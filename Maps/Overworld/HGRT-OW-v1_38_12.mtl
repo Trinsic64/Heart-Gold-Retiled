@@ -1,0 +1,56 @@
+newmtl ki02c
+map_Kd ki02c.png
+map_d ki02c.png
+
+newmtl grass01ax
+map_Kd grass01ax.png
+map_d grass01ax.png
+
+newmtl ki02ax
+map_Kd ki02ax.png
+map_d ki02ax.png
+
+newmtl ki02dx
+map_Kd ki02dx.png
+map_d ki02dx.png
+
+newmtl ki02bx
+map_Kd ki02bx.png
+map_d ki02bx.png
+
+newmtl h_kage_lm1
+map_Kd h_kage_lm1.png
+map_d h_kage_lm1.png
+
+newmtl grass02
+map_Kd grass02.png
+map_d grass02.png
+
+newmtl sek_fe03_r
+map_Kd sek_fe03_r.png
+map_d sek_fe03_r.png
+
+newmtl sek_teien
+map_Kd sek_teien.png
+map_d sek_teien.png
+
+newmtl sek_flower
+map_Kd sek_flower.png
+map_d sek_flower.png
+
+newmtl flower_sp1
+map_Kd flower_sp1.png
+map_d flower_sp1.png
+
+newmtl f_dodai_a
+map_Kd f_dodai_a.png
+map_d f_dodai_a.png
+
+newmtl f_dodai
+map_Kd f_dodai.png
+map_d f_dodai.png
+
+newmtl custom-michi
+map_Kd custom-michi.png
+map_d custom-michi.png
+

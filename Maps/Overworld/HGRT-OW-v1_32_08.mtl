@@ -1,0 +1,76 @@
+newmtl lav
+map_Kd lav.png
+map_d lav.png
+
+newmtl lav2
+map_Kd lav2.png
+map_d lav2.png
+
+newmtl rkage
+map_Kd rkage.png
+map_d rkage.png
+
+newmtl ki02c
+map_Kd ki02c.png
+map_d ki02c.png
+
+newmtl grass01ax
+map_Kd grass01ax.png
+map_d grass01ax.png
+
+newmtl gake01
+map_Kd gake01.png
+map_d gake01.png
+
+newmtl gake1_1
+map_Kd gake1_1.png
+map_d gake1_1.png
+
+newmtl michi01a
+map_Kd michi01a.png
+map_d michi01a.png
+
+newmtl michi01b
+map_Kd michi01b.png
+map_d michi01b.png
+
+newmtl ki02ax
+map_Kd ki02ax.png
+map_d ki02ax.png
+
+newmtl ki02dx
+map_Kd ki02dx.png
+map_d ki02dx.png
+
+newmtl ki02bx
+map_Kd ki02bx.png
+map_d ki02bx.png
+
+newmtl flower03
+map_Kd flower03.png
+map_d flower03.png
+
+newmtl grass02
+map_Kd grass02.png
+map_d grass02.png
+
+newmtl sek_fe01_r
+map_Kd sek_fe01_r.png
+map_d sek_fe01_r.png
+
+newmtl sek_fe01
+map_Kd sek_fe01.png
+map_d sek_fe01.png
+
+newmtl allpeak
+map_Kd allpeak.png
+map_d allpeak.png
+
+newmtl allpeak_p
+map_Kd allpeak_p.png
+map_d allpeak_p.png
+
+newmtl custom-michi
+map_Kd custom-michi.png
+map_d custom-michi.png
+

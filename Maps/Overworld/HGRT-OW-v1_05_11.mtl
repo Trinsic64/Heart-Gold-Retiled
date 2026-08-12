@@ -1,0 +1,56 @@
+newmtl sea_zanami2
+map_Kd sea_zanami2.png
+map_d sea_zanami2.png
+
+newmtl sea_zanami
+map_Kd sea_zanami.png
+map_d sea_zanami.png
+
+newmtl sea_mizu1_1
+map_Kd sea_mizu1_1.png
+map_d sea_mizu1_1.png
+
+newmtl gake_futa_2
+map_Kd gake_futa_2.png
+map_d gake_futa_2.png
+
+newmtl sea_jimen
+map_Kd sea_jimen.png
+map_d sea_jimen.png
+
+newmtl sand_and_grass
+map_Kd sand_and_grass.png
+map_d sand_and_grass.png
+
+newmtl sea_simi_1
+map_Kd sea_simi_1.png
+map_d sea_simi_1.png
+
+newmtl grass01ax
+map_Kd grass01ax.png
+map_d grass01ax.png
+
+newmtl gake1_0
+map_Kd gake1_0.png
+map_d gake1_0.png
+
+newmtl gake01
+map_Kd gake01.png
+map_d gake01.png
+
+newmtl rock01
+map_Kd rock01.png
+map_d rock01.png
+
+newmtl grass01_a
+map_Kd grass01_a.png
+map_d grass01_a.png
+
+newmtl beach_sub
+map_Kd beach_sub.png
+map_d beach_sub.png
+
+newmtl etcs_a
+map_Kd etcs_a.png
+map_d etcs_a.png
+

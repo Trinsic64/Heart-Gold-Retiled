@@ -1,0 +1,36 @@
+newmtl ko_land_a
+map_Kd ko_land_a.png
+map_d ko_land_a.png
+
+newmtl grass01ax
+map_Kd grass01ax.png
+map_d grass01ax.png
+
+newmtl gake01
+map_Kd gake01.png
+map_d gake01.png
+
+newmtl gake1_1
+map_Kd gake1_1.png
+map_d gake1_1.png
+
+newmtl ko_fence_a
+map_Kd ko_fence_a.png
+map_d ko_fence_a.png
+
+newmtl ko_road_a
+map_Kd ko_road_a.png
+map_d ko_road_a.png
+
+newmtl ko_land_r1
+map_Kd ko_land_r1.png
+map_d ko_land_r1.png
+
+newmtl ko_road_r1
+map_Kd ko_road_r1.png
+map_d ko_road_r1.png
+
+newmtl ko_roadline
+map_Kd ko_roadline.png
+map_d ko_roadline.png
+

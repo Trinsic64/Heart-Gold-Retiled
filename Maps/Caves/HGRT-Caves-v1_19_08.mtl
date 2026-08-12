@@ -1,0 +1,52 @@
+newmtl in81_ana01
+map_Kd in81_ana01.png
+map_d in81_ana01.png
+
+newmtl in65_gakeheri
+map_Kd in65_gakeheri.png
+map_d in65_gakeheri.png
+
+newmtl d0ana_002b
+map_Kd d0ana_002b.png
+map_d d0ana_002b.png
+
+newmtl in81_gake_a
+map_Kd in81_gake_a.png
+map_d in81_gake_a.png
+
+newmtl in81_yuka01
+map_Kd in81_yuka01.png
+map_d in81_yuka01.png
+
+newmtl in81_gake_c
+map_Kd in81_gake_c.png
+map_d in81_gake_c.png
+
+newmtl in81_gake_b
+map_Kd in81_gake_b.png
+map_d in81_gake_b.png
+
+newmtl d_ro
+map_Kd d_ro.png
+map_d d_ro.png
+
+newmtl droad03_sub
+map_Kd droad03_sub.png
+map_d droad03_sub.png
+
+newmtl d_rock03ss
+map_Kd d_rock03ss.png
+map_d d_rock03ss.png
+
+newmtl d_rock03st
+map_Kd d_rock03st.png
+map_d d_rock03st.png
+
+newmtl d_rock03
+map_Kd d_rock03.png
+map_d d_rock03.png
+
+newmtl droad03_sub2
+map_Kd droad03_sub2.png
+map_d droad03_sub2.png
+

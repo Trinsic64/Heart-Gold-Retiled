@@ -1,0 +1,80 @@
+newmtl lav
+map_Kd lav.png
+map_d lav.png
+
+newmtl kawa01b
+map_Kd kawa01b.png
+map_d kawa01b.png
+
+newmtl lav2
+map_Kd lav2.png
+map_d lav2.png
+
+newmtl rkage
+map_Kd rkage.png
+map_d rkage.png
+
+newmtl ki02c
+map_Kd ki02c.png
+map_d ki02c.png
+
+newmtl grass01ax
+map_Kd grass01ax.png
+map_d grass01ax.png
+
+newmtl gake01a2
+map_Kd gake01a2.png
+map_d gake01a2.png
+
+newmtl yamagake01
+map_Kd yamagake01.png
+map_d yamagake01.png
+
+newmtl gake1_1
+map_Kd gake1_1.png
+map_d gake1_1.png
+
+newmtl ki02ax
+map_Kd ki02ax.png
+map_d ki02ax.png
+
+newmtl ki02dx
+map_Kd ki02dx.png
+map_d ki02dx.png
+
+newmtl ki02bx
+map_Kd ki02bx.png
+map_d ki02bx.png
+
+newmtl h_kage_lm1
+map_Kd h_kage_lm1.png
+map_d h_kage_lm1.png
+
+newmtl grass02
+map_Kd grass02.png
+map_d grass02.png
+
+newmtl river
+map_Kd river.png
+map_d river.png
+
+newmtl sek_fe03_r
+map_Kd sek_fe03_r.png
+map_d sek_fe03_r.png
+
+newmtl sek_fe03
+map_Kd sek_fe03.png
+map_d sek_fe03.png
+
+newmtl sek_teien
+map_Kd sek_teien.png
+map_d sek_teien.png
+
+newmtl sek_flower
+map_Kd sek_flower.png
+map_d sek_flower.png
+
+newmtl custom-michi
+map_Kd custom-michi.png
+map_d custom-michi.png
+

@@ -1,0 +1,24 @@
+newmtl ki02c
+map_Kd ki02c.png
+map_d ki02c.png
+
+newmtl grass01ax
+map_Kd grass01ax.png
+map_d grass01ax.png
+
+newmtl egrass_ro
+map_Kd egrass_ro.png
+map_d egrass_ro.png
+
+newmtl egrass_v
+map_Kd egrass_v.png
+map_d egrass_v.png
+
+newmtl ki02ax
+map_Kd ki02ax.png
+map_d ki02ax.png
+
+newmtl ki02bx
+map_Kd ki02bx.png
+map_d ki02bx.png
+

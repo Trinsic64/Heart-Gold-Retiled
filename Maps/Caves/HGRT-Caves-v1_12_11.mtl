@@ -1,0 +1,92 @@
+newmtl d_ro
+map_Kd d_ro.png
+map_d d_ro.png
+
+newmtl spacer
+map_Kd spacer.png
+map_d spacer.png
+
+newmtl d_level08
+map_Kd d_level08.png
+map_d d_level08.png
+
+newmtl d_rock07ss
+map_Kd d_rock07ss.png
+map_d d_rock07ss.png
+
+newmtl d_rock07st
+map_Kd d_rock07st.png
+map_d d_rock07st.png
+
+newmtl d_rock07
+map_Kd d_rock07.png
+map_d d_rock07.png
+
+newmtl dcliff08
+map_Kd dcliff08.png
+map_d dcliff08.png
+
+newmtl droad08a
+map_Kd droad08a.png
+map_d droad08a.png
+
+newmtl droad08_r
+map_Kd droad08_r.png
+map_d droad08_r.png
+
+newmtl droad08_r_top
+map_Kd droad08_r_top.png
+map_d droad08_r_top.png
+
+newmtl dcliff08_r
+map_Kd dcliff08_r.png
+map_d dcliff08_r.png
+
+newmtl dwall08_e
+map_Kd dwall08_e.png
+map_d dwall08_e.png
+
+newmtl dwall08_s
+map_Kd dwall08_s.png
+map_d dwall08_s.png
+
+newmtl dwall08_w
+map_Kd dwall08_w.png
+map_d dwall08_w.png
+
+newmtl dwall08_n
+map_Kd dwall08_n.png
+map_d dwall08_n.png
+
+newmtl droad08_r2
+map_Kd droad08_r2.png
+map_d droad08_r2.png
+
+newmtl dwall08_es
+map_Kd dwall08_es.png
+map_d dwall08_es.png
+
+newmtl dwall08_sw
+map_Kd dwall08_sw.png
+map_d dwall08_sw.png
+
+newmtl dwall08_ne
+map_Kd dwall08_ne.png
+map_d dwall08_ne.png
+
+newmtl dwall08_wn
+map_Kd dwall08_wn.png
+map_d dwall08_wn.png
+
+newmtl droad08_sub
+map_Kd droad08_sub.png
+map_d droad08_sub.png
+
+newmtl droad08_sub2
+map_Kd droad08_sub2.png
+map_d droad08_sub2.png
+
+newmtl d_stairhole08
+map_Kd d_stairhole08.png
+map_d d_stairhole08.png
+

@@ -1,0 +1,68 @@
+newmtl d6gake_03
+map_Kd d6gake_03.png
+map_d d6gake_03.png
+
+newmtl d6gake_002
+map_Kd d6gake_002.png
+map_d d6gake_002.png
+
+newmtl d6yuka_001
+map_Kd d6yuka_001.png
+map_d d6yuka_001.png
+
+newmtl d_ro
+map_Kd d_ro.png
+map_d d_ro.png
+
+newmtl light
+map_Kd light.png
+map_d light.png
+
+newmtl dwall06_s
+map_Kd dwall06_s.png
+map_d dwall06_s.png
+
+newmtl chole06_out
+map_Kd chole06_out.png
+map_d chole06_out.png
+
+newmtl chole06_light
+map_Kd chole06_light.png
+map_d chole06_light.png
+
+newmtl dallpeak06
+map_Kd dallpeak06.png
+map_d dallpeak06.png
+
+newmtl dallpeak06_p
+map_Kd dallpeak06_p.png
+map_d dallpeak06_p.png
+
+newmtl droad06_sub
+map_Kd droad06_sub.png
+map_d droad06_sub.png
+
+newmtl d_rock06ss
+map_Kd d_rock06ss.png
+map_d d_rock06ss.png
+
+newmtl d_rock06st
+map_Kd d_rock06st.png
+map_d d_rock06st.png
+
+newmtl d_rock06
+map_Kd d_rock06.png
+map_d d_rock06.png
+
+newmtl d6gake_07
+map_Kd d6gake_07.png
+map_d d6gake_07.png
+
+newmtl slope_slope
+map_Kd slope_slope.png
+map_d slope_slope.png
+
+newmtl d0purple
+map_Kd d0purple.png
+map_d d0purple.png
+

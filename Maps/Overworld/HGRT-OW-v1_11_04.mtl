@@ -1,0 +1,120 @@
+newmtl ki02c
+map_Kd ki02c.png
+map_d ki02c.png
+
+newmtl gake_futa_2
+map_Kd gake_futa_2.png
+map_d gake_futa_2.png
+
+newmtl gake_michi
+map_Kd gake_michi.png
+map_d gake_michi.png
+
+newmtl grass01ax
+map_Kd grass01ax.png
+map_d grass01ax.png
+
+newmtl gake1_3
+map_Kd gake1_3.png
+map_d gake1_3.png
+
+newmtl gake1_0
+map_Kd gake1_0.png
+map_d gake1_0.png
+
+newmtl gake01
+map_Kd gake01.png
+map_d gake01.png
+
+newmtl rock01
+map_Kd rock01.png
+map_d rock01.png
+
+newmtl fence_b
+map_Kd fence_b.png
+map_d fence_b.png
+
+newmtl ki03ax
+map_Kd ki03ax.png
+map_d ki03ax.png
+
+newmtl ki03dx
+map_Kd ki03dx.png
+map_d ki03dx.png
+
+newmtl ki03bx
+map_Kd ki03bx.png
+map_d ki03bx.png
+
+newmtl t_tree2_c_lm24
+map_Kd t_tree2_c_lm24.png
+map_d t_tree2_c_lm24.png
+
+newmtl t_tree2_g__lm6
+map_Kd t_tree2_g__lm6.png
+map_d t_tree2_g__lm6.png
+
+newmtl t_tree2_ey_lm4
+map_Kd t_tree2_ey_lm4.png
+map_d t_tree2_ey_lm4.png
+
+newmtl t_tree2_by_lm4
+map_Kd t_tree2_by_lm4.png
+map_d t_tree2_by_lm4.png
+
+newmtl t_tree2_fy_lm4
+map_Kd t_tree2_fy_lm4.png
+map_d t_tree2_fy_lm4.png
+
+newmtl t_tree2_e_lm8
+map_Kd t_tree2_e_lm8.png
+map_d t_tree2_e_lm8.png
+
+newmtl t_tree2_b_lm16
+map_Kd t_tree2_b_lm16.png
+map_d t_tree2_b_lm16.png
+
+newmtl t_tree2_f_lm8
+map_Kd t_tree2_f_lm8.png
+map_d t_tree2_f_lm8.png
+
+newmtl t_tree2_ex_lm6
+map_Kd t_tree2_ex_lm6.png
+map_d t_tree2_ex_lm6.png
+
+newmtl t_tree2_bx_lm6
+map_Kd t_tree2_bx_lm6.png
+map_d t_tree2_bx_lm6.png
+
+newmtl t_tree2_fx_lm6
+map_Kd t_tree2_fx_lm6.png
+map_d t_tree2_fx_lm6.png
+
+newmtl slope_slope
+map_Kd slope_slope.png
+map_d slope_slope.png
+
+newmtl fieldkk01
+map_Kd fieldkk01.png
+map_d fieldkk01.png
+
+newmtl grass01_a
+map_Kd grass01_a.png
+map_d grass01_a.png
+
+newmtl road_en1
+map_Kd road_en1.png
+map_d road_en1.png
+
+newmtl road_en1_r
+map_Kd road_en1_r.png
+map_d road_en1_r.png
+
+newmtl etcs_a
+map_Kd etcs_a.png
+map_d etcs_a.png
+
+newmtl custom-fieldkk01_r
+map_Kd custom-fieldkk01_r.png
+map_d custom-fieldkk01_r.png
+

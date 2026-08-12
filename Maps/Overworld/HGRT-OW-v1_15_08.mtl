@@ -1,0 +1,64 @@
+newmtl ki02c
+map_Kd ki02c.png
+map_d ki02c.png
+
+newmtl grass01ax
+map_Kd grass01ax.png
+map_d grass01ax.png
+
+newmtl ki03ax
+map_Kd ki03ax.png
+map_d ki03ax.png
+
+newmtl ki03dx
+map_Kd ki03dx.png
+map_d ki03dx.png
+
+newmtl ki03bx
+map_Kd ki03bx.png
+map_d ki03bx.png
+
+newmtl fieldkk01
+map_Kd fieldkk01.png
+map_d fieldkk01.png
+
+newmtl grass01_a
+map_Kd grass01_a.png
+map_d grass01_a.png
+
+newmtl roadkk_ri1
+map_Kd roadkk_ri1.png
+map_d roadkk_ri1.png
+
+newmtl roadkk_01
+map_Kd roadkk_01.png
+map_d roadkk_01.png
+
+newmtl roadkk_ro
+map_Kd roadkk_ro.png
+map_d roadkk_ro.png
+
+newmtl roadkk_x2
+map_Kd roadkk_x2.png
+map_d roadkk_x2.png
+
+newmtl roadkk_z2
+map_Kd roadkk_z2.png
+map_d roadkk_z2.png
+
+newmtl roadkk_ri2
+map_Kd roadkk_ri2.png
+map_d roadkk_ri2.png
+
+newmtl roadkk_x1
+map_Kd roadkk_x1.png
+map_d roadkk_x1.png
+
+newmtl roadkk_z1
+map_Kd roadkk_z1.png
+map_d roadkk_z1.png
+
+newmtl custom-fieldkk01_r
+map_Kd custom-fieldkk01_r.png
+map_d custom-fieldkk01_r.png
+

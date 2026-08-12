@@ -1,0 +1,32 @@
+newmtl d0gake_001
+map_Kd d0gake_001.png
+map_d d0gake_001.png
+
+newmtl d0gake_001b
+map_Kd d0gake_001b.png
+map_d d0gake_001b.png
+
+newmtl d0yuka_002
+map_Kd d0yuka_002.png
+map_d d0yuka_002.png
+
+newmtl d0gake_heri
+map_Kd d0gake_heri.png
+map_d d0gake_heri.png
+
+newmtl d0gake_002b
+map_Kd d0gake_002b.png
+map_d d0gake_002b.png
+
+newmtl d0yuka_001
+map_Kd d0yuka_001.png
+map_d d0yuka_001.png
+
+newmtl d0gake_002
+map_Kd d0gake_002.png
+map_d d0gake_002.png
+
+newmtl d_ro
+map_Kd d_ro.png
+map_d d_ro.png
+

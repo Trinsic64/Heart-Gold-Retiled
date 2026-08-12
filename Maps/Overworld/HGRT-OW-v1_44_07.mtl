@@ -1,0 +1,60 @@
+newmtl gake_futa_2
+map_Kd gake_futa_2.png
+map_d gake_futa_2.png
+
+newmtl grass01ax
+map_Kd grass01ax.png
+map_d grass01ax.png
+
+newmtl gake1_0
+map_Kd gake1_0.png
+map_d gake1_0.png
+
+newmtl gake01
+map_Kd gake01.png
+map_d gake01.png
+
+newmtl shadowchip
+map_Kd shadowchip.png
+map_d shadowchip.png
+
+newmtl saku01a
+map_Kd saku01a.png
+map_d saku01a.png
+
+newmtl h_kage_lm1
+map_Kd h_kage_lm1.png
+map_d h_kage_lm1.png
+
+newmtl sio_fe02_r
+map_Kd sio_fe02_r.png
+map_d sio_fe02_r.png
+
+newmtl sio_fe02
+map_Kd sio_fe02.png
+map_d sio_fe02.png
+
+newmtl sio_fe01
+map_Kd sio_fe01.png
+map_d sio_fe01.png
+
+newmtl sio_fe01_r
+map_Kd sio_fe01_r.png
+map_d sio_fe01_r.png
+
+newmtl sio_sp1
+map_Kd sio_sp1.png
+map_d sio_sp1.png
+
+newmtl flower_sp1
+map_Kd flower_sp1.png
+map_d flower_sp1.png
+
+newmtl f_dodai_a
+map_Kd f_dodai_a.png
+map_d f_dodai_a.png
+
+newmtl f_dodai
+map_Kd f_dodai.png
+map_d f_dodai.png
+

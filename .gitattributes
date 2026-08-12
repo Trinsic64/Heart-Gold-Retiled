@@ -1,0 +1,27 @@
+* text=auto
+
+# Documentation and configuration
+*.md text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.sha256 text eol=lf
+*.mtl text eol=lf
+
+# Patch, archives, images, and generated map formats
+*.xdelta binary
+*.rar binary
+*.png binary
+*.imd binary
+*.obj binary
+*.nsbmd binary
+*.nsbtx binary
+*.bdhc binary
+*.bdhcam binary
+*.bgs binary
+*.bld binary
+*.bin binary
+*.per binary
+*.pdsmap binary
+*.pdsts binary
+*.meta binary
+

@@ -1,0 +1,84 @@
+newmtl sea_un
+map_Kd sea_un.png
+map_d sea_un.png
+
+newmtl sea_on
+map_Kd sea_on.png
+map_d sea_on.png
+
+newmtl d_ro
+map_Kd d_ro.png
+map_d d_ro.png
+
+newmtl light
+map_Kd light.png
+map_d light.png
+
+newmtl chole01_light
+map_Kd chole01_light.png
+map_d chole01_light.png
+
+newmtl sea_line_ham
+map_Kd sea_line_ham.png
+map_d sea_line_ham.png
+
+newmtl droad04a
+map_Kd droad04a.png
+map_d droad04a.png
+
+newmtl droad04_r
+map_Kd droad04_r.png
+map_d droad04_r.png
+
+newmtl dcliff04_r
+map_Kd dcliff04_r.png
+map_d dcliff04_r.png
+
+newmtl r_dtf_f01
+map_Kd r_dtf_f01.png
+map_d r_dtf_f01.png
+
+newmtl r_dtf_f03
+map_Kd r_dtf_f03.png
+map_d r_dtf_f03.png
+
+newmtl r_dtf_f02
+map_Kd r_dtf_f02.png
+map_d r_dtf_f02.png
+
+newmtl dslope04
+map_Kd dslope04.png
+map_d dslope04.png
+
+newmtl dwall04_s
+map_Kd dwall04_s.png
+map_d dwall04_s.png
+
+newmtl droad04_r2
+map_Kd droad04_r2.png
+map_d droad04_r2.png
+
+newmtl r_dtf_f05_lower
+map_Kd r_dtf_f05_lower.png
+map_d r_dtf_f05_lower.png
+
+newmtl r_dtf_f05_upper
+map_Kd r_dtf_f05_upper.png
+map_d r_dtf_f05_upper.png
+
+newmtl chole04_out
+map_Kd chole04_out.png
+map_d chole04_out.png
+
+newmtl dpond_line04
+map_Kd dpond_line04.png
+map_d dpond_line04.png
+
+newmtl d_rock04ss
+map_Kd d_rock04ss.png
+map_d d_rock04ss.png
+
+newmtl d_rock04st
+map_Kd d_rock04st.png
+map_d d_rock04st.png
+

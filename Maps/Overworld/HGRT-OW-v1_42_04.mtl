@@ -1,0 +1,48 @@
+newmtl gake_futa_2
+map_Kd gake_futa_2.png
+map_d gake_futa_2.png
+
+newmtl grass01ax
+map_Kd grass01ax.png
+map_d grass01ax.png
+
+newmtl gake1_0
+map_Kd gake1_0.png
+map_d gake1_0.png
+
+newmtl gake01
+map_Kd gake01.png
+map_d gake01.png
+
+newmtl gake1_1
+map_Kd gake1_1.png
+map_d gake1_1.png
+
+newmtl shadowchip
+map_Kd shadowchip.png
+map_d shadowchip.png
+
+newmtl michi01a
+map_Kd michi01a.png
+map_d michi01a.png
+
+newmtl michi01b
+map_Kd michi01b.png
+map_d michi01b.png
+
+newmtl saku01a
+map_Kd saku01a.png
+map_d saku01a.png
+
+newmtl slope_slope
+map_Kd slope_slope.png
+map_d slope_slope.png
+
+newmtl allpeak
+map_Kd allpeak.png
+map_d allpeak.png
+
+newmtl allpeak_p
+map_Kd allpeak_p.png
+map_d allpeak_p.png
+

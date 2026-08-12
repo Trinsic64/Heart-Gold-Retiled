@@ -1,0 +1,61 @@
+name: Content safety
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+
+      - name: Reject ROMs, extracted projects, tools, and oversized files
+        shell: bash
+        run: |
+          set -euo pipefail
+          failed=0
+
+          while IFS= read -r -d '' file; do
+            lower="${file,,}"
+            base="${lower##*/}"
+            size="$(stat -c '%s' -- "$file")"
+
+            case "$lower" in
+              *.nds|*.srl|*.3ds|*.cia|*.sav|*.dsv|*.narc|*.exe|*.dll|*.com|*.msi|*.bat|*.cmd|*.ps1|*.jar)
+                echo "Prohibited file type: $file"
+                failed=1
+                ;;
+            esac
+
+            case "/$lower/" in
+              */dspre/*|*/overlay/*)
+                echo "Prohibited DSPRE/extracted-ROM path: $file"
+                failed=1
+                ;;
+            esac
+
+            case "$base" in
+              arm7.bin|arm9.bin|banner.bin|header.bin|y7.bin|y9.bin)
+                echo "Prohibited extracted-ROM file: $file"
+                failed=1
+                ;;
+            esac
+
+            if (( size >= 100000000 )); then
+              echo "File is at or above the repository safety limit (100,000,000 bytes): $file ($size bytes)"
+              failed=1
+            fi
+          done < <(git ls-files -z)
+
+          if git grep -IEn '(BEGIN (RSA |EC |OPENSSH )?PRIVATE KEY|gh[pousr]_[A-Za-z0-9_]{20,}|github_pat_[A-Za-z0-9_]{20,})' -- .; then
+            echo "Possible private key or GitHub token detected."
+            failed=1
+          fi
+
+          exit "$failed"
+

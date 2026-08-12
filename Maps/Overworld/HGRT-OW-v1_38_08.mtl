@@ -1,0 +1,28 @@
+newmtl ki02c
+map_Kd ki02c.png
+map_d ki02c.png
+
+newmtl grass01ax
+map_Kd grass01ax.png
+map_d grass01ax.png
+
+newmtl ki02ax
+map_Kd ki02ax.png
+map_d ki02ax.png
+
+newmtl ki02dx
+map_Kd ki02dx.png
+map_d ki02dx.png
+
+newmtl ki02bx
+map_Kd ki02bx.png
+map_d ki02bx.png
+
+newmtl tama_fuch
+map_Kd tama_fuch.png
+map_d tama_fuch.png
+
+newmtl tama_yuka
+map_Kd tama_yuka.png
+map_d tama_yuka.png
+

@@ -1,0 +1,60 @@
+newmtl ki02c
+map_Kd ki02c.png
+map_d ki02c.png
+
+newmtl grass01ax
+map_Kd grass01ax.png
+map_d grass01ax.png
+
+newmtl ki02ax
+map_Kd ki02ax.png
+map_d ki02ax.png
+
+newmtl ki02dx
+map_Kd ki02dx.png
+map_d ki02dx.png
+
+newmtl ki02bx
+map_Kd ki02bx.png
+map_d ki02bx.png
+
+newmtl ymb_fe02_r
+map_Kd ymb_fe02_r.png
+map_d ymb_fe02_r.png
+
+newmtl nib_fe01_r
+map_Kd nib_fe01_r.png
+map_d nib_fe01_r.png
+
+newmtl nib_fe01
+map_Kd nib_fe01.png
+map_d nib_fe01.png
+
+newmtl ymb_fe02
+map_Kd ymb_fe02.png
+map_d ymb_fe02.png
+
+newmtl ymb_hole
+map_Kd ymb_hole.png
+map_d ymb_hole.png
+
+newmtl ymb_fence_a
+map_Kd ymb_fence_a.png
+map_d ymb_fence_a.png
+
+newmtl ymb_fence_c
+map_Kd ymb_fence_c.png
+map_d ymb_fence_c.png
+
+newmtl ymb_fence_b
+map_Kd ymb_fence_b.png
+map_d ymb_fence_b.png
+
+newmtl ymb_fence_d
+map_Kd ymb_fence_d.png
+map_d ymb_fence_d.png
+
+newmtl ymb_shouka
+map_Kd ymb_shouka.png
+map_d ymb_shouka.png
+

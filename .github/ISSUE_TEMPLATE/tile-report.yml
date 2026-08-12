@@ -1,0 +1,51 @@
+name: Tile or map problem
+description: Report an awkward, glitched, or misplaced tile.
+title: "[Map]: "
+labels:
+  - map bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve HeartGold Retiled. Do not attach a ROM, DSPRE workspace, or extracted game data.
+  - type: input
+    id: version
+    attributes:
+      label: Patch version
+      placeholder: v1.0.0
+    validations:
+      required: true
+  - type: input
+    id: location
+    attributes:
+      label: In-game location
+      description: Include the nearest town, route, cave floor, or landmark.
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What looks wrong?
+      description: Describe the affected tile and what you expected to see.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: How to reach it
+      description: Give short steps or directions from a nearby landmark.
+    validations:
+      required: true
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots
+      description: Drag in screenshots only. Do not upload a ROM, save, DSPRE project, or extracted game files.
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Content check
+      options:
+        - label: I have not attached a ROM, save, DSPRE workspace, or extracted game data.
+          required: true
+

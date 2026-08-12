@@ -1,0 +1,16 @@
+newmtl sea_mizu1_1
+map_Kd sea_mizu1_1.png
+map_d sea_mizu1_1.png
+
+newmtl sea_jimen
+map_Kd sea_jimen.png
+map_d sea_jimen.png
+
+newmtl gake1_6
+map_Kd gake1_6.png
+map_d gake1_6.png
+
+newmtl gake01
+map_Kd gake01.png
+map_d gake01.png
+

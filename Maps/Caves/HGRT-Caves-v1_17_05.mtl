@@ -1,0 +1,68 @@
+newmtl d0gake_001
+map_Kd d0gake_001.png
+map_d d0gake_001.png
+
+newmtl d0gake_001b
+map_Kd d0gake_001b.png
+map_d d0gake_001b.png
+
+newmtl d0yuka_002
+map_Kd d0yuka_002.png
+map_d d0yuka_002.png
+
+newmtl d0gake_heri
+map_Kd d0gake_heri.png
+map_d d0gake_heri.png
+
+newmtl d0mizu_gake
+map_Kd d0mizu_gake.png
+map_d d0mizu_gake.png
+
+newmtl d0gake_002b
+map_Kd d0gake_002b.png
+map_d d0gake_002b.png
+
+newmtl d0yuka_001
+map_Kd d0yuka_001.png
+map_d d0yuka_001.png
+
+newmtl d0gake_002
+map_Kd d0gake_002.png
+map_d d0gake_002.png
+
+newmtl d0ana_002b
+map_Kd d0ana_002b.png
+map_d d0ana_002b.png
+
+newmtl d0ana_001b
+map_Kd d0ana_001b.png
+map_d d0ana_001b.png
+
+newmtl d_ro
+map_Kd d_ro.png
+map_d d_ro.png
+
+newmtl dallpeak01
+map_Kd dallpeak01.png
+map_d dallpeak01.png
+
+newmtl dallpeak01_p
+map_Kd dallpeak01_p.png
+map_d dallpeak01_p.png
+
+newmtl droad01_sub
+map_Kd droad01_sub.png
+map_d droad01_sub.png
+
+newmtl droad01_sub2
+map_Kd droad01_sub2.png
+map_d droad01_sub2.png
+
+newmtl yuka-hole
+map_Kd yuka-hole.png
+map_d yuka-hole.png
+
+newmtl slope_slope
+map_Kd slope_slope.png
+map_d slope_slope.png
+

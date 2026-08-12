@@ -1,0 +1,108 @@
+newmtl sea_mizu1_1
+map_Kd sea_mizu1_1.png
+map_d sea_mizu1_1.png
+
+newmtl kawa01b
+map_Kd kawa01b.png
+map_d kawa01b.png
+
+newmtl ki02c
+map_Kd ki02c.png
+map_d ki02c.png
+
+newmtl gake_futa_2
+map_Kd gake_futa_2.png
+map_d gake_futa_2.png
+
+newmtl gake_michi
+map_Kd gake_michi.png
+map_d gake_michi.png
+
+newmtl sea_jimen
+map_Kd sea_jimen.png
+map_d sea_jimen.png
+
+newmtl ko_land_a
+map_Kd ko_land_a.png
+map_d ko_land_a.png
+
+newmtl grass01ax
+map_Kd grass01ax.png
+map_d grass01ax.png
+
+newmtl gake1_3
+map_Kd gake1_3.png
+map_d gake1_3.png
+
+newmtl gake1_0
+map_Kd gake1_0.png
+map_d gake1_0.png
+
+newmtl gake01a2
+map_Kd gake01a2.png
+map_d gake01a2.png
+
+newmtl gake01
+map_Kd gake01.png
+map_d gake01.png
+
+newmtl yamagake01
+map_Kd yamagake01.png
+map_d yamagake01.png
+
+newmtl gake1_1
+map_Kd gake1_1.png
+map_d gake1_1.png
+
+newmtl shadowchip
+map_Kd shadowchip.png
+map_d shadowchip.png
+
+newmtl saku01a
+map_Kd saku01a.png
+map_d saku01a.png
+
+newmtl ki03ax
+map_Kd ki03ax.png
+map_d ki03ax.png
+
+newmtl ki03dx
+map_Kd ki03dx.png
+map_d ki03dx.png
+
+newmtl ki03bx
+map_Kd ki03bx.png
+map_d ki03bx.png
+
+newmtl lambert16
+map_Kd lambert16.png
+map_d lambert16.png
+
+newmtl pond_line02
+map_Kd pond_line02.png
+map_d pond_line02.png
+
+newmtl ko_fence_a
+map_Kd ko_fence_a.png
+map_d ko_fence_a.png
+
+newmtl ko_pond_line
+map_Kd ko_pond_line.png
+map_d ko_pond_line.png
+
+newmtl ko_road_a
+map_Kd ko_road_a.png
+map_d ko_road_a.png
+
+newmtl ko_land_r1
+map_Kd ko_land_r1.png
+map_d ko_land_r1.png
+
+newmtl ko_road_r1
+map_Kd ko_road_r1.png
+map_d ko_road_r1.png
+
+newmtl ko_tetora
+map_Kd ko_tetora.png
+map_d ko_tetora.png
+

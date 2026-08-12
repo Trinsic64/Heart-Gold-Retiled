@@ -1,0 +1,49 @@
+# Complete Nintendo ROM images and common save formats
+*.nds
+*.srl
+*.3ds
+*.cia
+*.sav
+*.dsv
+
+# Executables and bundled tooling
+*.exe
+*.dll
+*.com
+*.msi
+*.bat
+*.cmd
+*.ps1
+*.jar
+
+# DSPRE and recognizable extracted-ROM content
+**/DSPRE/
+**/dspre/
+**/overlay/
+**/arm7.bin
+**/arm9.bin
+**/banner.bin
+**/header.bin
+**/y7.bin
+**/y9.bin
+*.narc
+
+# Credentials and local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.pfx
+*.p12
+
+# Editor and operating-system files
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.swp
+*.tmp
+*.bak
+.idea/
+.vscode/
+
