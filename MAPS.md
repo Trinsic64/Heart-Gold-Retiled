@@ -5,11 +5,14 @@ The `Maps` directory contains the mapping resources used by Pokémon HeartGold R
 ## Layout
 
 ```text
+Data/
+└── Matrices/       Matrix data used by the maps
+
 Maps/
-├── Caves/          Expanded cave mapping resources
-├── Overworld/      Expanded overworld mapping resources
-├── Caves.rar       Convenience archive of cave resources
-└── Overworld.rar   Convenience archive of overworld resources
+├── Caves/          Current expanded cave mapping resources
+├── Overworld/      Current expanded overworld mapping resources
+├── Caves.rar       Convenience snapshot of cave resources
+└── Overworld.rar   Convenience snapshot of overworld resources
 ```
 
 The resources include textures, models, materials, collision/camera data, and Pokémon DS Map Studio project files. The `.imd` metadata identifies Pokémon DS Map Studio 1.0 as the generator for the model data.
@@ -20,7 +23,10 @@ Common formats include:
 - `.obj`, `.mtl`, and `.imd` model/material data;
 - `.nsbmd` and `.nsbtx` Nintendo DS model/texture outputs;
 - `.bdhc`, `.bdhcam`, `.bgs`, `.bld`, `.per`, and `.bin` map support data; and
-- `.pdsmap` and `.pdsts` Pokémon DS Map Studio files.
+- `.pdsmap` and `.pdsts` Pokémon DS Map Studio files; and
+- `.mtx` binary matrix data.
+
+The expanded `Maps/Caves` and `Maps/Overworld` directories are the current working resources. The RAR files are retained as smaller convenience snapshots and may not include the latest individual map edits.
 
 ## Archive verification
 
@@ -40,4 +46,3 @@ Both archives were inventoried before publication. No `.nds`, `.srl`, executable
 - Submit changes only to mapping resources you have permission to share.
 
 These files may incorporate or depend on third-party game assets. Their inclusion does not grant ownership of those assets or permission for commercial use.
-

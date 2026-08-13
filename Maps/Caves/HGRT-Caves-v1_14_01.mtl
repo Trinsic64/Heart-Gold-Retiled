@@ -46,22 +46,6 @@ newmtl d_ro
 map_Kd d_ro.png
 map_d d_ro.png
 
-newmtl dwall01_s
-map_Kd dwall01_s.png
-map_d dwall01_s.png
-
-newmtl light
-map_Kd light.png
-map_d light.png
-
-newmtl chole01_out
-map_Kd chole01_out.png
-map_d chole01_out.png
-
-newmtl chole01_light
-map_Kd chole01_light.png
-map_d chole01_light.png
-
 newmtl droad01_sub
 map_Kd droad01_sub.png
 map_d droad01_sub.png

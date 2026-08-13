@@ -20,10 +20,10 @@ folder|Terrian/Beach/Ocean|8|13|0|0|1|0|0
 folder|Terrian/Decorations/Bushes|8|6|1|0|1|0|0
 folder|Terrian/Grasslands/Cave-Entrances|8|30|1|0|1|0|0
 folder|Terrian/Grasslands/Cliff-Rocks|8|35|1|0|1|0|0
-folder|Terrian/Grasslands/Waterfalls|8|18|0|0|1|0|0
+folder|Terrian/Grasslands/Waterfalls|8|18|1|0|1|0|0
 folder|Terrian/Beach/Ocean/Rocks|8|4|1|0|1|0|0
 folder|Terrian/Beach/Ocean/Waves|8|25|0|0|1|0|0
-folder|Terrian/Desert|8|43|1|0|1|1|0
+folder|Terrian/Desert|8|43|0|0|1|1|0
 folder|Terrian/Decorations/Flowers|8|12|1|0|1|0|0
 folder|Terrian/Decorations/Hedges|8|15|1|0|1|1|0
 folder|Terrian/Decorations/Rocks|8|342|1|0|1|0|0
@@ -33,7 +33,7 @@ folder|Terrian/Decorations/Rocks/Crystals|8|16|1|0|1|0|0
 folder|Terrian/Decorations/Rocks/Pillars|8|20|1|0|1|0|0
 folder|Terrian/Decorations/Rocks/Ocean-Rocks|8|82|1|1|1|0|0
 folder|Wild-Grass/Tall-Grass|8|4|0|0|1|0|0
-folder|Wild-Grass|8|5|1|0|1|1|0
+folder|Wild-Grass|8|5|0|0|1|0|0
 folder|Misc/Berries|8|4|1|0|1|0|0
 folder|Misc/Bridges|8|4|1|0|1|0|0
 folder|Misc/Buildings|8|88|1|0|1|0|0
@@ -65,7 +65,7 @@ folder|Terrian|8|4|0|0|1|0|0
 folder|Cities-&-Towns/Benches|8|8|1|0|1|0|0
 folder|Cities-&-Towns/Cities|8|30|1|0|1|1|0
 folder|Cities-&-Towns/Construction|8|60|1|1|1|0|0
-folder|Cities-&-Towns/Fences|8|20|0|1|1|1|0
+folder|Cities-&-Towns/Fences|8|20|1|1|1|1|0
 folder|Cities-&-Towns/Lamps|8|4|1|0|1|0|0
 folder|Cities-&-Towns/Roads|8|120|1|0|1|0|0
 folder|Cities-&-Towns/Cities/Fancy|8|9|1|0|1|1|0
@@ -81,7 +81,7 @@ folder|Terrian/Caves/Dark-Cave/Cave-Entrances|8|12|1|1|1|0|0
 folder|Terrian/Caves/Dark-Cave/Waterfalls|8|9|1|0|1|0|0
 folder|Terrian/Caves/Lava-Cave|8|87|1|0|1|1|0
 folder|Terrian/Caves/Cave-Walls|8|20|1|0|1|0|0
-folder|Terrian/Grasslands|8|63|0|1|1|1|0
+folder|Terrian/Grasslands|8|63|1|1|1|1|0
 folder|Terrian/Sewers/Pipes|8|52|1|1|1|0|0
 folder|Terrian/Sewers/Steam|8|4|1|0|1|0|0
 folder|Terrian/Decorations/Umbrellas|8|2|1|0|1|0|0

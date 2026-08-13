@@ -70,6 +70,22 @@ newmtl ki03bx
 map_Kd ki03bx.png
 map_d ki03bx.png
 
+newmtl Desert_michi01a
+map_Kd Desert_michi01a.png
+map_d Desert_michi01a.png
+
+newmtl sabaku01
+map_Kd sabaku01.png
+map_d sabaku01.png
+
+newmtl sabaku_el_1
+map_Kd sabaku_el_1.png
+map_d sabaku_el_1.png
+
+newmtl sabaku_e01
+map_Kd sabaku_e01.png
+map_d sabaku_e01.png
+
 newmtl flower03
 map_Kd flower03.png
 map_d flower03.png

@@ -62,10 +62,6 @@ newmtl d_rock01
 map_Kd d_rock01.png
 map_d d_rock01.png
 
-newmtl sea_rock
-map_Kd sea_rock.png
-map_d sea_rock.png
-
 newmtl slope_slope
 map_Kd slope_slope.png
 map_d slope_slope.png

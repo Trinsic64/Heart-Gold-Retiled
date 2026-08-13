@@ -1,16 +1,16 @@
 # Pokemon DS Map Studio tile metadata v7
 folder||0|4|1|1|1|0|0
 folder|HG-Cave|8|1290|1|0|1|0|0
-folder|Misc|8|4|1|0|1|0|0
+folder|Misc|8|1|0|0|1|0|0
 folder|Misc/Shadows|8|35|1|0|1|1|0
-folder|Misc/Void|8|21|1|0|1|1|0
+folder|Misc/Void|8|25|0|1|1|1|0
 folder|Terrian|8|4|0|0|1|0|0
 folder|Terrian/Beach|8|4|1|0|1|0|0
 folder|Terrian/Beach/Ocean|8|13|1|0|1|0|0
 folder|Terrian/Beach/Ocean/Rocks|8|4|1|0|1|0|0
 folder|Terrian/Beach/Ocean/Waves|8|26|1|0|1|0|0
 folder|Terrian/Caves|8|21|0|0|1|1|0
-folder|Terrian/Caves/Cave-Entrances|8|51|1|0|1|0|0
+folder|Terrian/Caves/Cave-Entrances|8|51|0|0|1|0|0
 folder|Terrian/Caves/Chargestone|8|67|1|1|1|1|0
 folder|Terrian/Caves/Chargestone/Cave-Entrances|8|40|1|0|1|0|0
 folder|Terrian/Caves/Cave-Void|8|40|1|1|1|1|0
@@ -38,7 +38,7 @@ folder|Terrian/Desert/Waterfalls|8|9|1|0|1|0|0
 folder|Terrian/Desert/Cliff-Rocks|8|6|1|0|1|0|0
 folder|Terrian/Desert/Dunes|8|12|1|0|1|0|0
 folder|Terrian/Desert/Ruins|8|24|1|0|1|0|0
-folder|Terrian/Grasslands|8|82|0|0|1|1|0
+folder|Terrian/Grasslands|8|82|1|0|1|1|0
 folder|Terrian/Grasslands/Cave-Entrances|8|30|1|0|1|0|0
 folder|Terrian/Grasslands/Cliff-Rocks|8|35|1|0|1|0|0
 folder|Terrian/Grasslands/Waterfalls|8|15|1|0|1|0|0
@@ -22796,6 +22796,12 @@ tile|11780||Terrian/Caves/Cave-Void|69|0|0|0|0|0|-1|
 membership|11780|Terrian/Caves/Cave-Void|69
 tile|11781||Terrian/Caves/Cave-Void|71|0|0|0|0|0|-1|
 membership|11781|Terrian/Caves/Cave-Void|71
+tile|11864||Misc/Void|168|0|0|0|0|0|-1|
+membership|11864|Misc/Void|168
+tile|11865||Misc/Void|170|0|0|0|0|0|-1|
+membership|11865|Misc/Void|170
+tile|11866||Misc/Void|169|0|0|0|0|0|-1|
+membership|11866|Misc/Void|169
 smart|0|Misc/Shadows
 smart|1|Misc/Shadows
 smart|2|Misc/Shadows
