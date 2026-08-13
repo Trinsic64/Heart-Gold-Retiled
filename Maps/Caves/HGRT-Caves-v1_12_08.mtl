@@ -70,6 +70,10 @@ newmtl droad01_sub2
 map_Kd droad01_sub2.png
 map_d droad01_sub2.png
 
+newmtl yuka-hole
+map_Kd yuka-hole.png
+map_d yuka-hole.png
+
 newmtl slope_slope
 map_Kd slope_slope.png
 map_d slope_slope.png

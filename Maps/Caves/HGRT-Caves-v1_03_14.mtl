@@ -50,3 +50,7 @@ newmtl d_rock01st
 map_Kd d_rock01st.png
 map_d d_rock01st.png
 
+newmtl yuka-hole
+map_Kd yuka-hole.png
+map_d yuka-hole.png
+

@@ -50,3 +50,7 @@ newmtl slope_slope
 map_Kd slope_slope.png
 map_d slope_slope.png
 
+newmtl gake_michi2
+map_Kd gake_michi2.png
+map_d gake_michi2.png
+

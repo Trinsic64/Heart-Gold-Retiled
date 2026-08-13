@@ -5,7 +5,7 @@ An unfinished visual overhaul of **Pokémon HeartGold** for Nintendo DS, with re
 There are still some awkward or glitchy tiles, but the project is playable and ready for community feedback. If you try it, please share what worked, what looked odd, and where you found it.
 
 > [!IMPORTANT]
-> This repository contains an xDelta patch and mapping resources only. It does **not** contain a Nintendo DS ROM, a DSPRE project, or an extracted ROM. You must supply your own legally obtained copy of Pokémon HeartGold.
+> This repository contains patch files and mapping resources only. It does **not** contain a Nintendo DS ROM, a DSPRE project, or an extracted ROM. You must supply your own legally obtained copy of Pokémon HeartGold.
 
 ## Screenshots
 
@@ -17,20 +17,25 @@ There are still some awkward or glitchy tiles, but the project is playable and r
 
 ## Download and play
 
-The current development patch is [HG-Retiled.xdelta](xDelta/HG-Retiled.xdelta?raw=1).
+The current development patch is available in two formats:
+
+- [HG-Retiled-Patch.xdelta](xDelta/HG-Retiled-Patch.xdelta?raw=1) for xDelta-compatible patchers; or
+- [HG-Retiled-v3.bps](HG-Retiled-v3.bps?raw=1) for BPS-compatible patchers.
+
+Use either patch format, not both.
 
 You will need:
 
 - your own clean Pokémon HeartGold ROM dump;
-- the `.xdelta` patch from this repository; and
-- a reputable xDelta-compatible patcher.
+- one patch file from this repository; and
+- a reputable patcher compatible with the format you selected.
 
 To apply it:
 
 1. Back up your clean ROM dump.
-2. Open your xDelta patcher.
+2. Open your xDelta- or BPS-compatible patcher.
 3. Select your clean ROM as the source file.
-4. Select `xDelta/HG-Retiled.xdelta` as the patch.
+4. Select `xDelta/HG-Retiled-Patch.xdelta` or `HG-Retiled-v3.bps` as the patch.
 5. Choose a new output filename and apply the patch.
 
 The exact compatible ROM region/revision and source hash have not yet been documented. If your patcher reports a source mismatch, do not force it; check that you are using the correct clean, unmodified dump.
@@ -40,19 +45,21 @@ The exact compatible ROM region/revision and source hash have not yet been docum
 SHA-256:
 
 ```text
-9161824328F656E9AC194573F73DF6EB292B71735E4EF0381B9F9C9581CA68CD  xDelta/HG-Retiled.xdelta
+33EAC6B179A5ADB2CDC4372EBE77078FB5D48D94D44464EA3ECE5F7FB91F69AF  xDelta/HG-Retiled-Patch.xdelta
+15DAD7B1494C1CFD9F0F595472E20B628EE5CDA3D85CE3C6B0BBE1B1E11F51F5  HG-Retiled-v3.bps
 ```
 
 On PowerShell:
 
 ```powershell
-Get-FileHash .\xDelta\HG-Retiled.xdelta -Algorithm SHA256
+Get-FileHash .\xDelta\HG-Retiled-Patch.xdelta -Algorithm SHA256
+Get-FileHash .\HG-Retiled-v3.bps -Algorithm SHA256
 ```
 
 On macOS or Linux:
 
 ```bash
-sha256sum xDelta/HG-Retiled.xdelta
+sha256sum xDelta/HG-Retiled-Patch.xdelta HG-Retiled-v3.bps
 ```
 
 The map archive hashes are recorded in [checksums.sha256](checksums.sha256).

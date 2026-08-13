@@ -38,3 +38,7 @@ newmtl doukutu01
 map_Kd doukutu01.png
 map_d doukutu01.png
 
+newmtl gake_michi2
+map_Kd gake_michi2.png
+map_d gake_michi2.png
+
