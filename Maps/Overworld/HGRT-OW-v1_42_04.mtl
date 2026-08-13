@@ -22,6 +22,26 @@ newmtl shadowchip
 map_Kd shadowchip.png
 map_d shadowchip.png
 
+newmtl egrass_ro
+map_Kd egrass_ro.png
+map_d egrass_ro.png
+
+newmtl egrass_u
+map_Kd egrass_u.png
+map_d egrass_u.png
+
+newmtl egrass_v
+map_Kd egrass_v.png
+map_d egrass_v.png
+
+newmtl egrass
+map_Kd egrass.png
+map_d egrass.png
+
+newmtl egrass_ri
+map_Kd egrass_ri.png
+map_d egrass_ri.png
+
 newmtl michi01a
 map_Kd michi01a.png
 map_d michi01a.png

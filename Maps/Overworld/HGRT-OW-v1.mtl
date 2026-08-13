@@ -710,10 +710,6 @@ newmtl kk_nakas_r
 map_Kd kk_nakas_r.png
 map_d kk_nakas_r.png
 
-newmtl cavekn
-map_Kd cavekn.png
-map_d cavekn.png
-
 newmtl sio_fe02
 map_Kd sio_fe02.png
 map_d sio_fe02.png

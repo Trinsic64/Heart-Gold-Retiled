@@ -9,6 +9,7 @@
 
 # Patch, archives, images, and generated map formats
 *.xdelta binary
+*.bps binary
 *.rar binary
 *.png binary
 *.imd binary
@@ -24,4 +25,4 @@
 *.pdsmap binary
 *.pdsts binary
 *.meta binary
-
+*.mtx binary

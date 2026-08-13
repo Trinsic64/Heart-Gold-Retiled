@@ -38,10 +38,6 @@ newmtl f_kage
 map_Kd f_kage.png
 map_d f_kage.png
 
-newmtl droad06a
-map_Kd droad06a.png
-map_d droad06a.png
-
 newmtl dallpeak06
 map_Kd dallpeak06.png
 map_d dallpeak06.png
@@ -61,10 +57,6 @@ map_d d_rock06ss.png
 newmtl d_rock06
 map_Kd d_rock06.png
 map_d d_rock06.png
-
-newmtl d_stairhole06
-map_Kd d_stairhole06.png
-map_d d_stairhole06.png
 
 newmtl bridge_a
 map_Kd bridge_a.png
@@ -89,4 +81,8 @@ map_d d6gake_10.png
 newmtl d6yuka_004
 map_Kd d6yuka_004.png
 map_d d6yuka_004.png
+
+newmtl d6yuka_005
+map_Kd d6yuka_005.png
+map_d d6yuka_005.png
 

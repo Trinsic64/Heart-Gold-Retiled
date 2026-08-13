@@ -58,6 +58,18 @@ newmtl shadowchip
 map_Kd shadowchip.png
 map_d shadowchip.png
 
+newmtl kusa_ec1
+map_Kd kusa_ec1.png
+map_d kusa_ec1.png
+
+newmtl kusa_ec2
+map_Kd kusa_ec2.png
+map_d kusa_ec2.png
+
+newmtl kusa_ec3
+map_Kd kusa_ec3.png
+map_d kusa_ec3.png
+
 newmtl saku01a
 map_Kd saku01a.png
 map_d saku01a.png

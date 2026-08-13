@@ -458,10 +458,6 @@ newmtl dcliff05_r
 map_Kd dcliff05_r.png
 map_d dcliff05_r.png
 
-newmtl dslope05
-map_Kd dslope05.png
-map_d dslope05.png
-
 newmtl droad05_sub
 map_Kd droad05_sub.png
 map_d droad05_sub.png
