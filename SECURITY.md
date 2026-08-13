@@ -1,6 +1,6 @@
 # Security and content safety
 
-This repository intentionally distributes only an xDelta patch, screenshots, documentation, and mapping resources. It must not contain complete ROM images, save files, executables, secrets, or DSPRE/extracted-ROM projects.
+This repository intentionally distributes the primary xDelta patch, an optional alternative patch format, screenshots, documentation, and mapping resources. It must not contain complete ROM images, save files, executables, secrets, or DSPRE/extracted-ROM projects.
 
 ## Verify releases
 
@@ -15,4 +15,3 @@ For an ordinary broken link or incorrect checksum, open a public issue without a
 ## Maintainer response
 
 If prohibited or sensitive content is discovered, maintainers should remove public access, rotate any exposed credential, purge the affected Git history when necessary, regenerate release artifacts, and publish new checksums before restoring distribution.
-
