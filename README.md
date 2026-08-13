@@ -17,28 +17,48 @@ There are still some awkward or glitchy tiles, but the project is playable and r
 
 ## Download and play
 
-The current development patch is available in two formats:
+The main and recommended patch is:
 
-- [HG-Retiled-Patch.xdelta](xDelta/HG-Retiled-Patch.xdelta?raw=1) for xDelta-compatible patchers; or
-- [HG-Retiled-v3.bps](HG-Retiled-v3.bps?raw=1) for BPS-compatible patchers.
+- [HG-Retiled-Patch.xdelta](xDelta/HG-Retiled-Patch.xdelta?raw=1)
 
-Use either patch format, not both.
+The [HG-Retiled-v3.bps](HG-Retiled-v3.bps?raw=1) file is included only as an optional alternative. The instructions below use the xDelta patch.
 
-You will need:
+### Required source ROM
 
-- your own clean Pokémon HeartGold ROM dump;
-- one patch file from this repository; and
-- a reputable patcher compatible with the format you selected.
+You must supply your own legally obtained, clean, unmodified **Pokémon HeartGold (USA)** ROM. Check that it matches all of these hashes before patching:
 
-To apply it:
+```text
+MD5:     258cea3a62ac0d6eb04b5a0fd764d788
+SHA-1:   4fcded0e2713dc03929845de631d0932ea2b5a37
+SHA-256: 65f02a56842b75aa92d775d56d657a56fe3fa993550b04dc20704ab82d760105
+```
+
+If your hashes differ, do not force the patch. Obtain the correct clean USA revision first.
+
+### Apply the xDelta patch
+
+Use either:
+
+- [xDelta UI](https://www.romhacking.net/utilities/598/) for a downloadable desktop patcher; or
+- [RomPatcher.js](https://www.marcrobledo.com/RomPatcher.js/) to apply the patch in your browser.
+
+Then:
 
 1. Back up your clean ROM dump.
-2. Open your xDelta- or BPS-compatible patcher.
-3. Select your clean ROM as the source file.
-4. Select `xDelta/HG-Retiled-Patch.xdelta` or `HG-Retiled-v3.bps` as the patch.
-5. Choose a new output filename and apply the patch.
+2. Open xDelta UI or RomPatcher.js.
+3. Select your original Pokémon HeartGold (USA) `.nds` file as the **source/ROM file**.
+4. Select `HG-Retiled-Patch.xdelta` as the **patch file**.
+5. Apply the patch and save the newly generated `.nds` file separately from your original ROM.
 
-The exact compatible ROM region/revision and source hash have not yet been documented. If your patcher reports a source mismatch, do not force it; check that you are using the correct clean, unmodified dump.
+In RomPatcher.js, the selections should look like this:
+
+<p align="center">
+  <img src="Pictures/RomPatcher-js-xdelta-example.png" width="600" alt="RomPatcher.js showing a clean Pokémon HeartGold USA ROM and HG-Retiled-Patch.xdelta selected">
+</p>
+
+### Optional BPS alternative
+
+`HG-Retiled-v3.bps` is available for people who prefer a BPS-compatible patcher, but it is not the main patching method. Start from the same clean USA ROM listed above and apply only one patch format—not both.
 
 ## Verify the download
 
