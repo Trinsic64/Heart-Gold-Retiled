@@ -1,0 +1,258 @@
+event_file,event_object_index,actual_object_index,location,flag,before_type,after_type,before_script,after_script,resolved_item_id,resolved_item_constant,action,restored_missing_object,changed
+5,11,11,Burned Tower,1073,3,3,7656,7045,45,ITEM_HP_UP,restore-original-item,no,yes
+5,12,12,Burned Tower,1291,3,3,7668,7668,668,ITEM_BANETTITE,keep-ground-mega,no,no
+7,5,5,Route 2,1233,0,3,7040,7040,40,ITEM_ELIXIR,classify-original-pickup,no,yes
+8,11,11,Route 3,1309,0,3,7296,7296,296,ITEM_BIG_ROOT,classify-original-pickup,no,yes
+9,3,3,Route 4,1240,3,3,7663,7663,663,ITEM_MEWTWONITE_Y,keep-ground-mega,no,no
+11,5,5,Route 6,1299,0,3,7389,7389,389,ITEM_TM062,classify-original-pickup,no,yes
+12,0,0,Route 7,1197,0,3,7219,7219,219,ITEM_MENTAL_HERB,classify-original-pickup,no,yes
+13,11,11,Route 8,1287,0,3,7368,7368,368,ITEM_TM041,classify-original-pickup,no,yes
+14,13,13,Route 9,1301,0,3,7418,7418,418,ITEM_TM091,classify-original-pickup,no,yes
+14,14,14,Route 9,1302,0,3,7023,7023,23,ITEM_FULL_RESTORE,classify-original-pickup,no,yes
+14,15,15,Route 9,1303,0,3,7269,7269,269,ITEM_LIGHT_CLAY,classify-original-pickup,no,yes
+14,16,16,Route 9,1304,3,3,2,2,2576,ITEM_DELPHOXITE,keep-ground-mega,no,no
+16,6,6,Route 11,1307,0,3,7413,7413,413,ITEM_TM086,classify-original-pickup,no,yes
+17,9,9,Route 12,1228,3,3,7675,7675,675,ITEM_KANGASKHANITE,keep-ground-mega,no,no
+17,10,10,Route 12,1229,0,3,7066,7066,66,ITEM_YELLOW_FLUTE,classify-original-pickup,no,yes
+20,11,11,Route 15,1230,0,3,7051,7051,51,ITEM_PP_UP,classify-original-pickup,no,yes
+20,12,12,Route 15,1306,0,3,7318,7318,318,ITEM_ROSE_INCENSE,classify-original-pickup,no,yes
+26,11,11,Route 25,1227,3,3,7662,7662,662,ITEM_MEWTWONITE_X,keep-ground-mega,no,no
+27,6,6,Route 26,1115,0,3,7041,7041,41,ITEM_MAX_ELIXIR,classify-original-pickup,no,yes
+28,7,7,Route 27,1117,0,3,7050,7050,50,ITEM_RARE_CANDY,classify-original-pickup,no,yes
+28,8,8,Route 27,1118,0,3,7329,7329,329,ITEM_TM002,classify-original-pickup,no,yes
+28,9,9,Route 27,1293,0,3,7280,7280,280,ITEM_DESTINY_KNOT,classify-original-pickup,no,yes
+29,0,0,Route 28,1280,0,3,7362,7362,362,ITEM_TM035,classify-original-pickup,no,yes
+30,8,8,Route 29,1081,0,3,7017,10,2559,ITEM_CLEFABLITE,keep-ground-mega,yes,yes
+31,9,9,Route 30,1056,3,3,7757,7757,757,ITEM_AUDINITE,keep-ground-mega,no,no
+31,10,10,Route 30,1088,3,3,7768,7768,768,ITEM_LOPUNNITE,keep-ground-mega,no,no
+32,6,6,Route 31,1057,3,3,7760,7760,760,ITEM_SLOWBRONITE,keep-ground-mega,no,no
+32,7,7,Route 31,1058,3,3,7657,7657,657,ITEM_GARDEVOIRITE,keep-ground-mega,no,no
+33,12,12,Route 32,1065,3,3,7753,7753,753,ITEM_SCEPTILITE,keep-ground-mega,no,no
+33,13,13,Route 32,1066,3,3,11,11,2568,ITEM_DARKRANITE,keep-ground-mega,no,no
+33,16,16,Route 32,1273,0,3,7336,7336,336,ITEM_TM009,classify-original-pickup,no,yes
+33,17,17,Route 32,1239,0,3,7253,7253,253,ITEM_SHELL_BELL,classify-original-pickup,no,yes
+35,8,8,Route 34,1087,0,3,7092,7092,92,ITEM_NUGGET,classify-original-pickup,no,yes
+35,14,14,Route 34,1274,0,3,7390,7390,390,ITEM_TM063,classify-original-pickup,no,yes
+36,9,9,Route 35,1097,0,3,7393,7393,393,ITEM_TM066,classify-original-pickup,no,yes
+36,14,14,Route 35,1275,3,3,7680,7680,680,ITEM_HERACRONITE,keep-ground-mega,no,no
+37,8,8,Route 36,1276,3,3,12,12,2570,ITEM_EXCADRITE,keep-ground-mega,no,no
+39,6,6,Route 38,1277,3,3,4,4,2577,ITEM_GRENINJITE,keep-ground-mega,no,no
+39,7,7,Route 38,1278,0,3,7255,7255,255,ITEM_LAX_INCENSE,classify-original-pickup,no,yes
+40,10,10,Route 39,1279,0,3,7387,7387,387,ITEM_TM060,classify-original-pickup,no,yes
+41,6,6,Route 42,1172,3,3,7,7,2565,ITEM_SKARMORITE,keep-ground-mega,no,no
+41,7,7,Route 42,1193,0,3,7324,7324,324,ITEM_DUBIOUS_DISC,classify-original-pickup,no,yes
+41,8,8,Route 42,1285,0,3,7392,7392,392,ITEM_TM065,classify-original-pickup,no,yes
+42,7,7,Route 43,1198,0,3,7039,7039,39,ITEM_MAX_ETHER,classify-original-pickup,no,yes
+43,8,8,Route 44,1201,3,3,7677,7677,677,ITEM_ABSOLITE,keep-ground-mega,no,no
+43,9,9,Route 44,1202,0,3,7029,7029,29,ITEM_MAX_REVIVE,classify-original-pickup,no,yes
+43,10,10,Route 44,1203,3,3,7029,4,2637,ITEM_CHIMECHITE,keep-ground-mega,no,yes
+44,8,8,Route 45,1212,3,3,7764,7764,764,ITEM_DIANCITE,keep-ground-mega,no,no
+44,9,9,Route 45,1213,3,3,7756,7756,756,ITEM_GALLADITE,keep-ground-mega,no,no
+44,10,10,Route 45,1214,3,3,6,6,2582,ITEM_DRAGALGITE,keep-ground-mega,no,no
+44,11,11,Route 45,1215,0,3,7092,7092,92,ITEM_NUGGET,classify-original-pickup,no,yes
+44,12,12,Route 45,1216,3,3,7,7,2650,ITEM_GLIMMORANITE,keep-ground-mega,no,no
+45,5,5,Route 46,1217,3,3,7755,7755,755,ITEM_ALTARIANITE,keep-ground-mega,no,no
+48,6,6,Pewter City,1308,0,3,7267,7267,267,ITEM_WISE_GLASSES,classify-original-pickup,no,yes
+51,12,12,Vermilion City,1294,0,3,7319,7319,319,ITEM_LUCK_INCENSE,classify-original-pickup,no,yes
+51,13,13,Vermilion City,1295,0,3,7288,7288,288,ITEM_STICKY_BARB,classify-original-pickup,no,yes
+52,12,12,Celadon City,1305,0,3,7394,7394,394,ITEM_TM067,classify-original-pickup,no,yes
+54,2,2,Cinnabar Island,1236,0,3,7323,7323,323,ITEM_MAGMARIZER,classify-original-pickup,no,yes
+70,5,5,Violet City,1059,0,3,7050,7050,50,ITEM_RARE_CANDY,classify-original-pickup,no,yes
+70,6,6,Violet City,1060,0,3,7051,7051,51,ITEM_PP_UP,classify-original-pickup,no,yes
+74,4,4,Olivine City,1310,0,3,7384,7384,384,ITEM_TM057,classify-original-pickup,no,yes
+85,14,14,Lake of Rage,1288,0,3,7370,7370,370,ITEM_TM043,classify-original-pickup,no,yes
+85,15,15,Lake of Rage,1290,0,3,7067,7067,67,ITEM_RED_FLUTE,classify-original-pickup,no,yes
+85,19,19,Lake of Rage,1289,0,3,7297,7297,297,ITEM_CHOICE_SPECS,classify-original-pickup,no,yes
+87,0,0,Mt. Silver,1231,0,3,7325,7325,325,ITEM_REAPER_CLOTH,classify-original-pickup,no,yes
+88,17,17,Route 19,1199,0,3,7382,7382,382,ITEM_TM055,classify-original-pickup,no,yes
+91,6,6,Route 40,1266,0,3,7415,7415,415,ITEM_TM088,classify-original-pickup,no,yes
+93,0,0,National Park,1145,0,3,7355,7355,355,ITEM_TM028,classify-original-pickup,no,yes
+93,1,1,National Park,1144,0,3,7218,7218,218,ITEM_SOOTHE_BELL,classify-original-pickup,no,yes
+93,25,25,National Park,1286,0,3,7107,7107,107,ITEM_SHINY_STONE,classify-original-pickup,no,yes
+96,5,5,Union Cave,1067,3,3,7667,7667,667,ITEM_AGGRONITE,keep-ground-mega,no,no
+96,6,6,Union Cave,1068,3,3,2,2,2569,ITEM_EMBOARITE,keep-ground-mega,no,no
+96,7,7,Union Cave,1069,3,3,3,3,2560,ITEM_VICTREEBELITE,keep-ground-mega,no,no
+96,8,8,Union Cave,1070,3,3,7761,7761,761,ITEM_STEELIXITE,keep-ground-mega,no,no
+103,2,2,DIGLETT???s Cave,1297,0,3,7053,7053,53,ITEM_PP_MAX,classify-original-pickup,no,yes
+103,3,3,DIGLETT???s Cave,1298,0,3,7315,7315,315,ITEM_ROCK_INCENSE,classify-original-pickup,no,yes
+105,0,0,Rock Tunnel,1222,0,3,7040,7040,40,ITEM_ELIXIR,classify-original-pickup,no,yes
+105,1,1,Rock Tunnel,1223,0,3,7383,7383,383,ITEM_TM056,classify-original-pickup,no,yes
+107,5,5,Sprout Tower,1061,3,3,7762,7022,22,ITEM_PARALYZE_HEAL,restore-original-item,no,yes
+110,1,1,Ruins of Alph,1146,3,3,9,9,2561,ITEM_STARMINITE,keep-ground-mega,no,no
+110,7,7,Ruins of Alph,1147,3,3,10,10,2571,ITEM_SCOLIPITE,keep-ground-mega,no,no
+114,6,6,Ilex Forest,1077,0,3,7028,7028,28,ITEM_REVIVE,classify-original-pickup,no,yes
+114,7,7,Ilex Forest,1084,3,3,7671,7671,671,ITEM_PINSIRITE,keep-ground-mega,no,no
+114,8,8,Ilex Forest,1085,3,3,7770,7018,18,ITEM_ANTIDOTE,restore-original-item,no,yes
+114,9,9,Ilex Forest,1086,0,3,7038,7038,38,ITEM_ETHER,classify-original-pickup,no,yes
+116,0,0,Mt. Mortar,1173,0,3,7038,7038,38,ITEM_ETHER,classify-original-pickup,no,yes
+116,1,1,Mt. Mortar,1174,0,3,7028,7028,28,ITEM_REVIVE,classify-original-pickup,no,yes
+117,0,0,Ice Path,1111,0,3,7426,7426,426,ITEM_HM07,classify-original-pickup,no,yes
+117,3,3,Ice Path,1204,3,3,7674,7674,674,ITEM_ABOMASITE,keep-ground-mega,no,no
+117,4,4,Ice Path,1205,0,3,7051,7051,51,ITEM_PP_UP,classify-original-pickup,no,yes
+118,0,0,Whirl Islands,1162,3,3,2,2,2638,ITEM_ABSOLITE_Z,keep-ground-mega,no,no
+118,1,1,Whirl Islands,1161,3,3,3,7002,2,ITEM_ULTRA_BALL,restore-original-item,no,yes
+119,0,0,Mt. Silver Cave,1241,0,3,7023,7023,23,ITEM_FULL_RESTORE,classify-original-pickup,no,yes
+120,1,1,Dark Cave,1113,0,3,7381,7381,381,ITEM_TM054,classify-original-pickup,no,yes
+120,2,2,Dark Cave,1114,0,3,7028,7028,28,ITEM_REVIVE,classify-original-pickup,no,yes
+121,0,0,Victory Road,1119,0,3,7029,7029,29,ITEM_MAX_REVIVE,classify-original-pickup,no,yes
+121,1,1,Victory Road,1120,3,3,4,4,2583,ITEM_HAWLUCHANITE,keep-ground-mega,no,no
+121,2,2,Victory Road,1121,3,3,5,5,2562,ITEM_DRAGONINITE,keep-ground-mega,no,no
+123,1,1,Tohjo Falls,1116,0,3,7081,7081,81,ITEM_MOON_STONE,classify-original-pickup,no,yes
+141,0,0,Cerulean Cave,1257,0,3,7041,7041,41,ITEM_MAX_ELIXIR,classify-original-pickup,no,yes
+141,1,1,Cerulean Cave,1260,0,3,7092,7092,92,ITEM_NUGGET,classify-original-pickup,no,yes
+141,2,2,Cerulean Cave,1259,0,3,7023,7023,23,ITEM_FULL_RESTORE,classify-original-pickup,no,yes
+141,3,3,Cerulean Cave,1261,0,3,7254,7254,254,ITEM_SEA_INCENSE,classify-original-pickup,no,yes
+143,1,1,Viridian Forest,1234,0,3,7056,7056,56,ITEM_DIRE_HIT,classify-original-pickup,no,yes
+143,2,2,Viridian Forest,1235,0,3,7065,7065,65,ITEM_BLUE_FLUTE,classify-original-pickup,no,yes
+143,3,3,Viridian Forest,1237,0,3,7085,7085,85,ITEM_LEAF_STONE,classify-original-pickup,no,yes
+143,4,4,Viridian Forest,1238,0,3,7404,7404,404,ITEM_TM077,classify-original-pickup,no,yes
+146,0,0,Route 47,1267,0,3,7028,7028,28,ITEM_REVIVE,classify-original-pickup,no,yes
+146,1,1,Route 47,1281,0,3,7279,7279,279,ITEM_LAGGING_TAIL,classify-original-pickup,no,yes
+146,2,2,Route 47,1282,0,3,7317,7317,317,ITEM_WAVE_INCENSE,classify-original-pickup,no,yes
+146,3,3,Route 47,1283,0,3,7069,7069,69,ITEM_WHITE_FLUTE,classify-original-pickup,no,yes
+147,0,0,Route 48,1284,0,3,7092,7092,92,ITEM_NUGGET,classify-original-pickup,no,yes
+148,5,5,Union Cave,1072,0,3,7366,7366,366,ITEM_TM039,classify-original-pickup,no,yes
+148,6,6,Union Cave,1071,3,3,7754,7058,58,ITEM_X_DEFENSE,restore-original-item,no,yes
+149,4,4,Union Cave,1082,0,3,7040,7040,40,ITEM_ELIXIR,classify-original-pickup,no,yes
+149,5,5,Union Cave,1083,3,3,4,4,2572,ITEM_SCRAFTINITE,keep-ground-mega,no,no
+150,2,2,Sprout Tower,1062,3,3,7670,7670,670,ITEM_SCIZORITE,keep-ground-mega,no,no
+151,4,4,Sprout Tower,1063,3,3,4,4,2563,ITEM_MEGANIUMITE,keep-ground-mega,no,no
+151,5,5,Sprout Tower,1064,3,3,7659,7659,659,ITEM_VENUSAURITE,keep-ground-mega,no,no
+169,4,4,Dark Cave,1218,3,3,6,6,2564,ITEM_FERALIGITE,keep-ground-mega,no,no
+169,5,5,Dark Cave,1219,3,3,7,7,2573,ITEM_EELEKTROSSITE,keep-ground-mega,no,no
+169,6,6,Dark Cave,1220,3,3,8,8,2584,ITEM_ZYGARDITE,keep-ground-mega,no,no
+169,7,7,Dark Cave,1221,0,3,7056,7056,56,ITEM_DIRE_HIT,classify-original-pickup,no,yes
+169,8,8,Dark Cave,1292,0,3,7068,7068,68,ITEM_BLACK_FLUTE,classify-original-pickup,no,yes
+170,8,8,SLOWPOKE Well,1075,3,3,4,4,2566,ITEM_FROSLASSITE,keep-ground-mega,no,no
+171,0,0,Victory Road,1122,0,3,7353,7353,353,ITEM_TM026,classify-original-pickup,no,yes
+171,1,1,Victory Road,1123,3,3,7673,7673,673,ITEM_LUCARIONITE,keep-ground-mega,no,no
+171,2,2,Victory Road,1124,0,3,7023,7023,23,ITEM_FULL_RESTORE,classify-original-pickup,no,yes
+172,1,1,Victory Road,1125,3,3,8,8,2640,ITEM_GARCHOMPITE_Z,keep-ground-mega,no,no
+172,2,2,Victory Road,1126,0,3,7406,7406,406,ITEM_TM079,classify-original-pickup,no,yes
+172,3,3,Victory Road,1127,0,3,7050,7050,50,ITEM_RARE_CANDY,classify-original-pickup,no,yes
+174,1,1,SLOWPOKE Well,1076,0,3,7345,7345,345,ITEM_TM018,classify-original-pickup,no,yes
+176,10,10,Goldenrod City,1200,0,3,7405,7405,405,ITEM_TM078,classify-original-pickup,no,yes
+181,8,8,Radio Tower,1089,3,3,10,7002,2,ITEM_ULTRA_BALL,restore-original-item,no,yes
+193,18,18,Goldenrod City,1091,0,3,7223,7223,223,ITEM_AMULET_COIN,classify-original-pickup,no,yes
+193,19,19,Goldenrod City,1090,3,3,7679,7679,679,ITEM_ALAKAZITE,keep-ground-mega,no,no
+193,20,20,Goldenrod City,1092,0,3,7038,7038,38,ITEM_ETHER,classify-original-pickup,no,yes
+193,21,21,Goldenrod City,1093,3,3,5,5,2642,ITEM_GOLURKITE,keep-ground-mega,no,no
+194,35,35,Goldenrod City,1095,3,3,8,8,2585,ITEM_DRAMPANITE,keep-ground-mega,no,no
+194,36,36,Goldenrod City,1096,0,3,7228,7228,228,ITEM_SMOKE_BALL,classify-original-pickup,no,yes
+195,4,4,Goldenrod City,1078,0,3,7409,7409,409,ITEM_TM082,classify-original-pickup,no,yes
+195,5,5,Goldenrod City,1079,0,3,7039,7039,39,ITEM_MAX_ETHER,classify-original-pickup,no,yes
+195,6,6,Goldenrod City,1094,3,3,3,7002,2,ITEM_ULTRA_BALL,restore-original-item,no,yes
+204,11,11,Burned Tower,1074,0,3,7339,7339,339,ITEM_TM012,classify-original-pickup,no,yes
+207,0,0,Lighthouse,1160,0,3,7050,7050,50,ITEM_RARE_CANDY,classify-original-pickup,no,yes
+208,3,3,Lighthouse,1098,0,3,7038,7038,38,ITEM_ETHER,classify-original-pickup,no,yes
+209,2,2,Lighthouse,1099,0,3,7414,7414,414,ITEM_TM087,classify-original-pickup,no,yes
+210,2,2,Lighthouse,1100,3,3,7658,7076,76,ITEM_SUPER_REPEL,restore-original-item,no,yes
+211,3,3,Lighthouse,1101,3,3,6,6,2567,ITEM_HEATRANITE,keep-ground-mega,no,no
+223,5,5,Ice Path,1209,3,3,7763,7763,763,ITEM_GLALITITE,keep-ground-mega,no,no
+224,4,4,Ice Path,1110,0,3,7399,7399,399,ITEM_TM072,classify-original-pickup,no,yes
+224,5,5,Ice Path,1206,3,3,4,4,2586,ITEM_ZERAORITE,keep-ground-mega,no,no
+224,6,6,Ice Path,1207,3,3,5,5,2578,ITEM_PYROARITE,keep-ground-mega,no,no
+225,1,1,Ice Path,1208,0,3,7246,7246,246,ITEM_NEVER_MELT_ICE,classify-original-pickup,no,yes
+228,1,1,Whirl Islands,1163,3,3,7676,7676,676,ITEM_GYARADOSITE,keep-ground-mega,no,no
+228,2,2,Whirl Islands,1164,3,3,7752,7752,752,ITEM_SWAMPERTITE,keep-ground-mega,no,no
+228,3,3,Whirl Islands,1165,0,3,7023,7023,23,ITEM_FULL_RESTORE,classify-original-pickup,no,yes
+228,4,4,Whirl Islands,1166,0,3,7092,7092,92,ITEM_NUGGET,classify-original-pickup,no,yes
+228,5,5,Whirl Islands,1167,3,3,7759,7759,759,ITEM_SHARPEDONITE,keep-ground-mega,no,no
+229,1,1,Whirl Islands,1168,0,3,7029,7029,29,ITEM_MAX_REVIVE,classify-original-pickup,no,yes
+229,2,2,Whirl Islands,1169,0,3,7023,7023,23,ITEM_FULL_RESTORE,classify-original-pickup,no,yes
+229,3,3,Whirl Islands,1170,0,3,7041,7041,41,ITEM_MAX_ELIXIR,classify-original-pickup,no,yes
+233,8,8,Team Rocket HQ,1102,3,3,34,34,2574,ITEM_CHANDELURITE,keep-ground-mega,no,no
+233,9,9,Team Rocket HQ,1103,3,3,7666,7666,666,ITEM_HOUNDOOMINITE,keep-ground-mega,no,no
+233,10,10,Team Rocket HQ,1104,0,3,7092,7092,92,ITEM_NUGGET,classify-original-pickup,no,yes
+234,15,15,Team Rocket HQ,1105,0,3,7373,7373,373,ITEM_TM046,classify-original-pickup,no,yes
+235,12,12,Team Rocket HQ,1108,3,3,7682,7682,682,ITEM_MANECTITE,keep-ground-mega,no,no
+235,13,13,Team Rocket HQ,1109,3,3,7758,7758,758,ITEM_METAGROSSITE,keep-ground-mega,no,no
+235,14,14,Team Rocket HQ,1106,0,3,7376,7376,376,ITEM_TM049,classify-original-pickup,no,yes
+235,15,15,Team Rocket HQ,1107,3,3,10,10,2587,ITEM_FALINKSITE,keep-ground-mega,no,no
+235,17,17,Team Rocket HQ,1196,3,3,11,11,2644,ITEM_CRABOMINITE,keep-ground-mega,no,no
+236,1,1,Mt. Mortar,1175,3,3,7664,7664,664,ITEM_BLAZIKENITE,keep-ground-mega,no,no
+236,2,2,Mt. Mortar,1176,0,3,7092,7092,92,ITEM_NUGGET,classify-original-pickup,no,yes
+236,3,3,Mt. Mortar,1177,0,3,7278,7278,278,ITEM_IRON_BALL,classify-original-pickup,no,yes
+236,4,4,Mt. Mortar,1178,3,3,9,7024,24,ITEM_MAX_POTION,restore-original-item,no,yes
+236,5,5,Mt. Mortar,1179,3,3,7665,7047,47,ITEM_IRON,restore-original-item,no,yes
+236,6,6,Mt. Mortar,1180,0,3,7029,7029,29,ITEM_MAX_REVIVE,classify-original-pickup,no,yes
+236,7,7,Mt. Mortar,1181,3,3,10,10,2645,ITEM_GOLISOPITE,keep-ground-mega,no,no
+236,10,10,Mt. Mortar,1194,0,3,7316,7316,316,ITEM_FULL_INCENSE,classify-original-pickup,no,yes
+236,11,11,Mt. Mortar,1195,0,3,7321,7321,321,ITEM_PROTECTOR,classify-original-pickup,no,yes
+237,0,0,Mt. Mortar,1182,0,3,7050,7050,50,ITEM_RARE_CANDY,classify-original-pickup,no,yes
+237,1,1,Mt. Mortar,1183,3,3,11,11,2580,ITEM_MALAMARITE,keep-ground-mega,no,no
+237,2,2,Mt. Mortar,1184,0,3,7367,7367,367,ITEM_TM040,classify-original-pickup,no,yes
+237,3,3,Mt. Mortar,1185,0,3,7040,7040,40,ITEM_ELIXIR,classify-original-pickup,no,yes
+237,4,4,Mt. Mortar,1186,0,3,7235,7235,235,ITEM_DRAGON_SCALE,classify-original-pickup,no,yes
+237,5,5,Mt. Mortar,1187,3,3,7681,7078,78,ITEM_ESCAPE_ROPE,restore-original-item,no,yes
+238,2,2,Mt. Mortar,1188,3,3,7683,7683,683,ITEM_GARCHOMPITE,keep-ground-mega,no,no
+238,3,3,Mt. Mortar,1189,0,3,7051,7051,51,ITEM_PP_UP,classify-original-pickup,no,yes
+238,4,4,Mt. Mortar,1190,0,3,7023,7023,23,ITEM_FULL_RESTORE,classify-original-pickup,no,yes
+238,5,5,Mt. Mortar,1191,0,3,7039,7039,39,ITEM_MAX_ETHER,classify-original-pickup,no,yes
+238,6,6,Mt. Mortar,1192,3,3,2,2,2575,ITEM_CHESNAUGHTITE,keep-ground-mega,no,no
+239,5,5,Dragon???s Den,1112,0,3,7250,7250,250,ITEM_DRAGON_FANG,classify-original-pickup,no,yes
+239,7,7,Dragon???s Den,1210,3,3,7769,7769,769,ITEM_SALAMENCITE,keep-ground-mega,no,no
+239,8,8,Dragon???s Den,1211,0,3,7041,7041,41,ITEM_MAX_ELIXIR,classify-original-pickup,no,yes
+295,0,0,Ruins of Alph,1128,0,3,7036,7036,36,ITEM_HEAL_POWDER,classify-original-pickup,no,yes
+295,1,1,Ruins of Alph,1129,0,3,7034,7034,34,ITEM_ENERGY_POWDER,classify-original-pickup,no,yes
+295,2,2,Ruins of Alph,1130,0,3,7155,7155,155,ITEM_ORAN_BERRY,classify-original-pickup,no,yes
+295,3,3,Ruins of Alph,1131,0,3,7151,7151,151,ITEM_PECHA_BERRY,classify-original-pickup,no,yes
+296,0,0,Ruins of Alph,1132,0,3,7036,7036,36,ITEM_HEAL_POWDER,classify-original-pickup,no,yes
+296,1,1,Ruins of Alph,1133,0,3,7035,7035,35,ITEM_ENERGY_ROOT,classify-original-pickup,no,yes
+296,2,2,Ruins of Alph,1134,0,3,7158,7158,158,ITEM_SITRUS_BERRY,classify-original-pickup,no,yes
+296,3,3,Ruins of Alph,1135,0,3,7081,7081,81,ITEM_MOON_STONE,classify-original-pickup,no,yes
+297,0,0,Ruins of Alph,1140,0,3,7037,7037,37,ITEM_REVIVAL_HERB,classify-original-pickup,no,yes
+297,1,1,Ruins of Alph,1141,0,3,7249,7249,249,ITEM_CHARCOAL,classify-original-pickup,no,yes
+297,2,2,Ruins of Alph,1142,0,3,7270,7270,270,ITEM_LIFE_ORB,classify-original-pickup,no,yes
+297,3,3,Ruins of Alph,1143,0,3,7154,7154,154,ITEM_LEPPA_BERRY,classify-original-pickup,no,yes
+298,0,0,Ruins of Alph,1136,0,3,7090,7090,90,ITEM_STARDUST,classify-original-pickup,no,yes
+298,1,1,Ruins of Alph,1137,0,3,7091,7091,91,ITEM_STAR_PIECE,classify-original-pickup,no,yes
+298,2,2,Ruins of Alph,1138,0,3,7154,7154,154,ITEM_LEPPA_BERRY,classify-original-pickup,no,yes
+298,3,3,Ruins of Alph,1139,0,3,7243,7243,243,ITEM_MYSTIC_WATER,classify-original-pickup,no,yes
+304,0,0,Bell Tower,1148,3,3,12,7027,27,ITEM_FULL_HEAL,restore-original-item,no,yes
+305,0,0,Bell Tower,1149,3,3,7684,7684,684,ITEM_LATIASITE,keep-ground-mega,no,no
+305,1,1,Bell Tower,1150,3,3,13,13,2646,ITEM_MAGEARNITE,keep-ground-mega,no,no
+305,2,2,Bell Tower,1151,0,3,7051,7051,51,ITEM_PP_UP,classify-original-pickup,no,yes
+306,0,0,Bell Tower,1152,0,3,7050,7050,50,ITEM_RARE_CANDY,classify-original-pickup,no,yes
+307,0,0,Bell Tower,1153,3,3,14,14,2581,ITEM_BARBARACITE,keep-ground-mega,no,no
+307,1,1,Bell Tower,1154,3,3,15,15,2636,ITEM_RAICHUNITE_Y,keep-ground-mega,no,no
+308,0,0,Bell Tower,1155,0,3,7029,7029,29,ITEM_MAX_REVIVE,classify-original-pickup,no,yes
+309,0,0,Bell Tower,1156,0,3,7023,7023,23,ITEM_FULL_RESTORE,classify-original-pickup,no,yes
+309,1,1,Bell Tower,1157,0,3,7041,7041,41,ITEM_MAX_ELIXIR,classify-original-pickup,no,yes
+309,2,2,Bell Tower,1158,0,3,7092,7092,92,ITEM_NUGGET,classify-original-pickup,no,yes
+310,0,0,Bell Tower,1159,3,3,7685,7685,685,ITEM_LATIOSITE,keep-ground-mega,no,no
+345,3,3,Route 10,1300,0,3,7396,7396,396,ITEM_TM069,classify-original-pickup,no,yes
+370,2,2,Route 2,1232,3,3,7767,7767,767,ITEM_CAMERUPTITE,keep-ground-mega,no,no
+405,0,0,Cerulean Cave,1262,0,3,7051,7051,51,ITEM_PP_UP,classify-original-pickup,no,yes
+405,1,1,Cerulean Cave,1264,0,3,7351,7351,351,ITEM_TM024,classify-original-pickup,no,yes
+405,2,2,Cerulean Cave,1263,3,3,16,16,2647,ITEM_SCOVILLAINITE,keep-ground-mega,no,no
+405,3,3,Cerulean Cave,1265,0,3,7314,7314,314,ITEM_ODD_INCENSE,classify-original-pickup,no,yes
+406,0,0,Cerulean Cave,1268,0,3,7029,7029,29,ITEM_MAX_REVIVE,classify-original-pickup,no,yes
+406,1,1,Cerulean Cave,1269,3,3,3,3,2648,ITEM_BAXCALIBRITE,keep-ground-mega,no,no
+406,2,2,Cerulean Cave,1270,0,3,7108,7108,108,ITEM_DUSK_STONE,classify-original-pickup,no,yes
+406,3,3,Cerulean Cave,1271,0,3,7322,7322,322,ITEM_ELECTIRIZER,classify-original-pickup,no,yes
+406,4,4,Cerulean Cave,1272,0,3,7281,7281,281,ITEM_BLACK_SLUDGE,classify-original-pickup,no,yes
+407,0,0,Rock Tunnel,1224,3,3,7672,7672,672,ITEM_AERODACTYLITE,keep-ground-mega,no,no
+407,1,1,Rock Tunnel,1225,0,3,7051,7051,51,ITEM_PP_UP,classify-original-pickup,no,yes
+407,2,2,Rock Tunnel,1226,0,3,7028,7028,28,ITEM_REVIVE,classify-original-pickup,no,yes
+407,18,18,Rock Tunnel,1296,0,3,7110,7110,110,ITEM_OVAL_STONE,classify-original-pickup,no,yes
+408,6,6,Seafoam Islands,1256,0,3,7286,7286,286,ITEM_GRIP_CLAW,classify-original-pickup,no,yes
+408,7,7,Seafoam Islands,1251,3,3,7661,7661,661,ITEM_BLASTOISINITE,keep-ground-mega,no,no
+409,3,3,Seafoam Islands,1252,0,3,7084,7084,84,ITEM_WATER_STONE,classify-original-pickup,no,yes
+410,7,7,Seafoam Islands,1253,0,3,7028,7028,28,ITEM_REVIVE,classify-original-pickup,no,yes
+410,8,8,Seafoam Islands,1254,0,3,7089,7089,89,ITEM_BIG_PEARL,classify-original-pickup,no,yes
+411,0,0,Seafoam Islands,1255,3,3,3,7002,2,ITEM_ULTRA_BALL,restore-original-item,no,yes
+411,1,1,Seafoam Islands,1258,0,3,7340,7340,340,ITEM_TM013,classify-original-pickup,no,yes
+413,0,0,Mt. Silver Cave,1242,0,3,7320,7320,320,ITEM_PURE_INCENSE,classify-original-pickup,no,yes
+413,1,1,Mt. Silver Cave,1243,0,3,7109,7109,109,ITEM_DAWN_STONE,classify-original-pickup,no,yes
+414,0,0,Mt. Silver Cave,1244,3,3,7660,7660,660,ITEM_CHARIZARDITE_X,keep-ground-mega,no,no
+414,1,1,Mt. Silver Cave,1245,0,3,7403,7403,403,ITEM_TM076,classify-original-pickup,no,yes
+415,0,0,Mt. Silver Cave,1246,0,3,7268,7268,268,ITEM_EXPERT_BELT,classify-original-pickup,no,yes
+417,0,0,Mt. Silver Cave,1247,0,3,7041,7041,41,ITEM_MAX_ELIXIR,classify-original-pickup,no,yes
+417,1,1,Mt. Silver Cave,1248,3,3,7678,7678,678,ITEM_CHARIZARDITE_Y,keep-ground-mega,no,no
+417,2,2,Mt. Silver Cave,1249,3,3,7669,7669,669,ITEM_TYRANITARITE,keep-ground-mega,no,no
+417,3,3,Mt. Silver Cave,1250,0,3,7029,7029,29,ITEM_MAX_REVIVE,classify-original-pickup,no,yes
+439,0,0,Whirl Islands,1171,0,3,7050,7050,50,ITEM_RARE_CANDY,classify-original-pickup,no,yes
+440,0,0,National Park,1145,0,3,7355,7355,355,ITEM_TM028,classify-original-pickup,no,yes
+440,1,1,National Park,1144,0,3,7218,7218,218,ITEM_SOOTHE_BELL,classify-original-pickup,no,yes
+440,12,12,National Park,1286,0,3,7107,7107,107,ITEM_SHINY_STONE,classify-original-pickup,no,yes

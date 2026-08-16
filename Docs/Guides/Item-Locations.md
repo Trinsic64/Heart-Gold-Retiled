@@ -1,6 +1,6 @@
 # Item Location Guide
 
-This guide covers visible overworld pickups after the expansion replacements, hidden-item coordinates, progression rewards added by v6.6.0, and Mega/Primal held-item sources. Shop inventories are not included.
+This guide covers visible overworld pickups after the v6.9.0 reconciliation, hidden-item coordinates, expansion progression rewards, and Mega/Primal held-item sources. Shop inventories are not included.
 
 ## Important progression items
 
@@ -10,9 +10,9 @@ This guide covers visible overworld pickups after the expansion replacements, hi
 | Red Orb and Blue Orb | Original late-game orb scene | Both are awarded in one playthrough so Groudon, Kyogre, and Rayquaza's Embedded Tower sequence can be completed. |
 | Enigma Stone | Ruins of Alph Research Center | National Dex plus all 28 Unown; activates the original Pewter Museum event. |
 | Gracidea access | Goldenrod Flower Shop | Bring Shaymin; the event now checks species rather than promotional metadata. |
-| Mega Stone pickups | Johto and Kanto | All 92 configured stones have one visible pickup; see the table below. |
+| Mega Stone pickups | Johto and Kanto | 79 stones retain visible pickups. The other 13 are obtained from wild-family held sources; see the reconciliation table below. |
 
-## All 92 Mega Stone pickups
+## 79 retained Mega Stone pickups
 
 Coordinates are the absolute map coordinates recorded for the pickup object.
 
@@ -22,10 +22,8 @@ Coordinates are the absolute map coordinates recorded for the pickup object.
 | Latiasite | Bell Tower | 6, 21 | replacement |
 | Latiosite | Bell Tower | 15, 6 | replacement |
 | Magearnite | Bell Tower | 22, 18 | replacement |
-| Raichunite X | Bell Tower | 6, 25 | replacement |
 | Raichunite Y | Bell Tower | 6, 7 | replacement |
 | Banettite | Burned Tower | 15, 9 | replacement |
-| Gengarite | Burned Tower | 7, 26 | replacement |
 | Baxcalibrite | Cerulean Cave | 5, 32 | replacement |
 | Scovillainite | Cerulean Cave | 12, 32 | replacement |
 | Eelektrossite | Dark Cave | 51, 15 | replacement |
@@ -35,27 +33,20 @@ Coordinates are the absolute map coordinates recorded for the pickup object.
 | Alakazite | Goldenrod City | 12, 4 | replacement |
 | Drampanite | Goldenrod City | 7, 4 | replacement |
 | Golurkite | Goldenrod City | 24, 22 | replacement |
-| Meowsticite | Goldenrod City | 6, 7 | replacement |
 | Abomasite | Ice Path | 53, 15 | replacement |
 | Glalitite | Ice Path | 13, 48 | replacement |
 | Pyroarite | Ice Path | 5, 12 | replacement |
 | Zeraorite | Ice Path | 15, 15 | replacement |
-| Beedrillite | Ilex Forest | 20, 30 | replacement |
 | Pinsirite | Ilex Forest | 27, 42 | replacement |
-| Ampharosite | Lighthouse | 11, 3 | replacement |
 | Heatranite | Lighthouse | 15, 8 | replacement |
 | Blazikenite | Mt. Mortar | 67, 54 | replacement |
 | Chesnaughtite | Mt. Mortar | 40, 39 | replacement |
-| Floettite | Mt. Mortar | 51, 43 | replacement |
 | Garchompite | Mt. Mortar | 11, 58 | replacement |
 | Golisopite | Mt. Mortar | 37, 52 | replacement |
 | Malamarite | Mt. Mortar | 45, 38 | replacement |
-| Mawilite | Mt. Mortar | 45, 15 | replacement |
-| Medichamite | Mt. Mortar | 29, 20 | replacement |
 | Charizardite X | Mt. Silver Cave | 27, 46 | replacement |
 | Charizardite Y | Mt. Silver Cave | 17, 37 | replacement |
 | Tyranitarite | Mt. Silver Cave | 37, 17 | replacement |
-| Lucarionite Z | Radio Tower | 25, 7 | replacement |
 | Aerodactylite | Rock Tunnel | 33, 33 | replacement |
 | Kangaskhanite | Route 12 | 1410, 332 | replacement |
 | Cameruptite | Route 2 | 1053, 129 | replacement |
@@ -83,10 +74,8 @@ Coordinates are the absolute map coordinates recorded for the pickup object.
 | Scolipite | Ruins of Alph | 418, 273 | replacement |
 | Starminite | Ruins of Alph | 435, 274 | replacement |
 | Blastoisinite | Seafoam Islands | 29, 9 | replacement |
-| Tatsugirinite | Seafoam Islands | 29, 4 | replacement |
 | Froslassite | SLOWPOKE Well | 34, 5 | replacement |
 | Meganiumite | Sprout Tower | 11, 27 | replacement |
-| Pidgeotite | Sprout Tower | 24, 16 | replacement |
 | Scizorite | Sprout Tower | 6, 9 | replacement |
 | Venusaurite | Sprout Tower | 19, 8 | replacement |
 | Chandelurite | Team Rocket HQ | 52, 11 | replacement |
@@ -97,7 +86,6 @@ Coordinates are the absolute map coordinates recorded for the pickup object.
 | Metagrossite | Team Rocket HQ | 13, 24 | replacement |
 | Aggronite | Union Cave | 3, 34 | replacement |
 | Emboarite | Union Cave | 29, 72 | replacement |
-| Sablenite | Union Cave | 27, 30 | replacement |
 | Scraftinite | Union Cave | 17, 73 | replacement |
 | Steelixite | Union Cave | 23, 93 | replacement |
 | Victreebelite | Union Cave | 4, 67 | replacement |
@@ -108,8 +96,27 @@ Coordinates are the absolute map coordinates recorded for the pickup object.
 | Absolite Z | Whirl Islands | 22, 47 | replacement |
 | Gyaradosite | Whirl Islands | 42, 49 | replacement |
 | Sharpedonite | Whirl Islands | 70, 39 | replacement |
-| Staraptite | Whirl Islands | 48, 21 | replacement |
 | Swampertite | Whirl Islands | 19, 36 | replacement |
+
+## Ground pickups restored in v6.9.0
+
+These stones remain obtainable from the listed Pokémon family held sources. Their duplicate ground item balls were restored to the items present before the v6.6 replacement pass.
+
+| Held-source stone | Location of restored pickup | Restored item | Maximum effective holder encounter rate |
+| --- | --- | --- | ---: |
+| Gengarite | Burned Tower | HP Up | 20% |
+| Pidgeotite | Sprout Tower | Paralyze Heal | 20% |
+| Beedrillite | Ilex Forest | Antidote | 26% |
+| Sablenite | Union Cave | X Defense | 15% |
+| Ampharosite | Lighthouse | Super Repel | 10% |
+| Medichamite | Mt. Mortar | Iron | 24% |
+| Mawilite | Mt. Mortar | Escape Rope | 10% |
+| Floettite | Mt. Mortar | Max Potion | 10% |
+| Raichunite X | Bell Tower | Full Heal | 10% |
+| Staraptite | Whirl Islands | Ultra Ball | 20% |
+| Lucarionite Z | Radio Tower | Ultra Ball | 10% |
+| Meowsticite | Goldenrod City | Ultra Ball | 15% |
+| Tatsugirinite | Seafoam Islands | Ultra Ball | 40% |
 
 ## Wild and static Mega/Primal held-item sources
 
@@ -219,7 +226,7 @@ The engine's common and rare held slots are normally 50% and 5% respectively. Ab
 
 ## All visible overworld pickups after expansion replacements
 
-The 92 replacement rows below show the new Mega Stone rather than the item that occupied that object before the expansion.
+The rows below show the item resolved by each v6.9 event object. Retained Mega Stone rows identify replacements, while the 13 reconciled rows identify the restored item and its held-source stone.
 
 | Location | Item | Coordinates (x, y) | Notes |
 | --- | --- | --- | --- |
@@ -232,11 +239,11 @@ The 92 replacement rows below show the new Mega Stone rather than the item that 
 | Bell Tower | Max Revive | 23, 7 | Visible pickup |
 | Bell Tower | Nugget | 19, 24 | Visible pickup |
 | Bell Tower | PP Up | 25, 24 | Visible pickup |
-| Bell Tower | Raichunite X | 6, 25 | Mega Stone (replaces prior pickup) |
+| Bell Tower | Full Heal | 6, 25 | Restored in v6.9; Raichunite X remains a wild-family held item |
 | Bell Tower | Raichunite Y | 6, 7 | Mega Stone (replaces prior pickup) |
 | Bell Tower | Rare Candy | 14, 19 | Visible pickup |
 | Burned Tower | Banettite | 15, 9 | Mega Stone (replaces prior pickup) |
-| Burned Tower | Gengarite | 7, 26 | Mega Stone (replaces prior pickup) |
+| Burned Tower | HP Up | 7, 26 | Restored in v6.9; Gengarite remains a wild-family held item |
 | Burned Tower | TM012 | 5, 6 | Visible pickup |
 | Celadon City | TM067 | 1195, 226 | Visible pickup |
 | Cerulean Cave | Baxcalibrite | 5, 32 | Mega Stone (replaces prior pickup) |
@@ -271,7 +278,7 @@ The 92 replacement rows below show the new Mega Stone rather than the item that 
 | Goldenrod City | Ether | 17, 23 | Visible pickup |
 | Goldenrod City | Golurkite | 24, 22 | Mega Stone (replaces prior pickup) |
 | Goldenrod City | Max Ether | 28, 23 | Visible pickup |
-| Goldenrod City | Meowsticite | 6, 7 | Mega Stone (replaces prior pickup) |
+| Goldenrod City | Ultra Ball | 6, 7 | Restored in v6.9; Meowsticite remains a wild-family held item |
 | Goldenrod City | Smoke Ball | 1, 15 | Visible pickup |
 | Goldenrod City | TM078 | 2, 15 | Visible pickup |
 | Goldenrod City | TM082 | 21, 15 | Visible pickup |
@@ -283,14 +290,14 @@ The 92 replacement rows below show the new Mega Stone rather than the item that 
 | Ice Path | Pyroarite | 5, 12 | Mega Stone (replaces prior pickup) |
 | Ice Path | TM072 | 57, 24 | Visible pickup |
 | Ice Path | Zeraorite | 15, 15 | Mega Stone (replaces prior pickup) |
-| Ilex Forest | Beedrillite | 20, 30 | Mega Stone (replaces prior pickup) |
+| Ilex Forest | Antidote | 20, 30 | Restored in v6.9; Beedrillite remains a wild-family held item |
 | Ilex Forest | Ether | 47, 16 | Visible pickup |
 | Ilex Forest | Pinsirite | 27, 42 | Mega Stone (replaces prior pickup) |
 | Ilex Forest | Revive | 42, 73 | Visible pickup |
 | Lake of Rage | Choice Specs | 540, 37 | Visible pickup |
 | Lake of Rage | Red Flute | 489, 73 | Visible pickup |
 | Lake of Rage | TM043 | 506, 34 | Visible pickup |
-| Lighthouse | Ampharosite | 11, 3 | Mega Stone (replaces prior pickup) |
+| Lighthouse | Super Repel | 11, 3 | Restored in v6.9; Ampharosite remains a wild-family held item |
 | Lighthouse | Ether | 14, 13 | Visible pickup |
 | Lighthouse | Heatranite | 15, 8 | Mega Stone (replaces prior pickup) |
 | Lighthouse | Rare Candy | 2, 2 | Visible pickup |
@@ -300,17 +307,17 @@ The 92 replacement rows below show the new Mega Stone rather than the item that 
 | Mt. Mortar | Dragon Scale | 27, 14 | Visible pickup |
 | Mt. Mortar | Elixir | 16, 24 | Visible pickup |
 | Mt. Mortar | Ether | 34, 20 | Visible pickup |
-| Mt. Mortar | Floettite | 51, 43 | Mega Stone (replaces prior pickup) |
+| Mt. Mortar | Max Potion | 51, 43 | Restored in v6.9; Floettite remains a wild-family held item |
 | Mt. Mortar | Full Incense | 73, 47 | Visible pickup |
 | Mt. Mortar | Full Restore | 52, 64 | Visible pickup |
 | Mt. Mortar | Garchompite | 11, 58 | Mega Stone (replaces prior pickup) |
 | Mt. Mortar | Golisopite | 37, 52 | Mega Stone (replaces prior pickup) |
 | Mt. Mortar | Iron Ball | 51, 31 | Visible pickup |
 | Mt. Mortar | Malamarite | 45, 38 | Mega Stone (replaces prior pickup) |
-| Mt. Mortar | Mawilite | 45, 15 | Mega Stone (replaces prior pickup) |
+| Mt. Mortar | Escape Rope | 45, 15 | Restored in v6.9; Mawilite remains a wild-family held item |
 | Mt. Mortar | Max Ether | 46, 45 | Visible pickup |
 | Mt. Mortar | Max Revive | 23, 36 | Visible pickup |
-| Mt. Mortar | Medichamite | 29, 20 | Mega Stone (replaces prior pickup) |
+| Mt. Mortar | Iron | 29, 20 | Restored in v6.9; Medichamite remains a wild-family held item |
 | Mt. Mortar | Nugget | 67, 28 | Visible pickup |
 | Mt. Mortar | PP Up | 36, 66 | Visible pickup |
 | Mt. Mortar | Protector | 38, 75 | Visible pickup |
@@ -336,7 +343,7 @@ The 92 replacement rows below show the new Mega Stone rather than the item that 
 | National Park | TM028 | 24, 58 | Visible pickup |
 | Olivine City | TM057 | 309, 250 | Visible pickup |
 | Pewter City | Wise Glasses | 1029, 91 | Visible pickup |
-| Radio Tower | Lucarionite Z | 25, 7 | Mega Stone (replaces prior pickup) |
+| Radio Tower | Ultra Ball | 25, 7 | Restored in v6.9; Lucarionite Z remains a wild-family held item |
 | Rock Tunnel | Aerodactylite | 33, 33 | Mega Stone (replaces prior pickup) |
 | Rock Tunnel | Elixir | 7, 27 | Visible pickup |
 | Rock Tunnel | Oval Stone | 15, 31 | Visible pickup |
@@ -425,13 +432,13 @@ The 92 replacement rows below show the new Mega Stone rather than the item that 
 | Seafoam Islands | Blastoisinite | 29, 9 | Mega Stone (replaces prior pickup) |
 | Seafoam Islands | Grip Claw | 22, 4 | Visible pickup |
 | Seafoam Islands | Revive | 21, 22 | Visible pickup |
-| Seafoam Islands | Tatsugirinite | 29, 4 | Mega Stone (replaces prior pickup) |
+| Seafoam Islands | Ultra Ball | 29, 4 | Restored in v6.9; Tatsugirinite remains a wild-family held item |
 | Seafoam Islands | TM013 | 42, 8 | Visible pickup |
 | Seafoam Islands | Water Stone | 19, 25 | Visible pickup |
 | SLOWPOKE Well | Froslassite | 34, 5 | Mega Stone (replaces prior pickup) |
 | SLOWPOKE Well | TM018 | 25, 9 | Visible pickup |
 | Sprout Tower | Meganiumite | 11, 27 | Mega Stone (replaces prior pickup) |
-| Sprout Tower | Pidgeotite | 24, 16 | Mega Stone (replaces prior pickup) |
+| Sprout Tower | Paralyze Heal | 24, 16 | Restored in v6.9; Pidgeotite remains a wild-family held item |
 | Sprout Tower | Scizorite | 6, 9 | Mega Stone (replaces prior pickup) |
 | Sprout Tower | Venusaurite | 19, 8 | Mega Stone (replaces prior pickup) |
 | Team Rocket HQ | Chandelurite | 52, 11 | Mega Stone (replaces prior pickup) |
@@ -447,7 +454,7 @@ The 92 replacement rows below show the new Mega Stone rather than the item that 
 | Union Cave | Aggronite | 3, 34 | Mega Stone (replaces prior pickup) |
 | Union Cave | Elixir | 25, 43 | Visible pickup |
 | Union Cave | Emboarite | 29, 72 | Mega Stone (replaces prior pickup) |
-| Union Cave | Sablenite | 27, 30 | Mega Stone (replaces prior pickup) |
+| Union Cave | X Defense | 27, 30 | Restored in v6.9; Sablenite remains a wild-family held item |
 | Union Cave | Scraftinite | 17, 73 | Mega Stone (replaces prior pickup) |
 | Union Cave | Steelixite | 23, 93 | Mega Stone (replaces prior pickup) |
 | Union Cave | TM039 | 11, 42 | Visible pickup |
@@ -478,7 +485,7 @@ The 92 replacement rows below show the new Mega Stone rather than the item that 
 | Whirl Islands | Nugget | 41, 14 | Visible pickup |
 | Whirl Islands | Rare Candy | 14, 27 | Visible pickup |
 | Whirl Islands | Sharpedonite | 70, 39 | Mega Stone (replaces prior pickup) |
-| Whirl Islands | Staraptite | 48, 21 | Mega Stone (replaces prior pickup) |
+| Whirl Islands | Ultra Ball | 48, 21 | Restored in v6.9; Staraptite remains a wild-family held item |
 | Whirl Islands | Swampertite | 19, 36 | Mega Stone (replaces prior pickup) |
 
 ## Hidden items

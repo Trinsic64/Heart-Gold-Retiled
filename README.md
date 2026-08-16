@@ -71,7 +71,7 @@ In RomPatcher.js, the selections should look like this:
 SHA-256:
 
 ```text
-5D1CB8B8721316AEDFD45BB8564EF428DE4E856FC4AEFFCEE7B53F22D4DDCA4D  xDelta/HG-Retiled-Expansion-Patch.xdelta
+FD13E511E97A4CD126D8E66D6AB59CB3BD0F3673AD18CA04FBBFA9574762C890  xDelta/HG-Retiled-Expansion-Patch.xdelta
 33EAC6B179A5ADB2CDC4372EBE77078FB5D48D94D44464EA3ECE5F7FB91F69AF  xDelta/HG-Retiled-Patch.xdelta
 15DAD7B1494C1CFD9F0F595472E20B628EE5CDA3D85CE3C6B0BBE1B1E11F51F5  HG-Retiled-v3.bps
 ```
@@ -94,13 +94,13 @@ The map archive hashes are recorded in [checksums.sha256](checksums.sha256).
 
 ## Expansion player guides
 
-The [v6.6.0 player-guide index](Docs/Guides/README.md) links to:
+The [v6.9.0 player-guide index](Docs/Guides/README.md) links to:
 
 - a story and postgame walkthrough;
 - the exact configured evolution methods;
 - confirmed HG-Engine features and limitations;
 - wild encounters by location, time, and method, plus a Pokémon-to-location reverse index;
-- visible and hidden item locations, all 92 Mega Stone pickups, and held-item sources; and
+- visible and hidden item locations, 79 retained Mega Stone pickups, 13 held-source-only stones, and all held-item sources; and
 - major boss details and a complete trainer-party index.
 
 ## Maps for creators

@@ -34,7 +34,7 @@ This walkthrough focuses on the altered progression, boss teams, Mega Evolution,
 ## 4. Ecruteak City
 
 - Clear the Sudowoodo route, visit the Burned Tower, and advance the legendary-beast story.
-- Several Mega Stone pickups are already available across early Johto. A visible item ball may now contain a stone rather than its original item.
+- Several retained Mega Stone pickups are already available across early Johto. Other stones come from wild-family held items, including eligible prior evolutions.
 
 **Morty:** Haunter Lv. 21<br>Corsola Galarian Lv. 22<br>Mismagius Lv. 23<br>Mimikyu Lv. 24<br>Gengar Lv. 25. Normal-type immunity tricks alone are insufficient because the team includes regional forms and coverage. Dark and Ghost attacks are still strong options.
 
@@ -105,6 +105,6 @@ Use the detailed Trainer Guide before each fight; every primary Kanto Leader has
 
 ## 12. Completion and rematches
 
-- Hunt all 92 visible Mega Stones and, if desired, farm their wild/static held-item sources.
+- Collect the 79 visible Mega Stones and hunt the held-item sources for the other 13; wild/static sources can also provide alternatives for many retained pickups.
 - Challenge the Gym and League rematches listed in the [Trainer Guide](Trainer-Guide.md).
 - Keep rotating saves while filling the Items pocket; the release audit calls out an unverified worst-case capacity scenario near 290 distinct item entries.

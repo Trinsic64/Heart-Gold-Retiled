@@ -21,7 +21,7 @@ This page documents features that are confirmed by the build configuration and r
 ## Mega Evolution and Primal Reversion
 
 - Professor Oak gives the Mega Ring immediately after giving the Pokédex. The same scene enables Mega Evolution.
-- All 92 configured Mega Stones have one visible overworld pickup.
+- All 92 configured Mega Stones remain obtainable. Version 6.9 retains 79 visible overworld pickups and moves 13 common-wild-family duplicates to held-source-only acquisition.
 - 82 stones also appear in wild held-item slots on members of the matching evolution families. Mewtwo X/Y, Latiasite, Latiosite, and Diancite have static sources; five future-family stones are ground-only.
 - Rayquaza Mega Evolves by knowing Dragon Ascent rather than holding a stone.
 - Groudon and Kyogre can hold the Red Orb and Blue Orb, and the original late-game orb scene awards both orbs in one save.
