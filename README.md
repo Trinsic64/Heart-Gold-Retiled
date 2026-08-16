@@ -17,11 +17,15 @@ There are still some awkward or glitchy tiles, but the project is playable and r
 
 ## Download and play
 
-The main and recommended patch is:
+The recommended gameplay expansion patch is:
+
+- [HG-Retiled-Expansion-Patch.xdelta](xDelta/HG-Retiled-Expansion-Patch.xdelta?raw=1) — Retiled maps plus the HG-Engine gameplay expansion documented below.
+
+The visual-only patch remains available:
 
 - [HG-Retiled-Patch.xdelta](xDelta/HG-Retiled-Patch.xdelta?raw=1)
 
-The [HG-Retiled-v3.bps](HG-Retiled-v3.bps?raw=1) file is included only as an optional alternative. The instructions below use the xDelta patch.
+The [HG-Retiled-v3.bps](HG-Retiled-v3.bps?raw=1) file is included only as an optional visual-only alternative. The instructions below use an xDelta patch.
 
 ### Required source ROM
 
@@ -47,8 +51,10 @@ Then:
 1. Back up your clean ROM dump.
 2. Open xDelta UI or RomPatcher.js.
 3. Select your original Pokémon HeartGold (USA) `.nds` file as the **source/ROM file**.
-4. Select `HG-Retiled-Patch.xdelta` as the **patch file**.
+4. Select either `HG-Retiled-Expansion-Patch.xdelta` or `HG-Retiled-Patch.xdelta` as the **patch file**, depending on the version you want.
 5. Apply the patch and save the newly generated `.nds` file separately from your original ROM.
+
+Apply exactly one patch to the clean ROM. Do not apply the expansion patch on top of the visual-only patch.
 
 In RomPatcher.js, the selections should look like this:
 
@@ -65,6 +71,7 @@ In RomPatcher.js, the selections should look like this:
 SHA-256:
 
 ```text
+5D1CB8B8721316AEDFD45BB8564EF428DE4E856FC4AEFFCEE7B53F22D4DDCA4D  xDelta/HG-Retiled-Expansion-Patch.xdelta
 33EAC6B179A5ADB2CDC4372EBE77078FB5D48D94D44464EA3ECE5F7FB91F69AF  xDelta/HG-Retiled-Patch.xdelta
 15DAD7B1494C1CFD9F0F595472E20B628EE5CDA3D85CE3C6B0BBE1B1E11F51F5  HG-Retiled-v3.bps
 ```
@@ -72,6 +79,7 @@ SHA-256:
 On PowerShell:
 
 ```powershell
+Get-FileHash .\xDelta\HG-Retiled-Expansion-Patch.xdelta -Algorithm SHA256
 Get-FileHash .\xDelta\HG-Retiled-Patch.xdelta -Algorithm SHA256
 Get-FileHash .\HG-Retiled-v3.bps -Algorithm SHA256
 ```
@@ -79,10 +87,21 @@ Get-FileHash .\HG-Retiled-v3.bps -Algorithm SHA256
 On macOS or Linux:
 
 ```bash
-sha256sum xDelta/HG-Retiled-Patch.xdelta HG-Retiled-v3.bps
+sha256sum xDelta/HG-Retiled-Expansion-Patch.xdelta xDelta/HG-Retiled-Patch.xdelta HG-Retiled-v3.bps
 ```
 
 The map archive hashes are recorded in [checksums.sha256](checksums.sha256).
+
+## Expansion player guides
+
+The [v6.6.0 player-guide index](Docs/Guides/README.md) links to:
+
+- a story and postgame walkthrough;
+- the exact configured evolution methods;
+- confirmed HG-Engine features and limitations;
+- wild encounters by location, time, and method, plus a Pokémon-to-location reverse index;
+- visible and hidden item locations, all 92 Mega Stone pickups, and held-item sources; and
+- major boss details and a complete trainer-party index.
 
 ## Maps for creators
 
