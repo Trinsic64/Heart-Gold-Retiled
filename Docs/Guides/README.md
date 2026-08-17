@@ -1,6 +1,6 @@
 # HeartGold Retiled Expansion Player Guides
 
-These guides describe the **v6.9.0 expansion patch** and contain spoilers.
+These guides describe the **v6.10.0 expansion patch** and contain spoilers.
 
 | Guide | Use it for |
 | --- | --- |
@@ -17,6 +17,6 @@ These guides describe the **v6.9.0 expansion patch** and contain spoilers.
 - 257 visible pickup objects and 105 hidden items
 - 79 retained Mega Stone pickups, 13 held-source-only stones, 89 Mega/Primal held-item sources, and 5 ground-only stones
 - 548 configured evolution/form rows
-- 738 trainer table entries
+- 738 trainer table entries containing 2,843 party members
 
 The documents were compiled from the exact authoring tables used for this release. Regenerate and revalidate them whenever encounter, trainer, evolution, or item data changes.
