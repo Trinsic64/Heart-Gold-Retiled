@@ -1,6 +1,6 @@
 # Expansion Walkthrough
 
-This walkthrough focuses on the altered progression, boss teams, Mega Evolution, and offline events in **HeartGold Retiled Expansion v6.10.0**. The map/story route remains recognizable as Pokémon HeartGold, but wild encounters and trainer parties should be treated as new.
+This walkthrough focuses on the altered progression, boss teams, Mega Evolution, and offline events in **HeartGold Retiled Expansion v6.10.1**. The map/story route remains recognizable as Pokémon HeartGold, but wild encounters and trainer parties should be treated as new.
 
 ## Before starting
 
