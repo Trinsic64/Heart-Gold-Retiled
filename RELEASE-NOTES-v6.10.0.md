@@ -1,6 +1,6 @@
 # HeartGold Retiled Expansion v6.10.0
 
-This trainer-focused prerelease updates the expansion patch to the newly authored HG-Engine roster and synchronizes the player-facing trainer documentation with the exact source used by the build.
+This trainer-focused release updates the expansion patch to the newly authored HG-Engine roster and synchronizes the player-facing trainer documentation with the exact source used by the build.
 
 ## Download
 
@@ -28,7 +28,7 @@ Apply this patch to a clean, legally obtained **Pokémon HeartGold (USA)** ROM m
 
 ## Work-in-progress warnings
 
-- The project remains a prerelease and may contain map/tile issues or gameplay bugs.
+- The project remains a work in progress and may contain map/tile issues or gameplay bugs.
 - A full runtime playthrough has not been completed for this release.
 - Keep rotating save backups while testing the new trainer balance.
 - Z-Moves, Dynamax/Gigantamax, Terastallization, discontinued online services, Pal Park replacement, and Pokéwalker replacement are not included.
