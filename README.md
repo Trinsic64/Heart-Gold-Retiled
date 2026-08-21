@@ -71,7 +71,7 @@ In RomPatcher.js, the selections should look like this:
 SHA-256:
 
 ```text
-D63287B23A87CF89AD443A1FF8B786E7141865022F37B57790469FE98D963F9A  xDelta/HG-Retiled-Expansion-Patch.xdelta
+70433DD01829C9602F0874819F937EB67014EE916F6BCCED3BADD91DC92F556B  xDelta/HG-Retiled-Expansion-Patch.xdelta
 33EAC6B179A5ADB2CDC4372EBE77078FB5D48D94D44464EA3ECE5F7FB91F69AF  xDelta/HG-Retiled-Patch.xdelta
 15DAD7B1494C1CFD9F0F595472E20B628EE5CDA3D85CE3C6B0BBE1B1E11F51F5  HG-Retiled-v3.bps
 ```
@@ -94,7 +94,7 @@ The map archive hashes are recorded in [checksums.sha256](checksums.sha256).
 
 ## Expansion player guides
 
-The [v6.10.1 player-guide index](Docs/Guides/README.md) links to:
+The [v6.11.0 player-guide index](Docs/Guides/README.md) links to:
 
 - a story and postgame walkthrough;
 - the exact configured evolution methods;
