@@ -1,6 +1,6 @@
 # Evolution Guide
 
-This is the player-facing evolution reference for the **HeartGold Retiled Expansion v6.6.0** build. It is generated from the evolution configuration used to build the patch, rather than from vanilla HeartGold rules.
+This is the player-facing evolution reference for the **HeartGold Retiled Expansion v6.12.0** build. It is generated from the evolution configuration used to build the patch, rather than from vanilla HeartGold rules.
 
 ## What changed
 
@@ -8,23 +8,17 @@ This is the player-facing evolution reference for the **HeartGold Retiled Expans
 - The Fairy type is enabled.
 - Many later-generation evolution methods and items are supported, including Ice Stone, Linking Cord, Black Augurite, Syrupy Apple, Auspicious Armor, Malicious Armor, and move-based methods.
 - The configured table contains no trade-only method. Former trade evolutions use level or item alternatives.
-- 7 configured evolutions can use a **Linking Cord**. The same families also have an additional configured path where shown.
+- Alolan Graveler is the only configured evolution that still uses a **Linking Cord**.
 - Some location-based evolutions also have a stone alternative. For example, Magneton can use a Thunder Stone.
 - Mega Evolution is a temporary battle transformation, not a permanent evolution. See [HG-Engine Features](HG-Engine-Features.md) and [Item Locations](Item-Locations.md).
 
 > [!NOTE]
 > Form-change rows are included because they are part of the same compiled table, even when they are not ordinary permanent evolutions. A target labelled “form N” uses the engine's numeric form slot.
 
-## Linking Cord alternatives
+## Linking Cord evolution
 
 | Pokémon | Evolves into | Method |
 | --- | --- | --- |
-| Kadabra | Alakazam | Use Linking Cord |
-| Machoke | Machamp | Use Linking Cord |
-| Graveler | Golem | Use Linking Cord |
-| Haunter | Gengar | Use Linking Cord |
-| Boldore | Gigalith | Use Linking Cord |
-| Gurdurr | Conkeldurr | Use Linking Cord |
 | Graveler Alolan | Golem (form 1) | Use Linking Cord |
 
 ## Complete configured evolution list
@@ -75,16 +69,13 @@ Use your browser's find command to search for a Pokémon or evolution item.
 | Poliwhirl | Politoed | Level 36 |
 | Abra | Kadabra | Level 16 |
 | Kadabra | Alakazam | Level 36 |
-| Kadabra | Alakazam | Use Linking Cord |
 | Machop | Machoke | Level 28 |
 | Machoke | Machamp | Level 36 |
-| Machoke | Machamp | Use Linking Cord |
 | Bellsprout | Weepinbell | Level 21 |
 | Weepinbell | Victreebel | Use Leaf Stone |
 | Tentacool | Tentacruel | Level 30 |
 | Geodude | Graveler | Level 25 |
 | Graveler | Golem | Level 36 |
-| Graveler | Golem | Use Linking Cord |
 | Ponyta | Rapidash | Level 40 |
 | Slowpoke | Slowbro | Level 37 |
 | Slowpoke | Slowking | Level 36 |
@@ -97,7 +88,6 @@ Use your browser's find command to search for a Pokémon or evolution item.
 | Shellder | Cloyster | Use Water Stone |
 | Gastly | Haunter | Level 25 |
 | Haunter | Gengar | Level 36 |
-| Haunter | Gengar | Use Linking Cord |
 | Onix | Steelix | Level 36 |
 | Drowzee | Hypno | Level 26 |
 | Krabby | Kingler | Level 28 |
@@ -312,13 +302,11 @@ Use your browser's find command to search for a Pokémon or evolution item.
 | Tranquill | Unfezant (form 1) | Level 32 (female) |
 | Blitzle | Zebstrika | Level 27 |
 | Roggenrola | Boldore | Level 25 |
-| Boldore | Gigalith | Level 36 |
-| Boldore | Gigalith | Use Linking Cord |
+| Boldore | Gigalith | Level 40 |
 | Woobat | Swoobat | High friendship |
 | Drilbur | Excadrill | Level 31 |
 | Timburr | Gurdurr | Level 25 |
-| Gurdurr | Conkeldurr | Level 36 |
-| Gurdurr | Conkeldurr | Use Linking Cord |
+| Gurdurr | Conkeldurr | Level 40 |
 | Tympole | Palpitoad | Level 25 |
 | Palpitoad | Seismitoad | Level 36 |
 | Sewaddle | Swadloon | Level 20 |
