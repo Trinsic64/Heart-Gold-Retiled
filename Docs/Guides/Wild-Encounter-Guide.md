@@ -2087,16 +2087,16 @@ Encounter ID 133; configured level range 13-29.
 
 ## Victory Road 2F
 
-Encounter ID 134; configured level range 32-55.
+Encounter ID 134; configured level range 32-48.
 
 | Method | Time | Average level | Pokémon and rate |
 | --- | --- | --- | --- |
-| Grass | Morning | 34.6 | Lairon Lv. 32 (20%); Magneton Lv. 32 (20%); Perrserker Lv. 32 (10%); Dugtrio Alolan Lv. 32 (10%); Perrserker Lv. 33 (10%); Dugtrio Alolan Lv. 33 (10%); Tyranitar Lv. 55 (5%); Zweilous Lv. 50 (5%); Sandaconda Lv. 36 (4%); Marowak Alolan Lv. 35 (4%); Sprigatito Lv. 36 (1%); Sprigatito Lv. 35 (1%) |
+| Grass | Morning | 34 | Lairon Lv. 32 (20%); Magneton Lv. 32 (20%); Perrserker Lv. 32 (10%); Dugtrio Alolan Lv. 32 (10%); Perrserker Lv. 33 (10%); Dugtrio Alolan Lv. 33 (10%); Tyranitar Lv. 48 (5%); Zweilous Lv. 45 (5%); Sandaconda Lv. 36 (4%); Marowak Alolan Lv. 35 (4%); Sprigatito Lv. 36 (1%); Sprigatito Lv. 35 (1%) |
 | Grass swarm | Any time | — | Graveler (swarm) |
 | Pokégear radio — Sinnoh Sound | Any time | — | Bronzor (radio replacement); Chingling (radio replacement) |
 | Pokégear radio — Hoenn Sound | Any time | — | Absol (radio replacement); Makuhita (radio replacement) |
-| Grass | Day | 34.6 | Naclstack Lv. 32 (20%); Magneton Lv. 32 (20%); Perrserker Lv. 32 (10%); Dugtrio Alolan Lv. 32 (10%); Marowak Alolan Lv. 33 (10%); Perrserker Lv. 33 (10%); Tyranitar Lv. 55 (5%); Zweilous Lv. 50 (5%); Seismitoad Lv. 36 (4%); Dugtrio Alolan Lv. 35 (4%); Sprigatito Lv. 36 (1%); Sprigatito Lv. 35 (1%) |
-| Grass | Night | 34.6 | Golett Lv. 32 (20%); Pawniard Lv. 32 (20%); Marowak Alolan Lv. 32 (20%); Perrserker Lv. 33 (10%); Dugtrio Alolan Lv. 33 (10%); Tyranitar Lv. 55 (5%); Zweilous Lv. 50 (5%); Dusknoir Lv. 36 (4%); Iron Boulder Lv. 35 (4%); Sprigatito Lv. 36 (1%); Sprigatito Lv. 35 (1%) |
+| Grass | Day | 34 | Naclstack Lv. 32 (20%); Magneton Lv. 32 (20%); Perrserker Lv. 32 (10%); Dugtrio Alolan Lv. 32 (10%); Marowak Alolan Lv. 33 (10%); Perrserker Lv. 33 (10%); Tyranitar Lv. 48 (5%); Zweilous Lv. 45 (5%); Seismitoad Lv. 36 (4%); Dugtrio Alolan Lv. 35 (4%); Sprigatito Lv. 36 (1%); Sprigatito Lv. 35 (1%) |
+| Grass | Night | 34 | Golett Lv. 32 (20%); Pawniard Lv. 32 (20%); Marowak Alolan Lv. 32 (20%); Perrserker Lv. 33 (10%); Dugtrio Alolan Lv. 33 (10%); Tyranitar Lv. 48 (5%); Zweilous Lv. 45 (5%); Dusknoir Lv. 36 (4%); Iron Boulder Lv. 35 (4%); Sprigatito Lv. 36 (1%); Sprigatito Lv. 35 (1%) |
 
 ## Victory Road 3F
 

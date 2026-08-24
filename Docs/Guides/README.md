@@ -1,6 +1,6 @@
 # HeartGold Retiled Expansion Player Guides
 
-These guides describe the **v6.12.0 expansion patch** and contain spoilers.
+These guides describe the **v6.12.1 expansion patch** and contain spoilers.
 
 | Guide | Use it for |
 | --- | --- |
