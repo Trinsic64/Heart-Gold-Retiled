@@ -19,7 +19,7 @@ There are still some awkward or glitchy tiles, but the project is playable and r
 
 The current Heartfelt Gold patch is:
 
-- [Heartfelt-Gold-v1-Patch.xdelta](xDelta/Heartfelt-Gold-v1-Patch.xdelta?raw=1) — the new major update. See the [release notes](RELEASE-NOTES-HEARTFELT-v1.0.0.md).
+- [Heartfelt-Gold-v1-Patch.xdelta](https://github.com/Trinsic64/Heart-Gold-Retiled/releases/download/heartfelt-v1.0.0/Heartfelt-Gold-v1-Patch.xdelta) — the new major update. See the [GitHub Release](https://github.com/Trinsic64/Heart-Gold-Retiled/releases/tag/heartfelt-v1.0.0) and [release notes](RELEASE-NOTES-HEARTFELT-v1.0.0.md).
 
 The patch was decoded against a clean USA source matching the hashes below; its output matches the local build named `Heartfelt-Gold-v3-Release.nds`. The `v1` filename is the patch release name.
 
