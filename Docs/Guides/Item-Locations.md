@@ -1,3 +1,7 @@
+# Historical guide: Retiled Expansion v6
+
+This item list predates Pokémon Heartfelt Gold. Pickup coordinates, shop stock, and held item sources have not been fully rechecked against the current patch. See [Heartfelt Gold gameplay features](HG-Engine-Features.md) for current shop source settings.
+
 # Item Location Guide
 
 This guide covers visible overworld pickups after the v6.9.0 reconciliation, hidden-item coordinates, expansion progression rewards, and Mega/Primal held-item sources. Shop inventories are not included.

@@ -676,8 +676,11 @@ SCR_SEQ_DEPENDENCIES_DIR := armips/scr_seq
 SCR_SEQ_DEPENDENCIES := $(SCR_SEQ_DEPENDENCIES_DIR)/*
 
 $(SCR_SEQ_NARC): $(SCR_SEQ_DEPENDENCIES)
+	rm -rf $(SCR_SEQ_DIR)
+	$(PYTHON) scripts/restore_script_archive.py $(ROMNAME) $(SCR_SEQ_TARGET)
 	$(NARCHIVE) extract $(SCR_SEQ_TARGET) -o $(SCR_SEQ_DIR) -nf
 	for file in $^; do $(ARMIPS) $$file; done
+	$(PYTHON) scripts/verify_script_archive.py $(SCR_SEQ_DIR) $(SCR_SEQ_TARGET)
 	$(NARCHIVE) create $@ $(SCR_SEQ_DIR) -nf
 
 # for convenience, rebuild SCR_SEQ_NARC every build so that DSPRE changes are not overwritten

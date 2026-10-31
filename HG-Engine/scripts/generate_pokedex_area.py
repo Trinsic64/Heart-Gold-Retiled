@@ -217,6 +217,15 @@ def parse_species(species_header: Path) -> tuple[dict[str, int], int]:
     max_match = re.search(r"#define\s+MAX_CANONICAL_MON_NUM\s+\((SPECIES_[A-Z0-9_]+)\)", text)
     if max_match is None or max_match.group(1) not in canonical:
         raise ValueError("could not resolve MAX_CANONICAL_MON_NUM")
+    # The area archive has canonical species entries, not separate form entries.
+    # Resolve declared expression-valued forms (e.g. TAUROS_AQUA) to the longest
+    # canonical base name. Do not silently accept undeclared encounter tokens.
+    bases = sorted(canonical, key=len, reverse=True)
+    for name in re.findall(r"^#define\s+(SPECIES_[A-Z0-9_]+)\s+", text, re.MULTILINE):
+        if name not in canonical:
+            base = next((base for base in bases if name.startswith(base + "_")), None)
+            if base is not None:
+                canonical[name] = canonical[base]
     return canonical, canonical[max_match.group(1)]
 
 
@@ -247,11 +256,15 @@ def parse_encounter_enum(encounter_header: Path) -> dict[str, int]:
 def encounter_blocks(encounters_source: Path, enum_values: dict[str, int]) -> dict[int, str]:
     text = encounters_source.read_text(encoding="utf-8")
     blocks: dict[int, str] = {}
-    for match in re.finditer(r"^    \[([^\]]+)\]\s*=\s*\{", text, re.MULTILINE):
+    for match in re.finditer(r"\[((?:ENCDATA_[A-Z0-9_]+)|(?:\d+))\]\s*=\s*\{", text):
         key = match.group(1).strip()
         encounter_id = int(key) if key.isdigit() else enum_values[key]
+        if encounter_id in blocks:
+            raise ValueError(f"duplicate encounter ID: {encounter_id}")
         opening = text.find("{", match.start())
         blocks[encounter_id] = text[opening + 1 : matching_brace(text, opening)]
+    if not blocks:
+        raise ValueError("no encounter tables found")
     return blocks
 
 

@@ -9,6 +9,19 @@ MAP_MAHOGANY equ 87
 
 .open "base/overlay/overlay_0018.bin", 0x021E5900
 
+// The archive includes species zero in every group: IDs 0 through 1075.
+// pokedex.s uses NUM_OF_MONS (1075), which shifts each later group backwards.
+// Override its seven literal-pool offsets after that patch has been applied.
+POKEDEX_AREA_SPECIES_COUNT equ 1076
+.org 0x021E86F8
+    .word 2 + 1 * POKEDEX_AREA_SPECIES_COUNT
+    .word 2 + 2 * POKEDEX_AREA_SPECIES_COUNT
+    .word 2 + 6 * POKEDEX_AREA_SPECIES_COUNT
+    .word 2 + 3 * POKEDEX_AREA_SPECIES_COUNT
+    .word 2 + 4 * POKEDEX_AREA_SPECIES_COUNT
+    .word 2 + 5 * POKEDEX_AREA_SPECIES_COUNT
+    .word 2 + 7 * POKEDEX_AREA_SPECIES_COUNT
+
 // sOverworldMapIDs[69]: 0xFFFF -> MAP_MAHOGANY (map header 87 / T28)
 .org 0x021F99DE
     .halfword MAP_MAHOGANY

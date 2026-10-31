@@ -3,6 +3,9 @@
 ROMNAME = rom.nds
 BUILDROM = test.nds
 
+# The local release ROM is DSPRE-edited and must be prepared before injection.
+.DEFAULT_GOAL := dspre-build
+
 define n
 
 
@@ -115,8 +118,8 @@ SDATTOOL := $(PYTHON) tools/SDATTool.py
 
 # Compiler/Assembler/Linker settings
 LDFLAGS = rom.ld -T $(C_SUBDIR)/linker.ld
-ASFLAGS =  -I$(shell pwd)/asm/include -I$(shell pwd)/include -mthumb -mcpu=arm946e-s -mtune=arm946e-s
-CFLAGS =  -I$(shell pwd)/include -mthumb -mno-thumb-interwork -mcpu=arm946e-s -mtune=arm946e-s -mno-long-calls -Wall -Wextra -Wno-builtin-declaration-mismatch -Wno-sequence-point -Wno-address-of-packed-member -Os -fira-loop-pressure -fipa-pta
+ASFLAGS =  -I"$(shell pwd)/asm/include" -I"$(shell pwd)/include" -mthumb -mcpu=arm946e-s -mtune=arm946e-s
+CFLAGS =  -I"$(shell pwd)/include" -mthumb -mno-thumb-interwork -mcpu=arm946e-s -mtune=arm946e-s -mno-long-calls -Wall -Wextra -Wno-builtin-declaration-mismatch -Wno-sequence-point -Wno-address-of-packed-member -Os -fira-loop-pressure -fipa-pta
 ARMIPS_FLAGS = -equ DEBUG_BATTLE_SCENARIOS 0
 
 ifeq ($(AUTO_TEST),Y)
@@ -228,7 +231,7 @@ $(MOVEDATAGEN): $(wildcard tools/source/movedatagen/*.c) data/Moves.c include/mo
 
 TOOLS += $(MOVEDATAGEN)
 
-$(POKEDEXAREALISTS): $(POKEDEXAREAGEN) data/Encounters.c data/Headbutt.c include/constants/species.h include/constants/encounter_tables.h include/constants/pokedex.h
+$(POKEDEXAREALISTS): $(POKEDEXAREAGEN) data/Encounters.c data/Headbutt.c data/FormToSpeciesMapping.c include/constants/species.h include/constants/encounter_tables.h include/constants/pokedex.h
 	$(PYTHON) $(POKEDEXAREAGEN)
 
 $(POKEDEXDATAGEN): $(wildcard tools/source/pokedexdatagen/*.c) data/PokedexSort.c data/PokedexArea.c $(POKEDEXAREALISTS) include/pokedex_archive_data.h include/constants/pokedex.h
@@ -305,12 +308,14 @@ $(OUTPUT):$(LINK)
 
 # only reextract from the rom if the romname is newer than the extracted arm9.bin
 $(BASE)/arm9.bin: $(ROMNAME) $(NDSTOOL) $(VENV_ACTIVATE)
+	$(PYTHON_NO_VENV) scripts/verify_rom_input.py $(ROMNAME)
 	rm -rf $(BASE)
 	@mkdir -p $(REQUIRED_DIRECTORIES)
 	$(NDSTOOL) -x $(ROMNAME) -9 $(BASE)/arm9.bin -7 $(BASE)/arm7.bin -y9 $(BASE)/overarm9.bin -y7 $(BASE)/overarm7.bin -d $(FILESYS) -y $(BASE)/overlay -t $(BASE)/banner.bin -h $(BASE)/header.bin
 	$(NARCHIVE) extract $(FILESYS)/a/0/2/8 -o $(BUILD)/a028/ -nf
 
 all: $(OUTPUT) $(OVERLAY_OUTPUTS) $(TOOLS) $(BASE)/arm9.bin
+	$(PYTHON_NO_VENV) scripts/verify_rom_input.py $(ROMNAME)
 	@# find and delete macOS and windows files
 	find . \( -name "*.DS_Store" -o -name "*:Zone.Identifier" \) -delete
 	$(PYTHON) scripts/make.py $(CFLAGS)
@@ -539,6 +544,9 @@ move_narc: $(NARC_FILES)
 	@echo "hidden item params:"
 	cp $(HIDDEN_ITEM_PARAMS_BIN) $(HIDDEN_ITEM_PARAMS_TARGET)
 
+	@echo "ability flag params:"
+	cp $(ABILITY_FLAG_PARAMS_BIN) $(ABILITY_FLAG_PARAMS_TARGET)
+
 update_machine_moves: $(VENV_ACTIVATE)
 	$(PYTHON) scripts/update_machine_moves.py --descriptions --sprites
 	@echo "Updated item descriptions and sprites. Double check formatting"
@@ -549,3 +557,22 @@ update_machine_moves: $(VENV_ACTIVATE)
 
 ####################### Debug #######################
 print-% : ; $(info $* is a $(flavor $*) variable set to [$($*)]) @true
+
+contents-% : ; $(info $($*)) @true
+
+# Build with clean HeartGold code and every named file from the latest DSPRE ROM.
+# rom.nds remains untouched. Apply the reviewed DSPRE dynamic-header hook last.
+.PHONY: dspre-build
+DSPRE_CODE_ROM ?= /mnt/c/ROM-Hack/Base-HG-Archives/Pokemon - HeartGold Version (USA)/Pokemon - HeartGold Version (USA).nds
+DSPRE_HOOK_REFERENCE_ROM ?= /mnt/c/ROM-Hack/Heartfelt-Gold/ROM/Pre-Release/Heartfelt-Gold-v0.16.nds
+DSPRE_LATEST_ROM ?= rom.nds
+DSPRE_INPUT_ROM ?= rom-dspre-clean-input.nds
+DSPRE_BUILD_ROM ?= Heartfelt-Gold-release-build.nds
+DSPRE_CAMERA_TABLE ?= data/camera/Heartfelt-Gold-CameraTable.bin
+
+dspre-build: $(VENV_ACTIVATE)
+	$(PYTHON) scripts/prepare_dspre_rom.py --code-base "$(DSPRE_CODE_ROM)" --latest "$(DSPRE_LATEST_ROM)" --output "$(DSPRE_INPUT_ROM)"
+	$(MAKE) all ROMNAME="$(DSPRE_INPUT_ROM)" BUILDROM="$(DSPRE_BUILD_ROM)"
+	$(PYTHON) scripts/apply_dspre_dynamic_headers.py --code-base "$(DSPRE_HOOK_REFERENCE_ROM)" --latest "$(DSPRE_LATEST_ROM)" --built "$(DSPRE_BUILD_ROM)"
+	$(PYTHON) scripts/apply_camera_table.py --table "$(DSPRE_CAMERA_TABLE)" --built "$(DSPRE_BUILD_ROM)"
+	$(PYTHON) scripts/verify_dspre_build.py --latest "$(DSPRE_LATEST_ROM)" --built "$(DSPRE_BUILD_ROM)" --sprite-btx build/pokemonow/1_0176.btx0 --camera-table "$(DSPRE_CAMERA_TABLE)"

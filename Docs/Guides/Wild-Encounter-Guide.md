@@ -1,3159 +1,2078 @@
-# Wild Encounter Guide
+# Wild encounter guide — Pokémon Heartfelt Gold
 
-This guide lists the encounters configured for **HeartGold Retiled Expansion v6.6.0**. It contains 420 time-of-day records across 140 encounter areas, plus the new one-time offline encounters.
+These tables are generated from the current hg-engine authoring source supplied for Heartfelt Gold. The patch binary has not been independently decoded against these tables. Encounter availability still depends on game progress.
 
-## How to read the tables
-
-- Rates shown beside Pokémon are the summed slot rates for that method and time.
-- “Any time” means the complete slot list is identical in the Morning, Day, and Night records.
-- Swarm and Pokégear radio entries are conditional replacements; activate the relevant daily feature before searching.
-- “NONE” slots are omitted. Fishing and Surf tables use their configured method rates.
-- Use the reverse index at the end of this document to answer “where can I find this Pokémon?” quickly.
+Rates are shares of slots **after an encounter is triggered**. Method encounter rates are shown separately; time affects grass slots. Swarm and radio Pokémon are conditional substitutions. Use the reverse index to search for a Pokémon.
 
-## One-time static encounters added for offline play
+Sources: [encounter table](../../HG-Engine/data/Encounters.c), local `Data/Encounters/HG-Encounters.csv`. Scripted encounters are listed in the [Static Encounter Guide](Static-Encounter-Guide.md).
 
-| Pokémon | Level | Location | Requirement |
+## New Bark Town (table 0)
+
+| Method | Time | Encounter rate | Pokémon and slot share |
+| --- | --- | --- | --- |
+| Surf | Any | 15% | Basculin White Striped Lv. 25–29 (60%); Clodsire Lv. 20–35 (35%); Qwilfish Lv. 20–40 (5%) |
+| Old Rod | Any | 25% | Panpour Lv. 6–12 (40%); Luvdisc Lv. 10–14 (30%); Feebas Lv. 6–12 (15%); Wimpod Lv. 10–14 (10%); Bruxish Lv. 6–12 (5%) |
+| Good Rod | Any | 50% | Corsola Lv. 30–35 (40%); Seaking Lv. 33–37 (30%); Wugtrio Lv. 30–40 (15%); Tentacruel Lv. 30–40 (10%); Whiscash Lv. 30–40 (5%) |
+| Super Rod | Any | 75% | Vaporeon Lv. 40–44 (40%); Omastar Lv. 40–45 (30%); Barbaracle Lv. 41–46 (15%); Jellicent Female Lv. 42–47 (10%); Gyarados Lv. 43–48 (5%) |
+## Route 29 (table 1)
+
+| Method | Time | Encounter rate | Pokémon and slot share |
 | --- | --- | --- | --- |
-| Celebi | 30 | Ilex Forest shrine | Elite Four cleared (flag 198) |
-| Pichu | 30 | Ilex Forest shrine | Elite Four cleared (flag 198) |
-| Arceus | 50 | Ruins of Alph | All 28 Unown seen |
-| Shaymin | 30 | National Park | National Dex obtained |
-| Diancie | 50 | Sinjoh Ruins | Sinjoh event complete (scene 0x40FB >= 14) |
-
-## New Bark Town
+| Grass | Any | 25% | Caterpie Lv. 4 (20%); Weedle Lv. 4 (20%); Hoppip Lv. 3 (10%); Lotad Lv. 4 (10%); Scatterbug Lv. 5 (10%); Budew Lv. 4 (10%); Sewaddle Lv. 4 (6%); Pansage Lv. 3 (6%); Applin Lv. 4 (8%) |
+## Cherrygrove City (table 2)
 
-Encounter ID 0; configured level range 10-40.
+| Method | Time | Encounter rate | Pokémon and slot share |
+| --- | --- | --- | --- |
+| Grass | Any | 25% | Squirtle Lv. 5 (20%); Totodile Lv. 5 (20%); Quaxly Lv. 5 (10%); Froakie Lv. 5 (10%); Oshawott Lv. 5 (10%); Piplup Lv. 5 (10%); Popplio Lv. 5 (10%); Sobble Lv. 5 (10%) |
+| Surf | Any | 15% | Swanna Lv. 35–38 (60%); Samurott Lv. 36–38 (30%); Staryu Lv. 15–35 (10%) |
+| Old Rod | Any | 25% | Azurill Lv. 8–15 (40%); Lotad Lv. 8–13 (30%); Qwilfish Lv. 10–15 (15%); Basculin White Striped Lv. 8–15 (10%); Inkay Lv. 10–15 (5%) |
+| Good Rod | Any | 50% | Araquanid Lv. 22–32 (40%); Qwilfish Lv. 20–37 (30%); Clodsire Lv. 20–32 (15%); Samurott Lv. 36–40 (10%); Lapras Lv. 20–35 (5%) |
+| Super Rod | Any | 75% | Vaporeon Lv. 40–44 (40%); Baraskewda Lv. 40–45 (30%); Wailord Lv. 41–46 (15%); Lumineon Lv. 42–47 (10%); Whiscash Lv. 43–48 (5%) |
+## Route 30 (table 3)
 
-| Method | Time | Average level | Pokémon and rate |
+| Method | Time | Encounter rate | Pokémon and slot share |
 | --- | --- | --- | --- |
-| Surf | Any time | 18.5 | Magikarp Lv. 15-25 (64%); Tentacool Lv. 10-20 (30%); Mantyke Lv. 15-25 (5%); Bibarel Lv. 15-25 (1%) |
-| Old Rod | Any time | 10 | Panpour Lv. 10 (40%); Finizen Lv. 10 (30%); Mantyke Lv. 10 (15%); Wingull Lv. 10 (15%) |
-| Good Rod | Any time | 20 | Wingull Lv. 20 (40%); Mantyke Lv. 20 (30%); Magikarp Lv. 20 (30%) |
-| Super Rod | Any time | 40 | Pelipper Lv. 40 (40%); Magikarp Lv. 40 (55%); Wailord Lv. 40 (5%) |
-| Surf swarm | Any time | — | Tentacool (swarm) |
-| Good Rod swarm | Any time | — | Shellder (swarm) |
-| Super Rod swarm | Any time | — | Magikarp (swarm) |
+| Grass | Any | 25% | Wingull Lv. 7 (20%); Bidoof Lv. 6 (20%); Lillipup Lv. 6 (10%); Pidove Lv. 6 (10%); Pikipek Lv. 6 (10%); Wattrel Lv. 6 (10%); Kakuna Lv. 7 (5%); Metapod Lv. 7 (5%); Pichu Lv. 7 (4%); Pikipek Lv. 7 (4%); Beedrill Lv. 10 (1%); Butterfree Lv. 10 (1%) |
+| Surf | Any | 15% | Dewpider Lv. 10–21 (60%); Goldeen Lv. 20–32 (30%); Lanturn Lv. 27–40 (6%); Araquanid Lv. 22–40 (4%) |
+| Old Rod | Any | 25% | Surskit Lv. 8–15 (40%); Arrokuda Lv. 8–15 (30%); Omanyte Lv. 8–15 (15%); Finizen Lv. 8–15 (15%) |
+| Good Rod | Any | 50% | Wailord Lv. 40 (40%); Octillery Lv. 25–37 (30%); Whiscash Lv. 30–40 (15%); Mantine Lv. 32–40 (10%); Kingler Lv. 28–40 (5%) |
+| Super Rod | Any | 75% | Vaporeon Lv. 40–44 (40%); Kabutops Lv. 40–45 (30%); Golduck Lv. 41–46 (15%); Tentacruel Lv. 42–47 (10%); Clawitzer Lv. 43–48 (5%) |
+Conditional: nightFish: Tympole
+
+## Route 31 (table 4)
 
-## Route 29
+| Method | Time | Encounter rate | Pokémon and slot share |
+| --- | --- | --- | --- |
+| Grass | Any | 25% | Sunkern Lv. 6 (20%); Oddish Lv. 7 (20%); Skitty Lv. 7 (10%); Bounsweet Lv. 6 (10%); Venonat Lv. 7 (10%); Morelull Lv. 7 (10%); Igglybuff Lv. 7 (5%); Togepi Lv. 7 (5%); Cleffa Lv. 6 (5%); Happiny Lv. 6 (5%) |
+| Surf | Any | 15% | Krabby Lv. 15–27 (60%); Vaporeon Lv. 30–35 (30%); Cramorant Lv. 25–40 (10%) |
+| Old Rod | Any | 25% | Corsola Lv. 8–15 (40%); Mareanie Lv. 15 (30%); Wimpod Lv. 8–15 (15%); Arctovish Lv. 8–15 (10%); Lapras Lv. 8–15 (5%) |
+| Good Rod | Any | 50% | Crawdaunt Lv. 30–35 (40%); Wugtrio Lv. 32–37 (30%); Jellicent Lv. 40 (15%); Clawitzer Lv. 37–40 (10%); Drednaw Lv. 35–40 (5%) |
+| Super Rod | Any | 75% | Octillery Lv. 40–44 (40%); Dewgong Lv. 40–45 (30%); Azumarill Lv. 41–46 (15%); Lanturn Lv. 42–47 (10%); Golisopod Lv. 43–48 (5%) |
+Conditional: nightFish: Luvdisc
 
-Encounter ID 1; configured level range 2-4.
+## Violet City (table 5)
 
-| Method | Time | Average level | Pokémon and rate |
+| Method | Time | Encounter rate | Pokémon and slot share |
 | --- | --- | --- | --- |
-| Grass | Morning | 2.7 | Combee Lv. 2 (20%); Hoppip Lv. 3 (20%); Starly Lv. 2 (10%); Venipede Lv. 3 (10%); Applin Lv. 3 (10%); Slakoth Lv. 3 (10%); Tarountula Lv. 2 (5%); Minccino Lv. 2 (5%); Rattata Lv. 4 (4%); Yungoos Lv. 4 (4%); Bulbasaur Lv. 4 (2%) |
-| Grass swarm | Any time | — | Pidgey (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Shinx (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Plusle (radio replacement); Minun (radio replacement) |
-| Grass | Day | 2.7 | Ledyba Lv. 2 (20%); Skitty Lv. 3 (20%); Cleffa Lv. 2 (10%); Marill Lv. 3 (10%); Slugma Lv. 3 (10%); Fomantis Lv. 3 (10%); Nymble Lv. 2 (5%); Caterpie Lv. 2 (5%); Gossifleur Lv. 4 (4%); Togepi Lv. 4 (4%); Bulbasaur Lv. 4 (2%) |
-| Grass | Night | 2.7 | Poltchageist Lv. 2 (20%); Bramblin Lv. 3 (20%); Bounsweet Lv. 2 (10%); Flittle Lv. 3 (10%); Toxel Lv. 3 (10%); Whismur Lv. 3 (10%); Wurmple Lv. 2 (5%); Azurill Lv. 2 (5%); Poochyena Lv. 4 (4%); Happiny Lv. 4 (4%); Bulbasaur Lv. 4 (2%) |
+| Grass | Any | 25% | Bulbasaur Lv. 8 (20%); Chikorita Lv. 8 (20%); Sprigatito Lv. 8 (10%); Chespin Lv. 8 (10%); Snivy Lv. 8 (10%); Turtwig Lv. 8 (10%); Rowlet Lv. 8 (10%); Grookey Lv. 8 (10%) |
+| Surf | Any | 15% | Corphish Lv. 20–29 (60%); Drednaw Lv. 32–37 (30%); Horsea Lv. 20–24 (6%); Seaking Lv. 33–37 (4%) |
+| Rock Smash | Any | 80% | Nosepass Lv. 8 (90%); Beldum Lv. 8 (10%) |
+| Old Rod | Any | 25% | Marill Lv. 3–8 (40%); Wooper Lv. 3–8 (30%); Krabby Lv. 3–8 (15%); Chinchou Lv. 3–8 (10%); Skrelp Lv. 3–8 (5%) |
+| Good Rod | Any | 50% | Slowpoke Lv. 20–35 (40%); Palpitoad Lv. 25–35 (30%); Golduck Lv. 33–35 (15%); Jellicent Female Lv. 40–42 (10%); Jellicent Lv. 40–42 (5%) |
+| Super Rod | Any | 75% | Toxapex Lv. 40–44 (40%); Milotic Lv. 40–45 (30%); Starmie Lv. 41–46 (15%); Jellicent Lv. 42–47 (10%); Jellicent Female Lv. 42–47 (5%) |
+Conditional: landSwarm: Grookey; surfSwarm: Grookey; nightFish: Rowlet; fishSwarm: Rowlet; Hoenn radio: Rowlet; Hoenn radio: Rowlet; Sinnoh radio: Grookey; Sinnoh radio: Grookey
 
-## Cherrygrove City
+## Sprout Tower 2F (table 6)
 
-Encounter ID 2; configured level range 3-40.
+| Method | Time | Encounter rate | Pokémon and slot share |
+| --- | --- | --- | --- |
+| Grass | Any | 5% | Bellsprout Lv. 9 (20%); Lechonk Lv. 9 (20%); Milcery Lv. 8 (10%); Cutiefly Lv. 9 (10%); Natu Lv. 8 (10%); Chingling Lv. 9 (10%); Gothita Lv. 10 (5%); Snubbull Lv. 9 (5%); Greavard Lv. 8 (4%); Munna Lv. 9 (4%); Wynaut Lv. 5 (2%) |
+## Sprout Tower 3F (table 7)
 
-| Method | Time | Average level | Pokémon and rate |
+| Method | Time | Encounter rate | Pokémon and slot share |
 | --- | --- | --- | --- |
-| Grass | Morning | 3.6 | Wooper Lv. 3 (20%); Lotad Lv. 3 (20%); Poliwag Lv. 3 (10%); Tympole Lv. 4 (10%); Surskit Lv. 4 (10%); Dewpider Lv. 4 (10%); Ducklett Lv. 4 (5%); Buizel Lv. 4 (5%); Shellos Lv. 5 (4%); Finneon Lv. 5 (4%); Wimpod Lv. 5 (2%) |
-| Surf | Any time | 18.5 | Magikarp Lv. 15-25 (69%); Barboach Lv. 10-20 (30%); Corsola Lv. 15-25 (1%) |
-| Old Rod | Any time | 10 | Inkay Lv. 10 (40%); Arrokuda Lv. 10 (30%); Remoraid Lv. 10 (15%); Goldeen Lv. 10 (10%); Barboach Lv. 10 (5%) |
-| Good Rod | Any time | 20 | Tatsugiri Lv. 20 (40%); Barboach Lv. 20 (45%); Basculin Lv. 20 (10%); Veluza Lv. 20 (5%) |
-| Super Rod | Any time | 40 | Qwilfish Lv. 40 (40%); Corsola Lv. 40 (30%); Krabby Lv. 40 (15%); Tatsugiri Lv. 40 (10%); Palafin Lv. 40 (5%) |
-| Surf swarm | Any time | — | Tentacool (swarm) |
-| Good Rod swarm | Any time | — | Staryu (swarm) |
-| Super Rod swarm | Any time | — | Magikarp (swarm) |
-| Grass | Day | 3.6 | Lotad Lv. 3 (20%); Surskit Lv. 3 (20%); Psyduck Lv. 3 (10%); Poliwag Lv. 4 (10%); Tympole Lv. 4 (10%); Ducklett Lv. 4 (10%); Dewpider Lv. 4 (5%); Buizel Lv. 4 (5%); Chewtle Lv. 5 (4%); Finneon Lv. 5 (4%); Wimpod Lv. 5 (2%) |
-| Grass | Night | 3.6 | Wooper Lv. 3 (20%); Tympole Lv. 3 (20%); Barboach Lv. 3 (10%); Poliwag Lv. 4 (10%); Tadbulb Lv. 4 (10%); Chinchou Lv. 4 (10%); Frillish Lv. 4 (5%); Dewpider Lv. 4 (5%); Shellos Lv. 5 (4%); Inkay Lv. 5 (4%); Wimpod Lv. 5 (2%) |
+| Grass | Any | 5% | Rattata Lv. 9 (40%); Purrloin Lv. 8 (10%); Poochyena Lv. 8 (10%); Mime Jr. Lv. 8 (10%); Smoochum Lv. 9 (10%); Hatenna Lv. 8 (5%); Shroodle Lv. 8 (5%); Espurr Lv. 8 (4%); Woobat Lv. 8 (4%); Jangmo-o Lv. 8 (2%) |
+## Route 32 (table 8)
 
-## Route 30
+| Method | Time | Encounter rate | Pokémon and slot share |
+| --- | --- | --- | --- |
+| Grass | Any | 25% | Wurmple Lv. 6 (20%); Spearow Lv. 8 (20%); Electrike Lv. 10 (10%); Mareep Lv. 9 (10%); Rookidee Lv. 9 (10%); Shinx Lv. 9 (10%); Starly Lv. 10 (5%); Fletchling Lv. 10 (5%); Silcoon Lv. 8 (4%); Cascoon Lv. 8 (4%); Beautifly Lv. 10 (1%); Dustox Lv. 10 (1%) |
+| Surf | Any | 15% | Quagsire Lv. 35–40 (60%); Samurott Lv. 36–40 (30%); Simipour Lv. 35–40 (9%); Carracosta Lv. 37 (1%) |
+| Rock Smash | Any | 80% | Crabrawler Lv. 6–8 (90%); Beldum Lv. 6–8 (10%) |
+| Old Rod | Any | 25% | Magikarp Lv. 8–13 (40%); Wooper Lv. 8–13 (30%); Qwilfish Lv. 8–13 (15%); Carvanha Lv. 8–13 (10%); Clamperl Lv. 8–13 (5%) |
+| Good Rod | Any | 50% | Cloyster Lv. 30–35 (40%); Dewgong Lv. 34–37 (30%); Starmie Lv. 35–40 (15%); Gastrodon Lv. 35–40 (10%); Milotic Lv. 35–40 (5%) |
+| Super Rod | Any | 75% | Kingdra Lv. 45 (40%); Walrein Lv. 44–45 (30%); Samurott Lv. 36–46 (15%); Ludicolo Lv. 42–47 (10%); Slowking Lv. 43–48 (5%) |
+Conditional: nightFish: Wiglett
 
-Encounter ID 3; configured level range 2-40.
+## Ruins of Alph (Outside) (table 9)
 
-| Method | Time | Average level | Pokémon and rate |
+| Method | Time | Encounter rate | Pokémon and slot share |
 | --- | --- | --- | --- |
-| Grass | Morning | 3.1 | Budew Lv. 2 (20%); Spearow Lv. 3 (20%); Milcery Lv. 2 (10%); Cutiefly Lv. 3 (10%); Growlithe Lv. 4 (10%); Buneary Lv. 4 (10%); Litleo Lv. 4 (5%); Doduo Lv. 4 (5%); Flabébé Lv. 4 (4%); Snubbull Lv. 4 (4%); Castform Lv. 4 (1%); Chatot Lv. 4 (1%) |
-| Surf | Any time | 18.62 | Surskit Lv. 15-25 (60%); Barboach Lv. 10-20 (30%); Horsea Lv. 15-25 (5%); Omanyte Lv. 15-25 (4%); Pelipper Lv. 32 (1%) |
-| Old Rod | Any time | 10 | Remoraid Lv. 10 (40%); Goldeen Lv. 10 (30%); Shellder Lv. 10 (15%); Pyukumuku Lv. 10 (10%); Tympole Lv. 10 (5%) |
-| Good Rod | Any time | 20 | Basculin Lv. 20 (40%); Mantyke Lv. 20 (30%); Remoraid Lv. 20 (15%); Poliwag Lv. 20 (15%) |
-| Super Rod | Any time | 40 | Goldeen Lv. 40 (40%); Poliwag Lv. 40 (40%); Qwilfish Lv. 40 (15%); Luvdisc Lv. 40 (5%) |
-| Grass swarm | Any time | — | Pidgey (swarm) |
-| Surf swarm | Any time | — | Poliwag (swarm) |
-| Good Rod swarm | Any time | — | Poliwag (swarm) |
-| Super Rod swarm | Any time | — | Magikarp (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Buizel (radio replacement); Bidoof (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Whismur (radio replacement); Linoone (radio replacement) |
-| Grass | Day | 3.1 | Budew Lv. 2 (20%); Spearow Lv. 3 (20%); Rellor Lv. 2 (10%); Croagunk Lv. 3 (10%); Spritzee Lv. 4 (10%); Swirlix Lv. 4 (10%); Glameow Lv. 4 (5%); Mime Jr. Lv. 4 (5%); Grubbin Lv. 4 (4%); Vulpix Lv. 4 (4%); Plusle Lv. 4 (1%); Minun Lv. 4 (1%) |
-| Grass | Night | 3.1 | Budew Lv. 2 (20%); Spearow Lv. 3 (20%); Dewpider Lv. 2 (10%); Tinkatink Lv. 3 (10%); Cacnea Lv. 4 (10%); Teddiursa Lv. 4 (10%); Mankey Lv. 4 (5%); Tandemaus Lv. 4 (5%); Shroodle Lv. 4 (4%); Ditto Lv. 4 (4%); Ponyta Galarian Lv. 4 (1%); Pachirisu Lv. 4 (1%) |
-
-## Route 31
-
-Encounter ID 4; configured level range 3-40.
-
-| Method | Time | Average level | Pokémon and rate |
-| --- | --- | --- | --- |
-| Grass | Morning | 3.7 | Sunkern Lv. 3 (20%); Hoothoot Lv. 4 (20%); Riolu Lv. 3 (10%); Clefairy Lv. 4 (10%); Morelull Lv. 3 (10%); Mareep Lv. 3 (10%); Dunsparce Lv. 5 (5%); Ponyta Lv. 5 (5%); Spinda Lv. 5 (4%); Natu Lv. 5 (4%); Dratini Lv. 5 (2%) |
-| Surf | Any time | 18.62 | Feebas Lv. 15-25 (60%); Carvanha Lv. 10-20 (30%); Frillish Lv. 15-25 (5%); Kabuto Lv. 15-25 (4%); Poliwrath Lv. 32 (1%) |
-| Old Rod | Any time | 10 | Finizen Lv. 10 (40%); Chinchou Lv. 10 (30%); Corsola Lv. 10 (15%); Pyukumuku Lv. 10 (10%); Wishiwashi Lv. 10 (5%) |
-| Good Rod | Any time | 20 | Wailmer Lv. 20 (40%); Tympole Lv. 20 (30%); Remoraid Lv. 20 (15%); Poliwag Lv. 20 (15%) |
-| Super Rod | Any time | 40 | Ducklett Lv. 40 (40%); Poliwag Lv. 40 (40%); Wishiwashi Lv. 40 (15%); Pelipper Lv. 40 (5%) |
-| Grass swarm | Any time | — | Pidgey (swarm) |
-| Surf swarm | Any time | — | Poliwag (swarm) |
-| Good Rod swarm | Any time | — | Poliwag (swarm) |
-| Super Rod swarm | Any time | — | Magikarp (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Buizel (radio replacement); Bidoof (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Whismur (radio replacement); Linoone (radio replacement) |
-| Grass | Day | 3.7 | Sunkern Lv. 3 (20%); Hoothoot Lv. 4 (20%); Petilil Lv. 3 (10%); Axew Lv. 4 (10%); Fletchling Lv. 3 (10%); Cherubi Lv. 3 (10%); Togetic Lv. 5 (5%); Roselia Lv. 5 (5%); Salandit Lv. 5 (4%); Pansear Lv. 5 (4%); Dratini Lv. 5 (2%) |
-| Grass | Night | 3.7 | Sunkern Lv. 3 (20%); Hoothoot Lv. 4 (20%); Skwovet Lv. 3 (10%); Darumaka Lv. 4 (10%); Tadbulb Lv. 3 (10%); Yamper Lv. 3 (10%); Lickitung Lv. 5 (5%); Farfetch'd Galarian Lv. 5 (5%); Espurr Lv. 5 (4%); Abra Lv. 5 (4%); Dratini Lv. 5 (2%) |
-
-## Violet City
+| Grass | Any | 10% | Bunnelby Lv. 9 (20%); Sandshrew Lv. 10 (20%); Nickit Lv. 10 (10%); Baltoy Lv. 10 (10%); Hippopotas Lv. 10 (10%); Paras Lv. 11 (10%); Yamask Lv. 10 (10%); Tynamo Lv. 10 (4%); Litwick Lv. 10 (4%); Gible Lv. 10 (1%); Gible Lv. 11 (1%) |
+| Surf | Any | 10% | Chinchou Lv. 20–26 (60%); Tynamo Lv. 20–28 (30%); Basculin White Striped Lv. 20–29 (6%); Dreepy Lv. 20–29 (4%) |
+| Rock Smash | Any | 80% | Shieldon Lv. 5–15 (90%); Archen Lv. 5–15 (10%) |
+| Old Rod | Any | 25% | Azurill Lv. 5–15 (40%); Dewpider Lv. 5–15 (30%); Frillish Female Lv. 5–15 (15%); Barboach Lv. 5–15 (10%); Staryu Lv. 5–15 (5%) |
+| Good Rod | Any | 50% | Floatzel Lv. 30–35 (40%); Kabuto Lv. 25–39 (30%); Malamar Lv. 35–40 (15%); Sealeo Lv. 35–40 (10%); Dragonair Lv. 32–37 (5%) |
+| Super Rod | Any | 75% | Quagsire Lv. 40–44 (40%); Dragalge Lv. 48 (30%); Huntail Lv. 41–46 (15%); Basclegion Lv. 42–47 (10%); Seismitoad Lv. 43–48 (5%) |
+Conditional: nightFish: Drednaw
 
-Encounter ID 5; configured level range 5-40.
+## Ruins of Alph (Inside, Main Room) (table 10)
+
+| Method | Time | Encounter rate | Pokémon and slot share |
+| --- | --- | --- | --- |
+| Grass | Any | 15% | Joltik Lv. 12 (20%); Spinarak Lv. 10 (20%); Shieldon Lv. 14 (10%); Anorith Lv. 12 (10%); Flittle Lv. 14 (10%); Bronzor Lv. 14 (10%); Cranidos Lv. 14 (6%); Cufant Lv. 14 (6%); Tyrunt Lv. 14 (4%); Nosepass Lv. 14 (4%) |
+## Ruins of Alph (Inside, Main Room) (table 11)
 
-| Method | Time | Average level | Pokémon and rate |
+| Method | Time | Encounter rate | Pokémon and slot share |
 | --- | --- | --- | --- |
-| Grass | Morning | 5.6 | Hoppip Lv. 5 (20%); Pidove Lv. 5 (20%); Ledyba Lv. 5 (10%); Spearow Lv. 6 (10%); Taillow Lv. 6 (10%); Starly Lv. 6 (10%); Combee Lv. 6 (5%); Fletchling Lv. 6 (5%); Rookidee Lv. 7 (4%); Chatot Lv. 7 (4%); Togepi Lv. 7 (2%) |
-| Surf | Any time | 18.5 | Corsola Lv. 15-25 (60%); Carvanha Lv. 10-20 (30%); Frillish Lv. 15-25 (5%); Tirtouga Lv. 15-25 (4%); Clauncher Lv. 15-25 (1%) |
-| Old Rod | Any time | 10 | Finneon Lv. 10 (40%); Arrokuda Lv. 10 (30%); Corsola Lv. 10 (15%); Carvanha Lv. 10 (10%); Frillish Lv. 10 (5%) |
-| Good Rod | Any time | 20 | Frillish Lv. 20 (40%); Poliwag Lv. 20 (45%); Corsola Lv. 20 (15%) |
-| Super Rod | Any time | 40 | Frillish Lv. 40 (40%); Tatsugiri Lv. 40 (30%); Basculin Lv. 40 (15%); Quagsire Lv. 40 (10%); Wugtrio Lv. 40 (5%) |
-| Surf swarm | Any time | — | Poliwag (swarm) |
-| Good Rod swarm | Any time | — | Poliwag (swarm) |
-| Super Rod swarm | Any time | — | Whiscash (swarm) |
-| Grass | Day | 5.6 | Combee Lv. 5 (20%); Fletchling Lv. 5 (20%); Hoppip Lv. 5 (10%); Pidove Lv. 6 (10%); Skitty Lv. 6 (10%); Minccino Lv. 6 (10%); Scatterbug Lv. 6 (5%); Nymble Lv. 6 (5%); Pikipek Lv. 7 (4%); Natu Lv. 7 (4%); Togepi Lv. 7 (2%) |
-| Grass | Night | 5.6 | Hoothoot Lv. 5 (20%); Spinarak Lv. 5 (20%); Murkrow Lv. 5 (10%); Misdreavus Lv. 6 (10%); Zubat Lv. 6 (10%); Shuppet Lv. 6 (10%); Purrloin Lv. 6 (5%); Nickit Lv. 6 (5%); Munna Lv. 7 (4%); Flittle Lv. 7 (4%); Togepi Lv. 7 (2%) |
+| Grass | Any | 15% | Nidoran♀ Lv. 13 (20%); Nidoran♂ Lv. 13 (20%); Toedscool Lv. 13 (10%); Nymble Lv. 13 (10%); Unown Lv. 13 (10%); Silicobra Lv. 13 (10%); Cubone Lv. 12 (5%); Meditite Lv. 13 (5%); Ditto Lv. 13 (4%); Smeargle Lv. 13 (4%); Wobbuffet Lv. 15 (2%) |
+## Ruins of Alph (Inside, Main Room) (table 12)
 
-## Sprout Tower 2F
+| Method | Time | Encounter rate | Pokémon and slot share |
+| --- | --- | --- | --- |
+| Grass | Any | 15% | Pumpkaboo Lv. 14 (20%); Phantump Lv. 14 (20%); Mudbray Lv. 14 (10%); Inkay Lv. 14 (10%); Sandygast Lv. 14 (10%); Girafarig Lv. 13 (10%); Noibat Lv. 15 (5%); Abra Lv. 15 (5%); Pawniard Lv. 14 (4%); Sableye Lv. 14 (4%); Beldum Lv. 14 (1%); Beldum Lv. 15 (1%) |
+## Ruins of Alph (Inside, Ladder Room) (table 13)
 
-Encounter ID 6; configured level range 3-6.
+| Method | Time | Encounter rate | Pokémon and slot share |
+| --- | --- | --- | --- |
+| Grass | Any | 15% | Wooper Lv. 13 (20%); Wooper Lv. 12 (20%); Spoink Lv. 13 (10%); Elgyem Lv. 12 (10%); Onix Lv. 13 (10%); Nacli Lv. 14 (10%); Corsola Lv. 14 (5%); Phanpy Lv. 13 (5%); Solosis Lv. 14 (4%); Duskull Lv. 13 (4%); Furret Lv. 15 (2%) |
+## Union Cave 1F (table 14)
 
-| Method | Time | Average level | Pokémon and rate |
+| Method | Time | Encounter rate | Pokémon and slot share |
 | --- | --- | --- | --- |
-| Grass | Morning | 3.95 | Yamask Lv. 3 (20%); Sinistea Lv. 4 (20%); Trubbish Lv. 3 (10%); Greavard Lv. 4 (10%); Shuppet Lv. 5 (10%); Chingling Lv. 5 (10%); Bronzor Lv. 3 (5%); Duskull Lv. 3 (5%); Gimmighoul Lv. 6 (4%); Gastly Lv. 5 (4%); Varoom Lv. 6 (1%); Trubbish Lv. 5 (1%) |
-| Grass swarm | Any time | — | Rattata (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Chatot (radio replacement); Meditite (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Zigzagoon (radio replacement); Spinda (radio replacement) |
-| Grass | Day | 3.95 | Honedge Lv. 3 (20%); Yamask Lv. 4 (20%); Greavard Lv. 3 (10%); Zorua Hisuian Lv. 4 (10%); Shuppet Lv. 5 (10%); Chingling Lv. 5 (10%); Bronzor Lv. 3 (5%); Duskull Lv. 3 (5%); Gimmighoul Lv. 6 (4%); Drifloon Lv. 5 (4%); Gastly Lv. 6 (1%); Misdreavus Lv. 5 (1%) |
-| Grass | Night | 3.95 | Pawniard Lv. 3 (20%); Sinistea Lv. 4 (20%); Sableye Lv. 3 (10%); Greavard Lv. 4 (10%); Zorua Hisuian Lv. 5 (10%); Chingling Lv. 5 (10%); Bronzor Lv. 3 (5%); Shuppet Lv. 3 (5%); Duskull Lv. 6 (4%); Gimmighoul Lv. 5 (4%); Drifloon Lv. 6 (1%); Gastly Lv. 5 (1%) |
+| Grass | Any | 10% | Zubat Lv. 12 (20%); Whismur Lv. 12 (20%); Makuhita Lv. 13 (10%); Yungoos Lv. 13 (10%); Yamper Lv. 13 (10%); Grubbin Lv. 13 (10%); Scraggy Lv. 13 (5%); Jigglypuff Lv. 15 (5%); Shuppet Lv. 13 (4%); Skorupi Lv. 13 (4%); Toxel Lv. 13 (2%) |
+| Surf | Any | 15% | Poliwag Lv. 15–24 (60%); Shellos Lv. 20–29 (30%); Wimpod Lv. 10–29 (6%); Tynamo Lv. 10–28 (4%) |
+| Old Rod | Any | 25% | Magikarp Lv. 8–13 (40%); Surskit Lv. 8–13 (30%); Carvanha Lv. 8–13 (15%); Omanyte Lv. 8–13 (10%); Frillish Female Lv. 8–13 (5%) |
+| Good Rod | Any | 50% | Grapploct Lv. 30–35 (40%); Barbaracle Lv. 39 (30%); Malamar Lv. 35–40 (15%); Huntail Lv. 36–40 (10%); Araquanid Lv. 35–40 (5%) |
+| Super Rod | Any | 75% | Overqwil Lv. 40–44 (40%); Basculin Lv. 40–45 (30%); Vaporeon Lv. 41–46 (15%); Poliwrath Lv. 42–47 (10%); Dragonair Lv. 43–48 (5%) |
+## Union Cave B1F (table 15)
 
-## Sprout Tower 3F
+| Method | Time | Encounter rate | Pokémon and slot share |
+| --- | --- | --- | --- |
+| Grass | Any | 15% | Pineco Lv. 14 (20%); Nincada Lv. 14 (20%); Misdreavus Lv. 14 (10%); Magnemite Lv. 13 (10%); Lickitung Lv. 14 (10%); Drifloon Lv. 15 (10%); Zorua Lv. 14 (5%); Pawmi Lv. 15 (5%); Zorua Lv. 15 (4%); Impidimp Lv. 15 (4%); Pawmo Lv. 18 (2%) |
+| Surf | Any | 15% | Skrelp Lv. 20–37 (60%); Mareanie Lv. 20–37 (30%); Horsea Lv. 20–24 (6%); Feebas Lv. 20–24 (4%) |
+| Old Rod | Any | 25% | Clauncher Lv. 9–14 (40%); Carvanha Lv. 9–14 (30%); Basculin Blue Striped Lv. 9–14 (15%); Clobbopus Lv. 9–14 (10%); Dratini Lv. 9–14 (5%) |
+| Good Rod | Any | 50% | Lombre Lv. 30–35 (40%); Wailmer Lv. 30–39 (30%); Jellicent Female Lv. 40 (15%); Jellicent Lv. 40 (10%); Golisopod Lv. 30–35 (5%) |
+| Super Rod | Any | 75% | Slowbro Lv. 38–55 (40%); Slowking Lv. 38–55 (30%); Veluza Lv. 40–60 (20%); Gastrodon East Sea Lv. 30–55 (10%) |
+Conditional: nightFish: Basculin
 
-Encounter ID 7; configured level range 3-6.
+## Union Cave B2F (table 16)
 
-| Method | Time | Average level | Pokémon and rate |
+| Method | Time | Encounter rate | Pokémon and slot share |
 | --- | --- | --- | --- |
-| Grass | Morning | 3.95 | Bronzor Lv. 3 (20%); Honedge Lv. 4 (20%); Zubat Lv. 3 (10%); Meditite Lv. 4 (10%); Meditite Lv. 5 (10%); Zubat Lv. 5 (10%); Varoom Lv. 3 (5%); Spinarak Lv. 3 (5%); Venipede Lv. 6 (4%); Trubbish Lv. 5 (4%); Fuecoco Lv. 6 (1%); Fuecoco Lv. 5 (1%) |
-| Grass swarm | Any time | — | Rattata (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Chatot (radio replacement); Meditite (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Zigzagoon (radio replacement); Spinda (radio replacement) |
-| Grass | Day | 3.95 | Pawniard Lv. 3 (20%); Bronzor Lv. 4 (20%); Misdreavus Lv. 3 (10%); Meditite Lv. 4 (10%); Meditite Lv. 5 (10%); Zubat Lv. 5 (10%); Varoom Lv. 3 (5%); Spinarak Lv. 3 (5%); Rotom Lv. 6 (4%); Venipede Lv. 5 (4%); Fuecoco Lv. 6 (1%); Fuecoco Lv. 5 (1%) |
-| Grass | Night | 3.95 | Yamask Lv. 3 (20%); Sinistea Lv. 4 (20%); Sableye Lv. 3 (10%); Meditite Lv. 4 (10%); Meditite Lv. 5 (10%); Zubat Lv. 5 (10%); Greavard Lv. 3 (5%); Zorua Hisuian Lv. 3 (5%); Shuppet Lv. 6 (4%); Duskull Lv. 5 (4%); Fuecoco Lv. 6 (1%); Fuecoco Lv. 5 (1%) |
+| Grass | Any | 15% | Golbat Lv. 28 (20%); Koffing Lv. 29 (20%); Swinub Lv. 24 (10%); Stunky Lv. 29 (10%); Graveler Lv. 28 (20%); Whirlipede Lv. 27 (5%); Rhyhorn Lv. 28 (5%); Gligar Lv. 29 (4%); Mawile Lv. 29 (4%); Rotom Lv. 29 (2%) |
+| Surf | Any | 15% | Chinchou Lv. 15–26 (60%); Tympole Lv. 15–24 (30%); Clodsire Lv. 20–36 (6%); Quagsire Lv. 20–36 (4%) |
+| Old Rod | Any | 25% | Arrokuda Lv. 15–25 (40%); Shellos Lv. 23–28 (30%); Psyduck Lv. 23–28 (15%); Kabuto Lv. 15–30 (15%) |
+| Good Rod | Any | 50% | Dragonair Lv. 30–35 (40%); Overqwil Lv. 30–35 (30%); Gyarados Lv. 30–35 (15%); Sharpedo Lv. 30–35 (15%) |
+| Super Rod | Any | 75% | Arctovish Lv. 43–48 (40%); Dracovish Lv. 44–49 (30%); Tatsugiri Lv. 45–50 (15%); Dhelmise Lv. 46–51 (10%); Dondozo Lv. 47–52 (5%) |
+Conditional: nightFish: Wiglett
 
-## Route 32
+## Route 33 (table 17)
 
-Encounter ID 8; configured level range 4-40.
+| Method | Time | Encounter rate | Pokémon and slot share |
+| --- | --- | --- | --- |
+| Grass | Any | 25% | Zigzagoon Lv. 12 (40%); Cherubi Lv. 13 (10%); Burmy Lv. 12 (10%); Tarountula Lv. 13 (10%); Spewpa Lv. 11 (10%); Snom Lv. 12 (5%); Tyrogue Lv. 12 (5%); Spidops Lv. 15 (4%); Vivillon Lv. 12 (4%); Stantler Lv. 12 (1%); Stantler Lv. 13 (1%) |
+## Slowpoke Well 1F (table 18)
 
-| Method | Time | Average level | Pokémon and rate |
+| Method | Time | Encounter rate | Pokémon and slot share |
 | --- | --- | --- | --- |
-| Grass | Morning | 5.3 | Wattrel Lv. 6 (20%); Wingull Lv. 4 (20%); Lotad Lv. 6 (15%); Dewpider Lv. 4 (14%); Tadbulb Lv. 6 (11%); Wooper Paldean Lv. 6 (10%); Marill Lv. 6 (5%); Surskit Lv. 6 (4%); Wooper Paldean Lv. 4 (1%) |
-| Surf | Any time | 17.16 | Tentacool Lv. 10-20 (60%); Barboach Lv. 15-25 (35%); Omanyte Lv. 15-25 (4%); Kingdra Lv. 36 (1%) |
-| Old Rod | Any time | 10 | Finizen Lv. 10 (40%); Chinchou Lv. 10 (30%); Finneon Lv. 10 (15%); Barboach Lv. 10 (15%) |
-| Good Rod | Any time | 20 | Barboach Lv. 20 (55%); Tentacool Lv. 20 (40%); Qwilfish Lv. 20 (5%) |
-| Super Rod | Any time | 40 | Slowbro Lv. 40 (55%); Tatsugiri Lv. 40 (30%); Qwilfish Lv. 40 (10%); Bibarel Lv. 40 (5%) |
-| Grass swarm | Any time | — | Bellsprout (swarm) |
-| Surf swarm | Any time | — | Tentacool (swarm) |
-| Good Rod swarm | Any time | — | Tentacool (swarm) |
-| Super Rod swarm | Any time | — | Qwilfish (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Buizel (radio replacement); Bidoof (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Whismur (radio replacement); Linoone (radio replacement) |
-| Grass | Day | 5.3 | Wattrel Lv. 6 (20%); Ducklett Lv. 4 (20%); Marill Lv. 6 (10%); Delibird Lv. 4 (10%); Lotad Lv. 6 (10%); Surskit Lv. 6 (10%); Dewpider Lv. 6 (5%); Tadbulb Lv. 6 (5%); Wooper Lv. 6 (4%); Wooper Paldean Lv. 4 (4%); Delibird Lv. 6 (1%); Lotad Lv. 4 (1%) |
-| Grass | Night | 5.3 | Lotad Lv. 6 (20%); Surskit Lv. 4 (20%); Marill Lv. 6 (11%); Bidoof Lv. 4 (10%); Pincurchin Lv. 6 (10%); Surskit Lv. 6 (10%); Dewpider Lv. 6 (5%); Tadbulb Lv. 6 (5%); Wooper Lv. 6 (4%); Wooper Paldean Lv. 4 (4%); Lotad Lv. 4 (1%) |
+| Grass | Any | 5% | Slowpoke Lv. 14 (40%); Diglett Lv. 15 (20%); Gastly Lv. 15 (10%); Rellor Lv. 16 (10%); Sneasel Lv. 15 (10%); Sinistea Lv. 15 (5%); Polchgeist Lv. 15 (5%) |
+| Surf | Any | 10% | Slowking Lv. 30–38 (90%); Slowbro Lv. 30–38 (6%); Slowbro Lv. 37–38 (4%) |
+| Old Rod | Any | 25% | Slowpoke Lv. 10–15 (100%) |
+| Good Rod | Any | 50% | Slowking Lv. 30–40 (65%); Slowbro Lv. 30–40 (30%); Slowbro Lv. 37–40 (5%) |
+| Super Rod | Any | 75% | Slowbro Lv. 37–46 (85%); Slowking Lv. 37–46 (15%) |
+Conditional: nightFish: Chewtle
 
-## Ruins of Alph (Outside)
+## Slowpoke Well B2F (table 19)
 
-Encounter ID 9; configured level range 3-40.
+| Method | Time | Encounter rate | Pokémon and slot share |
+| --- | --- | --- | --- |
+| Grass | Any | 15% | Pancham Lv. 26 (20%); Diggersby Lv. 23 (20%); Timburr Lv. 23 (10%); Machop Lv. 23 (10%); Dedenne Lv. 23 (10%); Drowzee Lv. 25 (10%); Trapinch Lv. 26 (5%); Sandile Lv. 25 (5%); Clefairy Lv. 24 (4%); Drilbur Lv. 24 (4%); Audino Lv. 25 (2%) |
+| Surf | Any | 10% | Wugtrio Lv. 26–36 (60%); Qwilfish Lv. 30–36 (30%); Poliwrath Lv. 30–35 (6%); Politoed Lv. 30–35 (4%) |
+| Old Rod | Any | 25% | Remoraid Lv. 15–24 (40%); Marill Lv. 10–17 (30%); Binacle Lv. 19–24 (15%); Feebas Lv. 15–29 (10%); Staryu Lv. 18–24 (5%) |
+| Good Rod | Any | 50% | Simipour Lv. 20–35 (40%); Qwilfish Lv. 20–30 (30%); Floatzel Lv. 26–38 (15%); Milotic Lv. 37 (10%); Wailord Lv. 40 (5%) |
+| Super Rod | Any | 75% | Araquanid Lv. 43–48 (40%); Pyukumuku Lv. 44–49 (30%); Luvdisc Lv. 45–50 (15%); Bruxish Lv. 46–51 (10%); Alomomola Lv. 47–52 (5%) |
+Conditional: nightFish: Luvdisc
 
-| Method | Time | Average level | Pokémon and rate |
+## Ilex Forest (table 20)
+
+| Method | Time | Encounter rate | Pokémon and slot share |
 | --- | --- | --- | --- |
-| Grass | Morning | 20.7 | Numel Lv. 20 (20%); Sandile Lv. 22 (20%); Growlithe Hisuian Lv. 20 (10%); Natu Lv. 22 (10%); Natu Lv. 18 (10%); Growlithe Hisuian Lv. 18 (10%); Clodsire Lv. 24 (5%); Diggersby Lv. 24 (5%); Diglett Alolan Lv. 20 (4%); Diggersby Lv. 22 (4%); Geodude Alolan Lv. 20 (1%); Oranguru Lv. 22 (1%) |
-| Surf | Any time | 16.5 | Archen Lv. 10-20 (60%); Kabuto Lv. 15-25 (30%); Clauncher Lv. 10-20 (6%); Tirtouga Lv. 10-20 (4%) |
-| Old Rod | Any time | 10 | Corphish Lv. 10 (40%); Binacle Lv. 10 (30%); Frillish Lv. 10 (15%); Corsola Lv. 10 (10%); Carvanha Lv. 10 (5%) |
-| Good Rod | Any time | 20 | Staryu Lv. 20 (40%); Shellder Lv. 20 (30%); Omanyte Lv. 20 (15%); Corphish Lv. 20 (10%); Relicanth Lv. 20 (5%) |
-| Super Rod | Any time | 40 | Kabuto Lv. 40 (40%); Tirtouga Lv. 40 (30%); Jellicent Lv. 40 (15%); Clauncher Lv. 40 (10%); Archeops Lv. 40 (5%) |
-| Rock Smash | Any time | 10.35 | Geodude Alolan Lv. 8-14 (90%); Rolycoly Lv. 3-6 (10%) |
-| Grass swarm | Any time | — | Natu (swarm) |
-| Surf swarm | Any time | — | Wooper (swarm) |
-| Good Rod swarm | Any time | — | Poliwag (swarm) |
-| Super Rod swarm | Any time | — | Magikarp (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Buizel (radio replacement); Bidoof (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Whismur (radio replacement); Linoone (radio replacement) |
-| Grass | Day | 20.7 | Numel Lv. 20 (20%); Sandile Lv. 22 (20%); Quagsire Lv. 20 (10%); Natu Lv. 22 (10%); Natu Lv. 18 (10%); Growlithe Hisuian Lv. 18 (10%); Clodsire Lv. 24 (5%); Sandslash Lv. 24 (5%); Ponyta Galarian Lv. 20 (4%); Mudbray Lv. 22 (4%); Indeedee Lv. 20 (1%); Musharna Lv. 22 (1%) |
-| Grass | Night | 20.7 | Sandile Lv. 20 (20%); Numel Lv. 22 (20%); Diglett Alolan Lv. 20 (10%); Natu Lv. 22 (10%); Natu Lv. 18 (10%); Diglett Alolan Lv. 18 (10%); Swoobat Lv. 24 (5%); Geodude Alolan Lv. 24 (5%); Girafarig Lv. 20 (4%); Toedscool Lv. 22 (4%); Espurr Lv. 20 (1%); Raichu Alolan Lv. 22 (1%) |
+| Grass | Any | 5% | Skwovet Lv. 18 (20%); Ledyba Lv. 17 (20%); Ekans Lv. 17 (10%); Sizzlipede Lv. 17 (10%); Fidough Lv. 16 (10%); Exeggcute Lv. 17 (10%); Karrablast Lv. 17 (5%); Shelmet Lv. 17 (5%); Ledian Lv. 18 (4%); Capsakid Lv. 18 (4%); Chansey Lv. 18 (2%) |
+| Surf | Any | 15% | Lombre Lv. 15–30 (60%); Wimpod Lv. 5–20 (30%); Wimpod Lv. 20–29 (5%); Ludicolo Lv. 25–38 (5%) |
+| Old Rod | Any | 25% | Chewtle Lv. 12–17 (40%); Tirtouga Lv. 12–17 (30%); Clobbopus Lv. 12–17 (15%); Relicanth Lv. 12–17 (10%); Feebas Lv. 12–17 (5%) |
+| Good Rod | Any | 50% | Qwilfish Lv. 20–37 (40%); Mantyke Lv. 20–31 (30%); Horsea Lv. 16–24 (15%); Seadra Lv. 32–37 (10%); Golisopod Lv. 30–36 (5%) |
+| Super Rod | Any | 75% | Gyarados Lv. 40–44 (40%); Politoed Lv. 40–45 (30%); Kabutops Lv. 41–46 (15%); Sharpedo Lv. 42–47 (10%); Mantine Lv. 43–48 (5%) |
+## Route 34 (table 21)
 
-## Ruins of Alph (Inside, Main Room)
+| Method | Time | Encounter rate | Pokémon and slot share |
+| --- | --- | --- | --- |
+| Grass | Any | 25% | Trubbish Lv. 16 (20%); Patrat Lv. 16 (20%); Maschiff Lv. 17 (10%); Skiddo Lv. 17 (10%); Cottonee Lv. 17 (10%); Skiploom Lv. 18 (10%); Tandemaus Lv. 16 (5%); Minccino Lv. 16 (5%); Sunflora Lv. 16 (4%); Shuckle Lv. 17 (4%); Goomy Lv. 17 (2%) |
+| Surf | Any | 15% | Wiglett Lv. 15–25 (60%); Frillish Lv. 15–39 (30%); Sealeo Lv. 32–43 (10%) |
+| Old Rod | Any | 25% | Chewtle Lv. 12–17 (40%); Staryu Lv. 5–17 (30%); Buizel Lv. 12–17 (15%); Clobbopus Lv. 12–17 (15%) |
+| Good Rod | Any | 50% | Mantine Lv. 32–35 (40%); Gorebyss Lv. 36–37 (30%); Ludicolo Lv. 35–40 (15%); Politoed Lv. 35–40 (10%); Slowking Lv. 35–40 (5%) |
+| Super Rod | Any | 75% | Wishiwashi Lv. 40–44 (40%); Palafin Lv. 40–45 (30%); Toxapex Lv. 41–46 (15%); Cloyster Lv. 42–47 (10%); Crawdaunt Lv. 43–48 (5%) |
+## Route 35 (table 22)
 
-Encounter ID 10; configured level range 5-5.
-
-| Method | Time | Average level | Pokémon and rate |
-| --- | --- | --- | --- |
-| Grass | Morning | 5 | Sandygast Lv. 5 (20%); Baltoy Lv. 5 (20%); Cubone Lv. 5 (15%); Nacli Lv. 5 (14%); Trapinch Lv. 5 (10%); Rolycoly Lv. 5 (10%); Silicobra Lv. 5 (5%); Drilbur Lv. 5 (4%); Scorbunny Lv. 5 (2%) |
-| Grass swarm | Any time | — | Unown (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Unown (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Unown (radio replacement) |
-| Grass | Day | 5 | Bronzor Lv. 5 (20%); Golett Lv. 5 (20%); Hippopotas Lv. 5 (10%); Trapinch Lv. 5 (10%); Rhyhorn Lv. 5 (10%); Cranidos Lv. 5 (10%); Shieldon Lv. 5 (5%); Glimmet Lv. 5 (5%); Wooper Paldean Lv. 5 (4%); Diglett Alolan Lv. 5 (4%); Scorbunny Lv. 5 (2%) |
-| Grass | Night | 5 | Golett Lv. 5 (20%); Yamask Galarian Lv. 5 (20%); Rolycoly Lv. 5 (10%); Tyrunt Lv. 5 (14%); Onix Lv. 5 (10%); Roggenrola Lv. 5 (10%); Nacli Lv. 5 (5%); Geodude Alolan Lv. 5 (5%); Trapinch Lv. 5 (4%); Scorbunny Lv. 5 (2%) |
-
-## Ruins of Alph (Inside, Main Room)
-
-Encounter ID 11; configured level range 5-5.
-
-| Method | Time | Average level | Pokémon and rate |
+| Method | Time | Encounter rate | Pokémon and slot share |
 | --- | --- | --- | --- |
-| Grass | Morning | 5 | Numel Lv. 5 (20%); Sandygast Lv. 5 (20%); Onix Lv. 5 (10%); Mudbray Lv. 5 (10%); Bonsly Lv. 5 (10%); Roggenrola Lv. 5 (10%); Nacli Lv. 5 (5%); Sandshrew Lv. 5 (5%); Nincada Lv. 5 (4%); Unown Lv. 5 (6%) |
-| Grass swarm | Any time | — | Unown (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Unown (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Unown (radio replacement) |
-| Grass | Day | 5 | Yamask Galarian Lv. 5 (20%); Swinub Lv. 5 (20%); Geodude Lv. 5 (10%); Sandshrew Lv. 5 (10%); Sudowoodo Lv. 5 (20%); Dwebble Lv. 5 (5%); Silicobra Lv. 5 (5%); Nincada Lv. 5 (4%); Unown Lv. 5 (6%) |
-| Grass | Night | 5 | Golett Lv. 5 (20%); Yamask Galarian Lv. 5 (20%); Cubone Lv. 5 (10%); Drilbur Lv. 5 (10%); Aron Lv. 5 (10%); Hippopotas Lv. 5 (10%); Rhyhorn Lv. 5 (5%); Cranidos Lv. 5 (5%); Nincada Lv. 5 (4%); Unown Lv. 5 (6%) |
-
-## Ruins of Alph (Inside, Main Room)
-
-Encounter ID 12; configured level range 5-5.
+| Grass | Any | 25% | Castform Lv. 17 (20%); Cacnea Lv. 18 (20%); Petilil Lv. 18 (10%); Smoliv Lv. 18 (10%); Flabébé Lv. 17 (10%); Bramblin Lv. 17 (10%); Ninjask Lv. 20 (5%); Thievul Lv. 18 (5%); Liepard Lv. 20 (4%); Ariados Lv. 22 (4%); Shedinja Lv. 20 (2%) |
+| Surf | Any | 15% | Ducklett Lv. 20–34 (60%); Poliwhirl Lv. 25–37 (30%); Swanna Lv. 35–37 (10%) |
+| Old Rod | Any | 25% | Barboach Lv. 13–18 (40%); Remoraid Lv. 13–18 (30%); Wiglett Lv. 13–18 (15%); Clobbopus Lv. 13–18 (15%) |
+| Good Rod | Any | 50% | Gastrodon East Sea Lv. 30–35 (40%); Clamperl Lv. 20–35 (30%); Azumarill Lv. 18–40 (15%); Clodsire Lv. 20–40 (10%); Dragonair Lv. 30–40 (5%) |
+| Super Rod | Any | 75% | Tentacruel Lv. 41–46 (40%); Baraskewda Lv. 26–45 (30%); Sealeo Lv. 32–43 (15%); Floatzel Lv. 26–47 (10%); Dragonair Lv. 41–46 (5%) |
+## National Park (table 23)
 
-| Method | Time | Average level | Pokémon and rate |
+| Method | Time | Encounter rate | Pokémon and slot share |
 | --- | --- | --- | --- |
-| Grass | Morning | 5 | Baltoy Lv. 5 (20%); Sandygast Lv. 5 (20%); Silicobra Lv. 5 (10%); Cubone Lv. 5 (10%); Growlithe Hisuian Lv. 5 (10%); Shieldon Lv. 5 (10%); Drilbur Lv. 5 (5%); Glimmet Lv. 5 (5%); Unown Lv. 5 (4%); Rolycoly Lv. 5 (4%); Hippopotas Lv. 5 (1%); Nosepass Lv. 5 (1%) |
-| Grass swarm | Any time | — | Unown (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Unown (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Unown (radio replacement) |
-| Grass | Day | 5 | Bronzor Lv. 5 (20%); Golett Lv. 5 (20%); Rhyhorn Lv. 5 (10%); Cranidos Lv. 5 (10%); Shieldon Lv. 5 (10%); Glimmet Lv. 5 (10%); Wooper Paldean Lv. 5 (5%); Rolycoly Lv. 5 (5%); Unown Lv. 5 (4%); Diglett Alolan Lv. 5 (4%); Geodude Alolan Lv. 5 (1%); Tyrunt Lv. 5 (1%) |
-| Grass | Night | 5 | Yamask Galarian Lv. 5 (20%); Sandile Lv. 5 (20%); Trapinch Lv. 5 (10%); Bonsly Lv. 5 (10%); Geodude Lv. 5 (10%); Phanpy Lv. 5 (10%); Nosepass Lv. 5 (5%); Aron Lv. 5 (5%); Silicobra Lv. 5 (4%); Wooper Lv. 5 (4%); Onix Lv. 5 (2%) |
-
-## Ruins of Alph (Inside, Ladder Room)
-
-Encounter ID 13; configured level range 5-5.
-
-| Method | Time | Average level | Pokémon and rate |
-| --- | --- | --- | --- |
-| Grass | Morning | 5 | Amaura Lv. 5 (20%); Numel Lv. 5 (20%); Mudbray Lv. 5 (10%); Roggenrola Lv. 5 (15%); Minior Lv. 5 (10%); Nacli Lv. 5 (11%); Trapinch Lv. 5 (5%); Rockruff Lv. 5 (4%); Bonsly Lv. 5 (4%); Sandshrew Lv. 5 (1%) |
-| Grass swarm | Any time | — | Unown (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Unown (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Unown (radio replacement) |
-| Grass | Day | 5 | Swinub Lv. 5 (20%); Sandygast Lv. 5 (20%); Geodude Lv. 5 (10%); Baltoy Lv. 5 (14%); Bonsly Lv. 5 (10%); Dwebble Lv. 5 (11%); Sandshrew Lv. 5 (5%); Cubone Lv. 5 (5%); Growlithe Hisuian Lv. 5 (4%); Drilbur Lv. 5 (1%) |
-| Grass | Night | 5 | Sandile Lv. 5 (20%); Golett Lv. 5 (20%); Phanpy Lv. 5 (10%); Aron Lv. 5 (10%); Hippopotas Lv. 5 (10%); Cubone Lv. 5 (10%); Rhyhorn Lv. 5 (5%); Wooper Lv. 5 (5%); Cranidos Lv. 5 (4%); Shieldon Lv. 5 (4%); Glimmet Lv. 5 (1%); Growlithe Hisuian Lv. 5 (1%) |
-
-## Union Cave 1F
-
-Encounter ID 14; configured level range 4-40.
-
-| Method | Time | Average level | Pokémon and rate |
-| --- | --- | --- | --- |
-| Grass | Morning | 5.65 | Amaura Lv. 6 (20%); Swinub Lv. 6 (20%); Growlithe Hisuian Lv. 6 (10%); Magnemite Lv. 6 (10%); Drilbur Lv. 5 (10%); Trubbish Lv. 5 (10%); Voltorb Lv. 4 (5%); Phanpy Lv. 4 (5%); Ferroseed Lv. 7 (4%); Hippopotas Lv. 6 (4%); Charmander Lv. 7 (1%); Charmander Lv. 6 (1%) |
-| Surf | Any time | 16.5 | Wooper Lv. 10-20 (60%); Corphish Lv. 15-25 (30%); Omanyte Lv. 10-20 (5%); Kabuto Lv. 10-20 (4%); Tirtouga Lv. 10-20 (1%) |
-| Old Rod | Any time | 10 | Wiglett Lv. 10 (40%); Wimpod Lv. 10 (30%); Binacle Lv. 10 (15%); Goldeen Lv. 10 (15%) |
-| Good Rod | Any time | 20 | Luvdisc Lv. 20 (40%); Goldeen Lv. 20 (60%) |
-| Super Rod | Any time | 40 | Goldeen Lv. 40 (70%); Staryu Lv. 40 (15%); Wailmer Lv. 40 (10%); Gastrodon Lv. 40 (5%) |
-| Grass swarm | Any time | — | Geodude (swarm) |
-| Surf swarm | Any time | — | Wooper (swarm) |
-| Good Rod swarm | Any time | — | Goldeen (swarm) |
-| Super Rod swarm | Any time | — | Magikarp (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Bronzor (radio replacement); Chingling (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Absol (radio replacement); Makuhita (radio replacement) |
-| Grass | Day | 5.65 | Sandile Lv. 6 (20%); Snorunt Lv. 6 (20%); Magnemite Lv. 6 (10%); Cufant Lv. 6 (10%); Rhyhorn Lv. 5 (10%); Cranidos Lv. 5 (10%); Wooper Paldean Lv. 4 (5%); Shieldon Lv. 4 (5%); Ferroseed Lv. 7 (4%); Glimmet Lv. 6 (4%); Charmander Lv. 7 (1%); Charmander Lv. 6 (1%) |
-| Grass | Night | 5.65 | Yamask Lv. 6 (20%); Golett Lv. 6 (20%); Sableye Lv. 6 (10%); Stunfisk Lv. 6 (10%); Rolycoly Lv. 5 (10%); Diglett Alolan Lv. 5 (10%); Geodude Alolan Lv. 4 (5%); Tyrunt Lv. 4 (5%); Ferroseed Lv. 7 (4%); Greavard Lv. 6 (4%); Charmander Lv. 7 (1%); Charmander Lv. 6 (1%) |
-
-## Union Cave B1F
-
-Encounter ID 15; configured level range 6-40.
-
-| Method | Time | Average level | Pokémon and rate |
-| --- | --- | --- | --- |
-| Grass | Morning | 7.75 | Yamask Galarian Lv. 8 (20%); Bergmite Lv. 8 (20%); Nosepass Lv. 8 (10%); Weedle Lv. 8 (10%); Kakuna Lv. 7 (10%); Drilbur Lv. 7 (10%); Onix Lv. 8 (5%); Mudbray Lv. 8 (5%); Sandshrew Alolan Lv. 9 (4%); Voltorb Hisuian Lv. 6 (4%); Zubat Lv. 9 (1%); Porygon Lv. 6 (1%) |
-| Surf | Any time | 16.5 | Wooper Lv. 10-20 (60%); Corsola Galarian Lv. 15-25 (30%); Clauncher Lv. 10-20 (5%); Corphish Lv. 10-20 (4%); Krabby Lv. 10-20 (1%) |
-| Old Rod | Any time | 10 | Shellder Lv. 10 (40%); Wiglett Lv. 10 (30%); Wimpod Lv. 10 (15%); Wishiwashi Lv. 10 (15%) |
-| Good Rod | Any time | 20 | Luvdisc Lv. 20 (40%); Tatsugiri Lv. 20 (30%); Basculin Lv. 20 (15%); Corsola Galarian Lv. 20 (10%); Pyukumuku Lv. 20 (5%) |
-| Super Rod | Any time | 40 | Slowbro Lv. 40 (40%); Slowking Lv. 40 (30%); Luvdisc Lv. 40 (15%); Wugtrio Lv. 40 (10%); Araquanid Lv. 40 (5%) |
-| Grass swarm | Any time | — | Geodude (swarm) |
-| Surf swarm | Any time | — | Wooper (swarm) |
-| Good Rod swarm | Any time | — | Goldeen (swarm) |
-| Super Rod swarm | Any time | — | Magikarp (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Bronzor (radio replacement); Chingling (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Absol (radio replacement); Makuhita (radio replacement) |
-| Grass | Day | 7.75 | Numel Lv. 8 (20%); Vanillite Lv. 8 (20%); Roggenrola Lv. 8 (10%); Weedle Lv. 8 (10%); Rockruff Lv. 7 (10%); Trubbish Lv. 7 (10%); Minior Lv. 8 (5%); Nacli Lv. 8 (5%); Meowth Galarian Lv. 9 (4%); Sandshrew Alolan Lv. 6 (4%); Zubat Lv. 9 (1%); Bonsly Lv. 6 (1%) |
-| Grass | Night | 7.75 | Sinistea Lv. 8 (20%); Sandygast Lv. 8 (20%); Duskull Lv. 8 (15%); Weedle Lv. 8 (10%); Zorua Hisuian Lv. 7 (10%); Voltorb Lv. 7 (10%); Shuppet Lv. 8 (5%); Klink Lv. 9 (4%); Gimmighoul Lv. 6 (4%); Zubat Lv. 9 (1%); Drifloon Lv. 6 (1%) |
-
-## Union Cave B2F
-
-Encounter ID 16; configured level range 10-40.
-
-| Method | Time | Average level | Pokémon and rate |
-| --- | --- | --- | --- |
-| Grass | Morning | 21.85 | Carkol Lv. 22 (20%); Amaura Lv. 22 (20%); Shedinja Lv. 22 (20%); Sandslash Lv. 22 (10%); Rotom Lv. 22 (10%); Shedinja Lv. 21 (10%); Pumpkaboo Lv. 20 (4%); Sandshrew Alolan Lv. 23 (4%); Larvitar Lv. 20 (1%); Larvitar Lv. 23 (1%) |
-| Surf | Any time | 17 | Tentacool Lv. 10-20 (60%); Omanyte Lv. 15-25 (30%); Clamperl Lv. 15-25 (6%); Kabuto Lv. 15-25 (4%) |
-| Old Rod | Any time | 10 | Arrokuda Lv. 10 (40%); Krabby Lv. 10 (45%); Binacle Lv. 10 (15%) |
-| Good Rod | Any time | 20 | Staryu Lv. 20 (40%); Krabby Lv. 20 (50%); Corsola Lv. 20 (10%) |
-| Super Rod | Any time | 40 | Krabby Lv. 40 (60%); Corsola Lv. 40 (30%); Wailmer Lv. 40 (10%) |
-| Grass swarm | Any time | — | Zubat (swarm) |
-| Surf swarm | Any time | — | Tentacool (swarm) |
-| Good Rod swarm | Any time | — | Staryu (swarm) |
-| Super Rod swarm | Any time | — | Magikarp (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Bronzor (radio replacement); Chingling (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Absol (radio replacement); Makuhita (radio replacement) |
-| Grass | Day | 21.85 | Carkol Lv. 22 (20%); Pawniard Lv. 22 (20%); Sandslash Lv. 22 (20%); Voltorb Hisuian Lv. 22 (10%); Shedinja Lv. 22 (10%); Stunfisk Lv. 21 (5%); Beedrill Lv. 21 (5%); Pumpkaboo Lv. 20 (4%); Ariados Lv. 23 (4%); Larvitar Lv. 20 (1%); Larvitar Lv. 23 (1%) |
-| Grass | Night | 21.85 | Honedge Lv. 22 (20%); Pawniard Lv. 22 (20%); Sableye Lv. 22 (10%); Shedinja Lv. 22 (10%); Misdreavus Lv. 22 (10%); Sandslash Lv. 22 (10%); Dustox Lv. 21 (5%); Sableye Lv. 21 (5%); Pumpkaboo Lv. 20 (4%); Shedinja Lv. 23 (4%); Larvitar Lv. 20 (1%); Larvitar Lv. 23 (1%) |
-
-## Route 33
-
-Encounter ID 17; configured level range 4-8.
-
-| Method | Time | Average level | Pokémon and rate |
-| --- | --- | --- | --- |
-| Grass | Morning | 6.3 | Weedle Lv. 6 (20%); Scatterbug Lv. 7 (20%); Makuhita Lv. 6 (10%); Wynaut Lv. 7 (10%); Ralts Lv. 6 (10%); Toedscool Lv. 6 (10%); Karrablast Lv. 6 (5%); Shelmet Lv. 6 (5%); Karrablast Lv. 8 (4%); Shelmet Lv. 4 (4%); Goomy Lv. 8 (1%); Goomy Lv. 4 (1%) |
-| Grass swarm | Any time | — | Hoppip (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Shinx (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Plusle (radio replacement); Minun (radio replacement) |
-| Grass | Day | 6.3 | Weedle Lv. 6 (20%); Scatterbug Lv. 7 (20%); Burmy Lv. 6 (10%); Wynaut Lv. 7 (10%); Ralts Lv. 6 (10%); Toedscool Lv. 6 (10%); Karrablast Lv. 6 (5%); Shelmet Lv. 6 (5%); Karrablast Lv. 8 (4%); Shelmet Lv. 4 (4%); Goomy Lv. 8 (1%); Goomy Lv. 4 (1%) |
-| Grass | Night | 6.3 | Weedle Lv. 6 (20%); Scatterbug Lv. 7 (20%); Burmy Lv. 6 (10%); Hatenna Lv. 7 (10%); Ralts Lv. 6 (10%); Toedscool Lv. 6 (10%); Karrablast Lv. 6 (5%); Shelmet Lv. 6 (5%); Karrablast Lv. 8 (4%); Shelmet Lv. 4 (4%); Goomy Lv. 8 (1%); Goomy Lv. 4 (1%) |
-
-## Slowpoke Well 1F
-
-Encounter ID 18; configured level range 5-40.
-
-| Method | Time | Average level | Pokémon and rate |
-| --- | --- | --- | --- |
-| Grass | Morning | 6.1 | Swinub Lv. 5 (20%); Yamask Galarian Lv. 6 (20%); Gastly Lv. 5 (10%); Sandshrew Lv. 6 (10%); Kakuna Lv. 7 (10%); Varoom Lv. 7 (10%); Trapinch Lv. 6 (5%); Geodude Lv. 6 (5%); Dwebble Lv. 8 (4%); Silicobra Lv. 8 (4%); Totodile Lv. 8 (2%) |
-| Surf | Any time | 16 | Slowpoke Lv. 10-20 (60%); Slowpoke Lv. 15-25 (30%); Slowpoke Lv. 5-15 (10%) |
-| Old Rod | Any time | 10 | Shellder Lv. 10 (40%); Psyduck Lv. 10 (30%); Skrelp Lv. 10 (15%); Seel Lv. 10 (10%); Shellos Lv. 10 (5%) |
-| Good Rod | Any time | 20 | Lombre Lv. 20 (50%); Tirtouga Lv. 20 (30%); Clamperl Lv. 20 (15%); Buizel Lv. 20 (5%) |
-| Super Rod | Any time | 40 | Buizel Lv. 40 (40%); Clauncher Lv. 40 (30%); Seadra Lv. 40 (15%); Wishiwashi Lv. 40 (10%); Tatsugiri Lv. 40 (5%) |
-| Grass swarm | Any time | — | Zubat (swarm) |
-| Surf swarm | Any time | — | Slowpoke (swarm) |
-| Good Rod swarm | Any time | — | Goldeen (swarm) |
-| Super Rod swarm | Any time | — | Magikarp (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Bronzor (radio replacement); Chingling (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Absol (radio replacement); Makuhita (radio replacement) |
-| Grass | Day | 6.1 | Sandile Lv. 5 (20%); Sandygast Lv. 6 (20%); Spinarak Lv. 5 (10%); Cubone Lv. 6 (10%); Venipede Lv. 7 (10%); Phanpy Lv. 7 (10%); Aron Lv. 6 (5%); Rolycoly Lv. 6 (5%); Rhyhorn Lv. 8 (4%); Cranidos Lv. 8 (4%); Totodile Lv. 8 (2%) |
-| Grass | Night | 6.1 | Golett Lv. 5 (20%); Yamask Galarian Lv. 6 (20%); Gastly Lv. 5 (10%); Shieldon Lv. 6 (10%); Zubat Lv. 7 (20%); Tyrunt Lv. 6 (5%); Venonat Lv. 6 (5%); Glimmet Lv. 8 (4%); Diglett Alolan Lv. 8 (4%); Totodile Lv. 8 (2%) |
-
-## Slowpoke Well B2F
-
-Encounter ID 19; configured level range 10-40.
-
-| Method | Time | Average level | Pokémon and rate |
-| --- | --- | --- | --- |
-| Grass | Morning | 21.4 | Wooper Lv. 21 (20%); Carkol Lv. 23 (20%); Zubat Lv. 21 (10%); Growlithe Hisuian Lv. 23 (10%); Minior Lv. 19 (10%); Stunfisk Lv. 19 (10%); Growlithe Hisuian Lv. 21 (5%); Beedrill Lv. 21 (5%); Golbat Lv. 23 (4%); Ariados Lv. 23 (4%); Quagsire Lv. 23 (1%); Stonjourner Lv. 23 (1%) |
-| Surf | Any time | 17.1 | Slowpoke Lv. 10-20 (60%); Mantyke Lv. 15-25 (30%); Ducklett Lv. 15-25 (5%); Mareanie Lv. 15-25 (4%); Malamar Lv. 30 (1%) |
-| Old Rod | Any time | 10 | Corphish Lv. 10 (40%); Mareanie Lv. 10 (30%); Wingull Lv. 10 (15%); Tentacool Lv. 10 (10%); Mantyke Lv. 10 (5%) |
-| Good Rod | Any time | 20 | Wingull Lv. 20 (40%); Mantyke Lv. 20 (30%); Archen Lv. 20 (15%); Basculin Lv. 20 (10%); Chinchou Lv. 20 (5%) |
-| Super Rod | Any time | 40 | Mantyke Lv. 40 (40%); Spheal Lv. 40 (30%); Sealeo Lv. 40 (15%); Finneon Lv. 40 (10%); Corsola Galarian Lv. 40 (5%) |
-| Grass swarm | Any time | — | Zubat (swarm) |
-| Surf swarm | Any time | — | Slowpoke (swarm) |
-| Good Rod swarm | Any time | — | Goldeen (swarm) |
-| Super Rod swarm | Any time | — | Magikarp (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Bronzor (radio replacement); Chingling (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Absol (radio replacement); Makuhita (radio replacement) |
-| Grass | Day | 21.4 | Wooper Lv. 21 (20%); Carkol Lv. 23 (20%); Dustox Lv. 21 (10%); Onix Lv. 23 (10%); Carkol Lv. 19 (10%); Dustox Lv. 19 (10%); Beedrill Lv. 21 (5%); Onix Lv. 21 (5%); Golbat Lv. 23 (4%); Mudbray Lv. 23 (4%); Stunfisk Galarian Lv. 23 (1%); Sandslash Lv. 23 (1%) |
-| Grass | Night | 21.4 | Wooper Lv. 21 (20%); Sandygast Lv. 23 (20%); Nosepass Lv. 21 (10%); Whirlipede Lv. 23 (14%); Grimer Alolan Lv. 19 (10%); Tyrunt Lv. 19 (10%); Dustox Lv. 21 (5%); Minior Lv. 21 (5%); Golbat Lv. 23 (4%); Lunatone Lv. 23 (1%); Runerigus Lv. 23 (1%) |
-
-## Ilex Forest
-
-Encounter ID 20; configured level range 5-40.
-
-| Method | Time | Average level | Pokémon and rate |
-| --- | --- | --- | --- |
-| Grass | Morning | 5.55 | Poltchageist Lv. 5 (20%); Nincada Lv. 6 (20%); Dwebble Lv. 5 (14%); Spinarak Lv. 6 (14%); Venipede Lv. 6 (10%); Venonat Lv. 6 (10%); Nincada Lv. 5 (5%); Voltorb Hisuian Lv. 5 (6%); Voltorb Hisuian Lv. 6 (1%) |
-| Surf | Any time | 13.5 | Psyduck Lv. 10-20 (60%); Buizel Lv. 5-15 (30%); Mantyke Lv. 10-20 (5%); Chewtle Lv. 10-20 (4%); Buizel Lv. 10-20 (1%) |
-| Old Rod | Any time | 10 | Finizen Lv. 10 (40%); Remoraid Lv. 10 (30%); Tentacool Lv. 10 (15%); Wingull Lv. 10 (10%); Mantyke Lv. 10 (5%) |
-| Good Rod | Any time | 20 | Tentacool Lv. 20 (40%); Qwilfish Hisuian Lv. 20 (35%); Mantyke Lv. 20 (15%); Qwilfish Lv. 20 (10%) |
-| Super Rod | Any time | 40 | Araquanid Lv. 40 (40%); Jellicent Lv. 40 (30%); Slowking Lv. 40 (15%); Luvdisc Lv. 40 (10%); Wailmer Lv. 40 (5%) |
-| Grass swarm | Any time | — | Caterpie (swarm) |
-| Surf swarm | Any time | — | Psyduck (swarm) |
-| Good Rod swarm | Any time | — | Poliwag (swarm) |
-| Super Rod swarm | Any time | — | Magikarp (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Budew (radio replacement); Carnivine (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Spoink (radio replacement); Numel (radio replacement) |
-| Grass | Day | 5.55 | Poltchageist Lv. 5 (20%); Ferroseed Lv. 6 (20%); Venipede Lv. 5 (10%); Venonat Lv. 6 (10%); Spinarak Lv. 6 (10%); Nincada Lv. 6 (11%); Voltorb Hisuian Lv. 5 (5%); Ferroseed Lv. 5 (6%); Dwebble Lv. 5 (4%); Venipede Lv. 6 (4%) |
-| Grass | Night | 5.55 | Poltchageist Lv. 5 (20%); Dwebble Lv. 6 (20%); Venonat Lv. 5 (10%); Nincada Lv. 6 (10%); Venipede Lv. 6 (10%); Bramblin Lv. 6 (10%); Phantump Lv. 5 (9%); Voltorb Hisuian Lv. 5 (5%); Phantump Lv. 6 (4%); Ferroseed Lv. 5 (1%); Weedle Lv. 6 (1%) |
-
-## Route 34
-
-Encounter ID 21; configured level range 10-40.
-
-| Method | Time | Average level | Pokémon and rate |
-| --- | --- | --- | --- |
-| Grass | Morning | 10.85 | Zigzagoon Lv. 10 (20%); Taillow Lv. 11 (20%); Spewpa Lv. 10 (10%); Foongus Lv. 11 (10%); Pidove Lv. 12 (10%); Wynaut Lv. 12 (10%); Solosis Lv. 10 (10%); Voltorb Hisuian Lv. 13 (4%); Voltorb Hisuian Lv. 10 (4%); Pikachu Lv. 13 (1%); Pikachu Lv. 10 (1%) |
-| Surf | Any time | 18.59 | Seel Lv. 15-25 (64%); Tentacool Lv. 10-20 (30%); Ducklett Lv. 15-25 (5%); Lanturn Lv. 29 (1%) |
-| Old Rod | Any time | 10 | Arrokuda Lv. 10 (40%); Inkay Lv. 10 (30%); Panpour Lv. 10 (15%); Tentacool Lv. 10 (10%); Ducklett Lv. 10 (5%) |
-| Good Rod | Any time | 20 | Clamperl Lv. 20 (40%); Lombre Lv. 20 (30%); Tentacool Lv. 20 (15%); Corsola Lv. 20 (10%); Skrelp Lv. 20 (5%) |
-| Super Rod | Any time | 40 | Ducklett Lv. 40 (40%); Corsola Lv. 40 (30%); Buizel Lv. 40 (15%); Pincurchin Lv. 40 (10%); Araquanid Lv. 40 (5%) |
-| Grass swarm | Any time | — | Ralts (swarm) |
-| Surf swarm | Any time | — | Tentacool (swarm) |
-| Good Rod swarm | Any time | — | Staryu (swarm) |
-| Super Rod swarm | Any time | — | Magikarp (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Buizel (radio replacement); Bidoof (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Whismur (radio replacement); Linoone (radio replacement) |
-| Grass | Day | 10.85 | Zigzagoon Lv. 10 (20%); Taillow Lv. 11 (20%); Impidimp Lv. 10 (10%); Foongus Lv. 11 (10%); Pidove Lv. 12 (10%); Wynaut Lv. 12 (10%); Solosis Lv. 10 (10%); Voltorb Hisuian Lv. 13 (4%); Voltorb Hisuian Lv. 10 (4%); Pikachu Lv. 13 (1%); Pikachu Lv. 10 (1%) |
-| Grass | Night | 10.85 | Houndour Lv. 10 (20%); Taillow Lv. 11 (20%); Charcadet Lv. 10 (10%); Foongus Lv. 11 (10%); Pidove Lv. 12 (10%); Wynaut Lv. 12 (10%); Solosis Lv. 10 (10%); Voltorb Hisuian Lv. 13 (4%); Stunky Lv. 10 (4%); Pikachu Lv. 13 (1%); Pikachu Lv. 10 (1%) |
-
-## Route 35
-
-Encounter ID 22; configured level range 10-40.
-
-| Method | Time | Average level | Pokémon and rate |
-| --- | --- | --- | --- |
-| Grass | Morning | 12.22 | Sentret Lv. 12 (20%); Rookidee Lv. 12 (20%); Shinx Lv. 12 (10%); Grimer Lv. 12 (10%); Lombre Lv. 14 (10%); Morpeko Lv. 14 (10%); Ferroseed Lv. 10 (10%); Swablu Lv. 14 (4%); Swablu Lv. 10 (4%); Porygon Lv. 14 (1%); Smeargle Lv. 12 (1%) |
-| Surf | Any time | 18.61 | Dewpider Lv. 15-25 (60%); Psyduck Lv. 10-20 (30%); Seel Lv. 15-25 (5%); Shellos Lv. 15-25 (4%); Lumineon Lv. 31 (1%) |
-| Old Rod | Any time | 10 | Skrelp Lv. 10 (40%); Mareanie Lv. 10 (30%); Horsea Lv. 10 (15%); Tentacool Lv. 10 (10%); Chewtle Lv. 10 (5%) |
-| Good Rod | Any time | 20 | Chinchou Lv. 20 (40%); Finneon Lv. 20 (30%); Ducklett Lv. 20 (15%); Wishiwashi Lv. 20 (10%); Tatsugiri Lv. 20 (5%) |
-| Super Rod | Any time | 40 | Basculin Lv. 40 (40%); Chinchou Lv. 40 (30%); Sealeo Lv. 40 (15%); Azumarill Lv. 40 (10%); Finneon Lv. 40 (5%) |
-| Grass swarm | Any time | — | Yanma (swarm) |
-| Surf swarm | Any time | — | Psyduck (swarm) |
-| Good Rod swarm | Any time | — | Poliwag (swarm) |
-| Super Rod swarm | Any time | — | Magikarp (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Buizel (radio replacement); Bidoof (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Whismur (radio replacement); Linoone (radio replacement) |
-| Grass | Day | 12.22 | Sentret Lv. 12 (20%); Rookidee Lv. 12 (20%); Shinx Lv. 12 (10%); Grimer Lv. 12 (10%); Spearow Lv. 14 (10%); Morpeko Lv. 14 (10%); Ferroseed Lv. 10 (5%); Doduo Lv. 10 (5%); Swablu Lv. 14 (4%); Swablu Lv. 10 (4%); Porygon Lv. 14 (1%); Lechonk Lv. 12 (1%) |
-| Grass | Night | 12.22 | Sentret Lv. 12 (20%); Rookidee Lv. 12 (20%); Shinx Lv. 12 (10%); Grimer Lv. 12 (10%); Spearow Lv. 14 (10%); Morpeko Lv. 14 (10%); Stunky Lv. 10 (5%); Zorua Lv. 10 (5%); Swablu Lv. 14 (4%); Swablu Lv. 10 (4%); Porygon Lv. 14 (1%); Rattata Alolan Lv. 12 (1%) |
-
-## National Park
+| Grass | Any | 25% | Deerling Lv. 20 (20%); Combee Lv. 20 (20%); Glameow Lv. 21 (10%); Buneary Lv. 21 (10%); Swadloon Lv. 21 (10%); Steenee Lv. 21 (10%); Flaaffy Lv. 21 (5%); Tinkatink Lv. 21 (5%); Munchlax Lv. 22 (4%); Delcatty Lv. 21 (4%); Tinkatuff Lv. 24 (2%) |
+## National Park (Bug Catching Contest) (table 24)
 
-Encounter ID 23; configured level range 10-14.
-
-| Method | Time | Average level | Pokémon and rate |
-| --- | --- | --- | --- |
-| Grass | Morning | 10.8 | Chingling Lv. 10 (20%); Pikipek Lv. 10 (20%); Helioptile Lv. 10 (10%); Shroomish Lv. 10 (10%); Pikipek Lv. 12 (10%); Emolga Lv. 12 (10%); Starly Lv. 12 (10%); Solosis Lv. 10 (4%); Solosis Lv. 14 (4%); Pawmi Lv. 10 (1%); Pawmi Lv. 14 (1%) |
-| Grass swarm | Any time | — | Caterpie (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Shinx (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Plusle (radio replacement); Minun (radio replacement) |
-| Grass | Day | 10.8 | Ledyba Lv. 10 (20%); Pikipek Lv. 10 (20%); Helioptile Lv. 10 (10%); Shroomish Lv. 10 (10%); Pikipek Lv. 12 (10%); Emolga Lv. 12 (10%); Starly Lv. 12 (10%); Solosis Lv. 10 (4%); Solosis Lv. 14 (4%); Pawmi Lv. 10 (1%); Pawmi Lv. 14 (1%) |
-| Grass | Night | 10.8 | Phantump Lv. 10 (20%); Poltchageist Lv. 10 (20%); Helioptile Lv. 10 (10%); Shroomish Lv. 10 (10%); Pikipek Lv. 12 (10%); Emolga Lv. 12 (10%); Starly Lv. 12 (10%); Solosis Lv. 10 (4%); Solosis Lv. 14 (4%); Pawmi Lv. 10 (1%); Grimer Alolan Lv. 14 (1%) |
+| Method | Time | Encounter rate | Pokémon and slot share |
+| --- | --- | --- | --- |
+| Grass | Any | 25% | Volbeat Lv. 22 (20%); Illumise Lv. 22 (20%); Charjabug Lv. 23 (10%); Mothim Lv. 23 (10%); Dwebble Lv. 23 (10%); Parasect Lv. 24 (10%); Scyther Lv. 20 (5%); Wormadam Lv. 23 (13%); Scizor Lv. 21 (2%) |
+## Route 36 (table 25)
 
-## National Park (Bug Catching Contest)
+| Method | Time | Encounter rate | Pokémon and slot share |
+| --- | --- | --- | --- |
+| Grass | Any | 25% | Wooloo Lv. 21 (20%); Gulpin Lv. 21 (20%); Mankey Lv. 22 (10%); Blitzle Lv. 22 (10%); Tadbulb Lv. 22 (10%); Stufful Lv. 21 (10%); Growlithe Lv. 24 (10%); Magby Lv. 23 (4%); Elekid Lv. 23 (4%); Bellibolt Lv. 23 (2%) |
+## Route 37 (table 26)
 
-Encounter ID 24; configured level range 10-14.
+| Method | Time | Encounter rate | Pokémon and slot share |
+| --- | --- | --- | --- |
+| Grass | Any | 25% | Fomantis Lv. 22 (20%); Helioptile Lv. 23 (20%); Voltorb Lv. 22 (20%); Vanillite Lv. 22 (10%); Morpeko Lv. 22 (10%); Oinkologne Female Lv. 23 (5%); Oinkologne Lv. 23 (5%); Pinsir Lv. 23 (4%); Heracross Lv. 23 (4%); Frigibax Lv. 23 (2%) |
+## Ecruteak City (table 27)
 
-| Method | Time | Average level | Pokémon and rate |
-| --- | --- | --- | --- |
-| Grass | Morning | 10.8 | Yanma Lv. 10 (20%); Combee Lv. 10 (20%); Grubbin Lv. 10 (10%); Pineco Lv. 10 (10%); Butterfree Lv. 12 (10%); Beautifly Lv. 12 (10%); Paras Lv. 12 (5%); Rellor Lv. 12 (5%); Spewpa Lv. 10 (4%); Butterfree Lv. 14 (4%); Snom Lv. 10 (1%); Snom Lv. 14 (1%) |
-| Grass swarm | Any time | — | Caterpie (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Caterpie (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Caterpie (radio replacement) |
-| Grass | Day | 10.8 | Yanma Lv. 10 (20%); Ledyba Lv. 10 (20%); Tarountula Lv. 10 (10%); Nymble Lv. 10 (10%); Beautifly Lv. 12 (10%); Kricketune Lv. 12 (10%); Metapod Lv. 12 (5%); Silcoon Lv. 12 (5%); Cascoon Lv. 10 (4%); Volbeat Lv. 14 (4%); Snom Lv. 10 (1%); Snom Lv. 14 (1%) |
-| Grass | Night | 10.8 | Dottler Lv. 10 (20%); Dwebble Lv. 10 (20%); Joltik Lv. 10 (10%); Caterpie Lv. 10 (10%); Silcoon Lv. 12 (10%); Kricketot Lv. 12 (10%); Grubbin Lv. 12 (5%); Blipbug Lv. 12 (5%); Pineco Lv. 10 (4%); Illumise Lv. 14 (4%); Snom Lv. 10 (1%); Snom Lv. 14 (1%) |
+| Method | Time | Encounter rate | Pokémon and slot share |
+| --- | --- | --- | --- |
+| Grass | Any | 10% | Swirlix Lv. 21 (20%); Spritzee Lv. 21 (20%); Klink Lv. 23 (10%); Pachirisu Lv. 23 (10%); Tranquill Lv. 21 (10%); Trumbeak Lv. 21 (10%); Teddiursa Lv. 21 (5%); Xatu Lv. 25 (5%); Riolu Lv. 24 (4%); Glimmet Lv. 23 (4%); Varoom Lv. 23 (2%) |
+| Surf | Any | 15% | Poliwhirl Lv. 25–35 (60%); Psyduck Lv. 22–32 (30%); Horsea Lv. 18–24 (10%) |
+| Old Rod | Any | 25% | Buizel Lv. 17–22 (40%); Tympole Lv. 17–22 (30%); Remoraid Lv. 17–22 (15%); Shellos East Sea Lv. 17–22 (15%) |
+| Good Rod | Any | 50% | Quagsire Lv. 30–35 (40%); Seadra Lv. 32–37 (30%); Sealeo Lv. 32–40 (25%); Basclegion Lv. 35–40 (5%) |
+| Super Rod | Any | 75% | Golduck Lv. 40–44 (40%); Carracosta Lv. 40–45 (30%); Whiscash Lv. 43–48 (20%); Kingler Lv. 42–47 (10%) |
+## Burned Tower 1F (table 28)
 
-## Route 36
+| Method | Time | Encounter rate | Pokémon and slot share |
+| --- | --- | --- | --- |
+| Grass | Any | 10% | Slugma Lv. 24 (20%); Pansear Lv. 24 (20%); Grimer Lv. 25 (20%); Flechinder Lv. 25 (10%); Numel Lv. 25 (10%); Torkoal Lv. 24 (5%); Darumaka Lv. 27 (5%); Charcadet Lv. 23 (4%); Larvesta Lv. 25 (4%); Deino Lv. 26 (2%) |
+| Rock Smash | Any | 80% | Growlithe Lv. 20–11 (90%); Arcanine Lv. 20–22 (10%) |
+## Burned Tower B1F (table 29)
 
-Encounter ID 25; configured level range 12-15.
+| Method | Time | Encounter rate | Pokémon and slot share |
+| --- | --- | --- | --- |
+| Grass | Any | 10% | Vulpix Lv. 27 (20%); Salandit Lv. 27 (20%); Nidorino Lv. 27 (10%); Nidorina Lv. 27 (10%); Ponyta Lv. 25 (10%); Litleo Lv. 27 (10%); Houndour Lv. 23 (5%); Axew Lv. 28 (5%); Charmeleon Lv. 25 (8%); Centskorch Lv. 28 (2%) |
+| Rock Smash | Any | 80% | Cranidos Lv. 20–22 (90%); Solrock Lv. 20–22 (10%) |
+## Bell Tower 2F (table 30)
 
-| Method | Time | Average level | Pokémon and rate |
+| Method | Time | Encounter rate | Pokémon and slot share |
 | --- | --- | --- | --- |
-| Grass | Morning | 12.5 | Patrat Lv. 12 (20%); Pidgey Lv. 12 (20%); Blitzle Lv. 12 (10%); Meditite Lv. 12 (10%); Nidoran♂ Lv. 13 (10%); Nidoran♀ Lv. 13 (10%); Hippopotas Lv. 13 (10%); Tynamo Lv. 13 (4%); Tynamo Lv. 15 (4%); Egg Lv. 13 (1%); Pincurchin Lv. 15 (1%) |
-| Grass swarm | Any time | — | Nidoran♂ (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Shinx (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Plusle (radio replacement); Minun (radio replacement) |
-| Grass | Day | 12.5 | Patrat Lv. 12 (20%); Pidgey Lv. 12 (20%); Blitzle Lv. 12 (10%); Meditite Lv. 12 (10%); Nidoran♂ Lv. 13 (10%); Nidoran♀ Lv. 13 (10%); Hippopotas Lv. 13 (10%); Tynamo Lv. 13 (4%); Tynamo Lv. 15 (4%); Bad Egg Lv. 13 (1%); Litleo Lv. 15 (1%) |
-| Grass | Night | 12.5 | Patrat Lv. 12 (20%); Pidgey Lv. 12 (20%); Blitzle Lv. 12 (10%); Meditite Lv. 12 (10%); Nidoran♂ Lv. 13 (10%); Nidoran♀ Lv. 13 (10%); Hippopotas Lv. 13 (5%); Rattata Alolan Lv. 13 (5%); Tynamo Lv. 13 (4%); Tynamo Lv. 15 (4%); Zigzagoon Galarian Lv. 13 (1%); Unown Lv. 15 (1%) |
+| Grass | Any | 5% | Rabsca Lv. 36 (20%); Leavanny Lv. 35 (20%); Oricorio Lv. 36 (10%); Oricorio Pau Lv. 36 (10%); Oricorio Sensu Lv. 36 (10%); Oricorio Pom Pom Lv. 36 (10%); Porygon-Z Lv. 40 (5%); Doublade Lv. 37 (5%); Ceruledge Lv. 36 (4%); Armarouge Lv. 37 (4%); Aegislash Lv. 38 (2%) |
+## Bell Tower 3F (table 31)
 
-## Route 37
+| Method | Time | Encounter rate | Pokémon and slot share |
+| --- | --- | --- | --- |
+| Grass | Any | 5% | Hypno Lv. 37 (20%); Galvantula Lv. 37 (20%); Comfey Lv. 37 (10%); Musharna Lv. 37 (10%); Espathra Lv. 37 (10%); Spiritomb Lv. 37 (10%); Meowstic Lv. 37 (5%); Meowstic Female Lv. 37 (5%); Annihilape Lv. 37 (4%); Mimikyu Lv. 37 (4%); Lucario Lv. 37 (2%) |
+## Bell Tower 4F (table 32)
 
-Encounter ID 26; configured level range 13-15.
+| Method | Time | Encounter rate | Pokémon and slot share |
+| --- | --- | --- | --- |
+| Grass | Any | 5% | Weezing Lv. 38 (40%); Bombirdier Lv. 38 (10%); Komala Lv. 38 (10%); Corviknite Lv. 38 (10%); Dodrio Lv. 38 (10%); Medicham Lv. 38 (5%); Clefable Lv. 38 (5%); Pidgeot Lv. 38 (4%); Staraptor Lv. 38 (4%); Eelektross Lv. 38 (2%) |
+## Bell Tower 5F (table 33)
 
-| Method | Time | Average level | Pokémon and rate |
+| Method | Time | Encounter rate | Pokémon and slot share |
 | --- | --- | --- | --- |
-| Grass | Morning | 14.3 | Bunnelby Lv. 13 (20%); Oricorio Lv. 15 (20%); Paras Lv. 13 (10%); Electrike Lv. 15 (10%); Wooloo Lv. 15 (10%); Tyrogue Lv. 15 (10%); Drifloon Lv. 14 (10%); Nidoran♂ Lv. 15 (4%); Nidoran♀ Lv. 15 (4%); Eevee Lv. 15 (2%) |
-| Grass swarm | Any time | — | Pidgey (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Shinx (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Plusle (radio replacement); Minun (radio replacement) |
-| Grass | Day | 14.3 | Bunnelby Lv. 13 (20%); Vivillon Lv. 15 (20%); Paras Lv. 13 (10%); Electrike Lv. 15 (10%); Wooloo Lv. 15 (10%); Tyrogue Lv. 15 (10%); Drifloon Lv. 14 (10%); Nidoran♂ Lv. 15 (4%); Nidoran♀ Lv. 15 (4%); Eevee Lv. 15 (2%) |
-| Grass | Night | 14.3 | Bunnelby Lv. 13 (20%); Litwick Lv. 15 (20%); Paras Lv. 13 (10%); Electrike Lv. 15 (10%); Wooloo Lv. 15 (10%); Tyrogue Lv. 15 (10%); Drifloon Lv. 14 (10%); Nidoran♂ Lv. 15 (4%); Nidoran♀ Lv. 15 (4%); Eevee Lv. 15 (2%) |
+| Grass | Any | 5% | Solrock Lv. 39 (20%); Lunatone Lv. 39 (20%); Miltank Lv. 38 (10%); Sigilyph Lv. 38 (10%); Escavalier Lv. 37 (10%); Accelgor Lv. 37 (10%); Obstagoon Lv. 40 (5%); Absol Lv. 38 (5%); Altaria Lv. 38 (4%); Kangaskhan Lv. 38 (4%); Sneasler Lv. 38 (2%) |
+## Bell Tower 6F (table 34)
 
-## Ecruteak City
+| Method | Time | Encounter rate | Pokémon and slot share |
+| --- | --- | --- | --- |
+| Grass | morning | 5% | Poltegeist Lv. 39 (20%); Sinistcha Lv. 39 (20%); Oranguru Lv. 39 (10%); Houndstone Lv. 39 (10%); Passimian Lv. 38 (10%); Crobat Lv. 38 (10%); Reuniclus Lv. 41 (5%); Gothitelle Lv. 41 (5%); Pawmot Lv. 41 (4%); Alakazam Lv. 40 (4%); Drakloak Lv. 41 (2%) |
+| Grass | day | 5% | Poltegeist Lv. 39 (20%); Sinistcha Lv. 39 (20%); Oranguru Lv. 39 (10%); Houndstone Lv. 39 (10%); Passimian Lv. 38 (10%); Bewear Lv. 38 (10%); Reuniclus Lv. 41 (5%); Gothitelle Lv. 41 (5%); Pawmot Lv. 41 (4%); Alakazam Lv. 40 (4%); Drakloak Lv. 41 (2%) |
+| Grass | night | 5% | Poltegeist Lv. 39 (20%); Sinistcha Lv. 39 (20%); Oranguru Lv. 39 (10%); Houndstone Lv. 39 (10%); Passimian Lv. 38 (10%); Bewear Lv. 38 (10%); Reuniclus Lv. 41 (5%); Gothitelle Lv. 41 (5%); Pawmot Lv. 41 (4%); Alakazam Lv. 40 (4%); Drakloak Lv. 41 (2%) |
+## Bell Tower 7F (table 35)
 
-Encounter ID 27; configured level range 14-40.
+| Method | Time | Encounter rate | Pokémon and slot share |
+| --- | --- | --- | --- |
+| Grass | Any | 5% | Hattrem Lv. 38 (20%); Vullaby Lv. 37 (20%); Probopass Lv. 38 (10%); Magnezone Lv. 38 (10%); Drifblim Lv. 38 (10%); Exploud Lv. 40 (10%); Gengar Lv. 42 (5%); Hatterene Lv. 42 (5%); Chandelure Lv. 38 (4%); Hawlucha Lv. 38 (4%); Mandibuzz Lv. 39 (2%) |
+## Bell Tower 8F (table 36)
 
-| Method | Time | Average level | Pokémon and rate |
+| Method | Time | Encounter rate | Pokémon and slot share |
 | --- | --- | --- | --- |
-| Grass | Morning | 14.6 | Hoothoot Lv. 14 (20%); Shuppet Lv. 14 (20%); Duskull Lv. 14 (10%); Phantump Lv. 15 (10%); Pumpkaboo Lv. 15 (10%); Greavard Lv. 15 (10%); Bramblin Lv. 15 (5%); Sinistea Lv. 15 (5%); Murkrow Lv. 16 (4%); Zorua Lv. 16 (4%); Rotom Lv. 16 (2%) |
-| Surf | Any time | 18.5 | Chewtle Lv. 15-25 (60%); Carvanha Lv. 10-20 (30%); Frillish Lv. 15-25 (5%); Surskit Lv. 15-25 (4%); Feebas Lv. 15-25 (1%) |
-| Old Rod | Any time | 10 | Chewtle Lv. 10 (40%); Finizen Lv. 10 (30%); Surskit Lv. 10 (15%); Carvanha Lv. 10 (10%); Frillish Lv. 10 (5%) |
-| Good Rod | Any time | 20 | Frillish Lv. 20 (40%); Carvanha Lv. 20 (30%); Qwilfish Lv. 20 (15%); Qwilfish Hisuian Lv. 20 (10%); Wailmer Lv. 20 (5%) |
-| Super Rod | Any time | 40 | Jellicent Lv. 40 (40%); Slowbro Lv. 40 (30%); Slowking Lv. 40 (15%); Luvdisc Lv. 40 (10%); Remoraid Lv. 40 (5%) |
-| Surf swarm | Any time | — | Poliwag (swarm) |
-| Good Rod swarm | Any time | — | Poliwag (swarm) |
-| Super Rod swarm | Any time | — | Magikarp (swarm) |
-| Grass | Day | 14.6 | Shuppet Lv. 14 (20%); Duskull Lv. 14 (20%); Phantump Lv. 14 (10%); Sinistea Lv. 15 (10%); Bramblin Lv. 15 (10%); Greavard Lv. 15 (10%); Pumpkaboo Lv. 15 (5%); Murkrow Lv. 15 (5%); Zorua Lv. 16 (4%); Mimikyu Lv. 16 (4%); Rotom Lv. 16 (2%) |
-| Grass | Night | 14.6 | Misdreavus Lv. 14 (20%); Gastly Lv. 14 (20%); Shuppet Lv. 14 (10%); Duskull Lv. 15 (10%); Litwick Lv. 15 (10%); Phantump Lv. 15 (10%); Greavard Lv. 15 (5%); Sinistea Lv. 15 (5%); Honedge Lv. 16 (4%); Zorua Lv. 16 (4%); Rotom Lv. 16 (2%) |
+| Grass | Any | 5% | Indeedee Female Lv. 40 (20%); Indeedee Lv. 40 (20%); Honchkrow Lv. 39 (10%); Mabosstiff Lv. 39 (10%); Maushold Lv. 39 (10%); Flamigo Lv. 39 (10%); Snorlax Lv. 39 (5%); Metang Lv. 39 (5%); Drapion Lv. 40 (4%); Tinkaton Lv. 39 (4%); Metagross Lv. 45 (2%) |
+## Bell Tower 9F (table 37)
 
-## Burned Tower 1F
+| Method | Time | Encounter rate | Pokémon and slot share |
+| --- | --- | --- | --- |
+| Grass | Any | 5% | Dudunspars Lv. 40 (20%); Farigiraf Lv. 40 (20%); Yanmega Lv. 40 (10%); Tsareena Lv. 40 (10%); Orbeetle Lv. 40 (10%); Cursola Lv. 40 (10%); ScreamTail Lv. 40 (5%); FluttrMane Lv. 40 (5%); Rapidash Lv. 40 (4%); Gholdengo Lv. 40 (4%); Iron Valor Lv. 40 (2%) |
+## Route 38 (table 38)
 
-Encounter ID 28; configured level range 13-16.
+| Method | Time | Encounter rate | Pokémon and slot share |
+| --- | --- | --- | --- |
+| Grass | Any | 25% | Spinda Lv. 26 (20%); Foongus Lv. 25 (20%); Nuzleaf Lv. 26 (10%); Gumshoos Lv. 25 (10%); Aipom Lv. 25 (10%); Lokix Lv. 24 (10%); Masquerain Lv. 25 (5%); Kecleon Lv. 25 (5%); Farfetch’d Lv. 26 (8%); Breloom Lv. 26 (2%) |
+## Route 39 (table 39)
 
-| Method | Time | Average level | Pokémon and rate |
+| Method | Time | Encounter rate | Pokémon and slot share |
 | --- | --- | --- | --- |
-| Grass | Morning | 14.05 | Honedge Lv. 13 (20%); Sinistea Lv. 14 (20%); Misdreavus Lv. 13 (10%); Gastly Lv. 14 (10%); Zorua Hisuian Lv. 15 (10%); Misdreavus Lv. 15 (10%); Gimmighoul Lv. 14 (5%); Zorua Hisuian Lv. 14 (5%); Misdreavus Lv. 16 (4%); Sableye Lv. 15 (4%); Dreepy Lv. 16 (1%); Dreepy Lv. 15 (1%) |
-| Grass swarm | Any time | — | Rattata (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Chatot (radio replacement); Meditite (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Zigzagoon (radio replacement); Spinda (radio replacement) |
-| Grass | Day | 14.05 | Honedge Lv. 13 (20%); Yamask Lv. 14 (20%); Gimmighoul Lv. 13 (10%); Gastly Lv. 14 (10%); Shuppet Lv. 15 (10%); Duskull Lv. 15 (10%); Greavard Lv. 14 (5%); Litwick Lv. 14 (5%); Misdreavus Lv. 16 (4%); Zorua Hisuian Lv. 15 (4%); Dreepy Lv. 16 (1%); Dreepy Lv. 15 (1%) |
-| Grass | Night | 14.05 | Sandygast Lv. 13 (20%); Sinistea Lv. 14 (20%); Misdreavus Lv. 13 (10%); Gastly Lv. 14 (10%); Misdreavus Lv. 15 (10%); Sableye Lv. 15 (10%); Gimmighoul Lv. 14 (10%); Misdreavus Lv. 16 (4%); Shuppet Lv. 15 (4%); Dreepy Lv. 16 (1%); Dreepy Lv. 15 (1%) |
+| Grass | Any | 25% | Raticate Lv. 26 (40%); Meowth Lv. 25 (25%); Gloom Lv. 25 (10%); Swablu Lv. 26 (10%); Pidgeotto Lv. 24 (5%); Vespiquen Lv. 24 (4%); Staravia Lv. 24 (4%); Bellossom Lv. 26 (1%); Vileplume Lv. 26 (1%) |
+## Olivine City (table 40)
 
-## Burned Tower B1F
+| Method | Time | Encounter rate | Pokémon and slot share |
+| --- | --- | --- | --- |
+| Grass | Any | 10% | Doduo Lv. 26 (20%); Roselia Lv. 26 (20%); Kirlia Lv. 25 (10%); Corvsquire Lv. 28 (10%); Mightyena Lv. 28 (10%); Yanma Lv. 26 (10%); Electrode Lv. 30 (10%); Kadabra Lv. 27 (4%); Eldegoss Lv. 28 (4%); Roserade Lv. 28 (2%) |
+| Surf | Any | 15% | Pelipper Lv. 25–35 (60%); Frillish Lv. 20–35 (30%); Eelektrik Lv. 29–36 (10%) |
+| Old Rod | Any | 25% | Tentacool Lv. 15–29 (40%); Panpour Lv. 10–35 (30%); Barboach Lv. 24–29 (15%); Palpitoad Lv. 25–30 (10%); Dreepy Lv. 10–29 (5%) |
+| Good Rod | Any | 50% | Gastrodon Lv. 30–35 (40%); Gorebyss Lv. 36 (30%); Tatsugiri Lv. 30–35 (15%); Gyarados Lv. 30–35 (10%); Lapras Lv. 30–35 (5%) |
+| Super Rod | Any | 75% | Barbaracle Lv. 43–48 (40%); Wugtrio Lv. 44–49 (30%); Malamar Lv. 45–50 (15%); Clawitzer Lv. 46–51 (10%); Quagsire Lv. 47–52 (5%) |
+Conditional: nightFish: Basculin
 
-Encounter ID 29; configured level range 14-16.
+## Route 40 (table 41)
 
-| Method | Time | Average level | Pokémon and rate |
+| Method | Time | Encounter rate | Pokémon and slot share |
 | --- | --- | --- | --- |
-| Grass | Morning | 14.65 | Honedge Lv. 14 (20%); Yamask Lv. 14 (20%); Growlithe Hisuian Lv. 14 (10%); Duskull Lv. 14 (11%); Greavard Lv. 16 (10%); Zorua Hisuian Lv. 16 (10%); Growlithe Hisuian Lv. 16 (5%); Litwick Lv. 16 (5%); Numel Lv. 15 (4%); Sableye Lv. 14 (4%); Shuppet Lv. 15 (1%) |
-| Grass swarm | Any time | — | Rattata (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Chatot (radio replacement); Meditite (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Zigzagoon (radio replacement); Spinda (radio replacement) |
-| Grass | Day | 14.65 | Honedge Lv. 14 (20%); Yamask Galarian Lv. 14 (20%); Greavard Lv. 14 (10%); Litwick Lv. 14 (10%); Zorua Hisuian Lv. 16 (10%); Sableye Lv. 16 (10%); Numel Lv. 16 (5%); Misdreavus Lv. 16 (5%); Gastly Lv. 15 (4%); Gimmighoul Lv. 14 (4%); Shuppet Lv. 15 (1%); Duskull Lv. 14 (1%) |
-| Grass | Night | 14.65 | Golett Lv. 14 (20%); Yamask Galarian Lv. 14 (20%); Greavard Lv. 14 (10%); Poltchageist Lv. 14 (10%); Zorua Hisuian Lv. 16 (10%); Litwick Lv. 16 (10%); Duskull Lv. 16 (5%); Greavard Lv. 16 (5%); Sableye Lv. 15 (4%); Gastly Lv. 14 (4%); Gimmighoul Lv. 15 (1%); Shuppet Lv. 14 (1%) |
+| Surf | Any | 10% | Ducklett Lv. 25–34 (60%); Pelipper Lv. 25–34 (30%); Cramorant Lv. 28–34 (5%); Finizen Lv. 25–37 (4%); Cramorant Lv. 32–38 (1%) |
+| Old Rod | Any | 25% | Seel Lv. 25–32 (40%); Finneon Lv. 25–30 (30%); Tentacool Lv. 21–29 (15%); Arrokuda Lv. 23–25 (10%); Clauncher Lv. 30–36 (5%) |
+| Good Rod | Any | 50% | Sharpedo Lv. 30–35 (40%); Crawdaunt Lv. 30–35 (30%); Omastar Lv. 40 (15%); Malamar Lv. 30–35 (10%); Dracovish Lv. 30–35 (5%) |
+| Super Rod | Any | 75% | Octillery Lv. 43–48 (40%); Lumineon Lv. 44–49 (30%); Wailord Lv. 45–50 (15%); Palafin Lv. 46–51 (10%); Jellicent Lv. 47–52 (5%) |
+Conditional: nightFish: Wiglett
+
+## Route 41 (table 42)
 
-## Bell Tower 2F
+| Method | Time | Encounter rate | Pokémon and slot share |
+| --- | --- | --- | --- |
+| Surf | Any | 10% | Alomomola Lv. 26–34 (60%); Dhelmise Lv. 25–35 (30%); Seaking Lv. 33–35 (6%); Lapras Lv. 28–34 (4%) |
+| Old Rod | Any | 25% | Shellder Lv. 24–34 (40%); Wishiwashi Lv. 21–26 (30%); Dondozo Lv. 21–26 (15%); Basculin White Striped Lv. 20–29 (10%); Arctovish Lv. 21–26 (5%) |
+| Good Rod | Any | 50% | Mantine Lv. 32–35 (40%); Alomomola Lv. 28–35 (30%); Kingler Lv. 28–35 (15%); Wugtrio Lv. 26–35 (10%); Ludicolo Lv. 30–34 (5%) |
+| Super Rod | Any | 75% | Lanturn Lv. 43–48 (40%); Golisopod Lv. 44–49 (30%); Starmie Lv. 45–50 (15%); Ludicolo Lv. 46–51 (10%); Dewgong Lv. 47–52 (5%) |
+Conditional: nightFish: Chewtle
 
-Encounter ID 30; configured level range 20-24.
+## Whirl Islands 1F (table 43)
 
-| Method | Time | Average level | Pokémon and rate |
+| Method | Time | Encounter rate | Pokémon and slot share |
 | --- | --- | --- | --- |
-| Grass | Morning | 21.25 | Diglett Lv. 20 (20%); Carkol Lv. 21 (20%); Koffing Lv. 20 (10%); Koffing Lv. 21 (10%); Phanpy Lv. 22 (10%); Trubbish Lv. 22 (10%); Clobbopus Lv. 22 (10%); Beedrill Lv. 23 (4%); Naclstack Lv. 24 (4%); Hitmontop Lv. 23 (1%); Hariyama Lv. 24 (1%) |
-| Grass swarm | Any time | — | Rattata (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Chatot (radio replacement); Meditite (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Zigzagoon (radio replacement); Spinda (radio replacement) |
-| Grass | Day | 21.25 | Diglett Lv. 20 (20%); Amaura Lv. 21 (20%); Koffing Lv. 20 (10%); Koffing Lv. 21 (10%); Phanpy Lv. 22 (10%); Trubbish Lv. 22 (10%); Clobbopus Lv. 22 (10%); Sandslash Lv. 23 (4%); Naclstack Lv. 24 (4%); Klefki Lv. 23 (1%); Nidoking Lv. 24 (1%) |
-| Grass | Night | 21.25 | Diglett Lv. 20 (20%); Pawniard Lv. 21 (20%); Koffing Lv. 20 (10%); Koffing Lv. 21 (10%); Phanpy Lv. 22 (10%); Trubbish Lv. 22 (10%); Clobbopus Lv. 22 (10%); Dustox Lv. 23 (4%); Naclstack Lv. 24 (4%); Falinks Lv. 23 (1%); Shuckle Lv. 24 (1%) |
+| Grass | Any | 5% | Gurdurr Lv. 35 (20%); Machoke Lv. 35 (20%); Copperajah Lv. 37 (10%); Toxicroak Lv. 37 (10%); Salazzle Lv. 38 (10%); Klawf Lv. 38 (10%); Pangoro Lv. 38 (5%); Scolipede Lv. 37 (5%); Scrafty Lv. 39 (4%); Crabomnabl Lv. 38 (4%); Conkeldurr Lv. 40 (1%); Machamp Lv. 40 (1%) |
+| Surf | Any | 10% | Clawitzer Lv. 37–38 (60%); Carracosta Lv. 37–38 (30%); Slowbro Lv. 37–38 (10%) |
+| Old Rod | Any | 25% | Basculin Lv. 32–37 (40%); Skrelp Lv. 32–37 (30%); Golisopod Lv. 32–37 (20%); Dondozo Lv. 32–37 (10%) |
+| Good Rod | Any | 50% | Lanturn Lv. 32–37 (40%); Whiscash Lv. 32–37 (30%); Dragalge Lv. 38–39 (15%); Wailord Lv. 40 (10%); Carracosta Lv. 37–38 (5%) |
+| Super Rod | Any | 75% | Milotic Lv. 51–56 (40%); Baraskewda Lv. 52–57 (30%); Mantine Lv. 53–58 (15%); Cloyster Lv. 54–59 (10%); Grapploct Lv. 55–60 (5%) |
+Conditional: nightFish: Poliwhirl
+
+## Whirl Islands B1F (table 44)
 
-## Bell Tower 3F
+| Method | Time | Encounter rate | Pokémon and slot share |
+| --- | --- | --- | --- |
+| Grass | Any | 5% | Sawk Lv. 40 (20%); Throh Lv. 40 (20%); Primeape Lv. 38 (10%); Forretress Lv. 38 (10%); Stunfisk Lv. 39 (20%); Nidoqueen Lv. 38 (5%); Nidoking Lv. 38 (5%); Glalie Lv. 42 (4%); Froslass Lv. 42 (4%); Krookodile Lv. 40 (2%) |
+## ??? (table 45)
 
-Encounter ID 31; configured level range 20-24.
+| Method | Time | Encounter rate | Pokémon and slot share |
+| --- | --- | --- | --- |
+## Whirl Islands B2F (table 46)
 
-| Method | Time | Average level | Pokémon and rate |
+| Method | Time | Encounter rate | Pokémon and slot share |
 | --- | --- | --- | --- |
-| Grass | Morning | 21.25 | Numel Lv. 20 (20%); Vanillite Lv. 21 (20%); Machop Lv. 20 (10%); Timburr Lv. 21 (10%); Silicobra Lv. 22 (10%); Trubbish Lv. 22 (10%); Drowzee Lv. 22 (10%); Elgyem Lv. 23 (4%); Elgyem Lv. 24 (4%); Litten Lv. 23 (1%); Litten Lv. 24 (1%) |
-| Grass swarm | Any time | — | Rattata (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Chatot (radio replacement); Meditite (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Zigzagoon (radio replacement); Spinda (radio replacement) |
-| Grass | Day | 21.25 | Bergmite Lv. 20 (20%); Baltoy Lv. 21 (20%); Machop Lv. 20 (10%); Timburr Lv. 21 (10%); Silicobra Lv. 22 (10%); Trubbish Lv. 22 (10%); Drowzee Lv. 22 (10%); Elgyem Lv. 23 (4%); Elgyem Lv. 24 (4%); Litten Lv. 23 (1%); Litten Lv. 24 (1%) |
-| Grass | Night | 21.25 | Honedge Lv. 20 (20%); Sandygast Lv. 21 (20%); Machop Lv. 20 (10%); Timburr Lv. 21 (10%); Silicobra Lv. 22 (10%); Sableye Lv. 22 (10%); Drowzee Lv. 22 (10%); Elgyem Lv. 23 (4%); Elgyem Lv. 24 (4%); Litten Lv. 23 (1%); Litten Lv. 24 (1%) |
+| Grass | Any | 5% | Durant Lv. 38 (20%); Crustle Lv. 38 (20%); Mudsdale Lv. 38 (10%); Garganacl Lv. 38 (10%); Lycanroc Midnight Lv. 37 (10%); Lycanroc Lv. 37 (10%); Darmanitan Lv. 37 (10%); Mienshao Lv. 38 (4%); Lycanroc Dusk Lv. 38 (4%); Cetitan Lv. 38 (2%) |
+| Surf | Any | 10% | Huntail Lv. 36–38 (60%); Kabutops Lv. 40–41 (30%); Bruxish Lv. 36–38 (6%); Starmie Lv. 36–40 (4%) |
+| Old Rod | Any | 25% | Kabuto Lv. 33–38 (40%); Milotic Lv. 34–38 (30%); Tentacruel Lv. 33–38 (15%); Slowbro Lv. 37–38 (10%); Seaking Lv. 33–38 (5%) |
+| Good Rod | Any | 50% | Lumineon Lv. 33–38 (40%); Araquanid Lv. 33–38 (30%); Baraskewda Lv. 33–38 (15%); Dragalge Lv. 48 (10%); Jellicent Lv. 40 (5%) |
+| Super Rod | Any | 75% | Overqwil Lv. 51–56 (40%); Jellicent Female Lv. 52–57 (30%); Walrein Lv. 53–58 (15%); Gastrodon Lv. 54–59 (10%); Poliwrath Lv. 55–60 (5%) |
+Conditional: nightFish: Wiglett
 
-## Bell Tower 4F
+## ??? (table 47)
 
-Encounter ID 32; configured level range 20-24.
+| Method | Time | Encounter rate | Pokémon and slot share |
+| --- | --- | --- | --- |
+## Whirl Islands B3F (table 48)
 
-| Method | Time | Average level | Pokémon and rate |
+| Method | Time | Encounter rate | Pokémon and slot share |
 | --- | --- | --- | --- |
-| Grass | Morning | 21.25 | Diglett Lv. 20 (20%); Snorunt Lv. 21 (20%); Machop Lv. 20 (10%); Timburr Lv. 21 (10%); Cubone Lv. 22 (10%); Spinarak Lv. 22 (10%); Stunfisk Lv. 22 (5%); Beedrill Lv. 22 (5%); Sandslash Lv. 23 (4%); Wobbuffet Lv. 24 (4%); Solrock Lv. 23 (1%); Kleavor Lv. 24 (1%) |
-| Grass swarm | Any time | — | Rattata (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Chatot (radio replacement); Meditite (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Zigzagoon (radio replacement); Spinda (radio replacement) |
-| Grass | Day | 21.25 | Diglett Lv. 20 (20%); Bronzor Lv. 21 (20%); Machop Lv. 20 (10%); Timburr Lv. 21 (10%); Cubone Lv. 22 (10%); Spinarak Lv. 22 (10%); Shedinja Lv. 22 (5%); Tyrunt Lv. 22 (5%); Dustox Lv. 23 (4%); Togedemaru Lv. 24 (4%); Druddigon Lv. 23 (1%); Golbat Lv. 24 (1%) |
-| Grass | Night | 21.25 | Diglett Lv. 20 (20%); Sinistea Lv. 21 (20%); Machop Lv. 20 (10%); Timburr Lv. 21 (10%); Cubone Lv. 22 (10%); Spinarak Lv. 22 (10%); Meowth Galarian Lv. 22 (10%); Roggenrola Lv. 23 (4%); Rockruff Lv. 24 (4%); Spiritomb Lv. 23 (1%); Mismagius Lv. 24 (1%) |
+| Grass | Any | 5% | Golem Lv. 42 (40%); Muk Lv. 41 (20%); Turtonator Lv. 40 (10%); Heatmor Lv. 40 (10%); Palossand Lv. 42 (6%); Rhydon Lv. 39 (6%); Klinklang Lv. 40 (4%); Dragalge Lv. 40 (4%) |
+## ??? (table 49)
 
-## Bell Tower 5F
+| Method | Time | Encounter rate | Pokémon and slot share |
+| --- | --- | --- | --- |
+## ??? (table 50)
 
-Encounter ID 33; configured level range 20-24.
+| Method | Time | Encounter rate | Pokémon and slot share |
+| --- | --- | --- | --- |
+## Cianwood City (table 51)
 
-| Method | Time | Average level | Pokémon and rate |
+| Method | Time | Encounter rate | Pokémon and slot share |
 | --- | --- | --- | --- |
-| Grass | Morning | 21.25 | Roggenrola Lv. 20 (20%); Geodude Lv. 21 (20%); Rolycoly Lv. 20 (10%); Rolycoly Lv. 21 (10%); Onix Lv. 22 (10%); Dwebble Lv. 22 (10%); Nosepass Lv. 22 (10%); Rockruff Lv. 23 (4%); Rockruff Lv. 24 (4%); Orthworm Lv. 23 (1%); Cufant Lv. 24 (1%) |
-| Grass swarm | Any time | — | Rattata (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Chatot (radio replacement); Meditite (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Zigzagoon (radio replacement); Spinda (radio replacement) |
-| Grass | Day | 21.25 | Roggenrola Lv. 20 (20%); Geodude Lv. 21 (20%); Rolycoly Lv. 20 (10%); Rolycoly Lv. 21 (10%); Onix Lv. 22 (10%); Dwebble Lv. 22 (10%); Nosepass Lv. 22 (10%); Sandshrew Alolan Lv. 23 (4%); Fidough Lv. 24 (4%); Skarmory Lv. 23 (1%); Klink Lv. 24 (1%) |
-| Grass | Night | 21.25 | Roggenrola Lv. 20 (20%); Geodude Lv. 21 (20%); Cufant Lv. 20 (10%); Sandshrew Alolan Lv. 21 (10%); Onix Lv. 22 (10%); Fidough Lv. 22 (10%); Nosepass Lv. 22 (5%); Minior Lv. 22 (5%); Klink Lv. 23 (4%); Mr. Mime Galarian Lv. 24 (4%); Brambleghast Lv. 23 (1%); Meowth Galarian Lv. 24 (1%) |
+| Grass | Any | 10% | Squawkbily Lv. 25 (20%); Dolliv Lv. 26 (20%); Luxio Lv. 26 (10%); Weepinbell Lv. 26 (10%); Vigoroth Lv. 25 (10%); Murkrow Lv. 26 (10%); Dubwool Lv. 26 (5%); Kilowatrel Lv. 26 (5%); Bouffalant Lv. 25 (4%); Eevee Lv. 25 (4%); Bagon Lv. 25 (2%) |
+| Surf | Any | 15% | Cramorant Lv. 30–35 (60%); Seaking Lv. 33–35 (30%); Eelektrik Lv. 29–33 (6%); Eelektross Lv. 33–36 (4%) |
+| Rock Smash | Any | 80% | Rockruff Lv. 20–24 (90%); Lycanroc Dusk Lv. 25–28 (10%) |
+| Old Rod | Any | 25% | Seel Lv. 21–33 (40%); Kingler Lv. 28–33 (30%); Chinchou Lv. 21–26 (15%); Eelektrik Lv. 29–34 (10%); Golisopod Lv. 30–32 (5%) |
+| Good Rod | Any | 50% | Golduck Lv. 33–35 (40%); Toxapex Lv. 38–40 (30%); Carracosta Lv. 37–38 (15%); Barbaracle Lv. 39 (10%); Basclegion Lv. 30–35 (5%) |
+| Super Rod | Any | 75% | Azumarill Lv. 40–56 (40%); Crawdaunt Lv. 40–55 (30%); Jellicent Female Lv. 40–50 (15%); Seismitoad Lv. 40–55 (10%); Dragalge Lv. 40–55 (5%) |
+Conditional: nightFish: Drednaw
 
-## Bell Tower 6F
+## Route 42 (table 52)
 
-Encounter ID 34; configured level range 20-24.
+| Method | Time | Encounter rate | Pokémon and slot share |
+| --- | --- | --- | --- |
+| Grass | Any | 25% | Venomoth Lv. 32 (20%); Carnivine Lv. 32 (20%); Swellow Lv. 31 (10%); Watchog Lv. 31 (10%); Cherrim Lv. 30 (10%); Fearow Lv. 30 (10%); Unfezant Female Lv. 32 (5%); Unfezant Lv. 32 (5%); Slowking Lv. 30 (4%); Slowbro Lv. 30 (4%); Victreebel Lv. 34 (2%) |
+| Surf | Any | 10% | Horsea Lv. 20–24 (60%); Psyduck Lv. 20–32 (30%); Lanturn Lv. 27–32 (6%); Eelektrik Lv. 29–31 (4%) |
+| Old Rod | Any | 25% | Finneon Lv. 25–30 (40%); Frillish Lv. 25–35 (30%); Frillish Female Lv. 25–35 (15%); Palpitoad Lv. 25–35 (10%); Tatsugiri Lv. 26–31 (5%) |
+| Good Rod | Any | 50% | Octillery Lv. 30–38 (40%); Floatzel Lv. 30–38 (30%); Sharpedo Lv. 30–38 (15%); Clawitzer Lv. 37–40 (10%); Walrein Lv. 44–45 (5%) |
+| Super Rod | Any | 75% | Ludicolo Lv. 43–48 (40%); Toxapex Lv. 44–49 (30%); Wugtrio Lv. 45–50 (15%); Whiscash Lv. 46–51 (10%); Carracosta Lv. 47–52 (5%) |
+Conditional: nightFish: Wiglett
+
+## Mt. Mortar (Waterfall room) (table 53)
 
-| Method | Time | Average level | Pokémon and rate |
+| Method | Time | Encounter rate | Pokémon and slot share |
 | --- | --- | --- | --- |
-| Grass | Morning | 21.25 | Carkol Lv. 20 (20%); Vanillite Lv. 21 (20%); Snorunt Lv. 20 (10%); Cranidos Lv. 21 (10%); Bergmite Lv. 22 (10%); Minior Lv. 22 (10%); Sandshrew Alolan Lv. 22 (10%); Glimmet Lv. 23 (4%); Naclstack Lv. 24 (4%); Fennekin Lv. 23 (1%); Fennekin Lv. 24 (1%) |
-| Grass swarm | Any time | — | Rattata (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Chatot (radio replacement); Meditite (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Zigzagoon (radio replacement); Spinda (radio replacement) |
-| Grass | Day | 21.25 | Stunfisk Lv. 20 (20%); Vanillite Lv. 21 (20%); Snorunt Lv. 20 (10%); Voltorb Lv. 21 (10%); Bergmite Lv. 22 (10%); Stunfisk Lv. 22 (10%); Sandshrew Alolan Lv. 22 (10%); Cufant Lv. 23 (4%); Magnemite Lv. 24 (4%); Fennekin Lv. 23 (1%); Fennekin Lv. 24 (1%) |
-| Grass | Night | 21.25 | Yamask Lv. 20 (20%); Vanillite Lv. 21 (20%); Togedemaru Lv. 20 (10%); Misdreavus Lv. 21 (10%); Bergmite Lv. 22 (10%); Gastly Lv. 22 (10%); Sandshrew Alolan Lv. 22 (10%); Duskull Lv. 23 (4%); Greavard Lv. 24 (4%); Fennekin Lv. 23 (1%); Fennekin Lv. 24 (1%) |
+| Grass | morning | 10% | Mienfoo Lv. 29 (20%); Slurpuff Lv. 30 (20%); Donphan Lv. 30 (10%); Loudred Lv. 30 (10%); Sirfetch’d Lv. 30 (10%); Druddigon Lv. 30 (10%); Bewear Lv. 30 (6%); Honedge Lv. 29 (6%); IronTreads Lv. 30 (4%); Great Tusk Lv. 30 (4%) |
+| Grass | day | 10% | Mienfoo Lv. 29 (20%); Slurpuff Lv. 30 (20%); Donphan Lv. 30 (10%); Loudred Lv. 30 (10%); Sirfetch’d Lv. 30 (10%); Druddigon Lv. 30 (10%); Bewear Lv. 30 (6%); Honedge Lv. 29 (6%); IronTreads Lv. 30 (4%); Great Tusk Lv. 30 (4%) |
+| Grass | night | 10% | Mienfoo Lv. 29 (20%); Slurpuff Lv. 30 (20%); Donphan Lv. 30 (10%); Loudred Lv. 30 (10%); Sirfetch’d Lv. 30 (10%); Druddigon Lv. 30 (10%); Crobat Lv. 30 (6%); Honedge Lv. 29 (6%); IronTreads Lv. 30 (4%); Great Tusk Lv. 30 (4%) |
+| Surf | Any | 10% | Lanturn Lv. 27–30 (60%); Starmie Lv. 25–30 (30%); Bruxish Lv. 25–30 (6%); Tatsugiri Lv. 25–30 (4%) |
+| Old Rod | Any | 25% | Clauncher Lv. 25–30 (40%); Dracovish Lv. 25–30 (30%); Eelektrik Lv. 29–30 (15%); Dreepy Lv. 25–29 (10%); Dratini Lv. 25–29 (5%) |
+| Good Rod | Any | 50% | Grapploct Lv. 30–35 (40%); Cloyster Lv. 30–35 (30%); Mareanie Lv. 30–35 (15%); Overqwil Lv. 30–35 (10%); Floatzel Lv. 30–35 (5%) |
+| Super Rod | Any | 75% | Tentacruel Lv. 43–48 (40%); Omastar Lv. 44–49 (30%); Walrein Lv. 45–50 (15%); Basculin Lv. 46–51 (10%); Sharpedo Lv. 47–52 (5%) |
+Conditional: nightFish: Luvdisc
 
-## Bell Tower 7F
+## Mt. Mortar (Central room) (table 54)
 
-Encounter ID 35; configured level range 20-24.
+| Method | Time | Encounter rate | Pokémon and slot share |
+| --- | --- | --- | --- |
+| Grass | Any | 10% | Dugtrio Lv. 28 (40%); Hariyama Lv. 29 (10%); Herdier Lv. 27 (10%); Carkol Lv. 27 (10%); Dachsbun Lv. 29 (10%); Swoobat Lv. 28 (5%); Ferroseed Lv. 29 (5%); Krokorok Lv. 29 (4%); Crabrawler Lv. 29 (4%); Houndoom Lv. 29 (2%) |
+## Mt. Mortar (Room above waterfall) (table 55)
 
-| Method | Time | Average level | Pokémon and rate |
+| Method | Time | Encounter rate | Pokémon and slot share |
 | --- | --- | --- | --- |
-| Grass | Morning | 21.25 | Bronzor Lv. 20 (20%); Aron Lv. 21 (20%); Slowpoke Galarian Lv. 20 (10%); Klink Lv. 21 (10%); Magnemite Lv. 22 (10%); Cufant Lv. 22 (10%); Fidough Lv. 22 (5%); Dustox Lv. 22 (5%); Varoom Lv. 23 (4%); Varoom Lv. 24 (4%); Throh Lv. 23 (1%); Togedemaru Lv. 24 (1%) |
-| Grass swarm | Any time | — | Rattata (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Chatot (radio replacement); Meditite (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Zigzagoon (radio replacement); Spinda (radio replacement) |
-| Grass | Day | 21.25 | Bronzor Lv. 20 (20%); Aron Lv. 21 (20%); Sandshrew Lv. 20 (10%); Klink Lv. 21 (10%); Magnemite Lv. 22 (10%); Cufant Lv. 22 (10%); Whirlipede Lv. 22 (5%); Golbat Lv. 22 (5%); Varoom Lv. 23 (4%); Varoom Lv. 24 (4%); Sawk Lv. 23 (1%); Meowth Galarian Lv. 24 (1%) |
-| Grass | Night | 21.25 | Bronzor Lv. 20 (20%); Aron Lv. 21 (20%); Litwick Lv. 20 (10%); Klink Lv. 21 (10%); Magnemite Lv. 22 (10%); Cufant Lv. 22 (10%); Roggenrola Lv. 22 (5%); Shedinja Lv. 22 (5%); Varoom Lv. 23 (4%); Nacli Lv. 24 (4%); Porygon Lv. 23 (1%); Aegislash Lv. 24 (1%) |
+| Grass | Any | 10% | Bastiodon Lv. 42 (20%); Rampardos Lv. 42 (20%); Toxtricity Lv. 41 (10%); Toxtricity Low Key Lv. 41 (10%); Cradily Lv. 41 (10%); Armaldo Lv. 41 (10%); Tyrantrum Lv. 41 (5%); Aerodactyl Lv. 42 (5%); Excadrill Lv. 43 (4%); Steelix Lv. 43 (4%); Golisopod Lv. 44 (2%) |
+| Surf | Any | 10% | Kabutops Lv. 40–42 (60%); Dracovish Lv. 38–40 (30%); Walrein Lv. 44–45 (6%); Eelektross Lv. 38–40 (4%) |
+| Old Rod | Any | 25% | Carracosta Lv. 37–40 (40%); Eelektross Lv. 38–40 (30%); Dondozo Lv. 38–40 (15%); Golisopod Lv. 38–40 (10%); Walrein Lv. 44–45 (5%) |
+| Good Rod | Any | 50% | Omastar Lv. 40–42 (40%); Drednaw Lv. 37–42 (30%); Jellicent Female Lv. 40–42 (15%); Dragalge Lv. 48 (10%); Dragonair Lv. 37–42 (5%) |
+| Super Rod | Any | 75% | Kingler Lv. 51–56 (40%); Golduck Lv. 52–57 (30%); Gorebyss Lv. 55–60 (15%); Lumineon Lv. 54–59 (10%); Kingdra Lv. 53–58 (5%) |
+Conditional: nightFish: Ludicolo
+
+## Mt. Mortar B1F (table 56)
 
-## Bell Tower 8F
+| Method | Time | Encounter rate | Pokémon and slot share |
+| --- | --- | --- | --- |
+| Grass | Any | 10% | Swalot Lv. 34 (20%); Sandslash Lv. 35 (20%); Lileep Lv. 34 (10%); Minior Lv. 34 (10%); Marowak Lv. 34 (12%); Magneton Lv. 33 (10%); Morgrem Lv. 34 (5%); Golett Lv. 34 (5%); Coalossal Lv. 35 (4%); SandyShock Lv. 35 (4%) |
+| Surf | Any | 10% | Basculin Blue Striped Lv. 20–37 (60%); Arctovish Lv. 26–35 (30%); Tatsugiri Lv. 25–35 (6%); Dondozo Lv. 20–35 (4%) |
+| Old Rod | Any | 25% | Golduck Lv. 33–34 (40%); Binacle Lv. 29–34 (30%); Octillery Lv. 25–34 (15%); Gyarados Lv. 20–34 (10%); Seadra Lv. 32–35 (5%) |
+| Good Rod | Any | 50% | Dewgong Lv. 34–35 (40%); Ludicolo Lv. 30–35 (30%); Tentacruel Lv. 30–37 (15%); Milotic Lv. 34–35 (10%); Kabutops Lv. 40–41 (5%) |
+| Super Rod | Any | 75% | Seaking Lv. 43–48 (40%); Wailord Lv. 44–49 (30%); Clawitzer Lv. 45–50 (15%); Floatzel Lv. 46–51 (10%); Walrein Lv. 47–52 (5%) |
+Conditional: nightFish: Slowpoke
 
-Encounter ID 36; configured level range 20-24.
+## Route 43 (table 57)
 
-| Method | Time | Average level | Pokémon and rate |
+| Method | Time | Encounter rate | Pokémon and slot share |
 | --- | --- | --- | --- |
-| Grass | Morning | 21.25 | Carkol Lv. 20 (20%); Cranidos Lv. 21 (20%); Stunfisk Lv. 20 (10%); Shieldon Lv. 21 (10%); Fidough Lv. 22 (10%); Kakuna Lv. 22 (10%); Mudbray Lv. 22 (5%); Abra Lv. 22 (5%); Tyrunt Lv. 23 (4%); Naclstack Lv. 24 (4%); Chimecho Lv. 23 (1%); Geodude Alolan Lv. 24 (1%) |
-| Grass swarm | Any time | — | Rattata (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Chatot (radio replacement); Meditite (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Zigzagoon (radio replacement); Spinda (radio replacement) |
-| Grass | Day | 21.25 | Rhyhorn Lv. 20 (20%); Togedemaru Lv. 21 (20%); Voltorb Lv. 20 (10%); Mr. Mime Galarian Lv. 21 (10%); Sandslash Lv. 22 (10%); Cranidos Lv. 22 (10%); Gothita Lv. 22 (5%); Glimmet Lv. 22 (5%); Sandshrew Lv. 23 (4%); Meowth Galarian Lv. 24 (4%); Bonsly Lv. 23 (1%); Rhyhorn Lv. 24 (1%) |
-| Grass | Night | 21.25 | Yamask Lv. 20 (20%); Golett Lv. 21 (20%); Grimer Alolan Lv. 20 (10%); Wobbuffet Lv. 21 (10%); Kadabra Lv. 22 (10%); Grimer Alolan Lv. 22 (10%); Shedinja Lv. 22 (5%); Aron Lv. 22 (5%); Kadabra Lv. 23 (4%); Gimmighoul Lv. 24 (4%); Beedrill Lv. 23 (1%); Smoochum Lv. 24 (1%) |
+| Grass | Any | 20% | Floette Lv. 33 (20%); Sawsbuck Lv. 34 (20%); Ponyta Lv. 33 (10%); Ribombee Lv. 33 (10%); Tropius Lv. 33 (10%); Jumpluff Lv. 33 (10%); Boltund Lv. 33 (5%); Gogoat Lv. 33 (5%); Whimsicott Lv. 33 (4%); Scovillain Lv. 33 (4%); Florges Lv. 34 (2%) |
+| Surf | Any | 10% | Basculin Lv. 30–35 (60%); Pelipper Lv. 30–35 (30%); Luvdisc Lv. 25–44 (6%); Bruxish Lv. 30–35 (4%) |
+| Old Rod | Any | 25% | Mantyke Lv. 28–31 (40%); Wailmer Lv. 28–33 (30%); Whiscash Lv. 30–35 (15%); Floatzel Lv. 26–36 (10%); Starmie Lv. 30–34 (5%) |
+| Good Rod | Any | 50% | Lumineon Lv. 31–35 (40%); Toxapex Lv. 38–39 (30%); Overqwil Lv. 31–35 (15%); Dracovish Lv. 30–35 (10%); Eelektross Lv. 30–35 (5%) |
+| Super Rod | Any | 75% | Araquanid Lv. 43–48 (40%); Barbaracle Lv. 44–49 (30%); Octillery Lv. 45–50 (15%); Gyarados Lv. 46–51 (10%); Kabutops Lv. 47–52 (5%) |
+Conditional: nightFish: Spheal
 
-## Bell Tower 9F
+## Lake of Rage (table 58)
 
-Encounter ID 37; configured level range 20-24.
+| Method | Time | Encounter rate | Pokémon and slot share |
+| --- | --- | --- | --- |
+| Grass | Any | 10% | Zangoose Lv. 34 (20%); Seviper Lv. 33 (20%); Cacturne Lv. 33 (10%); Chatot Lv. 34 (10%); Persian Lv. 33 (10%); Persian Lv. 34 (10%); Zebstrika Lv. 33 (5%); Gothorita Lv. 34 (5%); Toedscruel Lv. 34 (4%); Manectric Lv. 34 (4%); Ampharos Lv. 34 (2%) |
+| Surf | Any | 10% | Gyarados Lv. 30–32 (60%); Gyarados Lv. 32–34 (30%); Gyarados Lv. 34–36 (5%); Gyarados Lv. 36–38 (4%); Walrein Lv. 44 (1%) |
+| Old Rod | Any | 25% | Basclegion Lv. 30–32 (40%); Basculegion Female Lv. 30–32 (30%); Basculegion Female Lv. 32–35 (15%); Basclegion Lv. 32–38 (10%); Basculegion Female Lv. 35–38 (5%) |
+| Good Rod | Any | 50% | Kingler Lv. 30–35 (40%); Shellder Lv. 30–40 (30%); Frillish Lv. 30–35 (15%); Palafin Lv. 38 (10%); Seismitoad Lv. 36 (5%) |
+| Super Rod | Any | 75% | Gyarados Lv. 50–70 (40%); Basculin Blue Striped Lv. 43–48 (30%); Vaporeon Lv. 44–49 (15%); Kingdra Lv. 46–51 (10%); Walrein Lv. 47–52 (5%) |
+## Route 44 (table 59)
 
-| Method | Time | Average level | Pokémon and rate |
+| Method | Time | Encounter rate | Pokémon and slot share |
 | --- | --- | --- | --- |
-| Grass | Morning | 21.25 | Amaura Lv. 20 (20%); Baltoy Lv. 21 (20%); Carkol Lv. 20 (10%); Wooper Paldean Lv. 21 (10%); Meowth Galarian Lv. 22 (10%); Nidorina Lv. 22 (10%); Carkol Lv. 22 (5%); Nacli Lv. 22 (5%); Smoochum Lv. 23 (4%); Cranidos Lv. 24 (4%); Togedemaru Lv. 23 (1%); Fidough Lv. 24 (1%) |
-| Grass swarm | Any time | — | Rattata (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Chatot (radio replacement); Meditite (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Zigzagoon (radio replacement); Spinda (radio replacement) |
-| Grass | Day | 21.25 | Stunfisk Lv. 20 (20%); Snorunt Lv. 21 (20%); Mudbray Lv. 20 (10%); Slowpoke Galarian Lv. 21 (10%); Dustox Lv. 22 (10%); Togedemaru Lv. 22 (10%); Whirlipede Lv. 22 (5%); Tyrunt Lv. 22 (5%); Glimmet Lv. 23 (4%); Rhyhorn Lv. 24 (4%); Geodude Lv. 23 (1%); Trapinch Lv. 24 (1%) |
-| Grass | Night | 21.25 | Pawniard Lv. 20 (20%); Sandile Lv. 21 (20%); Porygon Lv. 20 (10%); Shuppet Lv. 21 (10%); Diglett Alolan Lv. 22 (10%); Geodude Alolan Lv. 22 (10%); Mr. Mime Galarian Lv. 22 (5%); Voltorb Lv. 22 (5%); Aron Lv. 23 (4%); Naclstack Lv. 24 (4%); Drilbur Lv. 23 (1%); Hatenna Lv. 24 (1%) |
+| Grass | Any | 25% | Delibird Lv. 37 (20%); Sawsbuck Winter Lv. 34 (20%); Lopunny Lv. 34 (10%); Cinccino Lv. 34 (10%); Ambipom Lv. 34 (10%); Stoutland Lv. 37 (10%); Lampent Lv. 35 (5%); Klang Lv. 35 (5%); Zoroark Lv. 34 (4%); Zoroark Lv. 35 (4%); Lampent Lv. 36 (1%); Klang Lv. 36 (1%) |
+| Surf | Any | 10% | Slowking Lv. 30–35 (60%); Lapras Lv. 30–35 (30%); Arctovish Lv. 30–35 (6%); Cloyster Lv. 30–35 (4%) |
+| Old Rod | Any | 25% | Tirtouga Lv. 30–35 (40%); Clamperl Lv. 30–35 (30%); Dewgong Lv. 34–35 (15%); Spheal Lv. 28–31 (10%); Sealeo Lv. 32–37 (5%) |
+| Good Rod | Any | 50% | Quagsire Lv. 30–35 (40%); Basculin Blue Striped Lv. 30–35 (30%); Sealeo Lv. 32–35 (15%); Palpitoad Lv. 30–35 (10%); Slowbro Lv. 37 (5%) |
+| Super Rod | Any | 75% | Basculegion Female Lv. 47–52 (40%); Relicanth Lv. 48–53 (30%); Walrein Lv. 49–54 (15%); Alomomola Lv. 50–55 (10%); Qwilfish Lv. 51–56 (5%) |
+Conditional: nightFish: Slowpoke
+
+## Ice Path 1F (table 60)
 
-## Route 38
+| Method | Time | Encounter rate | Pokémon and slot share |
+| --- | --- | --- | --- |
+| Grass | Any | 5% | Sandshrew Lv. 34 (20%); Cubchoo Lv. 34 (20%); Sandslash Lv. 36 (10%); Hitmonchan Lv. 34 (10%); Hitmonlee Lv. 35 (10%); Hitmontop Lv. 35 (10%); Bronzong Lv. 35 (5%); Darumaka Lv. 35 (5%); Duosion Lv. 35 (4%); Beartic Lv. 37 (4%); Arctibax Lv. 37 (2%) |
+## Ice Path B1F (table 61)
 
-Encounter ID 38; configured level range 13-16.
+| Method | Time | Encounter rate | Pokémon and slot share |
+| --- | --- | --- | --- |
+| Grass | Any | 5% | Vulpix Lv. 36 (20%); Snover Lv. 36 (20%); Carbink Lv. 38 (10%); Jynx Lv. 38 (10%); Mr. Mime Lv. 37 (20%); Ninetales Lv. 37 (5%); Cryogonal Lv. 40 (5%); Abomasnow Lv. 40 (4%); Falinks Lv. 39 (4%); Mr. Rime Lv. 42 (2%) |
+## Ice Path B2F (table 62)
 
-| Method | Time | Average level | Pokémon and rate |
+| Method | Time | Encounter rate | Pokémon and slot share |
 | --- | --- | --- | --- |
-| Grass | Morning | 15.7 | Wingull Lv. 16 (20%); Ducklett Lv. 16 (20%); Herdier Lv. 16 (10%); Chansey Lv. 16 (10%); Tangela Lv. 16 (10%); Sneasel Hisuian Lv. 16 (10%); Voltorb Lv. 16 (10%); Farfetch'd Lv. 13 (8%); Treecko Lv. 13 (2%) |
-| Grass swarm | Any time | — | Snubbull (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Shinx (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Plusle (radio replacement); Minun (radio replacement) |
-| Grass | Day | 15.7 | Wingull Lv. 16 (20%); Ducklett Lv. 16 (20%); Cottonee Lv. 16 (10%); Farfetch'd Lv. 16 (10%); Hoppip Lv. 16 (10%); Butterfree Lv. 16 (10%); Voltorb Lv. 16 (5%); Beautifly Lv. 16 (5%); Farfetch'd Lv. 13 (8%); Treecko Lv. 13 (2%) |
-| Grass | Night | 15.7 | Litwick Lv. 16 (20%); Ducklett Lv. 16 (20%); Cottonee Lv. 16 (10%); Farfetch'd Lv. 16 (10%); Hoppip Lv. 16 (10%); Vullaby Lv. 16 (10%); Rattata Alolan Lv. 16 (5%); Meowth Alolan Lv. 16 (5%); Farfetch'd Lv. 13 (8%); Treecko Lv. 13 (2%) |
+| Grass | Any | 5% | Vanillish Lv. 37 (20%); Snorunt Lv. 35 (20%); Weavile Lv. 36 (10%); Grumpig Lv. 36 (10%); Vanilluxe Lv. 40 (10%); Piloswine Lv. 36 (10%); Skarmory Lv. 37 (5%); Arctozolt Lv. 38 (5%); Duraludon Lv. 38 (4%); Blissey Lv. 39 (4%); Mamoswine Lv. 42 (2%) |
+## Ice Path B3F (table 63)
 
-## Route 39
+| Method | Time | Encounter rate | Pokémon and slot share |
+| --- | --- | --- | --- |
+| Grass | Any | 5% | Amaura Lv. 34 (20%); Bergmite Lv. 34 (20%); Dunsparce Lv. 35 (10%); Cetoddle Lv. 35 (10%); Eiscue Lv. 35 (10%); Frosmoth Lv. 35 (10%); Avalugg Lv. 37 (10%); Rotom Lv. 35 (4%); IronBundle Lv. 37 (4%); Aurorus Lv. 39 (2%) |
+| Rock Smash | Any | 80% | Pupitar Lv. 35–38 (90%); Aurorus Lv. 39–41 (10%) |
+## ??? (table 64)
 
-Encounter ID 39; configured level range 15-17.
+| Method | Time | Encounter rate | Pokémon and slot share |
+| --- | --- | --- | --- |
+## Blackthorn City (table 65)
 
-| Method | Time | Average level | Pokémon and rate |
+| Method | Time | Encounter rate | Pokémon and slot share |
 | --- | --- | --- | --- |
-| Grass | Morning | 16.2 | Bidoof Lv. 16 (20%); Dottler Lv. 17 (20%); Grimer Lv. 16 (10%); Alcremie Lv. 17 (10%); Mienfoo Lv. 16 (10%); Stufful Lv. 16 (10%); Igglybuff Lv. 16 (10%); Igglybuff Lv. 15 (4%); Noibat Lv. 15 (4%); Squawkabilly Lv. 15 (1%); Ponyta Lv. 15 (1%) |
-| Grass swarm | Any time | — | Rattata (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Shinx (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Plusle (radio replacement); Minun (radio replacement) |
-| Grass | Day | 16.2 | Bidoof Lv. 16 (20%); Dottler Lv. 17 (20%); Grimer Lv. 16 (10%); Tauros Lv. 17 (10%); Mienfoo Lv. 16 (10%); Stufful Lv. 16 (10%); Igglybuff Lv. 16 (10%); Igglybuff Lv. 15 (4%); Noibat Lv. 15 (4%); Vivillon Lv. 15 (1%); Tauros Lv. 15 (1%) |
-| Grass | Night | 16.2 | Bidoof Lv. 16 (20%); Dottler Lv. 17 (20%); Grimer Lv. 16 (10%); Lilligant Lv. 17 (10%); Mienfoo Lv. 16 (10%); Stufful Lv. 16 (10%); Igglybuff Lv. 16 (10%); Igglybuff Lv. 15 (4%); Noibat Lv. 15 (4%); Murkrow Lv. 15 (1%); Tauros Lv. 15 (1%) |
+| Grass | Any | 10% | Wigglytuff Lv. 37 (20%); Aromatisse Lv. 36 (20%); Magcargo Lv. 38 (10%); Vibrava Lv. 37 (10%); Simisear Lv. 37 (10%); Simisage Lv. 38 (10%); Pincurchin Lv. 37 (5%); Revavroom Lv. 40 (5%); Ursaring Lv. 37 (4%); Claydol Lv. 37 (4%); Glimmora Lv. 37 (2%) |
+| Surf | Any | 10% | Buizel Lv. 22–25 (60%); Qwilfish Lv. 30–37 (30%); Eelektrik Lv. 29–37 (5%); Dragalge Lv. 38 (5%) |
+| Old Rod | Any | 25% | Golduck Lv. 33–37 (40%); Sharpedo Lv. 32–37 (30%); Qwilfish Lv. 32–37 (15%); Seadra Lv. 32–37 (10%); Poliwhirl Lv. 32–37 (5%) |
+| Good Rod | Any | 50% | Slowking Lv. 32–37 (40%); Relicanth Lv. 32–40 (30%); Huntail Lv. 36–37 (15%); Jellicent Lv. 40–41 (10%); Kabutops Lv. 40–41 (5%) |
+| Super Rod | Any | 75% | Seismitoad Lv. 51–56 (40%); Lapras Lv. 52–57 (30%); Dondozo Lv. 53–58 (15%); Quagsire Lv. 55–60 (15%) |
+Conditional: nightFish: Drednaw
 
-## Olivine City
+## Dragons Den (table 66)
 
-Encounter ID 40; configured level range 16-40.
+| Method | Time | Encounter rate | Pokémon and slot share |
+| --- | --- | --- | --- |
+| Grass | Any | 10% | Noivern Lv. 40 (20%); Fraxure Lv. 43 (20%); Zweilous Lv. 40 (10%); Sliggoo Lv. 40 (20%); Hakamo-o Lv. 39 (10%); Dracozolt Lv. 44 (6%); Drampa Lv. 43 (6%); Shelgon Lv. 41 (4%); Gabite Lv. 40 (4%) |
+| Surf | Any | 10% | Tatsugiri Lv. 38–45 (60%); Kingdra Lv. 42–43 (30%); Dragonair Lv. 40–45 (6%); Dragalge Lv. 38–43 (4%) |
+| Old Rod | Any | 25% | Dratini Lv. 28–29 (40%); Dreepy Lv. 28–29 (30%); Kingdra Lv. 42–45 (15%); Milotic Lv. 30–45 (10%); Dragonair Lv. 40–45 (5%) |
+| Good Rod | Any | 50% | Seismitoad Lv. 36–45 (40%); Dragalge Lv. 38–45 (30%); Malamar Lv. 36–45 (15%); Dragonair Lv. 40–44 (10%); Dragonair Lv. 44–48 (5%) |
+| Super Rod | Any | 75% | Slowking Lv. 51–56 (40%); Pyukumuku Lv. 52–57 (30%); Dhelmise Lv. 53–58 (15%); Huntail Lv. 54–59 (10%); Kingdra Lv. 55–60 (5%) |
+## Route 45 (table 67)
 
-| Method | Time | Average level | Pokémon and rate |
+| Method | Time | Encounter rate | Pokémon and slot share |
 | --- | --- | --- | --- |
-| Grass | Morning | 16.72 | Wingull Lv. 16 (20%); Meowth Lv. 16 (20%); Pidove Lv. 16 (10%); Yungoos Lv. 17 (10%); Krabby Lv. 17 (10%); Nacli Lv. 17 (10%); Machop Lv. 18 (5%); Timburr Lv. 18 (5%); Pawmi Lv. 18 (4%); Varoom Lv. 18 (4%); Dhelmise Lv. 19 (2%) |
-| Surf | Any time | 18.5 | Horsea Lv. 15-25 (60%); Carvanha Lv. 10-20 (30%); Frillish Lv. 15-25 (5%); Tympole Lv. 15-25 (4%); Delibird Lv. 15-25 (1%) |
-| Old Rod | Any time | 10 | Magikarp Lv. 10 (40%); Arrokuda Lv. 10 (30%); Frillish Lv. 10 (15%); Carvanha Lv. 10 (10%); Inkay Lv. 10 (5%) |
-| Good Rod | Any time | 20 | Wailmer Lv. 20 (40%); Frillish Lv. 20 (30%); Carvanha Lv. 20 (15%); Panpour Lv. 20 (10%); Bruxish Lv. 20 (5%) |
-| Super Rod | Any time | 40 | Clamperl Lv. 40 (40%); Lombre Lv. 40 (30%); Panpour Lv. 40 (15%); Bibarel Lv. 40 (10%); Samurott Hisuian Lv. 40 (5%) |
-| Surf swarm | Any time | — | Tentacool (swarm) |
-| Good Rod swarm | Any time | — | Staryu (swarm) |
-| Super Rod swarm | Any time | — | Magikarp (swarm) |
-| Grass | Day | 16.72 | Wingull Lv. 16 (20%); Meowth Lv. 16 (20%); Yungoos Lv. 16 (10%); Krabby Lv. 17 (10%); Nacli Lv. 17 (10%); Machop Lv. 17 (10%); Timburr Lv. 18 (5%); Pawmi Lv. 18 (5%); Varoom Lv. 18 (4%); Toxel Lv. 18 (4%); Dhelmise Lv. 19 (2%) |
-| Grass | Night | 16.72 | Meowth Lv. 16 (20%); Wingull Lv. 16 (20%); Purrloin Lv. 16 (10%); Zubat Lv. 17 (10%); Krabby Lv. 17 (10%); Inkay Lv. 17 (10%); Nacli Lv. 18 (5%); Varoom Lv. 18 (5%); Toxel Lv. 18 (4%); Greavard Lv. 18 (4%); Dhelmise Lv. 19 (2%) |
+| Grass | Any | 25% | Trevenant Lv. 36 (20%); Gourgeist Lv. 37 (20%); Purugly Lv. 38 (10%); Amoonguss Lv. 39 (10%); Sandaconda Lv. 37 (10%); Bramblgast Lv. 37 (10%); Electabuzz Lv. 35 (5%); Magmar Lv. 35 (5%); Lurantis Lv. 37 (4%); Bisharp Lv. 38 (4%); Archeops Lv. 37 (2%) |
+| Surf | Any | 10% | Politoed Lv. 32–40 (60%); Jellicent Lv. 40–41 (30%); Jellicent Female Lv. 40–41 (10%) |
+| Old Rod | Any | 25% | Wishiwashi Lv. 32–37 (40%); Seadra Lv. 32–40 (30%); Mareanie Lv. 32–37 (15%); Palpitoad Lv. 30–35 (15%) |
+| Good Rod | Any | 50% | Poliwrath Lv. 32–40 (40%); Gorebyss Lv. 36–40 (30%); Basclegion Lv. 32–40 (15%); Dondozo Lv. 32–39 (10%); Clawitzer Lv. 37–40 (5%) |
+| Super Rod | Any | 75% | Bruxish Lv. 51–56 (40%); Veluza Lv. 52–57 (30%); Tatsugiri Lv. 53–58 (15%); Dracovish Lv. 54–59 (10%); Slowbro Lv. 55–60 (5%) |
+Conditional: nightFish: Poliwhirl
 
-## Route 40
+## Route 46 (table 68)
 
-Encounter ID 41; configured level range 18-40.
+| Method | Time | Encounter rate | Pokémon and slot share |
+| --- | --- | --- | --- |
+| Grass | Any | 25% | Blipbug Lv. 5 (20%); Hoothoot Lv. 5 (20%); Pidgey Lv. 4 (10%); Taillow Lv. 5 (10%); Sentret Lv. 5 (10%); Gossifleur Lv. 4 (10%); Seedot Lv. 5 (5%); Shroomish Lv. 5 (5%); Slakoth Lv. 5 (4%); Ralts Lv. 5 (4%); Dottler Lv. 10 (2%) |
+## Dark Cave (Route 31 entrance) (table 69)
 
-| Method | Time | Average level | Pokémon and rate |
+| Method | Time | Encounter rate | Pokémon and slot share |
 | --- | --- | --- | --- |
-| Grass | Morning | 19.02 | Tentacool Lv. 18 (20%); Wingull Lv. 18 (20%); Buizel Lv. 19 (10%); Shellos Lv. 19 (10%); Dewpider Lv. 19 (10%); Finneon Lv. 20 (10%); Clauncher Lv. 20 (5%); Skrelp Lv. 20 (5%); Mantyke Lv. 21 (4%); Wimpod Lv. 21 (4%); Lapras Lv. 22 (2%) |
-| Surf | Any time | 18.5 | Buizel Lv. 15-25 (60%); Clamperl Lv. 10-20 (30%); Finneon Lv. 15-25 (5%); Spheal Lv. 15-25 (4%); Slowpoke Galarian Lv. 15-25 (1%) |
-| Old Rod | Any time | 10 | Feebas Lv. 10 (40%); Skrelp Lv. 10 (30%); Barboach Lv. 10 (15%); Chinchou Lv. 10 (10%); Clamperl Lv. 10 (5%) |
-| Good Rod | Any time | 20 | Seel Lv. 20 (40%); Feebas Lv. 20 (30%); Shellos Lv. 20 (15%); Qwilfish Hisuian Lv. 20 (10%); Finizen Lv. 20 (5%) |
-| Super Rod | Any time | 40 | Wishiwashi Lv. 40 (40%); Tatsugiri Lv. 40 (30%); Mareanie Lv. 40 (15%); Azumarill Lv. 40 (10%); Poliwhirl Lv. 40 (5%) |
-| Surf swarm | Any time | — | Tentacool (swarm) |
-| Good Rod swarm | Any time | — | Staryu (swarm) |
-| Super Rod swarm | Any time | — | Magikarp (swarm) |
-| Grass | Day | 19.02 | Wingull Lv. 18 (20%); Tentacool Lv. 18 (20%); Buizel Lv. 19 (10%); Dewpider Lv. 19 (10%); Ducklett Lv. 19 (10%); Finneon Lv. 20 (10%); Clauncher Lv. 20 (5%); Skrelp Lv. 20 (5%); Wimpod Lv. 21 (4%); Cramorant Lv. 21 (4%); Lapras Lv. 22 (2%) |
-| Grass | Night | 19.02 | Tentacool Lv. 18 (20%); Chinchou Lv. 18 (20%); Frillish Lv. 19 (10%); Shellos Lv. 19 (10%); Skrelp Lv. 19 (10%); Inkay Lv. 20 (10%); Clauncher Lv. 20 (5%); Wimpod Lv. 20 (5%); Mantyke Lv. 21 (4%); Tynamo Lv. 21 (4%); Lapras Lv. 22 (2%) |
+| Grass | Any | 10% | Kricketot Lv. 9 (20%); Bonsly Lv. 9 (20%); Rolycoly Lv. 8 (10%); Roggenrola Lv. 8 (10%); Geodude Lv. 8 (20%); Venipede Lv. 8 (5%); Aron Lv. 8 (5%); Kricketune Lv. 10 (4%); Rockruff Lv. 8 (4%); Larvitar Lv. 8 (1%); Larvitar Lv. 7 (1%) |
+| Surf | Any | 10% | Inkay Lv. 20–29 (64%); Seel Lv. 20–33 (30%); Eelektrik Lv. 29–36 (6%) |
+| Rock Smash | Any | 80% | Aron Lv. 10–12 (90%); Larvitar Lv. 10–12 (10%) |
+| Old Rod | Any | 25% | Azurill Lv. 8–13 (40%); Seel Lv. 8–13 (30%); Magikarp Lv. 8–13 (15%); Slowpoke Lv. 8–13 (10%); Carvanha Lv. 8–13 (5%) |
+| Good Rod | Any | 50% | Bruxish Lv. 20–40 (40%); Alomomola Lv. 20–40 (30%); Seadra Lv. 32–38 (15%); Dracovish Lv. 20–35 (10%); Tatsugiri Lv. 20–40 (5%) |
+| Super Rod | Any | 75% | Grapploct Lv. 40–44 (40%); Wishiwashi Lv. 40–45 (30%); Poliwrath Lv. 42–47 (15%); Politoed Lv. 42–47 (10%); Omastar Lv. 43–48 (5%) |
+Conditional: nightFish: Slowpoke
+
+## Dark Cave (Route 45 entrance) (table 70)
 
-## Route 41
+| Method | Time | Encounter rate | Pokémon and slot share |
+| --- | --- | --- | --- |
+| Grass | Any | 10% | Cofagrigus Lv. 34 (20%); Runerigus Lv. 35 (20%); Pyroar Lv. 35 (10%); Pyroar Female Lv. 35 (10%); Arbok Lv. 35 (10%); Skuntank Lv. 36 (10%); Dusclops Lv. 37 (6%); Lycanroc Dusk Lv. 37 (6%); Camerupt Lv. 35 (4%); Banette Lv. 37 (4%) |
+| Surf | Any | 10% | Overqwil Lv. 30–38 (60%); Slowbro Lv. 37–38 (30%); Carracosta Lv. 37 (6%); Dondozo Lv. 36–40 (4%) |
+| Old Rod | Any | 25% | Corsola Lv. 30–40 (40%); Gastrodon Lv. 30–40 (30%); Dhelmise Lv. 30–40 (25%); Golisopod Lv. 30–40 (5%) |
+| Good Rod | Any | 50% | Ludicolo Lv. 30–35 (40%); Veluza Lv. 30–35 (30%); Luvdisc Lv. 30–35 (15%); Malamar Lv. 30–35 (10%); Eelektross Lv. 30–35 (5%) |
+| Super Rod | Any | 75% | Gastrodon East Sea Lv. 51–56 (40%); Walrein Lv. 52–57 (30%); Dragalge Lv. 53–58 (15%); Kingdra Lv. 54–59 (10%); Seismitoad Lv. 55–60 (5%) |
+Conditional: nightFish: Drednaw
 
-Encounter ID 42; configured level range 20-40.
+## Route 47 (table 71)
 
-| Method | Time | Average level | Pokémon and rate |
+| Method | Time | Encounter rate | Pokémon and slot share |
 | --- | --- | --- | --- |
-| Grass | Morning | 21.02 | Tentacool Lv. 20 (20%); Finneon Lv. 20 (20%); Wingull Lv. 21 (10%); Chinchou Lv. 21 (10%); Mantyke Lv. 21 (10%); Clauncher Lv. 22 (10%); Skrelp Lv. 22 (5%); Frillish Lv. 22 (5%); Wimpod Lv. 23 (4%); Cramorant Lv. 23 (4%); Relicanth Lv. 24 (2%) |
-| Surf | Any time | 20 | Seel Lv. 15-25 (60%); Carvanha Lv. 15-25 (30%); Clauncher Lv. 15-25 (5%); Wiglett Lv. 15-25 (4%); Psyduck Lv. 15-25 (1%) |
-| Old Rod | Any time | 10 | Horsea Lv. 10 (45%); Tympole Lv. 10 (30%); Spheal Lv. 10 (15%); Goldeen Lv. 10 (10%) |
-| Good Rod | Any time | 20 | Shellder Lv. 20 (50%); Surskit Lv. 20 (30%); Wishiwashi Lv. 20 (15%); Arrokuda Lv. 20 (5%) |
-| Super Rod | Any time | 40 | Feebas Lv. 40 (40%); Shellder Lv. 40 (30%); Basculin Lv. 40 (15%); Chinchou Lv. 40 (10%); Delibird Lv. 40 (5%) |
-| Surf swarm | Any time | — | Tentacool (swarm) |
-| Good Rod swarm | Any time | — | Shellder (swarm) |
-| Super Rod swarm | Any time | — | Magikarp (swarm) |
-| Grass | Day | 21.02 | Finneon Lv. 20 (20%); Wingull Lv. 20 (20%); Tentacool Lv. 21 (10%); Buizel Lv. 21 (10%); Shellos Lv. 21 (10%); Clauncher Lv. 22 (10%); Skrelp Lv. 22 (5%); Mantyke Lv. 22 (5%); Wimpod Lv. 23 (4%); Arrokuda Lv. 23 (4%); Relicanth Lv. 24 (2%) |
-| Grass | Night | 21.02 | Chinchou Lv. 20 (20%); Frillish Lv. 20 (20%); Tentacool Lv. 21 (10%); Finneon Lv. 21 (10%); Skrelp Lv. 21 (10%); Inkay Lv. 22 (10%); Clauncher Lv. 22 (5%); Wimpod Lv. 22 (5%); Mantyke Lv. 23 (4%); Tynamo Lv. 23 (4%); Relicanth Lv. 24 (2%) |
+| Grass | Any | 25% | Minun Lv. 30 (20%); Plusle Lv. 30 (20%); Emolga Lv. 28 (10%); Noctowl Lv. 27 (10%); Tangela Lv. 28 (10%); Toucannon Lv. 28 (10%); Tauros Combat Lv. 27 (5%); Tauros Lv. 28 (5%); Tauros Aqua Lv. 27 (4%); Tauros Blaze Lv. 28 (4%); Tangrowth Lv. 34 (2%) |
+| Surf | Any | 15% | Baraskewda Lv. 26–35 (60%); Golduck Lv. 33–35 (30%); Milotic Lv. 34–35 (6%); Basculegion Female Lv. 30–38 (4%) |
+| Old Rod | Any | 25% | Corphish Lv. 24–29 (40%); Pyukumuku Lv. 24–30 (30%); Feebas Lv. 24–29 (15%); Tynamo Lv. 24–28 (10%); Dratini Lv. 20–29 (5%) |
+| Good Rod | Any | 50% | Bibarel Lv. 20–42 (40%); Seismitoad Lv. 36–37 (30%); Carracosta Lv. 37–38 (15%); Lapras Lv. 30–37 (10%); Basculegion Female Lv. 30–35 (5%) |
+| Super Rod | Any | 75% | Malamar Lv. 43–48 (40%); Kingdra Lv. 45–49 (30%); Basculegion Female Lv. 45–50 (15%); Golisopod Lv. 46–51 (10%); Toxapex Lv. 47–52 (5%) |
+Conditional: nightFish: Spheal
+
+## Mt. Moon (Outside area) (table 72)
 
-## Whirl Islands 1F
+| Method | Time | Encounter rate | Pokémon and slot share |
+| --- | --- | --- | --- |
+| Surf | Any | 15% | Pelipper Lv. 74–77 (60%); IronBundle Lv. 75–77 (30%); Malamar Lv. 76–78 (6%); Eelektross Lv. 76–78 (4%) |
+| Old Rod | Any | 25% | Basculin Lv. 74–77 (40%); Slowking Lv. 75–77 (30%); Grapploct Lv. 76–78 (15%); Lumineon Lv. 76–78 (10%); Vaporeon Lv. 76–78 (5%) |
+| Good Rod | Any | 50% | Luvdisc Lv. 74–77 (40%); Lanturn Lv. 75–77 (30%); Golisopod Lv. 76–78 (15%); Dhelmise Lv. 76–78 (10%); Basclegion Lv. 76–78 (5%) |
+| Super Rod | Any | 75% | Seaking Lv. 74–77 (40%); Jellicent Lv. 75–77 (30%); Whiscash Lv. 76–78 (15%); Sharpedo Lv. 76–78 (10%); Ludicolo Lv. 76–78 (5%) |
+Conditional: nightFish: Jellicent
 
-Encounter ID 43; configured level range 10-40.
+## Mt. Moon (Outside Clefairy active) (table 73)
 
-| Method | Time | Average level | Pokémon and rate |
+| Method | Time | Encounter rate | Pokémon and slot share |
 | --- | --- | --- | --- |
-| Grass | Morning | 22.85 | Sandslash Lv. 22 (20%); Porygon Lv. 23 (20%); Gulpin Lv. 22 (10%); Golbat Lv. 23 (10%); Trapinch Lv. 24 (10%); Roggenrola Lv. 24 (10%); Axew Lv. 22 (5%); Porygon Lv. 22 (5%); Kakuna Lv. 23 (4%); Croagunk Lv. 24 (4%); Fidough Lv. 23 (1%); Geodude Lv. 24 (1%) |
-| Surf | Any time | 18.5 | Omanyte Lv. 15-25 (60%); Corsola Galarian Lv. 10-20 (30%); Spheal Lv. 15-25 (5%); Lileep Lv. 15-25 (4%); Anorith Lv. 15-25 (1%) |
-| Old Rod | Any time | 10 | Lileep Lv. 10 (40%); Anorith Lv. 10 (30%); Finneon Lv. 10 (15%); Tympole Lv. 10 (10%); Clamperl Lv. 10 (5%) |
-| Good Rod | Any time | 20 | Wimpod Lv. 20 (50%); Clauncher Lv. 20 (30%); Wailmer Lv. 20 (15%); Staryu Lv. 20 (5%) |
-| Super Rod | Any time | 40 | Clauncher Lv. 40 (40%); Horsea Lv. 40 (30%); Wiglett Lv. 40 (15%); Seadra Lv. 40 (10%); Cradily Lv. 40 (5%) |
-| Grass swarm | Any time | — | Krabby (swarm) |
-| Surf swarm | Any time | — | Tentacool (swarm) |
-| Good Rod swarm | Any time | — | Horsea (swarm) |
-| Super Rod swarm | Any time | — | Magikarp (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Bronzor (radio replacement); Chingling (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Absol (radio replacement); Makuhita (radio replacement) |
-| Grass | Day | 22.85 | Onix Lv. 22 (20%); Numel Lv. 23 (20%); Gulpin Lv. 22 (10%); Riolu Lv. 23 (10%); Minior Lv. 24 (10%); Geodude Alolan Lv. 24 (10%); Shieldon Lv. 22 (5%); Beedrill Lv. 22 (5%); Sandslash Lv. 23 (4%); Naclstack Lv. 24 (4%); Whirlipede Lv. 23 (1%); Klink Lv. 24 (1%) |
-| Grass | Night | 22.85 | Pawniard Lv. 22 (20%); Honedge Lv. 23 (20%); Gulpin Lv. 22 (10%); Abra Lv. 23 (10%); Grimer Alolan Lv. 24 (10%); Mr. Mime Galarian Lv. 24 (10%); Gothita Lv. 22 (5%); Kadabra Lv. 22 (5%); Wooper Lv. 23 (4%); Aron Lv. 24 (4%); Meowth Galarian Lv. 23 (1%); Vanillite Lv. 24 (1%) |
+| Surf | Any | 15% | Whiscash Lv. 74–77 (60%); Bibarel Lv. 75–77 (30%); Malamar Lv. 76–78 (6%); Eelektross Lv. 76–78 (4%) |
+| Old Rod | Any | 25% | Wishiwashi Lv. 74–77 (40%); Octillery Lv. 75–77 (30%); Overqwil Lv. 76–78 (15%); Gyarados Lv. 76–78 (10%); Quagsire Lv. 76–78 (5%) |
+| Good Rod | Any | 50% | Corsola Lv. 74–77 (40%); Politoed Lv. 75–77 (30%); Bruxish Lv. 76–78 (15%); Relicanth Lv. 76–78 (10%); Azumarill Lv. 76–78 (5%) |
+| Super Rod | Any | 75% | Luvdisc Lv. 74–77 (40%); Grapploct Lv. 75–77 (30%); Dragalge Lv. 76–78 (15%); Gastrodon East Sea Lv. 76–78 (10%); Dhelmise Lv. 76–78 (5%) |
+Conditional: nightFish: Drednaw
 
-## Whirl Islands B1F
+## Seafoam Islands 1F (table 74)
 
-Encounter ID 44; configured level range 22-24.
+| Method | Time | Encounter rate | Pokémon and slot share |
+| --- | --- | --- | --- |
+| Grass | Any | 5% | Eiscue Lv. 78 (20%); Jynx Lv. 79 (20%); Darmanitan Lv. 79 (10%); Darmanitan Lv. 80 (10%); Ninetales Lv. 81 (10%); Abomasnow Lv. 81 (10%); Glalie Lv. 82 (6%); Froslass Lv. 82 (6%); Vanilluxe Lv. 82 (8%) |
+## Seafoam Islands B1F (table 75)
 
-| Method | Time | Average level | Pokémon and rate |
+| Method | Time | Encounter rate | Pokémon and slot share |
 | --- | --- | --- | --- |
-| Grass | Morning | 22.85 | Mudbray Lv. 22 (20%); Bergmite Lv. 23 (20%); Wooper Paldean Lv. 22 (10%); Drilbur Lv. 23 (10%); Nidorina Lv. 24 (10%); Mudbray Lv. 24 (10%); Dustox Lv. 22 (5%); Makuhita Lv. 22 (5%); Baltoy Lv. 23 (4%); Baltoy Lv. 24 (4%); Sandshrew Lv. 23 (1%); Geodude Lv. 24 (1%) |
-| Grass swarm | Any time | — | Krabby (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Bronzor (radio replacement); Chingling (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Absol (radio replacement); Makuhita (radio replacement) |
-| Grass | Day | 22.85 | Snorunt Lv. 22 (20%); Carkol Lv. 23 (20%); Whirlipede Lv. 22 (10%); Golbat Lv. 23 (10%); Trapinch Lv. 24 (10%); Tyrunt Lv. 24 (10%); Bonsly Lv. 22 (5%); Meowth Galarian Lv. 22 (5%); Roggenrola Lv. 23 (4%); Axew Lv. 24 (4%); Nacli Lv. 23 (1%); Porygon Lv. 24 (1%) |
-| Grass | Night | 22.85 | Sandygast Lv. 22 (20%); Sinistea Lv. 23 (20%); Shedinja Lv. 22 (10%); Grimer Alolan Lv. 23 (10%); Diglett Alolan Lv. 24 (10%); Stunfisk Lv. 24 (10%); Smoochum Lv. 22 (5%); Cufant Lv. 22 (5%); Hatenna Lv. 23 (4%); Kakuna Lv. 24 (4%); Togedemaru Lv. 23 (1%); Mudbray Lv. 24 (1%) |
+| Grass | Any | 5% | Mismagius Lv. 78 (20%); Druddigon Lv. 79 (20%); Bronzong Lv. 79 (10%); Drifblim Lv. 80 (10%); Drapion Lv. 81 (11%); Carbink Lv. 81 (11%); Aerodactyl Lv. 82 (9%); Excadrill Lv. 82 (9%) |
+## Seafoam Islands B2F (table 76)
 
-## Whirl Islands B2F
+| Method | Time | Encounter rate | Pokémon and slot share |
+| --- | --- | --- | --- |
+| Grass | Any | 5% | Avalugg Lv. 78 (20%); Avalugg Lv. 79 (20%); Mr. Rime Lv. 79 (10%); Cryogonal Lv. 80 (10%); Cetitan Lv. 81 (11%); Glaceon Lv. 81 (11%); Chandelure Lv. 82 (9%); Eelektross Lv. 82 (9%) |
+## Seafoam Islands B3F (table 77)
 
-Encounter ID 46; configured level range 10-40.
+| Method | Time | Encounter rate | Pokémon and slot share |
+| --- | --- | --- | --- |
+| Grass | Any | 10% | Beartic Lv. 78 (20%); Bastiodon Lv. 79 (20%); Rampardos Lv. 79 (10%); Dragalge Lv. 80 (10%); Arctozolt Lv. 81 (11%); Cradily Lv. 81 (11%); Aurorus Lv. 82 (9%); Cursola Lv. 82 (9%) |
+## Seafoam Islands B4F (table 78)
 
-| Method | Time | Average level | Pokémon and rate |
+| Method | Time | Encounter rate | Pokémon and slot share |
 | --- | --- | --- | --- |
-| Grass | Morning | 22.85 | Swinub Lv. 22 (20%); Nosepass Lv. 23 (20%); Timburr Lv. 22 (10%); Croagunk Lv. 23 (10%); Timburr Lv. 24 (10%); Venonat Lv. 24 (10%); Riolu Lv. 22 (5%); Diglett Alolan Lv. 22 (5%); Geodude Alolan Lv. 23 (4%); Stunfisk Lv. 24 (4%); Squirtle Lv. 23 (1%); Squirtle Lv. 24 (1%) |
-| Surf | Any time | 20.85 | Wailmer Lv. 15-25 (60%); Kabuto Lv. 15-25 (30%); Horsea Lv. 30-40 (5%); Crabrawler Lv. 15-25 (4%); Golisopod Lv. 30 (1%) |
-| Old Rod | Any time | 10 | Crabrawler Lv. 10 (40%); Skorupi Lv. 10 (30%); Corphish Lv. 10 (15%); Binacle Lv. 10 (10%); Poliwag Lv. 10 (5%) |
-| Good Rod | Any time | 20 | Wailmer Lv. 20 (40%); Anorith Lv. 20 (30%); Clamperl Lv. 20 (15%); Horsea Lv. 20 (10%); Klawf Lv. 20 (5%) |
-| Super Rod | Any time | 40 | Poliwhirl Lv. 40 (55%); Horsea Lv. 40 (30%); Seadra Lv. 40 (10%); Armaldo Lv. 40 (5%) |
-| Grass swarm | Any time | — | Krabby (swarm) |
-| Surf swarm | Any time | — | Horsea (swarm) |
-| Good Rod swarm | Any time | — | Horsea (swarm) |
-| Super Rod swarm | Any time | — | Magikarp (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Bronzor (radio replacement); Chingling (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Absol (radio replacement); Makuhita (radio replacement) |
-| Grass | Day | 22.85 | Tyrunt Lv. 22 (20%); Shieldon Lv. 23 (20%); Timburr Lv. 22 (10%); Rhyhorn Lv. 23 (10%); Timburr Lv. 24 (10%); Fidough Lv. 24 (10%); Wooper Lv. 22 (5%); Phanpy Lv. 22 (5%); Aron Lv. 23 (4%); Wooper Paldean Lv. 24 (4%); Squirtle Lv. 23 (1%); Squirtle Lv. 24 (1%) |
-| Grass | Night | 22.85 | Yamask Lv. 22 (20%); Golett Lv. 23 (20%); Timburr Lv. 22 (10%); Mr. Mime Galarian Lv. 23 (10%); Timburr Lv. 24 (10%); Gothita Lv. 24 (10%); Kadabra Lv. 22 (5%); Klink Lv. 22 (5%); Golbat Lv. 23 (4%); Diglett Lv. 24 (4%); Squirtle Lv. 23 (1%); Squirtle Lv. 24 (1%) |
+| Grass | Any | 10% | Dracozolt Lv. 78 (20%); Armaldo Lv. 79 (20%); Overqwil Lv. 79 (10%); Mienshao Lv. 80 (10%); Toedscruel Lv. 81 (11%); Sandaconda Lv. 81 (11%); Weavile Lv. 82 (9%); Sneasler Lv. 82 (9%) |
+| Surf | Any | 5% | Tentacruel Lv. 78–82 (60%); Carracosta Lv. 78–82 (30%); Basclegion Lv. 78–82 (10%) |
+| Old Rod | Any | 25% | Relicanth Lv. 78–82 (40%); Veluza Lv. 78–82 (30%); Lumineon Lv. 78–82 (15%); Baraskewda Lv. 78–82 (10%); Basclegion Lv. 78–82 (5%) |
+| Good Rod | Any | 50% | Baraskewda Lv. 78–82 (40%); Veluza Lv. 78–82 (30%); Lumineon Lv. 78–82 (15%); Mantine Lv. 78–82 (15%) |
+| Super Rod | Any | 75% | Dragalge Lv. 78–82 (40%); Arctovish Lv. 78–82 (30%); Dhelmise Lv. 78–82 (20%); Dracovish Lv. 78–82 (10%) |
+Conditional: nightFish: Dewgong
+
+## Mt. Silver (Moltres room) (table 79)
 
-## Whirl Islands B3F
+| Method | Time | Encounter rate | Pokémon and slot share |
+| --- | --- | --- | --- |
+| Grass | Any | 5% | Pyroar Lv. 87 (20%); Houndoom Lv. 87 (20%); Aerodactyl Lv. 87 (10%); Steelix Lv. 87 (10%); Emboar Lv. 87 (10%); Chandelure Lv. 87 (10%); Delphox Lv. 88 (6%); Blaziken Lv. 88 (6%); Venusaur Lv. 88 (8%) |
+| Surf | Any | 10% | Slowpoke Lv. 30–35 (60%); Goldeen Lv. 30–32 (30%); Slowbro Lv. 37–46 (5%); Seaking Lv. 35–44 (4%); Seaking Lv. 37–46 (1%) |
+| Old Rod | Any | 25% | Slowpoke Lv. 22–28 (40%); Goldeen Lv. 22–28 (30%); Slowpoke Lv. 23–29 (25%); Slowpoke Lv. 24–30 (5%) |
+| Good Rod | Any | 50% | Cloyster Lv. 31–39 (40%); Starmie Lv. 31–39 (30%); Poliwrath Lv. 32–40 (15%); Slowpoke Lv. 30–36 (10%); Clawitzer Lv. 37–40 (5%) |
+| Super Rod | Any | 75% | Lumineon Lv. 49–57 (40%); Dewgong Lv. 49–57 (30%); Starmie Lv. 50–58 (15%); Clawitzer Lv. 50–58 (10%); Cloyster Lv. 51–59 (5%) |
+Conditional: nightFish: Drednaw
 
-Encounter ID 48; configured level range 23-25.
+## Mt. Silver 3F (table 80)
 
-| Method | Time | Average level | Pokémon and rate |
+| Method | Time | Encounter rate | Pokémon and slot share |
 | --- | --- | --- | --- |
-| Grass | Morning | 23.85 | Glimmet Lv. 23 (20%); Naclstack Lv. 24 (20%); Dustox Lv. 23 (10%); Cubone Lv. 24 (10%); Lycanroc Lv. 25 (10%); Cranidos Lv. 25 (10%); Venipede Lv. 23 (5%); Makuhita Lv. 23 (5%); Togedemaru Lv. 24 (4%); Graveler Alolan Lv. 25 (4%); Silicobra Lv. 24 (1%); Donphan Lv. 25 (1%) |
-| Grass swarm | Any time | — | Krabby (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Bronzor (radio replacement); Chingling (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Absol (radio replacement); Makuhita (radio replacement) |
-| Grass | Day | 23.85 | Voltorb Lv. 23 (20%); Phanpy Lv. 24 (20%); Sandshrew Lv. 23 (10%); Geodude Lv. 24 (10%); Shieldon Lv. 25 (10%); Glimmet Lv. 25 (10%); Whirlipede Lv. 23 (5%); Klink Lv. 23 (5%); Trapinch Lv. 24 (4%); Graveler Alolan Lv. 25 (4%); Bonsly Lv. 24 (1%); Carbink Lv. 25 (1%) |
-| Grass | Night | 23.85 | Yamask Galarian Lv. 23 (20%); Sandile Lv. 24 (20%); Smoochum Lv. 23 (10%); Slowpoke Galarian Lv. 24 (10%); Graveler Alolan Lv. 25 (10%); Lycanroc Lv. 25 (10%); Vanillite Lv. 23 (5%); Abra Lv. 23 (5%); Meowth Galarian Lv. 24 (4%); Haunter Lv. 25 (4%); Nincada Lv. 24 (1%); Sinistcha Lv. 25 (1%) |
+| Grass | Any | 10% | Ampharos Lv. 88 (20%); Excadrill Lv. 88 (20%); Aggron Lv. 88 (10%); Gengar Lv. 88 (10%); Chesnaught Lv. 88 (10%); Sceptile Lv. 88 (10%); Charizard Lv. 88 (12%); Meganium Lv. 88 (8%) |
+| Surf | Any | 10% | Finizen Lv. 30–35 (60%); Omanyte Lv. 30–35 (30%); Palafin Lv. 38–47 (5%); Omastar Lv. 40–49 (5%) |
+| Rock Smash | Any | 100% | Aggron Lv. 88 (90%); Excadrill Lv. 88 (10%) |
+| Old Rod | Any | 25% | Wishiwashi Lv. 22–28 (40%); Finizen Lv. 22–28 (30%); Crawdaunt Lv. 30 (15%); Omanyte Lv. 23–29 (10%); Wishiwashi Lv. 24–30 (5%) |
+| Good Rod | Any | 50% | Barbaracle Lv. 39–40 (40%); Palafin Lv. 38–40 (30%); Wishiwashi Lv. 32–40 (25%); Politoed Lv. 33–40 (5%) |
+| Super Rod | Any | 75% | Azumarill Lv. 49–57 (40%); Gorebyss Lv. 49–57 (30%); Crawdaunt Lv. 50–58 (15%); Politoed Lv. 50–58 (10%); Omastar Lv. 51–59 (5%) |
+Conditional: nightFish: Jellicent
+
+## Mt. Silver 4F (table 81)
 
-## Cianwood City
+| Method | Time | Encounter rate | Pokémon and slot share |
+| --- | --- | --- | --- |
+| Grass | Any | 10% | Tyranitar Lv. 90 (25%); Metagross Lv. 90 (25%); Dragonite Lv. 90 (25%); Salamence Lv. 90 (25%) |
+| Old Rod | Any | 25% | Clamperl Lv. 22–28 (40%); Binacle Lv. 22–28 (30%); Clamperl Lv. 23–29 (15%); Azumarill Lv. 23–29 (10%); Binacle Lv. 24–30 (5%) |
+| Good Rod | Any | 50% | Tentacruel Lv. 31–39 (40%); Azumarill Lv. 31–39 (30%); Cloyster Lv. 32–40 (15%); Binacle Lv. 31–38 (10%); Basclegion Lv. 33–40 (5%) |
+| Super Rod | Any | 75% | Huntail Lv. 49–57 (40%); Basclegion Lv. 49–57 (30%); Basclegion Lv. 50–58 (15%); Baraskewda Lv. 50–58 (10%); Cloyster Lv. 51–59 (5%) |
+Conditional: nightFish: Gastrodon
 
-Encounter ID 51; configured level range 22-40.
+## Cliff Edge Gate (table 82)
 
-| Method | Time | Average level | Pokémon and rate |
+| Method | Time | Encounter rate | Pokémon and slot share |
 | --- | --- | --- | --- |
-| Grass | Morning | 23.02 | Mankey Lv. 22 (20%); Crabrawler Lv. 22 (20%); Makuhita Lv. 23 (10%); Machop Lv. 23 (10%); Meditite Lv. 23 (10%); Croagunk Lv. 24 (10%); Stufful Lv. 24 (5%); Pancham Lv. 24 (5%); Falinks Lv. 25 (4%); Hawlucha Lv. 25 (4%); Riolu Lv. 26 (2%) |
-| Surf | Any time | 18.5 | Carvanha Lv. 15-25 (60%); Skorupi Lv. 10-20 (30%); Chewtle Lv. 15-25 (5%); Tirtouga Lv. 15-25 (4%); Tadbulb Lv. 15-25 (1%) |
-| Old Rod | Any time | 10 | Finizen Lv. 10 (40%); Remoraid Lv. 10 (30%); Arrokuda Lv. 10 (15%); Inkay Lv. 10 (10%); Panpour Lv. 10 (5%) |
-| Good Rod | Any time | 20 | Qwilfish Lv. 20 (40%); Qwilfish Hisuian Lv. 20 (30%); Slowpoke Galarian Lv. 20 (15%); Finneon Lv. 20 (10%); Binacle Lv. 20 (5%) |
-| Super Rod | Any time | 40 | Slowbro Lv. 40 (40%); Slowking Lv. 40 (30%); Luvdisc Lv. 40 (15%); Gastrodon Lv. 40 (10%); Lombre Lv. 40 (5%) |
-| Rock Smash | Any time | 20.1 | Nacli Lv. 15-24 (90%); Minior Lv. 23-28 (10%) |
-| Surf swarm | Any time | — | Tentacool (swarm) |
-| Good Rod swarm | Any time | — | Staryu (swarm) |
-| Super Rod swarm | Any time | — | Magikarp (swarm) |
-| Grass | Day | 23.02 | Crabrawler Lv. 22 (20%); Mankey Lv. 22 (20%); Machop Lv. 23 (10%); Makuhita Lv. 23 (10%); Meditite Lv. 23 (10%); Stufful Lv. 24 (10%); Pancham Lv. 24 (5%); Pawmi Lv. 24 (5%); Falinks Lv. 25 (4%); Hawlucha Lv. 25 (4%); Riolu Lv. 26 (2%) |
-| Grass | Night | 23.02 | Mankey Lv. 22 (20%); Croagunk Lv. 22 (20%); Makuhita Lv. 23 (10%); Meditite Lv. 23 (10%); Stufful Lv. 23 (10%); Pancham Lv. 24 (10%); Scraggy Lv. 24 (5%); Murkrow Lv. 24 (5%); Falinks Lv. 25 (4%); Hawlucha Lv. 25 (4%); Riolu Lv. 26 (2%) |
+| Surf | Any | 15% | Simipour Lv. 20–35 (60%); Pyukumuku Lv. 25–35 (30%); Milotic Lv. 34–35 (6%); Overqwil Lv. 25–35 (4%) |
+| Old Rod | Any | 25% | Skrelp Lv. 10–29 (40%); Wimpod Lv. 10–29 (30%); Feebas Lv. 10–29 (15%); Dratini Lv. 10–29 (10%); Dreepy Lv. 10–29 (5%) |
+| Good Rod | Any | 50% | Gastrodon East Sea Lv. 30–35 (40%); Poliwhirl Lv. 25–35 (30%); Araquanid Lv. 30–35 (15%); Slowbro Lv. 37–38 (10%); Seaking Lv. 33–35 (5%) |
+| Super Rod | Any | 75% | Crawdaunt Lv. 43–48 (40%); Wailord Lv. 44–49 (30%); Starmie Lv. 45–50 (15%); Kabutops Lv. 46–51 (10%); Golduck Lv. 47–52 (5%) |
+Conditional: nightFish: Drednaw
 
-## Route 42
+## Cliff Cave (table 83)
 
-Encounter ID 52; configured level range 10-40.
+| Method | Time | Encounter rate | Pokémon and slot share |
+| --- | --- | --- | --- |
+| Grass | Any | 10% | Croagunk Lv. 31 (20%); Sudowoodo Lv. 29 (20%); Haunter Lv. 31 (10%); Boldore Lv. 30 (10%); Heliolisk Lv. 30 (10%); Grafaiai Lv. 29 (10%); Orthworm Lv. 30 (5%); Stonjorner Lv. 30 (5%); Chimecho Lv. 28 (4%); Lickilicky Lv. 34 (4%); Kleavor Lv. 30 (2%) |
+| Rock Smash | Any | 80% | Lairon Lv. 32–34 (90%); Kleavor Lv. 28–32 (10%) |
+## Bell Tower 10F (table 84)
 
-| Method | Time | Average level | Pokémon and rate |
+| Method | Time | Encounter rate | Pokémon and slot share |
 | --- | --- | --- | --- |
-| Grass | Morning | 14.4 | Oricorio Lv. 15 (20%); Vivillon Lv. 13 (20%); Flaaffy Lv. 15 (10%); Mareep Lv. 13 (10%); Elgyem Lv. 14 (10%); Jigglypuff Lv. 14 (10%); Lilligant Lv. 16 (5%); Trumbeak Lv. 16 (5%); Ralts Lv. 15 (4%); Butterfree Lv. 17 (4%); Tangela Lv. 15 (1%); Furret Lv. 17 (1%) |
-| Surf | Any time | 18.5 | Tirtouga Lv. 15-25 (60%); Corphish Lv. 10-20 (30%); Archen Lv. 15-25 (5%); Buizel Lv. 15-25 (4%); Corsola Galarian Lv. 15-25 (1%) |
-| Old Rod | Any time | 10 | Psyduck Lv. 10 (40%); Skrelp Lv. 10 (30%); Shellos Lv. 10 (15%); Mareanie Lv. 10 (10%); Inkay Lv. 10 (5%) |
-| Good Rod | Any time | 20 | Crabrawler Lv. 20 (40%); Tatsugiri Lv. 20 (30%); Skorupi Lv. 20 (15%); Qwilfish Hisuian Lv. 20 (10%); Basculin Lv. 20 (5%) |
-| Super Rod | Any time | 40 | Palpitoad Lv. 40 (40%); Chinchou Lv. 40 (30%); Delibird Lv. 40 (15%); Spheal Lv. 40 (10%); Sealeo Lv. 40 (5%) |
-| Grass swarm | Any time | — | Mankey (swarm) |
-| Surf swarm | Any time | — | Goldeen (swarm) |
-| Good Rod swarm | Any time | — | Goldeen (swarm) |
-| Super Rod swarm | Any time | — | Magikarp (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Buizel (radio replacement); Bidoof (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Whismur (radio replacement); Linoone (radio replacement) |
-| Grass | Day | 14.4 | Oricorio Lv. 15 (20%); Larvesta Lv. 13 (20%); Rufflet Lv. 15 (10%); Mareep Lv. 13 (10%); Elgyem Lv. 14 (10%); Jigglypuff Lv. 14 (10%); Dipplin Lv. 16 (5%); Magby Lv. 16 (5%); Ralts Lv. 15 (4%); Dedenne Lv. 17 (4%); Roselia Lv. 15 (1%); Spidops Lv. 17 (1%) |
-| Grass | Night | 14.4 | Nuzleaf Lv. 15 (20%); Houndour Lv. 13 (20%); Growlithe Lv. 15 (10%); Mareep Lv. 13 (10%); Elgyem Lv. 14 (10%); Jigglypuff Lv. 14 (10%); Vullaby Lv. 16 (5%); Nuzleaf Lv. 16 (5%); Ralts Lv. 15 (4%); Volbeat Lv. 17 (4%); Zigzagoon Galarian Lv. 15 (1%); Kricketune Lv. 17 (1%) |
+| Grass | Any | 5% | Rufflet Lv. 37 (20%); Alcremie Lv. 38 (20%); Mismagius Lv. 39 (10%); Wyrdeer Lv. 40 (10%); Beheeyem Lv. 42 (10%); Slaking Lv. 42 (10%); Braviary Lv. 40 (5%); Grimmsnarl Lv. 42 (5%); Gardevoir Lv. 40 (4%); Gallade Lv. 40 (4%); Braviary Lv. 41 (2%) |
+## Mt. Silver (Outside) (table 85)
 
-## Mt. Mortar (Waterfall room)
+| Method | Time | Encounter rate | Pokémon and slot share |
+| --- | --- | --- | --- |
+| Grass | Any | 25% | Clefable Lv. 85 (20%); Beedrill Lv. 85 (20%); Manectric Lv. 85 (10%); Audino Lv. 85 (10%); Lopunny Lv. 85 (10%); Pidgeot Lv. 85 (10%); Altaria Lv. 85 (6%); Scovillain Lv. 85 (6%); Staraptor Lv. 85 (4%); Alakazam Lv. 85 (4%) |
+| Surf | Any | 10% | Sharpedo Lv. 87 (60%); Barbaracle Lv. 87 (30%); Slowbro Lv. 87 (10%) |
+| Old Rod | Any | 25% | Tatsugiri Lv. 87 (100%) |
+| Good Rod | Any | 50% | Starmie Lv. 87 (100%) |
+| Super Rod | Any | 75% | Dragalge Lv. 87 (100%) |
+Conditional: nightFish: Drednaw
 
-Encounter ID 53; configured level range 10-40.
+## Mt. Silver 1F (table 86)
 
-| Method | Time | Average level | Pokémon and rate |
+| Method | Time | Encounter rate | Pokémon and slot share |
 | --- | --- | --- | --- |
-| Grass | Morning | 14.09 | Hippopotas Lv. 13 (20%); Cufant Lv. 15 (20%); Rhyhorn Lv. 13 (10%); Sandshrew Alolan Lv. 15 (10%); Diglett Alolan Lv. 14 (10%); Porygon Lv. 14 (10%); Geodude Alolan Lv. 14 (9%); Kakuna Lv. 14 (5%); Beedrill Lv. 16 (4%); Mudkip Lv. 14 (1%); Mudkip Lv. 15 (1%) |
-| Surf | Any time | 18.5 | Corsola Galarian Lv. 15-25 (60%); Omanyte Lv. 10-20 (30%); Kabuto Lv. 15-25 (5%); Tirtouga Lv. 15-25 (4%); Lileep Lv. 15-25 (1%) |
-| Old Rod | Any time | 10 | Binacle Lv. 10 (45%); Wiglett Lv. 10 (30%); Wimpod Lv. 10 (15%); Skorupi Lv. 10 (10%) |
-| Good Rod | Any time | 20 | Archen Lv. 20 (40%); Lileep Lv. 20 (30%); Anorith Lv. 20 (15%); Staryu Lv. 20 (10%); Crabrawler Lv. 20 (5%) |
-| Super Rod | Any time | 40 | Corphish Lv. 40 (40%); Archen Lv. 40 (30%); Corsola Galarian Lv. 40 (15%); Wiglett Lv. 40 (10%); Lileep Lv. 40 (5%) |
-| Grass swarm | Any time | — | Marill (swarm) |
-| Surf swarm | Any time | — | Goldeen (swarm) |
-| Good Rod swarm | Any time | — | Goldeen (swarm) |
-| Super Rod swarm | Any time | — | Magikarp (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Bronzor (radio replacement); Chingling (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Absol (radio replacement); Makuhita (radio replacement) |
-| Grass | Day | 14.09 | Trubbish Lv. 13 (20%); Drilbur Lv. 15 (20%); Wooper Paldean Lv. 13 (10%); Cufant Lv. 15 (10%); Drilbur Lv. 14 (10%); Kakuna Lv. 14 (10%); Venonat Lv. 14 (5%); Magnemite Lv. 14 (5%); Fidough Lv. 14 (4%); Zorua Hisuian Lv. 16 (4%); Mudkip Lv. 14 (1%); Mudkip Lv. 15 (1%) |
-| Grass | Night | 14.09 | Pawniard Lv. 13 (20%); Honedge Lv. 15 (20%); Bronzor Lv. 13 (10%); Diglett Lv. 15 (10%); Vanillite Lv. 14 (10%); Mudbray Lv. 14 (10%); Shieldon Lv. 14 (5%); Diglett Alolan Lv. 14 (5%); Beedrill Lv. 14 (4%); Sableye Lv. 16 (4%); Mudkip Lv. 14 (1%); Mudkip Lv. 15 (1%) |
+| Grass | Any | 10% | Mawile Lv. 86 (20%); Sableye Lv. 86 (20%); Camerupt Lv. 86 (10%); Medicham Lv. 86 (10%); Chimecho Lv. 86 (10%); Banette Lv. 86 (10%); Meowstic Lv. 86 (12%); Absol Lv. 87 (8%) |
+| Surf | Any | 10% | Malamar Lv. 86 (60%); Feraligatr Lv. 88 (30%); Eelektross Lv. 86 (10%) |
+| Old Rod | Any | 25% | Greninja Lv. 88 (95%); Greninja Ash Lv. 88 (5%) |
+| Good Rod | Any | 50% | Swampert Lv. 88 (50%); Blastoise Lv. 88 (50%) |
+| Super Rod | Any | 75% | Gyarados Lv. 87 (100%) |
+Conditional: nightFish: Lumineon
 
-## Mt. Mortar (Central room)
+## Mt. Silver (Mountainside) (table 87)
+
+| Method | Time | Encounter rate | Pokémon and slot share |
+| --- | --- | --- | --- |
+| Grass | Any | 20% | Scolipede Lv. 87 (20%); Falinks Lv. 87 (20%); Pinsir Lv. 87 (10%); Victreebel Lv. 87 (10%); Scizor Lv. 87 (10%); Heracross Lv. 87 (10%); Raichu Lv. 87 (12%); Lucario Lv. 87 (8%) |
+## Mt. Silver (Expert Belt room) (table 88)
 
-Encounter ID 54; configured level range 13-15.
-
-| Method | Time | Average level | Pokémon and rate |
-| --- | --- | --- | --- |
-| Grass | Morning | 13.65 | Swinub Lv. 13 (20%); Onix Lv. 13 (20%); Wooper Lv. 13 (10%); Aron Lv. 13 (10%); Cufant Lv. 15 (10%); Drilbur Lv. 15 (10%); Magnemite Lv. 14 (5%); Silicobra Lv. 14 (5%); Venipede Lv. 15 (4%); Fidough Lv. 14 (4%); Beldum Lv. 15 (1%); Beldum Lv. 14 (1%) |
-| Grass swarm | Any time | — | Geodude (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Bronzor (radio replacement); Chingling (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Absol (radio replacement); Makuhita (radio replacement) |
-| Grass | Day | 13.65 | Nosepass Lv. 13 (20%); Porygon Lv. 13 (20%); Geodude Lv. 13 (10%); Klink Lv. 13 (10%); Minior Lv. 15 (10%); Trapinch Lv. 15 (10%); Bonsly Lv. 14 (5%); Meowth Galarian Lv. 14 (5%); Diglett Lv. 15 (4%); Weedle Lv. 14 (4%); Beldum Lv. 15 (1%); Beldum Lv. 14 (1%) |
-| Grass | Night | 13.65 | Sandygast Lv. 13 (20%); Sinistea Lv. 13 (20%); Drifloon Lv. 13 (10%); Pumpkaboo Lv. 13 (10%); Phantump Lv. 15 (10%); Bramblin Lv. 15 (10%); Drifloon Lv. 14 (5%); Nincada Lv. 14 (5%); Pumpkaboo Lv. 15 (4%); Kakuna Lv. 14 (4%); Beldum Lv. 15 (1%); Beldum Lv. 14 (1%) |
-
-## Mt. Mortar (Room above waterfall)
-
-Encounter ID 55; configured level range 10-40.
+| Method | Time | Encounter rate | Pokémon and slot share |
+| --- | --- | --- | --- |
+| Grass | Any | 10% | Golurk Lv. 87 (20%); Drampa Lv. 87 (20%); Gardevoir Lv. 87 (10%); Gallade Lv. 87 (10%); Golisopod Lv. 87 (10%); Glimmora Lv. 87 (10%); Garchomp Lv. 90 (10%); Floette Eternal Flower Lv. 88 (8%); Floette Lv. 89 (2%) |
+## Mt. Silver (Top, snowy area) (table 89)
 
-| Method | Time | Average level | Pokémon and rate |
-| --- | --- | --- | --- |
-| Grass | Morning | 32 | Krokorok Lv. 31 (20%); Lairon Lv. 32 (20%); Perrserker Lv. 31 (20%); Dugtrio Alolan Lv. 32 (10%); Marowak Alolan Lv. 31 (10%); Sliggoo Hisuian Lv. 40 (5%); Dustox Lv. 40 (5%); Perrserker Lv. 28 (4%); Beedrill Lv. 30 (4%); Magnezone Lv. 28 (1%); Mudsdale Lv. 30 (1%) |
-| Surf | Any time | 22 | Skrelp Lv. 15-25 (60%); Omanyte Lv. 20-30 (30%); Dewpider Lv. 20-30 (5%); Slowking Galarian Lv. 20-30 (4%); Cloyster Lv. 20-30 (1%) |
-| Old Rod | Any time | 10 | Wimpod Lv. 10 (40%); Skorupi Lv. 10 (30%); Feebas Lv. 10 (15%); Wishiwashi Lv. 10 (10%); Binacle Lv. 10 (5%) |
-| Good Rod | Any time | 20 | Staryu Lv. 20 (55%); Anorith Lv. 20 (30%); Crabrawler Lv. 20 (10%); Kabuto Lv. 20 (5%) |
-| Super Rod | Any time | 40 | Tirtouga Lv. 40 (40%); Corphish Lv. 40 (30%); Archen Lv. 40 (15%); Finneon Lv. 40 (10%); Whiscash Lv. 40 (5%) |
-| Grass swarm | Any time | — | Graveler (swarm) |
-| Surf swarm | Any time | — | Goldeen (swarm) |
-| Good Rod swarm | Any time | — | Goldeen (swarm) |
-| Super Rod swarm | Any time | — | Magikarp (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Bronzor (radio replacement); Chingling (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Absol (radio replacement); Makuhita (radio replacement) |
-| Grass | Day | 32 | Krokorok Lv. 31 (20%); Electrode Lv. 32 (20%); Dugtrio Alolan Lv. 31 (10%); Marowak Alolan Lv. 32 (10%); Electrode Lv. 31 (10%); Dugtrio Lv. 31 (10%); Sliggoo Hisuian Lv. 40 (5%); Dustox Lv. 40 (5%); Beedrill Lv. 28 (4%); Marowak Lv. 30 (4%); Graveler Lv. 28 (1%); Rampardos Lv. 30 (1%) |
-| Grass | Night | 32 | Krokorok Lv. 31 (20%); Yamask Lv. 32 (20%); Haunter Lv. 31 (10%); Lairon Lv. 32 (10%); Marowak Lv. 31 (10%); Graveler Lv. 31 (10%); Sliggoo Hisuian Lv. 40 (5%); Magcargo Lv. 40 (5%); Boldore Lv. 28 (4%); Graveler Alolan Lv. 30 (4%); Gholdengo Lv. 28 (1%); Bastiodon Lv. 30 (1%) |
+| Method | Time | Encounter rate | Pokémon and slot share |
+| --- | --- | --- | --- |
+| Grass | Any | 20% | Abomasnow Lv. 87 (20%); Crabomnabl Lv. 87 (20%); Scrafty Lv. 87 (10%); Skarmory Lv. 87 (10%); Hawlucha Lv. 87 (10%); Kangaskhan Lv. 87 (10%); Froslass Lv. 87 (6%); Glalie Lv. 87 (6%); Baxcalibur Lv. 90 (8%) |
+| Surf | Any | 10% | Shellder Lv. 30–35 (60%); Mantyke Lv. 30–35 (30%); Cloyster Lv. 35–44 (5%); Mantine Lv. 35–44 (4%); Mantine Lv. 37–46 (1%) |
+| Old Rod | Any | 25% | Shellder Lv. 22–28 (40%); Mantyke Lv. 22–28 (30%); Whiscash Lv. 30 (15%); Shellder Lv. 23–29 (10%); Shellder Lv. 24–30 (5%) |
+| Good Rod | Any | 50% | Whiscash Lv. 31–39 (40%); Politoed Lv. 31–39 (30%); Palafin Lv. 38–40 (15%); Shellder Lv. 32–40 (10%); Milotic Lv. 33–40 (5%) |
+| Super Rod | Any | 75% | Milotic Lv. 49–57 (40%); Kingler Lv. 49–57 (30%); Tentacruel Lv. 50–58 (15%); Poliwrath Lv. 50–58 (10%); Cloyster Lv. 51–59 (5%) |
+Conditional: nightFish: Sharpedo
 
-## Mt. Mortar B1F
-
-Encounter ID 56; configured level range 10-40.
+## ??? (table 90)
 
-| Method | Time | Average level | Pokémon and rate |
+| Method | Time | Encounter rate | Pokémon and slot share |
 | --- | --- | --- | --- |
-| Grass | Morning | 16 | Amaura Lv. 15 (20%); Tyrunt Lv. 17 (20%); Kakuna Lv. 15 (10%); Venonat Lv. 17 (10%); Spinarak Lv. 16 (10%); Kakuna Lv. 16 (16%); Weedle Lv. 16 (5%); Phantump Lv. 16 (4%); Venonat Lv. 16 (5%) |
-| Surf | Any time | 18.5 | Seel Lv. 15-25 (60%); Chewtle Lv. 10-20 (30%); Tadbulb Lv. 15-25 (5%); Slowpoke Galarian Lv. 15-25 (4%); Staryu Lv. 15-25 (1%) |
-| Old Rod | Any time | 10 | Finizen Lv. 10 (40%); Wiglett Lv. 10 (30%); Tympole Lv. 10 (15%); Wimpod Lv. 10 (10%); Remoraid Lv. 10 (5%) |
-| Good Rod | Any time | 20 | Staryu Lv. 20 (40%); Remoraid Lv. 20 (30%); Qwilfish Lv. 20 (15%); Qwilfish Hisuian Lv. 20 (10%); Lileep Lv. 20 (5%) |
-| Super Rod | Any time | 40 | Jellicent Lv. 40 (40%); Lileep Lv. 40 (30%); Anorith Lv. 40 (15%); Slowbro Lv. 40 (10%); Slowking Lv. 40 (5%) |
-| Grass swarm | Any time | — | Zubat (swarm) |
-| Surf swarm | Any time | — | Goldeen (swarm) |
-| Good Rod swarm | Any time | — | Goldeen (swarm) |
-| Super Rod swarm | Any time | — | Magikarp (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Bronzor (radio replacement); Chingling (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Absol (radio replacement); Makuhita (radio replacement) |
-| Grass | Day | 16 | Shieldon Lv. 15 (20%); Glimmet Lv. 17 (20%); Bramblin Lv. 15 (10%); Zubat Lv. 17 (10%); Venipede Lv. 16 (14%); Spinarak Lv. 16 (14%); Weedle Lv. 16 (6%); Zubat Lv. 16 (5%); Sudowoodo Lv. 16 (1%) |
-| Grass | Night | 16 | Golett Lv. 15 (20%); Yamask Galarian Lv. 17 (20%); Rotom Lv. 15 (10%); Sudowoodo Lv. 17 (10%); Rotom Lv. 16 (20%); Sudowoodo Lv. 16 (20%) |
+## Safari Zone (Placeholder, not used) (table 91)
 
-## Route 43
+| Method | Time | Encounter rate | Pokémon and slot share |
+| --- | --- | --- | --- |
+| Surf | Any | 15% | Finneon Lv. 26–30 (60%); Slowpoke Lv. 26–34 (30%); Lumineon Lv. 31–35 (5%); Slowking Lv. 31–35 (4%); Slowking Lv. 33–35 (1%) |
+| Old Rod | Any | 100% | Spheal Lv. 22–28 (40%); Shellos Lv. 22–28 (30%); Poliwag Lv. 20–24 (15%); Wailmer Lv. 23–29 (10%); Poliwag Lv. 21–24 (5%) |
+| Good Rod | Any | 100% | Veluza Lv. 27–35 (40%); Spheal Lv. 24–31 (30%); Binacle Lv. 28–36 (15%); Poliwag Lv. 24 (10%); Shellos Lv. 25–29 (5%) |
+| Super Rod | Any | 100% | Luvdisc Lv. 33–41 (40%); Spheal Lv. 30–31 (30%); Slowpoke Lv. 30–36 (15%); Skrelp Lv. 34–42 (10%); Slowking Lv. 35–43 (5%) |
+Conditional: nightFish: Bibarel
 
-Encounter ID 57; configured level range 5-50.
+## Route 12 (table 92)
 
-| Method | Time | Average level | Pokémon and rate |
+| Method | Time | Encounter rate | Pokémon and slot share |
 | --- | --- | --- | --- |
-| Grass | Morning | 16.8 | Sewaddle Lv. 15 (20%); Bellsprout Lv. 15 (20%); Beautifly Lv. 15 (10%); Pansage Lv. 15 (10%); Mimikyu Lv. 17 (10%); Furfrou Lv. 17 (10%); Sliggoo Lv. 40 (5%); Roselia Lv. 15 (5%); Shelmet Lv. 16 (4%); Illumise Lv. 17 (4%); Turtwig Lv. 16 (1%); Turtwig Lv. 17 (1%) |
-| Surf | Any time | 17.9 | Lombre Lv. 15-25 (60%); Wailmer Lv. 10-20 (30%); Dewpider Lv. 5-15 (5%); Psyduck Lv. 5-15 (4%); Walrein Lv. 50 (1%) |
-| Old Rod | Any time | 10 | Arrokuda Lv. 10 (40%); Inkay Lv. 10 (30%); Panpour Lv. 10 (15%); Seel Lv. 10 (10%); Surskit Lv. 10 (5%) |
-| Good Rod | Any time | 20 | Remoraid Lv. 20 (40%); Luvdisc Lv. 20 (30%); Lombre Lv. 20 (15%); Buizel Lv. 20 (15%) |
-| Super Rod | Any time | 40 | Shellos Lv. 40 (40%); Tatsugiri Lv. 40 (30%); Mareanie Lv. 40 (15%); Palpitoad Lv. 40 (10%); Octillery Lv. 40 (5%) |
-| Grass swarm | Any time | — | Flaaffy (swarm) |
-| Surf swarm | Any time | — | Magikarp (swarm) |
-| Good Rod swarm | Any time | — | Poliwag (swarm) |
-| Super Rod swarm | Any time | — | Magikarp (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Buizel (radio replacement); Bidoof (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Whismur (radio replacement); Linoone (radio replacement) |
-| Grass | Day | 16.8 | Sewaddle Lv. 15 (20%); Bellsprout Lv. 15 (20%); Trumbeak Lv. 15 (10%); Pansage Lv. 15 (10%); Dipplin Lv. 17 (10%); Mr. Mime Lv. 17 (10%); Sliggoo Lv. 40 (5%); Mareep Lv. 15 (5%); Shelmet Lv. 16 (4%); Sunflora Lv. 17 (4%); Turtwig Lv. 16 (1%); Turtwig Lv. 17 (1%) |
-| Grass | Night | 16.8 | Sewaddle Lv. 15 (20%); Bellsprout Lv. 15 (20%); Dottler Lv. 15 (10%); Pansage Lv. 15 (10%); Indeedee Lv. 17 (10%); Kricketune Lv. 17 (10%); Sliggoo Lv. 40 (5%); Scraggy Lv. 15 (5%); Shelmet Lv. 16 (4%); Shelmet Lv. 17 (4%); Turtwig Lv. 16 (1%); Turtwig Lv. 17 (1%) |
+| Grass | Any | 10% | Clodsire Lv. 75 (20%); Quagsire Lv. 75 (20%); Klawf Lv. 76 (10%); Bibarel Lv. 77 (10%); Grapploct Lv. 79 (10%); Cramorant Lv. 78 (10%); Vikavolt Lv. 79 (6%); Talonflame Lv. 77 (6%); Malamar Lv. 79 (4%); Crabomnabl Lv. 77 (4%) |
+| Surf | Any | 15% | Crawdaunt Lv. 75–78 (60%); Simipour Lv. 76–78 (30%); Clawitzer Lv. 77–79 (5%); Cramorant Lv. 77–79 (4%); Drednaw Lv. 77–79 (1%) |
+| Old Rod | Any | 25% | Grapploct Lv. 75–78 (40%); Overqwil Lv. 76–78 (30%); Dragalge Lv. 77–79 (15%); Mantine Lv. 77–79 (10%); Kingler Lv. 77–79 (5%) |
+| Good Rod | Any | 50% | Slowking Lv. 75–78 (40%); Basculin Lv. 76–78 (30%); Wugtrio Lv. 77–79 (15%); Milotic Lv. 77–79 (10%); Sharpedo Lv. 77–79 (5%) |
+| Super Rod | Any | 75% | Walrein Lv. 75–78 (40%); Veluza Lv. 76–78 (30%); Tentacruel Lv. 77–79 (15%); Omastar Lv. 77–79 (10%); Palafin Lv. 77–79 (5%) |
+Conditional: nightFish: Ludicolo
+
+## Route 19 (table 93)
 
-## Lake of Rage
+| Method | Time | Encounter rate | Pokémon and slot share |
+| --- | --- | --- | --- |
+| Grass | Any | 25% | Farigiraf Lv. 80 (20%); Dudunspars Lv. 81 (20%); Copperajah Lv. 81 (10%); Klinklang Lv. 82 (10%); Krookodile Lv. 82 (11%); Obstagoon Lv. 83 (11%); Emboar Lv. 83 (9%); Blaziken Lv. 84 (9%) |
+| Surf | Any | 10% | Swanna Lv. 80–84 (60%); Dragalge Lv. 80–84 (31%); Dhelmise Lv. 80–84 (9%) |
+| Rock Smash | Any | 100% | Aurorus Lv. 80–84 (90%); Kleavor Lv. 81–84 (10%) |
+| Old Rod | Any | 25% | Kingler Lv. 80–84 (40%); Relicanth Lv. 80–84 (30%); Wailord Lv. 80–84 (30%) |
+| Good Rod | Any | 50% | Dhelmise Lv. 80–84 (40%); Toxapex Lv. 80–84 (30%); Walrein Lv. 80–84 (15%); Samurott Lv. 80–84 (10%); Dracovish Lv. 80–84 (5%) |
+| Super Rod | Any | 75% | Malamar Lv. 80–84 (40%); Overqwil Lv. 80–84 (30%); Grapploct Lv. 80–84 (15%); Bruxish Lv. 80–84 (15%) |
+Conditional: nightFish: Basculegion Female
 
-Encounter ID 58; configured level range 5-40.
+## Route 20 (table 94)
 
-| Method | Time | Average level | Pokémon and rate |
+| Method | Time | Encounter rate | Pokémon and slot share |
 | --- | --- | --- | --- |
-| Grass | Morning | 18.02 | Magikarp Lv. 17 (20%); Tadbulb Lv. 17 (20%); Poliwag Lv. 18 (10%); Wooper Lv. 18 (10%); Tympole Lv. 18 (10%); Barboach Lv. 19 (10%); Tynamo Lv. 19 (5%); Basculin Lv. 19 (5%); Dewpider Lv. 20 (4%); Chewtle Lv. 20 (4%); Dreepy Lv. 21 (2%) |
-| Surf | Any time | 13.5 | Horsea Lv. 10-20 (60%); Shellos Lv. 5-15 (30%); Tympole Lv. 10-20 (5%); Delibird Lv. 10-20 (4%); Spheal Lv. 10-20 (1%) |
-| Old Rod | Any time | 10 | Chewtle Lv. 10 (40%); Finizen Lv. 10 (30%); Tadbulb Lv. 10 (15%); Shellder Lv. 10 (10%); Mareanie Lv. 10 (5%) |
-| Good Rod | Any time | 20 | Chinchou Lv. 20 (40%); Seel Lv. 20 (30%); Basculin Lv. 20 (15%); Skrelp Lv. 20 (10%); Finneon Lv. 20 (5%) |
-| Super Rod | Any time | 40 | Qwilfish Lv. 40 (40%); Qwilfish Hisuian Lv. 40 (30%); Slowpoke Galarian Lv. 40 (15%); Palpitoad Lv. 40 (10%); Araquanid Lv. 40 (5%) |
-| Surf swarm | Any time | — | Magikarp (swarm) |
-| Good Rod swarm | Any time | — | Gyarados (swarm) |
-| Super Rod swarm | Any time | — | Magikarp (swarm) |
-| Grass | Day | 18.02 | Magikarp Lv. 17 (20%); Tadbulb Lv. 17 (20%); Poliwag Lv. 18 (10%); Wooper Lv. 18 (10%); Surskit Lv. 18 (10%); Barboach Lv. 19 (10%); Tynamo Lv. 19 (5%); Basculin Lv. 19 (5%); Dewpider Lv. 20 (4%); Chewtle Lv. 20 (4%); Dreepy Lv. 21 (2%) |
-| Grass | Night | 18.02 | Tadbulb Lv. 17 (20%); Magikarp Lv. 17 (20%); Wooper Lv. 18 (10%); Tympole Lv. 18 (10%); Barboach Lv. 18 (10%); Chinchou Lv. 19 (10%); Tynamo Lv. 19 (5%); Basculin Lv. 19 (5%); Frillish Lv. 20 (4%); Dewpider Lv. 20 (4%); Dreepy Lv. 21 (2%) |
+| Surf | Any | 10% | Jellicent Lv. 77–81 (60%); Basculin Blue Striped Lv. 77–81 (30%); Basclegion Lv. 77–81 (10%) |
+| Old Rod | Any | 25% | Baraskewda Lv. 77–81 (40%); Bruxish Lv. 77–81 (30%); Pyukumuku Lv. 77–81 (20%); Araquanid Lv. 77–81 (10%) |
+| Good Rod | Any | 50% | Sharpedo Lv. 77–81 (40%); Wailord Lv. 77–81 (30%); Tentacruel Lv. 77–81 (15%); Pyukumuku Lv. 77–81 (10%); Jellicent Female Lv. 77–81 (5%) |
+| Super Rod | Any | 75% | Seismitoad Lv. 77–81 (40%); Wailord Lv. 77–81 (30%); Walrein Lv. 77–81 (15%); Araquanid Lv. 77–81 (10%); Tentacruel Lv. 77–81 (5%) |
+Conditional: nightFish: Sharpedo
 
-## Route 44
+## Pallet Town (table 95)
+
+| Method | Time | Encounter rate | Pokémon and slot share |
+| --- | --- | --- | --- |
+| Grass | Any | 10% | Raichu Lv. 79 (40%); Snorlax Lv. 80 (15%); Lucario Lv. 79 (10%); Togekiss Lv. 80 (10%); Magnezone Lv. 79 (10%); Venusaur Lv. 76 (5%); Blastoise Lv. 77 (5%); Charizard Lv. 79 (5%) |
+| Surf | Any | 15% | Swanna Lv. 76–79 (60%); Gorebyss Lv. 77–79 (30%); Ludicolo Lv. 78–80 (5%); Toxapex Lv. 78–80 (4%); Jellicent Lv. 78–80 (1%) |
+| Old Rod | Any | 25% | Lumineon Lv. 76–79 (40%); Huntail Lv. 77–79 (30%); Pyukumuku Lv. 78–80 (15%); Lanturn Lv. 78–80 (10%); Carracosta Lv. 78–80 (5%) |
+| Good Rod | Any | 50% | Seaking Lv. 76–79 (40%); Starmie Lv. 77–79 (30%); Golduck Lv. 78–80 (15%); Dracovish Lv. 78–80 (10%); Cloyster Lv. 78–80 (5%) |
+| Super Rod | Any | 75% | Baraskewda Lv. 76–79 (40%); Qwilfish Lv. 77–79 (30%); Wailord Lv. 78–80 (15%); Barbaracle Lv. 78–80 (10%); Dondozo Lv. 78–80 (5%) |
+Conditional: nightFish: Slowbro
 
-Encounter ID 59; configured level range 10-40.
+## Viridian City (table 96)
 
-| Method | Time | Average level | Pokémon and rate |
+| Method | Time | Encounter rate | Pokémon and slot share |
 | --- | --- | --- | --- |
-| Grass | Morning | 22.8 | Fletchinder Lv. 23 (20%); Shroomish Lv. 22 (20%); Arbok Lv. 23 (10%); Araquanid Lv. 22 (10%); Ariados Lv. 22 (10%); Tranquill Lv. 22 (10%); Parasect Lv. 24 (5%); Shiinotic Lv. 24 (5%); Dubwool Lv. 24 (4%); Manectric Lv. 26 (4%); Bagon Lv. 24 (1%); Bagon Lv. 26 (1%) |
-| Surf | Any time | 23.5 | Wailmer Lv. 20-30 (60%); Wattrel Lv. 15-25 (30%); Surskit Lv. 20-30 (5%); Dracovish Lv. 20-30 (4%); Dondozo Lv. 20-30 (1%) |
-| Old Rod | Any time | 10 | Arrokuda Lv. 10 (40%); Inkay Lv. 10 (30%); Feebas Lv. 10 (15%); Panpour Lv. 10 (10%); Lotad Lv. 10 (5%) |
-| Good Rod | Any time | 20 | Mareanie Lv. 20 (40%); Skrelp Lv. 20 (30%); Luvdisc Lv. 20 (25%); Remoraid Lv. 20 (5%) |
-| Super Rod | Any time | 40 | Gastrodon Lv. 40 (40%); Qwilfish Lv. 40 (30%); Poliwhirl Lv. 40 (15%); Remoraid Lv. 40 (10%); Lombre Lv. 40 (5%) |
-| Grass swarm | Any time | — | Tangela (swarm) |
-| Surf swarm | Any time | — | Poliwag (swarm) |
-| Good Rod swarm | Any time | — | Poliwag (swarm) |
-| Super Rod swarm | Any time | — | Remoraid (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Buizel (radio replacement); Bidoof (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Whismur (radio replacement); Linoone (radio replacement) |
-| Grass | Day | 22.8 | Fletchinder Lv. 23 (20%); Shroomish Lv. 22 (20%); Fearow Lv. 23 (10%); Wormadam Lv. 22 (10%); Mothim Lv. 22 (10%); Linoone Lv. 22 (10%); Breloom Lv. 24 (5%); Granbull Lv. 24 (5%); Greedent Lv. 24 (4%); Boltund Lv. 26 (4%); Bagon Lv. 24 (1%); Bagon Lv. 26 (1%) |
-| Grass | Night | 22.8 | Litwick Lv. 23 (20%); Shroomish Lv. 22 (20%); Liepard Lv. 23 (10%); Watchog Lv. 22 (10%); Gumshoos Lv. 22 (10%); Raticate Lv. 22 (10%); Lokix Lv. 24 (5%); Masquerain Lv. 24 (5%); Houndoom Lv. 24 (4%); Xatu Lv. 26 (4%); Bagon Lv. 24 (1%); Bagon Lv. 26 (1%) |
+| Grass | Any | 10% | Mabosstiff Lv. 79 (20%); Flamigo Lv. 80 (20%); Lickilicky Lv. 80 (10%); Bellibolt Lv. 82 (10%); Zoroark Lv. 82 (22%); Jolteon Lv. 83 (9%); Ampharos Lv. 83 (9%) |
+| Surf | Any | 15% | Bibarel Lv. 79–82 (60%); Pelipper Lv. 80–82 (30%); IronBundle Lv. 81–83 (5%); Cramorant Lv. 81–83 (4%); Poliwrath Lv. 81–83 (1%) |
+| Old Rod | Any | 25% | Araquanid Lv. 79–82 (40%); Jellicent Female Lv. 80–82 (30%); Slowbro Lv. 81–83 (15%); Arctovish Lv. 81–83 (10%); Seismitoad Lv. 81–83 (5%) |
+| Good Rod | Any | 50% | Kabutops Lv. 79–82 (40%); Dewgong Lv. 80–82 (30%); Kingdra Lv. 81–83 (15%); Basculin Blue Striped Lv. 81–83 (10%); Golisopod Lv. 81–83 (5%) |
+| Super Rod | Any | 75% | Alomomola Lv. 79–82 (40%); Floatzel Lv. 80–82 (30%); Tatsugiri Lv. 81–83 (15%); Gastrodon Lv. 81–83 (10%); Lapras Lv. 81–83 (5%) |
+Conditional: nightFish: Basculegion Female
 
-## Ice Path 1F
+## Cerulean City (table 97)
 
-Encounter ID 60; configured level range 21-23.
+| Method | Time | Encounter rate | Pokémon and slot share |
+| --- | --- | --- | --- |
+| Grass | Any | 10% | Dedenne Lv. 66 (20%); Pachirisu Lv. 67 (20%); Mimikyu Lv. 67 (10%); Maushold Lv. 68 (10%); Lilligant Lv. 69 (22%); Lopunny Lv. 70 (9%); Pidgeot Lv. 70 (9%) |
+| Surf | Any | 10% | Wishiwashi Lv. 66–69 (60%); Lumineon Lv. 67–69 (30%); Simipour Lv. 68–70 (5%); Gastrodon East Sea Lv. 68–70 (4%); Politoed Lv. 68–70 (1%) |
+| Old Rod | Any | 25% | Crawdaunt Lv. 66–69 (40%); Octillery Lv. 67–69 (30%); Kingdra Lv. 68–70 (15%); Jellicent Female Lv. 68–70 (10%); Lapras Lv. 68–70 (5%) |
+| Good Rod | Any | 50% | Kingler Lv. 66–69 (40%); Araquanid Lv. 67–69 (30%); Seismitoad Lv. 68–70 (15%); Alomomola Lv. 68–70 (10%); Baraskewda Lv. 68–70 (5%) |
+| Super Rod | Any | 75% | Carracosta Lv. 66–69 (40%); Wugtrio Lv. 67–69 (30%); Omastar Lv. 68–70 (15%); Dracovish Lv. 68–70 (10%); Azumarill Lv. 68–70 (5%) |
+Conditional: nightFish: Basculegion Female
+
+## Vermilion City (table 98)
 
-| Method | Time | Average level | Pokémon and rate |
-| --- | --- | --- | --- |
-| Grass | Morning | 21.8 | Bergmite Lv. 21 (20%); Snorunt Lv. 22 (20%); Mr. Mime Galarian Lv. 21 (10%); Smoochum Lv. 22 (20%); Mr. Mime Galarian Lv. 22 (18%); Smoochum Lv. 23 (5%); Mr. Mime Galarian Lv. 23 (5%); Frigibax Lv. 22 (2%) |
-| Grass swarm | Any time | — | Swinub (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Bronzor (radio replacement); Chingling (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Absol (radio replacement); Makuhita (radio replacement) |
-| Grass | Day | 21.8 | Swinub Lv. 21 (20%); Amaura Lv. 22 (20%); Smoochum Lv. 21 (10%); Smoochum Lv. 22 (20%); Mr. Mime Galarian Lv. 22 (10%); Smoochum Lv. 23 (5%); Amaura Lv. 23 (5%); Sandshrew Alolan Lv. 22 (4%); Vanillite Lv. 22 (4%); Frigibax Lv. 22 (2%) |
-| Grass | Night | 21.8 | Bergmite Lv. 21 (30%); Snorunt Lv. 22 (30%); Swinub Lv. 22 (10%); Mr. Mime Galarian Lv. 22 (10%); Smoochum Lv. 23 (5%); Amaura Lv. 23 (5%); Sandshrew Alolan Lv. 22 (4%); Vanillite Lv. 22 (4%); Frigibax Lv. 22 (2%) |
+| Method | Time | Encounter rate | Pokémon and slot share |
+| --- | --- | --- | --- |
+| Grass | Any | 10% | Kricketune Lv. 60 (20%); Ledian Lv. 61 (20%); Beautifly Lv. 61 (10%); Dustox Lv. 62 (10%); Shedinja Lv. 63 (11%); Butterfree Lv. 63 (11%); Vivillon Lv. 64 (9%); Beedrill Lv. 64 (9%) |
+| Surf | Any | 15% | Pyukumuku Lv. 60–63 (60%); Dondozo Lv. 61–63 (30%); Golisopod Lv. 62–64 (5%); Toxapex Lv. 62–64 (4%); Jellicent Lv. 62–64 (1%) |
+| Rock Smash | Any | 100% | Gigalith Lv. 60–64 (90%); Aggron Lv. 61–64 (10%) |
+| Old Rod | Any | 25% | Starmie Lv. 60–63 (40%); Palafin Lv. 61–63 (30%); Mantine Lv. 62–64 (15%); Relicanth Lv. 62–64 (10%); Quagsire Lv. 62–64 (5%) |
+| Good Rod | Any | 50% | Tatsugiri Lv. 60–63 (40%); Wailord Lv. 61–63 (30%); Basculin Blue Striped Lv. 62–64 (15%); Luvdisc Lv. 62–64 (10%); Gyarados Lv. 62–64 (5%) |
+| Super Rod | Any | 75% | Arctovish Lv. 60–63 (40%); Seaking Lv. 61–63 (30%); Milotic Lv. 62–64 (15%); Dewgong Lv. 62–64 (10%); Bruxish Lv. 62–64 (5%) |
+Conditional: nightFish: Wailord
 
-## Ice Path B1F
+## Celadon City (table 99)
 
-Encounter ID 61; configured level range 21-23.
+| Method | Time | Encounter rate | Pokémon and slot share |
+| --- | --- | --- | --- |
+| Grass | Any | 10% | Lokix Lv. 69 (20%); Granbull Lv. 70 (20%); Jumpluff Lv. 70 (10%); Eldegoss Lv. 71 (10%); Tropius Lv. 72 (11%); Noctowl Lv. 72 (11%); Kangaskhan Lv. 73 (9%); Altaria Lv. 73 (9%) |
+| Surf | Any | 15% | Poliwrath Lv. 70–72 (60%); Swanna Lv. 69–72 (30%); Vaporeon Lv. 71–73 (10%) |
+| Old Rod | Any | 25% | Clodsire Lv. 69–72 (40%); Pyukumuku Lv. 70–72 (30%); Toxapex Lv. 71–73 (15%); Dracovish Lv. 71–73 (10%); Vaporeon Lv. 71–73 (5%) |
+| Good Rod | Any | 50% | Bruxish Lv. 69–72 (40%); Clawitzer Lv. 69–72 (30%); Dewgong Lv. 69–72 (15%); Kingdra Lv. 69–72 (15%) |
+| Super Rod | Any | 75% | Toxapex Lv. 69–72 (40%); Malamar Lv. 69–72 (30%); Slowbro Lv. 69–72 (15%); Barbaracle Lv. 69–72 (15%) |
+## Fuchsia City (table 100)
 
-| Method | Time | Average level | Pokémon and rate |
+| Method | Time | Encounter rate | Pokémon and slot share |
 | --- | --- | --- | --- |
-| Grass | Morning | 21.8 | Swinub Lv. 21 (20%); Amaura Lv. 22 (20%); Bergmite Lv. 21 (10%); Snorunt Lv. 22 (11%); Swinub Lv. 22 (10%); Mr. Mime Galarian Lv. 22 (10%); Smoochum Lv. 23 (5%); Amaura Lv. 23 (5%); Sandshrew Alolan Lv. 22 (4%); Vanillite Lv. 22 (4%); Bergmite Lv. 22 (1%) |
-| Grass swarm | Any time | — | Swinub (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Bronzor (radio replacement); Chingling (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Absol (radio replacement); Makuhita (radio replacement) |
-| Grass | Day | 21.8 | Vanillite Lv. 21 (20%); Bergmite Lv. 22 (24%); Swinub Lv. 21 (10%); Mr. Mime Galarian Lv. 22 (11%); Smoochum Lv. 22 (10%); Amaura Lv. 22 (10%); Sandshrew Alolan Lv. 23 (5%); Vanillite Lv. 23 (5%); Snorunt Lv. 22 (4%); Swinub Lv. 22 (1%) |
-| Grass | Night | 21.8 | Snorunt Lv. 21 (20%); Swinub Lv. 22 (24%); Smoochum Lv. 21 (10%); Amaura Lv. 22 (11%); Sandshrew Alolan Lv. 22 (10%); Vanillite Lv. 22 (10%); Bergmite Lv. 23 (5%); Snorunt Lv. 23 (5%); Mr. Mime Galarian Lv. 22 (4%); Smoochum Lv. 22 (1%) |
+| Grass | Any | 10% | Stunfisk Lv. 70 (20%); Stunfisk Lv. 71 (20%); Slowking Lv. 74 (10%); Slowbro Lv. 74 (10%); Reuniclus Lv. 73 (11%); Gothitelle Lv. 73 (11%); Sirfetch’d Lv. 74 (9%); Tinkaton Lv. 74 (9%) |
+| Surf | Any | 15% | Pelipper Lv. 70–73 (60%); Bibarel Lv. 71–73 (30%); IronBundle Lv. 72–74 (5%); Swanna Lv. 72–74 (4%); Ludicolo Lv. 72–74 (1%) |
+| Old Rod | Any | 25% | Kabutops Lv. 70–73 (40%); Qwilfish Lv. 71–73 (30%); Basculin Lv. 72–74 (15%); Cloyster Lv. 72–74 (10%); Corsola Lv. 72–74 (5%) |
+| Good Rod | Any | 50% | Gorebyss Lv. 70–73 (40%); Whiscash Lv. 71–73 (30%); Floatzel Lv. 72–74 (15%); Sharpedo Lv. 72–74 (10%); Slowking Lv. 72–74 (5%) |
+| Super Rod | Any | 75% | Clawitzer Lv. 70–73 (40%); Barbaracle Lv. 71–73 (30%); Gastrodon Lv. 72–74 (15%); Tentacruel Lv. 72–74 (10%); Veluza Lv. 72–74 (5%) |
+Conditional: nightFish: Gorebyss
 
-## Ice Path B2F
+## Cinnabar Island (table 101)
 
-Encounter ID 62; configured level range 22-24.
+| Method | Time | Encounter rate | Pokémon and slot share |
+| --- | --- | --- | --- |
+| Grass | Any | 20% | Simisear Lv. 75 (20%); Turtonator Lv. 76 (20%); Pyroar Lv. 79 (10%); Centskorch Lv. 77 (10%); Torkoal Lv. 78 (10%); Flareon Lv. 78 (10%); Ceruledge Lv. 79 (5%); Armarouge Lv. 79 (5%); Infernape Lv. 79 (5%); Skeledirge Lv. 79 (5%) |
+| Surf | Any | 15% | Dracovish Lv. 75–79 (60%); Octillery Lv. 75–79 (30%); Bruxish Lv. 75–79 (6%); Corsola Lv. 75–79 (4%) |
+| Old Rod | Any | 25% | Grapploct Lv. 75–79 (40%); Lumineon Lv. 75–79 (30%); Mantine Lv. 75–79 (15%); Corsola Lv. 75–79 (15%) |
+| Good Rod | Any | 50% | Drednaw Lv. 75–79 (40%); Arctovish Lv. 75–79 (30%); Gastrodon Lv. 75–79 (15%); Dewgong Lv. 75–79 (15%) |
+| Super Rod | Any | 75% | Walrein Lv. 75–79 (70%); Barbaracle Lv. 75–79 (15%); Crawdaunt Lv. 75–79 (10%); Cloyster Lv. 75–79 (5%) |
+Conditional: nightFish: Drednaw
 
-| Method | Time | Average level | Pokémon and rate |
+## Route 48 (table 102)
+
+| Method | Time | Encounter rate | Pokémon and slot share |
 | --- | --- | --- | --- |
-| Grass | Morning | 22.8 | Swinub Lv. 22 (20%); Amaura Lv. 23 (24%); Sandshrew Alolan Lv. 22 (10%); Vanillite Lv. 23 (11%); Bergmite Lv. 23 (10%); Snorunt Lv. 23 (10%); Swinub Lv. 24 (5%); Mr. Mime Galarian Lv. 24 (5%); Smoochum Lv. 23 (4%); Sandshrew Alolan Lv. 23 (1%) |
-| Grass swarm | Any time | — | Swinub (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Bronzor (radio replacement); Chingling (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Absol (radio replacement); Makuhita (radio replacement) |
-| Grass | Day | 22.8 | Vanillite Lv. 22 (20%); Bergmite Lv. 23 (21%); Bergmite Lv. 22 (10%); Snorunt Lv. 23 (11%); Swinub Lv. 23 (10%); Mr. Mime Galarian Lv. 23 (10%); Smoochum Lv. 24 (5%); Amaura Lv. 24 (5%); Sandshrew Alolan Lv. 23 (4%); Vanillite Lv. 23 (4%) |
-| Grass | Night | 22.8 | Snorunt Lv. 22 (20%); Amaura Lv. 23 (30%); Swinub Lv. 22 (10%); Mr. Mime Galarian Lv. 23 (10%); Smoochum Lv. 23 (10%); Sandshrew Alolan Lv. 24 (5%); Vanillite Lv. 24 (5%); Bergmite Lv. 23 (4%); Snorunt Lv. 23 (4%); Sandslash Alolan Lv. 23 (1%); Froslass Lv. 23 (1%) |
-
-## Ice Path B3F
-
-Encounter ID 63; configured level range 22-24.
+| Grass | Any | 25% | Linoone Lv. 28 (40%); Shiinotic Lv. 29 (10%); Greedent Lv. 29 (10%); Bibarel Lv. 30 (10%); Granbull Lv. 30 (10%); Porygon Lv. 29 (5%); Shiftry Lv. 30 (5%); Lilligant Lv. 29 (8%); Porygon2 Lv. 30 (2%) |
+## Route 26 (table 103)
 
-| Method | Time | Average level | Pokémon and rate |
+| Method | Time | Encounter rate | Pokémon and slot share |
 | --- | --- | --- | --- |
-| Grass | Morning | 22.8 | Bergmite Lv. 22 (20%); Swinub Lv. 23 (21%); Swinub Lv. 22 (10%); Mr. Mime Galarian Lv. 23 (11%); Smoochum Lv. 23 (10%); Amaura Lv. 23 (10%); Sandshrew Alolan Lv. 24 (5%); Vanillite Lv. 24 (5%); Bergmite Lv. 23 (4%); Snorunt Lv. 23 (4%) |
-| Grass swarm | Any time | — | Swinub (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Bronzor (radio replacement); Chingling (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Absol (radio replacement); Makuhita (radio replacement) |
-| Grass | Day | 22.8 | Amaura Lv. 22 (20%); Vanillite Lv. 23 (30%); Smoochum Lv. 22 (10%); Amaura Lv. 23 (11%); Sandshrew Alolan Lv. 23 (10%); Bergmite Lv. 24 (5%); Snorunt Lv. 24 (5%); Swinub Lv. 23 (4%); Mr. Mime Galarian Lv. 23 (4%); Smoochum Lv. 23 (1%) |
-| Grass | Night | 22.8 | Snorunt Lv. 22 (20%); Vanillite Lv. 23 (31%); Sandshrew Alolan Lv. 22 (10%); Bergmite Lv. 23 (10%); Snorunt Lv. 23 (10%); Swinub Lv. 24 (5%); Mr. Mime Galarian Lv. 24 (5%); Smoochum Lv. 23 (4%); Amaura Lv. 23 (4%); Sandshrew Alolan Lv. 23 (1%) |
+| Grass | Any | 25% | IronBundle Lv. 47 (20%); Arboliva Lv. 47 (20%); Luxray Lv. 48 (10%); Rapidash Lv. 48 (10%); Rotom Lv. 47 (10%); Mamoswine Lv. 47 (10%); Appletun Lv. 48 (5%); Flapple Lv. 48 (5%); Exeggutor Lv. 47 (8%); Dipplin Lv. 48 (2%) |
+| Surf | Any | 10% | Omastar Lv. 44–47 (60%); Simipour Lv. 45–47 (30%); Walrein Lv. 46–48 (6%); Jellicent Female Lv. 46–48 (4%) |
+| Old Rod | Any | 25% | Seismitoad Lv. 44–47 (40%); Alomomola Lv. 45–47 (30%); Golisopod Lv. 46–48 (15%); Grapploct Lv. 46–48 (10%); Dragalge Lv. 48 (5%) |
+| Good Rod | Any | 50% | Starmie Lv. 44–47 (40%); Dondozo Lv. 45–47 (30%); Drednaw Lv. 46–48 (15%); Gyarados Lv. 46–48 (10%); Walrein Lv. 46–48 (5%) |
+| Super Rod | Any | 75% | Dhelmise Lv. 44–47 (40%); Walrein Lv. 45–47 (30%); Slowbro Lv. 46–48 (15%); Basculegion Female Lv. 46–48 (15%) |
+Conditional: nightFish: Spheal
 
-## Blackthorn City
-
-Encounter ID 65; configured level range 2-40.
-
-| Method | Time | Average level | Pokémon and rate |
-| --- | --- | --- | --- |
-| Grass | Morning | 23.4 | Swablu Lv. 23 (20%); Rockruff Lv. 23 (20%); Sandshrew Lv. 23 (10%); Cubone Lv. 23 (10%); Trapinch Lv. 24 (10%); Noibat Lv. 24 (10%); Axew Lv. 24 (5%); Druddigon Lv. 24 (5%); Turtonator Lv. 24 (4%); Drampa Lv. 24 (4%); Gible Lv. 24 (2%) |
-| Surf | Any time | 12.6 | Buizel Lv. 10-20 (60%); Slowpoke Lv. 5-15 (30%); Bidoof Lv. 2-10 (5%); Marill Lv. 2-10 (4%); Tadbulb Lv. 2-10 (1%) |
-| Old Rod | Any time | 10 | Psyduck Lv. 10 (40%); Shellos Lv. 10 (30%); Mareanie Lv. 10 (15%); Slowpoke Lv. 10 (10%); Tympole Lv. 10 (5%) |
-| Good Rod | Any time | 20 | Wishiwashi Lv. 20 (50%); Mareanie Lv. 20 (30%); Tatsugiri Lv. 20 (15%); Dewpider Lv. 20 (5%) |
-| Super Rod | Any time | 40 | Qwilfish Lv. 40 (40%); Araquanid Lv. 40 (30%); Basculin Lv. 40 (15%); Chinchou Lv. 40 (10%); Delibird Lv. 40 (5%) |
-| Surf swarm | Any time | — | Magikarp (swarm) |
-| Good Rod swarm | Any time | — | Poliwag (swarm) |
-| Super Rod swarm | Any time | — | Magikarp (swarm) |
-| Grass | Day | 23.4 | Rockruff Lv. 23 (20%); Swablu Lv. 23 (20%); Cubone Lv. 23 (10%); Trapinch Lv. 23 (10%); Noibat Lv. 24 (10%); Axew Lv. 24 (10%); Tyrunt Lv. 24 (5%); Druddigon Lv. 24 (5%); Turtonator Lv. 24 (4%); Duraludon Lv. 24 (4%); Gible Lv. 24 (2%) |
-| Grass | Night | 23.4 | Swablu Lv. 23 (20%); Noibat Lv. 23 (20%); Rockruff Lv. 23 (10%); Cubone Lv. 23 (10%); Trapinch Lv. 24 (10%); Axew Lv. 24 (10%); Murkrow Lv. 24 (5%); Druddigon Lv. 24 (5%); Drampa Lv. 24 (4%); Duraludon Lv. 24 (4%); Gible Lv. 24 (2%) |
-
-## Dragons Den
-
-Encounter ID 66; configured level range 5-40.
-
-| Method | Time | Average level | Pokémon and rate |
-| --- | --- | --- | --- |
-| Grass | Morning | 25.02 | Horsea Lv. 24 (20%); Swablu Lv. 24 (20%); Applin Lv. 25 (10%); Skrelp Lv. 25 (10%); Trapinch Lv. 25 (10%); Noibat Lv. 26 (10%); Dratini Lv. 26 (5%); Goomy Lv. 26 (5%); Axew Lv. 27 (4%); Druddigon Lv. 27 (4%); Frigibax Lv. 28 (2%) |
-| Surf | Any time | 13 | Mareanie Lv. 10-20 (60%); Omanyte Lv. 5-15 (31%); Clauncher Lv. 5-15 (5%); Corphish Lv. 5-15 (4%) |
-| Old Rod | Any time | 10 | Skorupi Lv. 10 (40%); Binacle Lv. 10 (30%); Crabrawler Lv. 10 (15%); Clauncher Lv. 10 (10%); Corphish Lv. 10 (5%) |
-| Good Rod | Any time | 20 | Kabuto Lv. 20 (55%); Omanyte Lv. 20 (30%); Archen Lv. 20 (10%); Tirtouga Lv. 20 (5%) |
-| Super Rod | Any time | 40 | Archen Lv. 40 (40%); Poliwhirl Lv. 40 (30%); Corsola Galarian Lv. 40 (15%); Araquanid Lv. 40 (10%); Wiglett Lv. 40 (5%) |
-| Surf swarm | Any time | — | Magikarp (swarm) |
-| Good Rod swarm | Any time | — | Dratini (swarm) |
-| Super Rod swarm | Any time | — | Magikarp (swarm) |
-| Grass | Day | 25.02 | Horsea Lv. 24 (20%); Applin Lv. 24 (20%); Swablu Lv. 25 (10%); Tyrunt Lv. 25 (10%); Trapinch Lv. 25 (10%); Noibat Lv. 26 (10%); Bagon Lv. 26 (5%); Beldum Lv. 26 (5%); Axew Lv. 27 (4%); Turtonator Lv. 27 (4%); Jangmo-o Lv. 28 (2%) |
-| Grass | Night | 25.02 | Skrelp Lv. 24 (20%); Noibat Lv. 24 (20%); Horsea Lv. 25 (10%); Applin Lv. 25 (10%); Trapinch Lv. 25 (10%); Axew Lv. 26 (10%); Deino Lv. 26 (5%); Dreepy Lv. 26 (5%); Drampa Lv. 27 (4%); Duraludon Lv. 27 (4%); Frigibax Lv. 28 (2%) |
-
-## Route 45
-
-Encounter ID 67; configured level range 2-40.
-
-| Method | Time | Average level | Pokémon and rate |
-| --- | --- | --- | --- |
-| Grass | Morning | 23.7 | Oricorio Lv. 23 (20%); Stufful Lv. 23 (20%); Trumbeak Lv. 23 (10%); Weepinbell Lv. 23 (10%); Gloom Lv. 24 (10%); Luxio Lv. 24 (10%); Dragonair Lv. 30 (5%); Slowpoke Galarian Lv. 20 (5%); Sigilyph Lv. 25 (4%); Capsakid Lv. 27 (4%); Eelektross Lv. 25 (1%); Crobat Lv. 27 (1%) |
-| Surf | Any time | 17.1 | Spheal Lv. 15-25 (60%); Chewtle Lv. 10-20 (30%); Feebas Lv. 2-10 (5%); Wattrel Lv. 2-10 (4%); Chewtle Lv. 2-10 (1%) |
-| Old Rod | Any time | 10 | Finizen Lv. 10 (40%); Finneon Lv. 10 (30%); Arrokuda Lv. 10 (15%); Inkay Lv. 10 (10%); Panpour Lv. 10 (5%) |
-| Good Rod | Any time | 20 | Qwilfish Hisuian Lv. 20 (40%); Bidoof Lv. 20 (30%); Lotad Lv. 20 (15%); Clamperl Lv. 20 (10%); Shellos Lv. 20 (5%) |
-| Super Rod | Any time | 40 | Slowking Lv. 40 (40%); Luvdisc Lv. 40 (30%); Gastrodon Lv. 40 (15%); Seadra Lv. 40 (10%); Clamperl Lv. 40 (5%) |
-| Grass swarm | Any time | — | Swablu (swarm) |
-| Surf swarm | Any time | — | Magikarp (swarm) |
-| Good Rod swarm | Any time | — | Poliwag (swarm) |
-| Super Rod swarm | Any time | — | Magikarp (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Buizel (radio replacement); Bidoof (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Whismur (radio replacement); Linoone (radio replacement) |
-| Grass | Day | 23.7 | Skiploom Lv. 23 (20%); Stufful Lv. 23 (20%); Trumbeak Lv. 23 (10%); Weepinbell Lv. 23 (10%); Gloom Lv. 24 (10%); Luxio Lv. 24 (10%); Dragonair Lv. 30 (5%); Slowpoke Galarian Lv. 20 (5%); Pawmot Lv. 25 (4%); Capsakid Lv. 27 (4%); Gliscor Lv. 25 (1%); Cetitan Lv. 27 (1%) |
-| Grass | Night | 23.7 | Nuzleaf Lv. 23 (20%); Stufful Lv. 23 (20%); Trumbeak Lv. 23 (10%); Weepinbell Lv. 23 (10%); Gloom Lv. 24 (10%); Luxio Lv. 24 (10%); Dragonair Lv. 30 (5%); Slowpoke Galarian Lv. 20 (5%); Comfey Lv. 25 (4%); Capsakid Lv. 27 (4%); Farigiraf Lv. 25 (1%); Wyrdeer Lv. 27 (1%) |
-
-## Route 46
-
-Encounter ID 68; configured level range 2-4.
-
-| Method | Time | Average level | Pokémon and rate |
-| --- | --- | --- | --- |
-| Grass | Morning | 2.45 | Wattrel Lv. 3 (20%); Sizzlipede Lv. 2 (20%); Toxel Lv. 3 (10%); Aipom Lv. 2 (10%); Delcatty Lv. 2 (10%); Yamper Lv. 2 (10%); Pansear Lv. 2 (5%); Nymble Lv. 2 (5%); Vulpix Alolan Lv. 3 (4%); Vulpix Alolan Lv. 4 (4%); Spearow Lv. 3 (1%); Cacnea Lv. 4 (1%) |
-| Grass swarm | Any time | — | Geodude (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Shinx (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Plusle (radio replacement); Minun (radio replacement) |
-| Grass | Day | 2.45 | Hoppip Lv. 3 (20%); Wattrel Lv. 2 (20%); Charcadet Lv. 3 (10%); Aipom Lv. 2 (10%); Delcatty Lv. 2 (10%); Flittle Lv. 2 (10%); Lillipup Lv. 2 (5%); Skwovet Lv. 2 (5%); Vulpix Alolan Lv. 3 (4%); Vulpix Alolan Lv. 4 (4%); Spearow Lv. 3 (1%); Elekid Lv. 4 (1%) |
-| Grass | Night | 2.45 | Litwick Lv. 3 (20%); Poltchageist Lv. 2 (20%); Poochyena Lv. 3 (10%); Aipom Lv. 2 (10%); Delcatty Lv. 2 (10%); Purrloin Lv. 2 (10%); Blipbug Lv. 2 (5%); Kricketot Lv. 2 (5%); Vulpix Alolan Lv. 3 (4%); Vulpix Alolan Lv. 4 (4%); Nickit Lv. 3 (1%); Poochyena Lv. 4 (1%) |
-
-## Dark Cave (Route 31 entrance)
-
-Encounter ID 69; configured level range 2-40.
-
-| Method | Time | Average level | Pokémon and rate |
-| --- | --- | --- | --- |
-| Grass | Morning | 2.65 | Magnemite Lv. 3 (20%); Voltorb Lv. 2 (20%); Rotom Lv. 3 (14%); Sudowoodo Lv. 2 (20%); Rotom Lv. 2 (10%); Rotom Lv. 4 (5%); Sudowoodo Lv. 4 (5%); Numel Lv. 4 (4%); Piplup Lv. 3 (1%); Piplup Lv. 4 (1%) |
-| Surf | Any time | 12.6 | Omanyte Lv. 10-20 (60%); Kabuto Lv. 5-15 (30%); Wiglett Lv. 2-10 (5%); Wimpod Lv. 2-10 (4%); Corphish Lv. 2-10 (1%) |
-| Old Rod | Any time | 10 | Skorupi Lv. 10 (40%); Binacle Lv. 10 (30%); Shellder Lv. 10 (15%); Crabrawler Lv. 10 (10%); Staryu Lv. 10 (5%) |
-| Good Rod | Any time | 20 | Lileep Lv. 20 (40%); Anorith Lv. 20 (30%); Kabuto Lv. 20 (15%); Tirtouga Lv. 20 (10%); Lotad Lv. 20 (5%) |
-| Super Rod | Any time | 40 | Archen Lv. 40 (40%); Corsola Galarian Lv. 40 (30%); Wiglett Lv. 40 (15%); Lileep Lv. 40 (10%); Anorith Lv. 40 (5%) |
-| Rock Smash | Any time | 6.5 | Anorith Lv. 4-8 (90%); Lileep Lv. 8-14 (10%) |
-| Grass swarm | Any time | — | Dunsparce (swarm) |
-| Surf swarm | Any time | — | Magikarp (swarm) |
-| Good Rod swarm | Any time | — | Goldeen (swarm) |
-| Super Rod swarm | Any time | — | Magikarp (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Bronzor (radio replacement); Chingling (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Absol (radio replacement); Makuhita (radio replacement) |
-| Grass | Day | 2.65 | Magnemite Lv. 3 (20%); Togedemaru Lv. 2 (20%); Sinistea Lv. 3 (10%); Wooper Lv. 2 (10%); Wooper Paldean Lv. 2 (10%); Pawniard Lv. 2 (10%); Rolycoly Lv. 4 (5%); Magnemite Lv. 4 (5%); Voltorb Lv. 3 (4%); Diglett Lv. 4 (4%); Piplup Lv. 3 (1%); Piplup Lv. 4 (1%) |
-| Grass | Night | 2.65 | Sandile Lv. 3 (20%); Sinistea Lv. 2 (20%); Poltchageist Lv. 3 (10%); Baltoy Lv. 2 (10%); Bronzor Lv. 2 (10%); Zorua Hisuian Lv. 2 (10%); Litwick Lv. 4 (5%); Roggenrola Lv. 4 (5%); Rockruff Lv. 3 (4%); Nacli Lv. 4 (4%); Piplup Lv. 3 (1%); Piplup Lv. 4 (1%) |
+## Route 27 (table 104)
 
-## Dark Cave (Route 45 entrance)
+| Method | Time | Encounter rate | Pokémon and slot share |
+| --- | --- | --- | --- |
+| Grass | Any | 25% | Raichu Lv. 43 (40%); Talonflame Lv. 43 (10%); Ninetales Lv. 45 (10%); Decidueye Lv. 45 (10%); Samurott Lv. 45 (10%); Hydrapple Lv. 47 (6%); Vikavolt Lv. 45 (6%); BruteBonet Lv. 46 (4%); SlithrWing Lv. 46 (4%) |
+| Surf | Any | 10% | Basculegion Female Lv. 39–44 (60%); Cramorant Lv. 39–44 (34%); Barbaracle Lv. 48 (6%) |
+| Old Rod | Any | 25% | Palafin Lv. 39–44 (40%); Basculegion Female Lv. 39–44 (30%); Veluza Lv. 39–44 (15%); Omastar Lv. 40–44 (10%); Starmie Lv. 39–44 (5%) |
+| Good Rod | Any | 50% | Sharpedo Lv. 39–44 (40%); Crawdaunt Lv. 39–44 (30%); Cloyster Lv. 39–44 (15%); Dewgong Lv. 39–44 (10%); Mantine Lv. 39–44 (5%) |
+| Super Rod | Any | 75% | Carracosta Lv. 51–56 (40%); Octillery Lv. 52–57 (30%); Seaking Lv. 53–58 (15%); Lanturn Lv. 54–59 (10%); Wugtrio Lv. 55–60 (5%) |
+Conditional: nightFish: Sharpedo
 
-Encounter ID 70; configured level range 2-40.
+## Route 28 (table 105)
 
-| Method | Time | Average level | Pokémon and rate |
+| Method | Time | Encounter rate | Pokémon and slot share |
 | --- | --- | --- | --- |
-| Grass | Morning | 23.2 | Stunfisk Lv. 23 (20%); Pumpkaboo Lv. 23 (20%); Whirlipede Lv. 23 (14%); Golbat Lv. 23 (10%); Graveler Alolan Lv. 25 (24%); Diggersby Lv. 20 (5%); Quagsire Lv. 20 (5%); Gible Lv. 25 (1%); Gible Lv. 23 (1%) |
-| Surf | Any time | 12.6 | Psyduck Lv. 10-20 (60%); Tirtouga Lv. 5-15 (30%); Wimpod Lv. 2-10 (9%); Bidoof Lv. 2-10 (1%) |
-| Old Rod | Any time | 10 | Skorupi Lv. 10 (40%); Binacle Lv. 10 (30%); Dewpider Lv. 10 (15%); Shellder Lv. 10 (10%); Crabrawler Lv. 10 (5%) |
-| Good Rod | Any time | 20 | Staryu Lv. 20 (40%); Skrelp Lv. 20 (30%); Slowpoke Lv. 20 (15%); Basculin Lv. 20 (10%); Buizel Lv. 20 (5%) |
-| Super Rod | Any time | 40 | Poliwhirl Lv. 40 (40%); Shellos Lv. 40 (30%); Psyduck Lv. 40 (15%); Seadra Lv. 40 (10%); Skrelp Lv. 40 (5%) |
-| Grass swarm | Any time | — | Geodude (swarm) |
-| Surf swarm | Any time | — | Magikarp (swarm) |
-| Good Rod swarm | Any time | — | Goldeen (swarm) |
-| Super Rod swarm | Any time | — | Magikarp (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Bronzor (radio replacement); Chingling (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Absol (radio replacement); Makuhita (radio replacement) |
-| Grass | Day | 23.2 | Voltorb Lv. 23 (20%); Pumpkaboo Lv. 23 (20%); Golbat Lv. 23 (14%); Whirlipede Lv. 23 (10%); Graveler Lv. 25 (10%); Boldore Lv. 25 (10%); Clodsire Lv. 20 (5%); Diggersby Lv. 20 (5%); Graveler Alolan Lv. 25 (4%); Gible Lv. 25 (1%); Gible Lv. 23 (1%) |
-| Grass | Night | 23.2 | Phantump Lv. 23 (20%); Pumpkaboo Lv. 23 (20%); Whirlipede Lv. 23 (10%); Ariados Lv. 23 (14%); Haunter Lv. 25 (10%); Lycanroc Lv. 25 (10%); Quagsire Lv. 20 (5%); Clodsire Lv. 20 (5%); Graveler Lv. 25 (4%); Gible Lv. 25 (1%); Gible Lv. 23 (1%) |
+| Grass | Any | 25% | Florges Lv. 85 (20%); Noivern Lv. 85 (20%); Typhlosion Lv. 85 (20%); SandyShock Lv. 85 (10%); Revavroom Lv. 85 (10%); IronTreads Lv. 85 (6%); Great Tusk Lv. 85 (6%); Slaking Lv. 85 (8%) |
+| Surf | Any | 10% | Inteleon Lv. 81–85 (60%); Primarina Lv. 81–85 (30%); Empoleon Lv. 81–85 (5%); Dracovish Lv. 81–85 (5%) |
+| Old Rod | Any | 25% | Empoleon Lv. 81–85 (40%); Blastoise Lv. 81–85 (30%); Swampert Lv. 81–85 (30%) |
+| Good Rod | Any | 50% | Dondozo Lv. 81–85 (40%); Gyarados Lv. 81–85 (30%); Feraligatr Lv. 81–85 (15%); Greninja Lv. 81–85 (15%) |
+| Super Rod | Any | 75% | Vaporeon Lv. 81–85 (40%); Overqwil Lv. 81–85 (30%); Arctovish Lv. 81–85 (15%); Simipour Lv. 81–85 (15%) |
+Conditional: nightFish: Azumarill
 
-## Route 47
+## Mt. Moon 1F (table 106)
 
-Encounter ID 71; configured level range 10-40.
+| Method | Time | Encounter rate | Pokémon and slot share |
+| --- | --- | --- | --- |
+| Grass | Any | 15% | Archeops Lv. 77 (20%); Crobat Lv. 75 (20%); Muk Lv. 75 (10%); Muk Lv. 77 (10%); Espeon Lv. 77 (11%); Umbreon Lv. 77 (11%); Weezing Lv. 78 (18%) |
+## Mt. Moon 2F (table 107)
+
+| Method | Time | Encounter rate | Pokémon and slot share |
+| --- | --- | --- | --- |
+| Grass | Any | 15% | Sandslash Lv. 74 (20%); Sandslash Lv. 75 (20%); Runerigus Lv. 76 (10%); Cofagrigus Lv. 76 (10%); Nidoqueen Lv. 77 (11%); Nidoking Lv. 77 (11%); Gengar Lv. 78 (9%); Banette Lv. 78 (9%) |
+## Rock Tunnel 1F (table 108)
 
-| Method | Time | Average level | Pokémon and rate |
+| Method | Time | Encounter rate | Pokémon and slot share |
 | --- | --- | --- | --- |
-| Grass | Morning | 33.48 | Vivillon Lv. 35 (20%); Fletchinder Lv. 35 (20%); Munchlax Lv. 34 (10%); Salazzle Lv. 33 (10%); Morgrem Lv. 32 (10%); Elekid Lv. 31 (10%); Tinkatuff Lv. 32 (5%); Tinkatuff Lv. 31 (5%); Decidueye Hisuian Lv. 34 (4%); Mothim Lv. 31 (4%); Jangmo-o Lv. 33 (1%); Jangmo-o Lv. 40 (1%) |
-| Surf | Any time | 18.5 | Slowpoke Lv. 15-25 (60%); Seel Lv. 10-20 (30%); Staryu Lv. 15-25 (5%); Surskit Lv. 15-25 (4%); Tympole Lv. 15-25 (1%) |
-| Old Rod | Any time | 10 | Tympole Lv. 10 (40%); Spheal Lv. 10 (30%); Chewtle Lv. 10 (15%); Wattrel Lv. 10 (10%); Finizen Lv. 10 (5%) |
-| Good Rod | Any time | 20 | Wishiwashi Lv. 20 (40%); Chinchou Lv. 20 (45%); Shellder Lv. 20 (10%); Delibird Lv. 20 (5%) |
-| Super Rod | Any time | 40 | Palpitoad Lv. 40 (40%); Araquanid Lv. 40 (30%); Sealeo Lv. 40 (20%); Delibird Lv. 40 (10%) |
-| Grass swarm | Any time | — | Ditto (swarm) |
-| Surf swarm | Any time | — | Tentacool (swarm) |
-| Good Rod swarm | Any time | — | Shellder (swarm) |
-| Super Rod swarm | Any time | — | Magikarp (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Buizel (radio replacement); Bidoof (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Whismur (radio replacement); Linoone (radio replacement) |
-| Grass | Day | 33.48 | Oricorio Lv. 35 (20%); Fletchinder Lv. 35 (20%); Munchlax Lv. 34 (10%); Tinkatink Lv. 33 (10%); Magby Lv. 32 (10%); Elekid Lv. 31 (10%); Tinkatuff Lv. 32 (5%); Tinkatuff Lv. 31 (5%); Staraptor Lv. 34 (4%); Ledian Lv. 31 (4%); Jangmo-o Lv. 33 (1%); Jangmo-o Lv. 40 (1%) |
-| Grass | Night | 33.48 | Nuzleaf Lv. 35 (20%); Fletchinder Lv. 35 (20%); Munchlax Lv. 34 (10%); Tinkatink Lv. 33 (10%); Magby Lv. 32 (10%); Elekid Lv. 31 (10%); Tinkatuff Lv. 32 (5%); Tinkatuff Lv. 31 (5%); Skuntank Lv. 34 (4%); Raticate Lv. 31 (4%); Jangmo-o Lv. 33 (1%); Jangmo-o Lv. 40 (1%) |
+| Grass | Any | 15% | Magcargo Lv. 63 (20%); Crustle Lv. 64 (20%); Minior Lv. 67 (10%); Lycanroc Midnight Lv. 65 (16%); Lunatone Lv. 66 (10%); Solrock Lv. 66 (10%); Lycanroc Lv. 64 (6%); Aggron Lv. 67 (4%); Lycanroc Dusk Lv. 67 (4%) |
+## Rock Tunnel B1F (table 109)
 
-## Mt. Moon (Outside area)
+| Method | Time | Encounter rate | Pokémon and slot share |
+| --- | --- | --- | --- |
+| Grass | Any | 15% | Golem Lv. 63 (20%); Golem Lv. 64 (20%); Donphan Lv. 63 (10%); Coalossal Lv. 64 (10%); Hariyama Lv. 63 (11%); Stonjorner Lv. 66 (11%); Garganacl Lv. 67 (9%); Kleavor Lv. 67 (9%) |
+| Rock Smash | Any | 100% | Archeops Lv. 63–67 (90%); Shuckle Lv. 64–67 (10%) |
+## Victory Road 1F (table 110)
 
-Encounter ID 72; configured level range 10-40.
+| Method | Time | Encounter rate | Pokémon and slot share |
+| --- | --- | --- | --- |
+| Grass | Any | 10% | ScreamTail Lv. 45 (20%); FluttrMane Lv. 45 (20%); Iron Hands Lv. 49 (10%); Iron Moth Lv. 45 (10%); Arcanine Lv. 45 (20%); Iron Neck Lv. 45 (6%); RoarinMoon Lv. 45 (6%); Ursaluna Lv. 45 (4%); Ursaluna Bloodmoon Lv. 45 (4%) |
+## Route 1 (table 111)
 
-| Method | Time | Average level | Pokémon and rate |
+| Method | Time | Encounter rate | Pokémon and slot share |
 | --- | --- | --- | --- |
-| Surf | Any time | 33.5 | Poliwhirl Lv. 35 (60%); Corsola Galarian Lv. 30 (30%); Tadbulb Lv. 35 (5%); Gastrodon Lv. 35 (4%); Crawdaunt Lv. 35 (1%) |
-| Old Rod | Any time | 10 | Finneon Lv. 10 (40%); Wiglett Lv. 10 (30%); Wimpod Lv. 10 (15%); Arrokuda Lv. 10 (10%); Inkay Lv. 10 (5%) |
-| Good Rod | Any time | 20 | Archen Lv. 20 (40%); Qwilfish Hisuian Lv. 20 (30%); Anorith Lv. 20 (15%); Wailmer Lv. 20 (10%); Lileep Lv. 20 (5%) |
-| Super Rod | Any time | 40 | Anorith Lv. 40 (40%); Slowbro Lv. 40 (30%); Slowking Lv. 40 (15%); Palpitoad Lv. 40 (10%); Gastrodon Lv. 40 (5%) |
-| Surf swarm | Any time | — | Poliwag (swarm) |
-| Good Rod swarm | Any time | — | Poliwag (swarm) |
-| Super Rod swarm | Any time | — | Magikarp (swarm) |
+| Grass | Any | 20% | Conkeldurr Lv. 79 (20%); Machamp Lv. 79 (20%); Hatterene Lv. 80 (10%); Grimmsnarl Lv. 78 (10%); Vaporeon Lv. 79 (10%); Sylveon Lv. 79 (10%); Gardevoir Lv. 79 (5%); Gallade Lv. 78 (5%); Rillaboom Lv. 79 (5%); Cinderace Lv. 78 (5%) |
+## Route 2 (South, below Viridian Forest) (table 112)
 
-## Mt. Moon (Outside Clefairy active)
+| Method | Time | Encounter rate | Pokémon and slot share |
+| --- | --- | --- | --- |
+| Grass | Any | 20% | Dubwool Lv. 74 (20%); Bouffalant Lv. 74 (20%); Roserade Lv. 71 (10%); Tsareena Lv. 72 (10%); Bombirdier Lv. 73 (11%); Beheeyem Lv. 73 (11%); Sinistcha Lv. 70 (9%); Poltegeist Lv. 71 (9%) |
+## Route 3 (table 113)
 
-Encounter ID 73; configured level range 10-40.
-
-| Method | Time | Average level | Pokémon and rate |
-| --- | --- | --- | --- |
-| Surf | Any time | 33.5 | Araquanid Lv. 35 (60%); Poliwhirl Lv. 30 (30%); Gastrodon Lv. 35 (5%); Seadra Lv. 35 (4%); Kingler Lv. 35 (1%) |
-| Old Rod | Any time | 10 | Panpour Lv. 10 (40%); Skorupi Lv. 10 (30%); Corsola Lv. 10 (15%); Marill Lv. 10 (10%); Dewpider Lv. 10 (5%) |
-| Good Rod | Any time | 20 | Crabrawler Lv. 20 (40%); Clamperl Lv. 20 (30%); Marill Lv. 20 (15%); Buizel Lv. 20 (10%); Feebas Lv. 20 (5%) |
-| Super Rod | Any time | 40 | Shellos Lv. 40 (40%); Psyduck Lv. 40 (30%); Seadra Lv. 40 (15%); Feebas Lv. 40 (10%); Jellicent Lv. 40 (5%) |
-| Surf swarm | Any time | — | Poliwag (swarm) |
-| Good Rod swarm | Any time | — | Magikarp (swarm) |
-| Super Rod swarm | Any time | — | Poliwag (swarm) |
+| Method | Time | Encounter rate | Pokémon and slot share |
+| --- | --- | --- | --- |
+| Grass | Any | 20% | Toxtricity Low Key Lv. 74 (20%); Toxtricity Lv. 75 (20%); Mandibuzz Lv. 75 (10%); Honchkrow Lv. 77 (10%); Stoutland Lv. 77 (11%); Rapidash Lv. 77 (11%); Aegislash Lv. 78 (9%); Alakazam Lv. 78 (9%) |
+| Rock Smash | Any | 100% | Excadrill Lv. 74–78 (90%); Aggron Lv. 75–78 (10%) |
+## Route 4 (table 114)
 
-## Seafoam Islands 1F
+| Method | Time | Encounter rate | Pokémon and slot share |
+| --- | --- | --- | --- |
+| Grass | Any | 20% | Oranguru Lv. 75 (20%); Exploud Lv. 76 (20%); Tauros Blaze Lv. 79 (10%); Tauros Aqua Lv. 79 (10%); Tauros Combat Lv. 76 (11%); Tauros Lv. 77 (11%); Braviary Lv. 79 (18%) |
+| Surf | Any | 15% | Cramorant Lv. 75–78 (60%); Pelipper Lv. 76–78 (30%); Swanna Lv. 77–79 (5%); Golduck Lv. 77–79 (4%); Qwilfish Lv. 77–79 (1%) |
+| Old Rod | Any | 25% | Crawdaunt Lv. 75–78 (40%); Gastrodon Lv. 76–78 (30%); Gorebyss Lv. 77–79 (15%); Sharpedo Lv. 77–79 (10%); Wishiwashi Lv. 77–79 (5%) |
+| Good Rod | Any | 50% | Wugtrio Lv. 75–78 (40%); Lumineon Lv. 76–78 (30%); Octillery Lv. 77–79 (15%); Milotic Lv. 77–79 (10%); Toxapex Lv. 77–79 (5%) |
+| Super Rod | Any | 75% | Azumarill Lv. 75–78 (40%); Huntail Lv. 76–78 (30%); Pyukumuku Lv. 77–79 (15%); Jellicent Lv. 77–79 (10%); Arctovish Lv. 77–79 (5%) |
+Conditional: nightFish: Wugtrio
 
-Encounter ID 74; configured level range 26-32.
+## Route 5 (table 115)
 
-| Method | Time | Average level | Pokémon and rate |
-| --- | --- | --- | --- |
-| Grass | Morning | 29.2 | Bergmite Lv. 28 (20%); Snorunt Lv. 32 (20%); Haunter Lv. 28 (10%); Dugtrio Lv. 29 (10%); Electrode Lv. 30 (10%); Lairon Lv. 32 (10%); Dugtrio Lv. 27 (5%); Boldore Lv. 26 (5%); Lycanroc Lv. 27 (4%); Dugtrio Lv. 26 (4%); Probopass Lv. 27 (1%); Dachsbun Lv. 26 (1%) |
-| Grass swarm | Any time | — | Zubat (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Bronzor (radio replacement); Chingling (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Absol (radio replacement); Makuhita (radio replacement) |
-| Grass | Day | 29.2 | Swinub Lv. 28 (20%); Amaura Lv. 32 (20%); Haunter Lv. 28 (10%); Marowak Lv. 29 (10%); Magneton Lv. 30 (10%); Lairon Lv. 32 (10%); Graveler Lv. 27 (5%); Boldore Lv. 26 (5%); Lycanroc Lv. 27 (4%); Dugtrio Lv. 26 (4%); Cryogonal Lv. 27 (1%); Swalot Lv. 26 (1%) |
-| Grass | Night | 29.2 | Gastly Lv. 28 (20%); Krokorok Lv. 32 (20%); Haunter Lv. 28 (10%); Wobbuffet Lv. 29 (10%); Electrode Lv. 30 (10%); Magneton Lv. 32 (10%); Haunter Lv. 27 (5%); Graveler Lv. 26 (5%); Boldore Lv. 27 (4%); Graveler Alolan Lv. 26 (4%); Dhelmise Lv. 27 (1%); Hypno Lv. 26 (1%) |
-
-## Seafoam Islands B1F
-
-Encounter ID 75; configured level range 26-34.
-
-| Method | Time | Average level | Pokémon and rate |
+| Method | Time | Encounter rate | Pokémon and slot share |
 | --- | --- | --- | --- |
-| Grass | Morning | 31.78 | Bonsly Lv. 32 (20%); Piloswine Lv. 34 (20%); Marowak Lv. 28 (15%); Lairon Lv. 34 (10%); Electrode Lv. 32 (10%); Magneton Lv. 34 (10%); Marowak Lv. 29 (5%); Lairon Lv. 32 (4%); Hitmonlee Lv. 28 (4%); Lycanroc Lv. 27 (1%); Lucario Lv. 26 (1%) |
-| Grass swarm | Any time | — | Seel (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Bronzor (radio replacement); Chingling (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Absol (radio replacement); Makuhita (radio replacement) |
-| Grass | Day | 31.78 | Bonsly Lv. 32 (20%); Piloswine Lv. 34 (20%); Lycanroc Lv. 28 (10%); Electrode Lv. 34 (10%); Magneton Lv. 32 (10%); Lairon Lv. 34 (10%); Dugtrio Lv. 29 (5%); Marowak Lv. 28 (5%); Electrode Lv. 32 (4%); Graveler Lv. 28 (4%); Mamoswine Lv. 27 (1%); Aerodactyl Lv. 26 (1%) |
-| Grass | Night | 31.78 | Bonsly Lv. 32 (20%); Piloswine Lv. 34 (20%); Haunter Lv. 28 (10%); Magneton Lv. 34 (10%); Gothorita Lv. 32 (10%); Lairon Lv. 34 (10%); Boldore Lv. 29 (5%); Graveler Alolan Lv. 28 (5%); Duosion Lv. 32 (4%); Palpitoad Lv. 28 (4%); Ceruledge Lv. 27 (1%); Polteageist Lv. 26 (1%) |
-
-## Seafoam Islands B2F
-
-Encounter ID 76; configured level range 28-54.
-
-| Method | Time | Average level | Pokémon and rate |
-| --- | --- | --- | --- |
-| Grass | Morning | 33.15 | Piloswine Lv. 33 (20%); Vanillish Lv. 35 (20%); Electrode Lv. 30 (10%); Vibrava Lv. 35 (20%); Lycanroc Lv. 33 (10%); Machoke Lv. 30 (5%); Gurdurr Lv. 29 (5%); Camerupt Lv. 33 (4%); Hitmonchan Lv. 29 (4%); Duraludon Lv. 28 (1%); Magcargo Lv. 54 (1%) |
-| Grass swarm | Any time | — | Seel (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Bronzor (radio replacement); Chingling (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Absol (radio replacement); Makuhita (radio replacement) |
-| Grass | Day | 33.15 | Piloswine Lv. 33 (20%); Vanillish Lv. 35 (20%); Gastrodon Lv. 30 (10%); Weezing Lv. 35 (10%); Magneton Lv. 33 (10%); Vibrava Lv. 35 (10%); Dugtrio Lv. 30 (5%); Marowak Lv. 29 (5%); Hattrem Lv. 33 (4%); Graveler Lv. 29 (4%); Arcanine Hisuian Lv. 28 (1%); Bisharp Lv. 54 (1%) |
-| Grass | Night | 33.15 | Piloswine Lv. 33 (20%); Vanillish Lv. 35 (20%); Haunter Lv. 30 (10%); Vibrava Lv. 35 (20%); Gothorita Lv. 33 (10%); Boldore Lv. 30 (5%); Boldore Lv. 29 (5%); Bronzong Lv. 33 (4%); Graveler Alolan Lv. 29 (4%); Chandelure Lv. 28 (1%); Bisharp Lv. 54 (1%) |
-
-## Seafoam Islands B3F
-
-Encounter ID 77; configured level range 31-36.
-
-| Method | Time | Average level | Pokémon and rate |
-| --- | --- | --- | --- |
-| Grass | Morning | 34.38 | Vanillish Lv. 35 (20%); Piloswine Lv. 36 (20%); Boldore Lv. 32 (10%); Lairon Lv. 34 (10%); Palpitoad Lv. 34 (10%); Gourgeist Lv. 36 (10%); Electrode Lv. 32 (5%); Lycanroc Lv. 31 (5%); Crustle Lv. 34 (4%); Steelix Lv. 36 (4%); Durant Lv. 32 (1%); Excadrill Lv. 31 (1%) |
-| Grass swarm | Any time | — | Dewgong (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Bronzor (radio replacement); Chingling (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Absol (radio replacement); Makuhita (radio replacement) |
-| Grass | Day | 34.38 | Vanillish Lv. 35 (20%); Piloswine Lv. 36 (20%); Machoke Lv. 32 (10%); Machoke Lv. 34 (10%); Gurdurr Lv. 34 (10%); Golem Lv. 36 (10%); Gastrodon Lv. 32 (5%); Magneton Lv. 31 (5%); Hippowdon Lv. 34 (4%); Golem Alolan Lv. 36 (4%); Gothorita Lv. 32 (1%); Forretress Lv. 31 (1%) |
-| Grass | Night | 34.38 | Vanillish Lv. 35 (20%); Piloswine Lv. 36 (20%); Hattrem Lv. 32 (10%); Gothorita Lv. 34 (10%); Haunter Lv. 34 (10%); Gourgeist Lv. 36 (10%); Lairon Lv. 32 (5%); Dugtrio Lv. 31 (5%); Cofagrigus Lv. 34 (4%); Claydol Lv. 36 (4%); Marshadow Lv. 32 (1%); Jynx Lv. 31 (1%) |
-
-## Seafoam Islands B4F
-
-Encounter ID 78; configured level range 10-50.
-
-| Method | Time | Average level | Pokémon and rate |
-| --- | --- | --- | --- |
-| Grass | Morning | 37.45 | Vanillish Lv. 37 (20%); Piloswine Lv. 40 (20%); Marowak Lv. 34 (10%); Graveler Lv. 34 (10%); Fraxure Lv. 38 (10%); Klang Lv. 38 (19%); Arctibax Lv. 39 (5%); Avalugg Lv. 37 (4%); Revavroom Lv. 40 (1%); Ferrothorn Lv. 40 (1%) |
-| Surf | Any time | 35.9 | Seel Lv. 30-40 (60%); Horsea Lv. 30-40 (30%); Palpitoad Lv. 35-45 (5%); Slowbro Lv. 50 (4%); Skrelp Lv. 35-45 (1%) |
-| Old Rod | Any time | 10 | Krabby Lv. 10 (40%); Binacle Lv. 10 (30%); Marill Lv. 10 (15%); Spheal Lv. 10 (10%); Chewtle Lv. 10 (5%) |
-| Good Rod | Any time | 20 | Clobbopus Lv. 20 (40%); Skrelp Lv. 20 (30%); Lotad Lv. 20 (15%); Horsea Lv. 20 (10%); Lombre Lv. 20 (5%) |
-| Super Rod | Any time | 40 | Araquanid Lv. 40 (40%); Sealeo Lv. 40 (30%); Delibird Lv. 40 (15%); Seadra Lv. 40 (10%); Barbaracle Lv. 40 (5%) |
-| Grass swarm | Any time | — | Seel (swarm) |
-| Surf swarm | Any time | — | Seel (swarm) |
-| Good Rod swarm | Any time | — | Horsea (swarm) |
-| Super Rod swarm | Any time | — | Magikarp (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Bronzor (radio replacement); Chingling (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Absol (radio replacement); Makuhita (radio replacement) |
-| Grass | Day | 37.45 | Piloswine Lv. 37 (20%); Vanillish Lv. 40 (20%); Duosion Lv. 34 (10%); Palpitoad Lv. 34 (10%); Klang Lv. 38 (14%); Golem Lv. 38 (10%); Arctibax Lv. 39 (5%); Dusclops Lv. 38 (5%); Avalugg Hisuian Lv. 37 (4%); Muk Lv. 40 (1%); Corviknight Lv. 40 (1%) |
-| Grass | Night | 37.45 | Doublade Lv. 37 (20%); Vanillish Lv. 40 (20%); Duosion Lv. 34 (10%); Hattrem Lv. 34 (10%); Dusclops Lv. 38 (20%); Arctibax Lv. 39 (5%); Medicham Lv. 38 (5%); Toxicroak Lv. 37 (4%); Banette Lv. 38 (4%); Krookodile Lv. 40 (1%); Muk Alolan Lv. 40 (1%) |
-
-## Mt. Silver (Moltres room)
-
-Encounter ID 79; configured level range 10-48.
+| Grass | Any | 20% | Persian Lv. 62 (20%); Persian Lv. 63 (20%); Greedent Lv. 63 (10%); Perrserker Lv. 64 (10%); Purugly Lv. 65 (11%); Kecleon Lv. 65 (11%); Cinccino Lv. 66 (9%); Mawile Lv. 66 (9%) |
+## Route 6 (table 116)
 
-| Method | Time | Average level | Pokémon and rate |
+| Method | Time | Encounter rate | Pokémon and slot share |
 | --- | --- | --- | --- |
-| Grass | Morning | 45.25 | Doublade Lv. 45 (20%); Krokorok Lv. 48 (20%); Lampent Lv. 45 (15%); Rhydon Lv. 48 (14%); Lampent Lv. 48 (10%); Dugtrio Lv. 47 (10%); Rhydon Lv. 45 (5%); Riolu Lv. 20 (4%); Haxorus Lv. 48 (1%); Makuhita Lv. 15 (1%) |
-| Surf | Any time | 36.5 | Poliwhirl Lv. 30-40 (60%); Sealeo Lv. 35-45 (30%); Gastrodon Lv. 30-40 (5%); Corsola Galarian Lv. 30-40 (4%); Tentacruel Lv. 30-40 (1%) |
-| Old Rod | Any time | 10 | Shellder Lv. 10 (40%); Finizen Lv. 10 (30%); Tadbulb Lv. 10 (15%); Surskit Lv. 10 (10%); Wiglett Lv. 10 (5%) |
-| Good Rod | Any time | 20 | Qwilfish Hisuian Lv. 20 (55%); Archen Lv. 20 (30%); Wimpod Lv. 20 (10%); Marill Lv. 20 (5%) |
-| Super Rod | Any time | 40 | Jellicent Lv. 40 (45%); Lileep Lv. 40 (30%); Anorith Lv. 40 (15%); Slowking Lv. 40 (10%) |
-| Grass swarm | Any time | — | Quagsire (swarm) |
-| Surf swarm | Any time | — | Seaking (swarm) |
-| Good Rod swarm | Any time | — | Goldeen (swarm) |
-| Super Rod swarm | Any time | — | Magikarp (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Bronzor (radio replacement); Chingling (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Absol (radio replacement); Makuhita (radio replacement) |
-| Grass | Day | 45.25 | Doublade Lv. 45 (20%); Krokorok Lv. 48 (20%); Lampent Lv. 45 (15%); Rhydon Lv. 48 (10%); Electrode Lv. 48 (10%); Klang Lv. 47 (10%); Golem Lv. 45 (5%); Vibrava Lv. 48 (4%); Nidorina Lv. 20 (4%); Klang Lv. 48 (1%); Koffing Lv. 15 (1%) |
-| Grass | Night | 45.25 | Doublade Lv. 45 (20%); Krokorok Lv. 48 (20%); Dusclops Lv. 45 (10%); Lampent Lv. 48 (10%); Dusclops Lv. 48 (10%); Gourgeist Lv. 47 (10%); Rhydon Lv. 45 (5%); Medicham Lv. 45 (5%); Gourgeist Lv. 48 (4%); Gothita Lv. 20 (4%); Annihilape Lv. 48 (1%); Chingling Lv. 15 (1%) |
-
-## Mt. Silver 3F
-
-Encounter ID 80; configured level range 10-52.
-
-| Method | Time | Average level | Pokémon and rate |
-| --- | --- | --- | --- |
-| Grass | Morning | 45.81 | Doublade Lv. 45 (20%); Golem Lv. 48 (20%); Golem Lv. 46 (10%); Dusclops Lv. 48 (10%); Rhydon Lv. 48 (10%); Dugtrio Alolan Lv. 50 (10%); Klang Lv. 45 (5%); Lampent Lv. 45 (5%); Bisharp Lv. 52 (4%); Grimer Lv. 20 (4%); Cyndaquil Lv. 48 (1%); Cyndaquil Lv. 15 (1%) |
-| Surf | Any time | 36.5 | Araquanid Lv. 30-40 (61%); Sealeo Lv. 35-45 (30%); Lotad Lv. 30-40 (5%); Poliwhirl Lv. 30-40 (4%) |
-| Old Rod | Any time | 10 | Arrokuda Lv. 10 (40%); Inkay Lv. 10 (55%); Panpour Lv. 10 (5%) |
-| Good Rod | Any time | 20 | Crabrawler Lv. 20 (55%); Skorupi Lv. 20 (40%); Dewpider Lv. 20 (5%) |
-| Super Rod | Any time | 40 | Sealeo Lv. 40 (40%); Slowking Lv. 40 (30%); Jellicent Lv. 40 (15%); Shellos Lv. 40 (10%); Swanna Lv. 40 (5%) |
-| Grass swarm | Any time | — | Quagsire (swarm) |
-| Surf swarm | Any time | — | Seaking (swarm) |
-| Good Rod swarm | Any time | — | Goldeen (swarm) |
-| Super Rod swarm | Any time | — | Magikarp (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Bronzor (radio replacement); Chingling (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Absol (radio replacement); Makuhita (radio replacement) |
-| Grass | Day | 45.81 | Doublade Lv. 45 (20%); Lycanroc Lv. 48 (20%); Golem Lv. 46 (10%); Dusclops Lv. 48 (10%); Fraxure Lv. 48 (10%); Gourgeist Lv. 50 (10%); Rhydon Lv. 45 (5%); Vibrava Lv. 45 (5%); Bisharp Lv. 52 (4%); Gulpin Lv. 20 (4%); Cyndaquil Lv. 48 (1%); Cyndaquil Lv. 15 (1%) |
-| Grass | Night | 45.81 | Doublade Lv. 45 (20%); Krokorok Lv. 48 (20%); Gourgeist Lv. 46 (10%); Lampent Lv. 48 (10%); Dusclops Lv. 48 (10%); Klang Lv. 50 (10%); Gourgeist Lv. 45 (5%); Lampent Lv. 45 (5%); Bisharp Lv. 52 (4%); Meditite Lv. 20 (4%); Cyndaquil Lv. 48 (1%); Cyndaquil Lv. 15 (1%) |
-
-## Mt. Silver 4F
-
-Encounter ID 81; configured level range 10-50.
-
-| Method | Time | Average level | Pokémon and rate |
-| --- | --- | --- | --- |
-| Grass | Morning | 46.15 | Golem Lv. 50 (20%); Lycanroc Lv. 48 (20%); Sudowoodo Lv. 45 (10%); Graveler Alolan Lv. 48 (10%); Medicham Lv. 47 (10%); Fraxure Lv. 47 (10%); Pupitar Lv. 45 (5%); Klang Lv. 45 (5%); Rhydon Lv. 48 (4%); Riolu Lv. 20 (4%); Golem Lv. 48 (1%); Axew Lv. 15 (1%) |
-| Surf | Any time | 36.5 | Feebas Lv. 30-40 (60%); Slowpoke Lv. 35-45 (30%); Lotad Lv. 30-40 (5%); Poliwhirl Lv. 30-40 (4%); Lombre Lv. 30-40 (1%) |
-| Old Rod | Any time | 10 | Spheal Lv. 10 (40%); Clobbopus Lv. 10 (30%); Tympole Lv. 10 (15%); Bidoof Lv. 10 (10%); Tadbulb Lv. 10 (5%) |
-| Good Rod | Any time | 20 | Corsola Galarian Lv. 20 (40%); Archen Lv. 20 (30%); Delibird Lv. 20 (15%); Lombre Lv. 20 (10%); Marill Lv. 20 (5%) |
-| Super Rod | Any time | 40 | Sealeo Lv. 40 (40%); Slowbro Lv. 40 (30%); Slowking Lv. 40 (15%); Seadra Lv. 40 (10%); Jellicent Lv. 40 (5%) |
-| Grass swarm | Any time | — | Sneasel (swarm) |
-| Surf swarm | Any time | — | Seaking (swarm) |
-| Good Rod swarm | Any time | — | Goldeen (swarm) |
-| Super Rod swarm | Any time | — | Magikarp (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Bronzor (radio replacement); Chingling (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Absol (radio replacement); Makuhita (radio replacement) |
-| Grass | Day | 46.15 | Rhydon Lv. 50 (20%); Gastrodon Lv. 48 (20%); Vibrava Lv. 45 (10%); Weezing Lv. 48 (11%); Golem Lv. 47 (10%); Dusclops Lv. 47 (10%); Pupitar Lv. 45 (5%); Fraxure Lv. 45 (5%); Rhydon Lv. 48 (4%); Croagunk Lv. 20 (4%); Hatenna Lv. 15 (1%) |
-| Grass | Night | 46.15 | Doublade Lv. 50 (20%); Krokorok Lv. 48 (20%); Lampent Lv. 45 (10%); Gourgeist Lv. 48 (10%); Dusclops Lv. 47 (10%); Gourgeist Lv. 47 (10%); Pupitar Lv. 45 (5%); Machoke Lv. 45 (5%); Gurdurr Lv. 48 (4%); Makuhita Lv. 20 (4%); Hattrem Lv. 48 (1%); Abra Lv. 15 (1%) |
-
-## Cliff Edge Gate
-
-Encounter ID 82; configured level range 10-40.
-
-| Method | Time | Average level | Pokémon and rate |
-| --- | --- | --- | --- |
-| Surf | Any time | 26 | Shellos Lv. 20-30 (60%); Bidoof Lv. 20-30 (30%); Psyduck Lv. 30-40 (5%); Azumarill Lv. 30-40 (4%); Slowpoke Lv. 30-40 (1%) |
-| Old Rod | Any time | 10 | Bidoof Lv. 10 (40%); Panpour Lv. 10 (45%); Clobbopus Lv. 10 (10%); Tympole Lv. 10 (5%) |
-| Good Rod | Any time | 20 | Spheal Lv. 20 (40%); Crabrawler Lv. 20 (30%); Skorupi Lv. 20 (15%); Feebas Lv. 20 (10%); Clobbopus Lv. 20 (5%) |
-| Super Rod | Any time | 40 | Slowbro Lv. 40 (55%); Slowking Lv. 40 (30%); Seadra Lv. 40 (10%); Toxapex Lv. 40 (5%) |
-| Surf swarm | Any time | — | Wooper (swarm) |
-| Good Rod swarm | Any time | — | Magikarp (swarm) |
-| Super Rod swarm | Any time | — | Magikarp (swarm) |
+| Grass | Any | 20% | Watchog Lv. 61 (20%); Parasect Lv. 62 (20%); Spidops Lv. 62 (10%); Delcatty Lv. 63 (10%); Gumshoos Lv. 64 (10%); Shiinotic Lv. 64 (10%); Wobbuffet Lv. 65 (5%); Medicham Lv. 65 (5%); Appletun Lv. 65 (5%); Flapple Lv. 65 (5%) |
+| Surf | Any | 15% | Bibarel Lv. 61–64 (60%); Dewgong Lv. 62–64 (30%); Seaking Lv. 63–65 (5%); Basculin Blue Striped Lv. 63–65 (4%); IronBundle Lv. 63–65 (1%) |
+| Old Rod | Any | 25% | Overqwil Lv. 61–64 (40%); Gorebyss Lv. 62–64 (30%); Tentacruel Lv. 63–65 (15%); Luvdisc Lv. 63–65 (10%); Lapras Lv. 63–65 (5%) |
+| Good Rod | Any | 50% | Whiscash Lv. 61–64 (40%); Slowbro Lv. 62–64 (30%); Araquanid Lv. 63–65 (15%); Tatsugiri Lv. 63–65 (10%); Poliwrath Lv. 63–65 (5%) |
+| Super Rod | Any | 75% | Kingler Lv. 61–64 (40%); Corsola Lv. 62–64 (30%); Politoed Lv. 63–65 (15%); Clawitzer Lv. 63–65 (10%); Vaporeon Lv. 63–65 (5%) |
+Conditional: nightFish: Wailord
+
+## Route 7 (table 117)
 
-## Cliff Cave
+| Method | Time | Encounter rate | Pokémon and slot share |
+| --- | --- | --- | --- |
+| Grass | Any | 20% | Castform Lv. 62 (20%); Unown Lv. 63 (20%); Ninjask Lv. 63 (10%); Pincurchin Lv. 64 (10%); Liepard Lv. 65 (11%); Fearow Lv. 65 (11%); Throh Lv. 66 (9%); Sawk Lv. 66 (9%) |
+## Route 8 (table 118)
 
-Encounter ID 83; configured level range 18-31.
-
-| Method | Time | Average level | Pokémon and rate |
-| --- | --- | --- | --- |
-| Grass | Morning | 20.34 | Phanpy Lv. 22 (20%); Fidough Lv. 19 (20%); Tyrogue Lv. 20 (10%); Nidorina Lv. 22 (14%); Axew Lv. 19 (10%); Croagunk Lv. 20 (10%); Grimer Alolan Lv. 18 (5%); Kadabra Lv. 20 (5%); Hatenna Lv. 20 (4%); Tyrogue Lv. 23 (1%); Clodsire Lv. 23 (1%) |
-| Rock Smash | Any time | 23.65 | Gligar Lv. 20-26 (90%); Gligar Lv. 28-31 (10%) |
-| Grass swarm | Any time | — | Golbat (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Bronzor (radio replacement); Chingling (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Absol (radio replacement); Makuhita (radio replacement) |
-| Grass | Day | 20.34 | Hippopotas Lv. 22 (20%); Fidough Lv. 19 (20%); Axew Lv. 20 (10%); Abra Lv. 22 (10%); Gulpin Lv. 19 (10%); Croagunk Lv. 20 (10%); Gothita Lv. 18 (5%); Chingling Lv. 20 (5%); Riolu Lv. 20 (4%); Grimer Alolan Lv. 22 (4%); Kadabra Lv. 23 (1%); Hatenna Lv. 23 (1%) |
-| Grass | Night | 20.34 | Pawniard Lv. 22 (20%); Fidough Lv. 19 (20%); Wobbuffet Lv. 20 (10%); Drowzee Lv. 22 (10%); Abra Lv. 19 (10%); Grimer Alolan Lv. 20 (10%); Gothita Lv. 18 (5%); Chingling Lv. 20 (5%); Kadabra Lv. 20 (4%); Nidorina Lv. 22 (4%); Hatenna Lv. 23 (1%); Wobbuffet Lv. 23 (1%) |
-
-## Bell Tower 10F
-
-Encounter ID 84; configured level range 20-24.
-
-| Method | Time | Average level | Pokémon and rate |
-| --- | --- | --- | --- |
-| Grass | Morning | 21.25 | Baltoy Lv. 20 (20%); Cufant Lv. 21 (20%); Beedrill Lv. 20 (10%); Makuhita Lv. 21 (10%); Tyrogue Lv. 22 (10%); Axew Lv. 22 (10%); Metang Lv. 22 (5%); Drowzee Lv. 22 (5%); Machop Lv. 23 (4%); Naclstack Lv. 24 (4%); Chimchar Lv. 23 (1%); Chimchar Lv. 24 (1%) |
-| Grass swarm | Any time | — | Rattata (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Chatot (radio replacement); Meditite (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Zigzagoon (radio replacement); Spinda (radio replacement) |
-| Grass | Day | 21.25 | Trubbish Lv. 20 (20%); Drilbur Lv. 21 (20%); Gulpin Lv. 20 (10%); Croagunk Lv. 21 (10%); Abra Lv. 22 (10%); Riolu Lv. 22 (10%); Metang Lv. 22 (5%); Gothita Lv. 22 (5%); Chingling Lv. 23 (4%); Naclstack Lv. 24 (4%); Chimchar Lv. 23 (1%); Chimchar Lv. 24 (1%) |
-| Grass | Night | 21.25 | Sandile Lv. 20 (20%); Pawniard Lv. 21 (20%); Grimer Alolan Lv. 20 (10%); Kadabra Lv. 21 (10%); Nidorina Lv. 22 (10%); Hatenna Lv. 22 (10%); Metang Lv. 22 (5%); Wobbuffet Lv. 22 (5%); Makuhita Lv. 23 (4%); Koffing Lv. 24 (4%); Chimchar Lv. 23 (1%); Chimchar Lv. 24 (1%) |
-
-## Mt. Silver (Outside)
-
-Encounter ID 85; configured level range 10-50.
-
-| Method | Time | Average level | Pokémon and rate |
-| --- | --- | --- | --- |
-| Grass | Morning | 42.2 | Magneton Lv. 41 (20%); Rhydon Lv. 42 (20%); Floette Lv. 41 (10%); Ponyta Lv. 42 (10%); Weepinbell Lv. 42 (10%); Yanma Lv. 42 (10%); Liepard Lv. 50 (5%); Persian Alolan Lv. 44 (5%); Accelgor Lv. 41 (4%); Galvantula Lv. 43 (4%); Purugly Lv. 41 (1%); Slaking Lv. 43 (1%) |
-| Surf | Any time | 36.63 | Clobbopus Lv. 30-40 (60%); Seadra Lv. 35-45 (30%); Slowpoke Galarian Lv. 30-40 (5%); Bibarel Lv. 30-40 (4%); Dragalge Lv. 48 (1%) |
-| Old Rod | Any time | 10 | Clobbopus Lv. 10 (40%); Bidoof Lv. 10 (30%); Clauncher Lv. 10 (15%); Pyukumuku Lv. 10 (10%); Pincurchin Lv. 10 (5%) |
-| Good Rod | Any time | 20 | Corsola Lv. 20 (40%); Omanyte Lv. 20 (30%); Kabuto Lv. 20 (15%); Bibarel Lv. 20 (10%); Azumarill Lv. 20 (5%) |
-| Super Rod | Any time | 40 | Sealeo Lv. 40 (40%); Jellicent Lv. 40 (40%); Slowking Lv. 40 (15%); Wugtrio Lv. 40 (5%) |
-| Grass swarm | Any time | — | Tangela (swarm) |
-| Surf swarm | Any time | — | Poliwhirl (swarm) |
-| Good Rod swarm | Any time | — | Poliwag (swarm) |
-| Super Rod swarm | Any time | — | Magikarp (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Buizel (radio replacement); Bidoof (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Whismur (radio replacement); Linoone (radio replacement) |
-| Grass | Day | 42.2 | Klang Lv. 41 (20%); Dugtrio Lv. 42 (20%); Floette Lv. 41 (10%); Ponyta Lv. 42 (10%); Weepinbell Lv. 42 (10%); Yanma Lv. 42 (10%); Mightyena Lv. 50 (5%); Raticate Alolan Lv. 44 (5%); Slurpuff Lv. 41 (4%); Aromatisse Lv. 43 (4%); Beartic Lv. 41 (1%); Electivire Lv. 43 (1%) |
-| Grass | Night | 42.2 | Doublade Lv. 41 (20%); Krokorok Lv. 42 (20%); Floette Lv. 41 (10%); Ponyta Lv. 42 (10%); Weepinbell Lv. 42 (10%); Yanma Lv. 42 (10%); Liepard Lv. 50 (5%); Persian Alolan Lv. 44 (5%); Pidgeot Lv. 41 (4%); Espathra Lv. 43 (4%); Reuniclus Lv. 41 (1%); Magmortar Lv. 43 (1%) |
-
-## Mt. Silver 1F
-
-Encounter ID 86; configured level range 10-50.
-
-| Method | Time | Average level | Pokémon and rate |
-| --- | --- | --- | --- |
-| Grass | Morning | 41.75 | Dugtrio Lv. 42 (20%); Marowak Lv. 44 (20%); Golem Lv. 42 (10%); Magneton Lv. 44 (10%); Vibrava Lv. 43 (10%); Weezing Lv. 43 (10%); Dusclops Lv. 42 (5%); Fraxure Lv. 41 (5%); Machoke Lv. 45 (4%); Tyrogue Lv. 20 (4%); Flygon Lv. 45 (1%); Grimer Lv. 15 (1%) |
-| Surf | Any time | 36.65 | Tirtouga Lv. 30-40 (60%); Corsola Lv. 35-45 (30%); Crawdaunt Lv. 30-40 (5%); Wugtrio Lv. 30-40 (4%); Pelipper Lv. 50 (1%) |
-| Old Rod | Any time | 10 | Remoraid Lv. 10 (40%); Krabby Lv. 10 (30%); Binacle Lv. 10 (15%); Pyukumuku Lv. 10 (10%); Pincurchin Lv. 10 (5%) |
-| Good Rod | Any time | 20 | Tatsugiri Lv. 20 (40%); Basculin Lv. 20 (30%); Qwilfish Lv. 20 (15%); Bibarel Lv. 20 (10%); Azumarill Lv. 20 (5%) |
-| Super Rod | Any time | 40 | Luvdisc Lv. 40 (40%); Staryu Lv. 40 (30%); Wailmer Lv. 40 (15%); Wugtrio Lv. 40 (10%); Pelipper Lv. 40 (5%) |
-| Grass swarm | Any time | — | Onix (swarm) |
-| Surf swarm | Any time | — | Seaking (swarm) |
-| Good Rod swarm | Any time | — | Gyarados (swarm) |
-| Super Rod swarm | Any time | — | Magikarp (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Bronzor (radio replacement); Chingling (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Absol (radio replacement); Makuhita (radio replacement) |
-| Grass | Day | 41.75 | Graveler Lv. 42 (20%); Boldore Lv. 44 (20%); Gurdurr Lv. 42 (10%); Gothorita Lv. 44 (10%); Vibrava Lv. 43 (10%); Weezing Lv. 43 (10%); Duosion Lv. 42 (5%); Hattrem Lv. 41 (5%); Haunter Lv. 45 (4%); Axew Lv. 20 (4%); Gourgeist Lv. 45 (1%); Machop Lv. 15 (1%) |
-| Grass | Night | 41.75 | Doublade Lv. 42 (20%); Sandygast Lv. 44 (20%); Lampent Lv. 42 (10%); Dusclops Lv. 44 (10%); Gothorita Lv. 43 (10%); Haunter Lv. 43 (10%); Gourgeist Lv. 42 (5%); Duosion Lv. 41 (5%); Hattrem Lv. 45 (4%); Drowzee Lv. 20 (4%); Golurk Lv. 45 (1%); Gulpin Lv. 15 (1%) |
-
-## Mt. Silver (Mountainside)
-
-Encounter ID 87; configured level range 15-51.
-
-| Method | Time | Average level | Pokémon and rate |
-| --- | --- | --- | --- |
-| Grass | Morning | 47.8 | Boldore Lv. 51 (20%); Palpitoad Lv. 48 (20%); Fraxure Lv. 51 (11%); Machoke Lv. 48 (20%); Gurdurr Lv. 48 (10%); Shelgon Lv. 50 (5%); Drakloak Lv. 50 (5%); Weezing Lv. 51 (4%); Croagunk Lv. 20 (4%); Riolu Lv. 15 (1%) |
-| Grass swarm | Any time | — | Golbat (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Bronzor (radio replacement); Chingling (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Absol (radio replacement); Makuhita (radio replacement) |
-| Grass | Day | 47.8 | Golem Lv. 51 (20%); Electrode Lv. 48 (20%); Machoke Lv. 51 (10%); Machoke Lv. 48 (10%); Gurdurr Lv. 48 (10%); Gothorita Lv. 48 (10%); Shelgon Lv. 50 (5%); Drakloak Lv. 50 (5%); Weezing Lv. 51 (4%); Nidorina Lv. 20 (4%); Duosion Lv. 51 (1%); Makuhita Lv. 15 (1%) |
-| Grass | Night | 47.8 | Doublade Lv. 51 (20%); Sinistea Lv. 48 (20%); Duosion Lv. 51 (14%); Machoke Lv. 48 (10%); Hattrem Lv. 48 (10%); Gothorita Lv. 48 (10%); Shelgon Lv. 50 (5%); Drakloak Lv. 50 (5%); Abra Lv. 20 (4%); Hattrem Lv. 51 (1%); Grimer Alolan Lv. 15 (1%) |
-
-## Mt. Silver (Expert Belt room)
-
-Encounter ID 88; configured level range 20-48.
-
-| Method | Time | Average level | Pokémon and rate |
-| --- | --- | --- | --- |
-| Grass | Morning | 45.26 | Naclstack Lv. 45 (20%); Lycanroc Lv. 48 (20%); Fraxure Lv. 45 (10%); Gurdurr Lv. 46 (10%); Magcargo Lv. 48 (10%); Gurdurr Lv. 47 (10%); Weezing Lv. 45 (5%); Gurdurr Lv. 45 (5%); Fraxure Lv. 48 (4%); Koffing Lv. 20 (4%); Torchic Lv. 48 (1%); Torchic Lv. 36 (1%) |
-| Grass swarm | Any time | — | Quagsire (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Bronzor (radio replacement); Chingling (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Absol (radio replacement); Makuhita (radio replacement) |
-| Grass | Day | 45.26 | Gastrodon Lv. 45 (20%); Klang Lv. 48 (20%); Weezing Lv. 45 (10%); Gurdurr Lv. 46 (10%); Duosion Lv. 48 (10%); Hattrem Lv. 47 (10%); Fraxure Lv. 45 (5%); Machoke Lv. 45 (5%); Gothorita Lv. 48 (4%); Tyrogue Lv. 20 (4%); Torchic Lv. 48 (1%); Torchic Lv. 36 (1%) |
-| Grass | Night | 45.26 | Golett Lv. 45 (20%); Yamask Galarian Lv. 48 (20%); Duosion Lv. 45 (15%); Gurdurr Lv. 46 (10%); Hattrem Lv. 48 (14%); Gothorita Lv. 47 (10%); Marowak Alolan Lv. 45 (5%); Gothita Lv. 20 (4%); Torchic Lv. 48 (1%); Torchic Lv. 36 (1%) |
-
-## Mt. Silver (Top, snowy area)
-
-Encounter ID 89; configured level range 10-48.
-
-| Method | Time | Average level | Pokémon and rate |
-| --- | --- | --- | --- |
-| Grass | Morning | 44.64 | Piloswine Lv. 45 (20%); Vanillish Lv. 48 (20%); Weezing Lv. 45 (10%); Fraxure Lv. 48 (10%); Machoke Lv. 47 (10%); Weezing Lv. 47 (10%); Grimer Lv. 30 (5%); Gurdurr Lv. 45 (5%); Muk Alolan Lv. 48 (4%); Machop Lv. 20 (4%); Toxicroak Lv. 48 (1%); Tyrantrum Lv. 39 (1%) |
-| Surf | Any time | 36.5 | Tentacool Lv. 30-40 (60%); Gastrodon Lv. 35-45 (30%); Quagsire Lv. 30-40 (5%); Bibarel Lv. 30-40 (4%); Pyukumuku Lv. 30-40 (1%) |
-| Old Rod | Any time | 10 | Shellder Lv. 10 (40%); Goldeen Lv. 10 (30%); Finizen Lv. 10 (15%); Pincurchin Lv. 10 (10%); Pyukumuku Lv. 10 (5%) |
-| Good Rod | Any time | 20 | Wishiwashi Lv. 20 (40%); Chinchou Lv. 20 (30%); Finneon Lv. 20 (15%); Azumarill Lv. 20 (10%); Clodsire Lv. 20 (5%) |
-| Super Rod | Any time | 40 | Corsola Lv. 40 (40%); Wiglett Lv. 40 (30%); Slowbro Lv. 40 (15%); Wugtrio Lv. 40 (10%); Sharpedo Lv. 40 (5%) |
-| Grass swarm | Any time | — | Sneasel (swarm) |
-| Surf swarm | Any time | — | Seaking (swarm) |
-| Good Rod swarm | Any time | — | Goldeen (swarm) |
-| Super Rod swarm | Any time | — | Magikarp (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Bronzor (radio replacement); Chingling (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Absol (radio replacement); Makuhita (radio replacement) |
-| Grass | Day | 44.64 | Vanillish Lv. 45 (20%); Piloswine Lv. 48 (20%); Weezing Lv. 45 (10%); Hattrem Lv. 48 (10%); Piloswine Lv. 47 (20%); Chingling Lv. 30 (5%); Riolu Lv. 45 (5%); Swalot Lv. 48 (4%); Hatenna Lv. 20 (4%); Vanilluxe Lv. 48 (1%); Aurorus Lv. 39 (1%) |
-| Grass | Night | 44.64 | Piloswine Lv. 45 (20%); Vanillish Lv. 48 (20%); Wobbuffet Lv. 45 (10%); Piloswine Lv. 48 (10%); Kadabra Lv. 47 (10%); Piloswine Lv. 47 (10%); Gothita Lv. 30 (5%); Mr Rime Lv. 45 (5%); Hypno Lv. 48 (4%); Slowbro Galarian Lv. 20 (4%); Glalie Lv. 48 (1%); Garganacl Lv. 39 (1%) |
-
-## Safari Zone (Placeholder, not used)
-
-Encounter ID 91; configured level range 10-20.
-
-| Method | Time | Average level | Pokémon and rate |
-| --- | --- | --- | --- |
-| Grass | Morning | 20 | Dipplin Lv. 20 (20%); Smeargle Lv. 20 (20%); Shedinja Lv. 20 (10%); Morgrem Lv. 20 (10%); Fearow Lv. 20 (10%); Whirlipede Lv. 20 (10%); Foongus Lv. 20 (10%); Swellow Lv. 20 (4%); Noctowl Lv. 20 (4%); Staraptor Lv. 20 (1%); Toucannon Lv. 20 (1%) |
-| Surf | Any time | 15 | Bidoof Lv. 10-20 (60%); Lotad Lv. 10-20 (30%); Wooper Lv. 10-20 (5%); Wooper Paldean Lv. 10-20 (4%); Feebas Lv. 10-20 (1%) |
-| Old Rod | Any time | 15 | Qwilfish Hisuian Lv. 10-20 (40%); Inkay Lv. 10-20 (30%); Panpour Lv. 10-20 (15%); Clobbopus Lv. 10-20 (10%); Dratini Lv. 10-20 (5%) |
-| Good Rod | Any time | 15 | Dragonair Lv. 10-20 (40%); Delibird Lv. 10-20 (30%); Wattrel Lv. 10-20 (15%); Tadbulb Lv. 10-20 (10%); Slowpoke Galarian Lv. 10-20 (5%) |
-| Super Rod | Any time | 15 | Marill Lv. 10-20 (40%); Bidoof Lv. 10-20 (30%); Stunfisk Lv. 10-20 (15%); Wooper Paldean Lv. 10-20 (10%); Clobbopus Lv. 10-20 (5%) |
-| Grass swarm | Any time | — | Rattata (swarm) |
-| Surf swarm | Any time | — | Magikarp (swarm) |
-| Good Rod swarm | Any time | — | Goldeen (swarm) |
-| Super Rod swarm | Any time | — | Goldeen (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Bidoof (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Zigzagoon (radio replacement) |
-| Grass | Day | 20 | Lilligant Lv. 20 (20%); Smeargle Lv. 20 (20%); Shedinja Lv. 20 (10%); Morgrem Lv. 20 (10%); Lurantis Lv. 20 (10%); Sawsbuck Lv. 20 (10%); Foongus Lv. 20 (5%); Dolliv Lv. 20 (5%); Klang Lv. 20 (8%); Lilligant Hisuian Lv. 20 (1%); Pidgeot Lv. 20 (1%) |
-| Grass | Night | 20 | Dottler Lv. 20 (20%); Smeargle Lv. 20 (20%); Shedinja Lv. 20 (10%); Morgrem Lv. 20 (10%); Farfetch'd Galarian Lv. 20 (10%); Wobbuffet Lv. 20 (10%); Alcremie Lv. 20 (5%); Bramblin Lv. 20 (5%); Klang Lv. 20 (8%); Shiftry Lv. 20 (1%); Brambleghast Lv. 20 (1%) |
-
-## Route 12
-
-Encounter ID 92; configured level range 10-40.
-
-| Method | Time | Average level | Pokémon and rate |
-| --- | --- | --- | --- |
-| Grass | Morning | 21.02 | Bellsprout Lv. 20 (20%); Venonat Lv. 20 (20%); Oddish Lv. 21 (10%); Hoppip Lv. 21 (10%); Foongus Lv. 21 (10%); Croagunk Lv. 22 (10%); Karrablast Lv. 22 (5%); Shelmet Lv. 22 (5%); Farfetch’d Lv. 23 (4%); Drowzee Lv. 23 (4%); Munchlax Lv. 24 (2%) |
-| Surf | Any time | 25 | Poliwhirl Lv. 25 (60%); Araquanid Lv. 25 (30%); Grapploct Lv. 25 (5%); Arctovish Lv. 25 (4%); Overqwil Lv. 25 (1%) |
-| Old Rod | Any time | 10 | Barboach Lv. 10 (40%); Arrokuda Lv. 10 (30%); Magikarp Lv. 10 (15%); Pincurchin Lv. 10 (10%); Pyukumuku Lv. 10 (5%) |
-| Good Rod | Any time | 20 | Clamperl Lv. 20 (40%); Lombre Lv. 20 (30%); Buizel Lv. 20 (15%); Bibarel Lv. 20 (10%); Quagsire Lv. 20 (5%) |
-| Super Rod | Any time | 40 | Slowking Lv. 40 (40%); Seadra Lv. 40 (30%); Sealeo Lv. 40 (15%); Clodsire Lv. 40 (10%); Azumarill Lv. 40 (5%) |
-| Surf swarm | Any time | — | Tentacool (swarm) |
-| Good Rod swarm | Any time | — | Tentacool (swarm) |
-| Super Rod swarm | Any time | — | Relicanth (swarm) |
-| Grass | Day | 21.02 | Oddish Lv. 20 (20%); Bellsprout Lv. 20 (20%); Venonat Lv. 21 (10%); Hoppip Lv. 21 (10%); Foongus Lv. 21 (10%); Exeggcute Lv. 22 (10%); Karrablast Lv. 22 (5%); Shelmet Lv. 22 (5%); Farfetch’d Lv. 23 (4%); Girafarig Lv. 23 (4%); Munchlax Lv. 24 (2%) |
-| Grass | Night | 21.02 | Venonat Lv. 20 (20%); Hoothoot Lv. 20 (20%); Drowzee Lv. 21 (10%); Croagunk Lv. 21 (10%); Foongus Lv. 21 (10%); Morelull Lv. 22 (10%); Murkrow Lv. 22 (5%); Shuppet Lv. 22 (5%); Karrablast Lv. 23 (4%); Shelmet Lv. 23 (4%); Munchlax Lv. 24 (2%) |
-
-## Route 19
-
-Encounter ID 93; configured level range 10-40.
-
-| Method | Time | Average level | Pokémon and rate |
-| --- | --- | --- | --- |
-| Grass | Morning | 28 | Wingull Lv. 27 (20%); Yungoos Lv. 27 (20%); Krabby Lv. 28 (10%); Crabrawler Lv. 28 (10%); Sandygast Lv. 28 (10%); Binacle Lv. 29 (10%); Shellos Lv. 29 (5%); Dhelmise Lv. 29 (5%); Wimpod Lv. 30 (4%); Cramorant Lv. 30 (4%); Clobbopus Lv. 30 (2%) |
-| Surf | Any time | 33.5 | Poliwhirl Lv. 35 (60%); Palpitoad Lv. 30 (30%); Pelipper Lv. 35 (5%); Quagsire Lv. 35 (4%); Bibarel Lv. 35 (1%) |
-| Old Rod | Any time | 10 | Psyduck Lv. 10 (40%); Skrelp Lv. 10 (30%); Slowpoke Lv. 10 (15%); Pincurchin Lv. 10 (10%); Mareanie Lv. 10 (5%) |
-| Good Rod | Any time | 20 | Seel Lv. 20 (40%); Qwilfish Lv. 20 (30%); Shellos Lv. 20 (15%); Azumarill Lv. 20 (10%); Clodsire Lv. 20 (5%) |
-| Super Rod | Any time | 40 | Jellicent Lv. 40 (40%); Ducklett Lv. 40 (30%); Mareanie Lv. 40 (15%); Wugtrio Lv. 40 (10%); Mantine Lv. 40 (5%) |
-| Rock Smash | Any time | 29.1 | Toedscool Lv. 28-31 (90%); Gligar Lv. 24-27 (10%) |
-| Surf swarm | Any time | — | Clamperl (swarm) |
-| Good Rod swarm | Any time | — | Staryu (swarm) |
-| Super Rod swarm | Any time | — | Magikarp (swarm) |
-| Grass | Day | 28 | Wingull Lv. 27 (20%); Yungoos Lv. 27 (20%); Krabby Lv. 28 (10%); Crabrawler Lv. 28 (10%); Sandygast Lv. 28 (10%); Binacle Lv. 29 (10%); Dewpider Lv. 29 (5%); Dhelmise Lv. 29 (5%); Wimpod Lv. 30 (4%); Fletchling Lv. 30 (4%); Clobbopus Lv. 30 (2%) |
-| Grass | Night | 28 | Sandygast Lv. 27 (20%); Zubat Lv. 27 (20%); Wingull Lv. 28 (10%); Krabby Lv. 28 (10%); Wooper Lv. 28 (10%); Shellos Lv. 29 (10%); Dewpider Lv. 29 (5%); Dhelmise Lv. 29 (5%); Wimpod Lv. 30 (4%); Murkrow Lv. 30 (4%); Clobbopus Lv. 30 (2%) |
-
-## Route 20
-
-Encounter ID 94; configured level range 10-40.
-
-| Method | Time | Average level | Pokémon and rate |
-| --- | --- | --- | --- |
-| Grass | Morning | 30.6 | Pelipper Lv. 30 (20%); Tentacruel Lv. 30 (20%); Floatzel Lv. 30 (10%); Gastrodon Lv. 31 (10%); Araquanid Lv. 31 (10%); Lanturn Lv. 31 (10%); Wugtrio Lv. 31 (5%); Golisopod Lv. 31 (5%); Cloyster Lv. 32 (4%); Cramorant Lv. 32 (4%); Dratini Lv. 32 (2%) |
-| Surf | Any time | 33.5 | Poliwag Lv. 35 (60%); Horsea Lv. 30 (30%); Pelipper Lv. 35 (5%); Quagsire Lv. 35 (4%); Bibarel Lv. 35 (1%) |
-| Old Rod | Any time | 10 | Tympole Lv. 10 (40%); Spheal Lv. 10 (30%); Chewtle Lv. 10 (15%); Pyukumuku Lv. 10 (10%); Pincurchin Lv. 10 (5%) |
-| Good Rod | Any time | 20 | Qwilfish Hisuian Lv. 20 (40%); Wingull Lv. 20 (30%); Surskit Lv. 20 (15%); Azumarill Lv. 20 (10%); Clodsire Lv. 20 (5%) |
-| Super Rod | Any time | 40 | Araquanid Lv. 40 (40%); Mantyke Lv. 40 (30%); Frillish Lv. 40 (15%); Wugtrio Lv. 40 (10%); Pelipper Lv. 40 (5%) |
-| Surf swarm | Any time | — | Tentacool (swarm) |
-| Good Rod swarm | Any time | — | Shellder (swarm) |
-| Super Rod swarm | Any time | — | Magikarp (swarm) |
-| Grass | Day | 30.6 | Pelipper Lv. 30 (20%); Tentacruel Lv. 30 (20%); Floatzel Lv. 30 (10%); Gastrodon Lv. 31 (10%); Araquanid Lv. 31 (10%); Lanturn Lv. 31 (10%); Wugtrio Lv. 31 (5%); Golisopod Lv. 31 (5%); Bruxish Lv. 32 (4%); Veluza Lv. 32 (4%); Dratini Lv. 32 (2%) |
-| Grass | Night | 30.6 | Tentacruel Lv. 30 (20%); Lanturn Lv. 30 (20%); Frillish Lv. 30 (10%); Gastrodon Lv. 31 (10%); Araquanid Lv. 31 (10%); Wugtrio Lv. 31 (10%); Golisopod Lv. 31 (5%); Cloyster Lv. 31 (5%); Bruxish Lv. 32 (4%); Veluza Lv. 32 (4%); Dratini Lv. 32 (2%) |
-
-## Pallet Town
-
-Encounter ID 95; configured level range 4-40.
-
-| Method | Time | Average level | Pokémon and rate |
-| --- | --- | --- | --- |
-| Grass | Morning | 4.6 | Pidgey Lv. 4 (20%); Rattata Lv. 4 (20%); Sentret Lv. 4 (10%); Bidoof Lv. 5 (10%); Skwovet Lv. 5 (10%); Hoppip Lv. 5 (10%); Fletchling Lv. 5 (5%); Wooloo Lv. 5 (5%); Yamper Lv. 6 (4%); Lillipup Lv. 6 (4%); Rockruff Lv. 6 (2%) |
-| Surf | Any time | 33.5 | Lombre Lv. 35 (60%); Corsola Galarian Lv. 30 (30%); Quagsire Lv. 35 (5%); Bibarel Lv. 35 (4%); Pyukumuku Lv. 35 (1%) |
-| Old Rod | Any time | 10 | Inkay Lv. 10 (40%); Panpour Lv. 10 (30%); Wimpod Lv. 10 (15%); Pincurchin Lv. 10 (10%); Pyukumuku Lv. 10 (5%) |
-| Good Rod | Any time | 20 | Feebas Lv. 20 (40%); Stunfisk Lv. 20 (30%); Delibird Lv. 20 (15%); Azumarill Lv. 20 (10%); Clodsire Lv. 20 (5%) |
-| Super Rod | Any time | 40 | Slowpoke Galarian Lv. 40 (40%); Archen Lv. 40 (30%); Lileep Lv. 40 (15%); Wugtrio Lv. 40 (10%); Pelipper Lv. 40 (5%) |
-| Surf swarm | Any time | — | Tentacool (swarm) |
-| Good Rod swarm | Any time | — | Shellder (swarm) |
-| Super Rod swarm | Any time | — | Magikarp (swarm) |
-| Grass | Day | 4.6 | Pidgey Lv. 4 (20%); Sentret Lv. 4 (20%); Bidoof Lv. 4 (10%); Skwovet Lv. 5 (10%); Bunnelby Lv. 5 (10%); Hoppip Lv. 5 (10%); Fletchling Lv. 5 (5%); Wooloo Lv. 5 (5%); Yamper Lv. 6 (4%); Smeargle Lv. 6 (4%); Rockruff Lv. 6 (2%) |
-| Grass | Night | 4.6 | Rattata Lv. 4 (20%); Hoothoot Lv. 4 (20%); Spinarak Lv. 4 (10%); Purrloin Lv. 5 (10%); Nickit Lv. 5 (10%); Zigzagoon Lv. 5 (10%); Whismur Lv. 5 (5%); Skwovet Lv. 5 (5%); Wooloo Lv. 6 (4%); Munna Lv. 6 (4%); Rockruff Lv. 6 (2%) |
-
-## Viridian City
-
-Encounter ID 96; configured level range 4-40.
-
-| Method | Time | Average level | Pokémon and rate |
-| --- | --- | --- | --- |
-| Grass | Morning | 4.62 | Caterpie Lv. 4 (20%); Weedle Lv. 4 (20%); Pidgey Lv. 4 (10%); Rattata Lv. 5 (10%); Oddish Lv. 5 (10%); Bellsprout Lv. 5 (10%); Nidoran♀ Lv. 5 (5%); Nidoran♂ Lv. 5 (5%); Scatterbug Lv. 6 (4%); Tarountula Lv. 6 (4%); Shinx Lv. 7 (2%) |
-| Surf | Any time | 8.5 | Chewtle Lv. 10 (60%); Marill Lv. 5 (30%); Pincurchin Lv. 10 (6%); Pyukumuku Lv. 10 (4%) |
-| Old Rod | Any time | 10 | Clobbopus Lv. 10 (40%); Skorupi Lv. 10 (30%); Crabrawler Lv. 10 (15%); Pyukumuku Lv. 10 (10%); Wattrel Lv. 10 (5%) |
-| Good Rod | Any time | 20 | Anorith Lv. 20 (40%); Tadbulb Lv. 20 (30%); Bidoof Lv. 20 (15%); Bibarel Lv. 20 (10%); Quagsire Lv. 20 (5%) |
-| Super Rod | Any time | 40 | Tatsugiri Lv. 40 (40%); Basculin Lv. 40 (30%); Qwilfish Lv. 40 (15%); Wugtrio Lv. 40 (10%); Clodsire Lv. 40 (5%) |
-| Surf swarm | Any time | — | Poliwag (swarm) |
-| Good Rod swarm | Any time | — | Poliwag (swarm) |
-| Super Rod swarm | Any time | — | Magikarp (swarm) |
-| Grass | Day | 4.62 | Caterpie Lv. 4 (20%); Weedle Lv. 4 (20%); Pidgey Lv. 4 (10%); Sentret Lv. 5 (10%); Oddish Lv. 5 (10%); Bellsprout Lv. 5 (10%); Seedot Lv. 5 (5%); Lotad Lv. 5 (5%); Scatterbug Lv. 6 (4%); Tarountula Lv. 6 (4%); Shinx Lv. 7 (2%) |
-| Grass | Night | 4.62 | Spinarak Lv. 4 (20%); Hoothoot Lv. 4 (20%); Rattata Lv. 4 (10%); Zubat Lv. 5 (10%); Oddish Lv. 5 (10%); Shroomish Lv. 5 (10%); Purrloin Lv. 5 (5%); Nickit Lv. 5 (5%); Shuppet Lv. 6 (4%); Murkrow Lv. 6 (4%); Shinx Lv. 7 (2%) |
-
-## Cerulean City
-
-Encounter ID 97; configured level range 5-40.
-
-| Method | Time | Average level | Pokémon and rate |
-| --- | --- | --- | --- |
-| Grass | Morning | 11.02 | Psyduck Lv. 10 (20%); Oddish Lv. 10 (20%); Poliwag Lv. 11 (10%); Bellsprout Lv. 11 (10%); Venonat Lv. 11 (10%); Slowpoke Lv. 12 (10%); Surskit Lv. 12 (5%); Dewpider Lv. 12 (5%); Mime jr. Lv. 13 (4%); Abra Lv. 13 (4%); Riolu Lv. 14 (2%) |
-| Surf | Any time | 8.5 | Remoraid Lv. 10 (60%); Corphish Lv. 5 (30%); Pincurchin Lv. 10 (5%); Clauncher Lv. 10 (4%); Omanyte Lv. 10 (1%) |
-| Old Rod | Any time | 10 | Goldeen Lv. 10 (40%); Finizen Lv. 10 (30%); Chinchou Lv. 10 (15%); Finneon Lv. 10 (10%); Carvanha Lv. 10 (5%) |
-| Good Rod | Any time | 20 | Luvdisc Lv. 20 (40%); Wailmer Lv. 20 (30%); Wishiwashi Lv. 20 (15%); Azumarill Lv. 20 (10%); Bibarel Lv. 20 (5%) |
-| Super Rod | Any time | 40 | Slowbro Lv. 40 (40%); Slowking Lv. 40 (30%); Corsola Lv. 40 (15%); Pelipper Lv. 40 (10%); Quagsire Lv. 40 (5%) |
-| Surf swarm | Any time | — | Goldeen (swarm) |
-| Good Rod swarm | Any time | — | Goldeen (swarm) |
-| Super Rod swarm | Any time | — | Magikarp (swarm) |
-| Grass | Day | 11.02 | Psyduck Lv. 10 (20%); Bellsprout Lv. 10 (20%); Oddish Lv. 11 (10%); Poliwag Lv. 11 (10%); Slowpoke Lv. 11 (10%); Lotad Lv. 12 (10%); Surskit Lv. 12 (5%); Dewpider Lv. 12 (5%); Mime jr. Lv. 13 (4%); Munna Lv. 13 (4%); Riolu Lv. 14 (2%) |
-| Grass | Night | 11.02 | Poliwag Lv. 10 (20%); Psyduck Lv. 10 (20%); Slowpoke Lv. 11 (10%); Venonat Lv. 11 (10%); Wooper Lv. 11 (10%); Frillish Lv. 12 (10%); Dewpider Lv. 12 (5%); Tadbulb Lv. 12 (5%); Drowzee Lv. 13 (4%); Abra Lv. 13 (4%); Riolu Lv. 14 (2%) |
-
-## Vermilion City
-
-Encounter ID 98; configured level range 10-40.
-
-| Method | Time | Average level | Pokémon and rate |
-| --- | --- | --- | --- |
-| Grass | Morning | 15 | Meowth Lv. 14 (20%); Wingull Lv. 14 (20%); Magnemite Lv. 15 (10%); Voltorb Lv. 15 (10%); Krabby Lv. 15 (10%); Machop Lv. 16 (10%); Pawmi Lv. 16 (5%); Tadbulb Lv. 16 (5%); Varoom Lv. 17 (4%); Toxel Lv. 17 (4%); Elekid Lv. 17 (2%) |
-| Surf | Any time | 33.5 | Kabuto Lv. 35 (60%); Tirtouga Lv. 30 (30%); Wugtrio Lv. 35 (5%); Clodsire Lv. 35 (4%); Gyarados Lv. 35 (1%) |
-| Old Rod | Any time | 10 | Barboach Lv. 10 (40%); Arrokuda Lv. 10 (30%); Magikarp Lv. 10 (15%); Psyduck Lv. 10 (10%); Skrelp Lv. 10 (5%) |
-| Good Rod | Any time | 20 | Clamperl Lv. 20 (40%); Lombre Lv. 20 (30%); Buizel Lv. 20 (15%); Azumarill Lv. 20 (10%); Bibarel Lv. 20 (5%) |
-| Super Rod | Any time | 40 | Gastrodon Lv. 40 (40%); Araquanid Lv. 40 (30%); Seadra Lv. 40 (15%); Pelipper Lv. 40 (10%); Cramorant Lv. 40 (5%) |
-| Rock Smash | Any time | 30.8 | Toedscool Lv. 24-37 (90%); Gligar Lv. 32-35 (10%) |
-| Surf swarm | Any time | — | Wingull (swarm) |
-| Good Rod swarm | Any time | — | Shellder (swarm) |
-| Super Rod swarm | Any time | — | Magikarp (swarm) |
-| Grass | Day | 15 | Wingull Lv. 14 (20%); Meowth Lv. 14 (20%); Magnemite Lv. 15 (10%); Voltorb Lv. 15 (10%); Krabby Lv. 15 (10%); Timburr Lv. 16 (10%); Pawmi Lv. 16 (5%); Tadbulb Lv. 16 (5%); Varoom Lv. 17 (4%); Grubbin Lv. 17 (4%); Elekid Lv. 17 (2%) |
-| Grass | Night | 15 | Meowth Lv. 14 (20%); Magnemite Lv. 14 (20%); Voltorb Lv. 15 (10%); Zubat Lv. 15 (10%); Krabby Lv. 15 (10%); Inkay Lv. 16 (10%); Tadbulb Lv. 16 (5%); Varoom Lv. 16 (5%); Toxel Lv. 17 (4%); Shuppet Lv. 17 (4%); Elekid Lv. 17 (2%) |
-
-## Celadon City
-
-Encounter ID 99; configured level range 15-22.
-
-| Method | Time | Average level | Pokémon and rate |
-| --- | --- | --- | --- |
-| Grass | Morning | 19.02 | Pidove Lv. 18 (20%); Skitty Lv. 18 (20%); Petilil Lv. 19 (10%); Bounsweet Lv. 19 (10%); Fomantis Lv. 19 (10%); Smoliv Lv. 20 (10%); Fidough Lv. 20 (5%); Porygon Lv. 20 (5%); Combee Lv. 21 (4%); Minccino Lv. 21 (4%); Zorua Lv. 22 (2%) |
-| Surf | Any time | 18 | Seel Lv. 20 (60%); Shellos Lv. 15 (30%); Slowpoke Lv. 15 (5%); Ducklett Lv. 15 (4%); Mareanie Lv. 15 (1%) |
-| Surf swarm | Any time | — | Grimer (swarm) |
-| Grass | Day | 19.02 | Skitty Lv. 18 (20%); Pidove Lv. 18 (20%); Petilil Lv. 19 (10%); Bounsweet Lv. 19 (10%); Fomantis Lv. 19 (10%); Smoliv Lv. 20 (10%); Fidough Lv. 20 (5%); Porygon Lv. 20 (5%); Spritzee Lv. 21 (4%); Swirlix Lv. 21 (4%); Zorua Lv. 22 (2%) |
-| Grass | Night | 19.02 | Purrloin Lv. 18 (20%); Meowth Lv. 18 (20%); Trubbish Lv. 19 (10%); Morelull Lv. 19 (10%); Oddish Lv. 19 (10%); Shroomish Lv. 20 (10%); Fidough Lv. 20 (5%); Porygon Lv. 20 (5%); Munna Lv. 21 (4%); Sinistea Lv. 21 (4%); Zorua Lv. 22 (2%) |
-
-## Fuchsia City
-
-Encounter ID 100; configured level range 10-40.
-
-| Method | Time | Average level | Pokémon and rate |
-| --- | --- | --- | --- |
-| Grass | Morning | 25.02 | Nidoran♀ Lv. 24 (20%); Nidoran♂ Lv. 24 (20%); Venonat Lv. 25 (10%); Doduo Lv. 25 (10%); Exeggcute Lv. 25 (10%); Girafarig Lv. 26 (10%); Tauros Lv. 26 (5%); Kangaskhan Lv. 26 (5%); Rhyhorn Lv. 27 (4%); Scyther Lv. 27 (4%); Chansey Lv. 28 (2%) |
-| Surf | Any time | 17.5 | Poliwag Lv. 20 (60%); Staryu Lv. 15 (30%); Horsea Lv. 10 (5%); Tympole Lv. 10 (4%); Spheal Lv. 10 (1%) |
-| Old Rod | Any time | 10 | Krabby Lv. 10 (40%); Binacle Lv. 10 (30%); Tentacool Lv. 10 (15%); Shellder Lv. 10 (10%); Chewtle Lv. 10 (5%) |
-| Good Rod | Any time | 20 | Qwilfish Hisuian Lv. 20 (40%); Wingull Lv. 20 (30%); Surskit Lv. 20 (15%); Quagsire Lv. 20 (10%); Azumarill Lv. 20 (5%) |
-| Super Rod | Any time | 40 | Sealeo Lv. 40 (40%); Poliwhirl Lv. 40 (30%); Palpitoad Lv. 40 (15%); Wugtrio Lv. 40 (10%); Clodsire Lv. 40 (5%) |
-| Surf swarm | Any time | — | Magikarp (swarm) |
-| Good Rod swarm | Any time | — | Gyarados (swarm) |
-| Super Rod swarm | Any time | — | Magikarp (swarm) |
-| Grass | Day | 25.02 | Nidoran♂ Lv. 24 (20%); Nidoran♀ Lv. 24 (20%); Doduo Lv. 25 (10%); Venonat Lv. 25 (10%); Exeggcute Lv. 25 (10%); Girafarig Lv. 26 (10%); Tauros Lv. 26 (5%); Kangaskhan Lv. 26 (5%); Rhyhorn Lv. 27 (4%); Pinsir Lv. 27 (4%); Chansey Lv. 28 (2%) |
-| Grass | Night | 25.02 | Venonat Lv. 24 (20%); Nidoran♀ Lv. 24 (20%); Nidoran♂ Lv. 25 (10%); Hoothoot Lv. 25 (10%); Exeggcute Lv. 25 (10%); Oddish Lv. 26 (10%); Girafarig Lv. 26 (5%); Tauros Lv. 26 (5%); Rhyhorn Lv. 27 (4%); Scyther Lv. 27 (4%); Chansey Lv. 28 (2%) |
-
-## Cinnabar Island
-
-Encounter ID 101; configured level range 10-40.
-
-| Method | Time | Average level | Pokémon and rate |
-| --- | --- | --- | --- |
-| Grass | Morning | 30.6 | Numel Lv. 30 (20%); Slugma Lv. 30 (20%); Houndour Lv. 30 (10%); Salandit Lv. 31 (10%); Rolycoly Lv. 31 (10%); Litleo Lv. 31 (10%); Capsakid Lv. 31 (5%); Charcadet Lv. 31 (5%); Heatmor Lv. 32 (4%); Turtonator Lv. 32 (4%); Larvesta Lv. 32 (2%) |
-| Surf | Any time | 33.5 | Araquanid Lv. 35 (60%); Lotad Lv. 30 (30%); Pelipper Lv. 35 (5%); Lapras Lv. 35 (4%); Quagsire Lv. 35 (1%) |
-| Old Rod | Any time | 10 | Inkay Lv. 10 (40%); Wiglett Lv. 10 (30%); Spheal Lv. 10 (15%); Panpour Lv. 10 (10%); Wooper Lv. 10 (5%) |
-| Good Rod | Any time | 20 | Mantyke Lv. 20 (40%); Frillish Lv. 20 (30%); Wimpod Lv. 20 (15%); Bibarel Lv. 20 (10%); Pyukumuku Lv. 20 (5%) |
-| Super Rod | Any time | 40 | Jellicent Lv. 40 (40%); Feebas Lv. 40 (30%); Corsola Galarian Lv. 40 (15%); Wugtrio Lv. 40 (10%); Pincurchin Lv. 40 (5%) |
-| Surf swarm | Any time | — | Tentacool (swarm) |
-| Good Rod swarm | Any time | — | Shellder (swarm) |
-| Super Rod swarm | Any time | — | Magikarp (swarm) |
-| Grass | Day | 30.6 | Slugma Lv. 30 (20%); Numel Lv. 30 (20%); Houndour Lv. 30 (10%); Rolycoly Lv. 31 (10%); Litleo Lv. 31 (10%); Capsakid Lv. 31 (10%); Salandit Lv. 31 (5%); Charcadet Lv. 31 (5%); Heatmor Lv. 32 (4%); Torkoal Lv. 32 (4%); Larvesta Lv. 32 (2%) |
-| Grass | Night | 30.6 | Houndour Lv. 30 (20%); Salandit Lv. 30 (20%); Slugma Lv. 30 (10%); Numel Lv. 31 (10%); Litwick Lv. 31 (10%); Rolycoly Lv. 31 (10%); Charcadet Lv. 31 (5%); Capsakid Lv. 31 (5%); Turtonator Lv. 32 (4%); Heatmor Lv. 32 (4%); Larvesta Lv. 32 (2%) |
-
-## Route 48
-
-Encounter ID 102; configured level range 20-25.
-
-| Method | Time | Average level | Pokémon and rate |
-| --- | --- | --- | --- |
-| Grass | Morning | 21.89 | Skiploom Lv. 25 (20%); Lillipup Lv. 20 (20%); Gulpin Lv. 20 (10%); Oricorio Lv. 21 (10%); Starly Lv. 22 (10%); Skitty Lv. 24 (10%); Mawile Lv. 21 (5%); Mawile Lv. 20 (5%); Tropius Lv. 20 (4%); Turtonator Lv. 22 (4%); Swellow Lv. 22 (1%); Noctowl Lv. 24 (1%) |
-| Grass swarm | Any time | — | Tauros (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Shinx (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Plusle (radio replacement); Minun (radio replacement) |
-| Grass | Day | 21.89 | Yanma Lv. 25 (20%); Lillipup Lv. 20 (20%); Gulpin Lv. 20 (10%); Pidgeotto Lv. 21 (10%); Starly Lv. 22 (10%); Skitty Lv. 24 (10%); Mawile Lv. 21 (5%); Mawile Lv. 20 (5%); Seviper Lv. 20 (4%); Heatmor Lv. 22 (4%); Vespiquen Lv. 22 (1%); Dracozolt Lv. 24 (1%) |
-| Grass | Night | 21.89 | Houndour Lv. 25 (20%); Lillipup Lv. 20 (20%); Gulpin Lv. 20 (10%); Dipplin Lv. 21 (10%); Starly Lv. 22 (10%); Skitty Lv. 24 (10%); Mawile Lv. 21 (5%); Mawile Lv. 20 (5%); Carnivine Lv. 20 (4%); Drampa Lv. 22 (4%); Eldegoss Lv. 22 (1%); Thievul Lv. 24 (1%) |
-
-## Route 26
-
-Encounter ID 103; configured level range 10-59.
-
-| Method | Time | Average level | Pokémon and rate |
-| --- | --- | --- | --- |
-| Grass | Morning | 29.54 | Vivillon Lv. 28 (20%); Yanma Lv. 28 (20%); Pichu Lv. 28 (10%); Sunflora Lv. 28 (10%); Whirlipede Lv. 32 (10%); Pancham Lv. 32 (10%); Simisage Lv. 30 (5%); Lilligant Hisuian Lv. 30 (5%); Appletun Lv. 30 (4%); Mothim Lv. 30 (4%); Mienshao Lv. 59 (1%); Arboliva Lv. 35 (1%) |
-| Surf | Any time | 28.5 | Stunfisk Lv. 30 (60%); Delibird Lv. 25 (30%); Pelipper Lv. 30 (5%); Clodsire Lv. 30 (4%); Floatzel Lv. 30 (1%) |
-| Old Rod | Any time | 10 | Clobbopus Lv. 10 (40%); Skorupi Lv. 10 (30%); Crabrawler Lv. 10 (15%); Wattrel Lv. 10 (10%); Tadbulb Lv. 10 (5%) |
-| Good Rod | Any time | 20 | Slowpoke Galarian Lv. 20 (40%); Archen Lv. 20 (30%); Lileep Lv. 20 (15%); Azumarill Lv. 20 (10%); Anorith Lv. 20 (5%) |
-| Super Rod | Any time | 40 | Azumarill Lv. 40 (40%); Bibarel Lv. 40 (30%); Clodsire Lv. 40 (15%); Tatsugiri Lv. 40 (10%); Basculin Lv. 40 (5%) |
-| Grass swarm | Any time | — | Doduo (swarm) |
-| Surf swarm | Any time | — | Tentacool (swarm) |
-| Good Rod swarm | Any time | — | Shellder (swarm) |
-| Super Rod swarm | Any time | — | Magikarp (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Buizel (radio replacement); Bidoof (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Whismur (radio replacement); Linoone (radio replacement) |
-| Grass | Day | 29.54 | Larvesta Lv. 28 (20%); Skiploom Lv. 28 (20%); Pichu Lv. 28 (10%); Wormadam Lv. 28 (10%); Ledian Lv. 32 (10%); Pancham Lv. 32 (10%); Mightyena Lv. 30 (5%); Dipplin Lv. 30 (5%); Parasect Lv. 30 (4%); Yanmega Lv. 30 (4%); Volcarona Lv. 59 (1%); Pyroar Lv. 35 (1%) |
-| Grass | Night | 29.54 | Bramblin Lv. 28 (20%); Nuzleaf Lv. 28 (20%); Pichu Lv. 28 (10%); Volbeat Lv. 28 (10%); Illumise Lv. 32 (10%); Pancham Lv. 32 (10%); Mightyena Lv. 30 (5%); Shiftry Lv. 30 (5%); Exeggutor Lv. 30 (4%); Tsareena Lv. 30 (4%); Noivern Lv. 59 (1%); Obstagoon Lv. 35 (1%) |
-
-## Route 27
-
-Encounter ID 104; configured level range 10-40.
-
-| Method | Time | Average level | Pokémon and rate |
-| --- | --- | --- | --- |
-| Grass | Morning | 28.93 | Phantump Lv. 28 (20%); Pumpkaboo Lv. 28 (20%); Swadloon Lv. 28 (10%); Nidorino Lv. 28 (10%); Nidorina Lv. 30 (10%); Stufful Lv. 30 (10%); Spidops Lv. 30 (5%); Sunflora Lv. 30 (5%); Gogoat Lv. 32 (4%); Ninetales Alolan Lv. 30 (4%); Talonflame Lv. 35 (1%); Ursaring Lv. 30 (1%) |
-| Surf | Any time | 18.5 | Corsola Lv. 20 (60%); Omanyte Lv. 15 (30%); Kabuto Lv. 20 (5%); Tirtouga Lv. 20 (4%); Alomomola Lv. 20 (1%) |
-| Old Rod | Any time | 10 | Remoraid Lv. 10 (40%); Goldeen Lv. 10 (30%); Finizen Lv. 10 (15%); Chinchou Lv. 10 (10%); Finneon Lv. 10 (5%) |
-| Good Rod | Any time | 20 | Qwilfish Lv. 20 (40%); Luvdisc Lv. 20 (30%); Wailmer Lv. 20 (15%); Wishiwashi Lv. 20 (10%); Carvanha Lv. 20 (5%) |
-| Super Rod | Any time | 40 | Slowbro Lv. 40 (40%); Slowking Lv. 40 (30%); Wailmer Lv. 40 (15%); Pelipper Lv. 40 (10%); Whiscash Lv. 40 (5%) |
-| Grass swarm | Any time | — | Doduo (swarm) |
-| Surf swarm | Any time | — | Luvdisc (swarm) |
-| Good Rod swarm | Any time | — | Shellder (swarm) |
-| Super Rod swarm | Any time | — | Magikarp (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Buizel (radio replacement); Bidoof (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Whismur (radio replacement); Linoone (radio replacement) |
-| Grass | Day | 28.93 | Phantump Lv. 28 (20%); Pumpkaboo Lv. 28 (20%); Ledian Lv. 28 (10%); Nidorino Lv. 28 (10%); Nidorina Lv. 30 (10%); Stufful Lv. 30 (10%); Butterfree Lv. 30 (5%); Parasect Lv. 30 (5%); Venomoth Lv. 32 (4%); Corvisquire Lv. 30 (4%); Altaria Lv. 35 (1%); Togekiss Lv. 30 (1%) |
-| Grass | Night | 28.93 | Phantump Lv. 28 (20%); Pumpkaboo Lv. 28 (20%); Nymble Lv. 28 (10%); Nidorino Lv. 28 (10%); Nidorina Lv. 30 (10%); Stufful Lv. 30 (10%); Wormadam Lv. 30 (5%); Spidops Lv. 30 (5%); Cacturne Lv. 32 (4%); Corvisquire Lv. 30 (4%); Weezing Galarian Lv. 35 (1%); Mabosstiff Lv. 30 (1%) |
-
-## Route 28
-
-Encounter ID 105; configured level range 10-55.
-
-| Method | Time | Average level | Pokémon and rate |
-| --- | --- | --- | --- |
-| Grass | Morning | 40.75 | Vivillon Lv. 39 (20%); Charjabug Lv. 40 (20%); Eelektrik Lv. 39 (10%); Steenee Lv. 40 (10%); Gossifleur Lv. 40 (10%); Lurantis Lv. 40 (10%); Dragonite Lv. 55 (5%); Amoonguss Lv. 42 (5%); Rapidash Lv. 41 (4%); Hatterene Lv. 43 (4%); Oshawott Lv. 41 (1%); Oshawott Lv. 43 (1%) |
-| Surf | Any time | 38.5 | Clauncher Lv. 40 (60%); Gastrodon Lv. 35 (30%); Huntail Lv. 40 (5%); Politoed Lv. 40 (4%); Milotic Lv. 40 (1%) |
-| Old Rod | Any time | 10 | Arrokuda Lv. 10 (40%); Magikarp Lv. 10 (30%); Corphish Lv. 10 (15%); Psyduck Lv. 10 (10%); Skrelp Lv. 10 (5%) |
-| Good Rod | Any time | 20 | Clamperl Lv. 20 (40%); Lombre Lv. 20 (30%); Buizel Lv. 20 (15%); Bibarel Lv. 20 (10%); Pyukumuku Lv. 20 (5%) |
-| Super Rod | Any time | 40 | Araquanid Lv. 40 (40%); Seadra Lv. 40 (30%); Sealeo Lv. 40 (15%); Wugtrio Lv. 40 (10%); Poliwhirl Lv. 40 (5%) |
-| Grass swarm | Any time | — | Tangela (swarm) |
-| Surf swarm | Any time | — | Poliwag (swarm) |
-| Good Rod swarm | Any time | — | Poliwag (swarm) |
-| Super Rod swarm | Any time | — | Magikarp (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Buizel (radio replacement); Bidoof (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Whismur (radio replacement); Linoone (radio replacement) |
-| Grass | Day | 40.75 | Yanma Lv. 39 (20%); Larvesta Lv. 40 (20%); Pawmi Lv. 39 (10%); Steenee Lv. 40 (10%); Gossifleur Lv. 40 (10%); Sawsbuck Lv. 40 (10%); Dragonite Lv. 55 (5%); Tinkaton Lv. 42 (5%); Abomasnow Lv. 41 (4%); Grimmsnarl Lv. 43 (4%); Oshawott Lv. 41 (1%); Oshawott Lv. 43 (1%) |
-| Grass | Night | 40.75 | Gourgeist Lv. 39 (20%); Nuzleaf Lv. 40 (20%); Pawmi Lv. 39 (10%); Steenee Lv. 40 (10%); Gossifleur Lv. 40 (10%); Raticate Alolan Lv. 40 (10%); Dragonite Lv. 55 (5%); Scrafty Lv. 42 (5%); Rapidash Galarian Lv. 41 (4%); Exploud Lv. 43 (4%); Oshawott Lv. 41 (1%); Oshawott Lv. 43 (1%) |
-
-## Mt. Moon 1F
-
-Encounter ID 106; configured level range 6-12.
-
-| Method | Time | Average level | Pokémon and rate |
-| --- | --- | --- | --- |
-| Grass | Morning | 7.9 | Rolycoly Lv. 6 (20%); Rockruff Lv. 8 (20%); Makuhita Lv. 6 (10%); Tyrogue Lv. 8 (10%); Riolu Lv. 8 (10%); Hatenna Lv. 8 (10%); Gothita Lv. 12 (10%); Elgyem Lv. 10 (4%); Elgyem Lv. 8 (4%); Axew Lv. 10 (1%); Wynaut Lv. 8 (1%) |
-| Grass swarm | Any time | — | Zubat (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Bronzor (radio replacement); Chingling (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Absol (radio replacement); Makuhita (radio replacement) |
-| Grass | Day | 7.9 | Wooper Paldean Lv. 6 (20%); Nacli Lv. 8 (20%); Makuhita Lv. 6 (10%); Croagunk Lv. 8 (10%); Machop Lv. 8 (10%); Grimer Lv. 8 (10%); Koffing Lv. 12 (10%); Tyrogue Lv. 10 (4%); Meditite Lv. 8 (4%); Axew Lv. 10 (1%); Chingling Lv. 8 (1%) |
-| Grass | Night | 7.9 | Sandile Lv. 6 (20%); Yamask Lv. 8 (20%); Wynaut Lv. 6 (10%); Hatenna Lv. 8 (10%); Abra Lv. 8 (10%); Drowzee Lv. 8 (10%); Gothita Lv. 12 (5%); Grimer Lv. 12 (5%); Elgyem Lv. 10 (4%); Riolu Lv. 8 (4%); Machop Lv. 10 (1%); Meditite Lv. 8 (1%) |
+| Method | Time | Encounter rate | Pokémon and slot share |
+| --- | --- | --- | --- |
+| Grass | Any | 20% | Furret Lv. 62 (20%); Linoone Lv. 63 (20%); Sunflora Lv. 63 (10%); Wigglytuff Lv. 64 (10%); Cherrim Lv. 65 (10%); Breloom Lv. 65 (10%); Primarina Lv. 66 (6%); Annihilape Lv. 66 (6%); Pikachu Partner Lv. 66 (4%); Eevee Partner Lv. 66 (4%) |
+## Route 9 (table 119)
 
-## Mt. Moon 2F
-
-Encounter ID 107; configured level range 6-12.
-
-| Method | Time | Average level | Pokémon and rate |
-| --- | --- | --- | --- |
-| Grass | Morning | 7.9 | Trapinch Lv. 6 (20%); Baltoy Lv. 8 (20%); Makuhita Lv. 6 (10%); Croagunk Lv. 8 (10%); Riolu Lv. 8 (10%); Tyrogue Lv. 8 (10%); Koffing Lv. 12 (5%); Drowzee Lv. 12 (5%); Axew Lv. 10 (4%); Chingling Lv. 8 (4%); Grimer Lv. 10 (1%); Hatenna Lv. 8 (1%) |
-| Grass swarm | Any time | — | Zubat (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Bronzor (radio replacement); Chingling (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Absol (radio replacement); Makuhita (radio replacement) |
-| Grass | Day | 7.9 | Meowth Galarian Lv. 6 (20%); Baltoy Lv. 8 (20%); Makuhita Lv. 6 (10%); Wynaut Lv. 8 (10%); Croagunk Lv. 8 (10%); Gulpin Lv. 8 (10%); Abra Lv. 12 (5%); Machop Lv. 12 (5%); Tyrogue Lv. 10 (4%); Trapinch Lv. 8 (4%); Cubone Lv. 10 (1%); Bonsly Lv. 8 (1%) |
-| Grass | Night | 7.9 | Yamask Lv. 6 (20%); Baltoy Lv. 8 (20%); Meowth Galarian Lv. 6 (10%); Sandshrew Lv. 8 (10%); Shuppet Lv. 8 (10%); Geodude Lv. 8 (10%); Growlithe Hisuian Lv. 12 (5%); Diglett Alolan Lv. 12 (5%); Silicobra Lv. 10 (4%); Klink Lv. 8 (4%); Drilbur Lv. 10 (1%); Varoom Lv. 8 (1%) |
-
-## Rock Tunnel 1F
-
-Encounter ID 108; configured level range 8-14.
-
-| Method | Time | Average level | Pokémon and rate |
-| --- | --- | --- | --- |
-| Grass | Morning | 10.55 | Cubone Lv. 10 (20%); Silicobra Lv. 10 (20%); Fidough Lv. 10 (10%); Trubbish Lv. 10 (10%); Geodude Alolan Lv. 12 (10%); Tyrunt Lv. 12 (10%); Phanpy Lv. 8 (5%); Aron Lv. 8 (5%); Porygon Lv. 14 (4%); Onix Lv. 13 (4%); Tepig Lv. 14 (1%); Tepig Lv. 13 (1%) |
-| Grass swarm | Any time | — | Cubone (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Bronzor (radio replacement); Chingling (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Absol (radio replacement); Makuhita (radio replacement) |
-| Grass | Day | 10.55 | Sandshrew Lv. 10 (20%); Magnemite Lv. 10 (20%); Hippopotas Lv. 10 (10%); Cufant Lv. 10 (10%); Cranidos Lv. 12 (10%); Shieldon Lv. 12 (10%); Rhyhorn Lv. 8 (5%); Glimmet Lv. 8 (5%); Mudbray Lv. 14 (4%); Nosepass Lv. 13 (4%); Tepig Lv. 14 (1%); Tepig Lv. 13 (1%) |
-| Grass | Night | 10.55 | Honedge Lv. 10 (20%); Yamask Galarian Lv. 10 (20%); Gastly Lv. 10 (10%); Gimmighoul Lv. 10 (10%); Togedemaru Lv. 12 (10%); Zorua Hisuian Lv. 12 (10%); Greavard Lv. 8 (5%); Shuppet Lv. 8 (5%); Voltorb Hisuian Lv. 14 (4%); Misdreavus Lv. 13 (4%); Tepig Lv. 14 (1%); Tepig Lv. 13 (1%) |
-
-## Rock Tunnel B1F
-
-Encounter ID 109; configured level range 10-54.
-
-| Method | Time | Average level | Pokémon and rate |
+| Method | Time | Encounter rate | Pokémon and slot share |
 | --- | --- | --- | --- |
-| Grass | Morning | 15 | Klink Lv. 12 (20%); Varoom Lv. 12 (20%); Dwebble Lv. 12 (10%); Ferroseed Lv. 12 (10%); Kadabra Lv. 16 (10%); Nidorina Lv. 16 (10%); Baxcalibur Lv. 54 (5%); Nincada Lv. 10 (5%); Minior Lv. 14 (4%); Sudowoodo Lv. 14 (4%); Sableye Lv. 14 (1%); Duskull Lv. 14 (1%) |
-| Rock Smash | Any time | 14.5 | Toedscool Lv. 12-16 (90%); Gligar Lv. 17-21 (10%) |
-| Grass swarm | Any time | — | Cubone (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Bronzor (radio replacement); Chingling (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Absol (radio replacement); Makuhita (radio replacement) |
-| Grass | Day | 15 | Cranidos Lv. 12 (20%); Silicobra Lv. 12 (20%); Drifloon Lv. 12 (10%); Pumpkaboo Lv. 12 (10%); Kadabra Lv. 16 (10%); Wobbuffet Lv. 16 (10%); Baxcalibur Lv. 54 (5%); Phantump Lv. 10 (5%); Rotom Lv. 14 (4%); Bramblin Lv. 14 (4%); Venonat Lv. 14 (1%); Dustox Lv. 14 (1%) |
-| Grass | Night | 15 | Pawniard Lv. 12 (20%); Honedge Lv. 12 (20%); Zubat Lv. 12 (10%); Venipede Lv. 12 (10%); Kadabra Lv. 16 (10%); Wobbuffet Lv. 16 (10%); Baxcalibur Lv. 54 (5%); Gimmighoul Lv. 10 (5%); Beedrill Lv. 14 (4%); Spinarak Lv. 14 (4%); Kakuna Lv. 14 (1%); Weedle Lv. 14 (1%) |
-
-## Victory Road 1F
-
-Encounter ID 110; configured level range 32-36.
-
-| Method | Time | Average level | Pokémon and rate |
-| --- | --- | --- | --- |
-| Grass | Morning | 32.8 | Magneton Lv. 32 (20%); Sandslash Lv. 32 (20%); Gothorita Lv. 32 (10%); Perrserker Lv. 32 (10%); Dugtrio Alolan Lv. 33 (10%); Marowak Alolan Lv. 33 (10%); Gabite Lv. 34 (5%); Hakamo-o Lv. 35 (5%); Garbodor Lv. 36 (4%); Perrserker Lv. 35 (4%); Deino Lv. 36 (1%); Deino Lv. 35 (1%) |
-| Grass swarm | Any time | — | Graveler (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Bronzor (radio replacement); Chingling (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Absol (radio replacement); Makuhita (radio replacement) |
-| Grass | Day | 32.8 | Lairon Lv. 32 (20%); Marowak Lv. 32 (20%); Dugtrio Alolan Lv. 32 (10%); Marowak Alolan Lv. 32 (10%); Perrserker Lv. 33 (10%); Dugtrio Alolan Lv. 33 (10%); Gabite Lv. 34 (5%); Hakamo-o Lv. 35 (5%); Rhyperior Lv. 36 (4%); Diggersby Lv. 35 (4%); Deino Lv. 36 (1%); Deino Lv. 35 (1%) |
-| Grass | Night | 32.8 | Krokorok Lv. 32 (20%); Sandygast Lv. 32 (20%); Marowak Alolan Lv. 32 (10%); Ariados Lv. 32 (10%); Wobbuffet Lv. 33 (10%); Marowak Alolan Lv. 33 (10%); Gabite Lv. 34 (5%); Hakamo-o Lv. 35 (5%); Typhlosion Hisuian Lv. 36 (4%); Archaludon Lv. 35 (4%); Deino Lv. 36 (1%); Deino Lv. 35 (1%) |
-
-## Route 1
-
-Encounter ID 111; configured level range 2-6.
-
-| Method | Time | Average level | Pokémon and rate |
-| --- | --- | --- | --- |
-| Grass | Morning | 2.6 | Wingull Lv. 2 (20%); Ducklett Lv. 2 (20%); Murkrow Lv. 2 (10%); Sizzlipede Lv. 2 (10%); Kricketot Lv. 3 (10%); Sentret Lv. 3 (10%); Pidgey Lv. 3 (10%); Gligar Lv. 6 (4%); Gligar Lv. 4 (4%); Combee Lv. 6 (1%); Pidgey Lv. 4 (1%) |
-| Grass swarm | Any time | — | Poochyena (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Shinx (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Plusle (radio replacement); Minun (radio replacement) |
-| Grass | Day | 2.6 | Wingull Lv. 2 (20%); Ducklett Lv. 2 (20%); Murkrow Lv. 2 (10%); Scatterbug Lv. 2 (10%); Sentret Lv. 3 (20%); Pidgey Lv. 3 (5%); Taillow Lv. 3 (5%); Gligar Lv. 6 (4%); Gligar Lv. 4 (4%); Smoliv Lv. 6 (1%); Toxel Lv. 4 (1%) |
-| Grass | Night | 2.6 | Litwick Lv. 2 (20%); Nickit Lv. 2 (20%); Murkrow Lv. 2 (10%); Caterpie Lv. 2 (10%); Wurmple Lv. 3 (10%); Flittle Lv. 3 (10%); Hoothoot Lv. 3 (10%); Maschiff Lv. 6 (4%); Hoothoot Lv. 4 (5%); Scraggy Lv. 6 (1%) |
-
-## Route 2 (South, below Viridian Forest)
-
-Encounter ID 112; configured level range 3-10.
-
-| Method | Time | Average level | Pokémon and rate |
-| --- | --- | --- | --- |
-| Grass | Morning | 4.34 | Sizzlipede Lv. 3 (20%); Phanpy Lv. 3 (20%); Tynamo Lv. 3 (10%); Rellor Lv. 3 (10%); Sizzlipede Lv. 5 (10%); Combee Lv. 5 (10%); Metapod Lv. 7 (5%); Silcoon Lv. 8 (5%); Wigglytuff Lv. 7 (4%); Wigglytuff Lv. 10 (4%); Chikorita Lv. 7 (1%); Chikorita Lv. 4 (1%) |
-| Grass swarm | Any time | — | Caterpie (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Shinx (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Plusle (radio replacement); Minun (radio replacement) |
-| Grass | Day | 4.34 | Combee Lv. 3 (20%); Phanpy Lv. 3 (20%); Tynamo Lv. 3 (10%); Sunkern Lv. 3 (10%); Tarountula Lv. 5 (10%); Scatterbug Lv. 5 (10%); Cherubi Lv. 7 (5%); Rellor Lv. 8 (5%); Wigglytuff Lv. 7 (4%); Dottler Lv. 10 (4%); Chikorita Lv. 7 (1%); Chikorita Lv. 4 (1%) |
-| Grass | Night | 4.34 | Bramblin Lv. 3 (20%); Poltchageist Lv. 3 (20%); Tynamo Lv. 3 (10%); Petilil Lv. 3 (10%); Poochyena Lv. 5 (10%); Hoothoot Lv. 5 (10%); Cascoon Lv. 7 (5%); Slowpoke Galarian Lv. 8 (5%); Silcoon Lv. 7 (4%); Deerling Lv. 10 (4%); Chikorita Lv. 7 (1%); Chikorita Lv. 4 (1%) |
+| Grass | Any | 20% | Minun Lv. 64 (20%); Plusle Lv. 65 (20%); Wormadam Lv. 67 (20%); Mothim Lv. 65 (11%); Wormadam Lv. 66 (11%); Klefki Lv. 68 (9%); Skarmory Lv. 67 (9%) |
+| Surf | Any | 15% | Gastrodon Lv. 64–67 (60%); Relicanth Lv. 65–67 (30%); Tentacruel Lv. 66–68 (5%); Octillery Lv. 66–68 (4%); Sharpedo Lv. 66–68 (1%) |
+| Old Rod | Any | 25% | Alomomola Lv. 64–67 (40%); Azumarill Lv. 65–67 (30%); Palafin Lv. 66–68 (15%); Drednaw Lv. 66–68 (10%); Grapploct Lv. 66–68 (5%) |
+| Good Rod | Any | 50% | Politoed Lv. 64–67 (40%); Slowking Lv. 65–67 (30%); Slowbro Lv. 66–68 (15%); Jellicent Female Lv. 66–68 (10%); Wugtrio Lv. 66–68 (5%) |
+| Super Rod | Any | 75% | Basculin Lv. 64–67 (40%); Huntail Lv. 65–67 (30%); Dragalge Lv. 66–68 (15%); Dondozo Lv. 66–68 (10%); Kabutops Lv. 66–68 (5%) |
+Conditional: nightFish: Luvdisc
 
-## Route 3
-
-Encounter ID 113; configured level range 5-10.
-
-| Method | Time | Average level | Pokémon and rate |
-| --- | --- | --- | --- |
-| Grass | Morning | 6.1 | Hoppip Lv. 5 (20%); Ledyba Lv. 5 (20%); Yamper Lv. 5 (10%); Murkrow Lv. 5 (10%); Meowth Lv. 8 (10%); Shroodle Lv. 8 (10%); Noibat Lv. 6 (5%); Jigglypuff Lv. 6 (5%); Pidove Lv. 10 (4%); Pidove Lv. 8 (4%); Squawkabilly Lv. 10 (1%); Skwovet Lv. 8 (1%) |
-| Grass swarm | Any time | — | Baltoy (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Shinx (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Plusle (radio replacement); Minun (radio replacement) |
-| Grass | Day | 6.1 | Noibat Lv. 5 (20%); Wattrel Lv. 5 (20%); Whismur Lv. 5 (10%); Murkrow Lv. 5 (10%); Mareep Lv. 8 (10%); Skwovet Lv. 8 (10%); Jigglypuff Lv. 6 (10%); Woobat Lv. 10 (4%); Cascoon Lv. 8 (4%); Salandit Lv. 10 (1%); Woobat Lv. 8 (1%) |
-| Grass | Night | 6.1 | Houndour Lv. 5 (20%); Bramblin Lv. 5 (20%); Nickit Lv. 5 (10%); Murkrow Lv. 5 (10%); Purrloin Lv. 8 (15%); Zigzagoon Galarian Lv. 8 (10%); Yungoos Lv. 6 (5%); Patrat Lv. 6 (5%); Stunky Lv. 10 (4%); Salandit Lv. 10 (1%) |
-
-## Route 4
-
-Encounter ID 114; configured level range 5-40.
-
-| Method | Time | Average level | Pokémon and rate |
-| --- | --- | --- | --- |
-| Grass | Morning | 6.1 | Sizzlipede Lv. 5 (20%); Spoink Lv. 5 (20%); Combee Lv. 5 (10%); Nymble Lv. 5 (10%); Wooloo Lv. 8 (10%); Mime Jr. Lv. 8 (10%); Slakoth Lv. 6 (10%); Pansear Lv. 10 (4%); Pineco Lv. 8 (4%); Spewpa Lv. 10 (1%); Smoliv Lv. 8 (1%) |
-| Surf | Any time | 8.5 | Clauncher Lv. 10 (60%); Lotad Lv. 5 (30%); Slowpoke Lv. 10 (5%); Seel Lv. 10 (4%); Shellos Lv. 10 (1%) |
-| Old Rod | Any time | 10 | Ducklett Lv. 10 (40%); Mareanie Lv. 10 (30%); Poliwag Lv. 10 (15%); Krabby Lv. 10 (10%); Horsea Lv. 10 (5%) |
-| Good Rod | Any time | 20 | Staryu Lv. 20 (40%); Tentacool Lv. 20 (30%); Tympole Lv. 20 (15%); Spheal Lv. 20 (10%); Binacle Lv. 20 (5%) |
-| Super Rod | Any time | 40 | Palpitoad Lv. 40 (40%); Tatsugiri Lv. 40 (30%); Jellicent Lv. 40 (15%); Shellder Lv. 40 (10%); Clawitzer Lv. 40 (5%) |
-| Grass swarm | Any time | — | Spearow (swarm) |
-| Surf swarm | Any time | — | Goldeen (swarm) |
-| Good Rod swarm | Any time | — | Goldeen (swarm) |
-| Super Rod swarm | Any time | — | Magikarp (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Buizel (radio replacement); Bidoof (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Whismur (radio replacement); Linoone (radio replacement) |
-| Grass | Day | 6.1 | Joltik Lv. 5 (20%); Spoink Lv. 5 (20%); Yamper Lv. 5 (10%); Capsakid Lv. 5 (10%); Sizzlipede Lv. 8 (10%); Tandemaus Lv. 8 (10%); Slakoth Lv. 6 (10%); Rufflet Lv. 10 (4%); Charcadet Lv. 8 (4%); Oricorio Lv. 10 (1%); Growlithe Lv. 8 (1%) |
-| Grass | Night | 6.1 | Houndour Lv. 5 (20%); Spoink Lv. 5 (20%); Cleffa Lv. 5 (10%); Scatterbug Lv. 5 (10%); Buneary Lv. 8 (10%); Slugma Lv. 8 (10%); Slakoth Lv. 6 (10%); Stunky Lv. 10 (4%); Vulpix Lv. 8 (4%); Dottler Lv. 10 (1%); Cacnea Lv. 8 (1%) |
-
-## Route 5
-
-Encounter ID 115; configured level range 12-15.
-
-| Method | Time | Average level | Pokémon and rate |
-| --- | --- | --- | --- |
-| Grass | Morning | 13.4 | Oricorio Lv. 13 (20%); Ekans Lv. 13 (20%); Magby Lv. 13 (10%); Squawkabilly Lv. 13 (10%); Squawkabilly Lv. 14 (10%); Staravia Lv. 14 (11%); Luxio Lv. 15 (5%); Mr. Mime Lv. 15 (5%); Aipom Lv. 12 (4%); Trumbeak Lv. 14 (4%); Smeargle Lv. 12 (1%) |
-| Grass swarm | Any time | — | Pidgey (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Shinx (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Plusle (radio replacement); Minun (radio replacement) |
-| Grass | Day | 13.4 | Gligar Lv. 13 (20%); Ekans Lv. 13 (20%); Elekid Lv. 13 (10%); Rufflet Lv. 13 (10%); Magby Lv. 14 (10%); Egg Lv. 14 (10%); Chansey Lv. 15 (5%); Spinda Lv. 15 (5%); Deerling Lv. 12 (4%); Stantler Lv. 14 (4%); Egg Lv. 12 (1%); Skiddo Lv. 14 (1%) |
-| Grass | Night | 13.4 | Litwick Lv. 13 (20%); Ekans Lv. 13 (20%); Rattata Alolan Lv. 13 (10%); Meowth Alolan Lv. 13 (10%); Zigzagoon Galarian Lv. 14 (10%); Furfrou Lv. 14 (10%); Girafarig Lv. 15 (5%); Mimikyu Lv. 15 (5%); Dottler Lv. 12 (4%); Tauros Lv. 14 (4%); Rattata Alolan Lv. 12 (1%); Scraggy Lv. 14 (1%) |
-
-## Route 6
-
-Encounter ID 116; configured level range 5-40.
-
-| Method | Time | Average level | Pokémon and rate |
-| --- | --- | --- | --- |
-| Grass | Morning | 13.4 | Togedemaru Lv. 13 (20%); Minior Lv. 13 (20%); Lechonk Lv. 13 (10%); Alcremie Lv. 13 (10%); Swoobat Lv. 14 (10%); Lilligant Lv. 14 (10%); Chatot Lv. 15 (5%); Petilil Lv. 15 (5%); Grubbin Lv. 12 (4%); Togetic Lv. 14 (4%); Froakie Lv. 12 (1%); Froakie Lv. 14 (1%) |
-| Surf | Any time | 8.5 | Psyduck Lv. 10 (60%); Wooper Lv. 5 (30%); Chewtle Lv. 10 (5%); Wingull Lv. 10 (4%); Surskit Lv. 10 (1%) |
-| Old Rod | Any time | 10 | Dewpider Lv. 10 (40%); Inkay Lv. 10 (30%); Wiglett Lv. 10 (15%); Panpour Lv. 10 (10%); Wimpod Lv. 10 (5%) |
-| Good Rod | Any time | 20 | Qwilfish Hisuian Lv. 20 (40%); Mantyke Lv. 20 (30%); Frillish Lv. 20 (15%); Feebas Lv. 20 (10%); Corsola Galarian Lv. 20 (5%) |
-| Super Rod | Any time | 40 | Stunfisk Lv. 40 (40%); Delibird Lv. 40 (30%); Slowpoke Galarian Lv. 40 (15%); Pincurchin Lv. 40 (10%); Clodsire Lv. 40 (5%) |
-| Grass swarm | Any time | — | Pidgey (swarm) |
-| Surf swarm | Any time | — | Psyduck (swarm) |
-| Good Rod swarm | Any time | — | Poliwag (swarm) |
-| Super Rod swarm | Any time | — | Magikarp (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Buizel (radio replacement); Bidoof (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Whismur (radio replacement); Linoone (radio replacement) |
-| Grass | Day | 13.4 | Togedemaru Lv. 13 (20%); Yanma Lv. 13 (20%); Ditto Lv. 13 (10%); Aipom Lv. 13 (10%); Swoobat Lv. 14 (10%); Mr. Mime Lv. 14 (10%); Shinx Lv. 15 (5%); Spinda Lv. 15 (5%); Foongus Lv. 12 (4%); Lickitung Lv. 14 (4%); Froakie Lv. 12 (1%); Froakie Lv. 14 (1%) |
-| Grass | Night | 13.4 | Togedemaru Lv. 13 (20%); Houndour Lv. 13 (20%); Vullaby Lv. 13 (10%); Rattata Alolan Lv. 13 (10%); Maschiff Lv. 14 (14%); Vullaby Lv. 14 (10%); Luxio Lv. 15 (5%); Stantler Lv. 15 (5%); Meowth Alolan Lv. 12 (4%); Froakie Lv. 12 (1%); Froakie Lv. 14 (1%) |
-
-## Route 7
-
-Encounter ID 117; configured level range 15-19.
-
-| Method | Time | Average level | Pokémon and rate |
-| --- | --- | --- | --- |
-| Grass | Morning | 17.4 | Oricorio Lv. 17 (20%); Fletchinder Lv. 17 (20%); Audino Lv. 17 (10%); Furfrou Lv. 17 (10%); Pawmo Lv. 18 (10%); Girafarig Lv. 18 (10%); Plusle Lv. 19 (6%); Minun Lv. 19 (5%); Pidgeotto Lv. 19 (4%); Trumbeak Lv. 15 (4%); Teddiursa Lv. 15 (1%) |
-| Grass swarm | Any time | — | Rattata (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Shinx (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Plusle (radio replacement); Minun (radio replacement) |
-| Grass | Day | 17.4 | Minior Lv. 17 (20%); Oricorio Lv. 17 (20%); Audino Lv. 17 (10%); Spinda Lv. 17 (10%); Growlithe Lv. 18 (10%); Girafarig Lv. 18 (10%); Pachirisu Lv. 19 (5%); Corvisquire Lv. 19 (5%); Pawmo Lv. 19 (4%); Staravia Lv. 15 (4%); Ledian Lv. 19 (1%); Growlithe Lv. 15 (1%) |
-| Grass | Night | 17.4 | Nuzleaf Lv. 17 (20%); Poltchageist Lv. 17 (20%); Audino Lv. 17 (10%); Indeedee Lv. 17 (10%); Growlithe Lv. 18 (10%); Girafarig Lv. 18 (10%); Oinkologne Lv. 19 (9%); Indeedee Lv. 19 (5%); Zigzagoon Galarian Lv. 15 (4%); Minun Lv. 19 (1%); Houndour Lv. 15 (1%) |
-
-## Route 8
-
-Encounter ID 118; configured level range 15-19.
-
-| Method | Time | Average level | Pokémon and rate |
-| --- | --- | --- | --- |
-| Grass | Morning | 17.2 | Combee Lv. 17 (20%); Skiploom Lv. 19 (20%); Beautifly Lv. 17 (10%); Alcremie Lv. 19 (10%); Elekid Lv. 15 (10%); Munna Lv. 15 (10%); Growlithe Lv. 18 (10%); Dipplin Lv. 17 (4%); Buneary Lv. 15 (4%); Fletchinder Lv. 17 (1%); Pancham Lv. 15 (1%) |
-| Grass swarm | Any time | — | Pidgeotto (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Shinx (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Plusle (radio replacement); Minun (radio replacement) |
-| Grass | Day | 17.2 | Gligar Lv. 17 (20%); Pidgeotto Lv. 19 (20%); Espurr Lv. 17 (10%); Ledian Lv. 19 (10%); Squawkabilly Lv. 15 (10%); Munna Lv. 15 (10%); Growlithe Lv. 18 (10%); Sneasel Hisuian Lv. 17 (4%); Flaaffy Lv. 15 (4%); Chansey Lv. 17 (1%); Cacnea Lv. 15 (1%) |
-| Grass | Night | 17.2 | Bramblin Lv. 17 (20%); Litwick Lv. 19 (20%); Meowth Alolan Lv. 17 (10%); Ponyta Galarian Lv. 19 (10%); Zigzagoon Galarian Lv. 15 (10%); Munna Lv. 15 (10%); Vigoroth Lv. 18 (5%); Pawmo Lv. 18 (5%); Zorua Lv. 17 (4%); Luxio Lv. 15 (4%); Herdier Lv. 17 (1%); Mime Jr. Lv. 15 (1%) |
-
-## Route 9
-
-Encounter ID 119; configured level range 10-40.
-
-| Method | Time | Average level | Pokémon and rate |
-| --- | --- | --- | --- |
-| Grass | Morning | 14 | Larvesta Lv. 13 (20%); Cubchoo Lv. 15 (20%); Deerling Lv. 13 (10%); Snom Lv. 15 (10%); Capsakid Lv. 13 (10%); Metapod Lv. 13 (10%); Dunsparce Lv. 15 (5%); Silcoon Lv. 15 (5%); Darumaka Galarian Lv. 15 (8%); Popplio Lv. 15 (2%) |
-| Surf | Any time | 13.5 | Archen Lv. 15 (60%); Clobbopus Lv. 10 (30%); Lileep Lv. 15 (5%); Anorith Lv. 15 (4%); Crabrawler Lv. 15 (1%) |
-| Old Rod | Any time | 10 | Skorupi Lv. 10 (40%); Wattrel Lv. 10 (30%); Tadbulb Lv. 10 (15%); Marill Lv. 10 (10%); Bidoof Lv. 10 (5%) |
-| Good Rod | Any time | 20 | Wooper Paldean Lv. 20 (40%); Tatsugiri Lv. 20 (30%); Basculin Lv. 20 (15%); Azumarill Lv. 20 (10%); Qwilfish Lv. 20 (5%) |
-| Super Rod | Any time | 40 | Luvdisc Lv. 40 (40%); Remoraid Lv. 40 (30%); Wailmer Lv. 40 (15%); Pelipper Lv. 40 (10%); Dewgong Lv. 40 (5%) |
-| Grass swarm | Any time | — | Sableye (swarm) |
-| Surf swarm | Any time | — | Goldeen (swarm) |
-| Good Rod swarm | Any time | — | Goldeen (swarm) |
-| Super Rod swarm | Any time | — | Magikarp (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Buizel (radio replacement); Bidoof (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Whismur (radio replacement); Linoone (radio replacement) |
-| Grass | Day | 14 | Vivillon Lv. 13 (20%); Cubchoo Lv. 15 (20%); Mankey Lv. 13 (10%); Snom Lv. 15 (10%); Farfetch'd Galarian Lv. 13 (10%); Snubbull Lv. 13 (10%); Joltik Lv. 15 (5%); Munchlax Lv. 15 (5%); Darumaka Galarian Lv. 15 (8%); Popplio Lv. 15 (2%) |
-| Grass | Night | 14 | Bramblin Lv. 13 (20%); Cubchoo Lv. 15 (20%); Mankey Lv. 13 (10%); Snom Lv. 15 (10%); Exeggcute Lv. 13 (10%); Farfetch'd Galarian Lv. 13 (10%); Dottler Lv. 15 (5%); Sneasel Hisuian Lv. 15 (5%); Darumaka Galarian Lv. 15 (8%); Popplio Lv. 15 (2%) |
+## Route 10 (table 120)
 
-## Route 10
-
-Encounter ID 120; configured level range 10-40.
-
-| Method | Time | Average level | Pokémon and rate |
-| --- | --- | --- | --- |
-| Grass | Morning | 16.55 | Hoppip Lv. 16 (20%); Snover Lv. 17 (20%); Stantler Lv. 16 (10%); Butterfree Lv. 17 (10%); Toxel Lv. 16 (10%); Vivillon Lv. 16 (10%); Cetoddle Lv. 18 (10%); Snom Lv. 18 (4%); Snom Lv. 15 (4%); Furfrou Lv. 18 (1%); Smeargle Lv. 15 (1%) |
-| Surf | Any time | 13.5 | Corsola Lv. 15 (60%); Clauncher Lv. 10 (30%); Omanyte Lv. 15 (5%); Kabuto Lv. 15 (4%); Tirtouga Lv. 15 (1%) |
-| Old Rod | Any time | 10 | Goldeen Lv. 10 (40%); Finizen Lv. 10 (30%); Chinchou Lv. 10 (15%); Finneon Lv. 10 (10%); Carvanha Lv. 10 (5%) |
-| Good Rod | Any time | 20 | Wishiwashi Lv. 20 (40%); Barboach Lv. 20 (30%); Arrokuda Lv. 20 (15%); Bibarel Lv. 20 (10%); Pyukumuku Lv. 20 (5%) |
-| Super Rod | Any time | 40 | Slowbro Lv. 40 (40%); Slowking Lv. 40 (30%); Gastrodon Lv. 40 (15%); Quagsire Lv. 40 (10%); Wugtrio Lv. 40 (5%) |
-| Grass swarm | Any time | — | Spearow (swarm) |
-| Surf swarm | Any time | — | Goldeen (swarm) |
-| Good Rod swarm | Any time | — | Goldeen (swarm) |
-| Super Rod swarm | Any time | — | Magikarp (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Buizel (radio replacement); Bidoof (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Whismur (radio replacement); Linoone (radio replacement) |
-| Grass | Day | 16.55 | Combee Lv. 16 (20%); Snover Lv. 17 (20%); Stantler Lv. 16 (10%); Kricketune Lv. 17 (10%); Bounsweet Lv. 16 (10%); Sizzlipede Lv. 16 (10%); Cetoddle Lv. 18 (10%); Snom Lv. 18 (4%); Pidove Lv. 15 (4%); Skiploom Lv. 18 (1%); Lillipup Lv. 15 (1%) |
-| Grass | Night | 16.55 | Murkrow Lv. 16 (20%); Snover Lv. 17 (20%); Stantler Lv. 16 (10%); Litleo Lv. 17 (10%); Silcoon Lv. 16 (10%); Espurr Lv. 16 (10%); Cetoddle Lv. 18 (10%); Lilligant Lv. 18 (4%); Skwovet Lv. 15 (4%); Oinkologne Lv. 18 (1%); Wooloo Lv. 15 (1%) |
+| Method | Time | Encounter rate | Pokémon and slot share |
+| --- | --- | --- | --- |
+| Grass | Any | 20% | Boltund Lv. 65 (20%); Heliolisk Lv. 64 (20%); Galvantula Lv. 63 (10%); Kilowatrel Lv. 65 (10%); Electrode Lv. 66 (20%); Pawmot Lv. 67 (6%); Manectric Lv. 67 (6%); Blissey Lv. 67 (8%) |
+| Surf | Any | 15% | Clawitzer Lv. 63–66 (60%); Luvdisc Lv. 64–66 (30%); Seismitoad Lv. 65–67 (5%); Ludicolo Lv. 65–67 (4%); Barbaracle Lv. 65–67 (1%) |
+| Old Rod | Any | 25% | Veluza Lv. 63–66 (40%); Baraskewda Lv. 64–66 (30%); Corsola Lv. 65–67 (15%); Kingler Lv. 65–67 (10%); Araquanid Lv. 65–67 (5%) |
+| Good Rod | Any | 50% | Golduck Lv. 63–66 (40%); Crawdaunt Lv. 64–66 (30%); Poliwrath Lv. 65–67 (15%); Arctovish Lv. 65–67 (10%); Vaporeon Lv. 65–67 (5%) |
+| Super Rod | Any | 75% | Mantine Lv. 63–66 (40%); Starmie Lv. 64–66 (30%); Gastrodon East Sea Lv. 65–67 (15%); Toxapex Lv. 65–67 (10%); Cloyster Lv. 65–67 (5%) |
+Conditional: nightFish: Basculin
 
-## Route 11
+## Route 11 (table 121)
 
-Encounter ID 121; configured level range 14-16.
+| Method | Time | Encounter rate | Pokémon and slot share |
+| --- | --- | --- | --- |
+| Grass | Any | 20% | Raticate Lv. 76 (20%); Raticate Lv. 77 (20%); Ariados Lv. 76 (10%); Sudowoodo Lv. 77 (10%); Venomoth Lv. 77 (10%); Arbok Lv. 79 (10%); Skuntank Lv. 80 (5%); Amoonguss Lv. 80 (5%); Ferrothorn Lv. 80 (5%); Garbodor Lv. 80 (5%) |
+## Route 13 (table 122)
 
-| Method | Time | Average level | Pokémon and rate |
+| Method | Time | Encounter rate | Pokémon and slot share |
 | --- | --- | --- | --- |
-| Grass | Morning | 14.9 | Stantler Lv. 14 (20%); Rufflet Lv. 15 (20%); Delibird Lv. 14 (10%); Cetoddle Lv. 15 (10%); Bad Egg Lv. 15 (10%); Noibat Lv. 15 (10%); Chatot Lv. 16 (5%); Vulpix Alolan Lv. 16 (13%); Patrat Lv. 16 (1%); Dipplin Lv. 16 (1%) |
-| Grass swarm | Any time | — | Drowzee (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Shinx (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Plusle (radio replacement); Minun (radio replacement) |
-| Grass | Day | 14.9 | Stantler Lv. 14 (20%); Magby Lv. 15 (20%); Woobat Lv. 14 (10%); Cetoddle Lv. 15 (10%); Spritzee Lv. 15 (10%); Aipom Lv. 15 (10%); Swirlix Lv. 16 (5%); Vulpix Alolan Lv. 16 (13%); Staravia Lv. 16 (1%); Egg Lv. 16 (1%) |
-| Grass | Night | 14.9 | Stantler Lv. 14 (20%); Drifloon Lv. 15 (20%); Scraggy Lv. 14 (10%); Cetoddle Lv. 15 (10%); Smoochum Lv. 15 (10%); Indeedee Lv. 15 (10%); Indeedee Lv. 16 (10%); Sneasel Lv. 16 (4%); Maschiff Lv. 16 (4%); Vullaby Lv. 16 (1%); Nidorino Lv. 16 (1%) |
+| Grass | Any | 20% | Rotom Lv. 71 (20%); Ditto Lv. 72 (20%); Chimecho Lv. 72 (10%); Audino Lv. 74 (10%); Samurott Lv. 74 (20%); Meowstic Female Lv. 74 (6%); Meowstic Lv. 74 (6%); Falinks Lv. 75 (4%); Absol Lv. 73 (4%) |
+| Surf | Any | 15% | Cramorant Lv. 71–74 (60%); Pelipper Lv. 72–74 (30%); Swanna Lv. 73–75 (5%); IronBundle Lv. 73–75 (4%); Golduck Lv. 73–75 (1%) |
+| Old Rod | Any | 25% | Qwilfish Lv. 71–74 (40%); Quagsire Lv. 72–74 (30%); Golisopod Lv. 73–75 (15%); Lanturn Lv. 73–75 (10%); Whiscash Lv. 73–75 (5%) |
+| Good Rod | Any | 50% | Tatsugiri Lv. 71–74 (40%); Floatzel Lv. 72–74 (30%); Kingdra Lv. 73–75 (15%); Milotic Lv. 73–75 (10%); Pyukumuku Lv. 73–75 (5%) |
+| Super Rod | Any | 75% | Wishiwashi Lv. 71–74 (40%); Carracosta Lv. 72–74 (30%); Lumineon Lv. 73–75 (15%); Omastar Lv. 73–75 (10%); Jellicent Lv. 73–75 (5%) |
+Conditional: nightFish: Wailord
+
+## Route 14 (table 123)
 
-## Route 13
-
-Encounter ID 122; configured level range 10-40.
-
-| Method | Time | Average level | Pokémon and rate |
-| --- | --- | --- | --- |
-| Grass | Morning | 23.41 | Charjabug Lv. 23 (20%); Skiploom Lv. 23 (20%); Fearow Lv. 23 (10%); Nidorino Lv. 23 (10%); Ledian Lv. 25 (10%); Tranquill Lv. 25 (10%); Darmanitan Galarian Lv. 22 (5%); Lopunny Lv. 22 (5%); Hawlucha Lv. 24 (4%); Flamigo Lv. 24 (4%); Arctozolt Lv. 24 (1%); Sneasler Lv. 25 (1%) |
-| Surf | Any time | 25 | Corphish Lv. 25 (60%); Araquanid Lv. 25 (30%); Poliwhirl Lv. 25 (5%); Simipour Lv. 25 (4%); Drednaw Lv. 25 (1%) |
-| Old Rod | Any time | 10 | Magikarp Lv. 10 (40%); Psyduck Lv. 10 (30%); Skrelp Lv. 10 (15%); Slowpoke Lv. 10 (10%); Seel Lv. 10 (5%) |
-| Good Rod | Any time | 20 | Clamperl Lv. 20 (40%); Lombre Lv. 20 (30%); Buizel Lv. 20 (15%); Shellos Lv. 20 (10%); Staryu Lv. 20 (5%) |
-| Super Rod | Any time | 40 | Seadra Lv. 40 (40%); Sealeo Lv. 40 (30%); Palpitoad Lv. 40 (15%); Jellicent Lv. 40 (10%); Tentacruel Lv. 40 (5%) |
-| Grass swarm | Any time | — | Chansey (swarm) |
-| Surf swarm | Any time | — | Tentacool (swarm) |
-| Good Rod swarm | Any time | — | Tentacool (swarm) |
-| Super Rod swarm | Any time | — | Magikarp (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Buizel (radio replacement); Bidoof (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Whismur (radio replacement); Linoone (radio replacement) |
-| Grass | Day | 23.41 | Golbat Lv. 23 (20%); Joltik Lv. 23 (20%); Fearow Lv. 23 (10%); Nidorino Lv. 23 (10%); Alcremie Lv. 25 (10%); Maushold Lv. 25 (10%); Whimsicott Lv. 22 (5%); Komala Lv. 22 (5%); Simisear Lv. 24 (4%); Bellibolt Lv. 24 (4%); Cyclizar Lv. 24 (1%); Kilowattrel Lv. 25 (1%) |
-| Grass | Night | 23.41 | Scraggy Lv. 23 (20%); Nuzleaf Lv. 23 (20%); Dedenne Lv. 23 (10%); Nidorino Lv. 23 (10%); Meowstic Lv. 25 (10%); Bad Egg Lv. 25 (10%); Frosmoth Lv. 22 (5%); Torkoal Lv. 22 (5%); Pangoro Lv. 24 (4%); Vileplume Lv. 24 (4%); Pinsir Lv. 24 (1%); Gallade Lv. 25 (1%) |
-
-## Route 14
-
-Encounter ID 123; configured level range 23-26.
-
-| Method | Time | Average level | Pokémon and rate |
-| --- | --- | --- | --- |
-| Grass | Morning | 23.79 | Minior Lv. 23 (20%); Snover Lv. 23 (20%); Skiploom Lv. 23 (10%); Kecleon Lv. 23 (10%); Ribombee Lv. 25 (10%); Maushold Lv. 25 (10%); Clefable Lv. 24 (5%); Heliolisk Lv. 24 (5%); Darumaka Galarian Lv. 26 (8%); Snivy Lv. 26 (1%); Snivy Lv. 25 (1%) |
-| Grass swarm | Any time | — | Nidorina (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Shinx (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Plusle (radio replacement); Minun (radio replacement) |
-| Grass | Day | 23.79 | Sizzlipede Lv. 23 (20%); Snover Lv. 23 (20%); Pawmo Lv. 23 (10%); Linoone Lv. 23 (10%); Oinkologne Lv. 25 (10%); Smoliv Lv. 25 (10%); Arbok Lv. 24 (5%); Vigoroth Lv. 24 (5%); Darumaka Galarian Lv. 26 (8%); Snivy Lv. 26 (1%); Snivy Lv. 25 (1%) |
-| Grass | Night | 23.79 | Maschiff Lv. 23 (20%); Houndour Lv. 23 (20%); Meowth Alolan Lv. 23 (10%); Zigzagoon Galarian Lv. 23 (10%); Mimikyu Lv. 25 (10%); Flittle Lv. 25 (10%); Castform Lv. 24 (5%); Mr. Mime Galarian Lv. 24 (5%); Darumaka Galarian Lv. 26 (8%); Snivy Lv. 26 (1%); Snivy Lv. 25 (1%) |
-
-## Route 15
-
-Encounter ID 124; configured level range 22-25.
-
-| Method | Time | Average level | Pokémon and rate |
-| --- | --- | --- | --- |
-| Grass | Morning | 23.41 | Cetoddle Lv. 23 (20%); Gligar Lv. 23 (20%); Yamper Lv. 23 (10%); Watchog Lv. 23 (10%); Pancham Lv. 25 (10%); Arbok Lv. 25 (10%); Cinccino Lv. 22 (5%); Ambipom Lv. 22 (5%); Victreebel Lv. 24 (4%); Kangaskhan Lv. 24 (4%); Scyther Lv. 24 (1%); Sirfetch'd Lv. 25 (1%) |
-| Grass swarm | Any time | — | Nidorina (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Shinx (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Plusle (radio replacement); Minun (radio replacement) |
-| Grass | Day | 23.41 | Cetoddle Lv. 23 (20%); Squawkabilly Lv. 23 (20%); Castform Lv. 23 (10%); Furret Lv. 23 (10%); Meowstic Lv. 25 (10%); Ribombee Lv. 25 (10%); Eiscue Lv. 22 (5%); Maractus Lv. 22 (5%); Bellossom Lv. 24 (4%); Miltank Lv. 24 (4%); Heracross Lv. 24 (1%); Ninetales Lv. 25 (1%) |
-| Grass | Night | 23.41 | Zorua Lv. 23 (20%); Stunky Lv. 23 (20%); Linoone Galarian Lv. 23 (10%); Indeedee Lv. 23 (10%); Chansey Lv. 25 (10%); Teddiursa Lv. 25 (10%); Rabsca Lv. 22 (5%); Zangoose Lv. 22 (5%); Bouffalant Lv. 24 (4%); Passimian Lv. 24 (4%); Leavanny Lv. 24 (1%); Honchkrow Lv. 25 (1%) |
-
-## Route 16
-
-Encounter ID 125; configured level range 26-30.
-
-| Method | Time | Average level | Pokémon and rate |
-| --- | --- | --- | --- |
-| Grass | Morning | 27.25 | Wattrel Lv. 26 (20%); Sneasel Lv. 27 (20%); Watchog Lv. 26 (10%); Dolliv Lv. 27 (10%); Shiinotic Lv. 28 (10%); Pachirisu Lv. 28 (10%); Elekid Lv. 29 (5%); Furret Lv. 29 (5%); Slugma Lv. 27 (4%); Salandit Lv. 30 (4%); Dudunsparce Lv. 27 (1%); Magmar Lv. 30 (1%) |
-| Grass swarm | Any time | — | Grimer (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Shinx (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Plusle (radio replacement); Minun (radio replacement) |
-| Grass | Day | 27.25 | Charjabug Lv. 26 (20%); Sneasel Lv. 27 (20%); Dolliv Lv. 26 (10%); Tranquill Lv. 27 (10%); Kecleon Lv. 28 (10%); Shiinotic Lv. 28 (10%); Cacnea Lv. 29 (5%); Deerling Lv. 29 (5%); Slugma Lv. 27 (4%); Mime Jr. Lv. 30 (4%); Lickilicky Lv. 27 (1%); Toxtricity Lv. 30 (1%) |
-| Grass | Night | 27.25 | Linoone Galarian Lv. 26 (30%); Sneasel Lv. 27 (20%); Meowstic Lv. 27 (10%); Dedenne Lv. 28 (10%); Persian Lv. 28 (10%); Meowstic Lv. 29 (5%); Girafarig Lv. 29 (5%); Weavile Lv. 27 (4%); Electabuzz Lv. 30 (4%); Armarouge Lv. 27 (1%); Magmar Lv. 30 (1%) |
-
-## Route 17
-
-Encounter ID 126; configured level range 27-32.
-
-| Method | Time | Average level | Pokémon and rate |
-| --- | --- | --- | --- |
-| Grass | Morning | 28.35 | Yanma Lv. 28 (20%); Charjabug Lv. 27 (20%); Darumaka Lv. 28 (10%); Gumshoos Lv. 27 (10%); Fletchinder Lv. 29 (10%); Tangela Lv. 29 (10%); Electabuzz Lv. 30 (5%); Magmar Lv. 30 (5%); Loudred Lv. 29 (4%); Unfezant Lv. 32 (4%); Snorlax Lv. 29 (1%); Stoutland Lv. 32 (1%) |
-| Grass swarm | Any time | — | Fearow (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Shinx (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Plusle (radio replacement); Minun (radio replacement) |
-| Grass | Day | 28.35 | Yanma Lv. 28 (20%); Fletchinder Lv. 27 (20%); Swadloon Lv. 28 (10%); Vulpix Lv. 27 (10%); Gumshoos Lv. 29 (10%); Ribombee Lv. 29 (10%); Electabuzz Lv. 30 (5%); Magmar Lv. 30 (5%); Applin Lv. 29 (4%); Unfezant Lv. 32 (4%); Blissey Lv. 29 (1%); Dodrio Lv. 32 (1%) |
-| Grass | Night | 28.35 | Vullaby Lv. 28 (20%); Greavard Lv. 27 (20%); Litleo Lv. 28 (10%); Dottler Lv. 27 (10%); Persian Lv. 29 (10%); Dolliv Lv. 29 (10%); Magmar Lv. 30 (5%); Fomantis Lv. 30 (5%); Absol Lv. 29 (4%); Morgrem Lv. 32 (4%); Bombirdier Lv. 29 (1%); Grumpig Lv. 32 (1%) |
-
-## Route 18
-
-Encounter ID 127; configured level range 26-30.
-
-| Method | Time | Average level | Pokémon and rate |
-| --- | --- | --- | --- |
-| Grass | Morning | 27.25 | Corvisquire Lv. 26 (20%); Larvesta Lv. 27 (20%); Tranquill Lv. 26 (10%); Doduo Lv. 27 (10%); Persian Lv. 28 (10%); Tranquill Lv. 28 (10%); Capsakid Lv. 29 (5%); Fletchinder Lv. 29 (5%); Sunkern Lv. 27 (4%); Beautifly Lv. 30 (4%); Chespin Lv. 27 (1%); Chespin Lv. 30 (1%) |
-| Grass swarm | Any time | — | Grimer (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Shinx (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Plusle (radio replacement); Minun (radio replacement) |
-| Grass | Day | 27.25 | Trumbeak Lv. 26 (20%); Mantyke Lv. 27 (20%); Skiddo Lv. 26 (10%); Munchlax Lv. 27 (10%); Wooloo Lv. 28 (10%); Flaaffy Lv. 28 (10%); Persian Lv. 29 (5%); Noibat Lv. 29 (5%); Clefairy Lv. 27 (4%); Farfetch'd Galarian Lv. 30 (4%); Chespin Lv. 27 (1%); Chespin Lv. 30 (1%) |
-| Grass | Night | 27.25 | Linoone Galarian Lv. 26 (30%); Murkrow Lv. 27 (20%); Charcadet Lv. 27 (10%); Loudred Lv. 28 (10%); Meowstic Lv. 28 (10%); Kricketune Lv. 29 (5%); Alcremie Lv. 29 (5%); Zorua Lv. 27 (4%); Electabuzz Lv. 30 (4%); Chespin Lv. 27 (1%); Chespin Lv. 30 (1%) |
-
-## Route 21
-
-Encounter ID 128; configured level range 10-40.
-
-| Method | Time | Average level | Pokémon and rate |
-| --- | --- | --- | --- |
-| Grass | Morning | 28.4 | Skiploom Lv. 30 (20%); Dolliv Lv. 25 (20%); Butterfree Lv. 30 (10%); Tangela Lv. 25 (10%); Darmanitan Lv. 35 (10%); Lurantis Lv. 35 (10%); Ledian Lv. 20 (5%); Ninjask Lv. 20 (5%); Roselia Lv. 30 (4%); Exeggutor Alolan Lv. 28 (4%); Scolipede Lv. 30 (1%); Centiskorch Lv. 28 (1%) |
-| Surf | Any time | 33.5 | Ducklett Lv. 35 (60%); Mareanie Lv. 30 (30%); Poliwag Lv. 35 (5%); Sharpedo Lv. 35 (4%); Horsea Lv. 35 (1%) |
-| Old Rod | Any time | 10 | Krabby Lv. 10 (40%); Tympole Lv. 10 (30%); Spheal Lv. 10 (15%); Binacle Lv. 10 (10%); Shellder Lv. 10 (5%) |
-| Good Rod | Any time | 20 | Chewtle Lv. 20 (40%); Qwilfish Hisuian Lv. 20 (30%); Wingull Lv. 20 (15%); Surskit Lv. 20 (10%); Dewpider Lv. 20 (5%) |
-| Super Rod | Any time | 40 | Mantyke Lv. 40 (40%); Jellicent Lv. 40 (30%); Frillish Lv. 40 (15%); Wailmer Lv. 40 (10%); Malamar Lv. 40 (5%) |
-| Grass swarm | Any time | — | Tangela (swarm) |
-| Surf swarm | Any time | — | Tentacool (swarm) |
-| Good Rod swarm | Any time | — | Shellder (swarm) |
-| Super Rod swarm | Any time | — | Magikarp (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Buizel (radio replacement); Bidoof (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Whismur (radio replacement); Linoone (radio replacement) |
-| Grass | Day | 28.4 | Toedscool Lv. 30 (20%); Smoliv Lv. 25 (20%); Swadloon Lv. 30 (10%); Gloom Lv. 25 (10%); Lurantis Lv. 35 (10%); Sawsbuck Lv. 35 (10%); Scovillain Lv. 20 (5%); Flapple Lv. 20 (5%); Cherrim Lv. 30 (4%); Roserade Lv. 28 (4%); Hydrapple Lv. 30 (1%); Jumpluff Lv. 28 (1%) |
-| Grass | Night | 28.4 | Poltchageist Lv. 30 (20%); Bramblin Lv. 25 (20%); Skiddo Lv. 30 (10%); Exeggcute Lv. 25 (10%); Dipplin Lv. 35 (10%); Sawsbuck Lv. 35 (10%); Shedinja Lv. 20 (5%); Swadloon Lv. 20 (5%); Vikavolt Lv. 30 (4%); Tangrowth Lv. 28 (4%); Orbeetle Lv. 30 (1%); Cherrim Lv. 28 (1%) |
-
-## Route 22
-
-Encounter ID 129; configured level range 3-40.
-
-| Method | Time | Average level | Pokémon and rate |
-| --- | --- | --- | --- |
-| Grass | Morning | 3.85 | Combee Lv. 3 (20%); Hoppip Lv. 3 (20%); Blipbug Lv. 3 (10%); Caterpie Lv. 3 (10%); Tarountula Lv. 5 (10%); Nymble Lv. 5 (10%); Scatterbug Lv. 4 (5%); Wurmple Lv. 4 (5%); Ponyta Lv. 6 (5%); Silcoon Lv. 7 (4%); Cascoon Lv. 7 (1%) |
-| Surf | Any time | 8.5 | Lotad Lv. 10 (60%); Wooper Lv. 5 (30%); Wiglett Lv. 10 (5%); Feebas Lv. 10 (4%); Wimpod Lv. 10 (1%) |
-| Old Rod | Any time | 10 | Panpour Lv. 10 (40%); Clobbopus Lv. 10 (30%); Corsola Galarian Lv. 10 (15%); Skorupi Lv. 10 (10%); Crabrawler Lv. 10 (5%) |
-| Good Rod | Any time | 20 | Stunfisk Lv. 20 (40%); Delibird Lv. 20 (30%); Slowpoke Galarian Lv. 20 (15%); Azumarill Lv. 20 (10%); Clodsire Lv. 20 (5%) |
-| Super Rod | Any time | 40 | Archen Lv. 40 (40%); Lileep Lv. 40 (30%); Anorith Lv. 40 (15%); Wattrel Lv. 40 (10%); Tadbulb Lv. 40 (5%) |
-| Grass swarm | Any time | — | Rattata (swarm) |
-| Surf swarm | Any time | — | Poliwag (swarm) |
-| Good Rod swarm | Any time | — | Poliwag (swarm) |
-| Super Rod swarm | Any time | — | Magikarp (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Buizel (radio replacement); Bidoof (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Whismur (radio replacement); Linoone (radio replacement) |
-| Grass | Day | 3.85 | Kricketot Lv. 3 (20%); Ledyba Lv. 3 (20%); Rellor Lv. 3 (10%); Cherubi Lv. 3 (10%); Combee Lv. 5 (10%); Pineco Lv. 5 (10%); Scatterbug Lv. 4 (5%); Wurmple Lv. 4 (5%); Ponyta Lv. 6 (4%); Foongus Lv. 7 (4%); Grubbin Lv. 6 (1%); Smoliv Lv. 7 (1%) |
-| Grass | Night | 3.85 | Bramblin Lv. 3 (20%); Poltchageist Lv. 3 (20%); Blipbug Lv. 3 (10%); Kricketot Lv. 3 (10%); Tarountula Lv. 5 (10%); Nymble Lv. 5 (10%); Blipbug Lv. 4 (5%); Burmy Lv. 4 (5%); Bounsweet Lv. 6 (4%); Rellor Lv. 7 (4%); Exeggcute Lv. 6 (1%); Capsakid Lv. 7 (1%) |
-
-## Route 24
-
-Encounter ID 130; configured level range 5-40.
-
-| Method | Time | Average level | Pokémon and rate |
-| --- | --- | --- | --- |
-| Grass | Morning | 9.5 | Metapod Lv. 8 (20%); Seedot Lv. 10 (20%); Cherubi Lv. 8 (10%); Cacnea Lv. 10 (10%); Mankey Lv. 9 (10%); Cutiefly Lv. 9 (10%); Spewpa Lv. 12 (5%); Metapod Lv. 12 (5%); Joltik Lv. 8 (4%); Dipplin Lv. 14 (4%); Sobble Lv. 8 (1%); Sobble Lv. 14 (1%) |
-| Surf | Any time | 8.5 | Seel Lv. 10 (60%); Wooper Paldean Lv. 5 (30%); Marill Lv. 10 (5%); Bidoof Lv. 10 (4%); Remoraid Lv. 10 (1%) |
-| Old Rod | Any time | 10 | Goldeen Lv. 10 (40%); Finizen Lv. 10 (30%); Chinchou Lv. 10 (15%); Finneon Lv. 10 (10%); Carvanha Lv. 10 (5%) |
-| Good Rod | Any time | 20 | Tatsugiri Lv. 20 (40%); Basculin Lv. 20 (45%); Qwilfish Lv. 20 (10%); Luvdisc Lv. 20 (5%) |
-| Super Rod | Any time | 40 | Wailmer Lv. 40 (40%); Wishiwashi Lv. 40 (30%); Slowbro Lv. 40 (15%); Pelipper Lv. 40 (10%); Quagsire Lv. 40 (5%) |
-| Grass swarm | Any time | — | Bellsprout (swarm) |
-| Surf swarm | Any time | — | Goldeen (swarm) |
-| Good Rod swarm | Any time | — | Goldeen (swarm) |
-| Super Rod swarm | Any time | — | Magikarp (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Buizel (radio replacement); Bidoof (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Whismur (radio replacement); Linoone (radio replacement) |
-| Grass | Day | 9.5 | Silcoon Lv. 8 (20%); Seedot Lv. 10 (20%); Petilil Lv. 8 (10%); Natu Lv. 10 (10%); Snubbull Lv. 9 (10%); Foongus Lv. 9 (10%); Karrablast Lv. 12 (5%); Toedscool Lv. 12 (5%); Budew Lv. 8 (4%); Lilligant Lv. 14 (4%); Sobble Lv. 8 (1%); Sobble Lv. 14 (1%) |
-| Grass | Night | 9.5 | Phantump Lv. 8 (20%); Seedot Lv. 10 (20%); Applin Lv. 8 (10%); Oddish Lv. 10 (10%); Sewaddle Lv. 9 (10%); Burmy Lv. 9 (10%); Skiddo Lv. 12 (10%); Nickit Lv. 8 (4%); Roselia Lv. 14 (4%); Sobble Lv. 8 (1%); Sobble Lv. 14 (1%) |
-
-## Route 25
-
-Encounter ID 131; configured level range 5-54.
-
-| Method | Time | Average level | Pokémon and rate |
-| --- | --- | --- | --- |
-| Grass | Morning | 9.54 | Sandshrew Lv. 8 (20%); Ekans Lv. 10 (20%); Bunnelby Lv. 8 (10%); Spewpa Lv. 10 (10%); Petilil Lv. 8 (10%); Metapod Lv. 8 (10%); Stantler Lv. 9 (5%); Kricketot Lv. 9 (5%); Pansage Lv. 10 (4%); Silcoon Lv. 14 (4%); Braviary Lv. 54 (1%); Butterfree Lv. 14 (1%) |
-| Surf | Any time | 8.5 | Clauncher Lv. 10 (60%); Corphish Lv. 5 (30%); Omanyte Lv. 10 (5%); Kabuto Lv. 10 (4%); Tirtouga Lv. 10 (1%) |
-| Old Rod | Any time | 10 | Barboach Lv. 10 (40%); Arrokuda Lv. 10 (30%); Magikarp Lv. 10 (15%); Psyduck Lv. 10 (10%); Luvdisc Lv. 10 (5%) |
-| Good Rod | Any time | 20 | Corsola Lv. 20 (40%); Clamperl Lv. 20 (30%); Lombre Lv. 20 (15%); Bibarel Lv. 20 (10%); Pyukumuku Lv. 20 (5%) |
-| Super Rod | Any time | 40 | Slowking Lv. 40 (40%); Gastrodon Lv. 40 (30%); Araquanid Lv. 40 (15%); Wugtrio Lv. 40 (10%); Seadra Lv. 40 (5%) |
-| Grass swarm | Any time | — | Buneary (swarm) |
-| Surf swarm | Any time | — | Goldeen (swarm) |
-| Good Rod swarm | Any time | — | Goldeen (swarm) |
-| Super Rod swarm | Any time | — | Magikarp (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Buizel (radio replacement); Bidoof (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Whismur (radio replacement); Linoone (radio replacement) |
-| Grass | Day | 9.54 | Sandshrew Lv. 8 (20%); Ekans Lv. 10 (20%); Paras Lv. 8 (10%); Karrablast Lv. 10 (10%); Cleffa Lv. 8 (10%); Petilil Lv. 8 (10%); Stantler Lv. 9 (5%); Bounsweet Lv. 9 (5%); Bellsprout Lv. 10 (4%); Ditto Lv. 14 (4%); Braviary Hisuian Lv. 54 (1%); Beautifly Lv. 14 (1%) |
-| Grass | Night | 9.54 | Bramblin Lv. 8 (20%); Exeggcute Lv. 10 (24%); Wurmple Lv. 8 (10%); Grubbin Lv. 10 (10%); Flittle Lv. 8 (10%); Pineco Lv. 8 (10%); Stantler Lv. 9 (5%); Grubbin Lv. 9 (5%); Cacnea Lv. 14 (4%); Mandibuzz Lv. 54 (1%); Kricketune Lv. 14 (1%) |
-
-## Tohjo Falls
-
-Encounter ID 132; configured level range 10-54.
-
-| Method | Time | Average level | Pokémon and rate |
-| --- | --- | --- | --- |
-| Grass | Morning | 22.16 | Diglett Lv. 22 (20%); Numel Lv. 22 (20%); Diggersby Lv. 22 (20%); Ariados Lv. 22 (10%); Wobbuffet Lv. 22 (10%); Diggersby Lv. 21 (5%); Wobbuffet Lv. 21 (5%); Diggersby Lv. 20 (4%); Ariados Lv. 23 (4%); Wobbuffet Lv. 20 (1%); Bisharp Lv. 54 (1%) |
-| Surf | Any time | 20 | Staryu Lv. 20 (60%); Tentacool Lv. 20 (30%); Krabby Lv. 20 (5%); Ludicolo Lv. 20 (4%); Crabominable Lv. 20 (1%) |
-| Old Rod | Any time | 10 | Binacle Lv. 10 (40%); Shellder Lv. 10 (30%); Wiglett Lv. 10 (15%); Wimpod Lv. 10 (10%); Skrelp Lv. 10 (5%) |
-| Good Rod | Any time | 20 | Corsola Galarian Lv. 20 (40%); Buizel Lv. 20 (30%); Seel Lv. 20 (15%); Shellos Lv. 20 (10%); Slowpoke Lv. 20 (5%) |
-| Super Rod | Any time | 40 | Sealeo Lv. 40 (40%); Poliwhirl Lv. 40 (30%); Palpitoad Lv. 40 (15%); Jellicent Lv. 40 (10%); Ducklett Lv. 40 (5%) |
-| Grass swarm | Any time | — | Zubat (swarm) |
-| Surf swarm | Any time | — | Goldeen (swarm) |
-| Good Rod swarm | Any time | — | Goldeen (swarm) |
-| Super Rod swarm | Any time | — | Magikarp (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Bronzor (radio replacement); Chingling (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Absol (radio replacement); Makuhita (radio replacement) |
-| Grass | Day | 22.16 | Diglett Lv. 22 (20%); Klink Lv. 22 (20%); Ariados Lv. 22 (20%); Diggersby Lv. 22 (10%); Wobbuffet Lv. 22 (10%); Diggersby Lv. 21 (5%); Wobbuffet Lv. 21 (5%); Diggersby Lv. 20 (4%); Ariados Lv. 23 (4%); Wobbuffet Lv. 20 (1%); Bisharp Lv. 54 (1%) |
-| Grass | Night | 22.16 | Diglett Lv. 22 (20%); Sandygast Lv. 22 (20%); Ariados Lv. 22 (10%); Diggersby Lv. 22 (10%); Carkol Lv. 22 (10%); Shedinja Lv. 22 (10%); Grimer Alolan Lv. 21 (5%); Wobbuffet Lv. 21 (5%); Unown Lv. 20 (4%); Sandslash Lv. 23 (4%); Kadabra Lv. 20 (1%); Bisharp Lv. 54 (1%) |
-
-## Digletts Cave
-
-Encounter ID 133; configured level range 13-29.
-
-| Method | Time | Average level | Pokémon and rate |
-| --- | --- | --- | --- |
-| Grass | Morning | 16.9 | Mudbray Lv. 15 (20%); Numel Lv. 17 (20%); Koffing Lv. 15 (10%); Nidorina Lv. 17 (10%); Elgyem Lv. 19 (10%); Drowzee Lv. 19 (10%); Growlithe Hisuian Lv. 13 (5%); Grimer Lv. 13 (5%); Axew Lv. 19 (4%); Naclstack Lv. 24 (4%); Abra Lv. 19 (1%); Ursaluna Lv. 29 (1%) |
-| Grass swarm | Any time | — | Diglett (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Bronzor (radio replacement); Chingling (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Absol (radio replacement); Makuhita (radio replacement) |
-| Grass | Day | 16.9 | Rhyhorn Lv. 15 (20%); Varoom Lv. 17 (20%); Machop Lv. 15 (10%); Timburr Lv. 17 (10%); Gulpin Lv. 19 (10%); Croagunk Lv. 19 (10%); Gothita Lv. 13 (5%); Solosis Lv. 13 (5%); Chingling Lv. 19 (4%); Ariados Lv. 24 (4%); Riolu Lv. 19 (1%); Nidoqueen Lv. 29 (1%) |
-| Grass | Night | 16.9 | Sinistea Lv. 15 (20%); Yamask Lv. 17 (20%); Meditite Lv. 15 (10%); Hatenna Lv. 17 (10%); Wynaut Lv. 19 (10%); Makuhita Lv. 19 (10%); Tyrogue Lv. 13 (5%); Pawniard Lv. 13 (5%); Honedge Lv. 19 (4%); Golbat Lv. 24 (4%); Growlithe Hisuian Lv. 19 (1%); Kingambit Lv. 29 (1%) |
-
-## Victory Road 2F
-
-Encounter ID 134; configured level range 32-48.
-
-| Method | Time | Average level | Pokémon and rate |
-| --- | --- | --- | --- |
-| Grass | Morning | 34 | Lairon Lv. 32 (20%); Magneton Lv. 32 (20%); Perrserker Lv. 32 (10%); Dugtrio Alolan Lv. 32 (10%); Perrserker Lv. 33 (10%); Dugtrio Alolan Lv. 33 (10%); Tyranitar Lv. 48 (5%); Zweilous Lv. 45 (5%); Sandaconda Lv. 36 (4%); Marowak Alolan Lv. 35 (4%); Sprigatito Lv. 36 (1%); Sprigatito Lv. 35 (1%) |
-| Grass swarm | Any time | — | Graveler (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Bronzor (radio replacement); Chingling (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Absol (radio replacement); Makuhita (radio replacement) |
-| Grass | Day | 34 | Naclstack Lv. 32 (20%); Magneton Lv. 32 (20%); Perrserker Lv. 32 (10%); Dugtrio Alolan Lv. 32 (10%); Marowak Alolan Lv. 33 (10%); Perrserker Lv. 33 (10%); Tyranitar Lv. 48 (5%); Zweilous Lv. 45 (5%); Seismitoad Lv. 36 (4%); Dugtrio Alolan Lv. 35 (4%); Sprigatito Lv. 36 (1%); Sprigatito Lv. 35 (1%) |
-| Grass | Night | 34 | Golett Lv. 32 (20%); Pawniard Lv. 32 (20%); Marowak Alolan Lv. 32 (20%); Perrserker Lv. 33 (10%); Dugtrio Alolan Lv. 33 (10%); Tyranitar Lv. 48 (5%); Zweilous Lv. 45 (5%); Dusknoir Lv. 36 (4%); Iron Boulder Lv. 35 (4%); Sprigatito Lv. 36 (1%); Sprigatito Lv. 35 (1%) |
-
-## Victory Road 3F
-
-Encounter ID 135; configured level range 24-48.
-
-| Method | Time | Average level | Pokémon and rate |
-| --- | --- | --- | --- |
-| Grass | Morning | 34 | Varoom Lv. 32 (20%); Dugtrio Lv. 32 (20%); Perrserker Lv. 32 (10%); Dugtrio Alolan Lv. 32 (10%); Marowak Alolan Lv. 33 (10%); Perrserker Lv. 33 (10%); Garchomp Lv. 48 (5%); Kommo-o Lv. 45 (5%); Machamp Lv. 36 (4%); Dugtrio Alolan Lv. 35 (4%); Porygon-Z Lv. 36 (1%); Glimmora Lv. 35 (1%) |
-| Rock Smash | Any time | 28.35 | Toedscool Lv. 24-32 (90%); Toedscool Lv. 30-33 (10%) |
-| Grass swarm | Any time | — | Graveler (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Bronzor (radio replacement); Chingling (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Absol (radio replacement); Makuhita (radio replacement) |
-| Grass | Day | 34 | Carkol Lv. 32 (20%); Marowak Lv. 32 (20%); Graveler Alolan Lv. 32 (10%); Electrode Lv. 32 (10%); Marowak Alolan Lv. 33 (10%); Lycanroc Lv. 33 (10%); Garchomp Lv. 48 (5%); Kommo-o Lv. 45 (5%); Conkeldurr Lv. 36 (4%); Vanillish Lv. 35 (4%); Porygon2 Lv. 36 (1%); Coalossal Lv. 35 (1%) |
-| Grass | Night | 34 | Yamask Galarian Lv. 32 (20%); Sandile Lv. 32 (20%); Duosion Lv. 32 (10%); Krokorok Lv. 32 (10%); Magneton Lv. 33 (10%); Lairon Lv. 33 (10%); Garchomp Lv. 48 (5%); Kommo-o Lv. 45 (5%); Alakazam Lv. 36 (4%); Iron Crown Lv. 35 (4%); Gigalith Lv. 36 (1%); Copperajah Lv. 35 (1%) |
-
-## Route 2 (North, above Viridian Forest)
-
-Encounter ID 136; configured level range 3-50.
-
-| Method | Time | Average level | Pokémon and rate |
-| --- | --- | --- | --- |
-| Grass | Morning | 6.44 | Venonat Lv. 3 (20%); Oddish Lv. 3 (20%); Azurill Lv. 3 (10%); Blipbug Lv. 3 (10%); Pineco Lv. 5 (20%); Toxel Lv. 7 (5%); Salamence Lv. 50 (5%); Applin Lv. 7 (4%); Foongus Lv. 10 (4%); Fomantis Lv. 7 (1%); Scatterbug Lv. 4 (1%) |
-| Grass swarm | Any time | — | Caterpie (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Shinx (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Plusle (radio replacement); Minun (radio replacement) |
-| Grass | Day | 6.44 | Venonat Lv. 3 (20%); Oddish Lv. 3 (20%); Kricketot Lv. 3 (10%); Caterpie Lv. 3 (10%); Pineco Lv. 5 (20%); Smoliv Lv. 7 (5%); Salamence Lv. 50 (5%); Rellor Lv. 7 (4%); Pansage Lv. 10 (4%); Pidove Lv. 7 (1%); Wurmple Lv. 4 (1%) |
-| Grass | Night | 6.44 | Venonat Lv. 3 (20%); Oddish Lv. 3 (20%); Wurmple Lv. 3 (10%); Azurill Lv. 3 (10%); Pineco Lv. 5 (20%); Budew Lv. 7 (5%); Salamence Lv. 50 (5%); Burmy Lv. 7 (4%); Dottler Lv. 10 (4%); Patrat Lv. 7 (1%); Gossifleur Lv. 4 (1%) |
-
-## Viridian Forest
+| Method | Time | Encounter rate | Pokémon and slot share |
+| --- | --- | --- | --- |
+| Grass | Any | 20% | Rabsca Lv. 73 (20%); Grumpig Lv. 74 (20%); Sawsbuck Lv. 74 (10%); Furfrou Lv. 75 (10%); Ambipom Lv. 76 (11%); Komala Lv. 76 (11%); Musharna Lv. 77 (9%); Comfey Lv. 77 (9%) |
+## Route 15 (table 124)
 
-Encounter ID 137; configured level range 3-7.
-
-| Method | Time | Average level | Pokémon and rate |
+| Method | Time | Encounter rate | Pokémon and slot share |
 | --- | --- | --- | --- |
-| Grass | Morning | 4.05 | Nincada Lv. 3 (30%); Ferroseed Lv. 3 (20%); Poltchageist Lv. 3 (10%); Ferroseed Lv. 5 (10%); Dwebble Lv. 5 (10%); Voltorb Hisuian Lv. 7 (5%); Sandile Lv. 7 (5%); Yamask Lv. 7 (4%); Golett Lv. 4 (4%); Numel Lv. 7 (1%); Sinistea Lv. 4 (1%) |
-| Grass swarm | Any time | — | Kricketot (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Budew (radio replacement); Carnivine (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Spoink (radio replacement); Numel (radio replacement) |
-| Grass | Day | 4.05 | Dwebble Lv. 3 (20%); Nincada Lv. 3 (20%); Bramblin Lv. 3 (10%); Phantump Lv. 3 (10%); Rolycoly Lv. 5 (10%); Pumpkaboo Lv. 5 (10%); Kakuna Lv. 7 (5%); Diglett Lv. 7 (5%); Roggenrola Lv. 7 (4%); Weedle Lv. 4 (4%); Rockruff Lv. 7 (1%); Nacli Lv. 4 (1%) |
-| Grass | Night | 4.05 | Poltchageist Lv. 3 (20%); Ferroseed Lv. 3 (20%); Baltoy Lv. 3 (10%); Bronzor Lv. 3 (10%); Litwick Lv. 5 (10%); Spinarak Lv. 5 (10%); Trapinch Lv. 7 (5%); Bonsly Lv. 7 (5%); Meowth Galarian Lv. 7 (4%); Sandshrew Lv. 4 (4%); Geodude Lv. 7 (1%); Venipede Lv. 4 (1%) |
+| Grass | Any | 20% | Gourgeist Lv. 70 (20%); Trevenant Lv. 71 (20%); Cacturne Lv. 71 (10%); Mr. Mime Lv. 72 (10%); Oinkologne Female Lv. 73 (11%); Oinkologne Lv. 73 (11%); Heracross Lv. 74 (9%); Scrafty Lv. 74 (9%) |
+## Route 16 (table 125)
 
-## Cerulean Cave 1F
+| Method | Time | Encounter rate | Pokémon and slot share |
+| --- | --- | --- | --- |
+| Grass | Any | 20% | Shiftry Lv. 68 (20%); Dachsbun Lv. 69 (20%); Frosmoth Lv. 68 (10%); Vespiquen Lv. 69 (10%); Whimsicott Lv. 71 (11%); Lurantis Lv. 71 (11%); Scovillain Lv. 72 (9%); Clefable Lv. 72 (9%) |
+## Route 17 (table 126)
 
-Encounter ID 139; configured level range 10-50.
+| Method | Time | Encounter rate | Pokémon and slot share |
+| --- | --- | --- | --- |
+| Grass | Any | 20% | Swalot Lv. 68 (20%); Swoobat Lv. 69 (20%); Oricorio Pom Pom Lv. 69 (10%); Oricorio Lv. 70 (10%); Unfezant Female Lv. 71 (10%); Unfezant Lv. 71 (10%); Oricorio Sensu Lv. 71 (10%); Oricorio Pau Lv. 72 (10%) |
+## Route 18 (table 127)
 
-| Method | Time | Average level | Pokémon and rate |
+| Method | Time | Encounter rate | Pokémon and slot share |
 | --- | --- | --- | --- |
-| Grass | Morning | 39.85 | Vibrava Lv. 39 (20%); Graveler Lv. 38 (20%); Fraxure Lv. 38 (10%); Magcargo Lv. 38 (10%); Medicham Lv. 40 (10%); Magcargo Lv. 39 (10%); Goodra Lv. 50 (5%); Goodra Hisuian Lv. 50 (5%); Medicham Lv. 39 (4%); Magcargo Lv. 40 (4%); Quaxly Lv. 39 (1%); Quaxly Lv. 40 (1%) |
-| Surf | Any time | 38.5 | Mareanie Lv. 40 (60%); Seadra Lv. 35 (30%); Cursola Lv. 40 (5%); Carracosta Lv. 40 (4%); Drapion Lv. 40 (1%) |
-| Old Rod | Any time | 10 | Poliwag Lv. 10 (40%); Horsea Lv. 10 (30%); Tympole Lv. 10 (15%); Spheal Lv. 10 (10%); Chewtle Lv. 10 (5%) |
-| Good Rod | Any time | 20 | Archen Lv. 20 (40%); Qwilfish Hisuian Lv. 20 (30%); Wingull Lv. 20 (15%); Surskit Lv. 20 (10%); Dewpider Lv. 20 (5%) |
-| Super Rod | Any time | 40 | Lileep Lv. 40 (40%); Anorith Lv. 40 (30%); Mantyke Lv. 40 (15%); Crabrawler Lv. 40 (10%); Frillish Lv. 40 (5%) |
-| Rock Smash | Any time | 23.5 | Toedscool Lv. 22-24 (90%); Graveler Lv. 26-30 (10%) |
-| Grass swarm | Any time | — | Golbat (swarm) |
-| Surf swarm | Any time | — | Poliwag (swarm) |
-| Good Rod swarm | Any time | — | Poliwag (swarm) |
-| Super Rod swarm | Any time | — | Magikarp (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Bronzor (radio replacement); Chingling (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Absol (radio replacement); Makuhita (radio replacement) |
-| Grass | Day | 39.85 | Vibrava Lv. 39 (20%); Palpitoad Lv. 38 (20%); Medicham Lv. 38 (10%); Magcargo Lv. 38 (10%); Medicham Lv. 40 (10%); Magcargo Lv. 39 (10%); Goodra Lv. 50 (5%); Goodra Hisuian Lv. 50 (5%); Medicham Lv. 39 (4%); Magcargo Lv. 40 (4%); Quaxly Lv. 39 (1%); Quaxly Lv. 40 (1%) |
-| Grass | Night | 39.85 | Honedge Lv. 39 (20%); Doublade Lv. 38 (20%); Medicham Lv. 38 (10%); Magcargo Lv. 38 (10%); Medicham Lv. 40 (10%); Magcargo Lv. 39 (10%); Goodra Lv. 50 (5%); Goodra Hisuian Lv. 50 (5%); Gengar Lv. 39 (4%); Trevenant Lv. 40 (4%); Quaxly Lv. 39 (1%); Quaxly Lv. 40 (1%) |
+| Grass | Any | 20% | Slurpuff Lv. 70 (20%); Forretress Lv. 71 (20%); Hypno Lv. 71 (10%); Espathra Lv. 72 (10%); Vileplume Lv. 74 (11%); Bellossom Lv. 74 (11%); Escavalier Lv. 74 (9%); Accelgor Lv. 74 (9%) |
+## Route 21 (table 128)
 
-## Cerulean Cave B1F
+| Method | Time | Encounter rate | Pokémon and slot share |
+| --- | --- | --- | --- |
+| Grass | Any | 20% | Hippowdon Lv. 75 (20%); Houndoom Lv. 76 (20%); Serperior Lv. 76 (10%); Glimmora Lv. 77 (10%); Probopass Lv. 76 (10%); Tyrantrum Lv. 78 (10%); Delphox Lv. 79 (5%); Chesnaught Lv. 79 (5%); Mewscarada Lv. 79 (5%); Incineroar Lv. 79 (5%) |
+| Surf | Any | 10% | Lapras Lv. 75–78 (60%); Bibarel Lv. 76–78 (30%); Dewgong Lv. 77–79 (5%); Ludicolo Lv. 77–79 (4%); Luvdisc Lv. 77–79 (1%) |
+| Old Rod | Any | 25% | Overqwil Lv. 75–78 (40%); Gorebyss Lv. 76–78 (30%); Sharpedo Lv. 77–79 (15%); Kingdra Lv. 77–79 (10%); Veluza Lv. 77–79 (5%) |
+| Good Rod | Any | 50% | Cloyster Lv. 75–78 (40%); Seismitoad Lv. 76–78 (30%); Milotic Lv. 77–79 (15%); Drednaw Lv. 77–79 (10%); Jellicent Female Lv. 77–79 (5%) |
+| Super Rod | Any | 75% | Grapploct Lv. 75–78 (40%); Poliwrath Lv. 76–78 (30%); Dondozo Lv. 77–79 (15%); Huntail Lv. 77–79 (10%); Omastar Lv. 77–79 (5%) |
+Conditional: nightFish: Dewgong
 
-Encounter ID 140; configured level range 10-50.
+## Route 22 (table 129)
 
-| Method | Time | Average level | Pokémon and rate |
+| Method | Time | Encounter rate | Pokémon and slot share |
 | --- | --- | --- | --- |
-| Grass | Morning | 41.85 | Rhydon Lv. 42 (24%); Porygon Lv. 40 (20%); Medicham Lv. 41 (20%); Magcargo Lv. 39 (10%); Magcargo Lv. 42 (10%); Metagross Lv. 50 (5%); Golem Lv. 50 (5%); Klang Lv. 41 (4%); Scizor Lv. 41 (1%); Aggron Lv. 42 (1%) |
-| Surf | Any time | 38.5 | Lombre Lv. 40 (60%); Quagsire Lv. 35 (30%); Sealeo Lv. 40 (5%); Gorebyss Lv. 40 (4%); Omastar Lv. 40 (1%) |
-| Old Rod | Any time | 11 | Inkay Lv. 10 (40%); Panpour Lv. 10 (30%); Skorupi Lv. 10 (15%); Feebas Lv. 10 (10%); Barraskewda Lv. 30 (5%) |
-| Good Rod | Any time | 20.5 | Stunfisk Lv. 20 (40%); Delibird Lv. 20 (30%); Slowpoke Galarian Lv. 20 (15%); Azumarill Lv. 20 (10%); Wugtrio Lv. 30 (5%) |
-| Super Rod | Any time | 40 | Clobbopus Lv. 40 (40%); Wattrel Lv. 40 (30%); Tadbulb Lv. 40 (15%); Pincurchin Lv. 40 (10%); Basculegion Lv. 40 (5%) |
-| Grass swarm | Any time | — | Kadabra (swarm) |
-| Surf swarm | Any time | — | Poliwag (swarm) |
-| Good Rod swarm | Any time | — | Poliwag (swarm) |
-| Super Rod swarm | Any time | — | Magikarp (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Bronzor (radio replacement); Chingling (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Absol (radio replacement); Makuhita (radio replacement) |
-| Grass | Day | 41.85 | Electrode Lv. 42 (20%); Graveler Lv. 40 (20%); Dugtrio Lv. 41 (10%); Marowak Lv. 39 (10%); Boldore Lv. 41 (10%); Vibrava Lv. 42 (10%); Metagross Lv. 50 (5%); Lampent Lv. 50 (5%); Dusclops Lv. 41 (4%); Haunter Lv. 42 (4%); Escavalier Lv. 41 (1%); Palossand Lv. 42 (1%) |
-| Grass | Night | 41.85 | Doublade Lv. 42 (20%); Krokorok Lv. 40 (20%); Gourgeist Lv. 41 (10%); Whirlipede Lv. 39 (10%); Medicham Lv. 41 (10%); Weezing Lv. 42 (10%); Metagross Lv. 50 (5%); Gothorita Lv. 50 (5%); Duosion Lv. 41 (4%); Hattrem Lv. 42 (4%); Gothitelle Lv. 41 (1%); Beheeyem Lv. 42 (1%) |
+| Grass | Any | 20% | Decidueye Lv. 81 (40%); Wyrdeer Lv. 80 (10%); Torterra Lv. 81 (10%); Tangrowth Lv. 82 (11%); Gogoat Lv. 83 (11%); Sceptile Lv. 83 (9%); Meganium Lv. 82 (9%) |
+| Surf | Any | 10% | Basculin Blue Striped Lv. 79–83 (60%); Walrein Lv. 79–83 (30%); IronBundle Lv. 79–83 (5%); Octillery Lv. 79–83 (5%) |
+| Old Rod | Any | 25% | Basculin Lv. 79–83 (40%); Simipour Lv. 79–83 (30%); Vaporeon Lv. 79–83 (15%); Malamar Lv. 79–83 (15%) |
+| Good Rod | Any | 50% | Politoed Lv. 79–83 (40%); Alomomola Lv. 79–83 (30%); Toxapex Lv. 79–83 (15%); Slowbro Lv. 79–83 (15%) |
+| Super Rod | Any | 75% | Alomomola Lv. 79–83 (40%); Slowbro Lv. 79–83 (30%); Simipour Lv. 79–83 (15%); Malamar Lv. 79–83 (15%) |
+Conditional: nightFish: Wugtrio
 
-## Cerulean Cave B2F
+## Route 24 (table 130)
 
-Encounter ID 141; configured level range 10-64.
+| Method | Time | Encounter rate | Pokémon and slot share |
+| --- | --- | --- | --- |
+| Grass | Any | 20% | Farfetch’d Lv. 64 (20%); Spinda Lv. 65 (20%); Thievul Lv. 65 (10%); Mightyena Lv. 66 (10%); Togedemaru Lv. 67 (11%); Emolga Lv. 67 (11%); Zangoose Lv. 68 (9%); Seviper Lv. 68 (9%) |
+| Surf | Any | 10% | Pelipper Lv. 64–67 (60%); Swanna Lv. 65–67 (30%); Politoed Lv. 66–68 (5%); Clawitzer Lv. 66–68 (4%); Araquanid Lv. 66–68 (1%) |
+| Old Rod | Any | 25% | Wishiwashi Lv. 64–67 (40%); Lanturn Lv. 65–67 (30%); Slowking Lv. 66–68 (15%); Floatzel Lv. 66–68 (10%); Crawdaunt Lv. 66–68 (5%) |
+| Good Rod | Any | 50% | Whiscash Lv. 64–67 (40%); Jellicent Lv. 65–67 (30%); Starmie Lv. 66–68 (15%); Lapras Lv. 66–68 (10%); Barbaracle Lv. 66–68 (5%) |
+| Super Rod | Any | 75% | Gastrodon East Sea Lv. 64–67 (40%); Basculin Lv. 65–67 (30%); Kabutops Lv. 66–68 (15%); Wugtrio Lv. 66–68 (10%); Kingler Lv. 66–68 (5%) |
+Conditional: nightFish: Basculin
 
-| Method | Time | Average level | Pokémon and rate |
+## Route 25 (table 131)
+
+| Method | Time | Encounter rate | Pokémon and slot share |
 | --- | --- | --- | --- |
-| Grass | Morning | 47.4 | Boldore Lv. 46 (20%); Palpitoad Lv. 45 (20%); Fraxure Lv. 47 (10%); Machoke Lv. 45 (10%); Gurdurr Lv. 45 (10%); Magcargo Lv. 45 (10%); Dragapult Lv. 60 (5%); Hydreigon Lv. 64 (5%); Perrserker Lv. 47 (4%); Electrode Hisuian Lv. 49 (4%); Dugtrio Alolan Lv. 47 (1%); Klinklang Lv. 49 (1%) |
-| Surf | Any time | 38.5 | Slowbro Lv. 40 (60%); Azumarill Lv. 35 (30%); Seaking Lv. 40 (5%); Golduck Lv. 40 (4%); Kabutops Lv. 40 (1%) |
-| Old Rod | Any time | 10 | Bidoof Lv. 10 (40%); Wooper Paldean Lv. 10 (30%); Clauncher Lv. 10 (15%); Corphish Lv. 10 (10%); Omanyte Lv. 10 (5%) |
-| Good Rod | Any time | 20 | Corsola Lv. 20 (40%); Kabuto Lv. 20 (30%); Tirtouga Lv. 20 (15%); Clodsire Lv. 20 (10%); Tatsugiri Lv. 20 (5%) |
-| Super Rod | Any time | 40 | Basculin Lv. 40 (40%); Qwilfish Lv. 40 (30%); Luvdisc Lv. 40 (15%); Wugtrio Lv. 40 (10%); Starmie Lv. 40 (5%) |
-| Rock Smash | Any time | 23.5 | Gligar Lv. 22-24 (90%); Toedscool Lv. 26-30 (10%) |
-| Grass swarm | Any time | — | Kadabra (swarm) |
-| Surf swarm | Any time | — | Poliwag (swarm) |
-| Good Rod swarm | Any time | — | Poliwag (swarm) |
-| Super Rod swarm | Any time | — | Magikarp (swarm) |
-| Pokégear radio — Sinnoh Sound | Any time | — | Bronzor (radio replacement); Chingling (radio replacement) |
-| Pokégear radio — Hoenn Sound | Any time | — | Absol (radio replacement); Makuhita (radio replacement) |
-| Grass | Day | 47.4 | Nosepass Lv. 46 (20%); Golem Lv. 45 (20%); Diggersby Lv. 47 (10%); Sudowoodo Lv. 45 (10%); Carkol Lv. 45 (10%); Graveler Alolan Lv. 45 (10%); Dragapult Lv. 60 (5%); Hydreigon Lv. 64 (5%); Golem Lv. 47 (4%); Electrode Lv. 49 (4%); Marowak Alolan Lv. 47 (1%); Lycanroc Lv. 49 (1%) |
-| Grass | Night | 47.4 | Doublade Lv. 46 (20%); Lampent Lv. 45 (20%); Krokorok Lv. 47 (10%); Rotom Lv. 45 (10%); Shedinja Lv. 45 (10%); Rhydon Lv. 45 (10%); Dragapult Lv. 60 (5%); Hydreigon Lv. 64 (5%); Vanillish Lv. 47 (4%); Magneton Lv. 49 (4%); Houndstone Lv. 47 (1%); Sandslash Lv. 49 (1%) |
+| Grass | Any | 20% | Squawkbily Lv. 64 (20%); Chatot Lv. 65 (20%); Swellow Lv. 65 (10%); Pelipper Lv. 66 (10%); Indeedee Lv. 67 (11%); Indeedee Female Lv. 67 (11%); Staraptor Lv. 68 (9%); Drampa Lv. 68 (9%) |
+| Surf | Any | 10% | Bibarel Lv. 64–67 (60%); Politoed Lv. 65–67 (30%); IronBundle Lv. 66–68 (5%); Jellicent Lv. 66–68 (4%); Cramorant Lv. 66–68 (1%) |
+| Old Rod | Any | 25% | Kingler Lv. 64–67 (40%); Lapras Lv. 65–67 (30%); Qwilfish Lv. 66–68 (15%); Quagsire Lv. 66–68 (10%); Azumarill Lv. 66–68 (5%) |
+| Good Rod | Any | 50% | Palafin Lv. 64–67 (40%); Toxapex Lv. 65–67 (30%); Golisopod Lv. 66–68 (15%); Gastrodon Lv. 66–68 (10%); Carracosta Lv. 66–68 (5%) |
+| Super Rod | Any | 75% | Seaking Lv. 64–67 (40%); Tatsugiri Lv. 65–67 (30%); Basculin Blue Striped Lv. 66–68 (15%); Alomomola Lv. 66–68 (10%); Relicanth Lv. 66–68 (5%) |
+Conditional: nightFish: Luvdisc
+
+## Tohjo Falls (table 132)
 
-## Mahogany Town
+| Method | Time | Encounter rate | Pokémon and slot share |
+| --- | --- | --- | --- |
+| Grass | Any | 15% | Lairon Lv. 40 (20%); Naclstack Lv. 37 (20%); Gigalith Lv. 40 (10%); Garbodor Lv. 40 (10%); Typhlosion Lv. 40 (10%); Gliscor Lv. 40 (10%); Rotom Lv. 40 (18%); Ferrothorn Lv. 44 (2%) |
+| Surf | Any | 10% | Basculin Lv. 34–39 (60%); Alomomola Lv. 37–39 (30%); Azumarill Lv. 30–40 (6%); Eelektross Lv. 34–39 (4%) |
+| Rock Smash | Any | 80% | Naclstack Lv. 36–37 (90%); Ferrothorn Lv. 41–44 (10%) |
+| Old Rod | Any | 25% | Mantyke Lv. 34–39 (40%); Dragonair Lv. 34–39 (30%); Clobbopus Lv. 34–39 (15%); Dewgong Lv. 34–39 (10%); Lanturn Lv. 34–39 (5%) |
+| Good Rod | Any | 50% | Huntail Lv. 36–39 (40%); Floatzel Lv. 34–39 (30%); Palafin Lv. 38–39 (15%); Carracosta Lv. 37–39 (10%); Wugtrio Lv. 34–39 (5%) |
+| Super Rod | Any | 75% | Cloyster Lv. 51–56 (40%); Gastrodon Lv. 52–57 (30%); Sharpedo Lv. 53–58 (15%); Whiscash Lv. 54–59 (10%); Poliwhirl Lv. 55–60 (5%) |
+Conditional: nightFish: Drednaw
 
-Encounter ID 142; configured level range 18-20.
+## Digletts Cave (table 133)
 
-| Method | Time | Average level | Pokémon and rate |
+| Method | Time | Encounter rate | Pokémon and slot share |
 | --- | --- | --- | --- |
-| Grass | Morning | 18.9 | Meowth Lv. 18 (20%); Hoothoot Lv. 19 (20%); Meowth Alolan Lv. 18 (10%); Vigoroth Lv. 19 (10%); Glameow Lv. 19 (10%); Minccino Lv. 19 (10%); Linoone Lv. 20 (5%); Dunsparce Lv. 20 (5%); Raticate Lv. 20 (4%); Rattata Lv. 20 (4%); Grookey Lv. 20 (2%) |
-| Grass | Day | 18.9 | Meowth Lv. 18 (20%); Hoothoot Lv. 19 (20%); Meowth Alolan Lv. 18 (10%); Herdier Lv. 19 (10%); Flabébé Lv. 19 (10%); Lechonk Lv. 19 (10%); Fletchling Lv. 20 (5%); Togetic Lv. 20 (5%); Morelull Lv. 20 (4%); Kirlia Lv. 20 (4%); Grookey Lv. 20 (2%) |
-| Grass | Night | 18.9 | Meowth Lv. 18 (20%); Purrloin Lv. 19 (20%); Meowth Alolan Lv. 18 (10%); Sneasel Lv. 19 (10%); Zorua Lv. 19 (10%); Milcery Lv. 19 (10%); Persian Alolan Lv. 20 (5%); Lickitung Lv. 20 (5%); Flaaffy Lv. 20 (4%); Impidimp Lv. 20 (4%); Grookey Lv. 20 (2%) |
+| Grass | Any | 10% | Dugtrio Lv. 70 (20%); Dugtrio Lv. 71 (20%); Shuckle Lv. 71 (10%); Orthworm Lv. 72 (10%); Mudsdale Lv. 73 (11%); Claydol Lv. 74 (11%); Sableye Lv. 74 (9%); Camerupt Lv. 74 (9%) |
+## Victory Road 2F (table 134)
 
-## Route 16 (New Grass)
+| Method | Time | Encounter rate | Pokémon and slot share |
+| --- | --- | --- | --- |
+| Grass | Any | 10% | Flygon Lv. 45 (20%); Haxorus Lv. 48 (20%); Dusknoir Lv. 45 (10%); Rhyperior Lv. 45 (10%); Magmortar Lv. 46 (10%); Electivire Lv. 46 (10%); Golurk Lv. 47 (5%); Aggron Lv. 46 (5%); Kingambit Lv. 52 (8%); IronThorns Lv. 46 (2%) |
+## Victory Road 3F (table 135)
 
-Encounter ID 143; configured level range 26-30.
+| Method | Time | Encounter rate | Pokémon and slot share |
+| --- | --- | --- | --- |
+| Grass | Any | 10% | Goodra Lv. 50 (40%); Kommo-o Lv. 46 (10%); Archaludon Lv. 46 (10%); Hydreigon Lv. 50 (10%); Dragapult Lv. 50 (10%); Salamence Lv. 50 (5%); Garchomp Lv. 48 (5%); Baxcalibur Lv. 54 (4%); Dragonite Lv. 55 (4%); Tyranitar Lv. 55 (2%) |
+| Rock Smash | Any | 80% | Baxcalibur Lv. 54 (90%); Tyranitar Lv. 55 (10%) |
+## Route 2 (North, above Viridian Forest) (table 136)
 
-| Method | Time | Average level | Pokémon and rate |
+| Method | Time | Encounter rate | Pokémon and slot share |
 | --- | --- | --- | --- |
-| Grass | Morning | 27.32 | Wattrel Lv. 27 (20%); Farfetch'd Lv. 27 (20%); Maushold Lv. 26 (10%); Loudred Lv. 27 (10%); Kirlia Lv. 27 (10%); Persian Lv. 28 (10%); Azumarill Lv. 28 (5%); Gouging Fire Lv. 28 (5%); Toucannon Lv. 29 (4%); Grafaiai Lv. 29 (4%); Luxray Lv. 30 (1%); Gardevoir Lv. 30 (1%) |
-| Grass | Day | 27.32 | Wattrel Lv. 27 (20%); Staravia Lv. 27 (20%); Ribombee Lv. 26 (10%); Floette Lv. 27 (10%); Oinkologne Lv. 27 (10%); Darumaka Lv. 28 (10%); Raging Bolt Lv. 28 (5%); Arcanine Lv. 28 (5%); Primeape Lv. 29 (4%); Bewear Lv. 29 (4%); Toedscruel Lv. 30 (1%); Ampharos Lv. 30 (1%) |
-| Grass | Night | 27.32 | Wattrel Lv. 27 (20%); Vullaby Lv. 27 (20%); Meowstic Lv. 26 (10%); Kecleon Lv. 27 (10%); Rotom Lv. 27 (10%); Togepi Lv. 28 (10%); Raticate Alolan Lv. 28 (5%); Florges Lv. 28 (5%); Drifblim Lv. 29 (4%); Zebstrika Lv. 29 (4%); Zoroark Lv. 30 (1%); Zoroark Hisuian Lv. 30 (1%) |
+| Grass | Any | 20% | Grafaiai Lv. 70 (20%); Bramblgast Lv. 71 (20%); Miltank Lv. 71 (10%); Zebstrika Lv. 72 (10%); Alcremie Lv. 73 (11%); Sigilyph Lv. 73 (11%); Corviknite Lv. 74 (9%); Toucannon Lv. 72 (9%) |
+## Viridian Forest (table 137)
 
-## Pewter City
+| Method | Time | Encounter rate | Pokémon and slot share |
+| --- | --- | --- | --- |
+| Grass | Any | 15% | Simisage Lv. 77 (20%); Durant Lv. 78 (20%); Orbeetle Lv. 78 (10%); Leavanny Lv. 79 (10%); Leafeon Lv. 80 (11%); Yanmega Lv. 80 (11%); Scizor Lv. 81 (9%); Pinsir Lv. 81 (9%) |
+## ??? (table 138)
 
-Encounter ID 144; configured level range 4-6.
+| Method | Time | Encounter rate | Pokémon and slot share |
+| --- | --- | --- | --- |
+## Cerulean Cave 1F (table 139)
 
-| Method | Time | Average level | Pokémon and rate |
+| Method | Time | Encounter rate | Pokémon and slot share |
 | --- | --- | --- | --- |
-| Grass | Morning | 5 | Rockruff Lv. 4 (20%); Woobat Lv. 5 (20%); Munna Lv. 5 (10%); Spoink Lv. 5 (10%); Flittle Lv. 5 (10%); Espurr Lv. 5 (10%); Exeggcute Lv. 6 (5%); Girafarig Lv. 6 (5%); Natu Lv. 6 (4%); Indeedee Lv. 6 (4%); Munna Lv. 6 (1%); Woobat Lv. 6 (1%) |
-| Grass | Day | 5 | Rockruff Lv. 4 (20%); Woobat Lv. 5 (20%); Spoink Lv. 5 (10%); Munna Lv. 5 (10%); Flittle Lv. 5 (10%); Espurr Lv. 5 (10%); Exeggcute Lv. 6 (5%); Girafarig Lv. 6 (5%); Natu Lv. 6 (4%); Indeedee Lv. 6 (4%); Woobat Lv. 6 (1%); Spoink Lv. 6 (1%) |
-| Grass | Night | 5 | Rockruff Lv. 4 (20%); Exeggcute Lv. 5 (20%); Munna Lv. 5 (10%); Spoink Lv. 5 (10%); Flittle Lv. 5 (10%); Woobat Lv. 5 (10%); Espurr Lv. 6 (5%); Girafarig Lv. 6 (5%); Natu Lv. 6 (4%); Indeedee Lv. 6 (4%); Munna Lv. 6 (1%); Spoink Lv. 6 (1%) |
+| Grass | Any | 10% | SlithrWing Lv. 72 (20%); Iron Hands Lv. 72 (20%); Haxorus Lv. 72 (10%); Magmortar Lv. 72 (10%); Electivire Lv. 73 (10%); Rhyperior Lv. 72 (10%); BruteBonet Lv. 73 (6%); RoarinMoon Lv. 74 (6%); Hydrapple Lv. 72 (4%); Iron Valor Lv. 75 (4%) |
+| Surf | Any | 10% | Gyarados Lv. 71–74 (60%); Pelipper Lv. 72–74 (30%); Walrein Lv. 73–75 (6%); Eelektross Lv. 73–75 (4%) |
+| Rock Smash | Any | 5% | Rhyperior Lv. 71–75 (90%); Hydrapple Lv. 72–75 (10%) |
+| Old Rod | Any | 25% | Golisopod Lv. 71–74 (40%); Quagsire Lv. 72–74 (30%); Carracosta Lv. 73–75 (15%); Wugtrio Lv. 73–75 (10%); Qwilfish Lv. 73–75 (5%) |
+| Good Rod | Any | 50% | Gastrodon East Sea Lv. 71–74 (40%); Tatsugiri Lv. 72–74 (30%); Barbaracle Lv. 73–75 (15%); Jellicent Female Lv. 73–75 (10%); Gorebyss Lv. 73–75 (5%) |
+| Super Rod | Any | 75% | Milotic Lv. 71–74 (40%); Clawitzer Lv. 72–74 (30%); Crawdaunt Lv. 73–75 (15%); Kabutops Lv. 73–75 (10%); Wishiwashi Lv. 73–75 (5%) |
+Conditional: nightFish: Lumineon
+
+## Cerulean Cave B1F (table 140)
 
-## Azalea Town
+| Method | Time | Encounter rate | Pokémon and slot share |
+| --- | --- | --- | --- |
+| Grass | Any | 10% | Goodra Lv. 74 (20%); Goodra Lv. 73 (20%); Dragapult Lv. 75 (10%); IronThorns Lv. 75 (10%); Hydreigon Lv. 73 (10%); Iron Neck Lv. 75 (10%); Ursaluna Lv. 75 (5%); Ursaluna Bloodmoon Lv. 75 (5%); Archaludon Lv. 73 (5%); Kommo-o Lv. 75 (5%) |
+| Surf | Any | 10% | Gyarados Lv. 71–74 (60%); Gorebyss Lv. 72–74 (30%); Walrein Lv. 73–75 (6%); Eelektross Lv. 73–75 (4%) |
+| Rock Smash | Any | 100% | Archaludon Lv. 71–75 (90%); Metagross Lv. 72–75 (10%) |
+| Old Rod | Any | 25% | Golduck Lv. 71–74 (40%); Whiscash Lv. 72–74 (30%); Quagsire Lv. 73–75 (15%); Palafin Lv. 73–75 (10%); Wugtrio Lv. 73–75 (5%) |
+| Good Rod | Any | 50% | Kingdra Lv. 71–74 (40%); Golisopod Lv. 72–74 (30%); Qwilfish Lv. 73–75 (15%); Milotic Lv. 73–75 (10%); Ludicolo Lv. 73–75 (5%) |
+| Super Rod | Any | 75% | Starmie Lv. 71–74 (40%); Slowking Lv. 72–74 (30%); Basculin Lv. 73–75 (15%); Lanturn Lv. 73–75 (10%); Omastar Lv. 73–75 (5%) |
+Conditional: nightFish: Azumarill
 
-Encounter ID 145; configured level range 6-8.
+## Cerulean Cave B2F (table 141)
 
-| Method | Time | Average level | Pokémon and rate |
+| Method | Time | Encounter rate | Pokémon and slot share |
 | --- | --- | --- | --- |
-| Grass | Morning | 7.2 | Pansage Lv. 6 (20%); Deerling Lv. 7 (20%); Seedot Lv. 7 (10%); Fomantis Lv. 7 (10%); Bellsprout Lv. 8 (10%); Applin Lv. 8 (10%); Sewaddle Lv. 8 (5%); Oddish Lv. 8 (5%); Bounsweet Lv. 8 (4%); Cascoon Lv. 8 (4%); Joltik Lv. 8 (1%); Ledyba Lv. 8 (1%) |
-| Grass | Day | 7.2 | Skiddo Lv. 6 (20%); Ledyba Lv. 7 (20%); Seedot Lv. 7 (10%); Fomantis Lv. 7 (10%); Deerling Lv. 8 (10%); Budew Lv. 8 (10%); Paras Lv. 8 (5%); Cherubi Lv. 8 (5%); Bellsprout Lv. 8 (4%); Applin Lv. 8 (4%); Sewaddle Lv. 8 (1%); Gossifleur Lv. 8 (1%) |
-| Grass | Night | 7.2 | Phantump Lv. 6 (20%); Pumpkaboo Lv. 7 (20%); Seedot Lv. 7 (10%); Fomantis Lv. 7 (10%); Tangela Lv. 8 (10%); Oddish Lv. 8 (10%); Burmy Lv. 8 (5%); Bounsweet Lv. 8 (5%); Tarountula Lv. 8 (4%); Cascoon Lv. 8 (4%); Joltik Lv. 8 (1%); Larvesta Lv. 8 (1%) |
+| Grass | Any | 10% | Arcanine Lv. 75 (40%); Greninja Battle Bond Lv. 75 (10%); Kingambit Lv. 75 (10%); Porygon-Z Lv. 73 (14%); Gholdengo Lv. 73 (14%); Volcarona Lv. 75 (6%); Iron Moth Lv. 75 (6%) |
+| Surf | Any | 10% | Walrein Lv. 71–74 (60%); Starmie Lv. 72–74 (30%); Omastar Lv. 73–75 (6%); Slowking Lv. 73–75 (4%) |
+| Rock Smash | Any | 100% | Arcanine Lv. 71–75 (90%); Kingambit Lv. 72–75 (10%) |
+| Old Rod | Any | 25% | Wishiwashi Lv. 71–74 (40%); Luvdisc Lv. 72–74 (30%); Lanturn Lv. 73–75 (15%); Huntail Lv. 73–75 (10%); Floatzel Lv. 73–75 (5%) |
+| Good Rod | Any | 50% | Kabutops Lv. 71–74 (40%); Ludicolo Lv. 72–74 (30%); Tatsugiri Lv. 73–75 (15%); Clawitzer Lv. 73–75 (10%); Lapras Lv. 73–75 (5%) |
+| Super Rod | Any | 75% | Kingdra Lv. 71–74 (40%); Poliwrath Lv. 72–74 (30%); Gastrodon East Sea Lv. 73–75 (15%); Azumarill Lv. 73–75 (10%); Seaking Lv. 73–75 (5%) |
+Conditional: nightFish: Golduck
+
+## Mahogany Town (table 142)
 
-## Route 10 (Cave Ground)
+| Method | Time | Encounter rate | Pokémon and slot share |
+| --- | --- | --- | --- |
+| Grass | Any | 10% | Togedemaru Lv. 31 (20%); Sawsbuck Autumn Lv. 34 (20%); Archen Lv. 32 (10%); Perrserker Lv. 35 (10%); Furfrou Lv. 33 (10%); Maractus Lv. 34 (10%); Togetic Lv. 33 (5%); Hippowdon Lv. 34 (5%); Klefki Lv. 35 (4%); Gimmighoul Lv. 35 (4%); Togekiss Lv. 34 (2%) |
+## Route 16 (New Grass) (table 143)
 
-Encounter ID 146; configured level range 14-17.
+| Method | Time | Encounter rate | Pokémon and slot share |
+| --- | --- | --- | --- |
+| Grass | Any | 10% | Maractus Lv. 68 (20%); Delibird Lv. 69 (20%); Xatu Lv. 69 (10%); Dodrio Lv. 70 (10%); Ribombee Lv. 71 (11%); Aromatisse Lv. 71 (11%); Victreebel Lv. 72 (9%); Scolipede Lv. 72 (9%) |
+## Pewter City (table 144)
 
-| Method | Time | Average level | Pokémon and rate |
+| Method | Time | Encounter rate | Pokémon and slot share |
 | --- | --- | --- | --- |
-| Grass | Morning | 15.12 | Rockruff Lv. 15 (20%); Stunfisk Lv. 15 (20%); Togedemaru Lv. 14 (10%); Geodude Alolan Lv. 15 (10%); Voltorb Lv. 15 (10%); Magnemite Lv. 15 (10%); Porygon Lv. 16 (5%); Onix Lv. 16 (5%); Mudbray Lv. 16 (4%); Nosepass Lv. 16 (4%); Rowlet Lv. 17 (2%) |
-| Grass | Day | 15.12 | Rockruff Lv. 15 (20%); Voltorb Lv. 15 (20%); Tyrunt Lv. 14 (10%); Diglett Alolan Lv. 15 (10%); Cranidos Lv. 15 (10%); Shieldon Lv. 15 (10%); Minior Lv. 16 (5%); Glimmet Lv. 16 (5%); Rhyhorn Lv. 16 (4%); Phanpy Lv. 16 (4%); Rowlet Lv. 17 (2%) |
-| Grass | Night | 15.12 | Rockruff Lv. 15 (20%); Magnemite Lv. 15 (20%); Aron Lv. 14 (10%); Hippopotas Lv. 15 (10%); Cufant Lv. 15 (10%); Zorua Hisuian Lv. 15 (10%); Misdreavus Lv. 16 (5%); Trubbish Lv. 16 (5%); Drilbur Lv. 16 (4%); Cubone Lv. 16 (4%); Rowlet Lv. 17 (2%) |
+| Grass | Any | 10% | Hitmonlee Lv. 74 (20%); Hitmonchan Lv. 75 (20%); Pangoro Lv. 76 (10%); Hitmontop Lv. 76 (10%); Heatmor Lv. 77 (11%); Salazzle Lv. 77 (11%); Houndstone Lv. 78 (9%); Spiritomb Lv. 78 (9%) |
+| Rock Smash | Any | 100% | Crabomnabl Lv. 74–78 (90%); Metagross Lv. 75–78 (10%) |
+## Azalea Town (table 145)
 
-# Pokémon-to-location reverse index
+| Method | Time | Encounter rate | Pokémon and slot share |
+| --- | --- | --- | --- |
+| Grass | Any | 10% | Charmander Lv. 12 (20%); Cyndaquil Lv. 12 (20%); Fuecoco Lv. 14 (10%); Fennekin Lv. 13 (10%); Tepig Lv. 13 (10%); Chimchar Lv. 13 (10%); Litten Lv. 14 (10%); Scorbunny Lv. 14 (10%) |
+## Route 10 (Cave Ground) (table 146)
 
-Some Pokémon appear in several slots at the same location; each location/method combination is shown once.
+| Method | Time | Encounter rate | Pokémon and slot share |
+| --- | --- | --- | --- |
+| Grass | Any | 10% | Diggersby Lv. 63 (20%); Carnivine Lv. 64 (20%); Smeargle Lv. 63 (10%); Morpeko Lv. 65 (10%); Volbeat Lv. 66 (11%); Illumise Lv. 66 (11%); Marowak Lv. 67 (18%) |
+## Pokémon to location index
 
 | Pokémon | Locations and methods |
 | --- | --- |
-| Abomasnow | Route 28 — Grass (Day) |
-| Abra | Bell Tower 10F — Grass (Day)<br>Bell Tower 8F — Grass (Morning)<br>Cerulean City — Grass (Morning)<br>Cerulean City — Grass (Night)<br>Cliff Cave — Grass (Day)<br>Cliff Cave — Grass (Night)<br>Digletts Cave — Grass (Morning)<br>Mt. Moon 1F — Grass (Night)<br>Mt. Moon 2F — Grass (Day)<br>Mt. Silver (Mountainside) — Grass (Night)<br>Mt. Silver 4F — Grass (Night)<br>Route 31 — Grass (Night)<br>Whirl Islands 1F — Grass (Night)<br>Whirl Islands B3F — Grass (Night) |
-| Absol | Cerulean Cave 1F — Pokégear radio — Hoenn Sound<br>Cerulean Cave B1F — Pokégear radio — Hoenn Sound<br>Cerulean Cave B2F — Pokégear radio — Hoenn Sound<br>Cliff Cave — Pokégear radio — Hoenn Sound<br>Dark Cave (Route 31 entrance) — Pokégear radio — Hoenn Sound<br>Dark Cave (Route 45 entrance) — Pokégear radio — Hoenn Sound<br>Digletts Cave — Pokégear radio — Hoenn Sound<br>Ice Path 1F — Pokégear radio — Hoenn Sound<br>Ice Path B1F — Pokégear radio — Hoenn Sound<br>Ice Path B2F — Pokégear radio — Hoenn Sound<br>Ice Path B3F — Pokégear radio — Hoenn Sound<br>Mt. Moon 1F — Pokégear radio — Hoenn Sound<br>Mt. Moon 2F — Pokégear radio — Hoenn Sound<br>Mt. Mortar (Central room) — Pokégear radio — Hoenn Sound<br>Mt. Mortar (Room above waterfall) — Pokégear radio — Hoenn Sound<br>Mt. Mortar (Waterfall room) — Pokégear radio — Hoenn Sound<br>Mt. Mortar B1F — Pokégear radio — Hoenn Sound<br>Mt. Silver (Expert Belt room) — Pokégear radio — Hoenn Sound<br>Mt. Silver (Moltres room) — Pokégear radio — Hoenn Sound<br>Mt. Silver (Mountainside) — Pokégear radio — Hoenn Sound<br>Mt. Silver (Top, snowy area) — Pokégear radio — Hoenn Sound<br>Mt. Silver 1F — Pokégear radio — Hoenn Sound<br>Mt. Silver 3F — Pokégear radio — Hoenn Sound<br>Mt. Silver 4F — Pokégear radio — Hoenn Sound<br>Rock Tunnel 1F — Pokégear radio — Hoenn Sound<br>Rock Tunnel B1F — Pokégear radio — Hoenn Sound<br>Route 17 — Grass (Night)<br>Seafoam Islands 1F — Pokégear radio — Hoenn Sound<br>Seafoam Islands B1F — Pokégear radio — Hoenn Sound<br>Seafoam Islands B2F — Pokégear radio — Hoenn Sound<br>Seafoam Islands B3F — Pokégear radio — Hoenn Sound<br>Seafoam Islands B4F — Pokégear radio — Hoenn Sound<br>Slowpoke Well 1F — Pokégear radio — Hoenn Sound<br>Slowpoke Well B2F — Pokégear radio — Hoenn Sound<br>Tohjo Falls — Pokégear radio — Hoenn Sound<br>Union Cave 1F — Pokégear radio — Hoenn Sound<br>Union Cave B1F — Pokégear radio — Hoenn Sound<br>Union Cave B2F — Pokégear radio — Hoenn Sound<br>Victory Road 1F — Pokégear radio — Hoenn Sound<br>Victory Road 2F — Pokégear radio — Hoenn Sound<br>Victory Road 3F — Pokégear radio — Hoenn Sound<br>Whirl Islands 1F — Pokégear radio — Hoenn Sound<br>Whirl Islands B1F — Pokégear radio — Hoenn Sound<br>Whirl Islands B2F — Pokégear radio — Hoenn Sound<br>Whirl Islands B3F — Pokégear radio — Hoenn Sound |
-| Accelgor | Mt. Silver (Outside) — Grass (Morning) |
-| Aegislash | Bell Tower 7F — Grass (Night) |
-| Aerodactyl | Seafoam Islands B1F — Grass (Day) |
-| Aggron | Cerulean Cave B1F — Grass (Morning) |
-| Aipom | Route 11 — Grass (Day)<br>Route 46 — Grass (Day)<br>Route 46 — Grass (Morning)<br>Route 46 — Grass (Night)<br>Route 5 — Grass (Morning)<br>Route 6 — Grass (Day) |
-| Alakazam | Victory Road 3F — Grass (Night) |
-| Alcremie | Route 13 — Grass (Day)<br>Route 18 — Grass (Night)<br>Route 39 — Grass (Morning)<br>Route 6 — Grass (Morning)<br>Route 8 — Grass (Morning)<br>Safari Zone (Placeholder, not used) — Grass (Night) |
-| Alomomola | Route 27 — Surf |
-| Altaria | Route 27 — Grass (Day) |
-| Amaura | Bell Tower 2F — Grass (Day)<br>Bell Tower 9F — Grass (Morning)<br>Ice Path 1F — Grass (Day)<br>Ice Path 1F — Grass (Night)<br>Ice Path B1F — Grass (Day)<br>Ice Path B1F — Grass (Morning)<br>Ice Path B1F — Grass (Night)<br>Ice Path B2F — Grass (Day)<br>Ice Path B2F — Grass (Morning)<br>Ice Path B2F — Grass (Night)<br>Ice Path B3F — Grass (Day)<br>Ice Path B3F — Grass (Morning)<br>Ice Path B3F — Grass (Night)<br>Mt. Mortar B1F — Grass (Morning)<br>Ruins of Alph (Inside, Ladder Room) — Grass (Morning)<br>Seafoam Islands 1F — Grass (Day)<br>Union Cave 1F — Grass (Morning)<br>Union Cave B2F — Grass (Morning) |
-| Ambipom | Route 15 — Grass (Morning) |
-| Amoonguss | Route 28 — Grass (Morning) |
-| Ampharos | Route 16 (New Grass) — Grass (Day) |
-| Annihilape | Mt. Silver (Moltres room) — Grass (Night) |
-| Anorith | Cerulean Cave 1F — Super Rod<br>Dark Cave (Route 31 entrance) — Good Rod<br>Dark Cave (Route 31 entrance) — Rock Smash<br>Dark Cave (Route 31 entrance) — Super Rod<br>Mt. Moon (Outside area) — Good Rod<br>Mt. Moon (Outside area) — Super Rod<br>Mt. Mortar (Room above waterfall) — Good Rod<br>Mt. Mortar (Waterfall room) — Good Rod<br>Mt. Mortar B1F — Super Rod<br>Mt. Silver (Moltres room) — Super Rod<br>Route 22 — Super Rod<br>Route 26 — Good Rod<br>Route 9 — Surf<br>Viridian City — Good Rod<br>Whirl Islands 1F — Old Rod<br>Whirl Islands 1F — Surf<br>Whirl Islands B2F — Good Rod |
-| Appletun | Route 26 — Grass (Morning) |
-| Applin | Azalea Town — Grass (Day)<br>Azalea Town — Grass (Morning)<br>Dragons Den — Grass (Day)<br>Dragons Den — Grass (Morning)<br>Dragons Den — Grass (Night)<br>Route 17 — Grass (Day)<br>Route 2 (North, above Viridian Forest) — Grass (Morning)<br>Route 24 — Grass (Night)<br>Route 29 — Grass (Morning) |
-| Araquanid | Blackthorn City — Super Rod<br>Cinnabar Island — Surf<br>Dragons Den — Super Rod<br>Ilex Forest — Super Rod<br>Lake of Rage — Super Rod<br>Mt. Moon (Outside Clefairy active) — Surf<br>Mt. Silver 3F — Surf<br>Route 12 — Surf<br>Route 13 — Surf<br>Route 20 — Grass (Day)<br>Route 20 — Grass (Morning)<br>Route 20 — Grass (Night)<br>Route 20 — Super Rod<br>Route 25 — Super Rod<br>Route 28 — Super Rod<br>Route 34 — Super Rod<br>Route 44 — Grass (Morning)<br>Route 47 — Super Rod<br>Seafoam Islands B4F — Super Rod<br>Union Cave B1F — Super Rod<br>Vermilion City — Super Rod |
-| Arbok | Route 14 — Grass (Day)<br>Route 15 — Grass (Morning)<br>Route 44 — Grass (Morning) |
-| Arboliva | Route 26 — Grass (Morning) |
-| Arcanine | Route 16 (New Grass) — Grass (Day) |
-| Arcanine Hisuian | Seafoam Islands B2F — Grass (Day) |
-| Arceus | Ruins of Alph — one-time static encounter (Lv. 50) |
-| Archaludon | Victory Road 1F — Grass (Night) |
-| Archen | Cerulean Cave 1F — Good Rod<br>Dark Cave (Route 31 entrance) — Super Rod<br>Dragons Den — Good Rod<br>Dragons Den — Super Rod<br>Mt. Moon (Outside area) — Good Rod<br>Mt. Mortar (Room above waterfall) — Super Rod<br>Mt. Mortar (Waterfall room) — Good Rod<br>Mt. Mortar (Waterfall room) — Super Rod<br>Mt. Silver (Moltres room) — Good Rod<br>Mt. Silver 4F — Good Rod<br>Pallet Town — Super Rod<br>Route 22 — Super Rod<br>Route 26 — Good Rod<br>Route 42 — Surf<br>Route 9 — Surf<br>Ruins of Alph (Outside) — Surf<br>Slowpoke Well B2F — Good Rod |
-| Archeops | Ruins of Alph (Outside) — Super Rod |
-| Arctibax | Seafoam Islands B4F — Grass (Day)<br>Seafoam Islands B4F — Grass (Morning)<br>Seafoam Islands B4F — Grass (Night) |
-| Arctovish | Route 12 — Surf |
-| Arctozolt | Route 13 — Grass (Morning) |
-| Ariados | Dark Cave (Route 45 entrance) — Grass (Night)<br>Digletts Cave — Grass (Day)<br>Route 44 — Grass (Morning)<br>Slowpoke Well B2F — Grass (Morning)<br>Tohjo Falls — Grass (Day)<br>Tohjo Falls — Grass (Morning)<br>Tohjo Falls — Grass (Night)<br>Union Cave B2F — Grass (Day)<br>Victory Road 1F — Grass (Night) |
-| Armaldo | Whirl Islands B2F — Super Rod |
-| Armarouge | Route 16 — Grass (Night) |
-| Aromatisse | Mt. Silver (Outside) — Grass (Day) |
-| Aron | Bell Tower 7F — Grass (Day)<br>Bell Tower 7F — Grass (Morning)<br>Bell Tower 7F — Grass (Night)<br>Bell Tower 8F — Grass (Night)<br>Bell Tower 9F — Grass (Night)<br>Mt. Mortar (Central room) — Grass (Morning)<br>Rock Tunnel 1F — Grass (Morning)<br>Route 10 (Cave Ground) — Grass (Night)<br>Ruins of Alph (Inside, Ladder Room) — Grass (Night)<br>Ruins of Alph (Inside, Main Room) — Grass (Night)<br>Slowpoke Well 1F — Grass (Day)<br>Whirl Islands 1F — Grass (Night)<br>Whirl Islands B2F — Grass (Day) |
-| Arrokuda | Cherrygrove City — Old Rod<br>Cianwood City — Old Rod<br>Mt. Moon (Outside area) — Old Rod<br>Mt. Silver 3F — Old Rod<br>Olivine City — Old Rod<br>Route 10 — Good Rod<br>Route 12 — Old Rod<br>Route 25 — Old Rod<br>Route 28 — Old Rod<br>Route 34 — Old Rod<br>Route 41 — Good Rod<br>Route 41 — Grass (Day)<br>Route 43 — Old Rod<br>Route 44 — Old Rod<br>Route 45 — Old Rod<br>Union Cave B2F — Old Rod<br>Vermilion City — Old Rod<br>Violet City — Old Rod |
-| Audino | Route 7 — Grass (Day)<br>Route 7 — Grass (Morning)<br>Route 7 — Grass (Night) |
-| Aurorus | Mt. Silver (Top, snowy area) — Grass (Day) |
-| Avalugg | Seafoam Islands B4F — Grass (Morning) |
-| Avalugg Hisuian | Seafoam Islands B4F — Grass (Day) |
-| Axew | Bell Tower 10F — Grass (Morning)<br>Blackthorn City — Grass (Day)<br>Blackthorn City — Grass (Morning)<br>Blackthorn City — Grass (Night)<br>Cliff Cave — Grass (Day)<br>Cliff Cave — Grass (Morning)<br>Digletts Cave — Grass (Morning)<br>Dragons Den — Grass (Day)<br>Dragons Den — Grass (Morning)<br>Dragons Den — Grass (Night)<br>Mt. Moon 1F — Grass (Day)<br>Mt. Moon 1F — Grass (Morning)<br>Mt. Moon 2F — Grass (Morning)<br>Mt. Silver 1F — Grass (Day)<br>Mt. Silver 4F — Grass (Morning)<br>Route 31 — Grass (Day)<br>Whirl Islands 1F — Grass (Morning)<br>Whirl Islands B1F — Grass (Day) |
-| Azumarill | Cerulean Cave B1F — Good Rod<br>Cerulean Cave B2F — Surf<br>Cerulean City — Good Rod<br>Cliff Edge Gate — Surf<br>Fuchsia City — Good Rod<br>Mt. Silver (Outside) — Good Rod<br>Mt. Silver (Top, snowy area) — Good Rod<br>Mt. Silver 1F — Good Rod<br>Pallet Town — Good Rod<br>Route 12 — Super Rod<br>Route 16 (New Grass) — Grass (Morning)<br>Route 19 — Good Rod<br>Route 20 — Good Rod<br>Route 22 — Good Rod<br>Route 26 — Good Rod<br>Route 26 — Super Rod<br>Route 35 — Super Rod<br>Route 40 — Super Rod<br>Route 9 — Good Rod<br>Vermilion City — Good Rod |
-| Azurill | Route 2 (North, above Viridian Forest) — Grass (Morning)<br>Route 2 (North, above Viridian Forest) — Grass (Night)<br>Route 29 — Grass (Night) |
-| Bad Egg | Route 11 — Grass (Morning)<br>Route 13 — Grass (Night)<br>Route 36 — Grass (Day) |
-| Bagon | Dragons Den — Grass (Day)<br>Route 44 — Grass (Day)<br>Route 44 — Grass (Morning)<br>Route 44 — Grass (Night) |
-| Baltoy | Bell Tower 10F — Grass (Morning)<br>Bell Tower 3F — Grass (Day)<br>Bell Tower 9F — Grass (Morning)<br>Dark Cave (Route 31 entrance) — Grass (Night)<br>Mt. Moon 2F — Grass (Day)<br>Mt. Moon 2F — Grass (Morning)<br>Mt. Moon 2F — Grass (Night)<br>Route 3 — Grass swarm<br>Ruins of Alph (Inside, Ladder Room) — Grass (Day)<br>Ruins of Alph (Inside, Main Room) — Grass (Morning)<br>Viridian Forest — Grass (Night)<br>Whirl Islands B1F — Grass (Morning) |
-| Banette | Seafoam Islands B4F — Grass (Night) |
-| Barbaracle | Seafoam Islands B4F — Super Rod |
-| Barboach | Cherrygrove City — Good Rod<br>Cherrygrove City — Grass (Night)<br>Cherrygrove City — Old Rod<br>Cherrygrove City — Surf<br>Lake of Rage — Grass (Day)<br>Lake of Rage — Grass (Morning)<br>Lake of Rage — Grass (Night)<br>Route 10 — Good Rod<br>Route 12 — Old Rod<br>Route 25 — Old Rod<br>Route 30 — Surf<br>Route 32 — Good Rod<br>Route 32 — Old Rod<br>Route 32 — Surf<br>Route 40 — Old Rod<br>Vermilion City — Old Rod |
-| Barraskewda | Cerulean Cave B1F — Old Rod |
-| Basculegion | Cerulean Cave B1F — Super Rod |
-| Basculin | Blackthorn City — Super Rod<br>Cerulean Cave B2F — Super Rod<br>Cherrygrove City — Good Rod<br>Dark Cave (Route 45 entrance) — Good Rod<br>Lake of Rage — Good Rod<br>Lake of Rage — Grass (Day)<br>Lake of Rage — Grass (Morning)<br>Lake of Rage — Grass (Night)<br>Mt. Silver 1F — Good Rod<br>Route 24 — Good Rod<br>Route 26 — Super Rod<br>Route 30 — Good Rod<br>Route 35 — Super Rod<br>Route 41 — Super Rod<br>Route 42 — Good Rod<br>Route 9 — Good Rod<br>Slowpoke Well B2F — Good Rod<br>Union Cave B1F — Good Rod<br>Violet City — Super Rod<br>Viridian City — Super Rod |
-| Bastiodon | Mt. Mortar (Room above waterfall) — Grass (Night) |
-| Baxcalibur | Rock Tunnel B1F — Grass (Day)<br>Rock Tunnel B1F — Grass (Morning)<br>Rock Tunnel B1F — Grass (Night) |
-| Beartic | Mt. Silver (Outside) — Grass (Day) |
-| Beautifly | National Park (Bug Catching Contest) — Grass (Day)<br>National Park (Bug Catching Contest) — Grass (Morning)<br>Route 18 — Grass (Morning)<br>Route 25 — Grass (Day)<br>Route 38 — Grass (Day)<br>Route 43 — Grass (Morning)<br>Route 8 — Grass (Morning) |
-| Beedrill | Bell Tower 10F — Grass (Morning)<br>Bell Tower 2F — Grass (Morning)<br>Bell Tower 4F — Grass (Morning)<br>Bell Tower 8F — Grass (Night)<br>Mt. Mortar (Room above waterfall) — Grass (Day)<br>Mt. Mortar (Room above waterfall) — Grass (Morning)<br>Mt. Mortar (Waterfall room) — Grass (Morning)<br>Mt. Mortar (Waterfall room) — Grass (Night)<br>Rock Tunnel B1F — Grass (Night)<br>Slowpoke Well B2F — Grass (Day)<br>Slowpoke Well B2F — Grass (Morning)<br>Union Cave B2F — Grass (Day)<br>Whirl Islands 1F — Grass (Day) |
-| Beheeyem | Cerulean Cave B1F — Grass (Night) |
-| Beldum | Dragons Den — Grass (Day)<br>Mt. Mortar (Central room) — Grass (Day)<br>Mt. Mortar (Central room) — Grass (Morning)<br>Mt. Mortar (Central room) — Grass (Night) |
-| Bellibolt | Route 13 — Grass (Day) |
-| Bellossom | Route 15 — Grass (Day) |
-| Bellsprout | Azalea Town — Grass (Day)<br>Azalea Town — Grass (Morning)<br>Cerulean City — Grass (Day)<br>Cerulean City — Grass (Morning)<br>Route 12 — Grass (Day)<br>Route 12 — Grass (Morning)<br>Route 24 — Grass swarm<br>Route 25 — Grass (Day)<br>Route 32 — Grass swarm<br>Route 43 — Grass (Day)<br>Route 43 — Grass (Morning)<br>Route 43 — Grass (Night)<br>Viridian City — Grass (Day)<br>Viridian City — Grass (Morning) |
-| Bergmite | Bell Tower 3F — Grass (Day)<br>Bell Tower 6F — Grass (Day)<br>Bell Tower 6F — Grass (Morning)<br>Bell Tower 6F — Grass (Night)<br>Ice Path 1F — Grass (Morning)<br>Ice Path 1F — Grass (Night)<br>Ice Path B1F — Grass (Day)<br>Ice Path B1F — Grass (Morning)<br>Ice Path B1F — Grass (Night)<br>Ice Path B2F — Grass (Day)<br>Ice Path B2F — Grass (Morning)<br>Ice Path B2F — Grass (Night)<br>Ice Path B3F — Grass (Day)<br>Ice Path B3F — Grass (Morning)<br>Ice Path B3F — Grass (Night)<br>Seafoam Islands 1F — Grass (Morning)<br>Union Cave B1F — Grass (Morning)<br>Whirl Islands B1F — Grass (Morning) |
-| Bewear | Route 16 (New Grass) — Grass (Day) |
-| Bibarel | Cerulean City — Good Rod<br>Cinnabar Island — Good Rod<br>Mt. Silver (Outside) — Good Rod<br>Mt. Silver (Outside) — Surf<br>Mt. Silver (Top, snowy area) — Surf<br>Mt. Silver 1F — Good Rod<br>New Bark Town — Surf<br>Olivine City — Super Rod<br>Pallet Town — Surf<br>Route 10 — Good Rod<br>Route 12 — Good Rod<br>Route 19 — Surf<br>Route 20 — Surf<br>Route 25 — Good Rod<br>Route 26 — Super Rod<br>Route 28 — Good Rod<br>Route 32 — Super Rod<br>Vermilion City — Good Rod<br>Viridian City — Good Rod |
-| Bidoof | Blackthorn City — Surf<br>Cerulean Cave B2F — Old Rod<br>Cliff Edge Gate — Old Rod<br>Cliff Edge Gate — Surf<br>Dark Cave (Route 45 entrance) — Surf<br>Mt. Silver (Outside) — Old Rod<br>Mt. Silver (Outside) — Pokégear radio — Sinnoh Sound<br>Mt. Silver 4F — Old Rod<br>Pallet Town — Grass (Day)<br>Pallet Town — Grass (Morning)<br>Route 10 — Pokégear radio — Sinnoh Sound<br>Route 13 — Pokégear radio — Sinnoh Sound<br>Route 21 — Pokégear radio — Sinnoh Sound<br>Route 22 — Pokégear radio — Sinnoh Sound<br>Route 24 — Pokégear radio — Sinnoh Sound<br>Route 24 — Surf<br>Route 25 — Pokégear radio — Sinnoh Sound<br>Route 26 — Pokégear radio — Sinnoh Sound<br>Route 27 — Pokégear radio — Sinnoh Sound<br>Route 28 — Pokégear radio — Sinnoh Sound<br>Route 30 — Pokégear radio — Sinnoh Sound<br>Route 31 — Pokégear radio — Sinnoh Sound<br>Route 32 — Grass (Night)<br>Route 32 — Pokégear radio — Sinnoh Sound<br>Route 34 — Pokégear radio — Sinnoh Sound<br>Route 35 — Pokégear radio — Sinnoh Sound<br>Route 39 — Grass (Day)<br>Route 39 — Grass (Morning)<br>Route 39 — Grass (Night)<br>Route 4 — Pokégear radio — Sinnoh Sound<br>Route 42 — Pokégear radio — Sinnoh Sound<br>Route 43 — Pokégear radio — Sinnoh Sound<br>Route 44 — Pokégear radio — Sinnoh Sound<br>Route 45 — Good Rod<br>Route 45 — Pokégear radio — Sinnoh Sound<br>Route 47 — Pokégear radio — Sinnoh Sound<br>Route 6 — Pokégear radio — Sinnoh Sound<br>Route 9 — Old Rod<br>Route 9 — Pokégear radio — Sinnoh Sound<br>Ruins of Alph (Outside) — Pokégear radio — Sinnoh Sound<br>Safari Zone (Placeholder, not used) — Pokégear radio — Sinnoh Sound<br>Safari Zone (Placeholder, not used) — Super Rod<br>Safari Zone (Placeholder, not used) — Surf<br>Viridian City — Good Rod |
-| Binacle | Cianwood City — Good Rod<br>Dark Cave (Route 31 entrance) — Old Rod<br>Dark Cave (Route 45 entrance) — Old Rod<br>Dragons Den — Old Rod<br>Fuchsia City — Old Rod<br>Mt. Mortar (Room above waterfall) — Old Rod<br>Mt. Mortar (Waterfall room) — Old Rod<br>Mt. Silver 1F — Old Rod<br>Route 19 — Grass (Day)<br>Route 19 — Grass (Morning)<br>Route 21 — Old Rod<br>Route 4 — Good Rod<br>Ruins of Alph (Outside) — Old Rod<br>Seafoam Islands B4F — Old Rod<br>Tohjo Falls — Old Rod<br>Union Cave 1F — Old Rod<br>Union Cave B2F — Old Rod<br>Whirl Islands B2F — Old Rod |
-| Bisharp | Mt. Silver 3F — Grass (Day)<br>Mt. Silver 3F — Grass (Morning)<br>Mt. Silver 3F — Grass (Night)<br>Seafoam Islands B2F — Grass (Day)<br>Seafoam Islands B2F — Grass (Night)<br>Tohjo Falls — Grass (Day)<br>Tohjo Falls — Grass (Morning)<br>Tohjo Falls — Grass (Night) |
-| Blipbug | National Park (Bug Catching Contest) — Grass (Night)<br>Route 2 (North, above Viridian Forest) — Grass (Morning)<br>Route 22 — Grass (Morning)<br>Route 22 — Grass (Night)<br>Route 46 — Grass (Night) |
-| Blissey | Route 17 — Grass (Day) |
-| Blitzle | Route 36 — Grass (Day)<br>Route 36 — Grass (Morning)<br>Route 36 — Grass (Night) |
-| Boldore | Cerulean Cave B1F — Grass (Day)<br>Cerulean Cave B2F — Grass (Morning)<br>Dark Cave (Route 45 entrance) — Grass (Day)<br>Mt. Mortar (Room above waterfall) — Grass (Night)<br>Mt. Silver (Mountainside) — Grass (Morning)<br>Mt. Silver 1F — Grass (Day)<br>Seafoam Islands 1F — Grass (Day)<br>Seafoam Islands 1F — Grass (Morning)<br>Seafoam Islands 1F — Grass (Night)<br>Seafoam Islands B1F — Grass (Night)<br>Seafoam Islands B2F — Grass (Night)<br>Seafoam Islands B3F — Grass (Morning) |
-| Boltund | Route 44 — Grass (Day) |
-| Bombirdier | Route 17 — Grass (Night) |
-| Bonsly | Bell Tower 8F — Grass (Day)<br>Mt. Moon 2F — Grass (Day)<br>Mt. Mortar (Central room) — Grass (Day)<br>Ruins of Alph (Inside, Ladder Room) — Grass (Day)<br>Ruins of Alph (Inside, Ladder Room) — Grass (Morning)<br>Ruins of Alph (Inside, Main Room) — Grass (Morning)<br>Ruins of Alph (Inside, Main Room) — Grass (Night)<br>Seafoam Islands B1F — Grass (Day)<br>Seafoam Islands B1F — Grass (Morning)<br>Seafoam Islands B1F — Grass (Night)<br>Union Cave B1F — Grass (Day)<br>Viridian Forest — Grass (Night)<br>Whirl Islands B1F — Grass (Day)<br>Whirl Islands B3F — Grass (Day) |
-| Bouffalant | Route 15 — Grass (Night) |
-| Bounsweet | Azalea Town — Grass (Morning)<br>Azalea Town — Grass (Night)<br>Celadon City — Grass (Day)<br>Celadon City — Grass (Morning)<br>Route 10 — Grass (Day)<br>Route 22 — Grass (Night)<br>Route 25 — Grass (Day)<br>Route 29 — Grass (Night) |
-| Brambleghast | Bell Tower 5F — Grass (Night)<br>Safari Zone (Placeholder, not used) — Grass (Night) |
-| Bramblin | Ecruteak City — Grass (Day)<br>Ecruteak City — Grass (Morning)<br>Ilex Forest — Grass (Night)<br>Mt. Mortar (Central room) — Grass (Night)<br>Mt. Mortar B1F — Grass (Day)<br>Rock Tunnel B1F — Grass (Day)<br>Route 2 (South, below Viridian Forest) — Grass (Night)<br>Route 21 — Grass (Night)<br>Route 22 — Grass (Night)<br>Route 25 — Grass (Night)<br>Route 26 — Grass (Night)<br>Route 29 — Grass (Night)<br>Route 3 — Grass (Night)<br>Route 8 — Grass (Night)<br>Route 9 — Grass (Night)<br>Safari Zone (Placeholder, not used) — Grass (Night)<br>Viridian Forest — Grass (Day) |
-| Braviary | Route 25 — Grass (Morning) |
-| Braviary Hisuian | Route 25 — Grass (Day) |
-| Breloom | Route 44 — Grass (Day) |
-| Bronzong | Seafoam Islands B2F — Grass (Night) |
-| Bronzor | Bell Tower 4F — Grass (Day)<br>Bell Tower 7F — Grass (Day)<br>Bell Tower 7F — Grass (Morning)<br>Bell Tower 7F — Grass (Night)<br>Cerulean Cave 1F — Pokégear radio — Sinnoh Sound<br>Cerulean Cave B1F — Pokégear radio — Sinnoh Sound<br>Cerulean Cave B2F — Pokégear radio — Sinnoh Sound<br>Cliff Cave — Pokégear radio — Sinnoh Sound<br>Dark Cave (Route 31 entrance) — Grass (Night)<br>Dark Cave (Route 31 entrance) — Pokégear radio — Sinnoh Sound<br>Dark Cave (Route 45 entrance) — Pokégear radio — Sinnoh Sound<br>Digletts Cave — Pokégear radio — Sinnoh Sound<br>Ice Path 1F — Pokégear radio — Sinnoh Sound<br>Ice Path B1F — Pokégear radio — Sinnoh Sound<br>Ice Path B2F — Pokégear radio — Sinnoh Sound<br>Ice Path B3F — Pokégear radio — Sinnoh Sound<br>Mt. Moon 1F — Pokégear radio — Sinnoh Sound<br>Mt. Moon 2F — Pokégear radio — Sinnoh Sound<br>Mt. Mortar (Central room) — Pokégear radio — Sinnoh Sound<br>Mt. Mortar (Room above waterfall) — Pokégear radio — Sinnoh Sound<br>Mt. Mortar (Waterfall room) — Grass (Night)<br>Mt. Mortar (Waterfall room) — Pokégear radio — Sinnoh Sound<br>Mt. Mortar B1F — Pokégear radio — Sinnoh Sound<br>Mt. Silver (Expert Belt room) — Pokégear radio — Sinnoh Sound<br>Mt. Silver (Moltres room) — Pokégear radio — Sinnoh Sound<br>Mt. Silver (Mountainside) — Pokégear radio — Sinnoh Sound<br>Mt. Silver (Top, snowy area) — Pokégear radio — Sinnoh Sound<br>Mt. Silver 1F — Pokégear radio — Sinnoh Sound<br>Mt. Silver 3F — Pokégear radio — Sinnoh Sound<br>Mt. Silver 4F — Pokégear radio — Sinnoh Sound<br>Rock Tunnel 1F — Pokégear radio — Sinnoh Sound<br>Rock Tunnel B1F — Pokégear radio — Sinnoh Sound<br>Ruins of Alph (Inside, Main Room) — Grass (Day)<br>Seafoam Islands 1F — Pokégear radio — Sinnoh Sound<br>Seafoam Islands B1F — Pokégear radio — Sinnoh Sound<br>Seafoam Islands B2F — Pokégear radio — Sinnoh Sound<br>Seafoam Islands B3F — Pokégear radio — Sinnoh Sound<br>Seafoam Islands B4F — Pokégear radio — Sinnoh Sound<br>Slowpoke Well 1F — Pokégear radio — Sinnoh Sound<br>Slowpoke Well B2F — Pokégear radio — Sinnoh Sound<br>Sprout Tower 2F — Grass (Day)<br>Sprout Tower 2F — Grass (Morning)<br>Sprout Tower 2F — Grass (Night)<br>Sprout Tower 3F — Grass (Day)<br>Sprout Tower 3F — Grass (Morning)<br>Tohjo Falls — Pokégear radio — Sinnoh Sound<br>Union Cave 1F — Pokégear radio — Sinnoh Sound<br>Union Cave B1F — Pokégear radio — Sinnoh Sound<br>Union Cave B2F — Pokégear radio — Sinnoh Sound<br>Victory Road 1F — Pokégear radio — Sinnoh Sound<br>Victory Road 2F — Pokégear radio — Sinnoh Sound<br>Victory Road 3F — Pokégear radio — Sinnoh Sound<br>Viridian Forest — Grass (Night)<br>Whirl Islands 1F — Pokégear radio — Sinnoh Sound<br>Whirl Islands B1F — Pokégear radio — Sinnoh Sound<br>Whirl Islands B2F — Pokégear radio — Sinnoh Sound<br>Whirl Islands B3F — Pokégear radio — Sinnoh Sound |
-| Bruxish | Olivine City — Good Rod<br>Route 20 — Grass (Day)<br>Route 20 — Grass (Night) |
-| Budew | Azalea Town — Grass (Day)<br>Ilex Forest — Pokégear radio — Sinnoh Sound<br>Route 2 (North, above Viridian Forest) — Grass (Night)<br>Route 24 — Grass (Day)<br>Route 30 — Grass (Day)<br>Route 30 — Grass (Morning)<br>Route 30 — Grass (Night)<br>Viridian Forest — Pokégear radio — Sinnoh Sound |
-| Buizel | Blackthorn City — Surf<br>Cherrygrove City — Grass (Day)<br>Cherrygrove City — Grass (Morning)<br>Dark Cave (Route 45 entrance) — Good Rod<br>Ilex Forest — Surf<br>Mt. Moon (Outside Clefairy active) — Good Rod<br>Mt. Silver (Outside) — Pokégear radio — Sinnoh Sound<br>Route 10 — Pokégear radio — Sinnoh Sound<br>Route 12 — Good Rod<br>Route 13 — Good Rod<br>Route 13 — Pokégear radio — Sinnoh Sound<br>Route 21 — Pokégear radio — Sinnoh Sound<br>Route 22 — Pokégear radio — Sinnoh Sound<br>Route 24 — Pokégear radio — Sinnoh Sound<br>Route 25 — Pokégear radio — Sinnoh Sound<br>Route 26 — Pokégear radio — Sinnoh Sound<br>Route 27 — Pokégear radio — Sinnoh Sound<br>Route 28 — Good Rod<br>Route 28 — Pokégear radio — Sinnoh Sound<br>Route 30 — Pokégear radio — Sinnoh Sound<br>Route 31 — Pokégear radio — Sinnoh Sound<br>Route 32 — Pokégear radio — Sinnoh Sound<br>Route 34 — Pokégear radio — Sinnoh Sound<br>Route 34 — Super Rod<br>Route 35 — Pokégear radio — Sinnoh Sound<br>Route 4 — Pokégear radio — Sinnoh Sound<br>Route 40 — Grass (Day)<br>Route 40 — Grass (Morning)<br>Route 40 — Surf<br>Route 41 — Grass (Day)<br>Route 42 — Pokégear radio — Sinnoh Sound<br>Route 42 — Surf<br>Route 43 — Good Rod<br>Route 43 — Pokégear radio — Sinnoh Sound<br>Route 44 — Pokégear radio — Sinnoh Sound<br>Route 45 — Pokégear radio — Sinnoh Sound<br>Route 47 — Pokégear radio — Sinnoh Sound<br>Route 6 — Pokégear radio — Sinnoh Sound<br>Route 9 — Pokégear radio — Sinnoh Sound<br>Ruins of Alph (Outside) — Pokégear radio — Sinnoh Sound<br>Slowpoke Well 1F — Good Rod<br>Slowpoke Well 1F — Super Rod<br>Tohjo Falls — Good Rod<br>Vermilion City — Good Rod |
-| Bulbasaur | Route 29 — Grass (Day)<br>Route 29 — Grass (Morning)<br>Route 29 — Grass (Night) |
-| Buneary | Route 25 — Grass swarm<br>Route 30 — Grass (Morning)<br>Route 4 — Grass (Night)<br>Route 8 — Grass (Morning) |
-| Bunnelby | Pallet Town — Grass (Day)<br>Route 25 — Grass (Morning)<br>Route 37 — Grass (Day)<br>Route 37 — Grass (Morning)<br>Route 37 — Grass (Night) |
-| Burmy | Azalea Town — Grass (Night)<br>Route 2 (North, above Viridian Forest) — Grass (Night)<br>Route 22 — Grass (Night)<br>Route 24 — Grass (Night)<br>Route 33 — Grass (Day)<br>Route 33 — Grass (Night) |
-| Butterfree | National Park (Bug Catching Contest) — Grass (Morning)<br>Route 10 — Grass (Morning)<br>Route 21 — Grass (Morning)<br>Route 25 — Grass (Morning)<br>Route 27 — Grass (Day)<br>Route 38 — Grass (Day)<br>Route 42 — Grass (Morning) |
-| Cacnea | Route 16 — Grass (Day)<br>Route 24 — Grass (Morning)<br>Route 25 — Grass (Night)<br>Route 30 — Grass (Night)<br>Route 4 — Grass (Night)<br>Route 46 — Grass (Morning)<br>Route 8 — Grass (Day) |
-| Cacturne | Route 27 — Grass (Night) |
-| Camerupt | Seafoam Islands B2F — Grass (Morning) |
-| Capsakid | Cinnabar Island — Grass (Day)<br>Cinnabar Island — Grass (Morning)<br>Cinnabar Island — Grass (Night)<br>Route 18 — Grass (Morning)<br>Route 22 — Grass (Night)<br>Route 4 — Grass (Day)<br>Route 45 — Grass (Day)<br>Route 45 — Grass (Morning)<br>Route 45 — Grass (Night)<br>Route 9 — Grass (Morning) |
-| Carbink | Whirl Islands B3F — Grass (Day) |
-| Carkol | Bell Tower 2F — Grass (Morning)<br>Bell Tower 6F — Grass (Morning)<br>Bell Tower 8F — Grass (Morning)<br>Bell Tower 9F — Grass (Morning)<br>Cerulean Cave B2F — Grass (Day)<br>Slowpoke Well B2F — Grass (Day)<br>Slowpoke Well B2F — Grass (Morning)<br>Tohjo Falls — Grass (Night)<br>Union Cave B2F — Grass (Day)<br>Union Cave B2F — Grass (Morning)<br>Victory Road 3F — Grass (Day)<br>Whirl Islands B1F — Grass (Day) |
-| Carnivine | Ilex Forest — Pokégear radio — Sinnoh Sound<br>Route 48 — Grass (Night)<br>Viridian Forest — Pokégear radio — Sinnoh Sound |
-| Carracosta | Cerulean Cave 1F — Surf |
-| Carvanha | Cerulean City — Old Rod<br>Cianwood City — Surf<br>Ecruteak City — Good Rod<br>Ecruteak City — Old Rod<br>Ecruteak City — Surf<br>Olivine City — Good Rod<br>Olivine City — Old Rod<br>Olivine City — Surf<br>Route 10 — Old Rod<br>Route 24 — Old Rod<br>Route 27 — Good Rod<br>Route 31 — Surf<br>Route 41 — Surf<br>Ruins of Alph (Outside) — Old Rod<br>Violet City — Old Rod<br>Violet City — Surf |
-| Cascoon | Azalea Town — Grass (Morning)<br>Azalea Town — Grass (Night)<br>National Park (Bug Catching Contest) — Grass (Day)<br>Route 2 (South, below Viridian Forest) — Grass (Night)<br>Route 22 — Grass (Morning)<br>Route 3 — Grass (Day) |
-| Castform | Route 14 — Grass (Night)<br>Route 15 — Grass (Day)<br>Route 30 — Grass (Morning) |
-| Caterpie | Ilex Forest — Grass swarm<br>National Park (Bug Catching Contest) — Grass (Night)<br>National Park (Bug Catching Contest) — Grass swarm<br>National Park (Bug Catching Contest) — Pokégear radio — Hoenn Sound<br>National Park (Bug Catching Contest) — Pokégear radio — Sinnoh Sound<br>National Park — Grass swarm<br>Route 1 — Grass (Night)<br>Route 2 (North, above Viridian Forest) — Grass (Day)<br>Route 2 (North, above Viridian Forest) — Grass swarm<br>Route 2 (South, below Viridian Forest) — Grass swarm<br>Route 22 — Grass (Morning)<br>Route 29 — Grass (Day)<br>Viridian City — Grass (Day)<br>Viridian City — Grass (Morning) |
-| Celebi | Ilex Forest shrine — one-time static encounter (Lv. 30) |
-| Centiskorch | Route 21 — Grass (Morning) |
-| Ceruledge | Seafoam Islands B1F — Grass (Night) |
-| Cetitan | Route 45 — Grass (Day) |
-| Cetoddle | Route 10 — Grass (Day)<br>Route 10 — Grass (Morning)<br>Route 10 — Grass (Night)<br>Route 11 — Grass (Day)<br>Route 11 — Grass (Morning)<br>Route 11 — Grass (Night)<br>Route 15 — Grass (Day)<br>Route 15 — Grass (Morning) |
-| Chandelure | Seafoam Islands B2F — Grass (Night) |
-| Chansey | Fuchsia City — Grass (Day)<br>Fuchsia City — Grass (Morning)<br>Fuchsia City — Grass (Night)<br>Route 13 — Grass swarm<br>Route 15 — Grass (Night)<br>Route 38 — Grass (Morning)<br>Route 5 — Grass (Day)<br>Route 8 — Grass (Day) |
-| Charcadet | Cinnabar Island — Grass (Day)<br>Cinnabar Island — Grass (Morning)<br>Cinnabar Island — Grass (Night)<br>Route 18 — Grass (Night)<br>Route 34 — Grass (Night)<br>Route 4 — Grass (Day)<br>Route 46 — Grass (Day) |
-| Charjabug | Route 13 — Grass (Morning)<br>Route 16 — Grass (Day)<br>Route 17 — Grass (Morning)<br>Route 28 — Grass (Morning) |
-| Charmander | Union Cave 1F — Grass (Day)<br>Union Cave 1F — Grass (Morning)<br>Union Cave 1F — Grass (Night) |
-| Chatot | Bell Tower 10F — Pokégear radio — Sinnoh Sound<br>Bell Tower 2F — Pokégear radio — Sinnoh Sound<br>Bell Tower 3F — Pokégear radio — Sinnoh Sound<br>Bell Tower 4F — Pokégear radio — Sinnoh Sound<br>Bell Tower 5F — Pokégear radio — Sinnoh Sound<br>Bell Tower 6F — Pokégear radio — Sinnoh Sound<br>Bell Tower 7F — Pokégear radio — Sinnoh Sound<br>Bell Tower 8F — Pokégear radio — Sinnoh Sound<br>Bell Tower 9F — Pokégear radio — Sinnoh Sound<br>Burned Tower 1F — Pokégear radio — Sinnoh Sound<br>Burned Tower B1F — Pokégear radio — Sinnoh Sound<br>Route 11 — Grass (Morning)<br>Route 30 — Grass (Morning)<br>Route 6 — Grass (Morning)<br>Sprout Tower 2F — Pokégear radio — Sinnoh Sound<br>Sprout Tower 3F — Pokégear radio — Sinnoh Sound<br>Violet City — Grass (Morning) |
-| Cherrim | Route 21 — Grass (Day)<br>Route 21 — Grass (Night) |
-| Cherubi | Azalea Town — Grass (Day)<br>Route 2 (South, below Viridian Forest) — Grass (Day)<br>Route 22 — Grass (Day)<br>Route 24 — Grass (Morning)<br>Route 31 — Grass (Day) |
-| Chespin | Route 18 — Grass (Day)<br>Route 18 — Grass (Morning)<br>Route 18 — Grass (Night) |
-| Chewtle | Cerulean Cave 1F — Old Rod<br>Cherrygrove City — Grass (Day)<br>Cianwood City — Surf<br>Ecruteak City — Old Rod<br>Ecruteak City — Surf<br>Fuchsia City — Old Rod<br>Ilex Forest — Surf<br>Lake of Rage — Grass (Day)<br>Lake of Rage — Grass (Morning)<br>Lake of Rage — Old Rod<br>Mt. Mortar B1F — Surf<br>Route 20 — Old Rod<br>Route 21 — Good Rod<br>Route 35 — Old Rod<br>Route 45 — Surf<br>Route 47 — Old Rod<br>Route 6 — Surf<br>Seafoam Islands B4F — Old Rod<br>Viridian City — Surf |
-| Chikorita | Route 2 (South, below Viridian Forest) — Grass (Day)<br>Route 2 (South, below Viridian Forest) — Grass (Morning)<br>Route 2 (South, below Viridian Forest) — Grass (Night) |
-| Chimchar | Bell Tower 10F — Grass (Day)<br>Bell Tower 10F — Grass (Morning)<br>Bell Tower 10F — Grass (Night) |
-| Chimecho | Bell Tower 8F — Grass (Morning) |
-| Chinchou | Blackthorn City — Super Rod<br>Cerulean City — Old Rod<br>Cherrygrove City — Grass (Night)<br>Lake of Rage — Good Rod<br>Lake of Rage — Grass (Night)<br>Mt. Silver (Top, snowy area) — Good Rod<br>Route 10 — Old Rod<br>Route 24 — Old Rod<br>Route 27 — Old Rod<br>Route 31 — Old Rod<br>Route 32 — Old Rod<br>Route 35 — Good Rod<br>Route 35 — Super Rod<br>Route 40 — Grass (Night)<br>Route 40 — Old Rod<br>Route 41 — Grass (Morning)<br>Route 41 — Grass (Night)<br>Route 41 — Super Rod<br>Route 42 — Super Rod<br>Route 47 — Good Rod<br>Slowpoke Well B2F — Good Rod |
-| Chingling | Bell Tower 10F — Grass (Day)<br>Cerulean Cave 1F — Pokégear radio — Sinnoh Sound<br>Cerulean Cave B1F — Pokégear radio — Sinnoh Sound<br>Cerulean Cave B2F — Pokégear radio — Sinnoh Sound<br>Cliff Cave — Grass (Day)<br>Cliff Cave — Grass (Night)<br>Cliff Cave — Pokégear radio — Sinnoh Sound<br>Dark Cave (Route 31 entrance) — Pokégear radio — Sinnoh Sound<br>Dark Cave (Route 45 entrance) — Pokégear radio — Sinnoh Sound<br>Digletts Cave — Grass (Day)<br>Digletts Cave — Pokégear radio — Sinnoh Sound<br>Ice Path 1F — Pokégear radio — Sinnoh Sound<br>Ice Path B1F — Pokégear radio — Sinnoh Sound<br>Ice Path B2F — Pokégear radio — Sinnoh Sound<br>Ice Path B3F — Pokégear radio — Sinnoh Sound<br>Mt. Moon 1F — Grass (Day)<br>Mt. Moon 1F — Pokégear radio — Sinnoh Sound<br>Mt. Moon 2F — Grass (Morning)<br>Mt. Moon 2F — Pokégear radio — Sinnoh Sound<br>Mt. Mortar (Central room) — Pokégear radio — Sinnoh Sound<br>Mt. Mortar (Room above waterfall) — Pokégear radio — Sinnoh Sound<br>Mt. Mortar (Waterfall room) — Pokégear radio — Sinnoh Sound<br>Mt. Mortar B1F — Pokégear radio — Sinnoh Sound<br>Mt. Silver (Expert Belt room) — Pokégear radio — Sinnoh Sound<br>Mt. Silver (Moltres room) — Grass (Night)<br>Mt. Silver (Moltres room) — Pokégear radio — Sinnoh Sound<br>Mt. Silver (Mountainside) — Pokégear radio — Sinnoh Sound<br>Mt. Silver (Top, snowy area) — Grass (Day)<br>Mt. Silver (Top, snowy area) — Pokégear radio — Sinnoh Sound<br>Mt. Silver 1F — Pokégear radio — Sinnoh Sound<br>Mt. Silver 3F — Pokégear radio — Sinnoh Sound<br>Mt. Silver 4F — Pokégear radio — Sinnoh Sound<br>National Park — Grass (Morning)<br>Rock Tunnel 1F — Pokégear radio — Sinnoh Sound<br>Rock Tunnel B1F — Pokégear radio — Sinnoh Sound<br>Seafoam Islands 1F — Pokégear radio — Sinnoh Sound<br>Seafoam Islands B1F — Pokégear radio — Sinnoh Sound<br>Seafoam Islands B2F — Pokégear radio — Sinnoh Sound<br>Seafoam Islands B3F — Pokégear radio — Sinnoh Sound<br>Seafoam Islands B4F — Pokégear radio — Sinnoh Sound<br>Slowpoke Well 1F — Pokégear radio — Sinnoh Sound<br>Slowpoke Well B2F — Pokégear radio — Sinnoh Sound<br>Sprout Tower 2F — Grass (Day)<br>Sprout Tower 2F — Grass (Morning)<br>Sprout Tower 2F — Grass (Night)<br>Tohjo Falls — Pokégear radio — Sinnoh Sound<br>Union Cave 1F — Pokégear radio — Sinnoh Sound<br>Union Cave B1F — Pokégear radio — Sinnoh Sound<br>Union Cave B2F — Pokégear radio — Sinnoh Sound<br>Victory Road 1F — Pokégear radio — Sinnoh Sound<br>Victory Road 2F — Pokégear radio — Sinnoh Sound<br>Victory Road 3F — Pokégear radio — Sinnoh Sound<br>Whirl Islands 1F — Pokégear radio — Sinnoh Sound<br>Whirl Islands B1F — Pokégear radio — Sinnoh Sound<br>Whirl Islands B2F — Pokégear radio — Sinnoh Sound<br>Whirl Islands B3F — Pokégear radio — Sinnoh Sound |
-| Cinccino | Route 15 — Grass (Morning) |
-| Clamperl | Mt. Moon (Outside Clefairy active) — Good Rod<br>Olivine City — Super Rod<br>Route 12 — Good Rod<br>Route 13 — Good Rod<br>Route 19 — Surf swarm<br>Route 25 — Good Rod<br>Route 28 — Good Rod<br>Route 34 — Good Rod<br>Route 40 — Old Rod<br>Route 40 — Surf<br>Route 45 — Good Rod<br>Route 45 — Super Rod<br>Slowpoke Well 1F — Good Rod<br>Union Cave B2F — Surf<br>Vermilion City — Good Rod<br>Whirl Islands 1F — Old Rod<br>Whirl Islands B2F — Good Rod |
-| Clauncher | Cerulean Cave B2F — Old Rod<br>Cerulean City — Surf<br>Dragons Den — Old Rod<br>Dragons Den — Surf<br>Mt. Silver (Outside) — Old Rod<br>Route 10 — Surf<br>Route 25 — Surf<br>Route 28 — Surf<br>Route 4 — Surf<br>Route 40 — Grass (Day)<br>Route 40 — Grass (Morning)<br>Route 40 — Grass (Night)<br>Route 41 — Grass (Day)<br>Route 41 — Grass (Morning)<br>Route 41 — Grass (Night)<br>Route 41 — Surf<br>Ruins of Alph (Outside) — Super Rod<br>Ruins of Alph (Outside) — Surf<br>Slowpoke Well 1F — Super Rod<br>Union Cave B1F — Surf<br>Violet City — Surf<br>Whirl Islands 1F — Good Rod<br>Whirl Islands 1F — Super Rod |
-| Clawitzer | Route 4 — Super Rod |
-| Claydol | Seafoam Islands B3F — Grass (Night) |
-| Clefable | Route 14 — Grass (Morning) |
-| Clefairy | Route 18 — Grass (Day)<br>Route 31 — Grass (Morning) |
-| Cleffa | Route 25 — Grass (Day)<br>Route 29 — Grass (Day)<br>Route 4 — Grass (Night) |
-| Clobbopus | Bell Tower 2F — Grass (Day)<br>Bell Tower 2F — Grass (Morning)<br>Bell Tower 2F — Grass (Night)<br>Cerulean Cave B1F — Super Rod<br>Cliff Edge Gate — Good Rod<br>Cliff Edge Gate — Old Rod<br>Mt. Silver (Outside) — Old Rod<br>Mt. Silver (Outside) — Surf<br>Mt. Silver 4F — Old Rod<br>Route 19 — Grass (Day)<br>Route 19 — Grass (Morning)<br>Route 19 — Grass (Night)<br>Route 22 — Old Rod<br>Route 26 — Old Rod<br>Route 9 — Surf<br>Safari Zone (Placeholder, not used) — Old Rod<br>Safari Zone (Placeholder, not used) — Super Rod<br>Seafoam Islands B4F — Good Rod<br>Viridian City — Old Rod |
-| Clodsire | Cerulean Cave B2F — Good Rod<br>Cliff Cave — Grass (Morning)<br>Dark Cave (Route 45 entrance) — Grass (Day)<br>Dark Cave (Route 45 entrance) — Grass (Night)<br>Fuchsia City — Super Rod<br>Mt. Silver (Top, snowy area) — Good Rod<br>Pallet Town — Good Rod<br>Route 12 — Super Rod<br>Route 19 — Good Rod<br>Route 20 — Good Rod<br>Route 22 — Good Rod<br>Route 26 — Super Rod<br>Route 26 — Surf<br>Route 6 — Super Rod<br>Ruins of Alph (Outside) — Grass (Day)<br>Ruins of Alph (Outside) — Grass (Morning)<br>Vermilion City — Surf<br>Viridian City — Super Rod |
-| Cloyster | Mt. Mortar (Room above waterfall) — Surf<br>Route 20 — Grass (Morning)<br>Route 20 — Grass (Night) |
-| Coalossal | Victory Road 3F — Grass (Day) |
-| Cofagrigus | Seafoam Islands B3F — Grass (Night) |
-| Combee | Celadon City — Grass (Morning)<br>National Park (Bug Catching Contest) — Grass (Morning)<br>Route 1 — Grass (Morning)<br>Route 10 — Grass (Day)<br>Route 2 (South, below Viridian Forest) — Grass (Day)<br>Route 2 (South, below Viridian Forest) — Grass (Morning)<br>Route 22 — Grass (Day)<br>Route 22 — Grass (Morning)<br>Route 29 — Grass (Morning)<br>Route 4 — Grass (Morning)<br>Route 8 — Grass (Morning)<br>Violet City — Grass (Day)<br>Violet City — Grass (Morning) |
-| Comfey | Route 45 — Grass (Night) |
-| Conkeldurr | Victory Road 3F — Grass (Day) |
-| Copperajah | Victory Road 3F — Grass (Night) |
-| Corphish | Cerulean Cave B2F — Old Rod<br>Cerulean City — Surf<br>Dark Cave (Route 31 entrance) — Surf<br>Dragons Den — Old Rod<br>Dragons Den — Surf<br>Mt. Mortar (Room above waterfall) — Super Rod<br>Mt. Mortar (Waterfall room) — Super Rod<br>Route 13 — Surf<br>Route 25 — Surf<br>Route 28 — Old Rod<br>Route 42 — Surf<br>Ruins of Alph (Outside) — Good Rod<br>Ruins of Alph (Outside) — Old Rod<br>Slowpoke Well B2F — Old Rod<br>Union Cave 1F — Surf<br>Union Cave B1F — Surf<br>Whirl Islands B2F — Old Rod |
-| Corsola | Cerulean Cave B2F — Good Rod<br>Cerulean City — Super Rod<br>Cherrygrove City — Super Rod<br>Cherrygrove City — Surf<br>Mt. Moon (Outside Clefairy active) — Old Rod<br>Mt. Silver (Outside) — Good Rod<br>Mt. Silver (Top, snowy area) — Super Rod<br>Mt. Silver 1F — Surf<br>Route 10 — Surf<br>Route 25 — Good Rod<br>Route 27 — Surf<br>Route 31 — Old Rod<br>Route 34 — Good Rod<br>Route 34 — Super Rod<br>Ruins of Alph (Outside) — Old Rod<br>Union Cave B2F — Good Rod<br>Union Cave B2F — Super Rod<br>Violet City — Good Rod<br>Violet City — Old Rod<br>Violet City — Surf |
-| Corsola Galarian | Cinnabar Island — Super Rod<br>Dark Cave (Route 31 entrance) — Super Rod<br>Dragons Den — Super Rod<br>Mt. Moon (Outside area) — Surf<br>Mt. Mortar (Waterfall room) — Super Rod<br>Mt. Mortar (Waterfall room) — Surf<br>Mt. Silver (Moltres room) — Surf<br>Mt. Silver 4F — Good Rod<br>Pallet Town — Surf<br>Route 22 — Old Rod<br>Route 42 — Surf<br>Route 6 — Good Rod<br>Slowpoke Well B2F — Super Rod<br>Tohjo Falls — Good Rod<br>Union Cave B1F — Good Rod<br>Union Cave B1F — Surf<br>Whirl Islands 1F — Surf |
-| Corviknight | Seafoam Islands B4F — Grass (Day) |
-| Corvisquire | Route 18 — Grass (Morning)<br>Route 27 — Grass (Day)<br>Route 27 — Grass (Night)<br>Route 7 — Grass (Day) |
-| Cottonee | Route 38 — Grass (Day)<br>Route 38 — Grass (Night) |
-| Crabominable | Tohjo Falls — Surf |
-| Crabrawler | Cerulean Cave 1F — Super Rod<br>Cianwood City — Grass (Day)<br>Cianwood City — Grass (Morning)<br>Cliff Edge Gate — Good Rod<br>Dark Cave (Route 31 entrance) — Old Rod<br>Dark Cave (Route 45 entrance) — Old Rod<br>Dragons Den — Old Rod<br>Mt. Moon (Outside Clefairy active) — Good Rod<br>Mt. Mortar (Room above waterfall) — Good Rod<br>Mt. Mortar (Waterfall room) — Good Rod<br>Mt. Silver 3F — Good Rod<br>Route 19 — Grass (Day)<br>Route 19 — Grass (Morning)<br>Route 22 — Old Rod<br>Route 26 — Old Rod<br>Route 42 — Good Rod<br>Route 9 — Surf<br>Viridian City — Old Rod<br>Whirl Islands B2F — Old Rod<br>Whirl Islands B2F — Surf |
-| Cradily | Whirl Islands 1F — Super Rod |
-| Cramorant | Route 19 — Grass (Morning)<br>Route 20 — Grass (Morning)<br>Route 40 — Grass (Day)<br>Route 41 — Grass (Morning)<br>Vermilion City — Super Rod |
-| Cranidos | Bell Tower 6F — Grass (Morning)<br>Bell Tower 8F — Grass (Day)<br>Bell Tower 8F — Grass (Morning)<br>Bell Tower 9F — Grass (Morning)<br>Rock Tunnel 1F — Grass (Day)<br>Rock Tunnel B1F — Grass (Day)<br>Route 10 (Cave Ground) — Grass (Day)<br>Ruins of Alph (Inside, Ladder Room) — Grass (Night)<br>Ruins of Alph (Inside, Main Room) — Grass (Day)<br>Ruins of Alph (Inside, Main Room) — Grass (Night)<br>Slowpoke Well 1F — Grass (Day)<br>Union Cave 1F — Grass (Day)<br>Whirl Islands B3F — Grass (Morning) |
-| Crawdaunt | Mt. Moon (Outside area) — Surf<br>Mt. Silver 1F — Surf |
-| Croagunk | Bell Tower 10F — Grass (Day)<br>Cianwood City — Grass (Morning)<br>Cianwood City — Grass (Night)<br>Cliff Cave — Grass (Day)<br>Cliff Cave — Grass (Morning)<br>Digletts Cave — Grass (Day)<br>Mt. Moon 1F — Grass (Day)<br>Mt. Moon 2F — Grass (Day)<br>Mt. Moon 2F — Grass (Morning)<br>Mt. Silver (Mountainside) — Grass (Morning)<br>Mt. Silver 4F — Grass (Day)<br>Route 12 — Grass (Morning)<br>Route 12 — Grass (Night)<br>Route 30 — Grass (Day)<br>Whirl Islands 1F — Grass (Morning)<br>Whirl Islands B2F — Grass (Morning) |
-| Crobat | Route 45 — Grass (Morning) |
-| Crustle | Seafoam Islands B3F — Grass (Morning) |
-| Cryogonal | Seafoam Islands 1F — Grass (Day) |
-| Cubchoo | Route 9 — Grass (Day)<br>Route 9 — Grass (Morning)<br>Route 9 — Grass (Night) |
-| Cubone | Bell Tower 4F — Grass (Day)<br>Bell Tower 4F — Grass (Morning)<br>Bell Tower 4F — Grass (Night)<br>Blackthorn City — Grass (Day)<br>Blackthorn City — Grass (Morning)<br>Blackthorn City — Grass (Night)<br>Mt. Moon 2F — Grass (Day)<br>Rock Tunnel 1F — Grass (Morning)<br>Rock Tunnel 1F — Grass swarm<br>Rock Tunnel B1F — Grass swarm<br>Route 10 (Cave Ground) — Grass (Night)<br>Ruins of Alph (Inside, Ladder Room) — Grass (Day)<br>Ruins of Alph (Inside, Ladder Room) — Grass (Night)<br>Ruins of Alph (Inside, Main Room) — Grass (Morning)<br>Ruins of Alph (Inside, Main Room) — Grass (Night)<br>Slowpoke Well 1F — Grass (Day)<br>Whirl Islands B3F — Grass (Morning) |
-| Cufant | Bell Tower 10F — Grass (Morning)<br>Bell Tower 5F — Grass (Morning)<br>Bell Tower 5F — Grass (Night)<br>Bell Tower 6F — Grass (Day)<br>Bell Tower 7F — Grass (Day)<br>Bell Tower 7F — Grass (Morning)<br>Bell Tower 7F — Grass (Night)<br>Mt. Mortar (Central room) — Grass (Morning)<br>Mt. Mortar (Waterfall room) — Grass (Day)<br>Mt. Mortar (Waterfall room) — Grass (Morning)<br>Rock Tunnel 1F — Grass (Day)<br>Route 10 (Cave Ground) — Grass (Night)<br>Union Cave 1F — Grass (Day)<br>Whirl Islands B1F — Grass (Night) |
-| Cursola | Cerulean Cave 1F — Surf |
-| Cutiefly | Route 24 — Grass (Morning)<br>Route 30 — Grass (Morning) |
-| Cyclizar | Route 13 — Grass (Day) |
-| Cyndaquil | Mt. Silver 3F — Grass (Day)<br>Mt. Silver 3F — Grass (Morning)<br>Mt. Silver 3F — Grass (Night) |
-| Dachsbun | Seafoam Islands 1F — Grass (Morning) |
-| Darmanitan | Route 21 — Grass (Morning) |
-| Darmanitan Galarian | Route 13 — Grass (Morning) |
-| Darumaka | Route 16 (New Grass) — Grass (Day)<br>Route 17 — Grass (Morning)<br>Route 31 — Grass (Night) |
-| Darumaka Galarian | Route 14 — Grass (Day)<br>Route 14 — Grass (Morning)<br>Route 14 — Grass (Night)<br>Route 9 — Grass (Day)<br>Route 9 — Grass (Morning)<br>Route 9 — Grass (Night) |
-| Decidueye Hisuian | Route 47 — Grass (Morning) |
-| Dedenne | Route 13 — Grass (Night)<br>Route 16 — Grass (Night)<br>Route 42 — Grass (Day) |
-| Deerling | Azalea Town — Grass (Day)<br>Azalea Town — Grass (Morning)<br>Route 16 — Grass (Day)<br>Route 2 (South, below Viridian Forest) — Grass (Night)<br>Route 5 — Grass (Day)<br>Route 9 — Grass (Morning) |
-| Deino | Dragons Den — Grass (Night)<br>Victory Road 1F — Grass (Day)<br>Victory Road 1F — Grass (Morning)<br>Victory Road 1F — Grass (Night) |
-| Delcatty | Route 46 — Grass (Day)<br>Route 46 — Grass (Morning)<br>Route 46 — Grass (Night) |
-| Delibird | Blackthorn City — Super Rod<br>Cerulean Cave B1F — Good Rod<br>Lake of Rage — Surf<br>Mt. Silver 4F — Good Rod<br>Olivine City — Surf<br>Pallet Town — Good Rod<br>Route 11 — Grass (Morning)<br>Route 22 — Good Rod<br>Route 26 — Surf<br>Route 32 — Grass (Day)<br>Route 41 — Super Rod<br>Route 42 — Super Rod<br>Route 47 — Good Rod<br>Route 47 — Super Rod<br>Route 6 — Super Rod<br>Safari Zone (Placeholder, not used) — Good Rod<br>Seafoam Islands B4F — Super Rod |
-| Dewgong | Route 9 — Super Rod<br>Seafoam Islands B3F — Grass swarm |
-| Dewpider | Blackthorn City — Good Rod<br>Cerulean Cave 1F — Good Rod<br>Cerulean City — Grass (Day)<br>Cerulean City — Grass (Morning)<br>Cerulean City — Grass (Night)<br>Cherrygrove City — Grass (Day)<br>Cherrygrove City — Grass (Morning)<br>Cherrygrove City — Grass (Night)<br>Dark Cave (Route 45 entrance) — Old Rod<br>Lake of Rage — Grass (Day)<br>Lake of Rage — Grass (Morning)<br>Lake of Rage — Grass (Night)<br>Mt. Moon (Outside Clefairy active) — Old Rod<br>Mt. Mortar (Room above waterfall) — Surf<br>Mt. Silver 3F — Good Rod<br>Route 19 — Grass (Day)<br>Route 19 — Grass (Night)<br>Route 21 — Good Rod<br>Route 30 — Grass (Night)<br>Route 32 — Grass (Day)<br>Route 32 — Grass (Morning)<br>Route 32 — Grass (Night)<br>Route 35 — Surf<br>Route 40 — Grass (Day)<br>Route 40 — Grass (Morning)<br>Route 43 — Surf<br>Route 6 — Old Rod |
-| Dhelmise | Olivine City — Grass (Day)<br>Olivine City — Grass (Morning)<br>Olivine City — Grass (Night)<br>Route 19 — Grass (Day)<br>Route 19 — Grass (Morning)<br>Route 19 — Grass (Night)<br>Seafoam Islands 1F — Grass (Night) |
-| Diancie | Sinjoh Ruins — one-time static encounter (Lv. 50) |
-| Diggersby | Cerulean Cave B2F — Grass (Day)<br>Dark Cave (Route 45 entrance) — Grass (Day)<br>Dark Cave (Route 45 entrance) — Grass (Morning)<br>Ruins of Alph (Outside) — Grass (Morning)<br>Tohjo Falls — Grass (Day)<br>Tohjo Falls — Grass (Morning)<br>Tohjo Falls — Grass (Night)<br>Victory Road 1F — Grass (Day) |
-| Diglett | Bell Tower 2F — Grass (Day)<br>Bell Tower 2F — Grass (Morning)<br>Bell Tower 2F — Grass (Night)<br>Bell Tower 4F — Grass (Day)<br>Bell Tower 4F — Grass (Morning)<br>Bell Tower 4F — Grass (Night)<br>Dark Cave (Route 31 entrance) — Grass (Day)<br>Digletts Cave — Grass swarm<br>Mt. Mortar (Central room) — Grass (Day)<br>Mt. Mortar (Waterfall room) — Grass (Night)<br>Tohjo Falls — Grass (Day)<br>Tohjo Falls — Grass (Morning)<br>Tohjo Falls — Grass (Night)<br>Viridian Forest — Grass (Day)<br>Whirl Islands B2F — Grass (Night) |
-| Diglett Alolan | Bell Tower 9F — Grass (Night)<br>Mt. Moon 2F — Grass (Night)<br>Mt. Mortar (Waterfall room) — Grass (Morning)<br>Mt. Mortar (Waterfall room) — Grass (Night)<br>Route 10 (Cave Ground) — Grass (Day)<br>Ruins of Alph (Inside, Main Room) — Grass (Day)<br>Ruins of Alph (Outside) — Grass (Morning)<br>Ruins of Alph (Outside) — Grass (Night)<br>Slowpoke Well 1F — Grass (Night)<br>Union Cave 1F — Grass (Night)<br>Whirl Islands B1F — Grass (Night)<br>Whirl Islands B2F — Grass (Morning) |
-| Dipplin | Route 11 — Grass (Morning)<br>Route 21 — Grass (Night)<br>Route 24 — Grass (Morning)<br>Route 26 — Grass (Day)<br>Route 42 — Grass (Day)<br>Route 43 — Grass (Day)<br>Route 48 — Grass (Night)<br>Route 8 — Grass (Morning)<br>Safari Zone (Placeholder, not used) — Grass (Morning) |
-| Ditto | Route 25 — Grass (Day)<br>Route 30 — Grass (Night)<br>Route 47 — Grass swarm<br>Route 6 — Grass (Day) |
-| Dodrio | Route 17 — Grass (Day) |
-| Doduo | Fuchsia City — Grass (Day)<br>Fuchsia City — Grass (Morning)<br>Route 18 — Grass (Morning)<br>Route 26 — Grass swarm<br>Route 27 — Grass swarm<br>Route 30 — Grass (Morning)<br>Route 35 — Grass (Day) |
-| Dolliv | Route 16 — Grass (Day)<br>Route 16 — Grass (Morning)<br>Route 17 — Grass (Night)<br>Route 21 — Grass (Morning)<br>Safari Zone (Placeholder, not used) — Grass (Day) |
-| Dondozo | Route 44 — Surf |
-| Donphan | Whirl Islands B3F — Grass (Morning) |
-| Dottler | National Park (Bug Catching Contest) — Grass (Night)<br>Route 17 — Grass (Night)<br>Route 2 (North, above Viridian Forest) — Grass (Night)<br>Route 2 (South, below Viridian Forest) — Grass (Day)<br>Route 39 — Grass (Day)<br>Route 39 — Grass (Morning)<br>Route 39 — Grass (Night)<br>Route 4 — Grass (Night)<br>Route 43 — Grass (Night)<br>Route 5 — Grass (Night)<br>Route 9 — Grass (Night)<br>Safari Zone (Placeholder, not used) — Grass (Night) |
-| Doublade | Cerulean Cave 1F — Grass (Night)<br>Cerulean Cave B1F — Grass (Night)<br>Cerulean Cave B2F — Grass (Night)<br>Mt. Silver (Moltres room) — Grass (Day)<br>Mt. Silver (Moltres room) — Grass (Morning)<br>Mt. Silver (Moltres room) — Grass (Night)<br>Mt. Silver (Mountainside) — Grass (Night)<br>Mt. Silver (Outside) — Grass (Night)<br>Mt. Silver 1F — Grass (Night)<br>Mt. Silver 3F — Grass (Day)<br>Mt. Silver 3F — Grass (Morning)<br>Mt. Silver 3F — Grass (Night)<br>Mt. Silver 4F — Grass (Night)<br>Seafoam Islands B4F — Grass (Night) |
-| Dracovish | Route 44 — Surf |
-| Dracozolt | Route 48 — Grass (Day) |
-| Dragalge | Mt. Silver (Outside) — Surf |
-| Dragapult | Cerulean Cave B2F — Grass (Day)<br>Cerulean Cave B2F — Grass (Morning)<br>Cerulean Cave B2F — Grass (Night) |
-| Dragonair | Route 45 — Grass (Day)<br>Route 45 — Grass (Morning)<br>Route 45 — Grass (Night)<br>Safari Zone (Placeholder, not used) — Good Rod |
-| Dragonite | Route 28 — Grass (Day)<br>Route 28 — Grass (Morning)<br>Route 28 — Grass (Night) |
-| Drakloak | Mt. Silver (Mountainside) — Grass (Day)<br>Mt. Silver (Mountainside) — Grass (Morning)<br>Mt. Silver (Mountainside) — Grass (Night) |
-| Drampa | Blackthorn City — Grass (Morning)<br>Blackthorn City — Grass (Night)<br>Dragons Den — Grass (Night)<br>Route 48 — Grass (Night) |
-| Drapion | Cerulean Cave 1F — Surf |
-| Dratini | Dragons Den — Good Rod swarm<br>Dragons Den — Grass (Morning)<br>Route 20 — Grass (Day)<br>Route 20 — Grass (Morning)<br>Route 20 — Grass (Night)<br>Route 31 — Grass (Day)<br>Route 31 — Grass (Morning)<br>Route 31 — Grass (Night)<br>Safari Zone (Placeholder, not used) — Old Rod |
-| Drednaw | Route 13 — Surf |
-| Dreepy | Burned Tower 1F — Grass (Day)<br>Burned Tower 1F — Grass (Morning)<br>Burned Tower 1F — Grass (Night)<br>Dragons Den — Grass (Night)<br>Lake of Rage — Grass (Day)<br>Lake of Rage — Grass (Morning)<br>Lake of Rage — Grass (Night) |
-| Drifblim | Route 16 (New Grass) — Grass (Night) |
-| Drifloon | Mt. Mortar (Central room) — Grass (Night)<br>Rock Tunnel B1F — Grass (Day)<br>Route 11 — Grass (Night)<br>Route 37 — Grass (Day)<br>Route 37 — Grass (Morning)<br>Route 37 — Grass (Night)<br>Sprout Tower 2F — Grass (Day)<br>Sprout Tower 2F — Grass (Night)<br>Union Cave B1F — Grass (Night) |
-| Drilbur | Bell Tower 10F — Grass (Day)<br>Bell Tower 9F — Grass (Night)<br>Mt. Moon 2F — Grass (Night)<br>Mt. Mortar (Central room) — Grass (Morning)<br>Mt. Mortar (Waterfall room) — Grass (Day)<br>Route 10 (Cave Ground) — Grass (Night)<br>Ruins of Alph (Inside, Ladder Room) — Grass (Day)<br>Ruins of Alph (Inside, Main Room) — Grass (Morning)<br>Ruins of Alph (Inside, Main Room) — Grass (Night)<br>Union Cave 1F — Grass (Morning)<br>Union Cave B1F — Grass (Morning)<br>Whirl Islands B1F — Grass (Morning) |
-| Drowzee | Bell Tower 10F — Grass (Morning)<br>Bell Tower 3F — Grass (Day)<br>Bell Tower 3F — Grass (Morning)<br>Bell Tower 3F — Grass (Night)<br>Cerulean City — Grass (Night)<br>Cliff Cave — Grass (Night)<br>Digletts Cave — Grass (Morning)<br>Mt. Moon 1F — Grass (Night)<br>Mt. Moon 2F — Grass (Morning)<br>Mt. Silver 1F — Grass (Night)<br>Route 11 — Grass swarm<br>Route 12 — Grass (Morning)<br>Route 12 — Grass (Night) |
-| Druddigon | Bell Tower 4F — Grass (Day)<br>Blackthorn City — Grass (Day)<br>Blackthorn City — Grass (Morning)<br>Blackthorn City — Grass (Night)<br>Dragons Den — Grass (Morning) |
-| Dubwool | Route 44 — Grass (Morning) |
-| Ducklett | Celadon City — Surf<br>Cherrygrove City — Grass (Day)<br>Cherrygrove City — Grass (Morning)<br>Route 1 — Grass (Day)<br>Route 1 — Grass (Morning)<br>Route 19 — Super Rod<br>Route 21 — Surf<br>Route 31 — Super Rod<br>Route 32 — Grass (Day)<br>Route 34 — Old Rod<br>Route 34 — Super Rod<br>Route 34 — Surf<br>Route 35 — Good Rod<br>Route 38 — Grass (Day)<br>Route 38 — Grass (Morning)<br>Route 38 — Grass (Night)<br>Route 4 — Old Rod<br>Route 40 — Grass (Day)<br>Slowpoke Well B2F — Surf<br>Tohjo Falls — Super Rod |
-| Dudunsparce | Route 16 — Grass (Morning) |
-| Dugtrio | Cerulean Cave B1F — Grass (Day)<br>Mt. Mortar (Room above waterfall) — Grass (Day)<br>Mt. Silver (Moltres room) — Grass (Morning)<br>Mt. Silver (Outside) — Grass (Day)<br>Mt. Silver 1F — Grass (Morning)<br>Seafoam Islands 1F — Grass (Day)<br>Seafoam Islands 1F — Grass (Morning)<br>Seafoam Islands B1F — Grass (Day)<br>Seafoam Islands B2F — Grass (Day)<br>Seafoam Islands B3F — Grass (Night)<br>Victory Road 3F — Grass (Morning) |
-| Dugtrio Alolan | Cerulean Cave B2F — Grass (Morning)<br>Mt. Mortar (Room above waterfall) — Grass (Day)<br>Mt. Mortar (Room above waterfall) — Grass (Morning)<br>Mt. Silver 3F — Grass (Morning)<br>Victory Road 1F — Grass (Day)<br>Victory Road 1F — Grass (Morning)<br>Victory Road 2F — Grass (Day)<br>Victory Road 2F — Grass (Morning)<br>Victory Road 2F — Grass (Night)<br>Victory Road 3F — Grass (Morning) |
-| Dunsparce | Dark Cave (Route 31 entrance) — Grass swarm<br>Mahogany Town — Grass (Morning)<br>Route 31 — Grass (Morning)<br>Route 9 — Grass (Morning) |
-| Duosion | Cerulean Cave B1F — Grass (Night)<br>Mt. Silver (Expert Belt room) — Grass (Day)<br>Mt. Silver (Expert Belt room) — Grass (Night)<br>Mt. Silver (Mountainside) — Grass (Day)<br>Mt. Silver (Mountainside) — Grass (Night)<br>Mt. Silver 1F — Grass (Day)<br>Mt. Silver 1F — Grass (Night)<br>Seafoam Islands B1F — Grass (Night)<br>Seafoam Islands B4F — Grass (Day)<br>Seafoam Islands B4F — Grass (Night)<br>Victory Road 3F — Grass (Night) |
-| Duraludon | Blackthorn City — Grass (Day)<br>Blackthorn City — Grass (Night)<br>Dragons Den — Grass (Night)<br>Seafoam Islands B2F — Grass (Morning) |
-| Durant | Seafoam Islands B3F — Grass (Morning) |
-| Dusclops | Cerulean Cave B1F — Grass (Day)<br>Mt. Silver (Moltres room) — Grass (Night)<br>Mt. Silver 1F — Grass (Morning)<br>Mt. Silver 1F — Grass (Night)<br>Mt. Silver 3F — Grass (Day)<br>Mt. Silver 3F — Grass (Morning)<br>Mt. Silver 3F — Grass (Night)<br>Mt. Silver 4F — Grass (Day)<br>Mt. Silver 4F — Grass (Night)<br>Seafoam Islands B4F — Grass (Day)<br>Seafoam Islands B4F — Grass (Night) |
-| Dusknoir | Victory Road 2F — Grass (Night) |
-| Duskull | Bell Tower 6F — Grass (Night)<br>Burned Tower 1F — Grass (Day)<br>Burned Tower B1F — Grass (Day)<br>Burned Tower B1F — Grass (Morning)<br>Burned Tower B1F — Grass (Night)<br>Ecruteak City — Grass (Day)<br>Ecruteak City — Grass (Morning)<br>Ecruteak City — Grass (Night)<br>Rock Tunnel B1F — Grass (Morning)<br>Sprout Tower 2F — Grass (Day)<br>Sprout Tower 2F — Grass (Morning)<br>Sprout Tower 2F — Grass (Night)<br>Sprout Tower 3F — Grass (Night)<br>Union Cave B1F — Grass (Night) |
-| Dustox | Bell Tower 2F — Grass (Night)<br>Bell Tower 4F — Grass (Day)<br>Bell Tower 7F — Grass (Morning)<br>Bell Tower 9F — Grass (Day)<br>Mt. Mortar (Room above waterfall) — Grass (Day)<br>Mt. Mortar (Room above waterfall) — Grass (Morning)<br>Rock Tunnel B1F — Grass (Day)<br>Slowpoke Well B2F — Grass (Day)<br>Slowpoke Well B2F — Grass (Night)<br>Union Cave B2F — Grass (Night)<br>Whirl Islands B1F — Grass (Morning)<br>Whirl Islands B3F — Grass (Morning) |
-| Dwebble | Bell Tower 5F — Grass (Day)<br>Bell Tower 5F — Grass (Morning)<br>Ilex Forest — Grass (Day)<br>Ilex Forest — Grass (Morning)<br>Ilex Forest — Grass (Night)<br>National Park (Bug Catching Contest) — Grass (Night)<br>Rock Tunnel B1F — Grass (Morning)<br>Ruins of Alph (Inside, Ladder Room) — Grass (Day)<br>Ruins of Alph (Inside, Main Room) — Grass (Day)<br>Slowpoke Well 1F — Grass (Morning)<br>Viridian Forest — Grass (Day)<br>Viridian Forest — Grass (Morning) |
-| Eelektrik | Route 28 — Grass (Morning) |
-| Eelektross | Route 45 — Grass (Morning) |
-| Eevee | Route 37 — Grass (Day)<br>Route 37 — Grass (Morning)<br>Route 37 — Grass (Night) |
-| Egg | Route 11 — Grass (Day)<br>Route 36 — Grass (Morning)<br>Route 5 — Grass (Day) |
-| Eiscue | Route 15 — Grass (Day) |
-| Ekans | Route 25 — Grass (Day)<br>Route 25 — Grass (Morning)<br>Route 5 — Grass (Day)<br>Route 5 — Grass (Morning)<br>Route 5 — Grass (Night) |
-| Eldegoss | Route 48 — Grass (Night) |
-| Electabuzz | Route 16 — Grass (Night)<br>Route 17 — Grass (Day)<br>Route 17 — Grass (Morning)<br>Route 18 — Grass (Night) |
-| Electivire | Mt. Silver (Outside) — Grass (Day) |
-| Electrike | Route 37 — Grass (Day)<br>Route 37 — Grass (Morning)<br>Route 37 — Grass (Night) |
-| Electrode | Cerulean Cave B1F — Grass (Day)<br>Cerulean Cave B2F — Grass (Day)<br>Mt. Mortar (Room above waterfall) — Grass (Day)<br>Mt. Silver (Moltres room) — Grass (Day)<br>Mt. Silver (Mountainside) — Grass (Day)<br>Seafoam Islands 1F — Grass (Morning)<br>Seafoam Islands 1F — Grass (Night)<br>Seafoam Islands B1F — Grass (Day)<br>Seafoam Islands B1F — Grass (Morning)<br>Seafoam Islands B2F — Grass (Morning)<br>Seafoam Islands B3F — Grass (Morning)<br>Victory Road 3F — Grass (Day) |
-| Electrode Hisuian | Cerulean Cave B2F — Grass (Morning) |
-| Elekid | Route 16 — Grass (Morning)<br>Route 46 — Grass (Day)<br>Route 47 — Grass (Day)<br>Route 47 — Grass (Morning)<br>Route 47 — Grass (Night)<br>Route 5 — Grass (Day)<br>Route 8 — Grass (Morning)<br>Vermilion City — Grass (Day)<br>Vermilion City — Grass (Morning)<br>Vermilion City — Grass (Night) |
-| Elgyem | Bell Tower 3F — Grass (Day)<br>Bell Tower 3F — Grass (Morning)<br>Bell Tower 3F — Grass (Night)<br>Digletts Cave — Grass (Morning)<br>Mt. Moon 1F — Grass (Morning)<br>Mt. Moon 1F — Grass (Night)<br>Route 42 — Grass (Day)<br>Route 42 — Grass (Morning)<br>Route 42 — Grass (Night) |
-| Emolga | National Park — Grass (Day)<br>National Park — Grass (Morning)<br>National Park — Grass (Night) |
-| Escavalier | Cerulean Cave B1F — Grass (Day) |
-| Espathra | Mt. Silver (Outside) — Grass (Night) |
-| Espurr | Pewter City — Grass (Day)<br>Pewter City — Grass (Morning)<br>Pewter City — Grass (Night)<br>Route 10 — Grass (Night)<br>Route 31 — Grass (Night)<br>Route 8 — Grass (Day)<br>Ruins of Alph (Outside) — Grass (Night) |
-| Excadrill | Seafoam Islands B3F — Grass (Morning) |
-| Exeggcute | Fuchsia City — Grass (Day)<br>Fuchsia City — Grass (Morning)<br>Fuchsia City — Grass (Night)<br>Pewter City — Grass (Day)<br>Pewter City — Grass (Morning)<br>Pewter City — Grass (Night)<br>Route 12 — Grass (Day)<br>Route 21 — Grass (Night)<br>Route 22 — Grass (Night)<br>Route 25 — Grass (Night)<br>Route 9 — Grass (Night) |
-| Exeggutor | Route 26 — Grass (Night) |
-| Exeggutor Alolan | Route 21 — Grass (Morning) |
-| Exploud | Route 28 — Grass (Night) |
-| Falinks | Bell Tower 2F — Grass (Night)<br>Cianwood City — Grass (Day)<br>Cianwood City — Grass (Morning)<br>Cianwood City — Grass (Night) |
-| Farfetch'd | Route 16 (New Grass) — Grass (Morning)<br>Route 38 — Grass (Day)<br>Route 38 — Grass (Morning)<br>Route 38 — Grass (Night) |
-| Farfetch’d | Route 12 — Grass (Day)<br>Route 12 — Grass (Morning) |
-| Farfetch'd Galarian | Route 18 — Grass (Day)<br>Route 31 — Grass (Night)<br>Route 9 — Grass (Day)<br>Route 9 — Grass (Night)<br>Safari Zone (Placeholder, not used) — Grass (Night) |
-| Farigiraf | Route 45 — Grass (Night) |
-| Fearow | Route 13 — Grass (Day)<br>Route 13 — Grass (Morning)<br>Route 17 — Grass swarm<br>Route 44 — Grass (Day)<br>Safari Zone (Placeholder, not used) — Grass (Morning) |
-| Feebas | Cerulean Cave B1F — Old Rod<br>Cinnabar Island — Super Rod<br>Cliff Edge Gate — Good Rod<br>Ecruteak City — Surf<br>Mt. Moon (Outside Clefairy active) — Good Rod<br>Mt. Moon (Outside Clefairy active) — Super Rod<br>Mt. Mortar (Room above waterfall) — Old Rod<br>Mt. Silver 4F — Surf<br>Pallet Town — Good Rod<br>Route 22 — Surf<br>Route 31 — Surf<br>Route 40 — Good Rod<br>Route 40 — Old Rod<br>Route 41 — Super Rod<br>Route 44 — Old Rod<br>Route 45 — Surf<br>Route 6 — Good Rod<br>Safari Zone (Placeholder, not used) — Surf |
-| Fennekin | Bell Tower 6F — Grass (Day)<br>Bell Tower 6F — Grass (Morning)<br>Bell Tower 6F — Grass (Night) |
-| Ferroseed | Ilex Forest — Grass (Day)<br>Ilex Forest — Grass (Night)<br>Rock Tunnel B1F — Grass (Morning)<br>Route 35 — Grass (Day)<br>Route 35 — Grass (Morning)<br>Union Cave 1F — Grass (Day)<br>Union Cave 1F — Grass (Morning)<br>Union Cave 1F — Grass (Night)<br>Viridian Forest — Grass (Morning)<br>Viridian Forest — Grass (Night) |
-| Ferrothorn | Seafoam Islands B4F — Grass (Morning) |
-| Fidough | Bell Tower 5F — Grass (Day)<br>Bell Tower 5F — Grass (Night)<br>Bell Tower 7F — Grass (Morning)<br>Bell Tower 8F — Grass (Morning)<br>Bell Tower 9F — Grass (Morning)<br>Celadon City — Grass (Day)<br>Celadon City — Grass (Morning)<br>Celadon City — Grass (Night)<br>Cliff Cave — Grass (Day)<br>Cliff Cave — Grass (Morning)<br>Cliff Cave — Grass (Night)<br>Mt. Mortar (Central room) — Grass (Morning)<br>Mt. Mortar (Waterfall room) — Grass (Day)<br>Rock Tunnel 1F — Grass (Morning)<br>Whirl Islands 1F — Grass (Morning)<br>Whirl Islands B2F — Grass (Day) |
-| Finizen | Cerulean City — Old Rod<br>Cianwood City — Old Rod<br>Ecruteak City — Old Rod<br>Ilex Forest — Old Rod<br>Lake of Rage — Old Rod<br>Mt. Mortar B1F — Old Rod<br>Mt. Silver (Moltres room) — Old Rod<br>Mt. Silver (Top, snowy area) — Old Rod<br>New Bark Town — Old Rod<br>Route 10 — Old Rod<br>Route 24 — Old Rod<br>Route 27 — Old Rod<br>Route 31 — Old Rod<br>Route 32 — Old Rod<br>Route 40 — Good Rod<br>Route 45 — Old Rod<br>Route 47 — Old Rod |
-| Finneon | Cerulean City — Old Rod<br>Cherrygrove City — Grass (Day)<br>Cherrygrove City — Grass (Morning)<br>Cianwood City — Good Rod<br>Lake of Rage — Good Rod<br>Mt. Moon (Outside area) — Old Rod<br>Mt. Mortar (Room above waterfall) — Super Rod<br>Mt. Silver (Top, snowy area) — Good Rod<br>Route 10 — Old Rod<br>Route 24 — Old Rod<br>Route 27 — Old Rod<br>Route 32 — Old Rod<br>Route 35 — Good Rod<br>Route 35 — Super Rod<br>Route 40 — Grass (Day)<br>Route 40 — Grass (Morning)<br>Route 40 — Surf<br>Route 41 — Grass (Day)<br>Route 41 — Grass (Morning)<br>Route 41 — Grass (Night)<br>Route 45 — Old Rod<br>Slowpoke Well B2F — Super Rod<br>Violet City — Old Rod<br>Whirl Islands 1F — Old Rod |
-| Flaaffy | Mahogany Town — Grass (Night)<br>Route 18 — Grass (Day)<br>Route 42 — Grass (Morning)<br>Route 43 — Grass swarm<br>Route 8 — Grass (Day) |
-| Flabébé | Mahogany Town — Grass (Day)<br>Route 30 — Grass (Morning) |
-| Flamigo | Route 13 — Grass (Morning) |
-| Flapple | Route 21 — Grass (Day) |
-| Fletchinder | Route 17 — Grass (Day)<br>Route 17 — Grass (Morning)<br>Route 18 — Grass (Morning)<br>Route 44 — Grass (Day)<br>Route 44 — Grass (Morning)<br>Route 47 — Grass (Day)<br>Route 47 — Grass (Morning)<br>Route 47 — Grass (Night)<br>Route 7 — Grass (Morning)<br>Route 8 — Grass (Morning) |
-| Fletchling | Mahogany Town — Grass (Day)<br>Pallet Town — Grass (Day)<br>Pallet Town — Grass (Morning)<br>Route 19 — Grass (Day)<br>Route 31 — Grass (Day)<br>Violet City — Grass (Day)<br>Violet City — Grass (Morning) |
-| Flittle | Pewter City — Grass (Day)<br>Pewter City — Grass (Morning)<br>Pewter City — Grass (Night)<br>Route 1 — Grass (Night)<br>Route 14 — Grass (Night)<br>Route 25 — Grass (Night)<br>Route 29 — Grass (Night)<br>Route 46 — Grass (Day)<br>Violet City — Grass (Night) |
-| Floatzel | Route 20 — Grass (Day)<br>Route 20 — Grass (Morning)<br>Route 26 — Surf |
-| Floette | Mt. Silver (Outside) — Grass (Day)<br>Mt. Silver (Outside) — Grass (Morning)<br>Mt. Silver (Outside) — Grass (Night)<br>Route 16 (New Grass) — Grass (Day) |
-| Florges | Route 16 (New Grass) — Grass (Night) |
-| Flygon | Mt. Silver 1F — Grass (Morning) |
-| Fomantis | Azalea Town — Grass (Day)<br>Azalea Town — Grass (Morning)<br>Azalea Town — Grass (Night)<br>Celadon City — Grass (Day)<br>Celadon City — Grass (Morning)<br>Route 17 — Grass (Night)<br>Route 2 (North, above Viridian Forest) — Grass (Morning)<br>Route 29 — Grass (Day) |
-| Foongus | Route 12 — Grass (Day)<br>Route 12 — Grass (Morning)<br>Route 12 — Grass (Night)<br>Route 2 (North, above Viridian Forest) — Grass (Morning)<br>Route 22 — Grass (Day)<br>Route 24 — Grass (Day)<br>Route 34 — Grass (Day)<br>Route 34 — Grass (Morning)<br>Route 34 — Grass (Night)<br>Route 6 — Grass (Day)<br>Safari Zone (Placeholder, not used) — Grass (Day)<br>Safari Zone (Placeholder, not used) — Grass (Morning) |
-| Forretress | Seafoam Islands B3F — Grass (Day) |
-| Fraxure | Cerulean Cave 1F — Grass (Morning)<br>Cerulean Cave B2F — Grass (Morning)<br>Mt. Silver (Expert Belt room) — Grass (Day)<br>Mt. Silver (Expert Belt room) — Grass (Morning)<br>Mt. Silver (Mountainside) — Grass (Morning)<br>Mt. Silver (Top, snowy area) — Grass (Morning)<br>Mt. Silver 1F — Grass (Morning)<br>Mt. Silver 3F — Grass (Day)<br>Mt. Silver 4F — Grass (Day)<br>Mt. Silver 4F — Grass (Morning)<br>Seafoam Islands B4F — Grass (Morning) |
-| Frigibax | Dragons Den — Grass (Morning)<br>Dragons Den — Grass (Night)<br>Ice Path 1F — Grass (Day)<br>Ice Path 1F — Grass (Morning)<br>Ice Path 1F — Grass (Night) |
-| Frillish | Cerulean Cave 1F — Super Rod<br>Cerulean City — Grass (Night)<br>Cherrygrove City — Grass (Night)<br>Cinnabar Island — Good Rod<br>Ecruteak City — Good Rod<br>Ecruteak City — Old Rod<br>Ecruteak City — Surf<br>Lake of Rage — Grass (Night)<br>Olivine City — Good Rod<br>Olivine City — Old Rod<br>Olivine City — Surf<br>Route 20 — Grass (Night)<br>Route 20 — Super Rod<br>Route 21 — Super Rod<br>Route 31 — Surf<br>Route 40 — Grass (Night)<br>Route 41 — Grass (Morning)<br>Route 41 — Grass (Night)<br>Route 6 — Good Rod<br>Ruins of Alph (Outside) — Old Rod<br>Violet City — Good Rod<br>Violet City — Old Rod<br>Violet City — Super Rod<br>Violet City — Surf |
-| Froakie | Route 6 — Grass (Day)<br>Route 6 — Grass (Morning)<br>Route 6 — Grass (Night) |
-| Froslass | Ice Path B2F — Grass (Night) |
-| Frosmoth | Route 13 — Grass (Night) |
-| Fuecoco | Sprout Tower 3F — Grass (Day)<br>Sprout Tower 3F — Grass (Morning)<br>Sprout Tower 3F — Grass (Night) |
-| Furfrou | Route 10 — Grass (Morning)<br>Route 43 — Grass (Morning)<br>Route 5 — Grass (Night)<br>Route 7 — Grass (Morning) |
-| Furret | Route 15 — Grass (Day)<br>Route 16 — Grass (Morning)<br>Route 42 — Grass (Morning) |
-| Gabite | Victory Road 1F — Grass (Day)<br>Victory Road 1F — Grass (Morning)<br>Victory Road 1F — Grass (Night) |
-| Gallade | Route 13 — Grass (Night) |
-| Galvantula | Mt. Silver (Outside) — Grass (Morning) |
-| Garbodor | Victory Road 1F — Grass (Morning) |
-| Garchomp | Victory Road 3F — Grass (Day)<br>Victory Road 3F — Grass (Morning)<br>Victory Road 3F — Grass (Night) |
-| Gardevoir | Route 16 (New Grass) — Grass (Morning) |
-| Garganacl | Mt. Silver (Top, snowy area) — Grass (Night) |
-| Gastly | Bell Tower 6F — Grass (Night)<br>Burned Tower 1F — Grass (Day)<br>Burned Tower 1F — Grass (Morning)<br>Burned Tower 1F — Grass (Night)<br>Burned Tower B1F — Grass (Day)<br>Burned Tower B1F — Grass (Night)<br>Ecruteak City — Grass (Night)<br>Rock Tunnel 1F — Grass (Night)<br>Seafoam Islands 1F — Grass (Night)<br>Slowpoke Well 1F — Grass (Morning)<br>Slowpoke Well 1F — Grass (Night)<br>Sprout Tower 2F — Grass (Day)<br>Sprout Tower 2F — Grass (Morning)<br>Sprout Tower 2F — Grass (Night) |
-| Gastrodon | Cianwood City — Super Rod<br>Mt. Moon (Outside Clefairy active) — Surf<br>Mt. Moon (Outside area) — Super Rod<br>Mt. Moon (Outside area) — Surf<br>Mt. Silver (Expert Belt room) — Grass (Day)<br>Mt. Silver (Moltres room) — Surf<br>Mt. Silver (Top, snowy area) — Surf<br>Mt. Silver 4F — Grass (Day)<br>Route 10 — Super Rod<br>Route 20 — Grass (Day)<br>Route 20 — Grass (Morning)<br>Route 20 — Grass (Night)<br>Route 25 — Super Rod<br>Route 28 — Surf<br>Route 44 — Super Rod<br>Route 45 — Super Rod<br>Seafoam Islands B2F — Grass (Day)<br>Seafoam Islands B3F — Grass (Day)<br>Union Cave 1F — Super Rod<br>Vermilion City — Super Rod |
-| Gengar | Cerulean Cave 1F — Grass (Night) |
-| Geodude | Bell Tower 5F — Grass (Day)<br>Bell Tower 5F — Grass (Morning)<br>Bell Tower 5F — Grass (Night)<br>Bell Tower 9F — Grass (Day)<br>Dark Cave (Route 45 entrance) — Grass swarm<br>Mt. Moon 2F — Grass (Night)<br>Mt. Mortar (Central room) — Grass (Day)<br>Mt. Mortar (Central room) — Grass swarm<br>Route 46 — Grass swarm<br>Ruins of Alph (Inside, Ladder Room) — Grass (Day)<br>Ruins of Alph (Inside, Main Room) — Grass (Day)<br>Ruins of Alph (Inside, Main Room) — Grass (Night)<br>Slowpoke Well 1F — Grass (Morning)<br>Union Cave 1F — Grass swarm<br>Union Cave B1F — Grass swarm<br>Viridian Forest — Grass (Night)<br>Whirl Islands 1F — Grass (Morning)<br>Whirl Islands B1F — Grass (Morning)<br>Whirl Islands B3F — Grass (Day) |
-| Geodude Alolan | Bell Tower 8F — Grass (Morning)<br>Bell Tower 9F — Grass (Night)<br>Mt. Mortar (Waterfall room) — Grass (Morning)<br>Rock Tunnel 1F — Grass (Morning)<br>Route 10 (Cave Ground) — Grass (Morning)<br>Ruins of Alph (Inside, Main Room) — Grass (Day)<br>Ruins of Alph (Inside, Main Room) — Grass (Night)<br>Ruins of Alph (Outside) — Grass (Morning)<br>Ruins of Alph (Outside) — Grass (Night)<br>Ruins of Alph (Outside) — Rock Smash<br>Union Cave 1F — Grass (Night)<br>Whirl Islands 1F — Grass (Day)<br>Whirl Islands B2F — Grass (Morning) |
-| Gholdengo | Mt. Mortar (Room above waterfall) — Grass (Night) |
-| Gible | Blackthorn City — Grass (Day)<br>Blackthorn City — Grass (Morning)<br>Blackthorn City — Grass (Night)<br>Dark Cave (Route 45 entrance) — Grass (Day)<br>Dark Cave (Route 45 entrance) — Grass (Morning)<br>Dark Cave (Route 45 entrance) — Grass (Night) |
-| Gigalith | Victory Road 3F — Grass (Night) |
-| Gimmighoul | Bell Tower 8F — Grass (Night)<br>Burned Tower 1F — Grass (Day)<br>Burned Tower 1F — Grass (Morning)<br>Burned Tower 1F — Grass (Night)<br>Burned Tower B1F — Grass (Day)<br>Burned Tower B1F — Grass (Night)<br>Rock Tunnel 1F — Grass (Night)<br>Rock Tunnel B1F — Grass (Night)<br>Sprout Tower 2F — Grass (Day)<br>Sprout Tower 2F — Grass (Morning)<br>Sprout Tower 2F — Grass (Night)<br>Union Cave B1F — Grass (Night) |
-| Girafarig | Fuchsia City — Grass (Day)<br>Fuchsia City — Grass (Morning)<br>Fuchsia City — Grass (Night)<br>Pewter City — Grass (Day)<br>Pewter City — Grass (Morning)<br>Pewter City — Grass (Night)<br>Route 12 — Grass (Day)<br>Route 16 — Grass (Night)<br>Route 5 — Grass (Night)<br>Route 7 — Grass (Day)<br>Route 7 — Grass (Morning)<br>Route 7 — Grass (Night)<br>Ruins of Alph (Outside) — Grass (Night) |
-| Glalie | Mt. Silver (Top, snowy area) — Grass (Night) |
-| Glameow | Mahogany Town — Grass (Morning)<br>Route 30 — Grass (Day) |
-| Gligar | Cerulean Cave B2F — Rock Smash<br>Cliff Cave — Rock Smash<br>Rock Tunnel B1F — Rock Smash<br>Route 1 — Grass (Day)<br>Route 1 — Grass (Morning)<br>Route 15 — Grass (Morning)<br>Route 19 — Rock Smash<br>Route 5 — Grass (Day)<br>Route 8 — Grass (Day)<br>Vermilion City — Rock Smash |
-| Glimmet | Bell Tower 6F — Grass (Morning)<br>Bell Tower 8F — Grass (Day)<br>Bell Tower 9F — Grass (Day)<br>Mt. Mortar B1F — Grass (Day)<br>Rock Tunnel 1F — Grass (Day)<br>Route 10 (Cave Ground) — Grass (Day)<br>Ruins of Alph (Inside, Ladder Room) — Grass (Night)<br>Ruins of Alph (Inside, Main Room) — Grass (Day)<br>Ruins of Alph (Inside, Main Room) — Grass (Morning)<br>Slowpoke Well 1F — Grass (Night)<br>Union Cave 1F — Grass (Day)<br>Whirl Islands B3F — Grass (Day)<br>Whirl Islands B3F — Grass (Morning) |
-| Glimmora | Victory Road 3F — Grass (Morning) |
-| Gliscor | Route 45 — Grass (Day) |
-| Gloom | Route 21 — Grass (Day)<br>Route 45 — Grass (Day)<br>Route 45 — Grass (Morning)<br>Route 45 — Grass (Night) |
-| Gogoat | Route 27 — Grass (Morning) |
-| Golbat | Bell Tower 4F — Grass (Day)<br>Bell Tower 7F — Grass (Day)<br>Cerulean Cave 1F — Grass swarm<br>Cliff Cave — Grass swarm<br>Dark Cave (Route 45 entrance) — Grass (Day)<br>Dark Cave (Route 45 entrance) — Grass (Morning)<br>Digletts Cave — Grass (Night)<br>Mt. Silver (Mountainside) — Grass swarm<br>Route 13 — Grass (Day)<br>Slowpoke Well B2F — Grass (Day)<br>Slowpoke Well B2F — Grass (Morning)<br>Slowpoke Well B2F — Grass (Night)<br>Whirl Islands 1F — Grass (Morning)<br>Whirl Islands B1F — Grass (Day)<br>Whirl Islands B2F — Grass (Night) |
-| Goldeen | Cerulean City — Good Rod swarm<br>Cerulean City — Old Rod<br>Cerulean City — Surf swarm<br>Cherrygrove City — Old Rod<br>Dark Cave (Route 31 entrance) — Good Rod swarm<br>Dark Cave (Route 45 entrance) — Good Rod swarm<br>Mt. Mortar (Room above waterfall) — Good Rod swarm<br>Mt. Mortar (Room above waterfall) — Surf swarm<br>Mt. Mortar (Waterfall room) — Good Rod swarm<br>Mt. Mortar (Waterfall room) — Surf swarm<br>Mt. Mortar B1F — Good Rod swarm<br>Mt. Mortar B1F — Surf swarm<br>Mt. Silver (Moltres room) — Good Rod swarm<br>Mt. Silver (Top, snowy area) — Good Rod swarm<br>Mt. Silver (Top, snowy area) — Old Rod<br>Mt. Silver 3F — Good Rod swarm<br>Mt. Silver 4F — Good Rod swarm<br>Route 10 — Good Rod swarm<br>Route 10 — Old Rod<br>Route 10 — Surf swarm<br>Route 24 — Good Rod swarm<br>Route 24 — Old Rod<br>Route 24 — Surf swarm<br>Route 25 — Good Rod swarm<br>Route 25 — Surf swarm<br>Route 27 — Old Rod<br>Route 30 — Old Rod<br>Route 30 — Super Rod<br>Route 4 — Good Rod swarm<br>Route 4 — Surf swarm<br>Route 41 — Old Rod<br>Route 42 — Good Rod swarm<br>Route 42 — Surf swarm<br>Route 9 — Good Rod swarm<br>Route 9 — Surf swarm<br>Safari Zone (Placeholder, not used) — Good Rod swarm<br>Safari Zone (Placeholder, not used) — Super Rod swarm<br>Slowpoke Well 1F — Good Rod swarm<br>Slowpoke Well B2F — Good Rod swarm<br>Tohjo Falls — Good Rod swarm<br>Tohjo Falls — Surf swarm<br>Union Cave 1F — Good Rod<br>Union Cave 1F — Good Rod swarm<br>Union Cave 1F — Old Rod<br>Union Cave 1F — Super Rod<br>Union Cave B1F — Good Rod swarm |
-| Golduck | Cerulean Cave B2F — Surf |
-| Golem | Cerulean Cave B1F — Grass (Morning)<br>Cerulean Cave B2F — Grass (Day)<br>Mt. Silver (Moltres room) — Grass (Day)<br>Mt. Silver (Mountainside) — Grass (Day)<br>Mt. Silver 1F — Grass (Morning)<br>Mt. Silver 3F — Grass (Day)<br>Mt. Silver 3F — Grass (Morning)<br>Mt. Silver 4F — Grass (Day)<br>Mt. Silver 4F — Grass (Morning)<br>Seafoam Islands B3F — Grass (Day)<br>Seafoam Islands B4F — Grass (Day) |
-| Golem Alolan | Seafoam Islands B3F — Grass (Day) |
-| Golett | Bell Tower 8F — Grass (Night)<br>Burned Tower B1F — Grass (Night)<br>Mt. Mortar B1F — Grass (Night)<br>Mt. Silver (Expert Belt room) — Grass (Night)<br>Ruins of Alph (Inside, Ladder Room) — Grass (Night)<br>Ruins of Alph (Inside, Main Room) — Grass (Day)<br>Ruins of Alph (Inside, Main Room) — Grass (Night)<br>Slowpoke Well 1F — Grass (Night)<br>Union Cave 1F — Grass (Night)<br>Victory Road 2F — Grass (Night)<br>Viridian Forest — Grass (Morning)<br>Whirl Islands B2F — Grass (Night) |
-| Golisopod | Route 20 — Grass (Day)<br>Route 20 — Grass (Morning)<br>Route 20 — Grass (Night)<br>Whirl Islands B2F — Surf |
-| Golurk | Mt. Silver 1F — Grass (Night) |
-| Goodra | Cerulean Cave 1F — Grass (Day)<br>Cerulean Cave 1F — Grass (Morning)<br>Cerulean Cave 1F — Grass (Night) |
-| Goodra Hisuian | Cerulean Cave 1F — Grass (Day)<br>Cerulean Cave 1F — Grass (Morning)<br>Cerulean Cave 1F — Grass (Night) |
-| Goomy | Dragons Den — Grass (Morning)<br>Route 33 — Grass (Day)<br>Route 33 — Grass (Morning)<br>Route 33 — Grass (Night) |
-| Gorebyss | Cerulean Cave B1F — Surf |
-| Gossifleur | Azalea Town — Grass (Day)<br>Route 2 (North, above Viridian Forest) — Grass (Night)<br>Route 28 — Grass (Day)<br>Route 28 — Grass (Morning)<br>Route 28 — Grass (Night)<br>Route 29 — Grass (Day) |
-| Gothita | Bell Tower 10F — Grass (Day)<br>Bell Tower 8F — Grass (Day)<br>Cliff Cave — Grass (Day)<br>Cliff Cave — Grass (Night)<br>Digletts Cave — Grass (Day)<br>Mt. Moon 1F — Grass (Morning)<br>Mt. Moon 1F — Grass (Night)<br>Mt. Silver (Expert Belt room) — Grass (Night)<br>Mt. Silver (Moltres room) — Grass (Night)<br>Mt. Silver (Top, snowy area) — Grass (Night)<br>Whirl Islands 1F — Grass (Night)<br>Whirl Islands B2F — Grass (Night) |
-| Gothitelle | Cerulean Cave B1F — Grass (Night) |
-| Gothorita | Cerulean Cave B1F — Grass (Night)<br>Mt. Silver (Expert Belt room) — Grass (Day)<br>Mt. Silver (Expert Belt room) — Grass (Night)<br>Mt. Silver (Mountainside) — Grass (Day)<br>Mt. Silver (Mountainside) — Grass (Night)<br>Mt. Silver 1F — Grass (Day)<br>Mt. Silver 1F — Grass (Night)<br>Seafoam Islands B1F — Grass (Night)<br>Seafoam Islands B2F — Grass (Night)<br>Seafoam Islands B3F — Grass (Day)<br>Seafoam Islands B3F — Grass (Night)<br>Victory Road 1F — Grass (Morning) |
-| Gouging Fire | Route 16 (New Grass) — Grass (Morning) |
-| Gourgeist | Cerulean Cave B1F — Grass (Night)<br>Mt. Silver (Moltres room) — Grass (Night)<br>Mt. Silver 1F — Grass (Day)<br>Mt. Silver 1F — Grass (Night)<br>Mt. Silver 3F — Grass (Day)<br>Mt. Silver 3F — Grass (Night)<br>Mt. Silver 4F — Grass (Night)<br>Route 28 — Grass (Night)<br>Seafoam Islands B3F — Grass (Morning)<br>Seafoam Islands B3F — Grass (Night) |
-| Grafaiai | Route 16 (New Grass) — Grass (Morning) |
-| Granbull | Route 44 — Grass (Day) |
-| Grapploct | Route 12 — Surf |
-| Graveler | Cerulean Cave 1F — Grass (Morning)<br>Cerulean Cave 1F — Rock Smash<br>Cerulean Cave B1F — Grass (Day)<br>Dark Cave (Route 45 entrance) — Grass (Day)<br>Dark Cave (Route 45 entrance) — Grass (Night)<br>Mt. Mortar (Room above waterfall) — Grass (Day)<br>Mt. Mortar (Room above waterfall) — Grass (Night)<br>Mt. Mortar (Room above waterfall) — Grass swarm<br>Mt. Silver 1F — Grass (Day)<br>Seafoam Islands 1F — Grass (Day)<br>Seafoam Islands 1F — Grass (Night)<br>Seafoam Islands B1F — Grass (Day)<br>Seafoam Islands B2F — Grass (Day)<br>Seafoam Islands B4F — Grass (Morning)<br>Victory Road 1F — Grass swarm<br>Victory Road 2F — Grass swarm<br>Victory Road 3F — Grass swarm |
-| Graveler Alolan | Cerulean Cave B2F — Grass (Day)<br>Dark Cave (Route 45 entrance) — Grass (Day)<br>Dark Cave (Route 45 entrance) — Grass (Morning)<br>Mt. Mortar (Room above waterfall) — Grass (Night)<br>Mt. Silver 4F — Grass (Morning)<br>Seafoam Islands 1F — Grass (Night)<br>Seafoam Islands B1F — Grass (Night)<br>Seafoam Islands B2F — Grass (Night)<br>Victory Road 3F — Grass (Day)<br>Whirl Islands B3F — Grass (Day)<br>Whirl Islands B3F — Grass (Morning)<br>Whirl Islands B3F — Grass (Night) |
-| Greavard | Bell Tower 6F — Grass (Night)<br>Burned Tower 1F — Grass (Day)<br>Burned Tower B1F — Grass (Day)<br>Burned Tower B1F — Grass (Morning)<br>Burned Tower B1F — Grass (Night)<br>Ecruteak City — Grass (Day)<br>Ecruteak City — Grass (Morning)<br>Ecruteak City — Grass (Night)<br>Olivine City — Grass (Night)<br>Rock Tunnel 1F — Grass (Night)<br>Route 17 — Grass (Night)<br>Sprout Tower 2F — Grass (Day)<br>Sprout Tower 2F — Grass (Morning)<br>Sprout Tower 2F — Grass (Night)<br>Sprout Tower 3F — Grass (Night)<br>Union Cave 1F — Grass (Night) |
-| Greedent | Route 44 — Grass (Day) |
-| Grimer | Celadon City — Surf swarm<br>Digletts Cave — Grass (Morning)<br>Mt. Moon 1F — Grass (Day)<br>Mt. Moon 1F — Grass (Night)<br>Mt. Moon 2F — Grass (Morning)<br>Mt. Silver (Top, snowy area) — Grass (Morning)<br>Mt. Silver 1F — Grass (Morning)<br>Mt. Silver 3F — Grass (Morning)<br>Route 16 — Grass swarm<br>Route 18 — Grass swarm<br>Route 35 — Grass (Day)<br>Route 35 — Grass (Morning)<br>Route 35 — Grass (Night)<br>Route 39 — Grass (Day)<br>Route 39 — Grass (Morning)<br>Route 39 — Grass (Night) |
-| Grimer Alolan | Bell Tower 10F — Grass (Night)<br>Bell Tower 8F — Grass (Night)<br>Cliff Cave — Grass (Day)<br>Cliff Cave — Grass (Morning)<br>Cliff Cave — Grass (Night)<br>Mt. Silver (Mountainside) — Grass (Night)<br>National Park — Grass (Night)<br>Slowpoke Well B2F — Grass (Night)<br>Tohjo Falls — Grass (Night)<br>Whirl Islands 1F — Grass (Night)<br>Whirl Islands B1F — Grass (Night) |
-| Grimmsnarl | Route 28 — Grass (Day) |
-| Grookey | Mahogany Town — Grass (Day)<br>Mahogany Town — Grass (Morning)<br>Mahogany Town — Grass (Night) |
-| Growlithe | Route 30 — Grass (Morning)<br>Route 4 — Grass (Day)<br>Route 42 — Grass (Night)<br>Route 7 — Grass (Day)<br>Route 7 — Grass (Night)<br>Route 8 — Grass (Day)<br>Route 8 — Grass (Morning) |
-| Growlithe Hisuian | Burned Tower B1F — Grass (Morning)<br>Digletts Cave — Grass (Morning)<br>Digletts Cave — Grass (Night)<br>Mt. Moon 2F — Grass (Night)<br>Ruins of Alph (Inside, Ladder Room) — Grass (Day)<br>Ruins of Alph (Inside, Ladder Room) — Grass (Night)<br>Ruins of Alph (Inside, Main Room) — Grass (Morning)<br>Ruins of Alph (Outside) — Grass (Day)<br>Ruins of Alph (Outside) — Grass (Morning)<br>Slowpoke Well B2F — Grass (Morning)<br>Union Cave 1F — Grass (Morning) |
-| Grubbin | National Park (Bug Catching Contest) — Grass (Morning)<br>National Park (Bug Catching Contest) — Grass (Night)<br>Route 22 — Grass (Day)<br>Route 25 — Grass (Night)<br>Route 30 — Grass (Day)<br>Route 6 — Grass (Morning)<br>Vermilion City — Grass (Day) |
-| Grumpig | Route 17 — Grass (Night) |
-| Gulpin | Bell Tower 10F — Grass (Day)<br>Cliff Cave — Grass (Day)<br>Digletts Cave — Grass (Day)<br>Mt. Moon 2F — Grass (Day)<br>Mt. Silver 1F — Grass (Night)<br>Mt. Silver 3F — Grass (Day)<br>Route 48 — Grass (Day)<br>Route 48 — Grass (Morning)<br>Route 48 — Grass (Night)<br>Whirl Islands 1F — Grass (Day)<br>Whirl Islands 1F — Grass (Morning)<br>Whirl Islands 1F — Grass (Night) |
-| Gumshoos | Route 17 — Grass (Day)<br>Route 17 — Grass (Morning)<br>Route 44 — Grass (Night) |
-| Gurdurr | Cerulean Cave B2F — Grass (Morning)<br>Mt. Silver (Expert Belt room) — Grass (Day)<br>Mt. Silver (Expert Belt room) — Grass (Morning)<br>Mt. Silver (Expert Belt room) — Grass (Night)<br>Mt. Silver (Mountainside) — Grass (Day)<br>Mt. Silver (Mountainside) — Grass (Morning)<br>Mt. Silver (Top, snowy area) — Grass (Morning)<br>Mt. Silver 1F — Grass (Day)<br>Mt. Silver 4F — Grass (Night)<br>Seafoam Islands B2F — Grass (Morning)<br>Seafoam Islands B3F — Grass (Day) |
-| Gyarados | Fuchsia City — Good Rod swarm<br>Lake of Rage — Good Rod swarm<br>Mt. Silver 1F — Good Rod swarm<br>Vermilion City — Surf |
-| Hakamo-o | Victory Road 1F — Grass (Day)<br>Victory Road 1F — Grass (Morning)<br>Victory Road 1F — Grass (Night) |
-| Happiny | Route 29 — Grass (Night) |
-| Hariyama | Bell Tower 2F — Grass (Morning) |
-| Hatenna | Bell Tower 10F — Grass (Night)<br>Bell Tower 9F — Grass (Night)<br>Cliff Cave — Grass (Day)<br>Cliff Cave — Grass (Morning)<br>Cliff Cave — Grass (Night)<br>Digletts Cave — Grass (Night)<br>Mt. Moon 1F — Grass (Morning)<br>Mt. Moon 1F — Grass (Night)<br>Mt. Moon 2F — Grass (Morning)<br>Mt. Silver (Top, snowy area) — Grass (Day)<br>Mt. Silver 4F — Grass (Day)<br>Route 33 — Grass (Night)<br>Whirl Islands B1F — Grass (Night) |
-| Hatterene | Route 28 — Grass (Morning) |
-| Hattrem | Cerulean Cave B1F — Grass (Night)<br>Mt. Silver (Expert Belt room) — Grass (Day)<br>Mt. Silver (Expert Belt room) — Grass (Night)<br>Mt. Silver (Mountainside) — Grass (Night)<br>Mt. Silver (Top, snowy area) — Grass (Day)<br>Mt. Silver 1F — Grass (Day)<br>Mt. Silver 1F — Grass (Night)<br>Mt. Silver 4F — Grass (Night)<br>Seafoam Islands B2F — Grass (Day)<br>Seafoam Islands B3F — Grass (Night)<br>Seafoam Islands B4F — Grass (Night) |
-| Haunter | Cerulean Cave B1F — Grass (Day)<br>Dark Cave (Route 45 entrance) — Grass (Night)<br>Mt. Mortar (Room above waterfall) — Grass (Night)<br>Mt. Silver 1F — Grass (Day)<br>Mt. Silver 1F — Grass (Night)<br>Seafoam Islands 1F — Grass (Day)<br>Seafoam Islands 1F — Grass (Morning)<br>Seafoam Islands 1F — Grass (Night)<br>Seafoam Islands B1F — Grass (Night)<br>Seafoam Islands B2F — Grass (Night)<br>Seafoam Islands B3F — Grass (Night)<br>Whirl Islands B3F — Grass (Night) |
-| Hawlucha | Cianwood City — Grass (Day)<br>Cianwood City — Grass (Morning)<br>Cianwood City — Grass (Night)<br>Route 13 — Grass (Morning) |
-| Haxorus | Mt. Silver (Moltres room) — Grass (Morning) |
-| Heatmor | Cinnabar Island — Grass (Day)<br>Cinnabar Island — Grass (Morning)<br>Cinnabar Island — Grass (Night)<br>Route 48 — Grass (Day) |
-| Heliolisk | Route 14 — Grass (Morning) |
-| Helioptile | National Park — Grass (Day)<br>National Park — Grass (Morning)<br>National Park — Grass (Night) |
-| Heracross | Route 15 — Grass (Day) |
-| Herdier | Mahogany Town — Grass (Day)<br>Route 38 — Grass (Morning)<br>Route 8 — Grass (Night) |
-| Hippopotas | Cliff Cave — Grass (Day)<br>Mt. Mortar (Waterfall room) — Grass (Morning)<br>Rock Tunnel 1F — Grass (Day)<br>Route 10 (Cave Ground) — Grass (Night)<br>Route 36 — Grass (Day)<br>Route 36 — Grass (Morning)<br>Route 36 — Grass (Night)<br>Ruins of Alph (Inside, Ladder Room) — Grass (Night)<br>Ruins of Alph (Inside, Main Room) — Grass (Day)<br>Ruins of Alph (Inside, Main Room) — Grass (Morning)<br>Ruins of Alph (Inside, Main Room) — Grass (Night)<br>Union Cave 1F — Grass (Morning) |
-| Hippowdon | Seafoam Islands B3F — Grass (Day) |
-| Hitmonchan | Seafoam Islands B2F — Grass (Morning) |
-| Hitmonlee | Seafoam Islands B1F — Grass (Morning) |
-| Hitmontop | Bell Tower 2F — Grass (Morning) |
-| Honchkrow | Route 15 — Grass (Night) |
-| Honedge | Bell Tower 3F — Grass (Night)<br>Burned Tower 1F — Grass (Day)<br>Burned Tower 1F — Grass (Morning)<br>Burned Tower B1F — Grass (Day)<br>Burned Tower B1F — Grass (Morning)<br>Cerulean Cave 1F — Grass (Night)<br>Digletts Cave — Grass (Night)<br>Ecruteak City — Grass (Night)<br>Mt. Mortar (Waterfall room) — Grass (Night)<br>Rock Tunnel 1F — Grass (Night)<br>Rock Tunnel B1F — Grass (Night)<br>Sprout Tower 2F — Grass (Day)<br>Sprout Tower 3F — Grass (Morning)<br>Union Cave B2F — Grass (Night)<br>Whirl Islands 1F — Grass (Night) |
-| Hoothoot | Ecruteak City — Grass (Morning)<br>Fuchsia City — Grass (Night)<br>Mahogany Town — Grass (Day)<br>Mahogany Town — Grass (Morning)<br>Pallet Town — Grass (Night)<br>Route 1 — Grass (Night)<br>Route 12 — Grass (Night)<br>Route 2 (South, below Viridian Forest) — Grass (Night)<br>Route 31 — Grass (Day)<br>Route 31 — Grass (Morning)<br>Route 31 — Grass (Night)<br>Violet City — Grass (Night)<br>Viridian City — Grass (Night) |
-| Hoppip | Pallet Town — Grass (Day)<br>Pallet Town — Grass (Morning)<br>Route 10 — Grass (Morning)<br>Route 12 — Grass (Day)<br>Route 12 — Grass (Morning)<br>Route 22 — Grass (Morning)<br>Route 29 — Grass (Morning)<br>Route 3 — Grass (Morning)<br>Route 33 — Grass swarm<br>Route 38 — Grass (Day)<br>Route 38 — Grass (Night)<br>Route 46 — Grass (Day)<br>Violet City — Grass (Day)<br>Violet City — Grass (Morning) |
-| Horsea | Cerulean Cave 1F — Old Rod<br>Dragons Den — Grass (Day)<br>Dragons Den — Grass (Morning)<br>Dragons Den — Grass (Night)<br>Fuchsia City — Surf<br>Lake of Rage — Surf<br>Olivine City — Surf<br>Route 20 — Surf<br>Route 21 — Surf<br>Route 30 — Surf<br>Route 35 — Old Rod<br>Route 4 — Old Rod<br>Route 41 — Old Rod<br>Seafoam Islands B4F — Good Rod<br>Seafoam Islands B4F — Good Rod swarm<br>Seafoam Islands B4F — Surf<br>Whirl Islands 1F — Good Rod swarm<br>Whirl Islands 1F — Super Rod<br>Whirl Islands B2F — Good Rod<br>Whirl Islands B2F — Good Rod swarm<br>Whirl Islands B2F — Super Rod<br>Whirl Islands B2F — Surf<br>Whirl Islands B2F — Surf swarm |
-| Houndoom | Route 44 — Grass (Night) |
-| Houndour | Cinnabar Island — Grass (Day)<br>Cinnabar Island — Grass (Morning)<br>Cinnabar Island — Grass (Night)<br>Route 14 — Grass (Night)<br>Route 3 — Grass (Night)<br>Route 34 — Grass (Night)<br>Route 4 — Grass (Night)<br>Route 42 — Grass (Night)<br>Route 48 — Grass (Night)<br>Route 6 — Grass (Night)<br>Route 7 — Grass (Night) |
-| Houndstone | Cerulean Cave B2F — Grass (Night) |
-| Huntail | Route 28 — Surf |
-| Hydrapple | Route 21 — Grass (Day) |
-| Hydreigon | Cerulean Cave B2F — Grass (Day)<br>Cerulean Cave B2F — Grass (Morning)<br>Cerulean Cave B2F — Grass (Night) |
-| Hypno | Mt. Silver (Top, snowy area) — Grass (Night)<br>Seafoam Islands 1F — Grass (Night) |
-| Igglybuff | Route 39 — Grass (Day)<br>Route 39 — Grass (Morning)<br>Route 39 — Grass (Night) |
-| Illumise | National Park (Bug Catching Contest) — Grass (Night)<br>Route 26 — Grass (Night)<br>Route 43 — Grass (Morning) |
-| Impidimp | Mahogany Town — Grass (Night)<br>Route 34 — Grass (Day) |
-| Indeedee | Pewter City — Grass (Day)<br>Pewter City — Grass (Morning)<br>Pewter City — Grass (Night)<br>Route 11 — Grass (Night)<br>Route 15 — Grass (Night)<br>Route 43 — Grass (Night)<br>Route 7 — Grass (Night)<br>Ruins of Alph (Outside) — Grass (Day) |
-| Inkay | Cerulean Cave B1F — Old Rod<br>Cherrygrove City — Grass (Night)<br>Cherrygrove City — Old Rod<br>Cianwood City — Old Rod<br>Cinnabar Island — Old Rod<br>Mt. Moon (Outside area) — Old Rod<br>Mt. Silver 3F — Old Rod<br>Olivine City — Grass (Night)<br>Olivine City — Old Rod<br>Pallet Town — Old Rod<br>Route 34 — Old Rod<br>Route 40 — Grass (Night)<br>Route 41 — Grass (Night)<br>Route 42 — Old Rod<br>Route 43 — Old Rod<br>Route 44 — Old Rod<br>Route 45 — Old Rod<br>Route 6 — Old Rod<br>Safari Zone (Placeholder, not used) — Old Rod<br>Vermilion City — Grass (Night) |
-| Iron Boulder | Victory Road 2F — Grass (Night) |
-| Iron Crown | Victory Road 3F — Grass (Night) |
-| Jangmo-o | Dragons Den — Grass (Day)<br>Route 47 — Grass (Day)<br>Route 47 — Grass (Morning)<br>Route 47 — Grass (Night) |
-| Jellicent | Cinnabar Island — Super Rod<br>Ecruteak City — Super Rod<br>Ilex Forest — Super Rod<br>Mt. Moon (Outside Clefairy active) — Super Rod<br>Mt. Mortar B1F — Super Rod<br>Mt. Silver (Moltres room) — Super Rod<br>Mt. Silver (Outside) — Super Rod<br>Mt. Silver 3F — Super Rod<br>Mt. Silver 4F — Super Rod<br>Route 13 — Super Rod<br>Route 19 — Super Rod<br>Route 21 — Super Rod<br>Route 4 — Super Rod<br>Ruins of Alph (Outside) — Super Rod<br>Tohjo Falls — Super Rod |
-| Jigglypuff | Route 3 — Grass (Day)<br>Route 3 — Grass (Morning)<br>Route 42 — Grass (Day)<br>Route 42 — Grass (Morning)<br>Route 42 — Grass (Night) |
-| Joltik | Azalea Town — Grass (Morning)<br>Azalea Town — Grass (Night)<br>National Park (Bug Catching Contest) — Grass (Night)<br>Route 13 — Grass (Day)<br>Route 24 — Grass (Morning)<br>Route 4 — Grass (Day)<br>Route 9 — Grass (Day) |
-| Jumpluff | Route 21 — Grass (Day) |
-| Jynx | Seafoam Islands B3F — Grass (Night) |
-| Kabuto | Cerulean Cave B2F — Good Rod<br>Dark Cave (Route 31 entrance) — Good Rod<br>Dark Cave (Route 31 entrance) — Surf<br>Dragons Den — Good Rod<br>Mt. Mortar (Room above waterfall) — Good Rod<br>Mt. Mortar (Waterfall room) — Surf<br>Mt. Silver (Outside) — Good Rod<br>Route 10 — Surf<br>Route 25 — Surf<br>Route 27 — Surf<br>Route 31 — Surf<br>Ruins of Alph (Outside) — Super Rod<br>Ruins of Alph (Outside) — Surf<br>Union Cave 1F — Surf<br>Union Cave B2F — Surf<br>Vermilion City — Surf<br>Whirl Islands B2F — Surf |
-| Kabutops | Cerulean Cave B2F — Surf |
-| Kadabra | Bell Tower 10F — Grass (Night)<br>Bell Tower 8F — Grass (Night)<br>Cerulean Cave B1F — Grass swarm<br>Cerulean Cave B2F — Grass swarm<br>Cliff Cave — Grass (Day)<br>Cliff Cave — Grass (Morning)<br>Cliff Cave — Grass (Night)<br>Mt. Silver (Top, snowy area) — Grass (Night)<br>Rock Tunnel B1F — Grass (Day)<br>Rock Tunnel B1F — Grass (Morning)<br>Rock Tunnel B1F — Grass (Night)<br>Tohjo Falls — Grass (Night)<br>Whirl Islands 1F — Grass (Night)<br>Whirl Islands B2F — Grass (Night) |
-| Kakuna | Bell Tower 8F — Grass (Morning)<br>Mt. Mortar (Central room) — Grass (Night)<br>Mt. Mortar (Waterfall room) — Grass (Day)<br>Mt. Mortar (Waterfall room) — Grass (Morning)<br>Mt. Mortar B1F — Grass (Morning)<br>Rock Tunnel B1F — Grass (Night)<br>Slowpoke Well 1F — Grass (Morning)<br>Union Cave B1F — Grass (Morning)<br>Viridian Forest — Grass (Day)<br>Whirl Islands 1F — Grass (Morning)<br>Whirl Islands B1F — Grass (Night) |
-| Kangaskhan | Fuchsia City — Grass (Day)<br>Fuchsia City — Grass (Morning)<br>Route 15 — Grass (Morning) |
-| Karrablast | Route 12 — Grass (Day)<br>Route 12 — Grass (Morning)<br>Route 12 — Grass (Night)<br>Route 24 — Grass (Day)<br>Route 25 — Grass (Day)<br>Route 33 — Grass (Day)<br>Route 33 — Grass (Morning)<br>Route 33 — Grass (Night) |
-| Kecleon | Route 14 — Grass (Morning)<br>Route 16 (New Grass) — Grass (Night)<br>Route 16 — Grass (Day) |
-| Kilowattrel | Route 13 — Grass (Day) |
-| Kingambit | Digletts Cave — Grass (Night) |
-| Kingdra | Route 32 — Surf |
-| Kingler | Mt. Moon (Outside Clefairy active) — Surf |
-| Kirlia | Mahogany Town — Grass (Day)<br>Route 16 (New Grass) — Grass (Morning) |
-| Klang | Cerulean Cave B1F — Grass (Morning)<br>Mt. Silver (Expert Belt room) — Grass (Day)<br>Mt. Silver (Moltres room) — Grass (Day)<br>Mt. Silver (Outside) — Grass (Day)<br>Mt. Silver 3F — Grass (Morning)<br>Mt. Silver 3F — Grass (Night)<br>Mt. Silver 4F — Grass (Morning)<br>Safari Zone (Placeholder, not used) — Grass (Day)<br>Safari Zone (Placeholder, not used) — Grass (Night)<br>Seafoam Islands B4F — Grass (Day)<br>Seafoam Islands B4F — Grass (Morning) |
-| Klawf | Whirl Islands B2F — Good Rod |
-| Kleavor | Bell Tower 4F — Grass (Morning) |
-| Klefki | Bell Tower 2F — Grass (Day) |
-| Klink | Bell Tower 5F — Grass (Day)<br>Bell Tower 5F — Grass (Night)<br>Bell Tower 7F — Grass (Day)<br>Bell Tower 7F — Grass (Morning)<br>Bell Tower 7F — Grass (Night)<br>Mt. Moon 2F — Grass (Night)<br>Mt. Mortar (Central room) — Grass (Day)<br>Rock Tunnel B1F — Grass (Morning)<br>Tohjo Falls — Grass (Day)<br>Union Cave B1F — Grass (Night)<br>Whirl Islands 1F — Grass (Day)<br>Whirl Islands B2F — Grass (Night)<br>Whirl Islands B3F — Grass (Day) |
-| Klinklang | Cerulean Cave B2F — Grass (Morning) |
-| Koffing | Bell Tower 10F — Grass (Night)<br>Bell Tower 2F — Grass (Day)<br>Bell Tower 2F — Grass (Morning)<br>Bell Tower 2F — Grass (Night)<br>Digletts Cave — Grass (Morning)<br>Mt. Moon 1F — Grass (Day)<br>Mt. Moon 2F — Grass (Morning)<br>Mt. Silver (Expert Belt room) — Grass (Morning)<br>Mt. Silver (Moltres room) — Grass (Day) |
-| Komala | Route 13 — Grass (Day) |
-| Kommo-o | Victory Road 3F — Grass (Day)<br>Victory Road 3F — Grass (Morning)<br>Victory Road 3F — Grass (Night) |
-| Krabby | Cherrygrove City — Super Rod<br>Fuchsia City — Old Rod<br>Mt. Silver 1F — Old Rod<br>Olivine City — Grass (Day)<br>Olivine City — Grass (Morning)<br>Olivine City — Grass (Night)<br>Route 19 — Grass (Day)<br>Route 19 — Grass (Morning)<br>Route 19 — Grass (Night)<br>Route 21 — Old Rod<br>Route 4 — Old Rod<br>Seafoam Islands B4F — Old Rod<br>Tohjo Falls — Surf<br>Union Cave B1F — Surf<br>Union Cave B2F — Good Rod<br>Union Cave B2F — Old Rod<br>Union Cave B2F — Super Rod<br>Vermilion City — Grass (Day)<br>Vermilion City — Grass (Morning)<br>Vermilion City — Grass (Night)<br>Whirl Islands 1F — Grass swarm<br>Whirl Islands B1F — Grass swarm<br>Whirl Islands B2F — Grass swarm<br>Whirl Islands B3F — Grass swarm |
-| Kricketot | National Park (Bug Catching Contest) — Grass (Night)<br>Route 1 — Grass (Morning)<br>Route 2 (North, above Viridian Forest) — Grass (Day)<br>Route 22 — Grass (Day)<br>Route 22 — Grass (Night)<br>Route 25 — Grass (Morning)<br>Route 46 — Grass (Night)<br>Viridian Forest — Grass swarm |
-| Kricketune | National Park (Bug Catching Contest) — Grass (Day)<br>Route 10 — Grass (Day)<br>Route 18 — Grass (Night)<br>Route 25 — Grass (Night)<br>Route 42 — Grass (Night)<br>Route 43 — Grass (Night) |
-| Krokorok | Cerulean Cave B1F — Grass (Night)<br>Cerulean Cave B2F — Grass (Night)<br>Mt. Mortar (Room above waterfall) — Grass (Day)<br>Mt. Mortar (Room above waterfall) — Grass (Morning)<br>Mt. Mortar (Room above waterfall) — Grass (Night)<br>Mt. Silver (Moltres room) — Grass (Day)<br>Mt. Silver (Moltres room) — Grass (Morning)<br>Mt. Silver (Moltres room) — Grass (Night)<br>Mt. Silver (Outside) — Grass (Night)<br>Mt. Silver 3F — Grass (Night)<br>Mt. Silver 4F — Grass (Night)<br>Seafoam Islands 1F — Grass (Night)<br>Victory Road 1F — Grass (Night)<br>Victory Road 3F — Grass (Night) |
-| Krookodile | Seafoam Islands B4F — Grass (Night) |
-| Lairon | Mt. Mortar (Room above waterfall) — Grass (Morning)<br>Mt. Mortar (Room above waterfall) — Grass (Night)<br>Seafoam Islands 1F — Grass (Day)<br>Seafoam Islands 1F — Grass (Morning)<br>Seafoam Islands B1F — Grass (Day)<br>Seafoam Islands B1F — Grass (Morning)<br>Seafoam Islands B1F — Grass (Night)<br>Seafoam Islands B3F — Grass (Morning)<br>Seafoam Islands B3F — Grass (Night)<br>Victory Road 1F — Grass (Day)<br>Victory Road 2F — Grass (Morning)<br>Victory Road 3F — Grass (Night) |
-| Lampent | Cerulean Cave B1F — Grass (Day)<br>Cerulean Cave B2F — Grass (Night)<br>Mt. Silver (Moltres room) — Grass (Day)<br>Mt. Silver (Moltres room) — Grass (Morning)<br>Mt. Silver (Moltres room) — Grass (Night)<br>Mt. Silver 1F — Grass (Night)<br>Mt. Silver 3F — Grass (Morning)<br>Mt. Silver 3F — Grass (Night)<br>Mt. Silver 4F — Grass (Night) |
-| Lanturn | Route 20 — Grass (Day)<br>Route 20 — Grass (Morning)<br>Route 20 — Grass (Night)<br>Route 34 — Surf |
-| Lapras | Cinnabar Island — Surf<br>Route 40 — Grass (Day)<br>Route 40 — Grass (Morning)<br>Route 40 — Grass (Night) |
-| Larvesta | Azalea Town — Grass (Night)<br>Cinnabar Island — Grass (Day)<br>Cinnabar Island — Grass (Morning)<br>Cinnabar Island — Grass (Night)<br>Route 18 — Grass (Morning)<br>Route 26 — Grass (Day)<br>Route 28 — Grass (Day)<br>Route 42 — Grass (Day)<br>Route 9 — Grass (Morning) |
-| Larvitar | Union Cave B2F — Grass (Day)<br>Union Cave B2F — Grass (Morning)<br>Union Cave B2F — Grass (Night) |
-| Leavanny | Route 15 — Grass (Night) |
-| Lechonk | Mahogany Town — Grass (Day)<br>Route 35 — Grass (Day)<br>Route 6 — Grass (Morning) |
-| Ledian | Route 13 — Grass (Morning)<br>Route 21 — Grass (Morning)<br>Route 26 — Grass (Day)<br>Route 27 — Grass (Day)<br>Route 47 — Grass (Day)<br>Route 7 — Grass (Day)<br>Route 8 — Grass (Day) |
-| Ledyba | Azalea Town — Grass (Day)<br>Azalea Town — Grass (Morning)<br>National Park (Bug Catching Contest) — Grass (Day)<br>National Park — Grass (Day)<br>Route 22 — Grass (Day)<br>Route 29 — Grass (Day)<br>Route 3 — Grass (Morning)<br>Violet City — Grass (Morning) |
-| Lickilicky | Route 16 — Grass (Day) |
-| Lickitung | Mahogany Town — Grass (Night)<br>Route 31 — Grass (Night)<br>Route 6 — Grass (Day) |
-| Liepard | Mt. Silver (Outside) — Grass (Morning)<br>Mt. Silver (Outside) — Grass (Night)<br>Route 44 — Grass (Night) |
-| Lileep | Cerulean Cave 1F — Super Rod<br>Dark Cave (Route 31 entrance) — Good Rod<br>Dark Cave (Route 31 entrance) — Rock Smash<br>Dark Cave (Route 31 entrance) — Super Rod<br>Mt. Moon (Outside area) — Good Rod<br>Mt. Mortar (Waterfall room) — Good Rod<br>Mt. Mortar (Waterfall room) — Super Rod<br>Mt. Mortar (Waterfall room) — Surf<br>Mt. Mortar B1F — Good Rod<br>Mt. Mortar B1F — Super Rod<br>Mt. Silver (Moltres room) — Super Rod<br>Pallet Town — Super Rod<br>Route 22 — Super Rod<br>Route 26 — Good Rod<br>Route 9 — Surf<br>Whirl Islands 1F — Old Rod<br>Whirl Islands 1F — Surf |
-| Lilligant | Route 10 — Grass (Night)<br>Route 24 — Grass (Day)<br>Route 39 — Grass (Night)<br>Route 42 — Grass (Morning)<br>Route 6 — Grass (Morning)<br>Safari Zone (Placeholder, not used) — Grass (Day) |
-| Lilligant Hisuian | Route 26 — Grass (Morning)<br>Safari Zone (Placeholder, not used) — Grass (Day) |
-| Lillipup | Pallet Town — Grass (Morning)<br>Route 10 — Grass (Day)<br>Route 46 — Grass (Day)<br>Route 48 — Grass (Day)<br>Route 48 — Grass (Morning)<br>Route 48 — Grass (Night) |
-| Linoone | Mahogany Town — Grass (Morning)<br>Mt. Silver (Outside) — Pokégear radio — Hoenn Sound<br>Route 10 — Pokégear radio — Hoenn Sound<br>Route 13 — Pokégear radio — Hoenn Sound<br>Route 14 — Grass (Day)<br>Route 21 — Pokégear radio — Hoenn Sound<br>Route 22 — Pokégear radio — Hoenn Sound<br>Route 24 — Pokégear radio — Hoenn Sound<br>Route 25 — Pokégear radio — Hoenn Sound<br>Route 26 — Pokégear radio — Hoenn Sound<br>Route 27 — Pokégear radio — Hoenn Sound<br>Route 28 — Pokégear radio — Hoenn Sound<br>Route 30 — Pokégear radio — Hoenn Sound<br>Route 31 — Pokégear radio — Hoenn Sound<br>Route 32 — Pokégear radio — Hoenn Sound<br>Route 34 — Pokégear radio — Hoenn Sound<br>Route 35 — Pokégear radio — Hoenn Sound<br>Route 4 — Pokégear radio — Hoenn Sound<br>Route 42 — Pokégear radio — Hoenn Sound<br>Route 43 — Pokégear radio — Hoenn Sound<br>Route 44 — Grass (Day)<br>Route 44 — Pokégear radio — Hoenn Sound<br>Route 45 — Pokégear radio — Hoenn Sound<br>Route 47 — Pokégear radio — Hoenn Sound<br>Route 6 — Pokégear radio — Hoenn Sound<br>Route 9 — Pokégear radio — Hoenn Sound<br>Ruins of Alph (Outside) — Pokégear radio — Hoenn Sound |
-| Linoone Galarian | Route 15 — Grass (Night)<br>Route 16 — Grass (Night)<br>Route 18 — Grass (Night) |
-| Litleo | Cinnabar Island — Grass (Day)<br>Cinnabar Island — Grass (Morning)<br>Route 10 — Grass (Night)<br>Route 17 — Grass (Night)<br>Route 30 — Grass (Morning)<br>Route 36 — Grass (Day) |
-| Litten | Bell Tower 3F — Grass (Day)<br>Bell Tower 3F — Grass (Morning)<br>Bell Tower 3F — Grass (Night) |
-| Litwick | Bell Tower 7F — Grass (Night)<br>Burned Tower 1F — Grass (Day)<br>Burned Tower B1F — Grass (Day)<br>Burned Tower B1F — Grass (Morning)<br>Burned Tower B1F — Grass (Night)<br>Cinnabar Island — Grass (Night)<br>Dark Cave (Route 31 entrance) — Grass (Night)<br>Ecruteak City — Grass (Night)<br>Route 1 — Grass (Night)<br>Route 37 — Grass (Night)<br>Route 38 — Grass (Night)<br>Route 44 — Grass (Night)<br>Route 46 — Grass (Night)<br>Route 5 — Grass (Night)<br>Route 8 — Grass (Night)<br>Viridian Forest — Grass (Night) |
-| Lokix | Route 44 — Grass (Night) |
-| Lombre | Cerulean Cave B1F — Surf<br>Cianwood City — Super Rod<br>Mt. Silver 4F — Good Rod<br>Mt. Silver 4F — Surf<br>Olivine City — Super Rod<br>Pallet Town — Surf<br>Route 12 — Good Rod<br>Route 13 — Good Rod<br>Route 25 — Good Rod<br>Route 28 — Good Rod<br>Route 34 — Good Rod<br>Route 35 — Grass (Morning)<br>Route 43 — Good Rod<br>Route 43 — Surf<br>Route 44 — Super Rod<br>Seafoam Islands B4F — Good Rod<br>Slowpoke Well 1F — Good Rod<br>Vermilion City — Good Rod |
-| Lopunny | Route 13 — Grass (Morning) |
-| Lotad | Cerulean City — Grass (Day)<br>Cherrygrove City — Grass (Day)<br>Cherrygrove City — Grass (Morning)<br>Cinnabar Island — Surf<br>Dark Cave (Route 31 entrance) — Good Rod<br>Mt. Silver 3F — Surf<br>Mt. Silver 4F — Surf<br>Route 22 — Surf<br>Route 32 — Grass (Day)<br>Route 32 — Grass (Morning)<br>Route 32 — Grass (Night)<br>Route 4 — Surf<br>Route 44 — Old Rod<br>Route 45 — Good Rod<br>Safari Zone (Placeholder, not used) — Surf<br>Seafoam Islands B4F — Good Rod<br>Viridian City — Grass (Day) |
-| Loudred | Route 16 (New Grass) — Grass (Morning)<br>Route 17 — Grass (Morning)<br>Route 18 — Grass (Night) |
-| Lucario | Seafoam Islands B1F — Grass (Morning) |
-| Ludicolo | Tohjo Falls — Surf |
-| Lumineon | Route 35 — Surf |
-| Lunatone | Slowpoke Well B2F — Grass (Night) |
-| Lurantis | Route 21 — Grass (Day)<br>Route 21 — Grass (Morning)<br>Route 28 — Grass (Morning)<br>Safari Zone (Placeholder, not used) — Grass (Day) |
-| Luvdisc | Cerulean Cave B2F — Super Rod<br>Cerulean City — Good Rod<br>Cianwood City — Super Rod<br>Ecruteak City — Super Rod<br>Ilex Forest — Super Rod<br>Mt. Silver 1F — Super Rod<br>Route 24 — Good Rod<br>Route 25 — Old Rod<br>Route 27 — Good Rod<br>Route 27 — Surf swarm<br>Route 30 — Super Rod<br>Route 43 — Good Rod<br>Route 44 — Good Rod<br>Route 45 — Super Rod<br>Route 9 — Super Rod<br>Union Cave 1F — Good Rod<br>Union Cave B1F — Good Rod<br>Union Cave B1F — Super Rod |
-| Luxio | Route 45 — Grass (Day)<br>Route 45 — Grass (Morning)<br>Route 45 — Grass (Night)<br>Route 5 — Grass (Morning)<br>Route 6 — Grass (Night)<br>Route 8 — Grass (Night) |
-| Luxray | Route 16 (New Grass) — Grass (Morning) |
-| Lycanroc | Cerulean Cave B2F — Grass (Day)<br>Dark Cave (Route 45 entrance) — Grass (Night)<br>Mt. Silver (Expert Belt room) — Grass (Morning)<br>Mt. Silver 3F — Grass (Day)<br>Mt. Silver 4F — Grass (Morning)<br>Seafoam Islands 1F — Grass (Day)<br>Seafoam Islands 1F — Grass (Morning)<br>Seafoam Islands B1F — Grass (Day)<br>Seafoam Islands B1F — Grass (Morning)<br>Seafoam Islands B2F — Grass (Morning)<br>Seafoam Islands B3F — Grass (Morning)<br>Victory Road 3F — Grass (Day)<br>Whirl Islands B3F — Grass (Morning)<br>Whirl Islands B3F — Grass (Night) |
-| Mabosstiff | Route 27 — Grass (Night) |
-| Machamp | Victory Road 3F — Grass (Morning) |
-| Machoke | Cerulean Cave B2F — Grass (Morning)<br>Mt. Silver (Expert Belt room) — Grass (Day)<br>Mt. Silver (Mountainside) — Grass (Day)<br>Mt. Silver (Mountainside) — Grass (Morning)<br>Mt. Silver (Mountainside) — Grass (Night)<br>Mt. Silver (Top, snowy area) — Grass (Morning)<br>Mt. Silver 1F — Grass (Morning)<br>Mt. Silver 4F — Grass (Night)<br>Seafoam Islands B2F — Grass (Morning)<br>Seafoam Islands B3F — Grass (Day) |
-| Machop | Bell Tower 10F — Grass (Morning)<br>Bell Tower 3F — Grass (Day)<br>Bell Tower 3F — Grass (Morning)<br>Bell Tower 3F — Grass (Night)<br>Bell Tower 4F — Grass (Day)<br>Bell Tower 4F — Grass (Morning)<br>Bell Tower 4F — Grass (Night)<br>Cianwood City — Grass (Day)<br>Cianwood City — Grass (Morning)<br>Digletts Cave — Grass (Day)<br>Mt. Moon 1F — Grass (Day)<br>Mt. Moon 1F — Grass (Night)<br>Mt. Moon 2F — Grass (Day)<br>Mt. Silver (Top, snowy area) — Grass (Morning)<br>Mt. Silver 1F — Grass (Day)<br>Olivine City — Grass (Day)<br>Olivine City — Grass (Morning)<br>Vermilion City — Grass (Morning) |
-| Magby | Route 11 — Grass (Day)<br>Route 42 — Grass (Day)<br>Route 47 — Grass (Day)<br>Route 47 — Grass (Night)<br>Route 5 — Grass (Day)<br>Route 5 — Grass (Morning) |
-| Magcargo | Cerulean Cave 1F — Grass (Day)<br>Cerulean Cave 1F — Grass (Morning)<br>Cerulean Cave 1F — Grass (Night)<br>Cerulean Cave B1F — Grass (Morning)<br>Cerulean Cave B2F — Grass (Morning)<br>Mt. Mortar (Room above waterfall) — Grass (Night)<br>Mt. Silver (Expert Belt room) — Grass (Morning)<br>Seafoam Islands B2F — Grass (Morning) |
-| Magikarp | Blackthorn City — Super Rod swarm<br>Blackthorn City — Surf swarm<br>Cerulean Cave 1F — Super Rod swarm<br>Cerulean Cave B1F — Super Rod swarm<br>Cerulean Cave B2F — Super Rod swarm<br>Cerulean City — Super Rod swarm<br>Cherrygrove City — Super Rod swarm<br>Cherrygrove City — Surf<br>Cianwood City — Super Rod swarm<br>Cinnabar Island — Super Rod swarm<br>Cliff Edge Gate — Good Rod swarm<br>Cliff Edge Gate — Super Rod swarm<br>Dark Cave (Route 31 entrance) — Super Rod swarm<br>Dark Cave (Route 31 entrance) — Surf swarm<br>Dark Cave (Route 45 entrance) — Super Rod swarm<br>Dark Cave (Route 45 entrance) — Surf swarm<br>Dragons Den — Super Rod swarm<br>Dragons Den — Surf swarm<br>Ecruteak City — Super Rod swarm<br>Fuchsia City — Super Rod swarm<br>Fuchsia City — Surf swarm<br>Ilex Forest — Super Rod swarm<br>Lake of Rage — Grass (Day)<br>Lake of Rage — Grass (Morning)<br>Lake of Rage — Grass (Night)<br>Lake of Rage — Super Rod swarm<br>Lake of Rage — Surf swarm<br>Mt. Moon (Outside Clefairy active) — Good Rod swarm<br>Mt. Moon (Outside area) — Super Rod swarm<br>Mt. Mortar (Room above waterfall) — Super Rod swarm<br>Mt. Mortar (Waterfall room) — Super Rod swarm<br>Mt. Mortar B1F — Super Rod swarm<br>Mt. Silver (Moltres room) — Super Rod swarm<br>Mt. Silver (Outside) — Super Rod swarm<br>Mt. Silver (Top, snowy area) — Super Rod swarm<br>Mt. Silver 1F — Super Rod swarm<br>Mt. Silver 3F — Super Rod swarm<br>Mt. Silver 4F — Super Rod swarm<br>New Bark Town — Good Rod<br>New Bark Town — Super Rod<br>New Bark Town — Super Rod swarm<br>New Bark Town — Surf<br>Olivine City — Old Rod<br>Olivine City — Super Rod swarm<br>Pallet Town — Super Rod swarm<br>Route 10 — Super Rod swarm<br>Route 12 — Old Rod<br>Route 13 — Old Rod<br>Route 13 — Super Rod swarm<br>Route 19 — Super Rod swarm<br>Route 20 — Super Rod swarm<br>Route 21 — Super Rod swarm<br>Route 22 — Super Rod swarm<br>Route 24 — Super Rod swarm<br>Route 25 — Old Rod<br>Route 25 — Super Rod swarm<br>Route 26 — Super Rod swarm<br>Route 27 — Super Rod swarm<br>Route 28 — Old Rod<br>Route 28 — Super Rod swarm<br>Route 30 — Super Rod swarm<br>Route 31 — Super Rod swarm<br>Route 34 — Super Rod swarm<br>Route 35 — Super Rod swarm<br>Route 4 — Super Rod swarm<br>Route 40 — Super Rod swarm<br>Route 41 — Super Rod swarm<br>Route 42 — Super Rod swarm<br>Route 43 — Super Rod swarm<br>Route 43 — Surf swarm<br>Route 45 — Super Rod swarm<br>Route 45 — Surf swarm<br>Route 47 — Super Rod swarm<br>Route 6 — Super Rod swarm<br>Route 9 — Super Rod swarm<br>Ruins of Alph (Outside) — Super Rod swarm<br>Safari Zone (Placeholder, not used) — Surf swarm<br>Seafoam Islands B4F — Super Rod swarm<br>Slowpoke Well 1F — Super Rod swarm<br>Slowpoke Well B2F — Super Rod swarm<br>Tohjo Falls — Super Rod swarm<br>Union Cave 1F — Super Rod swarm<br>Union Cave B1F — Super Rod swarm<br>Union Cave B2F — Super Rod swarm<br>Vermilion City — Old Rod<br>Vermilion City — Super Rod swarm<br>Viridian City — Super Rod swarm<br>Whirl Islands 1F — Super Rod swarm<br>Whirl Islands B2F — Super Rod swarm |
-| Magmar | Route 16 — Grass (Morning)<br>Route 16 — Grass (Night)<br>Route 17 — Grass (Day)<br>Route 17 — Grass (Morning)<br>Route 17 — Grass (Night) |
-| Magmortar | Mt. Silver (Outside) — Grass (Night) |
-| Magnemite | Bell Tower 6F — Grass (Day)<br>Bell Tower 7F — Grass (Day)<br>Bell Tower 7F — Grass (Morning)<br>Bell Tower 7F — Grass (Night)<br>Dark Cave (Route 31 entrance) — Grass (Day)<br>Dark Cave (Route 31 entrance) — Grass (Morning)<br>Mt. Mortar (Central room) — Grass (Morning)<br>Mt. Mortar (Waterfall room) — Grass (Day)<br>Rock Tunnel 1F — Grass (Day)<br>Route 10 (Cave Ground) — Grass (Morning)<br>Route 10 (Cave Ground) — Grass (Night)<br>Union Cave 1F — Grass (Day)<br>Union Cave 1F — Grass (Morning)<br>Vermilion City — Grass (Day)<br>Vermilion City — Grass (Morning)<br>Vermilion City — Grass (Night) |
-| Magneton | Cerulean Cave B2F — Grass (Night)<br>Mt. Silver (Outside) — Grass (Morning)<br>Mt. Silver 1F — Grass (Morning)<br>Seafoam Islands 1F — Grass (Day)<br>Seafoam Islands 1F — Grass (Night)<br>Seafoam Islands B1F — Grass (Day)<br>Seafoam Islands B1F — Grass (Morning)<br>Seafoam Islands B1F — Grass (Night)<br>Seafoam Islands B2F — Grass (Day)<br>Seafoam Islands B3F — Grass (Day)<br>Victory Road 1F — Grass (Morning)<br>Victory Road 2F — Grass (Day)<br>Victory Road 2F — Grass (Morning)<br>Victory Road 3F — Grass (Night) |
-| Magnezone | Mt. Mortar (Room above waterfall) — Grass (Morning) |
-| Makuhita | Bell Tower 10F — Grass (Morning)<br>Bell Tower 10F — Grass (Night)<br>Cerulean Cave 1F — Pokégear radio — Hoenn Sound<br>Cerulean Cave B1F — Pokégear radio — Hoenn Sound<br>Cerulean Cave B2F — Pokégear radio — Hoenn Sound<br>Cianwood City — Grass (Day)<br>Cianwood City — Grass (Morning)<br>Cianwood City — Grass (Night)<br>Cliff Cave — Pokégear radio — Hoenn Sound<br>Dark Cave (Route 31 entrance) — Pokégear radio — Hoenn Sound<br>Dark Cave (Route 45 entrance) — Pokégear radio — Hoenn Sound<br>Digletts Cave — Grass (Night)<br>Digletts Cave — Pokégear radio — Hoenn Sound<br>Ice Path 1F — Pokégear radio — Hoenn Sound<br>Ice Path B1F — Pokégear radio — Hoenn Sound<br>Ice Path B2F — Pokégear radio — Hoenn Sound<br>Ice Path B3F — Pokégear radio — Hoenn Sound<br>Mt. Moon 1F — Grass (Day)<br>Mt. Moon 1F — Grass (Morning)<br>Mt. Moon 1F — Pokégear radio — Hoenn Sound<br>Mt. Moon 2F — Grass (Day)<br>Mt. Moon 2F — Grass (Morning)<br>Mt. Moon 2F — Pokégear radio — Hoenn Sound<br>Mt. Mortar (Central room) — Pokégear radio — Hoenn Sound<br>Mt. Mortar (Room above waterfall) — Pokégear radio — Hoenn Sound<br>Mt. Mortar (Waterfall room) — Pokégear radio — Hoenn Sound<br>Mt. Mortar B1F — Pokégear radio — Hoenn Sound<br>Mt. Silver (Expert Belt room) — Pokégear radio — Hoenn Sound<br>Mt. Silver (Moltres room) — Grass (Morning)<br>Mt. Silver (Moltres room) — Pokégear radio — Hoenn Sound<br>Mt. Silver (Mountainside) — Grass (Day)<br>Mt. Silver (Mountainside) — Pokégear radio — Hoenn Sound<br>Mt. Silver (Top, snowy area) — Pokégear radio — Hoenn Sound<br>Mt. Silver 1F — Pokégear radio — Hoenn Sound<br>Mt. Silver 3F — Pokégear radio — Hoenn Sound<br>Mt. Silver 4F — Grass (Night)<br>Mt. Silver 4F — Pokégear radio — Hoenn Sound<br>Rock Tunnel 1F — Pokégear radio — Hoenn Sound<br>Rock Tunnel B1F — Pokégear radio — Hoenn Sound<br>Route 33 — Grass (Morning)<br>Seafoam Islands 1F — Pokégear radio — Hoenn Sound<br>Seafoam Islands B1F — Pokégear radio — Hoenn Sound<br>Seafoam Islands B2F — Pokégear radio — Hoenn Sound<br>Seafoam Islands B3F — Pokégear radio — Hoenn Sound<br>Seafoam Islands B4F — Pokégear radio — Hoenn Sound<br>Slowpoke Well 1F — Pokégear radio — Hoenn Sound<br>Slowpoke Well B2F — Pokégear radio — Hoenn Sound<br>Tohjo Falls — Pokégear radio — Hoenn Sound<br>Union Cave 1F — Pokégear radio — Hoenn Sound<br>Union Cave B1F — Pokégear radio — Hoenn Sound<br>Union Cave B2F — Pokégear radio — Hoenn Sound<br>Victory Road 1F — Pokégear radio — Hoenn Sound<br>Victory Road 2F — Pokégear radio — Hoenn Sound<br>Victory Road 3F — Pokégear radio — Hoenn Sound<br>Whirl Islands 1F — Pokégear radio — Hoenn Sound<br>Whirl Islands B1F — Grass (Morning)<br>Whirl Islands B1F — Pokégear radio — Hoenn Sound<br>Whirl Islands B2F — Pokégear radio — Hoenn Sound<br>Whirl Islands B3F — Grass (Morning)<br>Whirl Islands B3F — Pokégear radio — Hoenn Sound |
-| Malamar | Route 21 — Super Rod<br>Slowpoke Well B2F — Surf |
-| Mamoswine | Seafoam Islands B1F — Grass (Day) |
-| Mandibuzz | Route 25 — Grass (Night) |
-| Manectric | Route 44 — Grass (Morning) |
-| Mankey | Cianwood City — Grass (Day)<br>Cianwood City — Grass (Morning)<br>Cianwood City — Grass (Night)<br>Route 24 — Grass (Morning)<br>Route 30 — Grass (Night)<br>Route 42 — Grass swarm<br>Route 9 — Grass (Day)<br>Route 9 — Grass (Night) |
-| Mantine | Route 19 — Super Rod |
-| Mantyke | Cerulean Cave 1F — Super Rod<br>Cinnabar Island — Good Rod<br>Ilex Forest — Good Rod<br>Ilex Forest — Old Rod<br>Ilex Forest — Surf<br>New Bark Town — Good Rod<br>New Bark Town — Old Rod<br>New Bark Town — Surf<br>Route 18 — Grass (Day)<br>Route 20 — Super Rod<br>Route 21 — Super Rod<br>Route 30 — Good Rod<br>Route 40 — Grass (Morning)<br>Route 40 — Grass (Night)<br>Route 41 — Grass (Day)<br>Route 41 — Grass (Morning)<br>Route 41 — Grass (Night)<br>Route 6 — Good Rod<br>Slowpoke Well B2F — Good Rod<br>Slowpoke Well B2F — Old Rod<br>Slowpoke Well B2F — Super Rod<br>Slowpoke Well B2F — Surf |
-| Maractus | Route 15 — Grass (Day) |
-| Mareanie | Blackthorn City — Good Rod<br>Blackthorn City — Old Rod<br>Celadon City — Surf<br>Cerulean Cave 1F — Surf<br>Dragons Den — Surf<br>Lake of Rage — Old Rod<br>Route 19 — Old Rod<br>Route 19 — Super Rod<br>Route 21 — Surf<br>Route 35 — Old Rod<br>Route 4 — Old Rod<br>Route 40 — Super Rod<br>Route 42 — Old Rod<br>Route 43 — Super Rod<br>Route 44 — Good Rod<br>Slowpoke Well B2F — Old Rod<br>Slowpoke Well B2F — Surf |
-| Mareep | Route 3 — Grass (Day)<br>Route 31 — Grass (Morning)<br>Route 42 — Grass (Day)<br>Route 42 — Grass (Morning)<br>Route 42 — Grass (Night)<br>Route 43 — Grass (Day) |
-| Marill | Blackthorn City — Surf<br>Mt. Moon (Outside Clefairy active) — Good Rod<br>Mt. Moon (Outside Clefairy active) — Old Rod<br>Mt. Mortar (Waterfall room) — Grass swarm<br>Mt. Silver (Moltres room) — Good Rod<br>Mt. Silver 4F — Good Rod<br>Route 24 — Surf<br>Route 29 — Grass (Day)<br>Route 32 — Grass (Day)<br>Route 32 — Grass (Morning)<br>Route 32 — Grass (Night)<br>Route 9 — Old Rod<br>Safari Zone (Placeholder, not used) — Super Rod<br>Seafoam Islands B4F — Old Rod<br>Viridian City — Surf |
-| Marowak | Cerulean Cave B1F — Grass (Day)<br>Mt. Mortar (Room above waterfall) — Grass (Day)<br>Mt. Mortar (Room above waterfall) — Grass (Night)<br>Mt. Silver 1F — Grass (Morning)<br>Seafoam Islands 1F — Grass (Day)<br>Seafoam Islands B1F — Grass (Day)<br>Seafoam Islands B1F — Grass (Morning)<br>Seafoam Islands B2F — Grass (Day)<br>Seafoam Islands B4F — Grass (Morning)<br>Victory Road 1F — Grass (Day)<br>Victory Road 3F — Grass (Day) |
-| Marowak Alolan | Cerulean Cave B2F — Grass (Day)<br>Mt. Mortar (Room above waterfall) — Grass (Day)<br>Mt. Mortar (Room above waterfall) — Grass (Morning)<br>Mt. Silver (Expert Belt room) — Grass (Night)<br>Victory Road 1F — Grass (Day)<br>Victory Road 1F — Grass (Morning)<br>Victory Road 1F — Grass (Night)<br>Victory Road 2F — Grass (Day)<br>Victory Road 2F — Grass (Morning)<br>Victory Road 2F — Grass (Night)<br>Victory Road 3F — Grass (Day)<br>Victory Road 3F — Grass (Morning) |
-| Marshadow | Seafoam Islands B3F — Grass (Night) |
-| Maschiff | Route 1 — Grass (Night)<br>Route 11 — Grass (Night)<br>Route 14 — Grass (Night)<br>Route 6 — Grass (Night) |
-| Masquerain | Route 44 — Grass (Night) |
-| Maushold | Route 13 — Grass (Day)<br>Route 14 — Grass (Morning)<br>Route 16 (New Grass) — Grass (Morning) |
-| Mawile | Route 48 — Grass (Day)<br>Route 48 — Grass (Morning)<br>Route 48 — Grass (Night) |
-| Medicham | Cerulean Cave 1F — Grass (Day)<br>Cerulean Cave 1F — Grass (Morning)<br>Cerulean Cave 1F — Grass (Night)<br>Cerulean Cave B1F — Grass (Morning)<br>Cerulean Cave B1F — Grass (Night)<br>Mt. Silver (Moltres room) — Grass (Night)<br>Mt. Silver 4F — Grass (Morning)<br>Seafoam Islands B4F — Grass (Night) |
-| Meditite | Bell Tower 10F — Pokégear radio — Sinnoh Sound<br>Bell Tower 2F — Pokégear radio — Sinnoh Sound<br>Bell Tower 3F — Pokégear radio — Sinnoh Sound<br>Bell Tower 4F — Pokégear radio — Sinnoh Sound<br>Bell Tower 5F — Pokégear radio — Sinnoh Sound<br>Bell Tower 6F — Pokégear radio — Sinnoh Sound<br>Bell Tower 7F — Pokégear radio — Sinnoh Sound<br>Bell Tower 8F — Pokégear radio — Sinnoh Sound<br>Bell Tower 9F — Pokégear radio — Sinnoh Sound<br>Burned Tower 1F — Pokégear radio — Sinnoh Sound<br>Burned Tower B1F — Pokégear radio — Sinnoh Sound<br>Cianwood City — Grass (Day)<br>Cianwood City — Grass (Morning)<br>Cianwood City — Grass (Night)<br>Digletts Cave — Grass (Night)<br>Mt. Moon 1F — Grass (Day)<br>Mt. Moon 1F — Grass (Night)<br>Mt. Silver 3F — Grass (Night)<br>Route 36 — Grass (Day)<br>Route 36 — Grass (Morning)<br>Route 36 — Grass (Night)<br>Sprout Tower 2F — Pokégear radio — Sinnoh Sound<br>Sprout Tower 3F — Grass (Day)<br>Sprout Tower 3F — Grass (Morning)<br>Sprout Tower 3F — Grass (Night)<br>Sprout Tower 3F — Pokégear radio — Sinnoh Sound |
-| Meowstic | Route 13 — Grass (Night)<br>Route 15 — Grass (Day)<br>Route 16 (New Grass) — Grass (Night)<br>Route 16 — Grass (Night)<br>Route 18 — Grass (Night) |
-| Meowth | Celadon City — Grass (Night)<br>Mahogany Town — Grass (Day)<br>Mahogany Town — Grass (Morning)<br>Mahogany Town — Grass (Night)<br>Olivine City — Grass (Day)<br>Olivine City — Grass (Morning)<br>Olivine City — Grass (Night)<br>Route 3 — Grass (Morning)<br>Vermilion City — Grass (Day)<br>Vermilion City — Grass (Morning)<br>Vermilion City — Grass (Night) |
-| Meowth Alolan | Mahogany Town — Grass (Day)<br>Mahogany Town — Grass (Morning)<br>Mahogany Town — Grass (Night)<br>Route 14 — Grass (Night)<br>Route 38 — Grass (Night)<br>Route 5 — Grass (Night)<br>Route 6 — Grass (Night)<br>Route 8 — Grass (Night) |
-| Meowth Galarian | Bell Tower 4F — Grass (Night)<br>Bell Tower 5F — Grass (Night)<br>Bell Tower 7F — Grass (Day)<br>Bell Tower 8F — Grass (Day)<br>Bell Tower 9F — Grass (Morning)<br>Mt. Moon 2F — Grass (Day)<br>Mt. Moon 2F — Grass (Night)<br>Mt. Mortar (Central room) — Grass (Day)<br>Union Cave B1F — Grass (Day)<br>Viridian Forest — Grass (Night)<br>Whirl Islands 1F — Grass (Night)<br>Whirl Islands B1F — Grass (Day)<br>Whirl Islands B3F — Grass (Night) |
-| Metagross | Cerulean Cave B1F — Grass (Day)<br>Cerulean Cave B1F — Grass (Morning)<br>Cerulean Cave B1F — Grass (Night) |
-| Metang | Bell Tower 10F — Grass (Day)<br>Bell Tower 10F — Grass (Morning)<br>Bell Tower 10F — Grass (Night) |
-| Metapod | National Park (Bug Catching Contest) — Grass (Day)<br>Route 2 (South, below Viridian Forest) — Grass (Morning)<br>Route 24 — Grass (Morning)<br>Route 25 — Grass (Morning)<br>Route 9 — Grass (Morning) |
-| Mienfoo | Route 39 — Grass (Day)<br>Route 39 — Grass (Morning)<br>Route 39 — Grass (Night) |
-| Mienshao | Route 26 — Grass (Morning) |
-| Mightyena | Mt. Silver (Outside) — Grass (Day)<br>Route 26 — Grass (Day)<br>Route 26 — Grass (Night) |
-| Milcery | Mahogany Town — Grass (Night)<br>Route 30 — Grass (Morning) |
-| Milotic | Route 28 — Surf |
-| Miltank | Route 15 — Grass (Day) |
-| Mime jr. | Cerulean City — Grass (Day)<br>Cerulean City — Grass (Morning) |
-| Mime Jr. | Route 16 — Grass (Day)<br>Route 30 — Grass (Day)<br>Route 4 — Grass (Morning)<br>Route 8 — Grass (Night) |
-| Mimikyu | Ecruteak City — Grass (Day)<br>Route 14 — Grass (Night)<br>Route 43 — Grass (Morning)<br>Route 5 — Grass (Night) |
-| Minccino | Celadon City — Grass (Morning)<br>Mahogany Town — Grass (Morning)<br>Route 29 — Grass (Morning)<br>Violet City — Grass (Day) |
-| Minior | Bell Tower 5F — Grass (Night)<br>Bell Tower 6F — Grass (Morning)<br>Cianwood City — Rock Smash<br>Mt. Mortar (Central room) — Grass (Day)<br>Rock Tunnel B1F — Grass (Morning)<br>Route 10 (Cave Ground) — Grass (Day)<br>Route 14 — Grass (Morning)<br>Route 6 — Grass (Morning)<br>Route 7 — Grass (Day)<br>Ruins of Alph (Inside, Ladder Room) — Grass (Morning)<br>Slowpoke Well B2F — Grass (Morning)<br>Slowpoke Well B2F — Grass (Night)<br>Union Cave B1F — Grass (Day)<br>Whirl Islands 1F — Grass (Day) |
-| Minun | National Park — Pokégear radio — Hoenn Sound<br>Route 1 — Pokégear radio — Hoenn Sound<br>Route 11 — Pokégear radio — Hoenn Sound<br>Route 14 — Pokégear radio — Hoenn Sound<br>Route 15 — Pokégear radio — Hoenn Sound<br>Route 16 — Pokégear radio — Hoenn Sound<br>Route 17 — Pokégear radio — Hoenn Sound<br>Route 18 — Pokégear radio — Hoenn Sound<br>Route 2 (North, above Viridian Forest) — Pokégear radio — Hoenn Sound<br>Route 2 (South, below Viridian Forest) — Pokégear radio — Hoenn Sound<br>Route 29 — Pokégear radio — Hoenn Sound<br>Route 3 — Pokégear radio — Hoenn Sound<br>Route 30 — Grass (Day)<br>Route 33 — Pokégear radio — Hoenn Sound<br>Route 36 — Pokégear radio — Hoenn Sound<br>Route 37 — Pokégear radio — Hoenn Sound<br>Route 38 — Pokégear radio — Hoenn Sound<br>Route 39 — Pokégear radio — Hoenn Sound<br>Route 46 — Pokégear radio — Hoenn Sound<br>Route 48 — Pokégear radio — Hoenn Sound<br>Route 5 — Pokégear radio — Hoenn Sound<br>Route 7 — Grass (Morning)<br>Route 7 — Grass (Night)<br>Route 7 — Pokégear radio — Hoenn Sound<br>Route 8 — Pokégear radio — Hoenn Sound |
-| Misdreavus | Bell Tower 6F — Grass (Night)<br>Burned Tower 1F — Grass (Day)<br>Burned Tower 1F — Grass (Morning)<br>Burned Tower 1F — Grass (Night)<br>Burned Tower B1F — Grass (Day)<br>Ecruteak City — Grass (Night)<br>Rock Tunnel 1F — Grass (Night)<br>Route 10 (Cave Ground) — Grass (Night)<br>Sprout Tower 2F — Grass (Day)<br>Sprout Tower 3F — Grass (Day)<br>Union Cave B2F — Grass (Night)<br>Violet City — Grass (Night) |
-| Mismagius | Bell Tower 4F — Grass (Night) |
-| Morelull | Celadon City — Grass (Night)<br>Mahogany Town — Grass (Day)<br>Route 12 — Grass (Night)<br>Route 31 — Grass (Morning) |
-| Morgrem | Route 17 — Grass (Night)<br>Route 47 — Grass (Morning)<br>Safari Zone (Placeholder, not used) — Grass (Day)<br>Safari Zone (Placeholder, not used) — Grass (Morning)<br>Safari Zone (Placeholder, not used) — Grass (Night) |
-| Morpeko | Route 35 — Grass (Day)<br>Route 35 — Grass (Morning)<br>Route 35 — Grass (Night) |
-| Mothim | Route 26 — Grass (Morning)<br>Route 44 — Grass (Day)<br>Route 47 — Grass (Morning) |
-| Mr Rime | Mt. Silver (Top, snowy area) — Grass (Night) |
-| Mr. Mime | Route 43 — Grass (Day)<br>Route 5 — Grass (Morning)<br>Route 6 — Grass (Day) |
-| Mr. Mime Galarian | Bell Tower 5F — Grass (Night)<br>Bell Tower 8F — Grass (Day)<br>Bell Tower 9F — Grass (Night)<br>Ice Path 1F — Grass (Day)<br>Ice Path 1F — Grass (Morning)<br>Ice Path 1F — Grass (Night)<br>Ice Path B1F — Grass (Day)<br>Ice Path B1F — Grass (Morning)<br>Ice Path B1F — Grass (Night)<br>Ice Path B2F — Grass (Day)<br>Ice Path B2F — Grass (Morning)<br>Ice Path B2F — Grass (Night)<br>Ice Path B3F — Grass (Day)<br>Ice Path B3F — Grass (Morning)<br>Ice Path B3F — Grass (Night)<br>Route 14 — Grass (Night)<br>Whirl Islands 1F — Grass (Night)<br>Whirl Islands B2F — Grass (Night) |
-| Mudbray | Bell Tower 8F — Grass (Morning)<br>Bell Tower 9F — Grass (Day)<br>Digletts Cave — Grass (Morning)<br>Mt. Mortar (Waterfall room) — Grass (Night)<br>Rock Tunnel 1F — Grass (Day)<br>Route 10 (Cave Ground) — Grass (Morning)<br>Ruins of Alph (Inside, Ladder Room) — Grass (Morning)<br>Ruins of Alph (Inside, Main Room) — Grass (Morning)<br>Ruins of Alph (Outside) — Grass (Day)<br>Slowpoke Well B2F — Grass (Day)<br>Union Cave B1F — Grass (Morning)<br>Whirl Islands B1F — Grass (Morning)<br>Whirl Islands B1F — Grass (Night) |
-| Mudkip | Mt. Mortar (Waterfall room) — Grass (Day)<br>Mt. Mortar (Waterfall room) — Grass (Morning)<br>Mt. Mortar (Waterfall room) — Grass (Night) |
-| Mudsdale | Mt. Mortar (Room above waterfall) — Grass (Morning) |
-| Muk | Seafoam Islands B4F — Grass (Day) |
-| Muk Alolan | Mt. Silver (Top, snowy area) — Grass (Morning)<br>Seafoam Islands B4F — Grass (Night) |
-| Munchlax | Route 12 — Grass (Day)<br>Route 12 — Grass (Morning)<br>Route 12 — Grass (Night)<br>Route 18 — Grass (Day)<br>Route 47 — Grass (Day)<br>Route 47 — Grass (Morning)<br>Route 47 — Grass (Night)<br>Route 9 — Grass (Day) |
-| Munna | Celadon City — Grass (Night)<br>Cerulean City — Grass (Day)<br>Pallet Town — Grass (Night)<br>Pewter City — Grass (Day)<br>Pewter City — Grass (Morning)<br>Pewter City — Grass (Night)<br>Route 8 — Grass (Day)<br>Route 8 — Grass (Morning)<br>Route 8 — Grass (Night)<br>Violet City — Grass (Night) |
-| Murkrow | Blackthorn City — Grass (Night)<br>Cianwood City — Grass (Night)<br>Ecruteak City — Grass (Day)<br>Ecruteak City — Grass (Morning)<br>Route 1 — Grass (Day)<br>Route 1 — Grass (Morning)<br>Route 1 — Grass (Night)<br>Route 10 — Grass (Night)<br>Route 12 — Grass (Night)<br>Route 18 — Grass (Night)<br>Route 19 — Grass (Night)<br>Route 3 — Grass (Day)<br>Route 3 — Grass (Morning)<br>Route 3 — Grass (Night)<br>Route 39 — Grass (Night)<br>Violet City — Grass (Night)<br>Viridian City — Grass (Night) |
-| Musharna | Ruins of Alph (Outside) — Grass (Day) |
-| Nacli | Bell Tower 7F — Grass (Night)<br>Bell Tower 9F — Grass (Morning)<br>Cianwood City — Rock Smash<br>Dark Cave (Route 31 entrance) — Grass (Night)<br>Mt. Moon 1F — Grass (Day)<br>Olivine City — Grass (Day)<br>Olivine City — Grass (Morning)<br>Olivine City — Grass (Night)<br>Ruins of Alph (Inside, Ladder Room) — Grass (Morning)<br>Ruins of Alph (Inside, Main Room) — Grass (Morning)<br>Ruins of Alph (Inside, Main Room) — Grass (Night)<br>Union Cave B1F — Grass (Day)<br>Viridian Forest — Grass (Day)<br>Whirl Islands B1F — Grass (Day) |
-| Naclstack | Bell Tower 10F — Grass (Day)<br>Bell Tower 10F — Grass (Morning)<br>Bell Tower 2F — Grass (Day)<br>Bell Tower 2F — Grass (Morning)<br>Bell Tower 2F — Grass (Night)<br>Bell Tower 6F — Grass (Morning)<br>Bell Tower 8F — Grass (Morning)<br>Bell Tower 9F — Grass (Night)<br>Digletts Cave — Grass (Morning)<br>Mt. Silver (Expert Belt room) — Grass (Morning)<br>Victory Road 2F — Grass (Day)<br>Whirl Islands 1F — Grass (Day)<br>Whirl Islands B3F — Grass (Morning) |
-| Natu | Pewter City — Grass (Day)<br>Pewter City — Grass (Morning)<br>Pewter City — Grass (Night)<br>Route 24 — Grass (Day)<br>Route 31 — Grass (Morning)<br>Ruins of Alph (Outside) — Grass (Day)<br>Ruins of Alph (Outside) — Grass (Morning)<br>Ruins of Alph (Outside) — Grass (Night)<br>Ruins of Alph (Outside) — Grass swarm<br>Violet City — Grass (Day) |
-| Nickit | Pallet Town — Grass (Night)<br>Route 1 — Grass (Night)<br>Route 24 — Grass (Night)<br>Route 3 — Grass (Night)<br>Route 46 — Grass (Night)<br>Violet City — Grass (Night)<br>Viridian City — Grass (Night) |
-| Nidoking | Bell Tower 2F — Grass (Day) |
-| Nidoqueen | Digletts Cave — Grass (Day) |
-| Nidoran♀ | Fuchsia City — Grass (Day)<br>Fuchsia City — Grass (Morning)<br>Fuchsia City — Grass (Night)<br>Route 36 — Grass (Day)<br>Route 36 — Grass (Morning)<br>Route 36 — Grass (Night)<br>Route 37 — Grass (Day)<br>Route 37 — Grass (Morning)<br>Route 37 — Grass (Night)<br>Viridian City — Grass (Morning) |
-| Nidoran♂ | Fuchsia City — Grass (Day)<br>Fuchsia City — Grass (Morning)<br>Fuchsia City — Grass (Night)<br>Route 36 — Grass (Day)<br>Route 36 — Grass (Morning)<br>Route 36 — Grass (Night)<br>Route 36 — Grass swarm<br>Route 37 — Grass (Day)<br>Route 37 — Grass (Morning)<br>Route 37 — Grass (Night)<br>Viridian City — Grass (Morning) |
-| Nidorina | Bell Tower 10F — Grass (Night)<br>Bell Tower 9F — Grass (Morning)<br>Cliff Cave — Grass (Morning)<br>Cliff Cave — Grass (Night)<br>Digletts Cave — Grass (Morning)<br>Mt. Silver (Moltres room) — Grass (Day)<br>Mt. Silver (Mountainside) — Grass (Day)<br>Rock Tunnel B1F — Grass (Morning)<br>Route 14 — Grass swarm<br>Route 15 — Grass swarm<br>Route 27 — Grass (Day)<br>Route 27 — Grass (Morning)<br>Route 27 — Grass (Night)<br>Whirl Islands B1F — Grass (Morning) |
-| Nidorino | Route 11 — Grass (Night)<br>Route 13 — Grass (Day)<br>Route 13 — Grass (Morning)<br>Route 13 — Grass (Night)<br>Route 27 — Grass (Day)<br>Route 27 — Grass (Morning)<br>Route 27 — Grass (Night) |
-| Nincada | Ilex Forest — Grass (Day)<br>Ilex Forest — Grass (Morning)<br>Ilex Forest — Grass (Night)<br>Mt. Mortar (Central room) — Grass (Night)<br>Rock Tunnel B1F — Grass (Morning)<br>Ruins of Alph (Inside, Main Room) — Grass (Day)<br>Ruins of Alph (Inside, Main Room) — Grass (Morning)<br>Ruins of Alph (Inside, Main Room) — Grass (Night)<br>Viridian Forest — Grass (Day)<br>Viridian Forest — Grass (Morning)<br>Whirl Islands B3F — Grass (Night) |
-| Ninetales | Route 15 — Grass (Day) |
-| Ninetales Alolan | Route 27 — Grass (Morning) |
-| Ninjask | Route 21 — Grass (Morning) |
-| Noctowl | Route 48 — Grass (Morning)<br>Safari Zone (Placeholder, not used) — Grass (Morning) |
-| Noibat | Blackthorn City — Grass (Day)<br>Blackthorn City — Grass (Morning)<br>Blackthorn City — Grass (Night)<br>Dragons Den — Grass (Day)<br>Dragons Den — Grass (Morning)<br>Dragons Den — Grass (Night)<br>Route 11 — Grass (Morning)<br>Route 18 — Grass (Day)<br>Route 3 — Grass (Day)<br>Route 3 — Grass (Morning)<br>Route 39 — Grass (Day)<br>Route 39 — Grass (Morning)<br>Route 39 — Grass (Night) |
-| Noivern | Route 26 — Grass (Night) |
-| Nosepass | Bell Tower 5F — Grass (Day)<br>Bell Tower 5F — Grass (Morning)<br>Bell Tower 5F — Grass (Night)<br>Cerulean Cave B2F — Grass (Day)<br>Mt. Mortar (Central room) — Grass (Day)<br>Rock Tunnel 1F — Grass (Day)<br>Route 10 (Cave Ground) — Grass (Morning)<br>Ruins of Alph (Inside, Main Room) — Grass (Morning)<br>Ruins of Alph (Inside, Main Room) — Grass (Night)<br>Slowpoke Well B2F — Grass (Night)<br>Union Cave B1F — Grass (Morning)<br>Whirl Islands B2F — Grass (Morning) |
-| Numel | Bell Tower 3F — Grass (Morning)<br>Burned Tower B1F — Grass (Day)<br>Burned Tower B1F — Grass (Morning)<br>Cinnabar Island — Grass (Day)<br>Cinnabar Island — Grass (Morning)<br>Cinnabar Island — Grass (Night)<br>Dark Cave (Route 31 entrance) — Grass (Morning)<br>Digletts Cave — Grass (Morning)<br>Ilex Forest — Pokégear radio — Hoenn Sound<br>Ruins of Alph (Inside, Ladder Room) — Grass (Morning)<br>Ruins of Alph (Inside, Main Room) — Grass (Morning)<br>Ruins of Alph (Outside) — Grass (Day)<br>Ruins of Alph (Outside) — Grass (Morning)<br>Ruins of Alph (Outside) — Grass (Night)<br>Tohjo Falls — Grass (Morning)<br>Union Cave B1F — Grass (Day)<br>Viridian Forest — Grass (Morning)<br>Viridian Forest — Pokégear radio — Hoenn Sound<br>Whirl Islands 1F — Grass (Day) |
-| Nuzleaf | Route 13 — Grass (Night)<br>Route 26 — Grass (Night)<br>Route 28 — Grass (Night)<br>Route 42 — Grass (Night)<br>Route 45 — Grass (Night)<br>Route 47 — Grass (Night)<br>Route 7 — Grass (Night) |
-| Nymble | National Park (Bug Catching Contest) — Grass (Day)<br>Route 22 — Grass (Morning)<br>Route 22 — Grass (Night)<br>Route 27 — Grass (Night)<br>Route 29 — Grass (Day)<br>Route 4 — Grass (Morning)<br>Route 46 — Grass (Morning)<br>Violet City — Grass (Day) |
-| Obstagoon | Route 26 — Grass (Night) |
-| Octillery | Route 43 — Super Rod |
-| Oddish | Azalea Town — Grass (Morning)<br>Azalea Town — Grass (Night)<br>Celadon City — Grass (Night)<br>Cerulean City — Grass (Day)<br>Cerulean City — Grass (Morning)<br>Fuchsia City — Grass (Night)<br>Route 12 — Grass (Day)<br>Route 12 — Grass (Morning)<br>Route 2 (North, above Viridian Forest) — Grass (Day)<br>Route 2 (North, above Viridian Forest) — Grass (Morning)<br>Route 2 (North, above Viridian Forest) — Grass (Night)<br>Route 24 — Grass (Night)<br>Viridian City — Grass (Day)<br>Viridian City — Grass (Morning)<br>Viridian City — Grass (Night) |
-| Oinkologne | Route 10 — Grass (Night)<br>Route 14 — Grass (Day)<br>Route 16 (New Grass) — Grass (Day)<br>Route 7 — Grass (Night) |
-| Omanyte | Cerulean Cave B2F — Old Rod<br>Cerulean City — Surf<br>Dark Cave (Route 31 entrance) — Surf<br>Dragons Den — Good Rod<br>Dragons Den — Surf<br>Mt. Mortar (Room above waterfall) — Surf<br>Mt. Mortar (Waterfall room) — Surf<br>Mt. Silver (Outside) — Good Rod<br>Route 10 — Surf<br>Route 25 — Surf<br>Route 27 — Surf<br>Route 30 — Surf<br>Route 32 — Surf<br>Ruins of Alph (Outside) — Good Rod<br>Union Cave 1F — Surf<br>Union Cave B2F — Surf<br>Whirl Islands 1F — Surf |
-| Omastar | Cerulean Cave B1F — Surf |
-| Onix | Bell Tower 5F — Grass (Day)<br>Bell Tower 5F — Grass (Morning)<br>Bell Tower 5F — Grass (Night)<br>Mt. Mortar (Central room) — Grass (Morning)<br>Mt. Silver 1F — Grass swarm<br>Rock Tunnel 1F — Grass (Morning)<br>Route 10 (Cave Ground) — Grass (Morning)<br>Ruins of Alph (Inside, Main Room) — Grass (Morning)<br>Ruins of Alph (Inside, Main Room) — Grass (Night)<br>Slowpoke Well B2F — Grass (Day)<br>Union Cave B1F — Grass (Morning)<br>Whirl Islands 1F — Grass (Day) |
-| Oranguru | Ruins of Alph (Outside) — Grass (Morning) |
-| Orbeetle | Route 21 — Grass (Night) |
-| Oricorio | Route 37 — Grass (Morning)<br>Route 4 — Grass (Day)<br>Route 42 — Grass (Day)<br>Route 42 — Grass (Morning)<br>Route 45 — Grass (Morning)<br>Route 47 — Grass (Day)<br>Route 48 — Grass (Morning)<br>Route 5 — Grass (Morning)<br>Route 7 — Grass (Day)<br>Route 7 — Grass (Morning) |
-| Orthworm | Bell Tower 5F — Grass (Morning) |
-| Oshawott | Route 28 — Grass (Day)<br>Route 28 — Grass (Morning)<br>Route 28 — Grass (Night) |
-| Overqwil | Route 12 — Surf |
-| Pachirisu | Route 16 — Grass (Morning)<br>Route 30 — Grass (Night)<br>Route 7 — Grass (Day) |
-| Palafin | Cherrygrove City — Super Rod |
-| Palossand | Cerulean Cave B1F — Grass (Day) |
-| Palpitoad | Cerulean Cave 1F — Grass (Day)<br>Cerulean Cave B2F — Grass (Morning)<br>Fuchsia City — Super Rod<br>Lake of Rage — Super Rod<br>Mt. Moon (Outside area) — Super Rod<br>Mt. Silver (Mountainside) — Grass (Morning)<br>Route 13 — Super Rod<br>Route 19 — Surf<br>Route 4 — Super Rod<br>Route 42 — Super Rod<br>Route 43 — Super Rod<br>Route 47 — Super Rod<br>Seafoam Islands B1F — Grass (Night)<br>Seafoam Islands B3F — Grass (Morning)<br>Seafoam Islands B4F — Grass (Day)<br>Seafoam Islands B4F — Surf<br>Tohjo Falls — Super Rod |
-| Pancham | Cianwood City — Grass (Day)<br>Cianwood City — Grass (Morning)<br>Cianwood City — Grass (Night)<br>Route 15 — Grass (Morning)<br>Route 26 — Grass (Day)<br>Route 26 — Grass (Morning)<br>Route 26 — Grass (Night)<br>Route 8 — Grass (Morning) |
-| Pangoro | Route 13 — Grass (Night) |
-| Panpour | Cerulean Cave B1F — Old Rod<br>Cianwood City — Old Rod<br>Cinnabar Island — Old Rod<br>Cliff Edge Gate — Old Rod<br>Mt. Moon (Outside Clefairy active) — Old Rod<br>Mt. Silver 3F — Old Rod<br>New Bark Town — Old Rod<br>Olivine City — Good Rod<br>Olivine City — Super Rod<br>Pallet Town — Old Rod<br>Route 22 — Old Rod<br>Route 34 — Old Rod<br>Route 43 — Old Rod<br>Route 44 — Old Rod<br>Route 45 — Old Rod<br>Route 6 — Old Rod<br>Safari Zone (Placeholder, not used) — Old Rod |
-| Pansage | Azalea Town — Grass (Morning)<br>Route 2 (North, above Viridian Forest) — Grass (Day)<br>Route 25 — Grass (Morning)<br>Route 43 — Grass (Day)<br>Route 43 — Grass (Morning)<br>Route 43 — Grass (Night) |
-| Pansear | Route 31 — Grass (Day)<br>Route 4 — Grass (Morning)<br>Route 46 — Grass (Morning) |
-| Paras | Azalea Town — Grass (Day)<br>National Park (Bug Catching Contest) — Grass (Morning)<br>Route 25 — Grass (Day)<br>Route 37 — Grass (Day)<br>Route 37 — Grass (Morning)<br>Route 37 — Grass (Night) |
-| Parasect | Route 26 — Grass (Day)<br>Route 27 — Grass (Day)<br>Route 44 — Grass (Morning) |
-| Passimian | Route 15 — Grass (Night) |
-| Patrat | Route 11 — Grass (Morning)<br>Route 2 (North, above Viridian Forest) — Grass (Night)<br>Route 3 — Grass (Night)<br>Route 36 — Grass (Day)<br>Route 36 — Grass (Morning)<br>Route 36 — Grass (Night) |
-| Pawmi | Cianwood City — Grass (Day)<br>National Park — Grass (Day)<br>National Park — Grass (Morning)<br>National Park — Grass (Night)<br>Olivine City — Grass (Day)<br>Olivine City — Grass (Morning)<br>Route 28 — Grass (Day)<br>Route 28 — Grass (Night)<br>Vermilion City — Grass (Day)<br>Vermilion City — Grass (Morning) |
-| Pawmo | Route 14 — Grass (Day)<br>Route 7 — Grass (Day)<br>Route 7 — Grass (Morning)<br>Route 8 — Grass (Night) |
-| Pawmot | Route 45 — Grass (Day) |
-| Pawniard | Bell Tower 10F — Grass (Night)<br>Bell Tower 2F — Grass (Night)<br>Bell Tower 9F — Grass (Night)<br>Cliff Cave — Grass (Night)<br>Dark Cave (Route 31 entrance) — Grass (Day)<br>Digletts Cave — Grass (Night)<br>Mt. Mortar (Waterfall room) — Grass (Night)<br>Rock Tunnel B1F — Grass (Night)<br>Sprout Tower 2F — Grass (Night)<br>Sprout Tower 3F — Grass (Day)<br>Union Cave B2F — Grass (Day)<br>Union Cave B2F — Grass (Night)<br>Victory Road 2F — Grass (Night)<br>Whirl Islands 1F — Grass (Night) |
-| Pelipper | Cerulean City — Super Rod<br>Cinnabar Island — Surf<br>Mt. Silver 1F — Super Rod<br>Mt. Silver 1F — Surf<br>New Bark Town — Super Rod<br>Pallet Town — Super Rod<br>Route 19 — Surf<br>Route 20 — Grass (Day)<br>Route 20 — Grass (Morning)<br>Route 20 — Super Rod<br>Route 20 — Surf<br>Route 24 — Super Rod<br>Route 26 — Surf<br>Route 27 — Super Rod<br>Route 30 — Surf<br>Route 31 — Super Rod<br>Route 9 — Super Rod<br>Vermilion City — Super Rod |
-| Perrserker | Cerulean Cave B2F — Grass (Morning)<br>Mt. Mortar (Room above waterfall) — Grass (Morning)<br>Victory Road 1F — Grass (Day)<br>Victory Road 1F — Grass (Morning)<br>Victory Road 2F — Grass (Day)<br>Victory Road 2F — Grass (Morning)<br>Victory Road 2F — Grass (Night)<br>Victory Road 3F — Grass (Morning) |
-| Persian | Route 16 (New Grass) — Grass (Morning)<br>Route 16 — Grass (Night)<br>Route 17 — Grass (Night)<br>Route 18 — Grass (Day)<br>Route 18 — Grass (Morning) |
-| Persian Alolan | Mahogany Town — Grass (Night)<br>Mt. Silver (Outside) — Grass (Morning)<br>Mt. Silver (Outside) — Grass (Night) |
-| Petilil | Celadon City — Grass (Day)<br>Celadon City — Grass (Morning)<br>Route 2 (South, below Viridian Forest) — Grass (Night)<br>Route 24 — Grass (Day)<br>Route 25 — Grass (Day)<br>Route 25 — Grass (Morning)<br>Route 31 — Grass (Day)<br>Route 6 — Grass (Morning) |
-| Phanpy | Bell Tower 2F — Grass (Day)<br>Bell Tower 2F — Grass (Morning)<br>Bell Tower 2F — Grass (Night)<br>Cliff Cave — Grass (Morning)<br>Rock Tunnel 1F — Grass (Morning)<br>Route 10 (Cave Ground) — Grass (Day)<br>Route 2 (South, below Viridian Forest) — Grass (Day)<br>Route 2 (South, below Viridian Forest) — Grass (Morning)<br>Ruins of Alph (Inside, Ladder Room) — Grass (Night)<br>Ruins of Alph (Inside, Main Room) — Grass (Night)<br>Slowpoke Well 1F — Grass (Day)<br>Union Cave 1F — Grass (Morning)<br>Whirl Islands B2F — Grass (Day)<br>Whirl Islands B3F — Grass (Day) |
-| Phantump | Azalea Town — Grass (Night)<br>Dark Cave (Route 45 entrance) — Grass (Night)<br>Ecruteak City — Grass (Day)<br>Ecruteak City — Grass (Morning)<br>Ecruteak City — Grass (Night)<br>Ilex Forest — Grass (Night)<br>Mt. Mortar (Central room) — Grass (Night)<br>Mt. Mortar B1F — Grass (Morning)<br>National Park — Grass (Night)<br>Rock Tunnel B1F — Grass (Day)<br>Route 24 — Grass (Night)<br>Route 27 — Grass (Day)<br>Route 27 — Grass (Morning)<br>Route 27 — Grass (Night)<br>Viridian Forest — Grass (Day) |
-| Pichu | Ilex Forest shrine — one-time static encounter (Lv. 30)<br>Route 26 — Grass (Day)<br>Route 26 — Grass (Morning)<br>Route 26 — Grass (Night) |
-| Pidgeot | Mt. Silver (Outside) — Grass (Night)<br>Safari Zone (Placeholder, not used) — Grass (Day) |
-| Pidgeotto | Route 48 — Grass (Day)<br>Route 7 — Grass (Morning)<br>Route 8 — Grass (Day)<br>Route 8 — Grass swarm |
-| Pidgey | Pallet Town — Grass (Day)<br>Pallet Town — Grass (Morning)<br>Route 1 — Grass (Day)<br>Route 1 — Grass (Morning)<br>Route 29 — Grass swarm<br>Route 30 — Grass swarm<br>Route 31 — Grass swarm<br>Route 36 — Grass (Day)<br>Route 36 — Grass (Morning)<br>Route 36 — Grass (Night)<br>Route 37 — Grass swarm<br>Route 5 — Grass swarm<br>Route 6 — Grass swarm<br>Viridian City — Grass (Day)<br>Viridian City — Grass (Morning) |
-| Pidove | Celadon City — Grass (Day)<br>Celadon City — Grass (Morning)<br>Olivine City — Grass (Morning)<br>Route 10 — Grass (Day)<br>Route 2 (North, above Viridian Forest) — Grass (Day)<br>Route 3 — Grass (Morning)<br>Route 34 — Grass (Day)<br>Route 34 — Grass (Morning)<br>Route 34 — Grass (Night)<br>Violet City — Grass (Day)<br>Violet City — Grass (Morning) |
-| Pikachu | Route 34 — Grass (Day)<br>Route 34 — Grass (Morning)<br>Route 34 — Grass (Night) |
-| Pikipek | National Park — Grass (Day)<br>National Park — Grass (Morning)<br>National Park — Grass (Night)<br>Violet City — Grass (Day) |
-| Piloswine | Mt. Silver (Top, snowy area) — Grass (Day)<br>Mt. Silver (Top, snowy area) — Grass (Morning)<br>Mt. Silver (Top, snowy area) — Grass (Night)<br>Seafoam Islands B1F — Grass (Day)<br>Seafoam Islands B1F — Grass (Morning)<br>Seafoam Islands B1F — Grass (Night)<br>Seafoam Islands B2F — Grass (Day)<br>Seafoam Islands B2F — Grass (Morning)<br>Seafoam Islands B2F — Grass (Night)<br>Seafoam Islands B3F — Grass (Day)<br>Seafoam Islands B3F — Grass (Morning)<br>Seafoam Islands B3F — Grass (Night)<br>Seafoam Islands B4F — Grass (Day)<br>Seafoam Islands B4F — Grass (Morning) |
-| Pincurchin | Cerulean Cave B1F — Super Rod<br>Cerulean City — Surf<br>Cinnabar Island — Super Rod<br>Mt. Silver (Outside) — Old Rod<br>Mt. Silver (Top, snowy area) — Old Rod<br>Mt. Silver 1F — Old Rod<br>Pallet Town — Old Rod<br>Route 12 — Old Rod<br>Route 19 — Old Rod<br>Route 20 — Old Rod<br>Route 32 — Grass (Night)<br>Route 34 — Super Rod<br>Route 36 — Grass (Morning)<br>Route 6 — Super Rod<br>Viridian City — Surf |
-| Pineco | National Park (Bug Catching Contest) — Grass (Morning)<br>National Park (Bug Catching Contest) — Grass (Night)<br>Route 2 (North, above Viridian Forest) — Grass (Day)<br>Route 2 (North, above Viridian Forest) — Grass (Morning)<br>Route 2 (North, above Viridian Forest) — Grass (Night)<br>Route 22 — Grass (Day)<br>Route 25 — Grass (Night)<br>Route 4 — Grass (Morning) |
-| Pinsir | Fuchsia City — Grass (Day)<br>Route 13 — Grass (Night) |
-| Piplup | Dark Cave (Route 31 entrance) — Grass (Day)<br>Dark Cave (Route 31 entrance) — Grass (Morning)<br>Dark Cave (Route 31 entrance) — Grass (Night) |
-| Plusle | National Park — Pokégear radio — Hoenn Sound<br>Route 1 — Pokégear radio — Hoenn Sound<br>Route 11 — Pokégear radio — Hoenn Sound<br>Route 14 — Pokégear radio — Hoenn Sound<br>Route 15 — Pokégear radio — Hoenn Sound<br>Route 16 — Pokégear radio — Hoenn Sound<br>Route 17 — Pokégear radio — Hoenn Sound<br>Route 18 — Pokégear radio — Hoenn Sound<br>Route 2 (North, above Viridian Forest) — Pokégear radio — Hoenn Sound<br>Route 2 (South, below Viridian Forest) — Pokégear radio — Hoenn Sound<br>Route 29 — Pokégear radio — Hoenn Sound<br>Route 3 — Pokégear radio — Hoenn Sound<br>Route 30 — Grass (Day)<br>Route 33 — Pokégear radio — Hoenn Sound<br>Route 36 — Pokégear radio — Hoenn Sound<br>Route 37 — Pokégear radio — Hoenn Sound<br>Route 38 — Pokégear radio — Hoenn Sound<br>Route 39 — Pokégear radio — Hoenn Sound<br>Route 46 — Pokégear radio — Hoenn Sound<br>Route 48 — Pokégear radio — Hoenn Sound<br>Route 5 — Pokégear radio — Hoenn Sound<br>Route 7 — Grass (Morning)<br>Route 7 — Pokégear radio — Hoenn Sound<br>Route 8 — Pokégear radio — Hoenn Sound |
-| Politoed | Route 28 — Surf |
-| Poliwag | Blackthorn City — Good Rod swarm<br>Cerulean Cave 1F — Good Rod swarm<br>Cerulean Cave 1F — Old Rod<br>Cerulean Cave 1F — Surf swarm<br>Cerulean Cave B1F — Good Rod swarm<br>Cerulean Cave B1F — Surf swarm<br>Cerulean Cave B2F — Good Rod swarm<br>Cerulean Cave B2F — Surf swarm<br>Cerulean City — Grass (Day)<br>Cerulean City — Grass (Morning)<br>Cerulean City — Grass (Night)<br>Cherrygrove City — Grass (Day)<br>Cherrygrove City — Grass (Morning)<br>Cherrygrove City — Grass (Night)<br>Ecruteak City — Good Rod swarm<br>Ecruteak City — Surf swarm<br>Fuchsia City — Surf<br>Ilex Forest — Good Rod swarm<br>Lake of Rage — Grass (Day)<br>Lake of Rage — Grass (Morning)<br>Mt. Moon (Outside Clefairy active) — Super Rod swarm<br>Mt. Moon (Outside Clefairy active) — Surf swarm<br>Mt. Moon (Outside area) — Good Rod swarm<br>Mt. Moon (Outside area) — Surf swarm<br>Mt. Silver (Outside) — Good Rod swarm<br>Route 20 — Surf<br>Route 21 — Surf<br>Route 22 — Good Rod swarm<br>Route 22 — Surf swarm<br>Route 28 — Good Rod swarm<br>Route 28 — Surf swarm<br>Route 30 — Good Rod<br>Route 30 — Good Rod swarm<br>Route 30 — Super Rod<br>Route 30 — Surf swarm<br>Route 31 — Good Rod<br>Route 31 — Good Rod swarm<br>Route 31 — Super Rod<br>Route 31 — Surf swarm<br>Route 35 — Good Rod swarm<br>Route 4 — Old Rod<br>Route 43 — Good Rod swarm<br>Route 44 — Good Rod swarm<br>Route 44 — Surf swarm<br>Route 45 — Good Rod swarm<br>Route 6 — Good Rod swarm<br>Ruins of Alph (Outside) — Good Rod swarm<br>Violet City — Good Rod<br>Violet City — Good Rod swarm<br>Violet City — Surf swarm<br>Viridian City — Good Rod swarm<br>Viridian City — Surf swarm<br>Whirl Islands B2F — Old Rod |
-| Poliwhirl | Dark Cave (Route 45 entrance) — Super Rod<br>Dragons Den — Super Rod<br>Fuchsia City — Super Rod<br>Mt. Moon (Outside Clefairy active) — Surf<br>Mt. Moon (Outside area) — Surf<br>Mt. Silver (Moltres room) — Surf<br>Mt. Silver (Outside) — Surf swarm<br>Mt. Silver 3F — Surf<br>Mt. Silver 4F — Surf<br>Route 12 — Surf<br>Route 13 — Surf<br>Route 19 — Surf<br>Route 28 — Super Rod<br>Route 40 — Super Rod<br>Route 44 — Super Rod<br>Tohjo Falls — Super Rod<br>Whirl Islands B2F — Super Rod |
-| Poliwrath | Route 31 — Surf |
-| Poltchageist | Burned Tower B1F — Grass (Night)<br>Dark Cave (Route 31 entrance) — Grass (Night)<br>Ilex Forest — Grass (Day)<br>Ilex Forest — Grass (Morning)<br>Ilex Forest — Grass (Night)<br>National Park — Grass (Night)<br>Route 2 (South, below Viridian Forest) — Grass (Night)<br>Route 21 — Grass (Night)<br>Route 22 — Grass (Night)<br>Route 29 — Grass (Night)<br>Route 46 — Grass (Night)<br>Route 7 — Grass (Night)<br>Viridian Forest — Grass (Morning)<br>Viridian Forest — Grass (Night) |
-| Polteageist | Seafoam Islands B1F — Grass (Night) |
-| Ponyta | Mt. Silver (Outside) — Grass (Day)<br>Mt. Silver (Outside) — Grass (Morning)<br>Mt. Silver (Outside) — Grass (Night)<br>Route 22 — Grass (Day)<br>Route 22 — Grass (Morning)<br>Route 31 — Grass (Morning)<br>Route 39 — Grass (Morning) |
-| Ponyta Galarian | Route 30 — Grass (Night)<br>Route 8 — Grass (Night)<br>Ruins of Alph (Outside) — Grass (Day) |
-| Poochyena | Route 1 — Grass swarm<br>Route 2 (South, below Viridian Forest) — Grass (Night)<br>Route 29 — Grass (Night)<br>Route 46 — Grass (Night) |
-| Popplio | Route 9 — Grass (Day)<br>Route 9 — Grass (Morning)<br>Route 9 — Grass (Night) |
-| Porygon | Bell Tower 7F — Grass (Night)<br>Bell Tower 9F — Grass (Night)<br>Celadon City — Grass (Day)<br>Celadon City — Grass (Morning)<br>Celadon City — Grass (Night)<br>Cerulean Cave B1F — Grass (Morning)<br>Mt. Mortar (Central room) — Grass (Day)<br>Mt. Mortar (Waterfall room) — Grass (Morning)<br>Rock Tunnel 1F — Grass (Morning)<br>Route 10 (Cave Ground) — Grass (Morning)<br>Route 35 — Grass (Day)<br>Route 35 — Grass (Morning)<br>Route 35 — Grass (Night)<br>Union Cave B1F — Grass (Morning)<br>Whirl Islands 1F — Grass (Morning)<br>Whirl Islands B1F — Grass (Day) |
-| Porygon-Z | Victory Road 3F — Grass (Morning) |
-| Porygon2 | Victory Road 3F — Grass (Day) |
-| Primeape | Route 16 (New Grass) — Grass (Day) |
-| Probopass | Seafoam Islands 1F — Grass (Morning) |
-| Psyduck | Blackthorn City — Old Rod<br>Cerulean City — Grass (Day)<br>Cerulean City — Grass (Morning)<br>Cerulean City — Grass (Night)<br>Cherrygrove City — Grass (Day)<br>Cliff Edge Gate — Surf<br>Dark Cave (Route 45 entrance) — Super Rod<br>Dark Cave (Route 45 entrance) — Surf<br>Ilex Forest — Surf<br>Ilex Forest — Surf swarm<br>Mt. Moon (Outside Clefairy active) — Super Rod<br>Route 13 — Old Rod<br>Route 19 — Old Rod<br>Route 25 — Old Rod<br>Route 28 — Old Rod<br>Route 35 — Surf<br>Route 35 — Surf swarm<br>Route 41 — Surf<br>Route 42 — Old Rod<br>Route 43 — Surf<br>Route 6 — Surf<br>Route 6 — Surf swarm<br>Slowpoke Well 1F — Old Rod<br>Vermilion City — Old Rod |
-| Pumpkaboo | Azalea Town — Grass (Night)<br>Dark Cave (Route 45 entrance) — Grass (Day)<br>Dark Cave (Route 45 entrance) — Grass (Morning)<br>Dark Cave (Route 45 entrance) — Grass (Night)<br>Ecruteak City — Grass (Day)<br>Ecruteak City — Grass (Morning)<br>Mt. Mortar (Central room) — Grass (Night)<br>Rock Tunnel B1F — Grass (Day)<br>Route 27 — Grass (Day)<br>Route 27 — Grass (Morning)<br>Route 27 — Grass (Night)<br>Union Cave B2F — Grass (Day)<br>Union Cave B2F — Grass (Morning)<br>Union Cave B2F — Grass (Night)<br>Viridian Forest — Grass (Day) |
-| Pupitar | Mt. Silver 4F — Grass (Day)<br>Mt. Silver 4F — Grass (Morning)<br>Mt. Silver 4F — Grass (Night) |
-| Purrloin | Celadon City — Grass (Night)<br>Mahogany Town — Grass (Night)<br>Olivine City — Grass (Night)<br>Pallet Town — Grass (Night)<br>Route 3 — Grass (Night)<br>Route 46 — Grass (Night)<br>Violet City — Grass (Night)<br>Viridian City — Grass (Night) |
-| Purugly | Mt. Silver (Outside) — Grass (Morning) |
-| Pyroar | Route 26 — Grass (Day) |
-| Pyukumuku | Cinnabar Island — Good Rod<br>Mt. Silver (Outside) — Old Rod<br>Mt. Silver (Top, snowy area) — Old Rod<br>Mt. Silver (Top, snowy area) — Surf<br>Mt. Silver 1F — Old Rod<br>Pallet Town — Old Rod<br>Pallet Town — Surf<br>Route 10 — Good Rod<br>Route 12 — Old Rod<br>Route 20 — Old Rod<br>Route 25 — Good Rod<br>Route 28 — Good Rod<br>Route 30 — Old Rod<br>Route 31 — Old Rod<br>Union Cave B1F — Good Rod<br>Viridian City — Old Rod<br>Viridian City — Surf |
-| Quagsire | Cerulean Cave B1F — Surf<br>Cerulean City — Super Rod<br>Cinnabar Island — Surf<br>Dark Cave (Route 45 entrance) — Grass (Morning)<br>Dark Cave (Route 45 entrance) — Grass (Night)<br>Fuchsia City — Good Rod<br>Mt. Silver (Expert Belt room) — Grass swarm<br>Mt. Silver (Moltres room) — Grass swarm<br>Mt. Silver (Top, snowy area) — Surf<br>Mt. Silver 3F — Grass swarm<br>Pallet Town — Surf<br>Route 10 — Super Rod<br>Route 12 — Good Rod<br>Route 19 — Surf<br>Route 20 — Surf<br>Route 24 — Super Rod<br>Ruins of Alph (Outside) — Grass (Day)<br>Slowpoke Well B2F — Grass (Morning)<br>Violet City — Super Rod<br>Viridian City — Good Rod |
-| Quaxly | Cerulean Cave 1F — Grass (Day)<br>Cerulean Cave 1F — Grass (Morning)<br>Cerulean Cave 1F — Grass (Night) |
-| Qwilfish | Blackthorn City — Super Rod<br>Cerulean Cave B2F — Super Rod<br>Cherrygrove City — Super Rod<br>Cianwood City — Good Rod<br>Ecruteak City — Good Rod<br>Ilex Forest — Good Rod<br>Lake of Rage — Super Rod<br>Mt. Mortar B1F — Good Rod<br>Mt. Silver 1F — Good Rod<br>Route 19 — Good Rod<br>Route 24 — Good Rod<br>Route 27 — Good Rod<br>Route 30 — Super Rod<br>Route 32 — Good Rod<br>Route 32 — Super Rod<br>Route 32 — Super Rod swarm<br>Route 44 — Super Rod<br>Route 9 — Good Rod<br>Viridian City — Super Rod |
-| Qwilfish Hisuian | Cerulean Cave 1F — Good Rod<br>Cianwood City — Good Rod<br>Ecruteak City — Good Rod<br>Fuchsia City — Good Rod<br>Ilex Forest — Good Rod<br>Lake of Rage — Super Rod<br>Mt. Moon (Outside area) — Good Rod<br>Mt. Mortar B1F — Good Rod<br>Mt. Silver (Moltres room) — Good Rod<br>Route 20 — Good Rod<br>Route 21 — Good Rod<br>Route 40 — Good Rod<br>Route 42 — Good Rod<br>Route 45 — Good Rod<br>Route 6 — Good Rod<br>Safari Zone (Placeholder, not used) — Old Rod |
-| Rabsca | Route 15 — Grass (Night) |
-| Raging Bolt | Route 16 (New Grass) — Grass (Day) |
-| Raichu Alolan | Ruins of Alph (Outside) — Grass (Night) |
-| Ralts | Route 33 — Grass (Day)<br>Route 33 — Grass (Morning)<br>Route 33 — Grass (Night)<br>Route 34 — Grass swarm<br>Route 42 — Grass (Day)<br>Route 42 — Grass (Morning)<br>Route 42 — Grass (Night) |
-| Rampardos | Mt. Mortar (Room above waterfall) — Grass (Day) |
-| Rapidash | Route 28 — Grass (Morning) |
-| Rapidash Galarian | Route 28 — Grass (Night) |
-| Raticate | Mahogany Town — Grass (Morning)<br>Route 44 — Grass (Night)<br>Route 47 — Grass (Night) |
-| Raticate Alolan | Mt. Silver (Outside) — Grass (Day)<br>Route 16 (New Grass) — Grass (Night)<br>Route 28 — Grass (Night) |
-| Rattata | Bell Tower 10F — Grass swarm<br>Bell Tower 2F — Grass swarm<br>Bell Tower 3F — Grass swarm<br>Bell Tower 4F — Grass swarm<br>Bell Tower 5F — Grass swarm<br>Bell Tower 6F — Grass swarm<br>Bell Tower 7F — Grass swarm<br>Bell Tower 8F — Grass swarm<br>Bell Tower 9F — Grass swarm<br>Burned Tower 1F — Grass swarm<br>Burned Tower B1F — Grass swarm<br>Mahogany Town — Grass (Morning)<br>Pallet Town — Grass (Morning)<br>Pallet Town — Grass (Night)<br>Route 22 — Grass swarm<br>Route 29 — Grass (Morning)<br>Route 39 — Grass swarm<br>Route 7 — Grass swarm<br>Safari Zone (Placeholder, not used) — Grass swarm<br>Sprout Tower 2F — Grass swarm<br>Sprout Tower 3F — Grass swarm<br>Viridian City — Grass (Morning)<br>Viridian City — Grass (Night) |
-| Rattata Alolan | Route 35 — Grass (Night)<br>Route 36 — Grass (Night)<br>Route 38 — Grass (Night)<br>Route 5 — Grass (Night)<br>Route 6 — Grass (Night) |
-| Relicanth | Route 12 — Super Rod swarm<br>Route 41 — Grass (Day)<br>Route 41 — Grass (Morning)<br>Route 41 — Grass (Night)<br>Ruins of Alph (Outside) — Good Rod |
-| Rellor | National Park (Bug Catching Contest) — Grass (Morning)<br>Route 2 (North, above Viridian Forest) — Grass (Day)<br>Route 2 (South, below Viridian Forest) — Grass (Day)<br>Route 2 (South, below Viridian Forest) — Grass (Morning)<br>Route 22 — Grass (Day)<br>Route 22 — Grass (Night)<br>Route 30 — Grass (Day) |
-| Remoraid | Cerulean City — Surf<br>Cherrygrove City — Old Rod<br>Cianwood City — Old Rod<br>Ecruteak City — Super Rod<br>Ilex Forest — Old Rod<br>Mt. Mortar B1F — Good Rod<br>Mt. Mortar B1F — Old Rod<br>Mt. Silver 1F — Old Rod<br>Route 24 — Surf<br>Route 27 — Old Rod<br>Route 30 — Good Rod<br>Route 30 — Old Rod<br>Route 31 — Good Rod<br>Route 43 — Good Rod<br>Route 44 — Good Rod<br>Route 44 — Super Rod<br>Route 44 — Super Rod swarm<br>Route 9 — Super Rod |
-| Reuniclus | Mt. Silver (Outside) — Grass (Night) |
-| Revavroom | Seafoam Islands B4F — Grass (Morning) |
-| Rhydon | Cerulean Cave B1F — Grass (Morning)<br>Cerulean Cave B2F — Grass (Night)<br>Mt. Silver (Moltres room) — Grass (Day)<br>Mt. Silver (Moltres room) — Grass (Morning)<br>Mt. Silver (Moltres room) — Grass (Night)<br>Mt. Silver (Outside) — Grass (Morning)<br>Mt. Silver 3F — Grass (Day)<br>Mt. Silver 3F — Grass (Morning)<br>Mt. Silver 4F — Grass (Day)<br>Mt. Silver 4F — Grass (Morning) |
-| Rhyhorn | Bell Tower 8F — Grass (Day)<br>Bell Tower 9F — Grass (Day)<br>Digletts Cave — Grass (Day)<br>Fuchsia City — Grass (Day)<br>Fuchsia City — Grass (Morning)<br>Fuchsia City — Grass (Night)<br>Mt. Mortar (Waterfall room) — Grass (Morning)<br>Rock Tunnel 1F — Grass (Day)<br>Route 10 (Cave Ground) — Grass (Day)<br>Ruins of Alph (Inside, Ladder Room) — Grass (Night)<br>Ruins of Alph (Inside, Main Room) — Grass (Day)<br>Ruins of Alph (Inside, Main Room) — Grass (Night)<br>Slowpoke Well 1F — Grass (Day)<br>Union Cave 1F — Grass (Day)<br>Whirl Islands B2F — Grass (Day) |
-| Rhyperior | Victory Road 1F — Grass (Day) |
-| Ribombee | Route 14 — Grass (Morning)<br>Route 15 — Grass (Day)<br>Route 16 (New Grass) — Grass (Day)<br>Route 17 — Grass (Day) |
-| Riolu | Bell Tower 10F — Grass (Day)<br>Cerulean City — Grass (Day)<br>Cerulean City — Grass (Morning)<br>Cerulean City — Grass (Night)<br>Cianwood City — Grass (Day)<br>Cianwood City — Grass (Morning)<br>Cianwood City — Grass (Night)<br>Cliff Cave — Grass (Day)<br>Digletts Cave — Grass (Day)<br>Mt. Moon 1F — Grass (Morning)<br>Mt. Moon 1F — Grass (Night)<br>Mt. Moon 2F — Grass (Morning)<br>Mt. Silver (Moltres room) — Grass (Morning)<br>Mt. Silver (Mountainside) — Grass (Morning)<br>Mt. Silver (Top, snowy area) — Grass (Day)<br>Mt. Silver 4F — Grass (Morning)<br>Route 31 — Grass (Morning)<br>Whirl Islands 1F — Grass (Day)<br>Whirl Islands B2F — Grass (Morning) |
-| Rockruff | Bell Tower 4F — Grass (Night)<br>Bell Tower 5F — Grass (Morning)<br>Blackthorn City — Grass (Day)<br>Blackthorn City — Grass (Morning)<br>Blackthorn City — Grass (Night)<br>Dark Cave (Route 31 entrance) — Grass (Night)<br>Mt. Moon 1F — Grass (Morning)<br>Pallet Town — Grass (Day)<br>Pallet Town — Grass (Morning)<br>Pallet Town — Grass (Night)<br>Pewter City — Grass (Day)<br>Pewter City — Grass (Morning)<br>Pewter City — Grass (Night)<br>Route 10 (Cave Ground) — Grass (Day)<br>Route 10 (Cave Ground) — Grass (Morning)<br>Route 10 (Cave Ground) — Grass (Night)<br>Ruins of Alph (Inside, Ladder Room) — Grass (Morning)<br>Union Cave B1F — Grass (Day)<br>Viridian Forest — Grass (Day) |
-| Roggenrola | Bell Tower 4F — Grass (Night)<br>Bell Tower 5F — Grass (Day)<br>Bell Tower 5F — Grass (Morning)<br>Bell Tower 5F — Grass (Night)<br>Bell Tower 7F — Grass (Night)<br>Dark Cave (Route 31 entrance) — Grass (Night)<br>Ruins of Alph (Inside, Ladder Room) — Grass (Morning)<br>Ruins of Alph (Inside, Main Room) — Grass (Morning)<br>Ruins of Alph (Inside, Main Room) — Grass (Night)<br>Union Cave B1F — Grass (Day)<br>Viridian Forest — Grass (Day)<br>Whirl Islands 1F — Grass (Morning)<br>Whirl Islands B1F — Grass (Day) |
-| Rolycoly | Bell Tower 5F — Grass (Day)<br>Bell Tower 5F — Grass (Morning)<br>Cinnabar Island — Grass (Day)<br>Cinnabar Island — Grass (Morning)<br>Cinnabar Island — Grass (Night)<br>Dark Cave (Route 31 entrance) — Grass (Day)<br>Mt. Moon 1F — Grass (Morning)<br>Ruins of Alph (Inside, Main Room) — Grass (Day)<br>Ruins of Alph (Inside, Main Room) — Grass (Morning)<br>Ruins of Alph (Inside, Main Room) — Grass (Night)<br>Ruins of Alph (Outside) — Rock Smash<br>Slowpoke Well 1F — Grass (Day)<br>Union Cave 1F — Grass (Night)<br>Viridian Forest — Grass (Day) |
-| Rookidee | Route 35 — Grass (Day)<br>Route 35 — Grass (Morning)<br>Route 35 — Grass (Night)<br>Violet City — Grass (Morning) |
-| Roselia | Route 21 — Grass (Morning)<br>Route 24 — Grass (Night)<br>Route 31 — Grass (Day)<br>Route 42 — Grass (Day)<br>Route 43 — Grass (Morning) |
-| Roserade | Route 21 — Grass (Day) |
-| Rotom | Cerulean Cave B2F — Grass (Night)<br>Dark Cave (Route 31 entrance) — Grass (Morning)<br>Ecruteak City — Grass (Day)<br>Ecruteak City — Grass (Morning)<br>Ecruteak City — Grass (Night)<br>Mt. Mortar B1F — Grass (Night)<br>Rock Tunnel B1F — Grass (Day)<br>Route 16 (New Grass) — Grass (Night)<br>Sprout Tower 3F — Grass (Day)<br>Union Cave B2F — Grass (Morning) |
-| Rowlet | Route 10 (Cave Ground) — Grass (Day)<br>Route 10 (Cave Ground) — Grass (Morning)<br>Route 10 (Cave Ground) — Grass (Night) |
-| Rufflet | Route 11 — Grass (Morning)<br>Route 4 — Grass (Day)<br>Route 42 — Grass (Day)<br>Route 5 — Grass (Day) |
-| Runerigus | Slowpoke Well B2F — Grass (Night) |
-| Sableye | Bell Tower 3F — Grass (Night)<br>Burned Tower 1F — Grass (Morning)<br>Burned Tower 1F — Grass (Night)<br>Burned Tower B1F — Grass (Day)<br>Burned Tower B1F — Grass (Morning)<br>Burned Tower B1F — Grass (Night)<br>Mt. Mortar (Waterfall room) — Grass (Night)<br>Rock Tunnel B1F — Grass (Morning)<br>Route 9 — Grass swarm<br>Sprout Tower 2F — Grass (Night)<br>Sprout Tower 3F — Grass (Night)<br>Union Cave 1F — Grass (Night)<br>Union Cave B2F — Grass (Night) |
-| Salamence | Route 2 (North, above Viridian Forest) — Grass (Day)<br>Route 2 (North, above Viridian Forest) — Grass (Morning)<br>Route 2 (North, above Viridian Forest) — Grass (Night) |
-| Salandit | Cinnabar Island — Grass (Day)<br>Cinnabar Island — Grass (Morning)<br>Cinnabar Island — Grass (Night)<br>Route 16 — Grass (Morning)<br>Route 3 — Grass (Day)<br>Route 3 — Grass (Night)<br>Route 31 — Grass (Day) |
-| Salazzle | Route 47 — Grass (Morning) |
-| Samurott Hisuian | Olivine City — Super Rod |
-| Sandaconda | Victory Road 2F — Grass (Morning) |
-| Sandile | Bell Tower 10F — Grass (Night)<br>Bell Tower 9F — Grass (Night)<br>Dark Cave (Route 31 entrance) — Grass (Night)<br>Mt. Moon 1F — Grass (Night)<br>Ruins of Alph (Inside, Ladder Room) — Grass (Night)<br>Ruins of Alph (Inside, Main Room) — Grass (Night)<br>Ruins of Alph (Outside) — Grass (Day)<br>Ruins of Alph (Outside) — Grass (Morning)<br>Ruins of Alph (Outside) — Grass (Night)<br>Slowpoke Well 1F — Grass (Day)<br>Union Cave 1F — Grass (Day)<br>Victory Road 3F — Grass (Night)<br>Viridian Forest — Grass (Morning)<br>Whirl Islands B3F — Grass (Night) |
-| Sandshrew | Bell Tower 7F — Grass (Day)<br>Bell Tower 8F — Grass (Day)<br>Blackthorn City — Grass (Morning)<br>Mt. Moon 2F — Grass (Night)<br>Rock Tunnel 1F — Grass (Day)<br>Route 25 — Grass (Day)<br>Route 25 — Grass (Morning)<br>Ruins of Alph (Inside, Ladder Room) — Grass (Day)<br>Ruins of Alph (Inside, Ladder Room) — Grass (Morning)<br>Ruins of Alph (Inside, Main Room) — Grass (Day)<br>Ruins of Alph (Inside, Main Room) — Grass (Morning)<br>Slowpoke Well 1F — Grass (Morning)<br>Viridian Forest — Grass (Night)<br>Whirl Islands B1F — Grass (Morning)<br>Whirl Islands B3F — Grass (Day) |
-| Sandshrew Alolan | Bell Tower 5F — Grass (Day)<br>Bell Tower 5F — Grass (Night)<br>Bell Tower 6F — Grass (Day)<br>Bell Tower 6F — Grass (Morning)<br>Bell Tower 6F — Grass (Night)<br>Ice Path 1F — Grass (Day)<br>Ice Path 1F — Grass (Night)<br>Ice Path B1F — Grass (Day)<br>Ice Path B1F — Grass (Morning)<br>Ice Path B1F — Grass (Night)<br>Ice Path B2F — Grass (Day)<br>Ice Path B2F — Grass (Morning)<br>Ice Path B2F — Grass (Night)<br>Ice Path B3F — Grass (Day)<br>Ice Path B3F — Grass (Morning)<br>Ice Path B3F — Grass (Night)<br>Mt. Mortar (Waterfall room) — Grass (Morning)<br>Union Cave B1F — Grass (Day)<br>Union Cave B1F — Grass (Morning)<br>Union Cave B2F — Grass (Morning) |
-| Sandslash | Bell Tower 2F — Grass (Day)<br>Bell Tower 4F — Grass (Morning)<br>Bell Tower 8F — Grass (Day)<br>Cerulean Cave B2F — Grass (Night)<br>Ruins of Alph (Outside) — Grass (Day)<br>Slowpoke Well B2F — Grass (Day)<br>Tohjo Falls — Grass (Night)<br>Union Cave B2F — Grass (Day)<br>Union Cave B2F — Grass (Morning)<br>Union Cave B2F — Grass (Night)<br>Victory Road 1F — Grass (Morning)<br>Whirl Islands 1F — Grass (Day)<br>Whirl Islands 1F — Grass (Morning) |
-| Sandslash Alolan | Ice Path B2F — Grass (Night) |
-| Sandygast | Bell Tower 3F — Grass (Night)<br>Burned Tower 1F — Grass (Night)<br>Mt. Mortar (Central room) — Grass (Night)<br>Mt. Silver 1F — Grass (Night)<br>Route 19 — Grass (Day)<br>Route 19 — Grass (Morning)<br>Route 19 — Grass (Night)<br>Ruins of Alph (Inside, Ladder Room) — Grass (Day)<br>Ruins of Alph (Inside, Main Room) — Grass (Morning)<br>Slowpoke Well 1F — Grass (Day)<br>Slowpoke Well B2F — Grass (Night)<br>Tohjo Falls — Grass (Night)<br>Union Cave B1F — Grass (Night)<br>Victory Road 1F — Grass (Night)<br>Whirl Islands B1F — Grass (Night) |
-| Sawk | Bell Tower 7F — Grass (Day) |
-| Sawsbuck | Route 21 — Grass (Day)<br>Route 21 — Grass (Night)<br>Route 28 — Grass (Day)<br>Safari Zone (Placeholder, not used) — Grass (Day) |
-| Scatterbug | Route 1 — Grass (Day)<br>Route 2 (North, above Viridian Forest) — Grass (Morning)<br>Route 2 (South, below Viridian Forest) — Grass (Day)<br>Route 22 — Grass (Day)<br>Route 22 — Grass (Morning)<br>Route 33 — Grass (Day)<br>Route 33 — Grass (Morning)<br>Route 33 — Grass (Night)<br>Route 4 — Grass (Night)<br>Violet City — Grass (Day)<br>Viridian City — Grass (Day)<br>Viridian City — Grass (Morning) |
-| Scizor | Cerulean Cave B1F — Grass (Morning) |
-| Scolipede | Route 21 — Grass (Morning) |
-| Scorbunny | Ruins of Alph (Inside, Main Room) — Grass (Day)<br>Ruins of Alph (Inside, Main Room) — Grass (Morning)<br>Ruins of Alph (Inside, Main Room) — Grass (Night) |
-| Scovillain | Route 21 — Grass (Day) |
-| Scrafty | Route 28 — Grass (Night) |
-| Scraggy | Cianwood City — Grass (Night)<br>Route 1 — Grass (Night)<br>Route 11 — Grass (Night)<br>Route 13 — Grass (Night)<br>Route 43 — Grass (Night)<br>Route 5 — Grass (Night) |
-| Scyther | Fuchsia City — Grass (Morning)<br>Fuchsia City — Grass (Night)<br>Route 15 — Grass (Morning) |
-| Seadra | Cerulean Cave 1F — Surf<br>Cliff Edge Gate — Super Rod<br>Dark Cave (Route 45 entrance) — Super Rod<br>Mt. Moon (Outside Clefairy active) — Super Rod<br>Mt. Moon (Outside Clefairy active) — Surf<br>Mt. Silver (Outside) — Surf<br>Mt. Silver 4F — Super Rod<br>Route 12 — Super Rod<br>Route 13 — Super Rod<br>Route 25 — Super Rod<br>Route 28 — Super Rod<br>Route 45 — Super Rod<br>Seafoam Islands B4F — Super Rod<br>Slowpoke Well 1F — Super Rod<br>Vermilion City — Super Rod<br>Whirl Islands 1F — Super Rod<br>Whirl Islands B2F — Super Rod |
-| Seaking | Cerulean Cave B2F — Surf<br>Mt. Silver (Moltres room) — Surf swarm<br>Mt. Silver (Top, snowy area) — Surf swarm<br>Mt. Silver 1F — Surf swarm<br>Mt. Silver 3F — Surf swarm<br>Mt. Silver 4F — Surf swarm |
-| Sealeo | Cerulean Cave B1F — Surf<br>Fuchsia City — Super Rod<br>Mt. Silver (Moltres room) — Surf<br>Mt. Silver (Outside) — Super Rod<br>Mt. Silver 3F — Super Rod<br>Mt. Silver 3F — Surf<br>Mt. Silver 4F — Super Rod<br>Route 12 — Super Rod<br>Route 13 — Super Rod<br>Route 28 — Super Rod<br>Route 35 — Super Rod<br>Route 42 — Super Rod<br>Route 47 — Super Rod<br>Seafoam Islands B4F — Super Rod<br>Slowpoke Well B2F — Super Rod<br>Tohjo Falls — Super Rod |
-| Seedot | Azalea Town — Grass (Day)<br>Azalea Town — Grass (Morning)<br>Azalea Town — Grass (Night)<br>Route 24 — Grass (Day)<br>Route 24 — Grass (Morning)<br>Route 24 — Grass (Night)<br>Viridian City — Grass (Day) |
-| Seel | Celadon City — Surf<br>Lake of Rage — Good Rod<br>Mt. Mortar B1F — Surf<br>Route 13 — Old Rod<br>Route 19 — Good Rod<br>Route 24 — Surf<br>Route 34 — Surf<br>Route 35 — Surf<br>Route 4 — Surf<br>Route 40 — Good Rod<br>Route 41 — Surf<br>Route 43 — Old Rod<br>Route 47 — Surf<br>Seafoam Islands B1F — Grass swarm<br>Seafoam Islands B2F — Grass swarm<br>Seafoam Islands B4F — Grass swarm<br>Seafoam Islands B4F — Surf<br>Seafoam Islands B4F — Surf swarm<br>Slowpoke Well 1F — Old Rod<br>Tohjo Falls — Good Rod |
-| Seismitoad | Victory Road 2F — Grass (Day) |
-| Sentret | Pallet Town — Grass (Day)<br>Pallet Town — Grass (Morning)<br>Route 1 — Grass (Day)<br>Route 1 — Grass (Morning)<br>Route 35 — Grass (Day)<br>Route 35 — Grass (Morning)<br>Route 35 — Grass (Night)<br>Viridian City — Grass (Day) |
-| Seviper | Route 48 — Grass (Day) |
-| Sewaddle | Azalea Town — Grass (Day)<br>Azalea Town — Grass (Morning)<br>Route 24 — Grass (Night)<br>Route 43 — Grass (Day)<br>Route 43 — Grass (Morning)<br>Route 43 — Grass (Night) |
-| Sharpedo | Mt. Silver (Top, snowy area) — Super Rod<br>Route 21 — Surf |
-| Shaymin | National Park — one-time static encounter (Lv. 30) |
-| Shedinja | Bell Tower 4F — Grass (Day)<br>Bell Tower 7F — Grass (Night)<br>Bell Tower 8F — Grass (Night)<br>Cerulean Cave B2F — Grass (Night)<br>Route 21 — Grass (Night)<br>Safari Zone (Placeholder, not used) — Grass (Day)<br>Safari Zone (Placeholder, not used) — Grass (Morning)<br>Safari Zone (Placeholder, not used) — Grass (Night)<br>Tohjo Falls — Grass (Night)<br>Union Cave B2F — Grass (Day)<br>Union Cave B2F — Grass (Morning)<br>Union Cave B2F — Grass (Night)<br>Whirl Islands B1F — Grass (Night) |
-| Shelgon | Mt. Silver (Mountainside) — Grass (Day)<br>Mt. Silver (Mountainside) — Grass (Morning)<br>Mt. Silver (Mountainside) — Grass (Night) |
-| Shellder | Cinnabar Island — Good Rod swarm<br>Dark Cave (Route 31 entrance) — Old Rod<br>Dark Cave (Route 45 entrance) — Old Rod<br>Fuchsia City — Old Rod<br>Lake of Rage — Old Rod<br>Mt. Silver (Moltres room) — Old Rod<br>Mt. Silver (Top, snowy area) — Old Rod<br>New Bark Town — Good Rod swarm<br>Pallet Town — Good Rod swarm<br>Route 20 — Good Rod swarm<br>Route 21 — Good Rod swarm<br>Route 21 — Old Rod<br>Route 26 — Good Rod swarm<br>Route 27 — Good Rod swarm<br>Route 30 — Old Rod<br>Route 4 — Super Rod<br>Route 41 — Good Rod<br>Route 41 — Good Rod swarm<br>Route 41 — Super Rod<br>Route 47 — Good Rod<br>Route 47 — Good Rod swarm<br>Ruins of Alph (Outside) — Good Rod<br>Slowpoke Well 1F — Old Rod<br>Tohjo Falls — Old Rod<br>Union Cave B1F — Old Rod<br>Vermilion City — Good Rod swarm |
-| Shellos | Blackthorn City — Old Rod<br>Celadon City — Surf<br>Cherrygrove City — Grass (Morning)<br>Cherrygrove City — Grass (Night)<br>Cliff Edge Gate — Surf<br>Dark Cave (Route 45 entrance) — Super Rod<br>Lake of Rage — Surf<br>Mt. Moon (Outside Clefairy active) — Super Rod<br>Mt. Silver 3F — Super Rod<br>Route 13 — Good Rod<br>Route 19 — Good Rod<br>Route 19 — Grass (Morning)<br>Route 19 — Grass (Night)<br>Route 35 — Surf<br>Route 4 — Surf<br>Route 40 — Good Rod<br>Route 40 — Grass (Morning)<br>Route 40 — Grass (Night)<br>Route 41 — Grass (Day)<br>Route 42 — Old Rod<br>Route 43 — Super Rod<br>Route 45 — Good Rod<br>Slowpoke Well 1F — Old Rod<br>Tohjo Falls — Good Rod |
-| Shelmet | Route 12 — Grass (Day)<br>Route 12 — Grass (Morning)<br>Route 12 — Grass (Night)<br>Route 33 — Grass (Day)<br>Route 33 — Grass (Morning)<br>Route 33 — Grass (Night)<br>Route 43 — Grass (Day)<br>Route 43 — Grass (Morning)<br>Route 43 — Grass (Night) |
-| Shieldon | Bell Tower 8F — Grass (Morning)<br>Mt. Mortar (Waterfall room) — Grass (Night)<br>Mt. Mortar B1F — Grass (Day)<br>Rock Tunnel 1F — Grass (Day)<br>Route 10 (Cave Ground) — Grass (Day)<br>Ruins of Alph (Inside, Ladder Room) — Grass (Night)<br>Ruins of Alph (Inside, Main Room) — Grass (Day)<br>Ruins of Alph (Inside, Main Room) — Grass (Morning)<br>Slowpoke Well 1F — Grass (Night)<br>Union Cave 1F — Grass (Day)<br>Whirl Islands 1F — Grass (Day)<br>Whirl Islands B2F — Grass (Day)<br>Whirl Islands B3F — Grass (Day) |
-| Shiftry | Route 26 — Grass (Night)<br>Safari Zone (Placeholder, not used) — Grass (Night) |
-| Shiinotic | Route 16 — Grass (Day)<br>Route 16 — Grass (Morning)<br>Route 44 — Grass (Morning) |
-| Shinx | National Park — Pokégear radio — Sinnoh Sound<br>Route 1 — Pokégear radio — Sinnoh Sound<br>Route 11 — Pokégear radio — Sinnoh Sound<br>Route 14 — Pokégear radio — Sinnoh Sound<br>Route 15 — Pokégear radio — Sinnoh Sound<br>Route 16 — Pokégear radio — Sinnoh Sound<br>Route 17 — Pokégear radio — Sinnoh Sound<br>Route 18 — Pokégear radio — Sinnoh Sound<br>Route 2 (North, above Viridian Forest) — Pokégear radio — Sinnoh Sound<br>Route 2 (South, below Viridian Forest) — Pokégear radio — Sinnoh Sound<br>Route 29 — Pokégear radio — Sinnoh Sound<br>Route 3 — Pokégear radio — Sinnoh Sound<br>Route 33 — Pokégear radio — Sinnoh Sound<br>Route 35 — Grass (Day)<br>Route 35 — Grass (Morning)<br>Route 35 — Grass (Night)<br>Route 36 — Pokégear radio — Sinnoh Sound<br>Route 37 — Pokégear radio — Sinnoh Sound<br>Route 38 — Pokégear radio — Sinnoh Sound<br>Route 39 — Pokégear radio — Sinnoh Sound<br>Route 46 — Pokégear radio — Sinnoh Sound<br>Route 48 — Pokégear radio — Sinnoh Sound<br>Route 5 — Pokégear radio — Sinnoh Sound<br>Route 6 — Grass (Day)<br>Route 7 — Pokégear radio — Sinnoh Sound<br>Route 8 — Pokégear radio — Sinnoh Sound<br>Viridian City — Grass (Day)<br>Viridian City — Grass (Morning)<br>Viridian City — Grass (Night) |
-| Shroodle | Route 3 — Grass (Morning)<br>Route 30 — Grass (Night) |
-| Shroomish | Celadon City — Grass (Night)<br>National Park — Grass (Day)<br>National Park — Grass (Morning)<br>National Park — Grass (Night)<br>Route 44 — Grass (Day)<br>Route 44 — Grass (Morning)<br>Route 44 — Grass (Night)<br>Viridian City — Grass (Night) |
-| Shuckle | Bell Tower 2F — Grass (Night) |
-| Shuppet | Bell Tower 9F — Grass (Night)<br>Burned Tower 1F — Grass (Day)<br>Burned Tower 1F — Grass (Night)<br>Burned Tower B1F — Grass (Day)<br>Burned Tower B1F — Grass (Morning)<br>Burned Tower B1F — Grass (Night)<br>Ecruteak City — Grass (Day)<br>Ecruteak City — Grass (Morning)<br>Ecruteak City — Grass (Night)<br>Mt. Moon 2F — Grass (Night)<br>Rock Tunnel 1F — Grass (Night)<br>Route 12 — Grass (Night)<br>Sprout Tower 2F — Grass (Day)<br>Sprout Tower 2F — Grass (Morning)<br>Sprout Tower 2F — Grass (Night)<br>Sprout Tower 3F — Grass (Night)<br>Union Cave B1F — Grass (Night)<br>Vermilion City — Grass (Night)<br>Violet City — Grass (Night)<br>Viridian City — Grass (Night) |
-| Sigilyph | Route 45 — Grass (Morning) |
-| Silcoon | National Park (Bug Catching Contest) — Grass (Day)<br>National Park (Bug Catching Contest) — Grass (Night)<br>Route 10 — Grass (Night)<br>Route 2 (South, below Viridian Forest) — Grass (Morning)<br>Route 2 (South, below Viridian Forest) — Grass (Night)<br>Route 22 — Grass (Morning)<br>Route 24 — Grass (Day)<br>Route 25 — Grass (Morning)<br>Route 9 — Grass (Morning) |
-| Silicobra | Bell Tower 3F — Grass (Day)<br>Bell Tower 3F — Grass (Morning)<br>Bell Tower 3F — Grass (Night)<br>Mt. Moon 2F — Grass (Night)<br>Mt. Mortar (Central room) — Grass (Morning)<br>Rock Tunnel 1F — Grass (Morning)<br>Rock Tunnel B1F — Grass (Day)<br>Ruins of Alph (Inside, Main Room) — Grass (Day)<br>Ruins of Alph (Inside, Main Room) — Grass (Morning)<br>Ruins of Alph (Inside, Main Room) — Grass (Night)<br>Slowpoke Well 1F — Grass (Morning)<br>Whirl Islands B3F — Grass (Morning) |
-| Simipour | Route 13 — Surf |
-| Simisage | Route 26 — Grass (Morning) |
-| Simisear | Route 13 — Grass (Day) |
-| Sinistcha | Whirl Islands B3F — Grass (Night) |
-| Sinistea | Bell Tower 4F — Grass (Night)<br>Burned Tower 1F — Grass (Morning)<br>Burned Tower 1F — Grass (Night)<br>Celadon City — Grass (Night)<br>Dark Cave (Route 31 entrance) — Grass (Day)<br>Dark Cave (Route 31 entrance) — Grass (Night)<br>Digletts Cave — Grass (Night)<br>Ecruteak City — Grass (Day)<br>Ecruteak City — Grass (Morning)<br>Ecruteak City — Grass (Night)<br>Mt. Mortar (Central room) — Grass (Night)<br>Mt. Silver (Mountainside) — Grass (Night)<br>Sprout Tower 2F — Grass (Morning)<br>Sprout Tower 2F — Grass (Night)<br>Sprout Tower 3F — Grass (Night)<br>Union Cave B1F — Grass (Night)<br>Viridian Forest — Grass (Morning)<br>Whirl Islands B1F — Grass (Night) |
-| Sirfetch'd | Route 15 — Grass (Morning) |
-| Sizzlipede | Route 1 — Grass (Morning)<br>Route 10 — Grass (Day)<br>Route 14 — Grass (Day)<br>Route 2 (South, below Viridian Forest) — Grass (Morning)<br>Route 4 — Grass (Day)<br>Route 4 — Grass (Morning)<br>Route 46 — Grass (Morning) |
-| Skarmory | Bell Tower 5F — Grass (Day) |
-| Skiddo | Azalea Town — Grass (Day)<br>Route 18 — Grass (Day)<br>Route 21 — Grass (Night)<br>Route 24 — Grass (Night)<br>Route 5 — Grass (Day) |
-| Skiploom | Route 10 — Grass (Day)<br>Route 13 — Grass (Morning)<br>Route 14 — Grass (Morning)<br>Route 21 — Grass (Morning)<br>Route 26 — Grass (Day)<br>Route 45 — Grass (Day)<br>Route 48 — Grass (Morning)<br>Route 8 — Grass (Morning) |
-| Skitty | Celadon City — Grass (Day)<br>Celadon City — Grass (Morning)<br>Route 29 — Grass (Day)<br>Route 48 — Grass (Day)<br>Route 48 — Grass (Morning)<br>Route 48 — Grass (Night)<br>Violet City — Grass (Day) |
-| Skorupi | Cerulean Cave B1F — Old Rod<br>Cianwood City — Surf<br>Cliff Edge Gate — Good Rod<br>Dark Cave (Route 31 entrance) — Old Rod<br>Dark Cave (Route 45 entrance) — Old Rod<br>Dragons Den — Old Rod<br>Mt. Moon (Outside Clefairy active) — Old Rod<br>Mt. Mortar (Room above waterfall) — Old Rod<br>Mt. Mortar (Waterfall room) — Old Rod<br>Mt. Silver 3F — Good Rod<br>Route 22 — Old Rod<br>Route 26 — Old Rod<br>Route 42 — Good Rod<br>Route 9 — Old Rod<br>Viridian City — Old Rod<br>Whirl Islands B2F — Old Rod |
-| Skrelp | Dark Cave (Route 45 entrance) — Good Rod<br>Dark Cave (Route 45 entrance) — Super Rod<br>Dragons Den — Grass (Morning)<br>Dragons Den — Grass (Night)<br>Lake of Rage — Good Rod<br>Mt. Mortar (Room above waterfall) — Surf<br>Route 13 — Old Rod<br>Route 19 — Old Rod<br>Route 28 — Old Rod<br>Route 34 — Good Rod<br>Route 35 — Old Rod<br>Route 40 — Grass (Day)<br>Route 40 — Grass (Morning)<br>Route 40 — Grass (Night)<br>Route 40 — Old Rod<br>Route 41 — Grass (Day)<br>Route 41 — Grass (Morning)<br>Route 41 — Grass (Night)<br>Route 42 — Old Rod<br>Route 44 — Good Rod<br>Seafoam Islands B4F — Good Rod<br>Seafoam Islands B4F — Surf<br>Slowpoke Well 1F — Old Rod<br>Tohjo Falls — Old Rod<br>Vermilion City — Old Rod |
-| Skuntank | Route 47 — Grass (Night) |
-| Skwovet | Pallet Town — Grass (Day)<br>Pallet Town — Grass (Morning)<br>Pallet Town — Grass (Night)<br>Route 10 — Grass (Night)<br>Route 3 — Grass (Day)<br>Route 3 — Grass (Morning)<br>Route 31 — Grass (Night)<br>Route 46 — Grass (Day) |
-| Slaking | Mt. Silver (Outside) — Grass (Morning) |
-| Slakoth | Route 29 — Grass (Morning)<br>Route 4 — Grass (Day)<br>Route 4 — Grass (Morning)<br>Route 4 — Grass (Night) |
-| Sliggoo | Route 43 — Grass (Day)<br>Route 43 — Grass (Morning)<br>Route 43 — Grass (Night) |
-| Sliggoo Hisuian | Mt. Mortar (Room above waterfall) — Grass (Day)<br>Mt. Mortar (Room above waterfall) — Grass (Morning)<br>Mt. Mortar (Room above waterfall) — Grass (Night) |
-| Slowbro | Cerulean Cave B2F — Surf<br>Cerulean City — Super Rod<br>Cianwood City — Super Rod<br>Cliff Edge Gate — Super Rod<br>Ecruteak City — Super Rod<br>Mt. Moon (Outside area) — Super Rod<br>Mt. Mortar B1F — Super Rod<br>Mt. Silver (Top, snowy area) — Super Rod<br>Mt. Silver 4F — Super Rod<br>Route 10 — Super Rod<br>Route 24 — Super Rod<br>Route 27 — Super Rod<br>Route 32 — Super Rod<br>Seafoam Islands B4F — Surf<br>Union Cave B1F — Super Rod |
-| Slowbro Galarian | Mt. Silver (Top, snowy area) — Grass (Night) |
-| Slowking | Cerulean City — Super Rod<br>Cianwood City — Super Rod<br>Cliff Edge Gate — Super Rod<br>Ecruteak City — Super Rod<br>Ilex Forest — Super Rod<br>Mt. Moon (Outside area) — Super Rod<br>Mt. Mortar B1F — Super Rod<br>Mt. Silver (Moltres room) — Super Rod<br>Mt. Silver (Outside) — Super Rod<br>Mt. Silver 3F — Super Rod<br>Mt. Silver 4F — Super Rod<br>Route 10 — Super Rod<br>Route 12 — Super Rod<br>Route 25 — Super Rod<br>Route 27 — Super Rod<br>Route 45 — Super Rod<br>Union Cave B1F — Super Rod |
-| Slowking Galarian | Mt. Mortar (Room above waterfall) — Surf |
-| Slowpoke | Blackthorn City — Old Rod<br>Blackthorn City — Surf<br>Celadon City — Surf<br>Cerulean City — Grass (Day)<br>Cerulean City — Grass (Morning)<br>Cerulean City — Grass (Night)<br>Cliff Edge Gate — Surf<br>Dark Cave (Route 45 entrance) — Good Rod<br>Mt. Silver 4F — Surf<br>Route 13 — Old Rod<br>Route 19 — Old Rod<br>Route 4 — Surf<br>Route 47 — Surf<br>Slowpoke Well 1F — Surf<br>Slowpoke Well 1F — Surf swarm<br>Slowpoke Well B2F — Surf<br>Slowpoke Well B2F — Surf swarm<br>Tohjo Falls — Good Rod |
-| Slowpoke Galarian | Bell Tower 7F — Grass (Morning)<br>Bell Tower 9F — Grass (Day)<br>Cerulean Cave B1F — Good Rod<br>Cianwood City — Good Rod<br>Lake of Rage — Super Rod<br>Mt. Mortar B1F — Surf<br>Mt. Silver (Outside) — Surf<br>Pallet Town — Super Rod<br>Route 2 (South, below Viridian Forest) — Grass (Night)<br>Route 22 — Good Rod<br>Route 26 — Good Rod<br>Route 40 — Surf<br>Route 45 — Grass (Day)<br>Route 45 — Grass (Morning)<br>Route 45 — Grass (Night)<br>Route 6 — Super Rod<br>Safari Zone (Placeholder, not used) — Good Rod<br>Whirl Islands B3F — Grass (Night) |
-| Slugma | Cinnabar Island — Grass (Day)<br>Cinnabar Island — Grass (Morning)<br>Cinnabar Island — Grass (Night)<br>Route 16 — Grass (Day)<br>Route 16 — Grass (Morning)<br>Route 29 — Grass (Day)<br>Route 4 — Grass (Night) |
-| Slurpuff | Mt. Silver (Outside) — Grass (Day) |
-| Smeargle | Pallet Town — Grass (Day)<br>Route 10 — Grass (Morning)<br>Route 35 — Grass (Morning)<br>Route 5 — Grass (Morning)<br>Safari Zone (Placeholder, not used) — Grass (Day)<br>Safari Zone (Placeholder, not used) — Grass (Morning)<br>Safari Zone (Placeholder, not used) — Grass (Night) |
-| Smoliv | Celadon City — Grass (Day)<br>Celadon City — Grass (Morning)<br>Route 1 — Grass (Day)<br>Route 14 — Grass (Day)<br>Route 2 (North, above Viridian Forest) — Grass (Day)<br>Route 21 — Grass (Day)<br>Route 22 — Grass (Day)<br>Route 4 — Grass (Morning) |
-| Smoochum | Bell Tower 8F — Grass (Night)<br>Bell Tower 9F — Grass (Morning)<br>Ice Path 1F — Grass (Day)<br>Ice Path 1F — Grass (Morning)<br>Ice Path 1F — Grass (Night)<br>Ice Path B1F — Grass (Day)<br>Ice Path B1F — Grass (Morning)<br>Ice Path B1F — Grass (Night)<br>Ice Path B2F — Grass (Day)<br>Ice Path B2F — Grass (Morning)<br>Ice Path B2F — Grass (Night)<br>Ice Path B3F — Grass (Day)<br>Ice Path B3F — Grass (Morning)<br>Ice Path B3F — Grass (Night)<br>Route 11 — Grass (Night)<br>Whirl Islands B1F — Grass (Night)<br>Whirl Islands B3F — Grass (Night) |
-| Sneasel | Mahogany Town — Grass (Night)<br>Mt. Silver (Top, snowy area) — Grass swarm<br>Mt. Silver 4F — Grass swarm<br>Route 11 — Grass (Night)<br>Route 16 — Grass (Day)<br>Route 16 — Grass (Morning)<br>Route 16 — Grass (Night) |
-| Sneasel Hisuian | Route 38 — Grass (Morning)<br>Route 8 — Grass (Day)<br>Route 9 — Grass (Night) |
-| Sneasler | Route 13 — Grass (Morning) |
-| Snivy | Route 14 — Grass (Day)<br>Route 14 — Grass (Morning)<br>Route 14 — Grass (Night) |
-| Snom | National Park (Bug Catching Contest) — Grass (Day)<br>National Park (Bug Catching Contest) — Grass (Morning)<br>National Park (Bug Catching Contest) — Grass (Night)<br>Route 10 — Grass (Day)<br>Route 10 — Grass (Morning)<br>Route 9 — Grass (Day)<br>Route 9 — Grass (Morning)<br>Route 9 — Grass (Night) |
-| Snorlax | Route 17 — Grass (Morning) |
-| Snorunt | Bell Tower 4F — Grass (Morning)<br>Bell Tower 6F — Grass (Day)<br>Bell Tower 6F — Grass (Morning)<br>Bell Tower 9F — Grass (Day)<br>Ice Path 1F — Grass (Morning)<br>Ice Path 1F — Grass (Night)<br>Ice Path B1F — Grass (Day)<br>Ice Path B1F — Grass (Morning)<br>Ice Path B1F — Grass (Night)<br>Ice Path B2F — Grass (Day)<br>Ice Path B2F — Grass (Morning)<br>Ice Path B2F — Grass (Night)<br>Ice Path B3F — Grass (Day)<br>Ice Path B3F — Grass (Morning)<br>Ice Path B3F — Grass (Night)<br>Seafoam Islands 1F — Grass (Morning)<br>Union Cave 1F — Grass (Day)<br>Whirl Islands B1F — Grass (Day) |
-| Snover | Route 10 — Grass (Day)<br>Route 10 — Grass (Morning)<br>Route 10 — Grass (Night)<br>Route 14 — Grass (Day)<br>Route 14 — Grass (Morning) |
-| Snubbull | Route 24 — Grass (Day)<br>Route 30 — Grass (Morning)<br>Route 38 — Grass swarm<br>Route 9 — Grass (Day) |
-| Sobble | Route 24 — Grass (Day)<br>Route 24 — Grass (Morning)<br>Route 24 — Grass (Night) |
-| Solosis | Digletts Cave — Grass (Day)<br>National Park — Grass (Day)<br>National Park — Grass (Morning)<br>National Park — Grass (Night)<br>Route 34 — Grass (Day)<br>Route 34 — Grass (Morning)<br>Route 34 — Grass (Night) |
-| Solrock | Bell Tower 4F — Grass (Morning) |
-| Spearow | Route 10 — Grass swarm<br>Route 30 — Grass (Day)<br>Route 30 — Grass (Morning)<br>Route 30 — Grass (Night)<br>Route 35 — Grass (Day)<br>Route 35 — Grass (Night)<br>Route 4 — Grass swarm<br>Route 46 — Grass (Day)<br>Route 46 — Grass (Morning)<br>Violet City — Grass (Morning) |
-| Spewpa | National Park (Bug Catching Contest) — Grass (Morning)<br>Route 24 — Grass (Morning)<br>Route 25 — Grass (Morning)<br>Route 34 — Grass (Morning)<br>Route 4 — Grass (Morning) |
-| Spheal | Cerulean Cave 1F — Old Rod<br>Cinnabar Island — Old Rod<br>Cliff Edge Gate — Good Rod<br>Fuchsia City — Surf<br>Lake of Rage — Surf<br>Mt. Silver 4F — Old Rod<br>Route 20 — Old Rod<br>Route 21 — Old Rod<br>Route 4 — Good Rod<br>Route 40 — Surf<br>Route 41 — Old Rod<br>Route 42 — Super Rod<br>Route 45 — Surf<br>Route 47 — Old Rod<br>Seafoam Islands B4F — Old Rod<br>Slowpoke Well B2F — Super Rod<br>Whirl Islands 1F — Surf |
-| Spidops | Route 27 — Grass (Morning)<br>Route 27 — Grass (Night)<br>Route 42 — Grass (Day) |
-| Spinarak | Bell Tower 4F — Grass (Day)<br>Bell Tower 4F — Grass (Morning)<br>Bell Tower 4F — Grass (Night)<br>Ilex Forest — Grass (Day)<br>Ilex Forest — Grass (Morning)<br>Mt. Mortar B1F — Grass (Day)<br>Mt. Mortar B1F — Grass (Morning)<br>Pallet Town — Grass (Night)<br>Rock Tunnel B1F — Grass (Night)<br>Slowpoke Well 1F — Grass (Day)<br>Sprout Tower 3F — Grass (Day)<br>Sprout Tower 3F — Grass (Morning)<br>Violet City — Grass (Night)<br>Viridian City — Grass (Night)<br>Viridian Forest — Grass (Night) |
-| Spinda | Bell Tower 10F — Pokégear radio — Hoenn Sound<br>Bell Tower 2F — Pokégear radio — Hoenn Sound<br>Bell Tower 3F — Pokégear radio — Hoenn Sound<br>Bell Tower 4F — Pokégear radio — Hoenn Sound<br>Bell Tower 5F — Pokégear radio — Hoenn Sound<br>Bell Tower 6F — Pokégear radio — Hoenn Sound<br>Bell Tower 7F — Pokégear radio — Hoenn Sound<br>Bell Tower 8F — Pokégear radio — Hoenn Sound<br>Bell Tower 9F — Pokégear radio — Hoenn Sound<br>Burned Tower 1F — Pokégear radio — Hoenn Sound<br>Burned Tower B1F — Pokégear radio — Hoenn Sound<br>Route 31 — Grass (Morning)<br>Route 5 — Grass (Day)<br>Route 6 — Grass (Day)<br>Route 7 — Grass (Day)<br>Sprout Tower 2F — Pokégear radio — Hoenn Sound<br>Sprout Tower 3F — Pokégear radio — Hoenn Sound |
-| Spiritomb | Bell Tower 4F — Grass (Night) |
-| Spoink | Ilex Forest — Pokégear radio — Hoenn Sound<br>Pewter City — Grass (Day)<br>Pewter City — Grass (Morning)<br>Pewter City — Grass (Night)<br>Route 4 — Grass (Day)<br>Route 4 — Grass (Morning)<br>Route 4 — Grass (Night)<br>Viridian Forest — Pokégear radio — Hoenn Sound |
-| Sprigatito | Victory Road 2F — Grass (Day)<br>Victory Road 2F — Grass (Morning)<br>Victory Road 2F — Grass (Night) |
-| Spritzee | Celadon City — Grass (Day)<br>Route 11 — Grass (Day)<br>Route 30 — Grass (Day) |
-| Squawkabilly | Route 15 — Grass (Day)<br>Route 3 — Grass (Morning)<br>Route 39 — Grass (Morning)<br>Route 5 — Grass (Morning)<br>Route 8 — Grass (Day) |
-| Squirtle | Whirl Islands B2F — Grass (Day)<br>Whirl Islands B2F — Grass (Morning)<br>Whirl Islands B2F — Grass (Night) |
-| Stantler | Route 10 — Grass (Day)<br>Route 10 — Grass (Morning)<br>Route 10 — Grass (Night)<br>Route 11 — Grass (Day)<br>Route 11 — Grass (Morning)<br>Route 11 — Grass (Night)<br>Route 25 — Grass (Day)<br>Route 25 — Grass (Morning)<br>Route 25 — Grass (Night)<br>Route 5 — Grass (Day)<br>Route 6 — Grass (Night) |
-| Staraptor | Route 47 — Grass (Day)<br>Safari Zone (Placeholder, not used) — Grass (Morning) |
-| Staravia | Route 11 — Grass (Day)<br>Route 16 (New Grass) — Grass (Day)<br>Route 5 — Grass (Morning)<br>Route 7 — Grass (Day) |
-| Starly | National Park — Grass (Day)<br>National Park — Grass (Morning)<br>National Park — Grass (Night)<br>Route 29 — Grass (Morning)<br>Route 48 — Grass (Day)<br>Route 48 — Grass (Morning)<br>Route 48 — Grass (Night)<br>Violet City — Grass (Morning) |
-| Starmie | Cerulean Cave B2F — Super Rod |
-| Staryu | Cherrygrove City — Good Rod swarm<br>Cianwood City — Good Rod swarm<br>Dark Cave (Route 31 entrance) — Old Rod<br>Dark Cave (Route 45 entrance) — Good Rod<br>Fuchsia City — Surf<br>Mt. Mortar (Room above waterfall) — Good Rod<br>Mt. Mortar (Waterfall room) — Good Rod<br>Mt. Mortar B1F — Good Rod<br>Mt. Mortar B1F — Surf<br>Mt. Silver 1F — Super Rod<br>Olivine City — Good Rod swarm<br>Route 13 — Good Rod<br>Route 19 — Good Rod swarm<br>Route 34 — Good Rod swarm<br>Route 4 — Good Rod<br>Route 40 — Good Rod swarm<br>Route 47 — Surf<br>Ruins of Alph (Outside) — Good Rod<br>Tohjo Falls — Surf<br>Union Cave 1F — Super Rod<br>Union Cave B2F — Good Rod<br>Union Cave B2F — Good Rod swarm<br>Whirl Islands 1F — Good Rod |
-| Steelix | Seafoam Islands B3F — Grass (Morning) |
-| Steenee | Route 28 — Grass (Day)<br>Route 28 — Grass (Morning)<br>Route 28 — Grass (Night) |
-| Stonjourner | Slowpoke Well B2F — Grass (Morning) |
-| Stoutland | Route 17 — Grass (Morning) |
-| Stufful | Cianwood City — Grass (Day)<br>Cianwood City — Grass (Morning)<br>Cianwood City — Grass (Night)<br>Route 27 — Grass (Day)<br>Route 27 — Grass (Morning)<br>Route 27 — Grass (Night)<br>Route 39 — Grass (Day)<br>Route 39 — Grass (Morning)<br>Route 39 — Grass (Night)<br>Route 45 — Grass (Day)<br>Route 45 — Grass (Morning)<br>Route 45 — Grass (Night) |
-| Stunfisk | Bell Tower 4F — Grass (Morning)<br>Bell Tower 6F — Grass (Day)<br>Bell Tower 8F — Grass (Morning)<br>Bell Tower 9F — Grass (Day)<br>Cerulean Cave B1F — Good Rod<br>Dark Cave (Route 45 entrance) — Grass (Morning)<br>Pallet Town — Good Rod<br>Route 10 (Cave Ground) — Grass (Morning)<br>Route 22 — Good Rod<br>Route 26 — Surf<br>Route 6 — Super Rod<br>Safari Zone (Placeholder, not used) — Super Rod<br>Slowpoke Well B2F — Grass (Morning)<br>Union Cave 1F — Grass (Night)<br>Union Cave B2F — Grass (Day)<br>Whirl Islands B1F — Grass (Night)<br>Whirl Islands B2F — Grass (Morning) |
-| Stunfisk Galarian | Slowpoke Well B2F — Grass (Day) |
-| Stunky | Route 15 — Grass (Night)<br>Route 3 — Grass (Night)<br>Route 34 — Grass (Night)<br>Route 35 — Grass (Night)<br>Route 4 — Grass (Night) |
-| Sudowoodo | Cerulean Cave B2F — Grass (Day)<br>Dark Cave (Route 31 entrance) — Grass (Morning)<br>Mt. Mortar B1F — Grass (Day)<br>Mt. Mortar B1F — Grass (Night)<br>Mt. Silver 4F — Grass (Morning)<br>Rock Tunnel B1F — Grass (Morning)<br>Ruins of Alph (Inside, Main Room) — Grass (Day) |
-| Sunflora | Route 26 — Grass (Morning)<br>Route 27 — Grass (Morning)<br>Route 43 — Grass (Day) |
-| Sunkern | Route 18 — Grass (Morning)<br>Route 2 (South, below Viridian Forest) — Grass (Day)<br>Route 31 — Grass (Day)<br>Route 31 — Grass (Morning)<br>Route 31 — Grass (Night) |
-| Surskit | Cerulean Cave 1F — Good Rod<br>Cerulean City — Grass (Day)<br>Cerulean City — Grass (Morning)<br>Cherrygrove City — Grass (Day)<br>Cherrygrove City — Grass (Morning)<br>Ecruteak City — Old Rod<br>Ecruteak City — Surf<br>Fuchsia City — Good Rod<br>Lake of Rage — Grass (Day)<br>Mt. Silver (Moltres room) — Old Rod<br>Route 20 — Good Rod<br>Route 21 — Good Rod<br>Route 30 — Surf<br>Route 32 — Grass (Day)<br>Route 32 — Grass (Morning)<br>Route 32 — Grass (Night)<br>Route 41 — Good Rod<br>Route 43 — Old Rod<br>Route 44 — Surf<br>Route 47 — Surf<br>Route 6 — Surf |
-| Swablu | Blackthorn City — Grass (Day)<br>Blackthorn City — Grass (Morning)<br>Blackthorn City — Grass (Night)<br>Dragons Den — Grass (Day)<br>Dragons Den — Grass (Morning)<br>Route 35 — Grass (Day)<br>Route 35 — Grass (Morning)<br>Route 35 — Grass (Night)<br>Route 45 — Grass swarm |
-| Swadloon | Route 17 — Grass (Day)<br>Route 21 — Grass (Day)<br>Route 21 — Grass (Night)<br>Route 27 — Grass (Morning) |
-| Swalot | Mt. Silver (Top, snowy area) — Grass (Day)<br>Seafoam Islands 1F — Grass (Day) |
-| Swanna | Mt. Silver 3F — Super Rod |
-| Swellow | Route 48 — Grass (Morning)<br>Safari Zone (Placeholder, not used) — Grass (Morning) |
-| Swinub | Ice Path 1F — Grass (Day)<br>Ice Path 1F — Grass (Night)<br>Ice Path 1F — Grass swarm<br>Ice Path B1F — Grass (Day)<br>Ice Path B1F — Grass (Morning)<br>Ice Path B1F — Grass (Night)<br>Ice Path B1F — Grass swarm<br>Ice Path B2F — Grass (Day)<br>Ice Path B2F — Grass (Morning)<br>Ice Path B2F — Grass (Night)<br>Ice Path B2F — Grass swarm<br>Ice Path B3F — Grass (Day)<br>Ice Path B3F — Grass (Morning)<br>Ice Path B3F — Grass (Night)<br>Ice Path B3F — Grass swarm<br>Mt. Mortar (Central room) — Grass (Morning)<br>Ruins of Alph (Inside, Ladder Room) — Grass (Day)<br>Ruins of Alph (Inside, Main Room) — Grass (Day)<br>Seafoam Islands 1F — Grass (Day)<br>Slowpoke Well 1F — Grass (Morning)<br>Union Cave 1F — Grass (Morning)<br>Whirl Islands B2F — Grass (Morning) |
-| Swirlix | Celadon City — Grass (Day)<br>Route 11 — Grass (Day)<br>Route 30 — Grass (Day) |
-| Swoobat | Route 6 — Grass (Day)<br>Route 6 — Grass (Morning)<br>Ruins of Alph (Outside) — Grass (Night) |
-| Tadbulb | Blackthorn City — Surf<br>Cerulean Cave B1F — Super Rod<br>Cerulean City — Grass (Night)<br>Cherrygrove City — Grass (Night)<br>Cianwood City — Surf<br>Lake of Rage — Grass (Day)<br>Lake of Rage — Grass (Morning)<br>Lake of Rage — Grass (Night)<br>Lake of Rage — Old Rod<br>Mt. Moon (Outside area) — Surf<br>Mt. Mortar B1F — Surf<br>Mt. Silver (Moltres room) — Old Rod<br>Mt. Silver 4F — Old Rod<br>Route 22 — Super Rod<br>Route 26 — Old Rod<br>Route 31 — Grass (Night)<br>Route 32 — Grass (Day)<br>Route 32 — Grass (Morning)<br>Route 32 — Grass (Night)<br>Route 9 — Old Rod<br>Safari Zone (Placeholder, not used) — Good Rod<br>Vermilion City — Grass (Day)<br>Vermilion City — Grass (Morning)<br>Vermilion City — Grass (Night)<br>Viridian City — Good Rod |
-| Taillow | Route 1 — Grass (Day)<br>Route 34 — Grass (Day)<br>Route 34 — Grass (Morning)<br>Route 34 — Grass (Night)<br>Violet City — Grass (Morning) |
-| Talonflame | Route 27 — Grass (Morning) |
-| Tandemaus | Route 30 — Grass (Night)<br>Route 4 — Grass (Day) |
-| Tangela | Azalea Town — Grass (Night)<br>Mt. Silver (Outside) — Grass swarm<br>Route 17 — Grass (Morning)<br>Route 21 — Grass (Morning)<br>Route 21 — Grass swarm<br>Route 28 — Grass swarm<br>Route 38 — Grass (Morning)<br>Route 42 — Grass (Morning)<br>Route 44 — Grass swarm |
-| Tangrowth | Route 21 — Grass (Night) |
-| Tarountula | Azalea Town — Grass (Night)<br>National Park (Bug Catching Contest) — Grass (Day)<br>Route 2 (South, below Viridian Forest) — Grass (Day)<br>Route 22 — Grass (Morning)<br>Route 22 — Grass (Night)<br>Route 29 — Grass (Morning)<br>Viridian City — Grass (Day)<br>Viridian City — Grass (Morning) |
-| Tatsugiri | Blackthorn City — Good Rod<br>Cerulean Cave B2F — Good Rod<br>Cherrygrove City — Good Rod<br>Cherrygrove City — Super Rod<br>Mt. Silver 1F — Good Rod<br>Route 24 — Good Rod<br>Route 26 — Super Rod<br>Route 32 — Super Rod<br>Route 35 — Good Rod<br>Route 4 — Super Rod<br>Route 40 — Super Rod<br>Route 42 — Good Rod<br>Route 43 — Super Rod<br>Route 9 — Good Rod<br>Slowpoke Well 1F — Super Rod<br>Union Cave B1F — Good Rod<br>Violet City — Super Rod<br>Viridian City — Super Rod |
-| Tauros | Fuchsia City — Grass (Day)<br>Fuchsia City — Grass (Morning)<br>Fuchsia City — Grass (Night)<br>Route 39 — Grass (Day)<br>Route 39 — Grass (Night)<br>Route 48 — Grass swarm<br>Route 5 — Grass (Night) |
-| Teddiursa | Route 15 — Grass (Night)<br>Route 30 — Grass (Night)<br>Route 7 — Grass (Morning) |
-| Tentacool | Cherrygrove City — Surf swarm<br>Cianwood City — Surf swarm<br>Cinnabar Island — Surf swarm<br>Fuchsia City — Old Rod<br>Ilex Forest — Good Rod<br>Ilex Forest — Old Rod<br>Mt. Silver (Top, snowy area) — Surf<br>New Bark Town — Surf<br>New Bark Town — Surf swarm<br>Olivine City — Surf swarm<br>Pallet Town — Surf swarm<br>Route 12 — Good Rod swarm<br>Route 12 — Surf swarm<br>Route 13 — Good Rod swarm<br>Route 13 — Surf swarm<br>Route 20 — Surf swarm<br>Route 21 — Surf swarm<br>Route 26 — Surf swarm<br>Route 32 — Good Rod<br>Route 32 — Good Rod swarm<br>Route 32 — Surf<br>Route 32 — Surf swarm<br>Route 34 — Good Rod<br>Route 34 — Old Rod<br>Route 34 — Surf<br>Route 34 — Surf swarm<br>Route 35 — Old Rod<br>Route 4 — Good Rod<br>Route 40 — Grass (Day)<br>Route 40 — Grass (Morning)<br>Route 40 — Grass (Night)<br>Route 40 — Surf swarm<br>Route 41 — Grass (Day)<br>Route 41 — Grass (Morning)<br>Route 41 — Grass (Night)<br>Route 41 — Surf swarm<br>Route 47 — Surf swarm<br>Slowpoke Well B2F — Old Rod<br>Tohjo Falls — Surf<br>Union Cave B2F — Surf<br>Union Cave B2F — Surf swarm<br>Whirl Islands 1F — Surf swarm |
-| Tentacruel | Mt. Silver (Moltres room) — Surf<br>Route 13 — Super Rod<br>Route 20 — Grass (Day)<br>Route 20 — Grass (Morning)<br>Route 20 — Grass (Night) |
-| Tepig | Rock Tunnel 1F — Grass (Day)<br>Rock Tunnel 1F — Grass (Morning)<br>Rock Tunnel 1F — Grass (Night) |
-| Thievul | Route 48 — Grass (Night) |
-| Throh | Bell Tower 7F — Grass (Morning) |
-| Timburr | Bell Tower 3F — Grass (Day)<br>Bell Tower 3F — Grass (Morning)<br>Bell Tower 3F — Grass (Night)<br>Bell Tower 4F — Grass (Day)<br>Bell Tower 4F — Grass (Morning)<br>Bell Tower 4F — Grass (Night)<br>Digletts Cave — Grass (Day)<br>Olivine City — Grass (Day)<br>Olivine City — Grass (Morning)<br>Vermilion City — Grass (Day)<br>Whirl Islands B2F — Grass (Day)<br>Whirl Islands B2F — Grass (Morning)<br>Whirl Islands B2F — Grass (Night) |
-| Tinkatink | Route 30 — Grass (Night)<br>Route 47 — Grass (Day)<br>Route 47 — Grass (Night) |
-| Tinkaton | Route 28 — Grass (Day) |
-| Tinkatuff | Route 47 — Grass (Day)<br>Route 47 — Grass (Morning)<br>Route 47 — Grass (Night) |
-| Tirtouga | Cerulean Cave B2F — Good Rod<br>Cianwood City — Surf<br>Dark Cave (Route 31 entrance) — Good Rod<br>Dark Cave (Route 45 entrance) — Surf<br>Dragons Den — Good Rod<br>Mt. Mortar (Room above waterfall) — Super Rod<br>Mt. Mortar (Waterfall room) — Surf<br>Mt. Silver 1F — Surf<br>Route 10 — Surf<br>Route 25 — Surf<br>Route 27 — Surf<br>Route 42 — Surf<br>Ruins of Alph (Outside) — Super Rod<br>Ruins of Alph (Outside) — Surf<br>Slowpoke Well 1F — Good Rod<br>Union Cave 1F — Surf<br>Vermilion City — Surf<br>Violet City — Surf |
-| Toedscool | Cerulean Cave 1F — Rock Smash<br>Cerulean Cave B2F — Rock Smash<br>Rock Tunnel B1F — Rock Smash<br>Route 19 — Rock Smash<br>Route 21 — Grass (Day)<br>Route 24 — Grass (Day)<br>Route 33 — Grass (Day)<br>Route 33 — Grass (Morning)<br>Route 33 — Grass (Night)<br>Ruins of Alph (Outside) — Grass (Night)<br>Vermilion City — Rock Smash<br>Victory Road 3F — Rock Smash |
-| Toedscruel | Route 16 (New Grass) — Grass (Day) |
-| Togedemaru | Bell Tower 4F — Grass (Day)<br>Bell Tower 6F — Grass (Night)<br>Bell Tower 7F — Grass (Morning)<br>Bell Tower 8F — Grass (Day)<br>Bell Tower 9F — Grass (Day)<br>Bell Tower 9F — Grass (Morning)<br>Dark Cave (Route 31 entrance) — Grass (Day)<br>Rock Tunnel 1F — Grass (Night)<br>Route 10 (Cave Ground) — Grass (Morning)<br>Route 6 — Grass (Day)<br>Route 6 — Grass (Morning)<br>Route 6 — Grass (Night)<br>Whirl Islands B1F — Grass (Night)<br>Whirl Islands B3F — Grass (Morning) |
-| Togekiss | Route 27 — Grass (Day) |
-| Togepi | Route 16 (New Grass) — Grass (Night)<br>Route 29 — Grass (Day)<br>Violet City — Grass (Day)<br>Violet City — Grass (Morning)<br>Violet City — Grass (Night) |
-| Togetic | Mahogany Town — Grass (Day)<br>Route 31 — Grass (Day)<br>Route 6 — Grass (Morning) |
-| Torchic | Mt. Silver (Expert Belt room) — Grass (Day)<br>Mt. Silver (Expert Belt room) — Grass (Morning)<br>Mt. Silver (Expert Belt room) — Grass (Night) |
-| Torkoal | Cinnabar Island — Grass (Day)<br>Route 13 — Grass (Night) |
-| Totodile | Slowpoke Well 1F — Grass (Day)<br>Slowpoke Well 1F — Grass (Morning)<br>Slowpoke Well 1F — Grass (Night) |
-| Toucannon | Route 16 (New Grass) — Grass (Morning)<br>Safari Zone (Placeholder, not used) — Grass (Morning) |
-| Toxapex | Cliff Edge Gate — Super Rod |
-| Toxel | Olivine City — Grass (Day)<br>Olivine City — Grass (Night)<br>Route 1 — Grass (Day)<br>Route 10 — Grass (Morning)<br>Route 2 (North, above Viridian Forest) — Grass (Morning)<br>Route 29 — Grass (Night)<br>Route 46 — Grass (Morning)<br>Vermilion City — Grass (Morning)<br>Vermilion City — Grass (Night) |
-| Toxicroak | Mt. Silver (Top, snowy area) — Grass (Morning)<br>Seafoam Islands B4F — Grass (Night) |
-| Toxtricity | Route 16 — Grass (Day) |
-| Tranquill | Route 13 — Grass (Morning)<br>Route 16 — Grass (Day)<br>Route 18 — Grass (Morning)<br>Route 44 — Grass (Morning) |
-| Trapinch | Bell Tower 9F — Grass (Day)<br>Blackthorn City — Grass (Day)<br>Blackthorn City — Grass (Morning)<br>Blackthorn City — Grass (Night)<br>Dragons Den — Grass (Day)<br>Dragons Den — Grass (Morning)<br>Dragons Den — Grass (Night)<br>Mt. Moon 2F — Grass (Day)<br>Mt. Moon 2F — Grass (Morning)<br>Mt. Mortar (Central room) — Grass (Day)<br>Ruins of Alph (Inside, Ladder Room) — Grass (Morning)<br>Ruins of Alph (Inside, Main Room) — Grass (Day)<br>Ruins of Alph (Inside, Main Room) — Grass (Morning)<br>Ruins of Alph (Inside, Main Room) — Grass (Night)<br>Slowpoke Well 1F — Grass (Morning)<br>Viridian Forest — Grass (Night)<br>Whirl Islands 1F — Grass (Morning)<br>Whirl Islands B1F — Grass (Day)<br>Whirl Islands B3F — Grass (Day) |
-| Treecko | Route 38 — Grass (Day)<br>Route 38 — Grass (Morning)<br>Route 38 — Grass (Night) |
-| Trevenant | Cerulean Cave 1F — Grass (Night) |
-| Tropius | Route 48 — Grass (Morning) |
-| Trubbish | Bell Tower 10F — Grass (Day)<br>Bell Tower 2F — Grass (Day)<br>Bell Tower 2F — Grass (Morning)<br>Bell Tower 2F — Grass (Night)<br>Bell Tower 3F — Grass (Day)<br>Bell Tower 3F — Grass (Morning)<br>Celadon City — Grass (Night)<br>Mt. Mortar (Waterfall room) — Grass (Day)<br>Rock Tunnel 1F — Grass (Morning)<br>Route 10 (Cave Ground) — Grass (Night)<br>Sprout Tower 2F — Grass (Morning)<br>Sprout Tower 3F — Grass (Morning)<br>Union Cave 1F — Grass (Morning)<br>Union Cave B1F — Grass (Day) |
-| Trumbeak | Route 18 — Grass (Day)<br>Route 42 — Grass (Morning)<br>Route 43 — Grass (Day)<br>Route 45 — Grass (Day)<br>Route 45 — Grass (Morning)<br>Route 45 — Grass (Night)<br>Route 5 — Grass (Morning)<br>Route 7 — Grass (Morning) |
-| Tsareena | Route 26 — Grass (Night) |
-| Turtonator | Blackthorn City — Grass (Day)<br>Blackthorn City — Grass (Morning)<br>Cinnabar Island — Grass (Morning)<br>Cinnabar Island — Grass (Night)<br>Dragons Den — Grass (Day)<br>Route 48 — Grass (Morning) |
-| Turtwig | Route 43 — Grass (Day)<br>Route 43 — Grass (Morning)<br>Route 43 — Grass (Night) |
-| Tympole | Blackthorn City — Old Rod<br>Cerulean Cave 1F — Old Rod<br>Cherrygrove City — Grass (Day)<br>Cherrygrove City — Grass (Morning)<br>Cherrygrove City — Grass (Night)<br>Cliff Edge Gate — Old Rod<br>Fuchsia City — Surf<br>Lake of Rage — Grass (Morning)<br>Lake of Rage — Grass (Night)<br>Lake of Rage — Surf<br>Mt. Mortar B1F — Old Rod<br>Mt. Silver 4F — Old Rod<br>Olivine City — Surf<br>Route 20 — Old Rod<br>Route 21 — Old Rod<br>Route 30 — Old Rod<br>Route 31 — Good Rod<br>Route 4 — Good Rod<br>Route 41 — Old Rod<br>Route 47 — Old Rod<br>Route 47 — Surf<br>Whirl Islands 1F — Old Rod |
-| Tynamo | Lake of Rage — Grass (Day)<br>Lake of Rage — Grass (Morning)<br>Lake of Rage — Grass (Night)<br>Route 2 (South, below Viridian Forest) — Grass (Day)<br>Route 2 (South, below Viridian Forest) — Grass (Morning)<br>Route 2 (South, below Viridian Forest) — Grass (Night)<br>Route 36 — Grass (Day)<br>Route 36 — Grass (Morning)<br>Route 36 — Grass (Night)<br>Route 40 — Grass (Night)<br>Route 41 — Grass (Night) |
-| Typhlosion Hisuian | Victory Road 1F — Grass (Night) |
-| Tyranitar | Victory Road 2F — Grass (Day)<br>Victory Road 2F — Grass (Morning)<br>Victory Road 2F — Grass (Night) |
-| Tyrantrum | Mt. Silver (Top, snowy area) — Grass (Morning) |
-| Tyrogue | Bell Tower 10F — Grass (Morning)<br>Cliff Cave — Grass (Morning)<br>Digletts Cave — Grass (Night)<br>Mt. Moon 1F — Grass (Day)<br>Mt. Moon 1F — Grass (Morning)<br>Mt. Moon 2F — Grass (Day)<br>Mt. Moon 2F — Grass (Morning)<br>Mt. Silver (Expert Belt room) — Grass (Day)<br>Mt. Silver 1F — Grass (Morning)<br>Route 37 — Grass (Day)<br>Route 37 — Grass (Morning)<br>Route 37 — Grass (Night) |
-| Tyrunt | Bell Tower 4F — Grass (Day)<br>Bell Tower 8F — Grass (Morning)<br>Bell Tower 9F — Grass (Day)<br>Blackthorn City — Grass (Day)<br>Dragons Den — Grass (Day)<br>Mt. Mortar B1F — Grass (Morning)<br>Rock Tunnel 1F — Grass (Morning)<br>Route 10 (Cave Ground) — Grass (Day)<br>Ruins of Alph (Inside, Main Room) — Grass (Day)<br>Ruins of Alph (Inside, Main Room) — Grass (Night)<br>Slowpoke Well 1F — Grass (Night)<br>Slowpoke Well B2F — Grass (Night)<br>Union Cave 1F — Grass (Night)<br>Whirl Islands B1F — Grass (Day)<br>Whirl Islands B2F — Grass (Day) |
-| Unfezant | Route 17 — Grass (Day)<br>Route 17 — Grass (Morning) |
-| Unown | Route 36 — Grass (Night)<br>Ruins of Alph (Inside, Ladder Room) — Grass swarm<br>Ruins of Alph (Inside, Ladder Room) — Pokégear radio — Hoenn Sound<br>Ruins of Alph (Inside, Ladder Room) — Pokégear radio — Sinnoh Sound<br>Ruins of Alph (Inside, Main Room) — Grass (Day)<br>Ruins of Alph (Inside, Main Room) — Grass (Morning)<br>Ruins of Alph (Inside, Main Room) — Grass (Night)<br>Ruins of Alph (Inside, Main Room) — Grass swarm<br>Ruins of Alph (Inside, Main Room) — Pokégear radio — Hoenn Sound<br>Ruins of Alph (Inside, Main Room) — Pokégear radio — Sinnoh Sound<br>Tohjo Falls — Grass (Night) |
-| Ursaluna | Digletts Cave — Grass (Morning) |
-| Ursaring | Route 27 — Grass (Morning) |
-| Vanillish | Cerulean Cave B2F — Grass (Night)<br>Mt. Silver (Top, snowy area) — Grass (Day)<br>Mt. Silver (Top, snowy area) — Grass (Morning)<br>Mt. Silver (Top, snowy area) — Grass (Night)<br>Seafoam Islands B2F — Grass (Day)<br>Seafoam Islands B2F — Grass (Morning)<br>Seafoam Islands B2F — Grass (Night)<br>Seafoam Islands B3F — Grass (Day)<br>Seafoam Islands B3F — Grass (Morning)<br>Seafoam Islands B3F — Grass (Night)<br>Seafoam Islands B4F — Grass (Day)<br>Seafoam Islands B4F — Grass (Morning)<br>Seafoam Islands B4F — Grass (Night)<br>Victory Road 3F — Grass (Day) |
-| Vanillite | Bell Tower 3F — Grass (Morning)<br>Bell Tower 6F — Grass (Day)<br>Bell Tower 6F — Grass (Morning)<br>Bell Tower 6F — Grass (Night)<br>Ice Path 1F — Grass (Day)<br>Ice Path 1F — Grass (Night)<br>Ice Path B1F — Grass (Day)<br>Ice Path B1F — Grass (Morning)<br>Ice Path B1F — Grass (Night)<br>Ice Path B2F — Grass (Day)<br>Ice Path B2F — Grass (Morning)<br>Ice Path B2F — Grass (Night)<br>Ice Path B3F — Grass (Day)<br>Ice Path B3F — Grass (Morning)<br>Ice Path B3F — Grass (Night)<br>Mt. Mortar (Waterfall room) — Grass (Night)<br>Union Cave B1F — Grass (Day)<br>Whirl Islands 1F — Grass (Night)<br>Whirl Islands B3F — Grass (Night) |
-| Vanilluxe | Mt. Silver (Top, snowy area) — Grass (Day) |
-| Varoom | Bell Tower 7F — Grass (Day)<br>Bell Tower 7F — Grass (Morning)<br>Bell Tower 7F — Grass (Night)<br>Digletts Cave — Grass (Day)<br>Mt. Moon 2F — Grass (Night)<br>Olivine City — Grass (Day)<br>Olivine City — Grass (Morning)<br>Olivine City — Grass (Night)<br>Rock Tunnel B1F — Grass (Morning)<br>Slowpoke Well 1F — Grass (Morning)<br>Sprout Tower 2F — Grass (Morning)<br>Sprout Tower 3F — Grass (Day)<br>Sprout Tower 3F — Grass (Morning)<br>Vermilion City — Grass (Day)<br>Vermilion City — Grass (Morning)<br>Vermilion City — Grass (Night)<br>Victory Road 3F — Grass (Morning) |
-| Veluza | Cherrygrove City — Good Rod<br>Route 20 — Grass (Day)<br>Route 20 — Grass (Night) |
-| Venipede | Ilex Forest — Grass (Day)<br>Ilex Forest — Grass (Morning)<br>Ilex Forest — Grass (Night)<br>Mt. Mortar (Central room) — Grass (Morning)<br>Mt. Mortar B1F — Grass (Day)<br>Rock Tunnel B1F — Grass (Night)<br>Route 29 — Grass (Morning)<br>Slowpoke Well 1F — Grass (Day)<br>Sprout Tower 3F — Grass (Day)<br>Sprout Tower 3F — Grass (Morning)<br>Viridian Forest — Grass (Night)<br>Whirl Islands B3F — Grass (Morning) |
-| Venomoth | Route 27 — Grass (Day) |
-| Venonat | Cerulean City — Grass (Morning)<br>Cerulean City — Grass (Night)<br>Fuchsia City — Grass (Day)<br>Fuchsia City — Grass (Morning)<br>Fuchsia City — Grass (Night)<br>Ilex Forest — Grass (Day)<br>Ilex Forest — Grass (Morning)<br>Ilex Forest — Grass (Night)<br>Mt. Mortar (Waterfall room) — Grass (Day)<br>Mt. Mortar B1F — Grass (Morning)<br>Rock Tunnel B1F — Grass (Day)<br>Route 12 — Grass (Day)<br>Route 12 — Grass (Morning)<br>Route 12 — Grass (Night)<br>Route 2 (North, above Viridian Forest) — Grass (Day)<br>Route 2 (North, above Viridian Forest) — Grass (Morning)<br>Route 2 (North, above Viridian Forest) — Grass (Night)<br>Slowpoke Well 1F — Grass (Night)<br>Whirl Islands B2F — Grass (Morning) |
-| Vespiquen | Route 48 — Grass (Day) |
-| Vibrava | Cerulean Cave 1F — Grass (Day)<br>Cerulean Cave 1F — Grass (Morning)<br>Cerulean Cave B1F — Grass (Day)<br>Mt. Silver (Moltres room) — Grass (Day)<br>Mt. Silver 1F — Grass (Day)<br>Mt. Silver 1F — Grass (Morning)<br>Mt. Silver 3F — Grass (Day)<br>Mt. Silver 4F — Grass (Day)<br>Seafoam Islands B2F — Grass (Day)<br>Seafoam Islands B2F — Grass (Morning)<br>Seafoam Islands B2F — Grass (Night) |
-| Victreebel | Route 15 — Grass (Morning) |
-| Vigoroth | Mahogany Town — Grass (Morning)<br>Route 14 — Grass (Day)<br>Route 8 — Grass (Night) |
-| Vikavolt | Route 21 — Grass (Night) |
-| Vileplume | Route 13 — Grass (Night) |
-| Vivillon | Route 10 — Grass (Morning)<br>Route 26 — Grass (Morning)<br>Route 28 — Grass (Morning)<br>Route 37 — Grass (Day)<br>Route 39 — Grass (Day)<br>Route 42 — Grass (Morning)<br>Route 47 — Grass (Morning)<br>Route 9 — Grass (Day) |
-| Volbeat | National Park (Bug Catching Contest) — Grass (Day)<br>Route 26 — Grass (Night)<br>Route 42 — Grass (Night) |
-| Volcarona | Route 26 — Grass (Day) |
-| Voltorb | Bell Tower 6F — Grass (Day)<br>Bell Tower 8F — Grass (Day)<br>Bell Tower 9F — Grass (Night)<br>Dark Cave (Route 31 entrance) — Grass (Day)<br>Dark Cave (Route 31 entrance) — Grass (Morning)<br>Dark Cave (Route 45 entrance) — Grass (Day)<br>Route 10 (Cave Ground) — Grass (Day)<br>Route 10 (Cave Ground) — Grass (Morning)<br>Route 38 — Grass (Day)<br>Route 38 — Grass (Morning)<br>Union Cave 1F — Grass (Morning)<br>Union Cave B1F — Grass (Night)<br>Vermilion City — Grass (Day)<br>Vermilion City — Grass (Morning)<br>Vermilion City — Grass (Night)<br>Whirl Islands B3F — Grass (Day) |
-| Voltorb Hisuian | Ilex Forest — Grass (Day)<br>Ilex Forest — Grass (Morning)<br>Ilex Forest — Grass (Night)<br>Rock Tunnel 1F — Grass (Night)<br>Route 34 — Grass (Day)<br>Route 34 — Grass (Morning)<br>Route 34 — Grass (Night)<br>Union Cave B1F — Grass (Morning)<br>Union Cave B2F — Grass (Day)<br>Viridian Forest — Grass (Morning) |
-| Vullaby | Route 11 — Grass (Night)<br>Route 16 (New Grass) — Grass (Night)<br>Route 17 — Grass (Night)<br>Route 38 — Grass (Night)<br>Route 42 — Grass (Night)<br>Route 6 — Grass (Night) |
-| Vulpix | Route 17 — Grass (Day)<br>Route 30 — Grass (Day)<br>Route 4 — Grass (Night) |
-| Vulpix Alolan | Route 11 — Grass (Day)<br>Route 11 — Grass (Morning)<br>Route 46 — Grass (Day)<br>Route 46 — Grass (Morning)<br>Route 46 — Grass (Night) |
-| Wailmer | Cerulean City — Good Rod<br>Ecruteak City — Good Rod<br>Ilex Forest — Super Rod<br>Mt. Moon (Outside area) — Good Rod<br>Mt. Silver 1F — Super Rod<br>Olivine City — Good Rod<br>Route 21 — Super Rod<br>Route 24 — Super Rod<br>Route 27 — Good Rod<br>Route 27 — Super Rod<br>Route 31 — Good Rod<br>Route 43 — Surf<br>Route 44 — Surf<br>Route 9 — Super Rod<br>Union Cave 1F — Super Rod<br>Union Cave B2F — Super Rod<br>Whirl Islands 1F — Good Rod<br>Whirl Islands B2F — Good Rod<br>Whirl Islands B2F — Surf |
-| Wailord | New Bark Town — Super Rod |
-| Walrein | Route 43 — Surf |
-| Watchog | Route 15 — Grass (Morning)<br>Route 16 — Grass (Morning)<br>Route 44 — Grass (Night) |
-| Wattrel | Cerulean Cave B1F — Super Rod<br>Route 16 (New Grass) — Grass (Day)<br>Route 16 (New Grass) — Grass (Morning)<br>Route 16 (New Grass) — Grass (Night)<br>Route 16 — Grass (Morning)<br>Route 22 — Super Rod<br>Route 26 — Old Rod<br>Route 3 — Grass (Day)<br>Route 32 — Grass (Day)<br>Route 32 — Grass (Morning)<br>Route 44 — Surf<br>Route 45 — Surf<br>Route 46 — Grass (Day)<br>Route 46 — Grass (Morning)<br>Route 47 — Old Rod<br>Route 9 — Old Rod<br>Safari Zone (Placeholder, not used) — Good Rod<br>Viridian City — Old Rod |
-| Weavile | Route 16 — Grass (Night) |
-| Weedle | Ilex Forest — Grass (Night)<br>Mt. Mortar (Central room) — Grass (Day)<br>Mt. Mortar B1F — Grass (Day)<br>Mt. Mortar B1F — Grass (Morning)<br>Rock Tunnel B1F — Grass (Night)<br>Route 33 — Grass (Day)<br>Route 33 — Grass (Morning)<br>Route 33 — Grass (Night)<br>Union Cave B1F — Grass (Day)<br>Union Cave B1F — Grass (Morning)<br>Union Cave B1F — Grass (Night)<br>Viridian City — Grass (Day)<br>Viridian City — Grass (Morning)<br>Viridian Forest — Grass (Day) |
-| Weepinbell | Mt. Silver (Outside) — Grass (Day)<br>Mt. Silver (Outside) — Grass (Morning)<br>Mt. Silver (Outside) — Grass (Night)<br>Route 45 — Grass (Day)<br>Route 45 — Grass (Morning)<br>Route 45 — Grass (Night) |
-| Weezing | Cerulean Cave B1F — Grass (Night)<br>Mt. Silver (Expert Belt room) — Grass (Day)<br>Mt. Silver (Expert Belt room) — Grass (Morning)<br>Mt. Silver (Mountainside) — Grass (Day)<br>Mt. Silver (Mountainside) — Grass (Morning)<br>Mt. Silver (Top, snowy area) — Grass (Day)<br>Mt. Silver (Top, snowy area) — Grass (Morning)<br>Mt. Silver 1F — Grass (Day)<br>Mt. Silver 1F — Grass (Morning)<br>Mt. Silver 4F — Grass (Day)<br>Seafoam Islands B2F — Grass (Day) |
-| Weezing Galarian | Route 27 — Grass (Night) |
-| Whimsicott | Route 13 — Grass (Day) |
-| Whirlipede | Bell Tower 7F — Grass (Day)<br>Bell Tower 9F — Grass (Day)<br>Cerulean Cave B1F — Grass (Night)<br>Dark Cave (Route 45 entrance) — Grass (Day)<br>Dark Cave (Route 45 entrance) — Grass (Morning)<br>Dark Cave (Route 45 entrance) — Grass (Night)<br>Route 26 — Grass (Morning)<br>Safari Zone (Placeholder, not used) — Grass (Morning)<br>Slowpoke Well B2F — Grass (Night)<br>Whirl Islands 1F — Grass (Day)<br>Whirl Islands B1F — Grass (Day)<br>Whirl Islands B3F — Grass (Day) |
-| Whiscash | Mt. Mortar (Room above waterfall) — Super Rod<br>Route 27 — Super Rod<br>Violet City — Super Rod swarm |
-| Whismur | Mt. Silver (Outside) — Pokégear radio — Hoenn Sound<br>Pallet Town — Grass (Night)<br>Route 10 — Pokégear radio — Hoenn Sound<br>Route 13 — Pokégear radio — Hoenn Sound<br>Route 21 — Pokégear radio — Hoenn Sound<br>Route 22 — Pokégear radio — Hoenn Sound<br>Route 24 — Pokégear radio — Hoenn Sound<br>Route 25 — Pokégear radio — Hoenn Sound<br>Route 26 — Pokégear radio — Hoenn Sound<br>Route 27 — Pokégear radio — Hoenn Sound<br>Route 28 — Pokégear radio — Hoenn Sound<br>Route 29 — Grass (Night)<br>Route 3 — Grass (Day)<br>Route 30 — Pokégear radio — Hoenn Sound<br>Route 31 — Pokégear radio — Hoenn Sound<br>Route 32 — Pokégear radio — Hoenn Sound<br>Route 34 — Pokégear radio — Hoenn Sound<br>Route 35 — Pokégear radio — Hoenn Sound<br>Route 4 — Pokégear radio — Hoenn Sound<br>Route 42 — Pokégear radio — Hoenn Sound<br>Route 43 — Pokégear radio — Hoenn Sound<br>Route 44 — Pokégear radio — Hoenn Sound<br>Route 45 — Pokégear radio — Hoenn Sound<br>Route 47 — Pokégear radio — Hoenn Sound<br>Route 6 — Pokégear radio — Hoenn Sound<br>Route 9 — Pokégear radio — Hoenn Sound<br>Ruins of Alph (Outside) — Pokégear radio — Hoenn Sound |
-| Wigglytuff | Route 2 (South, below Viridian Forest) — Grass (Day)<br>Route 2 (South, below Viridian Forest) — Grass (Morning) |
-| Wiglett | Cinnabar Island — Old Rod<br>Dark Cave (Route 31 entrance) — Super Rod<br>Dark Cave (Route 31 entrance) — Surf<br>Dragons Den — Super Rod<br>Mt. Moon (Outside area) — Old Rod<br>Mt. Mortar (Waterfall room) — Old Rod<br>Mt. Mortar (Waterfall room) — Super Rod<br>Mt. Mortar B1F — Old Rod<br>Mt. Silver (Moltres room) — Old Rod<br>Mt. Silver (Top, snowy area) — Super Rod<br>Route 22 — Surf<br>Route 41 — Surf<br>Route 6 — Old Rod<br>Tohjo Falls — Old Rod<br>Union Cave 1F — Old Rod<br>Union Cave B1F — Old Rod<br>Whirl Islands 1F — Super Rod |
-| Wimpod | Cherrygrove City — Grass (Day)<br>Cherrygrove City — Grass (Morning)<br>Cherrygrove City — Grass (Night)<br>Cinnabar Island — Good Rod<br>Dark Cave (Route 31 entrance) — Surf<br>Dark Cave (Route 45 entrance) — Surf<br>Mt. Moon (Outside area) — Old Rod<br>Mt. Mortar (Room above waterfall) — Old Rod<br>Mt. Mortar (Waterfall room) — Old Rod<br>Mt. Mortar B1F — Old Rod<br>Mt. Silver (Moltres room) — Good Rod<br>Pallet Town — Old Rod<br>Route 19 — Grass (Day)<br>Route 19 — Grass (Morning)<br>Route 19 — Grass (Night)<br>Route 22 — Surf<br>Route 40 — Grass (Day)<br>Route 40 — Grass (Morning)<br>Route 40 — Grass (Night)<br>Route 41 — Grass (Day)<br>Route 41 — Grass (Morning)<br>Route 41 — Grass (Night)<br>Route 6 — Old Rod<br>Tohjo Falls — Old Rod<br>Union Cave 1F — Old Rod<br>Union Cave B1F — Old Rod<br>Whirl Islands 1F — Good Rod |
-| Wingull | Cerulean Cave 1F — Good Rod<br>Fuchsia City — Good Rod<br>Ilex Forest — Old Rod<br>New Bark Town — Good Rod<br>New Bark Town — Old Rod<br>Olivine City — Grass (Day)<br>Olivine City — Grass (Morning)<br>Olivine City — Grass (Night)<br>Route 1 — Grass (Day)<br>Route 1 — Grass (Morning)<br>Route 19 — Grass (Day)<br>Route 19 — Grass (Morning)<br>Route 19 — Grass (Night)<br>Route 20 — Good Rod<br>Route 21 — Good Rod<br>Route 32 — Grass (Morning)<br>Route 38 — Grass (Day)<br>Route 38 — Grass (Morning)<br>Route 40 — Grass (Day)<br>Route 40 — Grass (Morning)<br>Route 41 — Grass (Day)<br>Route 41 — Grass (Morning)<br>Route 6 — Surf<br>Slowpoke Well B2F — Good Rod<br>Slowpoke Well B2F — Old Rod<br>Vermilion City — Grass (Day)<br>Vermilion City — Grass (Morning)<br>Vermilion City — Surf swarm |
-| Wishiwashi | Blackthorn City — Good Rod<br>Cerulean City — Good Rod<br>Mt. Mortar (Room above waterfall) — Old Rod<br>Mt. Silver (Top, snowy area) — Good Rod<br>Route 10 — Good Rod<br>Route 24 — Super Rod<br>Route 27 — Good Rod<br>Route 31 — Old Rod<br>Route 31 — Super Rod<br>Route 35 — Good Rod<br>Route 40 — Super Rod<br>Route 41 — Good Rod<br>Route 47 — Good Rod<br>Slowpoke Well 1F — Super Rod<br>Union Cave B1F — Old Rod |
-| Wobbuffet | Bell Tower 10F — Grass (Night)<br>Bell Tower 4F — Grass (Morning)<br>Bell Tower 8F — Grass (Night)<br>Cliff Cave — Grass (Night)<br>Mt. Silver (Top, snowy area) — Grass (Night)<br>Rock Tunnel B1F — Grass (Day)<br>Rock Tunnel B1F — Grass (Night)<br>Safari Zone (Placeholder, not used) — Grass (Night)<br>Seafoam Islands 1F — Grass (Night)<br>Tohjo Falls — Grass (Day)<br>Tohjo Falls — Grass (Morning)<br>Tohjo Falls — Grass (Night)<br>Victory Road 1F — Grass (Night) |
-| Woobat | Pewter City — Grass (Day)<br>Pewter City — Grass (Morning)<br>Pewter City — Grass (Night)<br>Route 11 — Grass (Day)<br>Route 3 — Grass (Day) |
-| Wooloo | Pallet Town — Grass (Day)<br>Pallet Town — Grass (Morning)<br>Pallet Town — Grass (Night)<br>Route 10 — Grass (Night)<br>Route 18 — Grass (Day)<br>Route 37 — Grass (Day)<br>Route 37 — Grass (Morning)<br>Route 37 — Grass (Night)<br>Route 4 — Grass (Morning) |
-| Wooper | Cerulean City — Grass (Night)<br>Cherrygrove City — Grass (Morning)<br>Cherrygrove City — Grass (Night)<br>Cinnabar Island — Old Rod<br>Cliff Edge Gate — Surf swarm<br>Dark Cave (Route 31 entrance) — Grass (Day)<br>Lake of Rage — Grass (Day)<br>Lake of Rage — Grass (Morning)<br>Lake of Rage — Grass (Night)<br>Mt. Mortar (Central room) — Grass (Morning)<br>Route 19 — Grass (Night)<br>Route 22 — Surf<br>Route 32 — Grass (Day)<br>Route 32 — Grass (Night)<br>Route 6 — Surf<br>Ruins of Alph (Inside, Ladder Room) — Grass (Night)<br>Ruins of Alph (Inside, Main Room) — Grass (Night)<br>Ruins of Alph (Outside) — Surf swarm<br>Safari Zone (Placeholder, not used) — Surf<br>Slowpoke Well B2F — Grass (Day)<br>Slowpoke Well B2F — Grass (Morning)<br>Slowpoke Well B2F — Grass (Night)<br>Union Cave 1F — Surf<br>Union Cave 1F — Surf swarm<br>Union Cave B1F — Surf<br>Union Cave B1F — Surf swarm<br>Whirl Islands 1F — Grass (Night)<br>Whirl Islands B2F — Grass (Day) |
-| Wooper Paldean | Bell Tower 9F — Grass (Morning)<br>Cerulean Cave B2F — Old Rod<br>Dark Cave (Route 31 entrance) — Grass (Day)<br>Mt. Moon 1F — Grass (Day)<br>Mt. Mortar (Waterfall room) — Grass (Day)<br>Route 24 — Surf<br>Route 32 — Grass (Day)<br>Route 32 — Grass (Morning)<br>Route 32 — Grass (Night)<br>Route 9 — Good Rod<br>Ruins of Alph (Inside, Main Room) — Grass (Day)<br>Safari Zone (Placeholder, not used) — Super Rod<br>Safari Zone (Placeholder, not used) — Surf<br>Union Cave 1F — Grass (Day)<br>Whirl Islands B1F — Grass (Morning)<br>Whirl Islands B2F — Grass (Day) |
-| Wormadam | Route 26 — Grass (Day)<br>Route 27 — Grass (Night)<br>Route 44 — Grass (Day) |
-| Wugtrio | Cerulean Cave B1F — Good Rod<br>Cerulean Cave B2F — Super Rod<br>Cinnabar Island — Super Rod<br>Fuchsia City — Super Rod<br>Mt. Silver (Outside) — Super Rod<br>Mt. Silver (Top, snowy area) — Super Rod<br>Mt. Silver 1F — Super Rod<br>Mt. Silver 1F — Surf<br>Pallet Town — Super Rod<br>Route 10 — Super Rod<br>Route 19 — Super Rod<br>Route 20 — Grass (Day)<br>Route 20 — Grass (Morning)<br>Route 20 — Grass (Night)<br>Route 20 — Super Rod<br>Route 25 — Super Rod<br>Route 28 — Super Rod<br>Union Cave B1F — Super Rod<br>Vermilion City — Surf<br>Violet City — Super Rod<br>Viridian City — Super Rod |
-| Wurmple | Route 1 — Grass (Night)<br>Route 2 (North, above Viridian Forest) — Grass (Day)<br>Route 2 (North, above Viridian Forest) — Grass (Night)<br>Route 22 — Grass (Day)<br>Route 22 — Grass (Morning)<br>Route 25 — Grass (Night)<br>Route 29 — Grass (Night) |
-| Wynaut | Digletts Cave — Grass (Night)<br>Mt. Moon 1F — Grass (Morning)<br>Mt. Moon 1F — Grass (Night)<br>Mt. Moon 2F — Grass (Day)<br>Route 33 — Grass (Day)<br>Route 33 — Grass (Morning)<br>Route 34 — Grass (Day)<br>Route 34 — Grass (Morning)<br>Route 34 — Grass (Night) |
-| Wyrdeer | Route 45 — Grass (Night) |
-| Xatu | Route 44 — Grass (Night) |
-| Yamask | Bell Tower 6F — Grass (Night)<br>Bell Tower 8F — Grass (Night)<br>Burned Tower 1F — Grass (Day)<br>Burned Tower B1F — Grass (Morning)<br>Digletts Cave — Grass (Night)<br>Mt. Moon 1F — Grass (Night)<br>Mt. Moon 2F — Grass (Night)<br>Mt. Mortar (Room above waterfall) — Grass (Night)<br>Sprout Tower 2F — Grass (Day)<br>Sprout Tower 2F — Grass (Morning)<br>Sprout Tower 3F — Grass (Night)<br>Union Cave 1F — Grass (Night)<br>Viridian Forest — Grass (Morning)<br>Whirl Islands B2F — Grass (Night) |
-| Yamask Galarian | Burned Tower B1F — Grass (Day)<br>Burned Tower B1F — Grass (Night)<br>Mt. Mortar B1F — Grass (Night)<br>Mt. Silver (Expert Belt room) — Grass (Night)<br>Rock Tunnel 1F — Grass (Night)<br>Ruins of Alph (Inside, Main Room) — Grass (Day)<br>Ruins of Alph (Inside, Main Room) — Grass (Night)<br>Slowpoke Well 1F — Grass (Morning)<br>Slowpoke Well 1F — Grass (Night)<br>Union Cave B1F — Grass (Morning)<br>Victory Road 3F — Grass (Night)<br>Whirl Islands B3F — Grass (Night) |
-| Yamper | Pallet Town — Grass (Day)<br>Pallet Town — Grass (Morning)<br>Route 15 — Grass (Morning)<br>Route 3 — Grass (Morning)<br>Route 31 — Grass (Night)<br>Route 4 — Grass (Day)<br>Route 46 — Grass (Morning) |
-| Yanma | Mt. Silver (Outside) — Grass (Day)<br>Mt. Silver (Outside) — Grass (Morning)<br>Mt. Silver (Outside) — Grass (Night)<br>National Park (Bug Catching Contest) — Grass (Day)<br>National Park (Bug Catching Contest) — Grass (Morning)<br>Route 17 — Grass (Day)<br>Route 17 — Grass (Morning)<br>Route 26 — Grass (Morning)<br>Route 28 — Grass (Day)<br>Route 35 — Grass swarm<br>Route 48 — Grass (Day)<br>Route 6 — Grass (Day) |
-| Yanmega | Route 26 — Grass (Day) |
-| Yungoos | Olivine City — Grass (Day)<br>Olivine City — Grass (Morning)<br>Route 19 — Grass (Day)<br>Route 19 — Grass (Morning)<br>Route 29 — Grass (Morning)<br>Route 3 — Grass (Night) |
-| Zangoose | Route 15 — Grass (Night) |
-| Zebstrika | Route 16 (New Grass) — Grass (Night) |
-| Zigzagoon | Bell Tower 10F — Pokégear radio — Hoenn Sound<br>Bell Tower 2F — Pokégear radio — Hoenn Sound<br>Bell Tower 3F — Pokégear radio — Hoenn Sound<br>Bell Tower 4F — Pokégear radio — Hoenn Sound<br>Bell Tower 5F — Pokégear radio — Hoenn Sound<br>Bell Tower 6F — Pokégear radio — Hoenn Sound<br>Bell Tower 7F — Pokégear radio — Hoenn Sound<br>Bell Tower 8F — Pokégear radio — Hoenn Sound<br>Bell Tower 9F — Pokégear radio — Hoenn Sound<br>Burned Tower 1F — Pokégear radio — Hoenn Sound<br>Burned Tower B1F — Pokégear radio — Hoenn Sound<br>Pallet Town — Grass (Night)<br>Route 34 — Grass (Day)<br>Route 34 — Grass (Morning)<br>Safari Zone (Placeholder, not used) — Pokégear radio — Hoenn Sound<br>Sprout Tower 2F — Pokégear radio — Hoenn Sound<br>Sprout Tower 3F — Pokégear radio — Hoenn Sound |
-| Zigzagoon Galarian | Route 14 — Grass (Night)<br>Route 3 — Grass (Night)<br>Route 36 — Grass (Night)<br>Route 42 — Grass (Night)<br>Route 5 — Grass (Night)<br>Route 7 — Grass (Night)<br>Route 8 — Grass (Night) |
-| Zoroark | Route 16 (New Grass) — Grass (Night) |
-| Zoroark Hisuian | Route 16 (New Grass) — Grass (Night) |
-| Zorua | Celadon City — Grass (Day)<br>Celadon City — Grass (Morning)<br>Celadon City — Grass (Night)<br>Ecruteak City — Grass (Day)<br>Ecruteak City — Grass (Morning)<br>Ecruteak City — Grass (Night)<br>Mahogany Town — Grass (Night)<br>Route 15 — Grass (Night)<br>Route 18 — Grass (Night)<br>Route 35 — Grass (Night)<br>Route 8 — Grass (Night) |
-| Zorua Hisuian | Burned Tower 1F — Grass (Day)<br>Burned Tower 1F — Grass (Morning)<br>Burned Tower B1F — Grass (Day)<br>Burned Tower B1F — Grass (Morning)<br>Burned Tower B1F — Grass (Night)<br>Dark Cave (Route 31 entrance) — Grass (Night)<br>Mt. Mortar (Waterfall room) — Grass (Day)<br>Rock Tunnel 1F — Grass (Night)<br>Route 10 (Cave Ground) — Grass (Night)<br>Sprout Tower 2F — Grass (Day)<br>Sprout Tower 2F — Grass (Night)<br>Sprout Tower 3F — Grass (Night)<br>Union Cave B1F — Grass (Night) |
-| Zubat | Mt. Moon 1F — Grass swarm<br>Mt. Moon 2F — Grass swarm<br>Mt. Mortar B1F — Grass (Day)<br>Mt. Mortar B1F — Grass swarm<br>Olivine City — Grass (Night)<br>Rock Tunnel B1F — Grass (Night)<br>Route 19 — Grass (Night)<br>Seafoam Islands 1F — Grass swarm<br>Slowpoke Well 1F — Grass (Night)<br>Slowpoke Well 1F — Grass swarm<br>Slowpoke Well B2F — Grass (Morning)<br>Slowpoke Well B2F — Grass swarm<br>Sprout Tower 3F — Grass (Day)<br>Sprout Tower 3F — Grass (Morning)<br>Sprout Tower 3F — Grass (Night)<br>Tohjo Falls — Grass swarm<br>Union Cave B1F — Grass (Day)<br>Union Cave B1F — Grass (Morning)<br>Union Cave B1F — Grass (Night)<br>Union Cave B2F — Grass swarm<br>Vermilion City — Grass (Night)<br>Violet City — Grass (Night)<br>Viridian City — Grass (Night) |
-| Zweilous | Victory Road 2F — Grass (Day)<br>Victory Road 2F — Grass (Morning)<br>Victory Road 2F — Grass (Night) |
+| Abomasnow | Ice Path B1F (Grass, morning); Ice Path B1F (Grass, day); Ice Path B1F (Grass, night); Seafoam Islands 1F (Grass, morning); Seafoam Islands 1F (Grass, day); Seafoam Islands 1F (Grass, night); Mt. Silver (Top, snowy area) (Grass, morning); Mt. Silver (Top, snowy area) (Grass, day); Mt. Silver (Top, snowy area) (Grass, night) |
+| Abra | Ruins of Alph (Inside, Main Room) (Grass, morning); Ruins of Alph (Inside, Main Room) (Grass, day); Ruins of Alph (Inside, Main Room) (Grass, night) |
+| Absol | Bell Tower 5F (Grass, morning); Bell Tower 5F (Grass, day); Bell Tower 5F (Grass, night); Mt. Silver 1F (Grass, morning); Mt. Silver 1F (Grass, day); Mt. Silver 1F (Grass, night); Route 13 (Grass, morning); Route 13 (Grass, day); Route 13 (Grass, night) |
+| Accelgor | Bell Tower 5F (Grass, morning); Bell Tower 5F (Grass, day); Bell Tower 5F (Grass, night); Route 18 (Grass, morning); Route 18 (Grass, day); Route 18 (Grass, night) |
+| Aegislash | Bell Tower 2F (Grass, morning); Bell Tower 2F (Grass, day); Bell Tower 2F (Grass, night); Route 3 (Grass, morning); Route 3 (Grass, day); Route 3 (Grass, night) |
+| Aerodactyl | Mt. Mortar (Room above waterfall) (Grass, morning); Mt. Mortar (Room above waterfall) (Grass, day); Mt. Mortar (Room above waterfall) (Grass, night); Seafoam Islands B1F (Grass, morning); Seafoam Islands B1F (Grass, day); Seafoam Islands B1F (Grass, night); Mt. Silver (Moltres room) (Grass, morning); Mt. Silver (Moltres room) (Grass, day); Mt. Silver (Moltres room) (Grass, night) |
+| Aggron | Mt. Silver 3F (Grass, morning); Mt. Silver 3F (Grass, day); Mt. Silver 3F (Grass, night); Mt. Silver 3F (Rock Smash); Vermilion City (Rock Smash); Rock Tunnel 1F (Grass, morning); Rock Tunnel 1F (Grass, day); Rock Tunnel 1F (Grass, night); Route 3 (Rock Smash); Victory Road 2F (Grass, morning); Victory Road 2F (Grass, day); Victory Road 2F (Grass, night) |
+| Aipom | Route 38 (Grass, morning); Route 38 (Grass, day); Route 38 (Grass, night) |
+| Alakazam | Bell Tower 6F (Grass, morning); Bell Tower 6F (Grass, day); Bell Tower 6F (Grass, night); Mt. Silver (Outside) (Grass, morning); Mt. Silver (Outside) (Grass, day); Mt. Silver (Outside) (Grass, night); Route 3 (Grass, morning); Route 3 (Grass, day); Route 3 (Grass, night) |
+| Alcremie | Bell Tower 10F (Grass, morning); Bell Tower 10F (Grass, day); Bell Tower 10F (Grass, night); Route 2 (North, above Viridian Forest) (Grass, morning); Route 2 (North, above Viridian Forest) (Grass, day); Route 2 (North, above Viridian Forest) (Grass, night) |
+| Alomomola | Slowpoke Well B2F (Super Rod); Route 41 (Surf); Route 41 (Good Rod); Route 44 (Super Rod); Dark Cave (Route 31 entrance) (Good Rod); Viridian City (Super Rod); Cerulean City (Good Rod); Route 26 (Old Rod); Route 9 (Old Rod); Route 22 (Good Rod); Route 22 (Super Rod); Route 25 (Super Rod); Tohjo Falls (Surf) |
+| Altaria | Bell Tower 5F (Grass, morning); Bell Tower 5F (Grass, day); Bell Tower 5F (Grass, night); Mt. Silver (Outside) (Grass, morning); Mt. Silver (Outside) (Grass, day); Mt. Silver (Outside) (Grass, night); Celadon City (Grass, morning); Celadon City (Grass, day); Celadon City (Grass, night) |
+| Amaura | Ice Path B3F (Grass, morning); Ice Path B3F (Grass, day); Ice Path B3F (Grass, night) |
+| Ambipom | Route 44 (Grass, morning); Route 44 (Grass, day); Route 44 (Grass, night); Route 14 (Grass, morning); Route 14 (Grass, day); Route 14 (Grass, night) |
+| Amoonguss | Route 45 (Grass, morning); Route 45 (Grass, day); Route 45 (Grass, night); Route 11 (Grass, morning); Route 11 (Grass, day); Route 11 (Grass, night) |
+| Ampharos | Lake of Rage (Grass, morning); Lake of Rage (Grass, day); Lake of Rage (Grass, night); Mt. Silver 3F (Grass, morning); Mt. Silver 3F (Grass, day); Mt. Silver 3F (Grass, night); Viridian City (Grass, morning); Viridian City (Grass, day); Viridian City (Grass, night) |
+| Annihilape | Bell Tower 3F (Grass, morning); Bell Tower 3F (Grass, day); Bell Tower 3F (Grass, night); Route 8 (Grass, morning); Route 8 (Grass, day); Route 8 (Grass, night) |
+| Anorith | Ruins of Alph (Inside, Main Room) (Grass, morning); Ruins of Alph (Inside, Main Room) (Grass, day); Ruins of Alph (Inside, Main Room) (Grass, night) |
+| Appletun | Route 26 (Grass, morning); Route 26 (Grass, day); Route 26 (Grass, night); Route 6 (Grass, morning); Route 6 (Grass, day); Route 6 (Grass, night) |
+| Applin | Route 29 (Grass, morning); Route 29 (Grass, day); Route 29 (Grass, night) |
+| Araquanid | Cherrygrove City (Good Rod); Route 30 (Surf); Union Cave 1F (Good Rod); Slowpoke Well B2F (Super Rod); Whirl Islands B2F (Good Rod); Route 43 (Super Rod); Cliff Edge Gate (Good Rod); Route 20 (Old Rod); Route 20 (Super Rod); Viridian City (Old Rod); Cerulean City (Good Rod); Route 6 (Good Rod); Route 10 (Old Rod); Route 24 (Surf) |
+| Arbok | Dark Cave (Route 45 entrance) (Grass, morning); Dark Cave (Route 45 entrance) (Grass, day); Dark Cave (Route 45 entrance) (Grass, night); Route 11 (Grass, morning); Route 11 (Grass, day); Route 11 (Grass, night) |
+| Arboliva | Route 26 (Grass, morning); Route 26 (Grass, day); Route 26 (Grass, night) |
+| Arcanine | Burned Tower 1F (Rock Smash); Victory Road 1F (Grass, morning); Victory Road 1F (Grass, day); Victory Road 1F (Grass, night); Cerulean Cave B2F (Grass, morning); Cerulean Cave B2F (Grass, day); Cerulean Cave B2F (Grass, night); Cerulean Cave B2F (Rock Smash) |
+| Archaludon | Victory Road 3F (Grass, morning); Victory Road 3F (Grass, day); Victory Road 3F (Grass, night); Cerulean Cave B1F (Grass, morning); Cerulean Cave B1F (Grass, day); Cerulean Cave B1F (Grass, night); Cerulean Cave B1F (Rock Smash) |
+| Archen | Ruins of Alph (Outside) (Rock Smash); Mahogany Town (Grass, morning); Mahogany Town (Grass, day); Mahogany Town (Grass, night) |
+| Archeops | Route 45 (Grass, morning); Route 45 (Grass, day); Route 45 (Grass, night); Mt. Moon 1F (Grass, morning); Mt. Moon 1F (Grass, day); Mt. Moon 1F (Grass, night); Rock Tunnel B1F (Rock Smash) |
+| Arctibax | Ice Path 1F (Grass, morning); Ice Path 1F (Grass, day); Ice Path 1F (Grass, night) |
+| Arctovish | Route 31 (Old Rod); Union Cave B2F (Super Rod); Route 41 (Old Rod); Mt. Mortar B1F (Surf); Route 44 (Surf); Seafoam Islands B4F (Super Rod); Viridian City (Old Rod); Vermilion City (Super Rod); Cinnabar Island (Good Rod); Route 28 (Super Rod); Route 4 (Super Rod); Route 10 (Good Rod) |
+| Arctozolt | Ice Path B2F (Grass, morning); Ice Path B2F (Grass, day); Ice Path B2F (Grass, night); Seafoam Islands B3F (Grass, morning); Seafoam Islands B3F (Grass, day); Seafoam Islands B3F (Grass, night) |
+| Ariados | Route 35 (Grass, morning); Route 35 (Grass, day); Route 35 (Grass, night); Route 11 (Grass, morning); Route 11 (Grass, day); Route 11 (Grass, night) |
+| Armaldo | Mt. Mortar (Room above waterfall) (Grass, morning); Mt. Mortar (Room above waterfall) (Grass, day); Mt. Mortar (Room above waterfall) (Grass, night); Seafoam Islands B4F (Grass, morning); Seafoam Islands B4F (Grass, day); Seafoam Islands B4F (Grass, night) |
+| Armarouge | Bell Tower 2F (Grass, morning); Bell Tower 2F (Grass, day); Bell Tower 2F (Grass, night); Cinnabar Island (Grass, morning); Cinnabar Island (Grass, day); Cinnabar Island (Grass, night) |
+| Aromatisse | Blackthorn City (Grass, morning); Blackthorn City (Grass, day); Blackthorn City (Grass, night); Route 16 (New Grass) (Grass, morning); Route 16 (New Grass) (Grass, day); Route 16 (New Grass) (Grass, night) |
+| Aron | Dark Cave (Route 31 entrance) (Grass, morning); Dark Cave (Route 31 entrance) (Grass, day); Dark Cave (Route 31 entrance) (Grass, night); Dark Cave (Route 31 entrance) (Rock Smash) |
+| Arrokuda | Route 30 (Old Rod); Union Cave B2F (Old Rod); Route 40 (Old Rod) |
+| Audino | Slowpoke Well B2F (Grass, morning); Slowpoke Well B2F (Grass, day); Slowpoke Well B2F (Grass, night); Mt. Silver (Outside) (Grass, morning); Mt. Silver (Outside) (Grass, day); Mt. Silver (Outside) (Grass, night); Route 13 (Grass, morning); Route 13 (Grass, day); Route 13 (Grass, night) |
+| Aurorus | Ice Path B3F (Grass, morning); Ice Path B3F (Grass, day); Ice Path B3F (Grass, night); Ice Path B3F (Rock Smash); Seafoam Islands B3F (Grass, morning); Seafoam Islands B3F (Grass, day); Seafoam Islands B3F (Grass, night); Route 19 (Rock Smash) |
+| Avalugg | Ice Path B3F (Grass, morning); Ice Path B3F (Grass, day); Ice Path B3F (Grass, night); Seafoam Islands B2F (Grass, morning); Seafoam Islands B2F (Grass, day); Seafoam Islands B2F (Grass, night) |
+| Axew | Burned Tower B1F (Grass, morning); Burned Tower B1F (Grass, day); Burned Tower B1F (Grass, night) |
+| Azumarill | Route 31 (Super Rod); Route 35 (Good Rod); Cianwood City (Super Rod); Mt. Moon (Outside Clefairy active) (Good Rod); Mt. Silver 3F (Super Rod); Mt. Silver 4F (Old Rod); Mt. Silver 4F (Good Rod); Cerulean City (Super Rod); Route 4 (Super Rod); Route 9 (Old Rod); Route 25 (Old Rod); Tohjo Falls (Surf); Cerulean Cave B2F (Super Rod) |
+| Azurill | Cherrygrove City (Old Rod); Ruins of Alph (Outside) (Old Rod); Dark Cave (Route 31 entrance) (Old Rod) |
+| Bagon | Cianwood City (Grass, morning); Cianwood City (Grass, day); Cianwood City (Grass, night) |
+| Baltoy | Ruins of Alph (Outside) (Grass, morning); Ruins of Alph (Outside) (Grass, day); Ruins of Alph (Outside) (Grass, night) |
+| Banette | Dark Cave (Route 45 entrance) (Grass, morning); Dark Cave (Route 45 entrance) (Grass, day); Dark Cave (Route 45 entrance) (Grass, night); Mt. Silver 1F (Grass, morning); Mt. Silver 1F (Grass, day); Mt. Silver 1F (Grass, night); Mt. Moon 2F (Grass, morning); Mt. Moon 2F (Grass, day); Mt. Moon 2F (Grass, night) |
+| Baraskewda | Cherrygrove City (Super Rod); Route 35 (Super Rod); Whirl Islands 1F (Super Rod); Whirl Islands B2F (Good Rod); Route 47 (Surf); Seafoam Islands B4F (Old Rod); Seafoam Islands B4F (Good Rod); Mt. Silver 4F (Super Rod); Route 20 (Old Rod); Pallet Town (Super Rod); Cerulean City (Good Rod); Route 10 (Old Rod) |
+| Barbaracle | New Bark Town (Super Rod); Union Cave 1F (Good Rod); Olivine City (Super Rod); Cianwood City (Good Rod); Route 43 (Super Rod); Mt. Silver 3F (Good Rod); Mt. Silver (Outside) (Surf); Pallet Town (Super Rod); Celadon City (Super Rod); Fuchsia City (Super Rod); Cinnabar Island (Super Rod); Route 27 (Surf); Route 10 (Surf); Route 24 (Good Rod); Cerulean Cave 1F (Good Rod) |
+| Barboach | Ruins of Alph (Outside) (Old Rod); Route 35 (Old Rod); Olivine City (Old Rod) |
+| Basclegion | Ruins of Alph (Outside) (Super Rod); Ecruteak City (Good Rod); Cianwood City (Good Rod); Lake of Rage (Old Rod); Route 45 (Good Rod); Mt. Moon (Outside area) (Good Rod); Seafoam Islands B4F (Surf); Seafoam Islands B4F (Old Rod); Mt. Silver 4F (Good Rod); Mt. Silver 4F (Super Rod); Route 20 (Surf) |
+| Basculegion Female | Lake of Rage (Old Rod); Route 44 (Super Rod); Route 47 (Surf); Route 47 (Good Rod); Route 47 (Super Rod); Route 26 (Super Rod); Route 27 (Surf); Route 27 (Old Rod) |
+| Basculin | Union Cave 1F (Super Rod); Whirl Islands 1F (Old Rod); Mt. Mortar (Waterfall room) (Super Rod); Route 43 (Surf); Mt. Moon (Outside area) (Old Rod); Route 12 (Good Rod); Fuchsia City (Old Rod); Route 9 (Super Rod); Route 22 (Old Rod); Route 24 (Super Rod); Tohjo Falls (Surf); Cerulean Cave B1F (Super Rod) |
+| Basculin Blue Striped | Union Cave B1F (Old Rod); Mt. Mortar B1F (Surf); Lake of Rage (Super Rod); Route 44 (Good Rod); Route 20 (Surf); Viridian City (Good Rod); Vermilion City (Good Rod); Route 6 (Surf); Route 22 (Surf); Route 25 (Super Rod) |
+| Basculin White Striped | New Bark Town (Surf); Cherrygrove City (Old Rod); Ruins of Alph (Outside) (Surf); Route 41 (Old Rod) |
+| Bastiodon | Mt. Mortar (Room above waterfall) (Grass, morning); Mt. Mortar (Room above waterfall) (Grass, day); Mt. Mortar (Room above waterfall) (Grass, night); Seafoam Islands B3F (Grass, morning); Seafoam Islands B3F (Grass, day); Seafoam Islands B3F (Grass, night) |
+| Baxcalibur | Mt. Silver (Top, snowy area) (Grass, morning); Mt. Silver (Top, snowy area) (Grass, day); Mt. Silver (Top, snowy area) (Grass, night); Victory Road 3F (Grass, morning); Victory Road 3F (Grass, day); Victory Road 3F (Grass, night); Victory Road 3F (Rock Smash) |
+| Beartic | Ice Path 1F (Grass, morning); Ice Path 1F (Grass, day); Ice Path 1F (Grass, night); Seafoam Islands B3F (Grass, morning); Seafoam Islands B3F (Grass, day); Seafoam Islands B3F (Grass, night) |
+| Beautifly | Route 32 (Grass, morning); Route 32 (Grass, day); Route 32 (Grass, night); Vermilion City (Grass, morning); Vermilion City (Grass, day); Vermilion City (Grass, night) |
+| Beedrill | Route 30 (Grass, morning); Route 30 (Grass, day); Route 30 (Grass, night); Mt. Silver (Outside) (Grass, morning); Mt. Silver (Outside) (Grass, day); Mt. Silver (Outside) (Grass, night); Vermilion City (Grass, morning); Vermilion City (Grass, day); Vermilion City (Grass, night) |
+| Beheeyem | Bell Tower 10F (Grass, morning); Bell Tower 10F (Grass, day); Bell Tower 10F (Grass, night); Route 2 (South, below Viridian Forest) (Grass, morning); Route 2 (South, below Viridian Forest) (Grass, day); Route 2 (South, below Viridian Forest) (Grass, night) |
+| Beldum | Violet City (Rock Smash); Route 32 (Rock Smash); Ruins of Alph (Inside, Main Room) (Grass, morning); Ruins of Alph (Inside, Main Room) (Grass, day); Ruins of Alph (Inside, Main Room) (Grass, night) |
+| Bellibolt | Route 36 (Grass, morning); Route 36 (Grass, day); Route 36 (Grass, night); Viridian City (Grass, morning); Viridian City (Grass, day); Viridian City (Grass, night) |
+| Bellossom | Route 39 (Grass, morning); Route 39 (Grass, day); Route 39 (Grass, night); Route 18 (Grass, morning); Route 18 (Grass, day); Route 18 (Grass, night) |
+| Bellsprout | Sprout Tower 2F (Grass, morning); Sprout Tower 2F (Grass, day); Sprout Tower 2F (Grass, night) |
+| Bergmite | Ice Path B3F (Grass, morning); Ice Path B3F (Grass, day); Ice Path B3F (Grass, night) |
+| Bewear | Bell Tower 6F (Grass, day); Bell Tower 6F (Grass, night); Mt. Mortar (Waterfall room) (Grass, morning); Mt. Mortar (Waterfall room) (Grass, day) |
+| Bibarel | Route 47 (Good Rod); Mt. Moon (Outside Clefairy active) (Surf); Route 12 (Grass, morning); Route 12 (Grass, day); Route 12 (Grass, night); Viridian City (Surf); Fuchsia City (Surf); Route 48 (Grass, morning); Route 48 (Grass, day); Route 48 (Grass, night); Route 6 (Surf); Route 21 (Surf); Route 25 (Surf) |
+| Bidoof | Route 30 (Grass, morning); Route 30 (Grass, day); Route 30 (Grass, night) |
+| Binacle | Slowpoke Well B2F (Old Rod); Mt. Mortar B1F (Old Rod); Mt. Silver 4F (Old Rod); Mt. Silver 4F (Good Rod); Safari Zone (Placeholder, not used) (Good Rod) |
+| Bisharp | Route 45 (Grass, morning); Route 45 (Grass, day); Route 45 (Grass, night) |
+| Blastoise | Mt. Silver 1F (Good Rod); Pallet Town (Grass, morning); Pallet Town (Grass, day); Pallet Town (Grass, night); Route 28 (Old Rod) |
+| Blaziken | Mt. Silver (Moltres room) (Grass, morning); Mt. Silver (Moltres room) (Grass, day); Mt. Silver (Moltres room) (Grass, night); Route 19 (Grass, morning); Route 19 (Grass, day); Route 19 (Grass, night) |
+| Blipbug | Route 46 (Grass, morning); Route 46 (Grass, day); Route 46 (Grass, night) |
+| Blissey | Ice Path B2F (Grass, morning); Ice Path B2F (Grass, day); Ice Path B2F (Grass, night); Route 10 (Grass, morning); Route 10 (Grass, day); Route 10 (Grass, night) |
+| Blitzle | Route 36 (Grass, morning); Route 36 (Grass, day); Route 36 (Grass, night) |
+| Boldore | Cliff Cave (Grass, morning); Cliff Cave (Grass, day); Cliff Cave (Grass, night) |
+| Boltund | Route 43 (Grass, morning); Route 43 (Grass, day); Route 43 (Grass, night); Route 10 (Grass, morning); Route 10 (Grass, day); Route 10 (Grass, night) |
+| Bombirdier | Bell Tower 4F (Grass, morning); Bell Tower 4F (Grass, day); Bell Tower 4F (Grass, night); Route 2 (South, below Viridian Forest) (Grass, morning); Route 2 (South, below Viridian Forest) (Grass, day); Route 2 (South, below Viridian Forest) (Grass, night) |
+| Bonsly | Dark Cave (Route 31 entrance) (Grass, morning); Dark Cave (Route 31 entrance) (Grass, day); Dark Cave (Route 31 entrance) (Grass, night) |
+| Bouffalant | Cianwood City (Grass, morning); Cianwood City (Grass, day); Cianwood City (Grass, night); Route 2 (South, below Viridian Forest) (Grass, morning); Route 2 (South, below Viridian Forest) (Grass, day); Route 2 (South, below Viridian Forest) (Grass, night) |
+| Bounsweet | Route 31 (Grass, morning); Route 31 (Grass, day); Route 31 (Grass, night) |
+| Bramblgast | Route 45 (Grass, morning); Route 45 (Grass, day); Route 45 (Grass, night); Route 2 (North, above Viridian Forest) (Grass, morning); Route 2 (North, above Viridian Forest) (Grass, day); Route 2 (North, above Viridian Forest) (Grass, night) |
+| Bramblin | Route 35 (Grass, morning); Route 35 (Grass, day); Route 35 (Grass, night) |
+| Braviary | Bell Tower 10F (Grass, morning); Bell Tower 10F (Grass, day); Bell Tower 10F (Grass, night); Route 4 (Grass, morning); Route 4 (Grass, day); Route 4 (Grass, night) |
+| Breloom | Route 38 (Grass, morning); Route 38 (Grass, day); Route 38 (Grass, night); Route 8 (Grass, morning); Route 8 (Grass, day); Route 8 (Grass, night) |
+| Bronzong | Ice Path 1F (Grass, morning); Ice Path 1F (Grass, day); Ice Path 1F (Grass, night); Seafoam Islands B1F (Grass, morning); Seafoam Islands B1F (Grass, day); Seafoam Islands B1F (Grass, night) |
+| Bronzor | Ruins of Alph (Inside, Main Room) (Grass, morning); Ruins of Alph (Inside, Main Room) (Grass, day); Ruins of Alph (Inside, Main Room) (Grass, night) |
+| BruteBonet | Route 27 (Grass, morning); Route 27 (Grass, day); Route 27 (Grass, night); Cerulean Cave 1F (Grass, morning); Cerulean Cave 1F (Grass, day); Cerulean Cave 1F (Grass, night) |
+| Bruxish | New Bark Town (Old Rod); Slowpoke Well B2F (Super Rod); Whirl Islands B2F (Surf); Mt. Mortar (Waterfall room) (Surf); Route 43 (Surf); Route 45 (Super Rod); Dark Cave (Route 31 entrance) (Good Rod); Mt. Moon (Outside Clefairy active) (Good Rod); Route 19 (Super Rod); Route 20 (Old Rod); Vermilion City (Super Rod); Celadon City (Good Rod); Cinnabar Island (Surf) |
+| Budew | Route 29 (Grass, morning); Route 29 (Grass, day); Route 29 (Grass, night) |
+| Buizel | Route 34 (Old Rod); Ecruteak City (Old Rod); Blackthorn City (Surf) |
+| Bulbasaur | Violet City (Grass, morning); Violet City (Grass, day); Violet City (Grass, night) |
+| Buneary | National Park (Grass, morning); National Park (Grass, day); National Park (Grass, night) |
+| Bunnelby | Ruins of Alph (Outside) (Grass, morning); Ruins of Alph (Outside) (Grass, day); Ruins of Alph (Outside) (Grass, night) |
+| Burmy | Route 33 (Grass, morning); Route 33 (Grass, day); Route 33 (Grass, night) |
+| Butterfree | Route 30 (Grass, morning); Route 30 (Grass, day); Route 30 (Grass, night); Vermilion City (Grass, morning); Vermilion City (Grass, day); Vermilion City (Grass, night) |
+| Cacnea | Route 35 (Grass, morning); Route 35 (Grass, day); Route 35 (Grass, night) |
+| Cacturne | Lake of Rage (Grass, morning); Lake of Rage (Grass, day); Lake of Rage (Grass, night); Route 15 (Grass, morning); Route 15 (Grass, day); Route 15 (Grass, night) |
+| Camerupt | Dark Cave (Route 45 entrance) (Grass, morning); Dark Cave (Route 45 entrance) (Grass, day); Dark Cave (Route 45 entrance) (Grass, night); Mt. Silver 1F (Grass, morning); Mt. Silver 1F (Grass, day); Mt. Silver 1F (Grass, night); Digletts Cave (Grass, morning); Digletts Cave (Grass, day); Digletts Cave (Grass, night) |
+| Capsakid | Ilex Forest (Grass, morning); Ilex Forest (Grass, day); Ilex Forest (Grass, night) |
+| Carbink | Ice Path B1F (Grass, morning); Ice Path B1F (Grass, day); Ice Path B1F (Grass, night); Seafoam Islands B1F (Grass, morning); Seafoam Islands B1F (Grass, day); Seafoam Islands B1F (Grass, night) |
+| Carkol | Mt. Mortar (Central room) (Grass, morning); Mt. Mortar (Central room) (Grass, day); Mt. Mortar (Central room) (Grass, night) |
+| Carnivine | Route 42 (Grass, morning); Route 42 (Grass, day); Route 42 (Grass, night); Route 10 (Cave Ground) (Grass, morning); Route 10 (Cave Ground) (Grass, day); Route 10 (Cave Ground) (Grass, night) |
+| Carracosta | Route 32 (Surf); Ecruteak City (Super Rod); Whirl Islands 1F (Surf); Whirl Islands 1F (Good Rod); Cianwood City (Good Rod); Route 42 (Super Rod); Mt. Mortar (Room above waterfall) (Old Rod); Dark Cave (Route 45 entrance) (Surf); Route 47 (Good Rod); Seafoam Islands B4F (Surf); Pallet Town (Old Rod); Cerulean City (Super Rod); Route 27 (Super Rod); Route 13 (Super Rod); Route 25 (Good Rod); Tohjo Falls (Good Rod); Cerulean Cave 1F (Old Rod) |
+| Carvanha | Route 32 (Old Rod); Union Cave 1F (Old Rod); Union Cave B1F (Old Rod); Dark Cave (Route 31 entrance) (Old Rod) |
+| Cascoon | Route 32 (Grass, morning); Route 32 (Grass, day); Route 32 (Grass, night) |
+| Castform | Route 35 (Grass, morning); Route 35 (Grass, day); Route 35 (Grass, night); Route 7 (Grass, morning); Route 7 (Grass, day); Route 7 (Grass, night) |
+| Caterpie | Route 29 (Grass, morning); Route 29 (Grass, day); Route 29 (Grass, night) |
+| Centskorch | Burned Tower B1F (Grass, morning); Burned Tower B1F (Grass, day); Burned Tower B1F (Grass, night); Cinnabar Island (Grass, morning); Cinnabar Island (Grass, day); Cinnabar Island (Grass, night) |
+| Ceruledge | Bell Tower 2F (Grass, morning); Bell Tower 2F (Grass, day); Bell Tower 2F (Grass, night); Cinnabar Island (Grass, morning); Cinnabar Island (Grass, day); Cinnabar Island (Grass, night) |
+| Cetitan | Whirl Islands B2F (Grass, morning); Whirl Islands B2F (Grass, day); Whirl Islands B2F (Grass, night); Seafoam Islands B2F (Grass, morning); Seafoam Islands B2F (Grass, day); Seafoam Islands B2F (Grass, night) |
+| Cetoddle | Ice Path B3F (Grass, morning); Ice Path B3F (Grass, day); Ice Path B3F (Grass, night) |
+| Chandelure | Bell Tower 7F (Grass, morning); Bell Tower 7F (Grass, day); Bell Tower 7F (Grass, night); Seafoam Islands B2F (Grass, morning); Seafoam Islands B2F (Grass, day); Seafoam Islands B2F (Grass, night); Mt. Silver (Moltres room) (Grass, morning); Mt. Silver (Moltres room) (Grass, day); Mt. Silver (Moltres room) (Grass, night) |
+| Chansey | Ilex Forest (Grass, morning); Ilex Forest (Grass, day); Ilex Forest (Grass, night) |
+| Charcadet | Burned Tower 1F (Grass, morning); Burned Tower 1F (Grass, day); Burned Tower 1F (Grass, night) |
+| Charizard | Mt. Silver 3F (Grass, morning); Mt. Silver 3F (Grass, day); Mt. Silver 3F (Grass, night); Pallet Town (Grass, morning); Pallet Town (Grass, day); Pallet Town (Grass, night) |
+| Charjabug | National Park (Bug Catching Contest) (Grass, morning); National Park (Bug Catching Contest) (Grass, day); National Park (Bug Catching Contest) (Grass, night) |
+| Charmander | Azalea Town (Grass, morning); Azalea Town (Grass, day); Azalea Town (Grass, night) |
+| Charmeleon | Burned Tower B1F (Grass, morning); Burned Tower B1F (Grass, day); Burned Tower B1F (Grass, night) |
+| Chatot | Lake of Rage (Grass, morning); Lake of Rage (Grass, day); Lake of Rage (Grass, night); Route 25 (Grass, morning); Route 25 (Grass, day); Route 25 (Grass, night) |
+| Cherrim | Route 42 (Grass, morning); Route 42 (Grass, day); Route 42 (Grass, night); Route 8 (Grass, morning); Route 8 (Grass, day); Route 8 (Grass, night) |
+| Cherubi | Route 33 (Grass, morning); Route 33 (Grass, day); Route 33 (Grass, night) |
+| Chesnaught | Mt. Silver 3F (Grass, morning); Mt. Silver 3F (Grass, day); Mt. Silver 3F (Grass, night); Route 21 (Grass, morning); Route 21 (Grass, day); Route 21 (Grass, night) |
+| Chespin | Violet City (Grass, morning); Violet City (Grass, day); Violet City (Grass, night) |
+| Chewtle | Ilex Forest (Old Rod); Route 34 (Old Rod) |
+| Chikorita | Violet City (Grass, morning); Violet City (Grass, day); Violet City (Grass, night) |
+| Chimchar | Azalea Town (Grass, morning); Azalea Town (Grass, day); Azalea Town (Grass, night) |
+| Chimecho | Cliff Cave (Grass, morning); Cliff Cave (Grass, day); Cliff Cave (Grass, night); Mt. Silver 1F (Grass, morning); Mt. Silver 1F (Grass, day); Mt. Silver 1F (Grass, night); Route 13 (Grass, morning); Route 13 (Grass, day); Route 13 (Grass, night) |
+| Chinchou | Violet City (Old Rod); Ruins of Alph (Outside) (Surf); Union Cave B2F (Surf); Cianwood City (Old Rod) |
+| Chingling | Sprout Tower 2F (Grass, morning); Sprout Tower 2F (Grass, day); Sprout Tower 2F (Grass, night) |
+| Cinccino | Route 44 (Grass, morning); Route 44 (Grass, day); Route 44 (Grass, night); Route 5 (Grass, morning); Route 5 (Grass, day); Route 5 (Grass, night) |
+| Cinderace | Route 1 (Grass, morning); Route 1 (Grass, day); Route 1 (Grass, night) |
+| Clamperl | Route 32 (Old Rod); Route 35 (Good Rod); Route 44 (Old Rod); Mt. Silver 4F (Old Rod) |
+| Clauncher | Union Cave B1F (Old Rod); Route 40 (Old Rod); Mt. Mortar (Waterfall room) (Old Rod) |
+| Clawitzer | Route 30 (Super Rod); Route 31 (Good Rod); Olivine City (Super Rod); Whirl Islands 1F (Surf); Route 42 (Good Rod); Mt. Mortar B1F (Super Rod); Route 45 (Good Rod); Mt. Silver (Moltres room) (Good Rod); Mt. Silver (Moltres room) (Super Rod); Route 12 (Surf); Celadon City (Good Rod); Fuchsia City (Super Rod); Route 6 (Super Rod); Route 10 (Surf); Route 24 (Surf); Cerulean Cave 1F (Super Rod); Cerulean Cave B2F (Good Rod) |
+| Claydol | Blackthorn City (Grass, morning); Blackthorn City (Grass, day); Blackthorn City (Grass, night); Digletts Cave (Grass, morning); Digletts Cave (Grass, day); Digletts Cave (Grass, night) |
+| Clefable | Bell Tower 4F (Grass, morning); Bell Tower 4F (Grass, day); Bell Tower 4F (Grass, night); Mt. Silver (Outside) (Grass, morning); Mt. Silver (Outside) (Grass, day); Mt. Silver (Outside) (Grass, night); Route 16 (Grass, morning); Route 16 (Grass, day); Route 16 (Grass, night) |
+| Clefairy | Slowpoke Well B2F (Grass, morning); Slowpoke Well B2F (Grass, day); Slowpoke Well B2F (Grass, night) |
+| Cleffa | Route 31 (Grass, morning); Route 31 (Grass, day); Route 31 (Grass, night) |
+| Clobbopus | Union Cave B1F (Old Rod); Ilex Forest (Old Rod); Route 34 (Old Rod); Route 35 (Old Rod); Tohjo Falls (Old Rod) |
+| Clodsire | New Bark Town (Surf); Cherrygrove City (Good Rod); Union Cave B2F (Surf); Route 35 (Good Rod); Route 12 (Grass, morning); Route 12 (Grass, day); Route 12 (Grass, night); Celadon City (Old Rod) |
+| Cloyster | Route 32 (Good Rod); Route 34 (Super Rod); Whirl Islands 1F (Super Rod); Mt. Mortar (Waterfall room) (Good Rod); Route 44 (Surf); Mt. Silver (Moltres room) (Good Rod); Mt. Silver (Moltres room) (Super Rod); Mt. Silver 4F (Good Rod); Mt. Silver 4F (Super Rod); Mt. Silver (Top, snowy area) (Surf); Mt. Silver (Top, snowy area) (Super Rod); Pallet Town (Good Rod); Fuchsia City (Old Rod); Cinnabar Island (Super Rod); Route 27 (Good Rod); Route 10 (Super Rod); Route 21 (Good Rod); Tohjo Falls (Super Rod) |
+| Coalossal | Mt. Mortar B1F (Grass, morning); Mt. Mortar B1F (Grass, day); Mt. Mortar B1F (Grass, night); Rock Tunnel B1F (Grass, morning); Rock Tunnel B1F (Grass, day); Rock Tunnel B1F (Grass, night) |
+| Cofagrigus | Dark Cave (Route 45 entrance) (Grass, morning); Dark Cave (Route 45 entrance) (Grass, day); Dark Cave (Route 45 entrance) (Grass, night); Mt. Moon 2F (Grass, morning); Mt. Moon 2F (Grass, day); Mt. Moon 2F (Grass, night) |
+| Combee | National Park (Grass, morning); National Park (Grass, day); National Park (Grass, night) |
+| Comfey | Bell Tower 3F (Grass, morning); Bell Tower 3F (Grass, day); Bell Tower 3F (Grass, night); Route 14 (Grass, morning); Route 14 (Grass, day); Route 14 (Grass, night) |
+| Conkeldurr | Whirl Islands 1F (Grass, morning); Whirl Islands 1F (Grass, day); Whirl Islands 1F (Grass, night); Route 1 (Grass, morning); Route 1 (Grass, day); Route 1 (Grass, night) |
+| Copperajah | Whirl Islands 1F (Grass, morning); Whirl Islands 1F (Grass, day); Whirl Islands 1F (Grass, night); Route 19 (Grass, morning); Route 19 (Grass, day); Route 19 (Grass, night) |
+| Corphish | Violet City (Surf); Route 47 (Old Rod) |
+| Corsola | New Bark Town (Good Rod); Route 31 (Old Rod); Ruins of Alph (Inside, Ladder Room) (Grass, morning); Ruins of Alph (Inside, Ladder Room) (Grass, day); Ruins of Alph (Inside, Ladder Room) (Grass, night); Dark Cave (Route 45 entrance) (Old Rod); Mt. Moon (Outside Clefairy active) (Good Rod); Fuchsia City (Old Rod); Cinnabar Island (Surf); Cinnabar Island (Old Rod); Route 6 (Super Rod); Route 10 (Old Rod) |
+| Corviknite | Bell Tower 4F (Grass, morning); Bell Tower 4F (Grass, day); Bell Tower 4F (Grass, night); Route 2 (North, above Viridian Forest) (Grass, morning); Route 2 (North, above Viridian Forest) (Grass, day); Route 2 (North, above Viridian Forest) (Grass, night) |
+| Corvsquire | Olivine City (Grass, morning); Olivine City (Grass, day); Olivine City (Grass, night) |
+| Cottonee | Route 34 (Grass, morning); Route 34 (Grass, day); Route 34 (Grass, night) |
+| Crabomnabl | Whirl Islands 1F (Grass, morning); Whirl Islands 1F (Grass, day); Whirl Islands 1F (Grass, night); Mt. Silver (Top, snowy area) (Grass, morning); Mt. Silver (Top, snowy area) (Grass, day); Mt. Silver (Top, snowy area) (Grass, night); Route 12 (Grass, morning); Route 12 (Grass, day); Route 12 (Grass, night); Pewter City (Rock Smash) |
+| Crabrawler | Route 32 (Rock Smash); Mt. Mortar (Central room) (Grass, morning); Mt. Mortar (Central room) (Grass, day); Mt. Mortar (Central room) (Grass, night) |
+| Cradily | Mt. Mortar (Room above waterfall) (Grass, morning); Mt. Mortar (Room above waterfall) (Grass, day); Mt. Mortar (Room above waterfall) (Grass, night); Seafoam Islands B3F (Grass, morning); Seafoam Islands B3F (Grass, day); Seafoam Islands B3F (Grass, night) |
+| Cramorant | Route 31 (Surf); Route 40 (Surf); Cianwood City (Surf); Route 12 (Grass, morning); Route 12 (Grass, day); Route 12 (Grass, night); Route 12 (Surf); Viridian City (Surf); Route 27 (Surf); Route 4 (Surf); Route 13 (Surf); Route 25 (Surf) |
+| Cranidos | Ruins of Alph (Inside, Main Room) (Grass, morning); Ruins of Alph (Inside, Main Room) (Grass, day); Ruins of Alph (Inside, Main Room) (Grass, night); Burned Tower B1F (Rock Smash) |
+| Crawdaunt | Route 31 (Good Rod); Route 34 (Super Rod); Route 40 (Good Rod); Cianwood City (Super Rod); Mt. Silver 3F (Old Rod); Mt. Silver 3F (Super Rod); Cliff Edge Gate (Super Rod); Route 12 (Surf); Cerulean City (Old Rod); Cinnabar Island (Super Rod); Route 27 (Good Rod); Route 4 (Old Rod); Route 10 (Good Rod); Route 24 (Old Rod); Cerulean Cave 1F (Super Rod) |
+| Croagunk | Cliff Cave (Grass, morning); Cliff Cave (Grass, day); Cliff Cave (Grass, night) |
+| Crobat | Bell Tower 6F (Grass, morning); Mt. Mortar (Waterfall room) (Grass, night); Mt. Moon 1F (Grass, morning); Mt. Moon 1F (Grass, day); Mt. Moon 1F (Grass, night) |
+| Crustle | Whirl Islands B2F (Grass, morning); Whirl Islands B2F (Grass, day); Whirl Islands B2F (Grass, night); Rock Tunnel 1F (Grass, morning); Rock Tunnel 1F (Grass, day); Rock Tunnel 1F (Grass, night) |
+| Cryogonal | Ice Path B1F (Grass, morning); Ice Path B1F (Grass, day); Ice Path B1F (Grass, night); Seafoam Islands B2F (Grass, morning); Seafoam Islands B2F (Grass, day); Seafoam Islands B2F (Grass, night) |
+| Cubchoo | Ice Path 1F (Grass, morning); Ice Path 1F (Grass, day); Ice Path 1F (Grass, night) |
+| Cubone | Ruins of Alph (Inside, Main Room) (Grass, morning); Ruins of Alph (Inside, Main Room) (Grass, day); Ruins of Alph (Inside, Main Room) (Grass, night) |
+| Cufant | Ruins of Alph (Inside, Main Room) (Grass, morning); Ruins of Alph (Inside, Main Room) (Grass, day); Ruins of Alph (Inside, Main Room) (Grass, night) |
+| Cursola | Bell Tower 9F (Grass, morning); Bell Tower 9F (Grass, day); Bell Tower 9F (Grass, night); Seafoam Islands B3F (Grass, morning); Seafoam Islands B3F (Grass, day); Seafoam Islands B3F (Grass, night) |
+| Cutiefly | Sprout Tower 2F (Grass, morning); Sprout Tower 2F (Grass, day); Sprout Tower 2F (Grass, night) |
+| Cyndaquil | Azalea Town (Grass, morning); Azalea Town (Grass, day); Azalea Town (Grass, night) |
+| Dachsbun | Mt. Mortar (Central room) (Grass, morning); Mt. Mortar (Central room) (Grass, day); Mt. Mortar (Central room) (Grass, night); Route 16 (Grass, morning); Route 16 (Grass, day); Route 16 (Grass, night) |
+| Darmanitan | Whirl Islands B2F (Grass, morning); Whirl Islands B2F (Grass, day); Whirl Islands B2F (Grass, night); Seafoam Islands 1F (Grass, morning); Seafoam Islands 1F (Grass, day); Seafoam Islands 1F (Grass, night) |
+| Darumaka | Burned Tower 1F (Grass, morning); Burned Tower 1F (Grass, day); Burned Tower 1F (Grass, night); Ice Path 1F (Grass, morning); Ice Path 1F (Grass, day); Ice Path 1F (Grass, night) |
+| Decidueye | Route 27 (Grass, morning); Route 27 (Grass, day); Route 27 (Grass, night); Route 22 (Grass, morning); Route 22 (Grass, day); Route 22 (Grass, night) |
+| Dedenne | Slowpoke Well B2F (Grass, morning); Slowpoke Well B2F (Grass, day); Slowpoke Well B2F (Grass, night); Cerulean City (Grass, morning); Cerulean City (Grass, day); Cerulean City (Grass, night) |
+| Deerling | National Park (Grass, morning); National Park (Grass, day); National Park (Grass, night) |
+| Deino | Burned Tower 1F (Grass, morning); Burned Tower 1F (Grass, day); Burned Tower 1F (Grass, night) |
+| Delcatty | National Park (Grass, morning); National Park (Grass, day); National Park (Grass, night); Route 6 (Grass, morning); Route 6 (Grass, day); Route 6 (Grass, night) |
+| Delibird | Route 44 (Grass, morning); Route 44 (Grass, day); Route 44 (Grass, night); Route 16 (New Grass) (Grass, morning); Route 16 (New Grass) (Grass, day); Route 16 (New Grass) (Grass, night) |
+| Delphox | Mt. Silver (Moltres room) (Grass, morning); Mt. Silver (Moltres room) (Grass, day); Mt. Silver (Moltres room) (Grass, night); Route 21 (Grass, morning); Route 21 (Grass, day); Route 21 (Grass, night) |
+| Dewgong | Route 31 (Super Rod); Route 32 (Good Rod); Route 41 (Super Rod); Mt. Mortar B1F (Good Rod); Route 44 (Old Rod); Mt. Silver (Moltres room) (Super Rod); Viridian City (Good Rod); Vermilion City (Super Rod); Celadon City (Good Rod); Cinnabar Island (Good Rod); Route 27 (Good Rod); Route 6 (Surf); Route 21 (Surf); Tohjo Falls (Old Rod) |
+| Dewpider | Route 30 (Surf); Ruins of Alph (Outside) (Old Rod) |
+| Dhelmise | Union Cave B2F (Super Rod); Route 41 (Surf); Dragons Den (Super Rod); Dark Cave (Route 45 entrance) (Old Rod); Mt. Moon (Outside area) (Good Rod); Mt. Moon (Outside Clefairy active) (Super Rod); Seafoam Islands B4F (Super Rod); Route 19 (Surf); Route 19 (Good Rod); Route 26 (Super Rod) |
+| Diggersby | Slowpoke Well B2F (Grass, morning); Slowpoke Well B2F (Grass, day); Slowpoke Well B2F (Grass, night); Route 10 (Cave Ground) (Grass, morning); Route 10 (Cave Ground) (Grass, day); Route 10 (Cave Ground) (Grass, night) |
+| Diglett | Slowpoke Well 1F (Grass, morning); Slowpoke Well 1F (Grass, day); Slowpoke Well 1F (Grass, night) |
+| Dipplin | Route 26 (Grass, morning); Route 26 (Grass, day); Route 26 (Grass, night) |
+| Ditto | Ruins of Alph (Inside, Main Room) (Grass, morning); Ruins of Alph (Inside, Main Room) (Grass, day); Ruins of Alph (Inside, Main Room) (Grass, night); Route 13 (Grass, morning); Route 13 (Grass, day); Route 13 (Grass, night) |
+| Dodrio | Bell Tower 4F (Grass, morning); Bell Tower 4F (Grass, day); Bell Tower 4F (Grass, night); Route 16 (New Grass) (Grass, morning); Route 16 (New Grass) (Grass, day); Route 16 (New Grass) (Grass, night) |
+| Doduo | Olivine City (Grass, morning); Olivine City (Grass, day); Olivine City (Grass, night) |
+| Dolliv | Cianwood City (Grass, morning); Cianwood City (Grass, day); Cianwood City (Grass, night) |
+| Dondozo | Union Cave B2F (Super Rod); Route 41 (Old Rod); Whirl Islands 1F (Old Rod); Mt. Mortar (Room above waterfall) (Old Rod); Mt. Mortar B1F (Surf); Blackthorn City (Super Rod); Route 45 (Good Rod); Dark Cave (Route 45 entrance) (Surf); Pallet Town (Super Rod); Vermilion City (Surf); Route 26 (Good Rod); Route 28 (Good Rod); Route 9 (Super Rod); Route 21 (Super Rod) |
+| Donphan | Mt. Mortar (Waterfall room) (Grass, morning); Mt. Mortar (Waterfall room) (Grass, day); Mt. Mortar (Waterfall room) (Grass, night); Rock Tunnel B1F (Grass, morning); Rock Tunnel B1F (Grass, day); Rock Tunnel B1F (Grass, night) |
+| Dottler | Route 46 (Grass, morning); Route 46 (Grass, day); Route 46 (Grass, night) |
+| Doublade | Bell Tower 2F (Grass, morning); Bell Tower 2F (Grass, day); Bell Tower 2F (Grass, night) |
+| Dracovish | Union Cave B2F (Super Rod); Route 40 (Good Rod); Mt. Mortar (Waterfall room) (Old Rod); Mt. Mortar (Room above waterfall) (Surf); Route 43 (Good Rod); Route 45 (Super Rod); Dark Cave (Route 31 entrance) (Good Rod); Seafoam Islands B4F (Super Rod); Route 19 (Good Rod); Pallet Town (Good Rod); Cerulean City (Super Rod); Celadon City (Old Rod); Cinnabar Island (Surf); Route 28 (Surf) |
+| Dracozolt | Dragons Den (Grass, morning); Dragons Den (Grass, day); Dragons Den (Grass, night); Seafoam Islands B4F (Grass, morning); Seafoam Islands B4F (Grass, day); Seafoam Islands B4F (Grass, night) |
+| Dragalge | Ruins of Alph (Outside) (Super Rod); Whirl Islands 1F (Good Rod); Whirl Islands B2F (Good Rod); Whirl Islands B3F (Grass, morning); Whirl Islands B3F (Grass, day); Whirl Islands B3F (Grass, night); Cianwood City (Super Rod); Mt. Mortar (Room above waterfall) (Good Rod); Blackthorn City (Surf); Dragons Den (Surf); Dragons Den (Good Rod); Dark Cave (Route 45 entrance) (Super Rod); Mt. Moon (Outside Clefairy active) (Super Rod); Seafoam Islands B3F (Grass, morning); Seafoam Islands B3F (Grass, day); Seafoam Islands B3F (Grass, night); Seafoam Islands B4F (Super Rod); Mt. Silver (Outside) (Super Rod); Route 12 (Old Rod); Route 19 (Surf); Route 26 (Old Rod); Route 9 (Super Rod) |
+| Dragapult | Victory Road 3F (Grass, morning); Victory Road 3F (Grass, day); Victory Road 3F (Grass, night); Cerulean Cave B1F (Grass, morning); Cerulean Cave B1F (Grass, day); Cerulean Cave B1F (Grass, night) |
+| Dragonair | Ruins of Alph (Outside) (Good Rod); Union Cave 1F (Super Rod); Union Cave B2F (Good Rod); Route 35 (Good Rod); Route 35 (Super Rod); Mt. Mortar (Room above waterfall) (Good Rod); Dragons Den (Surf); Dragons Den (Old Rod); Dragons Den (Good Rod); Tohjo Falls (Old Rod) |
+| Dragonite | Mt. Silver 4F (Grass, morning); Mt. Silver 4F (Grass, day); Mt. Silver 4F (Grass, night); Victory Road 3F (Grass, morning); Victory Road 3F (Grass, day); Victory Road 3F (Grass, night) |
+| Drakloak | Bell Tower 6F (Grass, morning); Bell Tower 6F (Grass, day); Bell Tower 6F (Grass, night) |
+| Drampa | Dragons Den (Grass, morning); Dragons Den (Grass, day); Dragons Den (Grass, night); Mt. Silver (Expert Belt room) (Grass, morning); Mt. Silver (Expert Belt room) (Grass, day); Mt. Silver (Expert Belt room) (Grass, night); Route 25 (Grass, morning); Route 25 (Grass, day); Route 25 (Grass, night) |
+| Drapion | Bell Tower 8F (Grass, morning); Bell Tower 8F (Grass, day); Bell Tower 8F (Grass, night); Seafoam Islands B1F (Grass, morning); Seafoam Islands B1F (Grass, day); Seafoam Islands B1F (Grass, night) |
+| Dratini | Union Cave B1F (Old Rod); Mt. Mortar (Waterfall room) (Old Rod); Dragons Den (Old Rod); Route 47 (Old Rod); Cliff Edge Gate (Old Rod) |
+| Drednaw | Route 31 (Good Rod); Violet City (Surf); Mt. Mortar (Room above waterfall) (Good Rod); Route 12 (Surf); Cinnabar Island (Good Rod); Route 26 (Good Rod); Route 9 (Old Rod); Route 21 (Good Rod) |
+| Dreepy | Ruins of Alph (Outside) (Surf); Olivine City (Old Rod); Mt. Mortar (Waterfall room) (Old Rod); Dragons Den (Old Rod); Cliff Edge Gate (Old Rod) |
+| Drifblim | Bell Tower 7F (Grass, morning); Bell Tower 7F (Grass, day); Bell Tower 7F (Grass, night); Seafoam Islands B1F (Grass, morning); Seafoam Islands B1F (Grass, day); Seafoam Islands B1F (Grass, night) |
+| Drifloon | Union Cave B1F (Grass, morning); Union Cave B1F (Grass, day); Union Cave B1F (Grass, night) |
+| Drilbur | Slowpoke Well B2F (Grass, morning); Slowpoke Well B2F (Grass, day); Slowpoke Well B2F (Grass, night) |
+| Drowzee | Slowpoke Well B2F (Grass, morning); Slowpoke Well B2F (Grass, day); Slowpoke Well B2F (Grass, night) |
+| Druddigon | Mt. Mortar (Waterfall room) (Grass, morning); Mt. Mortar (Waterfall room) (Grass, day); Mt. Mortar (Waterfall room) (Grass, night); Seafoam Islands B1F (Grass, morning); Seafoam Islands B1F (Grass, day); Seafoam Islands B1F (Grass, night) |
+| Dubwool | Cianwood City (Grass, morning); Cianwood City (Grass, day); Cianwood City (Grass, night); Route 2 (South, below Viridian Forest) (Grass, morning); Route 2 (South, below Viridian Forest) (Grass, day); Route 2 (South, below Viridian Forest) (Grass, night) |
+| Ducklett | Route 35 (Surf); Route 40 (Surf) |
+| Dudunspars | Bell Tower 9F (Grass, morning); Bell Tower 9F (Grass, day); Bell Tower 9F (Grass, night); Route 19 (Grass, morning); Route 19 (Grass, day); Route 19 (Grass, night) |
+| Dugtrio | Mt. Mortar (Central room) (Grass, morning); Mt. Mortar (Central room) (Grass, day); Mt. Mortar (Central room) (Grass, night); Digletts Cave (Grass, morning); Digletts Cave (Grass, day); Digletts Cave (Grass, night) |
+| Dunsparce | Ice Path B3F (Grass, morning); Ice Path B3F (Grass, day); Ice Path B3F (Grass, night) |
+| Duosion | Ice Path 1F (Grass, morning); Ice Path 1F (Grass, day); Ice Path 1F (Grass, night) |
+| Duraludon | Ice Path B2F (Grass, morning); Ice Path B2F (Grass, day); Ice Path B2F (Grass, night) |
+| Durant | Whirl Islands B2F (Grass, morning); Whirl Islands B2F (Grass, day); Whirl Islands B2F (Grass, night); Viridian Forest (Grass, morning); Viridian Forest (Grass, day); Viridian Forest (Grass, night) |
+| Dusclops | Dark Cave (Route 45 entrance) (Grass, morning); Dark Cave (Route 45 entrance) (Grass, day); Dark Cave (Route 45 entrance) (Grass, night) |
+| Dusknoir | Victory Road 2F (Grass, morning); Victory Road 2F (Grass, day); Victory Road 2F (Grass, night) |
+| Duskull | Ruins of Alph (Inside, Ladder Room) (Grass, morning); Ruins of Alph (Inside, Ladder Room) (Grass, day); Ruins of Alph (Inside, Ladder Room) (Grass, night) |
+| Dustox | Route 32 (Grass, morning); Route 32 (Grass, day); Route 32 (Grass, night); Vermilion City (Grass, morning); Vermilion City (Grass, day); Vermilion City (Grass, night) |
+| Dwebble | National Park (Bug Catching Contest) (Grass, morning); National Park (Bug Catching Contest) (Grass, day); National Park (Bug Catching Contest) (Grass, night) |
+| Eelektrik | Olivine City (Surf); Cianwood City (Surf); Cianwood City (Old Rod); Route 42 (Surf); Mt. Mortar (Waterfall room) (Old Rod); Blackthorn City (Surf); Dark Cave (Route 31 entrance) (Surf) |
+| Eelektross | Bell Tower 4F (Grass, morning); Bell Tower 4F (Grass, day); Bell Tower 4F (Grass, night); Cianwood City (Surf); Mt. Mortar (Room above waterfall) (Surf); Mt. Mortar (Room above waterfall) (Old Rod); Route 43 (Good Rod); Dark Cave (Route 45 entrance) (Good Rod); Mt. Moon (Outside area) (Surf); Mt. Moon (Outside Clefairy active) (Surf); Seafoam Islands B2F (Grass, morning); Seafoam Islands B2F (Grass, day); Seafoam Islands B2F (Grass, night); Mt. Silver 1F (Surf); Tohjo Falls (Surf); Cerulean Cave 1F (Surf); Cerulean Cave B1F (Surf) |
+| Eevee | Cianwood City (Grass, morning); Cianwood City (Grass, day); Cianwood City (Grass, night) |
+| Eevee Partner | Route 8 (Grass, morning); Route 8 (Grass, day); Route 8 (Grass, night) |
+| Eiscue | Ice Path B3F (Grass, morning); Ice Path B3F (Grass, day); Ice Path B3F (Grass, night); Seafoam Islands 1F (Grass, morning); Seafoam Islands 1F (Grass, day); Seafoam Islands 1F (Grass, night) |
+| Ekans | Ilex Forest (Grass, morning); Ilex Forest (Grass, day); Ilex Forest (Grass, night) |
+| Eldegoss | Olivine City (Grass, morning); Olivine City (Grass, day); Olivine City (Grass, night); Celadon City (Grass, morning); Celadon City (Grass, day); Celadon City (Grass, night) |
+| Electabuzz | Route 45 (Grass, morning); Route 45 (Grass, day); Route 45 (Grass, night) |
+| Electivire | Victory Road 2F (Grass, morning); Victory Road 2F (Grass, day); Victory Road 2F (Grass, night); Cerulean Cave 1F (Grass, morning); Cerulean Cave 1F (Grass, day); Cerulean Cave 1F (Grass, night) |
+| Electrike | Route 32 (Grass, morning); Route 32 (Grass, day); Route 32 (Grass, night) |
+| Electrode | Olivine City (Grass, morning); Olivine City (Grass, day); Olivine City (Grass, night); Route 10 (Grass, morning); Route 10 (Grass, day); Route 10 (Grass, night) |
+| Elekid | Route 36 (Grass, morning); Route 36 (Grass, day); Route 36 (Grass, night) |
+| Elgyem | Ruins of Alph (Inside, Ladder Room) (Grass, morning); Ruins of Alph (Inside, Ladder Room) (Grass, day); Ruins of Alph (Inside, Ladder Room) (Grass, night) |
+| Emboar | Mt. Silver (Moltres room) (Grass, morning); Mt. Silver (Moltres room) (Grass, day); Mt. Silver (Moltres room) (Grass, night); Route 19 (Grass, morning); Route 19 (Grass, day); Route 19 (Grass, night) |
+| Emolga | Route 47 (Grass, morning); Route 47 (Grass, day); Route 47 (Grass, night); Route 24 (Grass, morning); Route 24 (Grass, day); Route 24 (Grass, night) |
+| Empoleon | Route 28 (Surf); Route 28 (Old Rod) |
+| Escavalier | Bell Tower 5F (Grass, morning); Bell Tower 5F (Grass, day); Bell Tower 5F (Grass, night); Route 18 (Grass, morning); Route 18 (Grass, day); Route 18 (Grass, night) |
+| Espathra | Bell Tower 3F (Grass, morning); Bell Tower 3F (Grass, day); Bell Tower 3F (Grass, night); Route 18 (Grass, morning); Route 18 (Grass, day); Route 18 (Grass, night) |
+| Espeon | Mt. Moon 1F (Grass, morning); Mt. Moon 1F (Grass, day); Mt. Moon 1F (Grass, night) |
+| Espurr | Sprout Tower 3F (Grass, morning); Sprout Tower 3F (Grass, day); Sprout Tower 3F (Grass, night) |
+| Excadrill | Mt. Mortar (Room above waterfall) (Grass, morning); Mt. Mortar (Room above waterfall) (Grass, day); Mt. Mortar (Room above waterfall) (Grass, night); Seafoam Islands B1F (Grass, morning); Seafoam Islands B1F (Grass, day); Seafoam Islands B1F (Grass, night); Mt. Silver 3F (Grass, morning); Mt. Silver 3F (Grass, day); Mt. Silver 3F (Grass, night); Mt. Silver 3F (Rock Smash); Route 3 (Rock Smash) |
+| Exeggcute | Ilex Forest (Grass, morning); Ilex Forest (Grass, day); Ilex Forest (Grass, night) |
+| Exeggutor | Route 26 (Grass, morning); Route 26 (Grass, day); Route 26 (Grass, night) |
+| Exploud | Bell Tower 7F (Grass, morning); Bell Tower 7F (Grass, day); Bell Tower 7F (Grass, night); Route 4 (Grass, morning); Route 4 (Grass, day); Route 4 (Grass, night) |
+| Falinks | Ice Path B1F (Grass, morning); Ice Path B1F (Grass, day); Ice Path B1F (Grass, night); Mt. Silver (Mountainside) (Grass, morning); Mt. Silver (Mountainside) (Grass, day); Mt. Silver (Mountainside) (Grass, night); Route 13 (Grass, morning); Route 13 (Grass, day); Route 13 (Grass, night) |
+| Farfetch’d | Route 38 (Grass, morning); Route 38 (Grass, day); Route 38 (Grass, night); Route 24 (Grass, morning); Route 24 (Grass, day); Route 24 (Grass, night) |
+| Farigiraf | Bell Tower 9F (Grass, morning); Bell Tower 9F (Grass, day); Bell Tower 9F (Grass, night); Route 19 (Grass, morning); Route 19 (Grass, day); Route 19 (Grass, night) |
+| Fearow | Route 42 (Grass, morning); Route 42 (Grass, day); Route 42 (Grass, night); Route 7 (Grass, morning); Route 7 (Grass, day); Route 7 (Grass, night) |
+| Feebas | New Bark Town (Old Rod); Union Cave B1F (Surf); Slowpoke Well B2F (Old Rod); Ilex Forest (Old Rod); Route 47 (Old Rod); Cliff Edge Gate (Old Rod) |
+| Fennekin | Azalea Town (Grass, morning); Azalea Town (Grass, day); Azalea Town (Grass, night) |
+| Feraligatr | Mt. Silver 1F (Surf); Route 28 (Good Rod) |
+| Ferroseed | Mt. Mortar (Central room) (Grass, morning); Mt. Mortar (Central room) (Grass, day); Mt. Mortar (Central room) (Grass, night) |
+| Ferrothorn | Route 11 (Grass, morning); Route 11 (Grass, day); Route 11 (Grass, night); Tohjo Falls (Grass, morning); Tohjo Falls (Grass, day); Tohjo Falls (Grass, night); Tohjo Falls (Rock Smash) |
+| Fidough | Ilex Forest (Grass, morning); Ilex Forest (Grass, day); Ilex Forest (Grass, night) |
+| Finizen | Route 30 (Old Rod); Route 40 (Surf); Mt. Silver 3F (Surf); Mt. Silver 3F (Old Rod) |
+| Finneon | Route 40 (Old Rod); Route 42 (Old Rod); Safari Zone (Placeholder, not used) (Surf) |
+| Flaaffy | National Park (Grass, morning); National Park (Grass, day); National Park (Grass, night) |
+| Flabébé | Route 35 (Grass, morning); Route 35 (Grass, day); Route 35 (Grass, night) |
+| Flamigo | Bell Tower 8F (Grass, morning); Bell Tower 8F (Grass, day); Bell Tower 8F (Grass, night); Viridian City (Grass, morning); Viridian City (Grass, day); Viridian City (Grass, night) |
+| Flapple | Route 26 (Grass, morning); Route 26 (Grass, day); Route 26 (Grass, night); Route 6 (Grass, morning); Route 6 (Grass, day); Route 6 (Grass, night) |
+| Flareon | Cinnabar Island (Grass, morning); Cinnabar Island (Grass, day); Cinnabar Island (Grass, night) |
+| Flechinder | Burned Tower 1F (Grass, morning); Burned Tower 1F (Grass, day); Burned Tower 1F (Grass, night) |
+| Fletchling | Route 32 (Grass, morning); Route 32 (Grass, day); Route 32 (Grass, night) |
+| Flittle | Ruins of Alph (Inside, Main Room) (Grass, morning); Ruins of Alph (Inside, Main Room) (Grass, day); Ruins of Alph (Inside, Main Room) (Grass, night) |
+| Floatzel | Ruins of Alph (Outside) (Good Rod); Slowpoke Well B2F (Good Rod); Route 35 (Super Rod); Route 42 (Good Rod); Mt. Mortar (Waterfall room) (Good Rod); Mt. Mortar B1F (Super Rod); Route 43 (Old Rod); Viridian City (Super Rod); Fuchsia City (Good Rod); Route 13 (Good Rod); Route 24 (Old Rod); Tohjo Falls (Good Rod); Cerulean Cave B2F (Old Rod) |
+| Floette | Route 43 (Grass, morning); Route 43 (Grass, day); Route 43 (Grass, night); Mt. Silver (Expert Belt room) (Grass, morning); Mt. Silver (Expert Belt room) (Grass, day); Mt. Silver (Expert Belt room) (Grass, night) |
+| Floette Eternal Flower | Mt. Silver (Expert Belt room) (Grass, morning); Mt. Silver (Expert Belt room) (Grass, day); Mt. Silver (Expert Belt room) (Grass, night) |
+| Florges | Route 43 (Grass, morning); Route 43 (Grass, day); Route 43 (Grass, night); Route 28 (Grass, morning); Route 28 (Grass, day); Route 28 (Grass, night) |
+| FluttrMane | Bell Tower 9F (Grass, morning); Bell Tower 9F (Grass, day); Bell Tower 9F (Grass, night); Victory Road 1F (Grass, morning); Victory Road 1F (Grass, day); Victory Road 1F (Grass, night) |
+| Flygon | Victory Road 2F (Grass, morning); Victory Road 2F (Grass, day); Victory Road 2F (Grass, night) |
+| Fomantis | Route 37 (Grass, morning); Route 37 (Grass, day); Route 37 (Grass, night) |
+| Foongus | Route 38 (Grass, morning); Route 38 (Grass, day); Route 38 (Grass, night) |
+| Forretress | Whirl Islands B1F (Grass, morning); Whirl Islands B1F (Grass, day); Whirl Islands B1F (Grass, night); Route 18 (Grass, morning); Route 18 (Grass, day); Route 18 (Grass, night) |
+| Fraxure | Dragons Den (Grass, morning); Dragons Den (Grass, day); Dragons Den (Grass, night) |
+| Frigibax | Route 37 (Grass, morning); Route 37 (Grass, day); Route 37 (Grass, night) |
+| Frillish | Route 34 (Surf); Olivine City (Surf); Route 42 (Old Rod); Lake of Rage (Good Rod) |
+| Frillish Female | Ruins of Alph (Outside) (Old Rod); Union Cave 1F (Old Rod); Route 42 (Old Rod) |
+| Froakie | Cherrygrove City (Grass, morning); Cherrygrove City (Grass, day); Cherrygrove City (Grass, night) |
+| Froslass | Whirl Islands B1F (Grass, morning); Whirl Islands B1F (Grass, day); Whirl Islands B1F (Grass, night); Seafoam Islands 1F (Grass, morning); Seafoam Islands 1F (Grass, day); Seafoam Islands 1F (Grass, night); Mt. Silver (Top, snowy area) (Grass, morning); Mt. Silver (Top, snowy area) (Grass, day); Mt. Silver (Top, snowy area) (Grass, night) |
+| Frosmoth | Ice Path B3F (Grass, morning); Ice Path B3F (Grass, day); Ice Path B3F (Grass, night); Route 16 (Grass, morning); Route 16 (Grass, day); Route 16 (Grass, night) |
+| Fuecoco | Azalea Town (Grass, morning); Azalea Town (Grass, day); Azalea Town (Grass, night) |
+| Furfrou | Route 14 (Grass, morning); Route 14 (Grass, day); Route 14 (Grass, night); Mahogany Town (Grass, morning); Mahogany Town (Grass, day); Mahogany Town (Grass, night) |
+| Furret | Ruins of Alph (Inside, Ladder Room) (Grass, morning); Ruins of Alph (Inside, Ladder Room) (Grass, day); Ruins of Alph (Inside, Ladder Room) (Grass, night); Route 8 (Grass, morning); Route 8 (Grass, day); Route 8 (Grass, night) |
+| Gabite | Dragons Den (Grass, morning); Dragons Den (Grass, day); Dragons Den (Grass, night) |
+| Gallade | Bell Tower 10F (Grass, morning); Bell Tower 10F (Grass, day); Bell Tower 10F (Grass, night); Mt. Silver (Expert Belt room) (Grass, morning); Mt. Silver (Expert Belt room) (Grass, day); Mt. Silver (Expert Belt room) (Grass, night); Route 1 (Grass, morning); Route 1 (Grass, day); Route 1 (Grass, night) |
+| Galvantula | Bell Tower 3F (Grass, morning); Bell Tower 3F (Grass, day); Bell Tower 3F (Grass, night); Route 10 (Grass, morning); Route 10 (Grass, day); Route 10 (Grass, night) |
+| Garbodor | Route 11 (Grass, morning); Route 11 (Grass, day); Route 11 (Grass, night); Tohjo Falls (Grass, morning); Tohjo Falls (Grass, day); Tohjo Falls (Grass, night) |
+| Garchomp | Mt. Silver (Expert Belt room) (Grass, morning); Mt. Silver (Expert Belt room) (Grass, day); Mt. Silver (Expert Belt room) (Grass, night); Victory Road 3F (Grass, morning); Victory Road 3F (Grass, day); Victory Road 3F (Grass, night) |
+| Gardevoir | Bell Tower 10F (Grass, morning); Bell Tower 10F (Grass, day); Bell Tower 10F (Grass, night); Mt. Silver (Expert Belt room) (Grass, morning); Mt. Silver (Expert Belt room) (Grass, day); Mt. Silver (Expert Belt room) (Grass, night); Route 1 (Grass, morning); Route 1 (Grass, day); Route 1 (Grass, night) |
+| Garganacl | Whirl Islands B2F (Grass, morning); Whirl Islands B2F (Grass, day); Whirl Islands B2F (Grass, night); Rock Tunnel B1F (Grass, morning); Rock Tunnel B1F (Grass, day); Rock Tunnel B1F (Grass, night) |
+| Gastly | Slowpoke Well 1F (Grass, morning); Slowpoke Well 1F (Grass, day); Slowpoke Well 1F (Grass, night) |
+| Gastrodon | Route 32 (Good Rod); Olivine City (Good Rod); Whirl Islands B2F (Super Rod); Dark Cave (Route 45 entrance) (Old Rod); Viridian City (Super Rod); Fuchsia City (Super Rod); Cinnabar Island (Good Rod); Route 4 (Old Rod); Route 9 (Surf); Route 25 (Good Rod); Tohjo Falls (Super Rod) |
+| Gastrodon East Sea | Union Cave B1F (Super Rod); Route 35 (Good Rod); Dark Cave (Route 45 entrance) (Super Rod); Mt. Moon (Outside Clefairy active) (Super Rod); Cliff Edge Gate (Good Rod); Cerulean City (Surf); Route 10 (Super Rod); Route 24 (Super Rod); Cerulean Cave 1F (Good Rod); Cerulean Cave B2F (Super Rod) |
+| Gengar | Bell Tower 7F (Grass, morning); Bell Tower 7F (Grass, day); Bell Tower 7F (Grass, night); Mt. Silver 3F (Grass, morning); Mt. Silver 3F (Grass, day); Mt. Silver 3F (Grass, night); Mt. Moon 2F (Grass, morning); Mt. Moon 2F (Grass, day); Mt. Moon 2F (Grass, night) |
+| Geodude | Dark Cave (Route 31 entrance) (Grass, morning); Dark Cave (Route 31 entrance) (Grass, day); Dark Cave (Route 31 entrance) (Grass, night) |
+| Gholdengo | Bell Tower 9F (Grass, morning); Bell Tower 9F (Grass, day); Bell Tower 9F (Grass, night); Cerulean Cave B2F (Grass, morning); Cerulean Cave B2F (Grass, day); Cerulean Cave B2F (Grass, night) |
+| Gible | Ruins of Alph (Outside) (Grass, morning); Ruins of Alph (Outside) (Grass, day); Ruins of Alph (Outside) (Grass, night) |
+| Gigalith | Vermilion City (Rock Smash); Tohjo Falls (Grass, morning); Tohjo Falls (Grass, day); Tohjo Falls (Grass, night) |
+| Gimmighoul | Mahogany Town (Grass, morning); Mahogany Town (Grass, day); Mahogany Town (Grass, night) |
+| Girafarig | Ruins of Alph (Inside, Main Room) (Grass, morning); Ruins of Alph (Inside, Main Room) (Grass, day); Ruins of Alph (Inside, Main Room) (Grass, night) |
+| Glaceon | Seafoam Islands B2F (Grass, morning); Seafoam Islands B2F (Grass, day); Seafoam Islands B2F (Grass, night) |
+| Glalie | Whirl Islands B1F (Grass, morning); Whirl Islands B1F (Grass, day); Whirl Islands B1F (Grass, night); Seafoam Islands 1F (Grass, morning); Seafoam Islands 1F (Grass, day); Seafoam Islands 1F (Grass, night); Mt. Silver (Top, snowy area) (Grass, morning); Mt. Silver (Top, snowy area) (Grass, day); Mt. Silver (Top, snowy area) (Grass, night) |
+| Glameow | National Park (Grass, morning); National Park (Grass, day); National Park (Grass, night) |
+| Gligar | Union Cave B2F (Grass, morning); Union Cave B2F (Grass, day); Union Cave B2F (Grass, night) |
+| Glimmet | Ecruteak City (Grass, morning); Ecruteak City (Grass, day); Ecruteak City (Grass, night) |
+| Glimmora | Blackthorn City (Grass, morning); Blackthorn City (Grass, day); Blackthorn City (Grass, night); Mt. Silver (Expert Belt room) (Grass, morning); Mt. Silver (Expert Belt room) (Grass, day); Mt. Silver (Expert Belt room) (Grass, night); Route 21 (Grass, morning); Route 21 (Grass, day); Route 21 (Grass, night) |
+| Gliscor | Tohjo Falls (Grass, morning); Tohjo Falls (Grass, day); Tohjo Falls (Grass, night) |
+| Gloom | Route 39 (Grass, morning); Route 39 (Grass, day); Route 39 (Grass, night) |
+| Gogoat | Route 43 (Grass, morning); Route 43 (Grass, day); Route 43 (Grass, night); Route 22 (Grass, morning); Route 22 (Grass, day); Route 22 (Grass, night) |
+| Golbat | Union Cave B2F (Grass, morning); Union Cave B2F (Grass, day); Union Cave B2F (Grass, night) |
+| Goldeen | Route 30 (Surf); Mt. Silver (Moltres room) (Surf); Mt. Silver (Moltres room) (Old Rod) |
+| Golduck | Route 30 (Super Rod); Violet City (Good Rod); Ecruteak City (Super Rod); Cianwood City (Good Rod); Mt. Mortar (Room above waterfall) (Super Rod); Mt. Mortar B1F (Old Rod); Blackthorn City (Old Rod); Route 47 (Surf); Cliff Edge Gate (Super Rod); Pallet Town (Good Rod); Route 4 (Surf); Route 10 (Good Rod); Route 13 (Surf); Cerulean Cave B1F (Old Rod) |
+| Golem | Whirl Islands B3F (Grass, morning); Whirl Islands B3F (Grass, day); Whirl Islands B3F (Grass, night); Rock Tunnel B1F (Grass, morning); Rock Tunnel B1F (Grass, day); Rock Tunnel B1F (Grass, night) |
+| Golett | Mt. Mortar B1F (Grass, morning); Mt. Mortar B1F (Grass, day); Mt. Mortar B1F (Grass, night) |
+| Golisopod | Route 31 (Super Rod); Union Cave B1F (Good Rod); Ilex Forest (Good Rod); Route 41 (Super Rod); Whirl Islands 1F (Old Rod); Cianwood City (Old Rod); Mt. Mortar (Room above waterfall) (Grass, morning); Mt. Mortar (Room above waterfall) (Grass, day); Mt. Mortar (Room above waterfall) (Grass, night); Mt. Mortar (Room above waterfall) (Old Rod); Dark Cave (Route 45 entrance) (Old Rod); Route 47 (Super Rod); Mt. Moon (Outside area) (Good Rod); Mt. Silver (Expert Belt room) (Grass, morning); Mt. Silver (Expert Belt room) (Grass, day); Mt. Silver (Expert Belt room) (Grass, night); Viridian City (Good Rod); Vermilion City (Surf); Route 26 (Old Rod); Route 13 (Old Rod); Route 25 (Good Rod); Cerulean Cave 1F (Old Rod); Cerulean Cave B1F (Good Rod) |
+| Golurk | Mt. Silver (Expert Belt room) (Grass, morning); Mt. Silver (Expert Belt room) (Grass, day); Mt. Silver (Expert Belt room) (Grass, night); Victory Road 2F (Grass, morning); Victory Road 2F (Grass, day); Victory Road 2F (Grass, night) |
+| Goodra | Victory Road 3F (Grass, morning); Victory Road 3F (Grass, day); Victory Road 3F (Grass, night); Cerulean Cave B1F (Grass, morning); Cerulean Cave B1F (Grass, day); Cerulean Cave B1F (Grass, night) |
+| Goomy | Route 34 (Grass, morning); Route 34 (Grass, day); Route 34 (Grass, night) |
+| Gorebyss | Route 34 (Good Rod); Olivine City (Good Rod); Mt. Mortar (Room above waterfall) (Super Rod); Route 45 (Good Rod); Mt. Silver 3F (Super Rod); Pallet Town (Surf); Fuchsia City (Good Rod); Route 4 (Old Rod); Route 6 (Old Rod); Route 21 (Old Rod); Cerulean Cave 1F (Good Rod); Cerulean Cave B1F (Surf) |
+| Gossifleur | Route 46 (Grass, morning); Route 46 (Grass, day); Route 46 (Grass, night) |
+| Gothita | Sprout Tower 2F (Grass, morning); Sprout Tower 2F (Grass, day); Sprout Tower 2F (Grass, night) |
+| Gothitelle | Bell Tower 6F (Grass, morning); Bell Tower 6F (Grass, day); Bell Tower 6F (Grass, night); Fuchsia City (Grass, morning); Fuchsia City (Grass, day); Fuchsia City (Grass, night) |
+| Gothorita | Lake of Rage (Grass, morning); Lake of Rage (Grass, day); Lake of Rage (Grass, night) |
+| Gourgeist | Route 45 (Grass, morning); Route 45 (Grass, day); Route 45 (Grass, night); Route 15 (Grass, morning); Route 15 (Grass, day); Route 15 (Grass, night) |
+| Grafaiai | Cliff Cave (Grass, morning); Cliff Cave (Grass, day); Cliff Cave (Grass, night); Route 2 (North, above Viridian Forest) (Grass, morning); Route 2 (North, above Viridian Forest) (Grass, day); Route 2 (North, above Viridian Forest) (Grass, night) |
+| Granbull | Celadon City (Grass, morning); Celadon City (Grass, day); Celadon City (Grass, night); Route 48 (Grass, morning); Route 48 (Grass, day); Route 48 (Grass, night) |
+| Grapploct | Union Cave 1F (Good Rod); Whirl Islands 1F (Super Rod); Mt. Mortar (Waterfall room) (Good Rod); Dark Cave (Route 31 entrance) (Super Rod); Mt. Moon (Outside area) (Old Rod); Mt. Moon (Outside Clefairy active) (Super Rod); Route 12 (Grass, morning); Route 12 (Grass, day); Route 12 (Grass, night); Route 12 (Old Rod); Route 19 (Super Rod); Cinnabar Island (Old Rod); Route 26 (Old Rod); Route 9 (Old Rod); Route 21 (Super Rod) |
+| Graveler | Union Cave B2F (Grass, morning); Union Cave B2F (Grass, day); Union Cave B2F (Grass, night) |
+| Great Tusk | Mt. Mortar (Waterfall room) (Grass, morning); Mt. Mortar (Waterfall room) (Grass, day); Mt. Mortar (Waterfall room) (Grass, night); Route 28 (Grass, morning); Route 28 (Grass, day); Route 28 (Grass, night) |
+| Greavard | Sprout Tower 2F (Grass, morning); Sprout Tower 2F (Grass, day); Sprout Tower 2F (Grass, night) |
+| Greedent | Route 48 (Grass, morning); Route 48 (Grass, day); Route 48 (Grass, night); Route 5 (Grass, morning); Route 5 (Grass, day); Route 5 (Grass, night) |
+| Greninja | Mt. Silver 1F (Old Rod); Route 28 (Good Rod) |
+| Greninja Ash | Mt. Silver 1F (Old Rod) |
+| Greninja Battle Bond | Cerulean Cave B2F (Grass, morning); Cerulean Cave B2F (Grass, day); Cerulean Cave B2F (Grass, night) |
+| Grimer | Burned Tower 1F (Grass, morning); Burned Tower 1F (Grass, day); Burned Tower 1F (Grass, night) |
+| Grimmsnarl | Bell Tower 10F (Grass, morning); Bell Tower 10F (Grass, day); Bell Tower 10F (Grass, night); Route 1 (Grass, morning); Route 1 (Grass, day); Route 1 (Grass, night) |
+| Grookey | Violet City (Grass, morning); Violet City (Grass, day); Violet City (Grass, night) |
+| Growlithe | Route 36 (Grass, morning); Route 36 (Grass, day); Route 36 (Grass, night); Burned Tower 1F (Rock Smash) |
+| Grubbin | Union Cave 1F (Grass, morning); Union Cave 1F (Grass, day); Union Cave 1F (Grass, night) |
+| Grumpig | Ice Path B2F (Grass, morning); Ice Path B2F (Grass, day); Ice Path B2F (Grass, night); Route 14 (Grass, morning); Route 14 (Grass, day); Route 14 (Grass, night) |
+| Gulpin | Route 36 (Grass, morning); Route 36 (Grass, day); Route 36 (Grass, night) |
+| Gumshoos | Route 38 (Grass, morning); Route 38 (Grass, day); Route 38 (Grass, night); Route 6 (Grass, morning); Route 6 (Grass, day); Route 6 (Grass, night) |
+| Gurdurr | Whirl Islands 1F (Grass, morning); Whirl Islands 1F (Grass, day); Whirl Islands 1F (Grass, night) |
+| Gyarados | New Bark Town (Super Rod); Union Cave B2F (Good Rod); Ilex Forest (Super Rod); Olivine City (Good Rod); Mt. Mortar B1F (Old Rod); Route 43 (Super Rod); Lake of Rage (Surf); Lake of Rage (Super Rod); Mt. Moon (Outside Clefairy active) (Old Rod); Mt. Silver 1F (Super Rod); Vermilion City (Good Rod); Route 26 (Good Rod); Route 28 (Good Rod); Cerulean Cave 1F (Surf); Cerulean Cave B1F (Surf) |
+| Hakamo-o | Dragons Den (Grass, morning); Dragons Den (Grass, day); Dragons Den (Grass, night) |
+| Happiny | Route 31 (Grass, morning); Route 31 (Grass, day); Route 31 (Grass, night) |
+| Hariyama | Mt. Mortar (Central room) (Grass, morning); Mt. Mortar (Central room) (Grass, day); Mt. Mortar (Central room) (Grass, night); Rock Tunnel B1F (Grass, morning); Rock Tunnel B1F (Grass, day); Rock Tunnel B1F (Grass, night) |
+| Hatenna | Sprout Tower 3F (Grass, morning); Sprout Tower 3F (Grass, day); Sprout Tower 3F (Grass, night) |
+| Hatterene | Bell Tower 7F (Grass, morning); Bell Tower 7F (Grass, day); Bell Tower 7F (Grass, night); Route 1 (Grass, morning); Route 1 (Grass, day); Route 1 (Grass, night) |
+| Hattrem | Bell Tower 7F (Grass, morning); Bell Tower 7F (Grass, day); Bell Tower 7F (Grass, night) |
+| Haunter | Cliff Cave (Grass, morning); Cliff Cave (Grass, day); Cliff Cave (Grass, night) |
+| Hawlucha | Bell Tower 7F (Grass, morning); Bell Tower 7F (Grass, day); Bell Tower 7F (Grass, night); Mt. Silver (Top, snowy area) (Grass, morning); Mt. Silver (Top, snowy area) (Grass, day); Mt. Silver (Top, snowy area) (Grass, night) |
+| Haxorus | Victory Road 2F (Grass, morning); Victory Road 2F (Grass, day); Victory Road 2F (Grass, night); Cerulean Cave 1F (Grass, morning); Cerulean Cave 1F (Grass, day); Cerulean Cave 1F (Grass, night) |
+| Heatmor | Whirl Islands B3F (Grass, morning); Whirl Islands B3F (Grass, day); Whirl Islands B3F (Grass, night); Pewter City (Grass, morning); Pewter City (Grass, day); Pewter City (Grass, night) |
+| Heliolisk | Cliff Cave (Grass, morning); Cliff Cave (Grass, day); Cliff Cave (Grass, night); Route 10 (Grass, morning); Route 10 (Grass, day); Route 10 (Grass, night) |
+| Helioptile | Route 37 (Grass, morning); Route 37 (Grass, day); Route 37 (Grass, night) |
+| Heracross | Route 37 (Grass, morning); Route 37 (Grass, day); Route 37 (Grass, night); Mt. Silver (Mountainside) (Grass, morning); Mt. Silver (Mountainside) (Grass, day); Mt. Silver (Mountainside) (Grass, night); Route 15 (Grass, morning); Route 15 (Grass, day); Route 15 (Grass, night) |
+| Herdier | Mt. Mortar (Central room) (Grass, morning); Mt. Mortar (Central room) (Grass, day); Mt. Mortar (Central room) (Grass, night) |
+| Hippopotas | Ruins of Alph (Outside) (Grass, morning); Ruins of Alph (Outside) (Grass, day); Ruins of Alph (Outside) (Grass, night) |
+| Hippowdon | Route 21 (Grass, morning); Route 21 (Grass, day); Route 21 (Grass, night); Mahogany Town (Grass, morning); Mahogany Town (Grass, day); Mahogany Town (Grass, night) |
+| Hitmonchan | Ice Path 1F (Grass, morning); Ice Path 1F (Grass, day); Ice Path 1F (Grass, night); Pewter City (Grass, morning); Pewter City (Grass, day); Pewter City (Grass, night) |
+| Hitmonlee | Ice Path 1F (Grass, morning); Ice Path 1F (Grass, day); Ice Path 1F (Grass, night); Pewter City (Grass, morning); Pewter City (Grass, day); Pewter City (Grass, night) |
+| Hitmontop | Ice Path 1F (Grass, morning); Ice Path 1F (Grass, day); Ice Path 1F (Grass, night); Pewter City (Grass, morning); Pewter City (Grass, day); Pewter City (Grass, night) |
+| Honchkrow | Bell Tower 8F (Grass, morning); Bell Tower 8F (Grass, day); Bell Tower 8F (Grass, night); Route 3 (Grass, morning); Route 3 (Grass, day); Route 3 (Grass, night) |
+| Honedge | Mt. Mortar (Waterfall room) (Grass, morning); Mt. Mortar (Waterfall room) (Grass, day); Mt. Mortar (Waterfall room) (Grass, night) |
+| Hoothoot | Route 46 (Grass, morning); Route 46 (Grass, day); Route 46 (Grass, night) |
+| Hoppip | Route 29 (Grass, morning); Route 29 (Grass, day); Route 29 (Grass, night) |
+| Horsea | Violet City (Surf); Union Cave B1F (Surf); Ilex Forest (Good Rod); Ecruteak City (Surf); Route 42 (Surf) |
+| Houndoom | Mt. Mortar (Central room) (Grass, morning); Mt. Mortar (Central room) (Grass, day); Mt. Mortar (Central room) (Grass, night); Mt. Silver (Moltres room) (Grass, morning); Mt. Silver (Moltres room) (Grass, day); Mt. Silver (Moltres room) (Grass, night); Route 21 (Grass, morning); Route 21 (Grass, day); Route 21 (Grass, night) |
+| Houndour | Burned Tower B1F (Grass, morning); Burned Tower B1F (Grass, day); Burned Tower B1F (Grass, night) |
+| Houndstone | Bell Tower 6F (Grass, morning); Bell Tower 6F (Grass, day); Bell Tower 6F (Grass, night); Pewter City (Grass, morning); Pewter City (Grass, day); Pewter City (Grass, night) |
+| Huntail | Ruins of Alph (Outside) (Super Rod); Union Cave 1F (Good Rod); Whirl Islands B2F (Surf); Blackthorn City (Good Rod); Dragons Den (Super Rod); Mt. Silver 4F (Super Rod); Pallet Town (Old Rod); Route 4 (Super Rod); Route 9 (Super Rod); Route 21 (Super Rod); Tohjo Falls (Good Rod); Cerulean Cave B2F (Old Rod) |
+| Hydrapple | Route 27 (Grass, morning); Route 27 (Grass, day); Route 27 (Grass, night); Cerulean Cave 1F (Grass, morning); Cerulean Cave 1F (Grass, day); Cerulean Cave 1F (Grass, night); Cerulean Cave 1F (Rock Smash) |
+| Hydreigon | Victory Road 3F (Grass, morning); Victory Road 3F (Grass, day); Victory Road 3F (Grass, night); Cerulean Cave B1F (Grass, morning); Cerulean Cave B1F (Grass, day); Cerulean Cave B1F (Grass, night) |
+| Hypno | Bell Tower 3F (Grass, morning); Bell Tower 3F (Grass, day); Bell Tower 3F (Grass, night); Route 18 (Grass, morning); Route 18 (Grass, day); Route 18 (Grass, night) |
+| Igglybuff | Route 31 (Grass, morning); Route 31 (Grass, day); Route 31 (Grass, night) |
+| Illumise | National Park (Bug Catching Contest) (Grass, morning); National Park (Bug Catching Contest) (Grass, day); National Park (Bug Catching Contest) (Grass, night); Route 10 (Cave Ground) (Grass, morning); Route 10 (Cave Ground) (Grass, day); Route 10 (Cave Ground) (Grass, night) |
+| Impidimp | Union Cave B1F (Grass, morning); Union Cave B1F (Grass, day); Union Cave B1F (Grass, night) |
+| Incineroar | Route 21 (Grass, morning); Route 21 (Grass, day); Route 21 (Grass, night) |
+| Indeedee | Bell Tower 8F (Grass, morning); Bell Tower 8F (Grass, day); Bell Tower 8F (Grass, night); Route 25 (Grass, morning); Route 25 (Grass, day); Route 25 (Grass, night) |
+| Indeedee Female | Bell Tower 8F (Grass, morning); Bell Tower 8F (Grass, day); Bell Tower 8F (Grass, night); Route 25 (Grass, morning); Route 25 (Grass, day); Route 25 (Grass, night) |
+| Infernape | Cinnabar Island (Grass, morning); Cinnabar Island (Grass, day); Cinnabar Island (Grass, night) |
+| Inkay | Cherrygrove City (Old Rod); Ruins of Alph (Inside, Main Room) (Grass, morning); Ruins of Alph (Inside, Main Room) (Grass, day); Ruins of Alph (Inside, Main Room) (Grass, night); Dark Cave (Route 31 entrance) (Surf) |
+| Inteleon | Route 28 (Surf) |
+| Iron Hands | Victory Road 1F (Grass, morning); Victory Road 1F (Grass, day); Victory Road 1F (Grass, night); Cerulean Cave 1F (Grass, morning); Cerulean Cave 1F (Grass, day); Cerulean Cave 1F (Grass, night) |
+| Iron Moth | Victory Road 1F (Grass, morning); Victory Road 1F (Grass, day); Victory Road 1F (Grass, night); Cerulean Cave B2F (Grass, morning); Cerulean Cave B2F (Grass, day); Cerulean Cave B2F (Grass, night) |
+| Iron Neck | Victory Road 1F (Grass, morning); Victory Road 1F (Grass, day); Victory Road 1F (Grass, night); Cerulean Cave B1F (Grass, morning); Cerulean Cave B1F (Grass, day); Cerulean Cave B1F (Grass, night) |
+| Iron Valor | Bell Tower 9F (Grass, morning); Bell Tower 9F (Grass, day); Bell Tower 9F (Grass, night); Cerulean Cave 1F (Grass, morning); Cerulean Cave 1F (Grass, day); Cerulean Cave 1F (Grass, night) |
+| IronBundle | Ice Path B3F (Grass, morning); Ice Path B3F (Grass, day); Ice Path B3F (Grass, night); Mt. Moon (Outside area) (Surf); Viridian City (Surf); Fuchsia City (Surf); Route 26 (Grass, morning); Route 26 (Grass, day); Route 26 (Grass, night); Route 6 (Surf); Route 13 (Surf); Route 22 (Surf); Route 25 (Surf) |
+| IronThorns | Victory Road 2F (Grass, morning); Victory Road 2F (Grass, day); Victory Road 2F (Grass, night); Cerulean Cave B1F (Grass, morning); Cerulean Cave B1F (Grass, day); Cerulean Cave B1F (Grass, night) |
+| IronTreads | Mt. Mortar (Waterfall room) (Grass, morning); Mt. Mortar (Waterfall room) (Grass, day); Mt. Mortar (Waterfall room) (Grass, night); Route 28 (Grass, morning); Route 28 (Grass, day); Route 28 (Grass, night) |
+| Jangmo-o | Sprout Tower 3F (Grass, morning); Sprout Tower 3F (Grass, day); Sprout Tower 3F (Grass, night) |
+| Jellicent | Route 31 (Good Rod); Violet City (Good Rod); Violet City (Super Rod); Union Cave B1F (Good Rod); Route 40 (Super Rod); Whirl Islands B2F (Good Rod); Blackthorn City (Good Rod); Route 45 (Surf); Mt. Moon (Outside area) (Super Rod); Route 20 (Surf); Pallet Town (Surf); Vermilion City (Surf); Route 4 (Super Rod); Route 13 (Super Rod); Route 24 (Good Rod); Route 25 (Surf) |
+| Jellicent Female | New Bark Town (Super Rod); Violet City (Good Rod); Violet City (Super Rod); Union Cave B1F (Good Rod); Whirl Islands B2F (Super Rod); Cianwood City (Super Rod); Mt. Mortar (Room above waterfall) (Good Rod); Route 45 (Surf); Route 20 (Good Rod); Viridian City (Old Rod); Cerulean City (Old Rod); Route 26 (Surf); Route 9 (Good Rod); Route 21 (Good Rod); Cerulean Cave 1F (Good Rod) |
+| Jigglypuff | Union Cave 1F (Grass, morning); Union Cave 1F (Grass, day); Union Cave 1F (Grass, night) |
+| Jolteon | Viridian City (Grass, morning); Viridian City (Grass, day); Viridian City (Grass, night) |
+| Joltik | Ruins of Alph (Inside, Main Room) (Grass, morning); Ruins of Alph (Inside, Main Room) (Grass, day); Ruins of Alph (Inside, Main Room) (Grass, night) |
+| Jumpluff | Route 43 (Grass, morning); Route 43 (Grass, day); Route 43 (Grass, night); Celadon City (Grass, morning); Celadon City (Grass, day); Celadon City (Grass, night) |
+| Jynx | Ice Path B1F (Grass, morning); Ice Path B1F (Grass, day); Ice Path B1F (Grass, night); Seafoam Islands 1F (Grass, morning); Seafoam Islands 1F (Grass, day); Seafoam Islands 1F (Grass, night) |
+| Kabuto | Ruins of Alph (Outside) (Good Rod); Union Cave B2F (Old Rod); Whirl Islands B2F (Old Rod) |
+| Kabutops | Route 30 (Super Rod); Ilex Forest (Super Rod); Whirl Islands B2F (Surf); Mt. Mortar (Room above waterfall) (Surf); Mt. Mortar B1F (Good Rod); Route 43 (Super Rod); Blackthorn City (Good Rod); Cliff Edge Gate (Super Rod); Viridian City (Good Rod); Fuchsia City (Old Rod); Route 9 (Super Rod); Route 24 (Super Rod); Cerulean Cave 1F (Super Rod); Cerulean Cave B2F (Good Rod) |
+| Kadabra | Olivine City (Grass, morning); Olivine City (Grass, day); Olivine City (Grass, night) |
+| Kakuna | Route 30 (Grass, morning); Route 30 (Grass, day); Route 30 (Grass, night) |
+| Kangaskhan | Bell Tower 5F (Grass, morning); Bell Tower 5F (Grass, day); Bell Tower 5F (Grass, night); Mt. Silver (Top, snowy area) (Grass, morning); Mt. Silver (Top, snowy area) (Grass, day); Mt. Silver (Top, snowy area) (Grass, night); Celadon City (Grass, morning); Celadon City (Grass, day); Celadon City (Grass, night) |
+| Karrablast | Ilex Forest (Grass, morning); Ilex Forest (Grass, day); Ilex Forest (Grass, night) |
+| Kecleon | Route 38 (Grass, morning); Route 38 (Grass, day); Route 38 (Grass, night); Route 5 (Grass, morning); Route 5 (Grass, day); Route 5 (Grass, night) |
+| Kilowatrel | Cianwood City (Grass, morning); Cianwood City (Grass, day); Cianwood City (Grass, night); Route 10 (Grass, morning); Route 10 (Grass, day); Route 10 (Grass, night) |
+| Kingambit | Victory Road 2F (Grass, morning); Victory Road 2F (Grass, day); Victory Road 2F (Grass, night); Cerulean Cave B2F (Grass, morning); Cerulean Cave B2F (Grass, day); Cerulean Cave B2F (Grass, night); Cerulean Cave B2F (Rock Smash) |
+| Kingdra | Route 32 (Super Rod); Mt. Mortar (Room above waterfall) (Super Rod); Lake of Rage (Super Rod); Dragons Den (Surf); Dragons Den (Old Rod); Dragons Den (Super Rod); Dark Cave (Route 45 entrance) (Super Rod); Route 47 (Super Rod); Viridian City (Good Rod); Cerulean City (Old Rod); Celadon City (Good Rod); Route 13 (Good Rod); Route 21 (Old Rod); Cerulean Cave B1F (Good Rod); Cerulean Cave B2F (Super Rod) |
+| Kingler | Route 30 (Good Rod); Ecruteak City (Super Rod); Route 41 (Good Rod); Cianwood City (Old Rod); Mt. Mortar (Room above waterfall) (Super Rod); Lake of Rage (Good Rod); Mt. Silver (Top, snowy area) (Super Rod); Route 12 (Old Rod); Route 19 (Old Rod); Cerulean City (Good Rod); Route 6 (Super Rod); Route 10 (Old Rod); Route 24 (Super Rod); Route 25 (Old Rod) |
+| Kirlia | Olivine City (Grass, morning); Olivine City (Grass, day); Olivine City (Grass, night) |
+| Klang | Route 44 (Grass, morning); Route 44 (Grass, day); Route 44 (Grass, night) |
+| Klawf | Whirl Islands 1F (Grass, morning); Whirl Islands 1F (Grass, day); Whirl Islands 1F (Grass, night); Route 12 (Grass, morning); Route 12 (Grass, day); Route 12 (Grass, night) |
+| Kleavor | Cliff Cave (Grass, morning); Cliff Cave (Grass, day); Cliff Cave (Grass, night); Cliff Cave (Rock Smash); Route 19 (Rock Smash); Rock Tunnel B1F (Grass, morning); Rock Tunnel B1F (Grass, day); Rock Tunnel B1F (Grass, night) |
+| Klefki | Route 9 (Grass, morning); Route 9 (Grass, day); Route 9 (Grass, night); Mahogany Town (Grass, morning); Mahogany Town (Grass, day); Mahogany Town (Grass, night) |
+| Klink | Ecruteak City (Grass, morning); Ecruteak City (Grass, day); Ecruteak City (Grass, night) |
+| Klinklang | Whirl Islands B3F (Grass, morning); Whirl Islands B3F (Grass, day); Whirl Islands B3F (Grass, night); Route 19 (Grass, morning); Route 19 (Grass, day); Route 19 (Grass, night) |
+| Koffing | Union Cave B2F (Grass, morning); Union Cave B2F (Grass, day); Union Cave B2F (Grass, night) |
+| Komala | Bell Tower 4F (Grass, morning); Bell Tower 4F (Grass, day); Bell Tower 4F (Grass, night); Route 14 (Grass, morning); Route 14 (Grass, day); Route 14 (Grass, night) |
+| Kommo-o | Victory Road 3F (Grass, morning); Victory Road 3F (Grass, day); Victory Road 3F (Grass, night); Cerulean Cave B1F (Grass, morning); Cerulean Cave B1F (Grass, day); Cerulean Cave B1F (Grass, night) |
+| Krabby | Route 31 (Surf); Violet City (Old Rod) |
+| Kricketot | Dark Cave (Route 31 entrance) (Grass, morning); Dark Cave (Route 31 entrance) (Grass, day); Dark Cave (Route 31 entrance) (Grass, night) |
+| Kricketune | Dark Cave (Route 31 entrance) (Grass, morning); Dark Cave (Route 31 entrance) (Grass, day); Dark Cave (Route 31 entrance) (Grass, night); Vermilion City (Grass, morning); Vermilion City (Grass, day); Vermilion City (Grass, night) |
+| Krokorok | Mt. Mortar (Central room) (Grass, morning); Mt. Mortar (Central room) (Grass, day); Mt. Mortar (Central room) (Grass, night) |
+| Krookodile | Whirl Islands B1F (Grass, morning); Whirl Islands B1F (Grass, day); Whirl Islands B1F (Grass, night); Route 19 (Grass, morning); Route 19 (Grass, day); Route 19 (Grass, night) |
+| Lairon | Cliff Cave (Rock Smash); Tohjo Falls (Grass, morning); Tohjo Falls (Grass, day); Tohjo Falls (Grass, night) |
+| Lampent | Route 44 (Grass, morning); Route 44 (Grass, day); Route 44 (Grass, night) |
+| Lanturn | Route 30 (Surf); Route 31 (Super Rod); Route 41 (Super Rod); Whirl Islands 1F (Good Rod); Route 42 (Surf); Mt. Mortar (Waterfall room) (Surf); Mt. Moon (Outside area) (Good Rod); Pallet Town (Old Rod); Route 27 (Super Rod); Route 13 (Old Rod); Route 24 (Old Rod); Tohjo Falls (Old Rod); Cerulean Cave B1F (Super Rod); Cerulean Cave B2F (Old Rod) |
+| Lapras | Cherrygrove City (Good Rod); Route 31 (Old Rod); Olivine City (Good Rod); Route 41 (Surf); Route 44 (Surf); Blackthorn City (Super Rod); Route 47 (Good Rod); Viridian City (Super Rod); Cerulean City (Old Rod); Route 6 (Old Rod); Route 21 (Surf); Route 24 (Good Rod); Route 25 (Old Rod); Cerulean Cave B2F (Good Rod) |
+| Larvesta | Burned Tower 1F (Grass, morning); Burned Tower 1F (Grass, day); Burned Tower 1F (Grass, night) |
+| Larvitar | Dark Cave (Route 31 entrance) (Grass, morning); Dark Cave (Route 31 entrance) (Grass, day); Dark Cave (Route 31 entrance) (Grass, night); Dark Cave (Route 31 entrance) (Rock Smash) |
+| Leafeon | Viridian Forest (Grass, morning); Viridian Forest (Grass, day); Viridian Forest (Grass, night) |
+| Leavanny | Bell Tower 2F (Grass, morning); Bell Tower 2F (Grass, day); Bell Tower 2F (Grass, night); Viridian Forest (Grass, morning); Viridian Forest (Grass, day); Viridian Forest (Grass, night) |
+| Lechonk | Sprout Tower 2F (Grass, morning); Sprout Tower 2F (Grass, day); Sprout Tower 2F (Grass, night) |
+| Ledian | Ilex Forest (Grass, morning); Ilex Forest (Grass, day); Ilex Forest (Grass, night); Vermilion City (Grass, morning); Vermilion City (Grass, day); Vermilion City (Grass, night) |
+| Ledyba | Ilex Forest (Grass, morning); Ilex Forest (Grass, day); Ilex Forest (Grass, night) |
+| Lickilicky | Cliff Cave (Grass, morning); Cliff Cave (Grass, day); Cliff Cave (Grass, night); Viridian City (Grass, morning); Viridian City (Grass, day); Viridian City (Grass, night) |
+| Lickitung | Union Cave B1F (Grass, morning); Union Cave B1F (Grass, day); Union Cave B1F (Grass, night) |
+| Liepard | Route 35 (Grass, morning); Route 35 (Grass, day); Route 35 (Grass, night); Route 7 (Grass, morning); Route 7 (Grass, day); Route 7 (Grass, night) |
+| Lileep | Mt. Mortar B1F (Grass, morning); Mt. Mortar B1F (Grass, day); Mt. Mortar B1F (Grass, night) |
+| Lilligant | Cerulean City (Grass, morning); Cerulean City (Grass, day); Cerulean City (Grass, night); Route 48 (Grass, morning); Route 48 (Grass, day); Route 48 (Grass, night) |
+| Lillipup | Route 30 (Grass, morning); Route 30 (Grass, day); Route 30 (Grass, night) |
+| Linoone | Route 48 (Grass, morning); Route 48 (Grass, day); Route 48 (Grass, night); Route 8 (Grass, morning); Route 8 (Grass, day); Route 8 (Grass, night) |
+| Litleo | Burned Tower B1F (Grass, morning); Burned Tower B1F (Grass, day); Burned Tower B1F (Grass, night) |
+| Litten | Azalea Town (Grass, morning); Azalea Town (Grass, day); Azalea Town (Grass, night) |
+| Litwick | Ruins of Alph (Outside) (Grass, morning); Ruins of Alph (Outside) (Grass, day); Ruins of Alph (Outside) (Grass, night) |
+| Lokix | Route 38 (Grass, morning); Route 38 (Grass, day); Route 38 (Grass, night); Celadon City (Grass, morning); Celadon City (Grass, day); Celadon City (Grass, night) |
+| Lombre | Union Cave B1F (Good Rod); Ilex Forest (Surf) |
+| Lopunny | Route 44 (Grass, morning); Route 44 (Grass, day); Route 44 (Grass, night); Mt. Silver (Outside) (Grass, morning); Mt. Silver (Outside) (Grass, day); Mt. Silver (Outside) (Grass, night); Cerulean City (Grass, morning); Cerulean City (Grass, day); Cerulean City (Grass, night) |
+| Lotad | Route 29 (Grass, morning); Route 29 (Grass, day); Route 29 (Grass, night); Cherrygrove City (Old Rod) |
+| Loudred | Mt. Mortar (Waterfall room) (Grass, morning); Mt. Mortar (Waterfall room) (Grass, day); Mt. Mortar (Waterfall room) (Grass, night) |
+| Lucario | Bell Tower 3F (Grass, morning); Bell Tower 3F (Grass, day); Bell Tower 3F (Grass, night); Mt. Silver (Mountainside) (Grass, morning); Mt. Silver (Mountainside) (Grass, day); Mt. Silver (Mountainside) (Grass, night); Pallet Town (Grass, morning); Pallet Town (Grass, day); Pallet Town (Grass, night) |
+| Ludicolo | Route 32 (Super Rod); Ilex Forest (Surf); Route 34 (Good Rod); Route 41 (Good Rod); Route 41 (Super Rod); Route 42 (Super Rod); Mt. Mortar B1F (Good Rod); Dark Cave (Route 45 entrance) (Good Rod); Mt. Moon (Outside area) (Super Rod); Pallet Town (Surf); Fuchsia City (Surf); Route 10 (Surf); Route 21 (Surf); Cerulean Cave B1F (Good Rod); Cerulean Cave B2F (Good Rod) |
+| Lumineon | Cherrygrove City (Super Rod); Route 40 (Super Rod); Whirl Islands B2F (Good Rod); Mt. Mortar (Room above waterfall) (Super Rod); Route 43 (Good Rod); Mt. Moon (Outside area) (Old Rod); Seafoam Islands B4F (Old Rod); Seafoam Islands B4F (Good Rod); Mt. Silver (Moltres room) (Super Rod); Safari Zone (Placeholder, not used) (Surf); Pallet Town (Old Rod); Cerulean City (Surf); Cinnabar Island (Old Rod); Route 4 (Good Rod); Route 13 (Super Rod) |
+| Lunatone | Bell Tower 5F (Grass, morning); Bell Tower 5F (Grass, day); Bell Tower 5F (Grass, night); Rock Tunnel 1F (Grass, morning); Rock Tunnel 1F (Grass, day); Rock Tunnel 1F (Grass, night) |
+| Lurantis | Route 45 (Grass, morning); Route 45 (Grass, day); Route 45 (Grass, night); Route 16 (Grass, morning); Route 16 (Grass, day); Route 16 (Grass, night) |
+| Luvdisc | New Bark Town (Old Rod); Slowpoke Well B2F (Super Rod); Route 43 (Surf); Dark Cave (Route 45 entrance) (Good Rod); Mt. Moon (Outside area) (Good Rod); Mt. Moon (Outside Clefairy active) (Super Rod); Safari Zone (Placeholder, not used) (Super Rod); Vermilion City (Good Rod); Route 6 (Old Rod); Route 10 (Surf); Route 21 (Surf); Cerulean Cave B2F (Old Rod) |
+| Luxio | Cianwood City (Grass, morning); Cianwood City (Grass, day); Cianwood City (Grass, night) |
+| Luxray | Route 26 (Grass, morning); Route 26 (Grass, day); Route 26 (Grass, night) |
+| Lycanroc | Whirl Islands B2F (Grass, morning); Whirl Islands B2F (Grass, day); Whirl Islands B2F (Grass, night); Rock Tunnel 1F (Grass, morning); Rock Tunnel 1F (Grass, day); Rock Tunnel 1F (Grass, night) |
+| Lycanroc Dusk | Whirl Islands B2F (Grass, morning); Whirl Islands B2F (Grass, day); Whirl Islands B2F (Grass, night); Cianwood City (Rock Smash); Dark Cave (Route 45 entrance) (Grass, morning); Dark Cave (Route 45 entrance) (Grass, day); Dark Cave (Route 45 entrance) (Grass, night); Rock Tunnel 1F (Grass, morning); Rock Tunnel 1F (Grass, day); Rock Tunnel 1F (Grass, night) |
+| Lycanroc Midnight | Whirl Islands B2F (Grass, morning); Whirl Islands B2F (Grass, day); Whirl Islands B2F (Grass, night); Rock Tunnel 1F (Grass, morning); Rock Tunnel 1F (Grass, day); Rock Tunnel 1F (Grass, night) |
+| Mabosstiff | Bell Tower 8F (Grass, morning); Bell Tower 8F (Grass, day); Bell Tower 8F (Grass, night); Viridian City (Grass, morning); Viridian City (Grass, day); Viridian City (Grass, night) |
+| Machamp | Whirl Islands 1F (Grass, morning); Whirl Islands 1F (Grass, day); Whirl Islands 1F (Grass, night); Route 1 (Grass, morning); Route 1 (Grass, day); Route 1 (Grass, night) |
+| Machoke | Whirl Islands 1F (Grass, morning); Whirl Islands 1F (Grass, day); Whirl Islands 1F (Grass, night) |
+| Machop | Slowpoke Well B2F (Grass, morning); Slowpoke Well B2F (Grass, day); Slowpoke Well B2F (Grass, night) |
+| Magby | Route 36 (Grass, morning); Route 36 (Grass, day); Route 36 (Grass, night) |
+| Magcargo | Blackthorn City (Grass, morning); Blackthorn City (Grass, day); Blackthorn City (Grass, night); Rock Tunnel 1F (Grass, morning); Rock Tunnel 1F (Grass, day); Rock Tunnel 1F (Grass, night) |
+| Magikarp | Route 32 (Old Rod); Union Cave 1F (Old Rod); Dark Cave (Route 31 entrance) (Old Rod) |
+| Magmar | Route 45 (Grass, morning); Route 45 (Grass, day); Route 45 (Grass, night) |
+| Magmortar | Victory Road 2F (Grass, morning); Victory Road 2F (Grass, day); Victory Road 2F (Grass, night); Cerulean Cave 1F (Grass, morning); Cerulean Cave 1F (Grass, day); Cerulean Cave 1F (Grass, night) |
+| Magnemite | Union Cave B1F (Grass, morning); Union Cave B1F (Grass, day); Union Cave B1F (Grass, night) |
+| Magneton | Mt. Mortar B1F (Grass, morning); Mt. Mortar B1F (Grass, day); Mt. Mortar B1F (Grass, night) |
+| Magnezone | Bell Tower 7F (Grass, morning); Bell Tower 7F (Grass, day); Bell Tower 7F (Grass, night); Pallet Town (Grass, morning); Pallet Town (Grass, day); Pallet Town (Grass, night) |
+| Makuhita | Union Cave 1F (Grass, morning); Union Cave 1F (Grass, day); Union Cave 1F (Grass, night) |
+| Malamar | Ruins of Alph (Outside) (Good Rod); Union Cave 1F (Good Rod); Olivine City (Super Rod); Route 40 (Good Rod); Dragons Den (Good Rod); Dark Cave (Route 45 entrance) (Good Rod); Route 47 (Super Rod); Mt. Moon (Outside area) (Surf); Mt. Moon (Outside Clefairy active) (Surf); Mt. Silver 1F (Surf); Route 12 (Grass, morning); Route 12 (Grass, day); Route 12 (Grass, night); Route 19 (Super Rod); Celadon City (Super Rod); Route 22 (Old Rod); Route 22 (Super Rod) |
+| Mamoswine | Ice Path B2F (Grass, morning); Ice Path B2F (Grass, day); Ice Path B2F (Grass, night); Route 26 (Grass, morning); Route 26 (Grass, day); Route 26 (Grass, night) |
+| Mandibuzz | Bell Tower 7F (Grass, morning); Bell Tower 7F (Grass, day); Bell Tower 7F (Grass, night); Route 3 (Grass, morning); Route 3 (Grass, day); Route 3 (Grass, night) |
+| Manectric | Lake of Rage (Grass, morning); Lake of Rage (Grass, day); Lake of Rage (Grass, night); Mt. Silver (Outside) (Grass, morning); Mt. Silver (Outside) (Grass, day); Mt. Silver (Outside) (Grass, night); Route 10 (Grass, morning); Route 10 (Grass, day); Route 10 (Grass, night) |
+| Mankey | Route 36 (Grass, morning); Route 36 (Grass, day); Route 36 (Grass, night) |
+| Mantine | Route 30 (Good Rod); Ilex Forest (Super Rod); Route 34 (Good Rod); Route 41 (Good Rod); Whirl Islands 1F (Super Rod); Seafoam Islands B4F (Good Rod); Mt. Silver (Top, snowy area) (Surf); Route 12 (Old Rod); Vermilion City (Old Rod); Cinnabar Island (Old Rod); Route 27 (Good Rod); Route 10 (Super Rod) |
+| Mantyke | Ilex Forest (Good Rod); Route 43 (Old Rod); Mt. Silver (Top, snowy area) (Surf); Mt. Silver (Top, snowy area) (Old Rod); Tohjo Falls (Old Rod) |
+| Maractus | Mahogany Town (Grass, morning); Mahogany Town (Grass, day); Mahogany Town (Grass, night); Route 16 (New Grass) (Grass, morning); Route 16 (New Grass) (Grass, day); Route 16 (New Grass) (Grass, night) |
+| Mareanie | Route 31 (Old Rod); Union Cave B1F (Surf); Mt. Mortar (Waterfall room) (Good Rod); Route 45 (Old Rod) |
+| Mareep | Route 32 (Grass, morning); Route 32 (Grass, day); Route 32 (Grass, night) |
+| Marill | Violet City (Old Rod); Slowpoke Well B2F (Old Rod) |
+| Marowak | Mt. Mortar B1F (Grass, morning); Mt. Mortar B1F (Grass, day); Mt. Mortar B1F (Grass, night); Route 10 (Cave Ground) (Grass, morning); Route 10 (Cave Ground) (Grass, day); Route 10 (Cave Ground) (Grass, night) |
+| Maschiff | Route 34 (Grass, morning); Route 34 (Grass, day); Route 34 (Grass, night) |
+| Masquerain | Route 38 (Grass, morning); Route 38 (Grass, day); Route 38 (Grass, night) |
+| Maushold | Bell Tower 8F (Grass, morning); Bell Tower 8F (Grass, day); Bell Tower 8F (Grass, night); Cerulean City (Grass, morning); Cerulean City (Grass, day); Cerulean City (Grass, night) |
+| Mawile | Union Cave B2F (Grass, morning); Union Cave B2F (Grass, day); Union Cave B2F (Grass, night); Mt. Silver 1F (Grass, morning); Mt. Silver 1F (Grass, day); Mt. Silver 1F (Grass, night); Route 5 (Grass, morning); Route 5 (Grass, day); Route 5 (Grass, night) |
+| Medicham | Bell Tower 4F (Grass, morning); Bell Tower 4F (Grass, day); Bell Tower 4F (Grass, night); Mt. Silver 1F (Grass, morning); Mt. Silver 1F (Grass, day); Mt. Silver 1F (Grass, night); Route 6 (Grass, morning); Route 6 (Grass, day); Route 6 (Grass, night) |
+| Meditite | Ruins of Alph (Inside, Main Room) (Grass, morning); Ruins of Alph (Inside, Main Room) (Grass, day); Ruins of Alph (Inside, Main Room) (Grass, night) |
+| Meganium | Mt. Silver 3F (Grass, morning); Mt. Silver 3F (Grass, day); Mt. Silver 3F (Grass, night); Route 22 (Grass, morning); Route 22 (Grass, day); Route 22 (Grass, night) |
+| Meowstic | Bell Tower 3F (Grass, morning); Bell Tower 3F (Grass, day); Bell Tower 3F (Grass, night); Mt. Silver 1F (Grass, morning); Mt. Silver 1F (Grass, day); Mt. Silver 1F (Grass, night); Route 13 (Grass, morning); Route 13 (Grass, day); Route 13 (Grass, night) |
+| Meowstic Female | Bell Tower 3F (Grass, morning); Bell Tower 3F (Grass, day); Bell Tower 3F (Grass, night); Route 13 (Grass, morning); Route 13 (Grass, day); Route 13 (Grass, night) |
+| Meowth | Route 39 (Grass, morning); Route 39 (Grass, day); Route 39 (Grass, night) |
+| Metagross | Bell Tower 8F (Grass, morning); Bell Tower 8F (Grass, day); Bell Tower 8F (Grass, night); Mt. Silver 4F (Grass, morning); Mt. Silver 4F (Grass, day); Mt. Silver 4F (Grass, night); Cerulean Cave B1F (Rock Smash); Pewter City (Rock Smash) |
+| Metang | Bell Tower 8F (Grass, morning); Bell Tower 8F (Grass, day); Bell Tower 8F (Grass, night) |
+| Metapod | Route 30 (Grass, morning); Route 30 (Grass, day); Route 30 (Grass, night) |
+| Mewscarada | Route 21 (Grass, morning); Route 21 (Grass, day); Route 21 (Grass, night) |
+| Mienfoo | Mt. Mortar (Waterfall room) (Grass, morning); Mt. Mortar (Waterfall room) (Grass, day); Mt. Mortar (Waterfall room) (Grass, night) |
+| Mienshao | Whirl Islands B2F (Grass, morning); Whirl Islands B2F (Grass, day); Whirl Islands B2F (Grass, night); Seafoam Islands B4F (Grass, morning); Seafoam Islands B4F (Grass, day); Seafoam Islands B4F (Grass, night) |
+| Mightyena | Olivine City (Grass, morning); Olivine City (Grass, day); Olivine City (Grass, night); Route 24 (Grass, morning); Route 24 (Grass, day); Route 24 (Grass, night) |
+| Milcery | Sprout Tower 2F (Grass, morning); Sprout Tower 2F (Grass, day); Sprout Tower 2F (Grass, night) |
+| Milotic | Violet City (Super Rod); Route 32 (Good Rod); Slowpoke Well B2F (Good Rod); Whirl Islands 1F (Super Rod); Whirl Islands B2F (Old Rod); Mt. Mortar B1F (Good Rod); Dragons Den (Old Rod); Route 47 (Surf); Cliff Edge Gate (Surf); Mt. Silver (Top, snowy area) (Good Rod); Mt. Silver (Top, snowy area) (Super Rod); Route 12 (Good Rod); Vermilion City (Super Rod); Route 4 (Good Rod); Route 13 (Good Rod); Route 21 (Good Rod); Cerulean Cave 1F (Super Rod); Cerulean Cave B1F (Good Rod) |
+| Miltank | Bell Tower 5F (Grass, morning); Bell Tower 5F (Grass, day); Bell Tower 5F (Grass, night); Route 2 (North, above Viridian Forest) (Grass, morning); Route 2 (North, above Viridian Forest) (Grass, day); Route 2 (North, above Viridian Forest) (Grass, night) |
+| Mime Jr. | Sprout Tower 3F (Grass, morning); Sprout Tower 3F (Grass, day); Sprout Tower 3F (Grass, night) |
+| Mimikyu | Bell Tower 3F (Grass, morning); Bell Tower 3F (Grass, day); Bell Tower 3F (Grass, night); Cerulean City (Grass, morning); Cerulean City (Grass, day); Cerulean City (Grass, night) |
+| Minccino | Route 34 (Grass, morning); Route 34 (Grass, day); Route 34 (Grass, night) |
+| Minior | Mt. Mortar B1F (Grass, morning); Mt. Mortar B1F (Grass, day); Mt. Mortar B1F (Grass, night); Rock Tunnel 1F (Grass, morning); Rock Tunnel 1F (Grass, day); Rock Tunnel 1F (Grass, night) |
+| Minun | Route 47 (Grass, morning); Route 47 (Grass, day); Route 47 (Grass, night); Route 9 (Grass, morning); Route 9 (Grass, day); Route 9 (Grass, night) |
+| Misdreavus | Union Cave B1F (Grass, morning); Union Cave B1F (Grass, day); Union Cave B1F (Grass, night) |
+| Mismagius | Seafoam Islands B1F (Grass, morning); Seafoam Islands B1F (Grass, day); Seafoam Islands B1F (Grass, night); Bell Tower 10F (Grass, morning); Bell Tower 10F (Grass, day); Bell Tower 10F (Grass, night) |
+| Morelull | Route 31 (Grass, morning); Route 31 (Grass, day); Route 31 (Grass, night) |
+| Morgrem | Mt. Mortar B1F (Grass, morning); Mt. Mortar B1F (Grass, day); Mt. Mortar B1F (Grass, night) |
+| Morpeko | Route 37 (Grass, morning); Route 37 (Grass, day); Route 37 (Grass, night); Route 10 (Cave Ground) (Grass, morning); Route 10 (Cave Ground) (Grass, day); Route 10 (Cave Ground) (Grass, night) |
+| Mothim | National Park (Bug Catching Contest) (Grass, morning); National Park (Bug Catching Contest) (Grass, day); National Park (Bug Catching Contest) (Grass, night); Route 9 (Grass, morning); Route 9 (Grass, day); Route 9 (Grass, night) |
+| Mr. Mime | Ice Path B1F (Grass, morning); Ice Path B1F (Grass, day); Ice Path B1F (Grass, night); Route 15 (Grass, morning); Route 15 (Grass, day); Route 15 (Grass, night) |
+| Mr. Rime | Ice Path B1F (Grass, morning); Ice Path B1F (Grass, day); Ice Path B1F (Grass, night); Seafoam Islands B2F (Grass, morning); Seafoam Islands B2F (Grass, day); Seafoam Islands B2F (Grass, night) |
+| Mudbray | Ruins of Alph (Inside, Main Room) (Grass, morning); Ruins of Alph (Inside, Main Room) (Grass, day); Ruins of Alph (Inside, Main Room) (Grass, night) |
+| Mudsdale | Whirl Islands B2F (Grass, morning); Whirl Islands B2F (Grass, day); Whirl Islands B2F (Grass, night); Digletts Cave (Grass, morning); Digletts Cave (Grass, day); Digletts Cave (Grass, night) |
+| Muk | Whirl Islands B3F (Grass, morning); Whirl Islands B3F (Grass, day); Whirl Islands B3F (Grass, night); Mt. Moon 1F (Grass, morning); Mt. Moon 1F (Grass, day); Mt. Moon 1F (Grass, night) |
+| Munchlax | National Park (Grass, morning); National Park (Grass, day); National Park (Grass, night) |
+| Munna | Sprout Tower 2F (Grass, morning); Sprout Tower 2F (Grass, day); Sprout Tower 2F (Grass, night) |
+| Murkrow | Cianwood City (Grass, morning); Cianwood City (Grass, day); Cianwood City (Grass, night) |
+| Musharna | Bell Tower 3F (Grass, morning); Bell Tower 3F (Grass, day); Bell Tower 3F (Grass, night); Route 14 (Grass, morning); Route 14 (Grass, day); Route 14 (Grass, night) |
+| Nacli | Ruins of Alph (Inside, Ladder Room) (Grass, morning); Ruins of Alph (Inside, Ladder Room) (Grass, day); Ruins of Alph (Inside, Ladder Room) (Grass, night) |
+| Naclstack | Tohjo Falls (Grass, morning); Tohjo Falls (Grass, day); Tohjo Falls (Grass, night); Tohjo Falls (Rock Smash) |
+| Natu | Sprout Tower 2F (Grass, morning); Sprout Tower 2F (Grass, day); Sprout Tower 2F (Grass, night) |
+| Nickit | Ruins of Alph (Outside) (Grass, morning); Ruins of Alph (Outside) (Grass, day); Ruins of Alph (Outside) (Grass, night) |
+| Nidoking | Whirl Islands B1F (Grass, morning); Whirl Islands B1F (Grass, day); Whirl Islands B1F (Grass, night); Mt. Moon 2F (Grass, morning); Mt. Moon 2F (Grass, day); Mt. Moon 2F (Grass, night) |
+| Nidoqueen | Whirl Islands B1F (Grass, morning); Whirl Islands B1F (Grass, day); Whirl Islands B1F (Grass, night); Mt. Moon 2F (Grass, morning); Mt. Moon 2F (Grass, day); Mt. Moon 2F (Grass, night) |
+| Nidoran♀ | Ruins of Alph (Inside, Main Room) (Grass, morning); Ruins of Alph (Inside, Main Room) (Grass, day); Ruins of Alph (Inside, Main Room) (Grass, night) |
+| Nidoran♂ | Ruins of Alph (Inside, Main Room) (Grass, morning); Ruins of Alph (Inside, Main Room) (Grass, day); Ruins of Alph (Inside, Main Room) (Grass, night) |
+| Nidorina | Burned Tower B1F (Grass, morning); Burned Tower B1F (Grass, day); Burned Tower B1F (Grass, night) |
+| Nidorino | Burned Tower B1F (Grass, morning); Burned Tower B1F (Grass, day); Burned Tower B1F (Grass, night) |
+| Nincada | Union Cave B1F (Grass, morning); Union Cave B1F (Grass, day); Union Cave B1F (Grass, night) |
+| Ninetales | Ice Path B1F (Grass, morning); Ice Path B1F (Grass, day); Ice Path B1F (Grass, night); Seafoam Islands 1F (Grass, morning); Seafoam Islands 1F (Grass, day); Seafoam Islands 1F (Grass, night); Route 27 (Grass, morning); Route 27 (Grass, day); Route 27 (Grass, night) |
+| Ninjask | Route 35 (Grass, morning); Route 35 (Grass, day); Route 35 (Grass, night); Route 7 (Grass, morning); Route 7 (Grass, day); Route 7 (Grass, night) |
+| Noctowl | Route 47 (Grass, morning); Route 47 (Grass, day); Route 47 (Grass, night); Celadon City (Grass, morning); Celadon City (Grass, day); Celadon City (Grass, night) |
+| Noibat | Ruins of Alph (Inside, Main Room) (Grass, morning); Ruins of Alph (Inside, Main Room) (Grass, day); Ruins of Alph (Inside, Main Room) (Grass, night) |
+| Noivern | Dragons Den (Grass, morning); Dragons Den (Grass, day); Dragons Den (Grass, night); Route 28 (Grass, morning); Route 28 (Grass, day); Route 28 (Grass, night) |
+| Nosepass | Violet City (Rock Smash); Ruins of Alph (Inside, Main Room) (Grass, morning); Ruins of Alph (Inside, Main Room) (Grass, day); Ruins of Alph (Inside, Main Room) (Grass, night) |
+| Numel | Burned Tower 1F (Grass, morning); Burned Tower 1F (Grass, day); Burned Tower 1F (Grass, night) |
+| Nuzleaf | Route 38 (Grass, morning); Route 38 (Grass, day); Route 38 (Grass, night) |
+| Nymble | Ruins of Alph (Inside, Main Room) (Grass, morning); Ruins of Alph (Inside, Main Room) (Grass, day); Ruins of Alph (Inside, Main Room) (Grass, night) |
+| Obstagoon | Bell Tower 5F (Grass, morning); Bell Tower 5F (Grass, day); Bell Tower 5F (Grass, night); Route 19 (Grass, morning); Route 19 (Grass, day); Route 19 (Grass, night) |
+| Octillery | Route 30 (Good Rod); Route 31 (Super Rod); Route 40 (Super Rod); Route 42 (Good Rod); Mt. Mortar B1F (Old Rod); Route 43 (Super Rod); Mt. Moon (Outside Clefairy active) (Old Rod); Cerulean City (Old Rod); Cinnabar Island (Surf); Route 27 (Super Rod); Route 4 (Good Rod); Route 9 (Surf); Route 22 (Surf) |
+| Oddish | Route 31 (Grass, morning); Route 31 (Grass, day); Route 31 (Grass, night) |
+| Oinkologne | Route 37 (Grass, morning); Route 37 (Grass, day); Route 37 (Grass, night); Route 15 (Grass, morning); Route 15 (Grass, day); Route 15 (Grass, night) |
+| Oinkologne Female | Route 37 (Grass, morning); Route 37 (Grass, day); Route 37 (Grass, night); Route 15 (Grass, morning); Route 15 (Grass, day); Route 15 (Grass, night) |
+| Omanyte | Route 30 (Old Rod); Union Cave 1F (Old Rod); Mt. Silver 3F (Surf); Mt. Silver 3F (Old Rod) |
+| Omastar | New Bark Town (Super Rod); Route 40 (Good Rod); Mt. Mortar (Waterfall room) (Super Rod); Mt. Mortar (Room above waterfall) (Good Rod); Dark Cave (Route 31 entrance) (Super Rod); Mt. Silver 3F (Surf); Mt. Silver 3F (Super Rod); Route 12 (Super Rod); Cerulean City (Super Rod); Route 26 (Surf); Route 27 (Old Rod); Route 13 (Super Rod); Route 21 (Super Rod); Cerulean Cave B1F (Super Rod); Cerulean Cave B2F (Surf) |
+| Onix | Ruins of Alph (Inside, Ladder Room) (Grass, morning); Ruins of Alph (Inside, Ladder Room) (Grass, day); Ruins of Alph (Inside, Ladder Room) (Grass, night) |
+| Oranguru | Bell Tower 6F (Grass, morning); Bell Tower 6F (Grass, day); Bell Tower 6F (Grass, night); Route 4 (Grass, morning); Route 4 (Grass, day); Route 4 (Grass, night) |
+| Orbeetle | Bell Tower 9F (Grass, morning); Bell Tower 9F (Grass, day); Bell Tower 9F (Grass, night); Viridian Forest (Grass, morning); Viridian Forest (Grass, day); Viridian Forest (Grass, night) |
+| Oricorio | Bell Tower 2F (Grass, morning); Bell Tower 2F (Grass, day); Bell Tower 2F (Grass, night); Route 17 (Grass, morning); Route 17 (Grass, day); Route 17 (Grass, night) |
+| Oricorio Pau | Bell Tower 2F (Grass, morning); Bell Tower 2F (Grass, day); Bell Tower 2F (Grass, night); Route 17 (Grass, morning); Route 17 (Grass, day); Route 17 (Grass, night) |
+| Oricorio Pom Pom | Bell Tower 2F (Grass, morning); Bell Tower 2F (Grass, day); Bell Tower 2F (Grass, night); Route 17 (Grass, morning); Route 17 (Grass, day); Route 17 (Grass, night) |
+| Oricorio Sensu | Bell Tower 2F (Grass, morning); Bell Tower 2F (Grass, day); Bell Tower 2F (Grass, night); Route 17 (Grass, morning); Route 17 (Grass, day); Route 17 (Grass, night) |
+| Orthworm | Cliff Cave (Grass, morning); Cliff Cave (Grass, day); Cliff Cave (Grass, night); Digletts Cave (Grass, morning); Digletts Cave (Grass, day); Digletts Cave (Grass, night) |
+| Oshawott | Cherrygrove City (Grass, morning); Cherrygrove City (Grass, day); Cherrygrove City (Grass, night) |
+| Overqwil | Union Cave 1F (Super Rod); Union Cave B2F (Good Rod); Whirl Islands B2F (Super Rod); Mt. Mortar (Waterfall room) (Good Rod); Route 43 (Good Rod); Dark Cave (Route 45 entrance) (Surf); Mt. Moon (Outside Clefairy active) (Old Rod); Seafoam Islands B4F (Grass, morning); Seafoam Islands B4F (Grass, day); Seafoam Islands B4F (Grass, night); Cliff Edge Gate (Surf); Route 12 (Old Rod); Route 19 (Super Rod); Route 28 (Super Rod); Route 6 (Old Rod); Route 21 (Old Rod) |
+| Pachirisu | Ecruteak City (Grass, morning); Ecruteak City (Grass, day); Ecruteak City (Grass, night); Cerulean City (Grass, morning); Cerulean City (Grass, day); Cerulean City (Grass, night) |
+| Palafin | Route 34 (Super Rod); Route 40 (Super Rod); Lake of Rage (Good Rod); Mt. Silver 3F (Surf); Mt. Silver 3F (Good Rod); Mt. Silver (Top, snowy area) (Good Rod); Route 12 (Super Rod); Vermilion City (Old Rod); Route 27 (Old Rod); Route 9 (Old Rod); Route 25 (Good Rod); Tohjo Falls (Good Rod); Cerulean Cave B1F (Old Rod) |
+| Palossand | Whirl Islands B3F (Grass, morning); Whirl Islands B3F (Grass, day); Whirl Islands B3F (Grass, night) |
+| Palpitoad | Violet City (Good Rod); Olivine City (Old Rod); Route 42 (Old Rod); Route 44 (Good Rod); Route 45 (Old Rod) |
+| Pancham | Slowpoke Well B2F (Grass, morning); Slowpoke Well B2F (Grass, day); Slowpoke Well B2F (Grass, night) |
+| Pangoro | Whirl Islands 1F (Grass, morning); Whirl Islands 1F (Grass, day); Whirl Islands 1F (Grass, night); Pewter City (Grass, morning); Pewter City (Grass, day); Pewter City (Grass, night) |
+| Panpour | New Bark Town (Old Rod); Olivine City (Old Rod) |
+| Pansage | Route 29 (Grass, morning); Route 29 (Grass, day); Route 29 (Grass, night) |
+| Pansear | Burned Tower 1F (Grass, morning); Burned Tower 1F (Grass, day); Burned Tower 1F (Grass, night) |
+| Paras | Ruins of Alph (Outside) (Grass, morning); Ruins of Alph (Outside) (Grass, day); Ruins of Alph (Outside) (Grass, night) |
+| Parasect | National Park (Bug Catching Contest) (Grass, morning); National Park (Bug Catching Contest) (Grass, day); National Park (Bug Catching Contest) (Grass, night); Route 6 (Grass, morning); Route 6 (Grass, day); Route 6 (Grass, night) |
+| Passimian | Bell Tower 6F (Grass, morning); Bell Tower 6F (Grass, day); Bell Tower 6F (Grass, night) |
+| Patrat | Route 34 (Grass, morning); Route 34 (Grass, day); Route 34 (Grass, night) |
+| Pawmi | Union Cave B1F (Grass, morning); Union Cave B1F (Grass, day); Union Cave B1F (Grass, night) |
+| Pawmo | Union Cave B1F (Grass, morning); Union Cave B1F (Grass, day); Union Cave B1F (Grass, night) |
+| Pawmot | Bell Tower 6F (Grass, morning); Bell Tower 6F (Grass, day); Bell Tower 6F (Grass, night); Route 10 (Grass, morning); Route 10 (Grass, day); Route 10 (Grass, night) |
+| Pawniard | Ruins of Alph (Inside, Main Room) (Grass, morning); Ruins of Alph (Inside, Main Room) (Grass, day); Ruins of Alph (Inside, Main Room) (Grass, night) |
+| Pelipper | Olivine City (Surf); Route 40 (Surf); Route 43 (Surf); Mt. Moon (Outside area) (Surf); Viridian City (Surf); Fuchsia City (Surf); Route 4 (Surf); Route 13 (Surf); Route 24 (Surf); Route 25 (Grass, morning); Route 25 (Grass, day); Route 25 (Grass, night); Cerulean Cave 1F (Surf) |
+| Perrserker | Route 5 (Grass, morning); Route 5 (Grass, day); Route 5 (Grass, night); Mahogany Town (Grass, morning); Mahogany Town (Grass, day); Mahogany Town (Grass, night) |
+| Persian | Lake of Rage (Grass, morning); Lake of Rage (Grass, day); Lake of Rage (Grass, night); Route 5 (Grass, morning); Route 5 (Grass, day); Route 5 (Grass, night) |
+| Petilil | Route 35 (Grass, morning); Route 35 (Grass, day); Route 35 (Grass, night) |
+| Phanpy | Ruins of Alph (Inside, Ladder Room) (Grass, morning); Ruins of Alph (Inside, Ladder Room) (Grass, day); Ruins of Alph (Inside, Ladder Room) (Grass, night) |
+| Phantump | Ruins of Alph (Inside, Main Room) (Grass, morning); Ruins of Alph (Inside, Main Room) (Grass, day); Ruins of Alph (Inside, Main Room) (Grass, night) |
+| Pichu | Route 30 (Grass, morning); Route 30 (Grass, day); Route 30 (Grass, night) |
+| Pidgeot | Bell Tower 4F (Grass, morning); Bell Tower 4F (Grass, day); Bell Tower 4F (Grass, night); Mt. Silver (Outside) (Grass, morning); Mt. Silver (Outside) (Grass, day); Mt. Silver (Outside) (Grass, night); Cerulean City (Grass, morning); Cerulean City (Grass, day); Cerulean City (Grass, night) |
+| Pidgeotto | Route 39 (Grass, morning); Route 39 (Grass, day); Route 39 (Grass, night) |
+| Pidgey | Route 46 (Grass, morning); Route 46 (Grass, day); Route 46 (Grass, night) |
+| Pidove | Route 30 (Grass, morning); Route 30 (Grass, day); Route 30 (Grass, night) |
+| Pikachu Partner | Route 8 (Grass, morning); Route 8 (Grass, day); Route 8 (Grass, night) |
+| Pikipek | Route 30 (Grass, morning); Route 30 (Grass, day); Route 30 (Grass, night) |
+| Piloswine | Ice Path B2F (Grass, morning); Ice Path B2F (Grass, day); Ice Path B2F (Grass, night) |
+| Pincurchin | Blackthorn City (Grass, morning); Blackthorn City (Grass, day); Blackthorn City (Grass, night); Route 7 (Grass, morning); Route 7 (Grass, day); Route 7 (Grass, night) |
+| Pineco | Union Cave B1F (Grass, morning); Union Cave B1F (Grass, day); Union Cave B1F (Grass, night) |
+| Pinsir | Route 37 (Grass, morning); Route 37 (Grass, day); Route 37 (Grass, night); Mt. Silver (Mountainside) (Grass, morning); Mt. Silver (Mountainside) (Grass, day); Mt. Silver (Mountainside) (Grass, night); Viridian Forest (Grass, morning); Viridian Forest (Grass, day); Viridian Forest (Grass, night) |
+| Piplup | Cherrygrove City (Grass, morning); Cherrygrove City (Grass, day); Cherrygrove City (Grass, night) |
+| Plusle | Route 47 (Grass, morning); Route 47 (Grass, day); Route 47 (Grass, night); Route 9 (Grass, morning); Route 9 (Grass, day); Route 9 (Grass, night) |
+| Polchgeist | Slowpoke Well 1F (Grass, morning); Slowpoke Well 1F (Grass, day); Slowpoke Well 1F (Grass, night) |
+| Politoed | Slowpoke Well B2F (Surf); Ilex Forest (Super Rod); Route 34 (Good Rod); Route 45 (Surf); Dark Cave (Route 31 entrance) (Super Rod); Mt. Moon (Outside Clefairy active) (Good Rod); Mt. Silver 3F (Good Rod); Mt. Silver 3F (Super Rod); Mt. Silver (Top, snowy area) (Good Rod); Cerulean City (Surf); Route 6 (Super Rod); Route 9 (Good Rod); Route 22 (Good Rod); Route 24 (Surf); Route 25 (Surf) |
+| Poliwag | Union Cave 1F (Surf); Safari Zone (Placeholder, not used) (Old Rod); Safari Zone (Placeholder, not used) (Good Rod) |
+| Poliwhirl | Route 35 (Surf); Ecruteak City (Surf); Blackthorn City (Old Rod); Cliff Edge Gate (Good Rod); Tohjo Falls (Super Rod) |
+| Poliwrath | Union Cave 1F (Super Rod); Slowpoke Well B2F (Surf); Whirl Islands B2F (Super Rod); Route 45 (Good Rod); Dark Cave (Route 31 entrance) (Super Rod); Mt. Silver (Moltres room) (Good Rod); Mt. Silver (Top, snowy area) (Super Rod); Viridian City (Surf); Celadon City (Surf); Route 6 (Good Rod); Route 10 (Good Rod); Route 21 (Super Rod); Cerulean Cave B2F (Super Rod) |
+| Poltegeist | Bell Tower 6F (Grass, morning); Bell Tower 6F (Grass, day); Bell Tower 6F (Grass, night); Route 2 (South, below Viridian Forest) (Grass, morning); Route 2 (South, below Viridian Forest) (Grass, day); Route 2 (South, below Viridian Forest) (Grass, night) |
+| Ponyta | Burned Tower B1F (Grass, morning); Burned Tower B1F (Grass, day); Burned Tower B1F (Grass, night); Route 43 (Grass, morning); Route 43 (Grass, day); Route 43 (Grass, night) |
+| Poochyena | Sprout Tower 3F (Grass, morning); Sprout Tower 3F (Grass, day); Sprout Tower 3F (Grass, night) |
+| Popplio | Cherrygrove City (Grass, morning); Cherrygrove City (Grass, day); Cherrygrove City (Grass, night) |
+| Porygon | Route 48 (Grass, morning); Route 48 (Grass, day); Route 48 (Grass, night) |
+| Porygon-Z | Bell Tower 2F (Grass, morning); Bell Tower 2F (Grass, day); Bell Tower 2F (Grass, night); Cerulean Cave B2F (Grass, morning); Cerulean Cave B2F (Grass, day); Cerulean Cave B2F (Grass, night) |
+| Porygon2 | Route 48 (Grass, morning); Route 48 (Grass, day); Route 48 (Grass, night) |
+| Primarina | Route 28 (Surf); Route 8 (Grass, morning); Route 8 (Grass, day); Route 8 (Grass, night) |
+| Primeape | Whirl Islands B1F (Grass, morning); Whirl Islands B1F (Grass, day); Whirl Islands B1F (Grass, night) |
+| Probopass | Bell Tower 7F (Grass, morning); Bell Tower 7F (Grass, day); Bell Tower 7F (Grass, night); Route 21 (Grass, morning); Route 21 (Grass, day); Route 21 (Grass, night) |
+| Psyduck | Union Cave B2F (Old Rod); Ecruteak City (Surf); Route 42 (Surf) |
+| Pumpkaboo | Ruins of Alph (Inside, Main Room) (Grass, morning); Ruins of Alph (Inside, Main Room) (Grass, day); Ruins of Alph (Inside, Main Room) (Grass, night) |
+| Pupitar | Ice Path B3F (Rock Smash) |
+| Purrloin | Sprout Tower 3F (Grass, morning); Sprout Tower 3F (Grass, day); Sprout Tower 3F (Grass, night) |
+| Purugly | Route 45 (Grass, morning); Route 45 (Grass, day); Route 45 (Grass, night); Route 5 (Grass, morning); Route 5 (Grass, day); Route 5 (Grass, night) |
+| Pyroar | Dark Cave (Route 45 entrance) (Grass, morning); Dark Cave (Route 45 entrance) (Grass, day); Dark Cave (Route 45 entrance) (Grass, night); Mt. Silver (Moltres room) (Grass, morning); Mt. Silver (Moltres room) (Grass, day); Mt. Silver (Moltres room) (Grass, night); Cinnabar Island (Grass, morning); Cinnabar Island (Grass, day); Cinnabar Island (Grass, night) |
+| Pyroar Female | Dark Cave (Route 45 entrance) (Grass, morning); Dark Cave (Route 45 entrance) (Grass, day); Dark Cave (Route 45 entrance) (Grass, night) |
+| Pyukumuku | Slowpoke Well B2F (Super Rod); Dragons Den (Super Rod); Route 47 (Old Rod); Cliff Edge Gate (Surf); Route 20 (Old Rod); Route 20 (Good Rod); Pallet Town (Old Rod); Vermilion City (Surf); Celadon City (Old Rod); Route 4 (Super Rod); Route 13 (Good Rod) |
+| Quagsire | Route 32 (Surf); Ruins of Alph (Outside) (Super Rod); Union Cave B2F (Surf); Ecruteak City (Good Rod); Olivine City (Super Rod); Route 44 (Good Rod); Blackthorn City (Super Rod); Mt. Moon (Outside Clefairy active) (Old Rod); Route 12 (Grass, morning); Route 12 (Grass, day); Route 12 (Grass, night); Vermilion City (Old Rod); Route 13 (Old Rod); Route 25 (Old Rod); Cerulean Cave 1F (Old Rod); Cerulean Cave B1F (Old Rod) |
+| Quaxly | Cherrygrove City (Grass, morning); Cherrygrove City (Grass, day); Cherrygrove City (Grass, night) |
+| Qwilfish | New Bark Town (Surf); Cherrygrove City (Old Rod); Cherrygrove City (Good Rod); Route 32 (Old Rod); Slowpoke Well B2F (Surf); Slowpoke Well B2F (Good Rod); Ilex Forest (Good Rod); Route 44 (Super Rod); Blackthorn City (Surf); Blackthorn City (Old Rod); Pallet Town (Super Rod); Fuchsia City (Old Rod); Route 4 (Surf); Route 13 (Old Rod); Route 25 (Old Rod); Cerulean Cave 1F (Old Rod); Cerulean Cave B1F (Good Rod) |
+| Rabsca | Bell Tower 2F (Grass, morning); Bell Tower 2F (Grass, day); Bell Tower 2F (Grass, night); Route 14 (Grass, morning); Route 14 (Grass, day); Route 14 (Grass, night) |
+| Raichu | Mt. Silver (Mountainside) (Grass, morning); Mt. Silver (Mountainside) (Grass, day); Mt. Silver (Mountainside) (Grass, night); Pallet Town (Grass, morning); Pallet Town (Grass, day); Pallet Town (Grass, night); Route 27 (Grass, morning); Route 27 (Grass, day); Route 27 (Grass, night) |
+| Ralts | Route 46 (Grass, morning); Route 46 (Grass, day); Route 46 (Grass, night) |
+| Rampardos | Mt. Mortar (Room above waterfall) (Grass, morning); Mt. Mortar (Room above waterfall) (Grass, day); Mt. Mortar (Room above waterfall) (Grass, night); Seafoam Islands B3F (Grass, morning); Seafoam Islands B3F (Grass, day); Seafoam Islands B3F (Grass, night) |
+| Rapidash | Bell Tower 9F (Grass, morning); Bell Tower 9F (Grass, day); Bell Tower 9F (Grass, night); Route 26 (Grass, morning); Route 26 (Grass, day); Route 26 (Grass, night); Route 3 (Grass, morning); Route 3 (Grass, day); Route 3 (Grass, night) |
+| Raticate | Route 39 (Grass, morning); Route 39 (Grass, day); Route 39 (Grass, night); Route 11 (Grass, morning); Route 11 (Grass, day); Route 11 (Grass, night) |
+| Rattata | Sprout Tower 3F (Grass, morning); Sprout Tower 3F (Grass, day); Sprout Tower 3F (Grass, night) |
+| Relicanth | Ilex Forest (Old Rod); Route 44 (Super Rod); Blackthorn City (Good Rod); Mt. Moon (Outside Clefairy active) (Good Rod); Seafoam Islands B4F (Old Rod); Route 19 (Old Rod); Vermilion City (Old Rod); Route 9 (Surf); Route 25 (Super Rod) |
+| Rellor | Slowpoke Well 1F (Grass, morning); Slowpoke Well 1F (Grass, day); Slowpoke Well 1F (Grass, night) |
+| Remoraid | Slowpoke Well B2F (Old Rod); Route 35 (Old Rod); Ecruteak City (Old Rod) |
+| Reuniclus | Bell Tower 6F (Grass, morning); Bell Tower 6F (Grass, day); Bell Tower 6F (Grass, night); Fuchsia City (Grass, morning); Fuchsia City (Grass, day); Fuchsia City (Grass, night) |
+| Revavroom | Blackthorn City (Grass, morning); Blackthorn City (Grass, day); Blackthorn City (Grass, night); Route 28 (Grass, morning); Route 28 (Grass, day); Route 28 (Grass, night) |
+| Rhydon | Whirl Islands B3F (Grass, morning); Whirl Islands B3F (Grass, day); Whirl Islands B3F (Grass, night) |
+| Rhyhorn | Union Cave B2F (Grass, morning); Union Cave B2F (Grass, day); Union Cave B2F (Grass, night) |
+| Rhyperior | Victory Road 2F (Grass, morning); Victory Road 2F (Grass, day); Victory Road 2F (Grass, night); Cerulean Cave 1F (Grass, morning); Cerulean Cave 1F (Grass, day); Cerulean Cave 1F (Grass, night); Cerulean Cave 1F (Rock Smash) |
+| Ribombee | Route 43 (Grass, morning); Route 43 (Grass, day); Route 43 (Grass, night); Route 16 (New Grass) (Grass, morning); Route 16 (New Grass) (Grass, day); Route 16 (New Grass) (Grass, night) |
+| Rillaboom | Route 1 (Grass, morning); Route 1 (Grass, day); Route 1 (Grass, night) |
+| Riolu | Ecruteak City (Grass, morning); Ecruteak City (Grass, day); Ecruteak City (Grass, night) |
+| RoarinMoon | Victory Road 1F (Grass, morning); Victory Road 1F (Grass, day); Victory Road 1F (Grass, night); Cerulean Cave 1F (Grass, morning); Cerulean Cave 1F (Grass, day); Cerulean Cave 1F (Grass, night) |
+| Rockruff | Cianwood City (Rock Smash); Dark Cave (Route 31 entrance) (Grass, morning); Dark Cave (Route 31 entrance) (Grass, day); Dark Cave (Route 31 entrance) (Grass, night) |
+| Roggenrola | Dark Cave (Route 31 entrance) (Grass, morning); Dark Cave (Route 31 entrance) (Grass, day); Dark Cave (Route 31 entrance) (Grass, night) |
+| Rolycoly | Dark Cave (Route 31 entrance) (Grass, morning); Dark Cave (Route 31 entrance) (Grass, day); Dark Cave (Route 31 entrance) (Grass, night) |
+| Rookidee | Route 32 (Grass, morning); Route 32 (Grass, day); Route 32 (Grass, night) |
+| Roselia | Olivine City (Grass, morning); Olivine City (Grass, day); Olivine City (Grass, night) |
+| Roserade | Olivine City (Grass, morning); Olivine City (Grass, day); Olivine City (Grass, night); Route 2 (South, below Viridian Forest) (Grass, morning); Route 2 (South, below Viridian Forest) (Grass, day); Route 2 (South, below Viridian Forest) (Grass, night) |
+| Rotom | Union Cave B2F (Grass, morning); Union Cave B2F (Grass, day); Union Cave B2F (Grass, night); Ice Path B3F (Grass, morning); Ice Path B3F (Grass, day); Ice Path B3F (Grass, night); Route 26 (Grass, morning); Route 26 (Grass, day); Route 26 (Grass, night); Route 13 (Grass, morning); Route 13 (Grass, day); Route 13 (Grass, night); Tohjo Falls (Grass, morning); Tohjo Falls (Grass, day); Tohjo Falls (Grass, night) |
+| Rowlet | Violet City (Grass, morning); Violet City (Grass, day); Violet City (Grass, night) |
+| Rufflet | Bell Tower 10F (Grass, morning); Bell Tower 10F (Grass, day); Bell Tower 10F (Grass, night) |
+| Runerigus | Dark Cave (Route 45 entrance) (Grass, morning); Dark Cave (Route 45 entrance) (Grass, day); Dark Cave (Route 45 entrance) (Grass, night); Mt. Moon 2F (Grass, morning); Mt. Moon 2F (Grass, day); Mt. Moon 2F (Grass, night) |
+| Sableye | Ruins of Alph (Inside, Main Room) (Grass, morning); Ruins of Alph (Inside, Main Room) (Grass, day); Ruins of Alph (Inside, Main Room) (Grass, night); Mt. Silver 1F (Grass, morning); Mt. Silver 1F (Grass, day); Mt. Silver 1F (Grass, night); Digletts Cave (Grass, morning); Digletts Cave (Grass, day); Digletts Cave (Grass, night) |
+| Salamence | Mt. Silver 4F (Grass, morning); Mt. Silver 4F (Grass, day); Mt. Silver 4F (Grass, night); Victory Road 3F (Grass, morning); Victory Road 3F (Grass, day); Victory Road 3F (Grass, night) |
+| Salandit | Burned Tower B1F (Grass, morning); Burned Tower B1F (Grass, day); Burned Tower B1F (Grass, night) |
+| Salazzle | Whirl Islands 1F (Grass, morning); Whirl Islands 1F (Grass, day); Whirl Islands 1F (Grass, night); Pewter City (Grass, morning); Pewter City (Grass, day); Pewter City (Grass, night) |
+| Samurott | Cherrygrove City (Surf); Cherrygrove City (Good Rod); Route 32 (Surf); Route 32 (Super Rod); Route 19 (Good Rod); Route 27 (Grass, morning); Route 27 (Grass, day); Route 27 (Grass, night); Route 13 (Grass, morning); Route 13 (Grass, day); Route 13 (Grass, night) |
+| Sandaconda | Route 45 (Grass, morning); Route 45 (Grass, day); Route 45 (Grass, night); Seafoam Islands B4F (Grass, morning); Seafoam Islands B4F (Grass, day); Seafoam Islands B4F (Grass, night) |
+| Sandile | Slowpoke Well B2F (Grass, morning); Slowpoke Well B2F (Grass, day); Slowpoke Well B2F (Grass, night) |
+| Sandshrew | Ruins of Alph (Outside) (Grass, morning); Ruins of Alph (Outside) (Grass, day); Ruins of Alph (Outside) (Grass, night); Ice Path 1F (Grass, morning); Ice Path 1F (Grass, day); Ice Path 1F (Grass, night) |
+| Sandslash | Mt. Mortar B1F (Grass, morning); Mt. Mortar B1F (Grass, day); Mt. Mortar B1F (Grass, night); Ice Path 1F (Grass, morning); Ice Path 1F (Grass, day); Ice Path 1F (Grass, night); Mt. Moon 2F (Grass, morning); Mt. Moon 2F (Grass, day); Mt. Moon 2F (Grass, night) |
+| Sandygast | Ruins of Alph (Inside, Main Room) (Grass, morning); Ruins of Alph (Inside, Main Room) (Grass, day); Ruins of Alph (Inside, Main Room) (Grass, night) |
+| SandyShock | Mt. Mortar B1F (Grass, morning); Mt. Mortar B1F (Grass, day); Mt. Mortar B1F (Grass, night); Route 28 (Grass, morning); Route 28 (Grass, day); Route 28 (Grass, night) |
+| Sawk | Whirl Islands B1F (Grass, morning); Whirl Islands B1F (Grass, day); Whirl Islands B1F (Grass, night); Route 7 (Grass, morning); Route 7 (Grass, day); Route 7 (Grass, night) |
+| Sawsbuck | Route 43 (Grass, morning); Route 43 (Grass, day); Route 43 (Grass, night); Route 14 (Grass, morning); Route 14 (Grass, day); Route 14 (Grass, night) |
+| Sawsbuck Autumn | Mahogany Town (Grass, morning); Mahogany Town (Grass, day); Mahogany Town (Grass, night) |
+| Sawsbuck Winter | Route 44 (Grass, morning); Route 44 (Grass, day); Route 44 (Grass, night) |
+| Scatterbug | Route 29 (Grass, morning); Route 29 (Grass, day); Route 29 (Grass, night) |
+| Sceptile | Mt. Silver 3F (Grass, morning); Mt. Silver 3F (Grass, day); Mt. Silver 3F (Grass, night); Route 22 (Grass, morning); Route 22 (Grass, day); Route 22 (Grass, night) |
+| Scizor | National Park (Bug Catching Contest) (Grass, morning); National Park (Bug Catching Contest) (Grass, day); National Park (Bug Catching Contest) (Grass, night); Mt. Silver (Mountainside) (Grass, morning); Mt. Silver (Mountainside) (Grass, day); Mt. Silver (Mountainside) (Grass, night); Viridian Forest (Grass, morning); Viridian Forest (Grass, day); Viridian Forest (Grass, night) |
+| Scolipede | Whirl Islands 1F (Grass, morning); Whirl Islands 1F (Grass, day); Whirl Islands 1F (Grass, night); Mt. Silver (Mountainside) (Grass, morning); Mt. Silver (Mountainside) (Grass, day); Mt. Silver (Mountainside) (Grass, night); Route 16 (New Grass) (Grass, morning); Route 16 (New Grass) (Grass, day); Route 16 (New Grass) (Grass, night) |
+| Scorbunny | Azalea Town (Grass, morning); Azalea Town (Grass, day); Azalea Town (Grass, night) |
+| Scovillain | Route 43 (Grass, morning); Route 43 (Grass, day); Route 43 (Grass, night); Mt. Silver (Outside) (Grass, morning); Mt. Silver (Outside) (Grass, day); Mt. Silver (Outside) (Grass, night); Route 16 (Grass, morning); Route 16 (Grass, day); Route 16 (Grass, night) |
+| Scrafty | Whirl Islands 1F (Grass, morning); Whirl Islands 1F (Grass, day); Whirl Islands 1F (Grass, night); Mt. Silver (Top, snowy area) (Grass, morning); Mt. Silver (Top, snowy area) (Grass, day); Mt. Silver (Top, snowy area) (Grass, night); Route 15 (Grass, morning); Route 15 (Grass, day); Route 15 (Grass, night) |
+| Scraggy | Union Cave 1F (Grass, morning); Union Cave 1F (Grass, day); Union Cave 1F (Grass, night) |
+| ScreamTail | Bell Tower 9F (Grass, morning); Bell Tower 9F (Grass, day); Bell Tower 9F (Grass, night); Victory Road 1F (Grass, morning); Victory Road 1F (Grass, day); Victory Road 1F (Grass, night) |
+| Scyther | National Park (Bug Catching Contest) (Grass, morning); National Park (Bug Catching Contest) (Grass, day); National Park (Bug Catching Contest) (Grass, night) |
+| Seadra | Ilex Forest (Good Rod); Ecruteak City (Good Rod); Mt. Mortar B1F (Old Rod); Blackthorn City (Old Rod); Route 45 (Old Rod); Dark Cave (Route 31 entrance) (Good Rod) |
+| Seaking | New Bark Town (Good Rod); Violet City (Surf); Route 41 (Surf); Whirl Islands B2F (Old Rod); Cianwood City (Surf); Mt. Mortar B1F (Super Rod); Mt. Moon (Outside area) (Super Rod); Mt. Silver (Moltres room) (Surf); Cliff Edge Gate (Good Rod); Pallet Town (Good Rod); Vermilion City (Super Rod); Route 27 (Super Rod); Route 6 (Surf); Route 25 (Super Rod); Cerulean Cave B2F (Super Rod) |
+| Sealeo | Ruins of Alph (Outside) (Good Rod); Route 34 (Surf); Route 35 (Super Rod); Ecruteak City (Good Rod); Route 44 (Old Rod); Route 44 (Good Rod) |
+| Seedot | Route 46 (Grass, morning); Route 46 (Grass, day); Route 46 (Grass, night) |
+| Seel | Route 40 (Old Rod); Cianwood City (Old Rod); Dark Cave (Route 31 entrance) (Surf); Dark Cave (Route 31 entrance) (Old Rod) |
+| Seismitoad | Ruins of Alph (Outside) (Super Rod); Cianwood City (Super Rod); Lake of Rage (Good Rod); Blackthorn City (Super Rod); Dragons Den (Good Rod); Dark Cave (Route 45 entrance) (Super Rod); Route 47 (Good Rod); Route 20 (Super Rod); Viridian City (Old Rod); Cerulean City (Good Rod); Route 26 (Old Rod); Route 10 (Surf); Route 21 (Good Rod) |
+| Sentret | Route 46 (Grass, morning); Route 46 (Grass, day); Route 46 (Grass, night) |
+| Serperior | Route 21 (Grass, morning); Route 21 (Grass, day); Route 21 (Grass, night) |
+| Seviper | Lake of Rage (Grass, morning); Lake of Rage (Grass, day); Lake of Rage (Grass, night); Route 24 (Grass, morning); Route 24 (Grass, day); Route 24 (Grass, night) |
+| Sewaddle | Route 29 (Grass, morning); Route 29 (Grass, day); Route 29 (Grass, night) |
+| Sharpedo | Union Cave B2F (Good Rod); Ilex Forest (Super Rod); Route 40 (Good Rod); Route 42 (Good Rod); Mt. Mortar (Waterfall room) (Super Rod); Blackthorn City (Old Rod); Mt. Moon (Outside area) (Super Rod); Mt. Silver (Outside) (Surf); Route 12 (Good Rod); Route 20 (Good Rod); Fuchsia City (Good Rod); Route 27 (Good Rod); Route 4 (Old Rod); Route 9 (Surf); Route 21 (Old Rod); Tohjo Falls (Super Rod) |
+| Shedinja | Route 35 (Grass, morning); Route 35 (Grass, day); Route 35 (Grass, night); Vermilion City (Grass, morning); Vermilion City (Grass, day); Vermilion City (Grass, night) |
+| Shelgon | Dragons Den (Grass, morning); Dragons Den (Grass, day); Dragons Den (Grass, night) |
+| Shellder | Route 41 (Old Rod); Lake of Rage (Good Rod); Mt. Silver (Top, snowy area) (Surf); Mt. Silver (Top, snowy area) (Old Rod); Mt. Silver (Top, snowy area) (Good Rod) |
+| Shellos | Union Cave 1F (Surf); Union Cave B2F (Old Rod); Safari Zone (Placeholder, not used) (Old Rod); Safari Zone (Placeholder, not used) (Good Rod) |
+| Shellos East Sea | Ecruteak City (Old Rod) |
+| Shelmet | Ilex Forest (Grass, morning); Ilex Forest (Grass, day); Ilex Forest (Grass, night) |
+| Shieldon | Ruins of Alph (Outside) (Rock Smash); Ruins of Alph (Inside, Main Room) (Grass, morning); Ruins of Alph (Inside, Main Room) (Grass, day); Ruins of Alph (Inside, Main Room) (Grass, night) |
+| Shiftry | Route 48 (Grass, morning); Route 48 (Grass, day); Route 48 (Grass, night); Route 16 (Grass, morning); Route 16 (Grass, day); Route 16 (Grass, night) |
+| Shiinotic | Route 48 (Grass, morning); Route 48 (Grass, day); Route 48 (Grass, night); Route 6 (Grass, morning); Route 6 (Grass, day); Route 6 (Grass, night) |
+| Shinx | Route 32 (Grass, morning); Route 32 (Grass, day); Route 32 (Grass, night) |
+| Shroodle | Sprout Tower 3F (Grass, morning); Sprout Tower 3F (Grass, day); Sprout Tower 3F (Grass, night) |
+| Shroomish | Route 46 (Grass, morning); Route 46 (Grass, day); Route 46 (Grass, night) |
+| Shuckle | Route 34 (Grass, morning); Route 34 (Grass, day); Route 34 (Grass, night); Rock Tunnel B1F (Rock Smash); Digletts Cave (Grass, morning); Digletts Cave (Grass, day); Digletts Cave (Grass, night) |
+| Shuppet | Union Cave 1F (Grass, morning); Union Cave 1F (Grass, day); Union Cave 1F (Grass, night) |
+| Sigilyph | Bell Tower 5F (Grass, morning); Bell Tower 5F (Grass, day); Bell Tower 5F (Grass, night); Route 2 (North, above Viridian Forest) (Grass, morning); Route 2 (North, above Viridian Forest) (Grass, day); Route 2 (North, above Viridian Forest) (Grass, night) |
+| Silcoon | Route 32 (Grass, morning); Route 32 (Grass, day); Route 32 (Grass, night) |
+| Silicobra | Ruins of Alph (Inside, Main Room) (Grass, morning); Ruins of Alph (Inside, Main Room) (Grass, day); Ruins of Alph (Inside, Main Room) (Grass, night) |
+| Simipour | Route 32 (Surf); Slowpoke Well B2F (Good Rod); Cliff Edge Gate (Surf); Route 12 (Surf); Cerulean City (Surf); Route 26 (Surf); Route 28 (Super Rod); Route 22 (Old Rod); Route 22 (Super Rod) |
+| Simisage | Blackthorn City (Grass, morning); Blackthorn City (Grass, day); Blackthorn City (Grass, night); Viridian Forest (Grass, morning); Viridian Forest (Grass, day); Viridian Forest (Grass, night) |
+| Simisear | Blackthorn City (Grass, morning); Blackthorn City (Grass, day); Blackthorn City (Grass, night); Cinnabar Island (Grass, morning); Cinnabar Island (Grass, day); Cinnabar Island (Grass, night) |
+| Sinistcha | Bell Tower 6F (Grass, morning); Bell Tower 6F (Grass, day); Bell Tower 6F (Grass, night); Route 2 (South, below Viridian Forest) (Grass, morning); Route 2 (South, below Viridian Forest) (Grass, day); Route 2 (South, below Viridian Forest) (Grass, night) |
+| Sinistea | Slowpoke Well 1F (Grass, morning); Slowpoke Well 1F (Grass, day); Slowpoke Well 1F (Grass, night) |
+| Sirfetch’d | Mt. Mortar (Waterfall room) (Grass, morning); Mt. Mortar (Waterfall room) (Grass, day); Mt. Mortar (Waterfall room) (Grass, night); Fuchsia City (Grass, morning); Fuchsia City (Grass, day); Fuchsia City (Grass, night) |
+| Sizzlipede | Ilex Forest (Grass, morning); Ilex Forest (Grass, day); Ilex Forest (Grass, night) |
+| Skarmory | Ice Path B2F (Grass, morning); Ice Path B2F (Grass, day); Ice Path B2F (Grass, night); Mt. Silver (Top, snowy area) (Grass, morning); Mt. Silver (Top, snowy area) (Grass, day); Mt. Silver (Top, snowy area) (Grass, night); Route 9 (Grass, morning); Route 9 (Grass, day); Route 9 (Grass, night) |
+| Skeledirge | Cinnabar Island (Grass, morning); Cinnabar Island (Grass, day); Cinnabar Island (Grass, night) |
+| Skiddo | Route 34 (Grass, morning); Route 34 (Grass, day); Route 34 (Grass, night) |
+| Skiploom | Route 34 (Grass, morning); Route 34 (Grass, day); Route 34 (Grass, night) |
+| Skitty | Route 31 (Grass, morning); Route 31 (Grass, day); Route 31 (Grass, night) |
+| Skorupi | Union Cave 1F (Grass, morning); Union Cave 1F (Grass, day); Union Cave 1F (Grass, night) |
+| Skrelp | Violet City (Old Rod); Union Cave B1F (Surf); Whirl Islands 1F (Old Rod); Cliff Edge Gate (Old Rod); Safari Zone (Placeholder, not used) (Super Rod) |
+| Skuntank | Dark Cave (Route 45 entrance) (Grass, morning); Dark Cave (Route 45 entrance) (Grass, day); Dark Cave (Route 45 entrance) (Grass, night); Route 11 (Grass, morning); Route 11 (Grass, day); Route 11 (Grass, night) |
+| Skwovet | Ilex Forest (Grass, morning); Ilex Forest (Grass, day); Ilex Forest (Grass, night) |
+| Slaking | Bell Tower 10F (Grass, morning); Bell Tower 10F (Grass, day); Bell Tower 10F (Grass, night); Route 28 (Grass, morning); Route 28 (Grass, day); Route 28 (Grass, night) |
+| Slakoth | Route 46 (Grass, morning); Route 46 (Grass, day); Route 46 (Grass, night) |
+| Sliggoo | Dragons Den (Grass, morning); Dragons Den (Grass, day); Dragons Den (Grass, night) |
+| SlithrWing | Route 27 (Grass, morning); Route 27 (Grass, day); Route 27 (Grass, night); Cerulean Cave 1F (Grass, morning); Cerulean Cave 1F (Grass, day); Cerulean Cave 1F (Grass, night) |
+| Slowbro | Union Cave B1F (Super Rod); Slowpoke Well 1F (Surf); Slowpoke Well 1F (Good Rod); Slowpoke Well 1F (Super Rod); Whirl Islands 1F (Surf); Whirl Islands B2F (Old Rod); Route 42 (Grass, morning); Route 42 (Grass, day); Route 42 (Grass, night); Route 44 (Good Rod); Route 45 (Super Rod); Dark Cave (Route 45 entrance) (Surf); Mt. Silver (Moltres room) (Surf); Cliff Edge Gate (Good Rod); Mt. Silver (Outside) (Surf); Viridian City (Old Rod); Celadon City (Super Rod); Fuchsia City (Grass, morning); Fuchsia City (Grass, day); Fuchsia City (Grass, night); Route 26 (Super Rod); Route 6 (Good Rod); Route 9 (Good Rod); Route 22 (Good Rod); Route 22 (Super Rod) |
+| Slowking | Route 32 (Super Rod); Union Cave B1F (Super Rod); Slowpoke Well 1F (Surf); Slowpoke Well 1F (Good Rod); Slowpoke Well 1F (Super Rod); Route 34 (Good Rod); Route 42 (Grass, morning); Route 42 (Grass, day); Route 42 (Grass, night); Route 44 (Surf); Blackthorn City (Good Rod); Dragons Den (Super Rod); Mt. Moon (Outside area) (Old Rod); Safari Zone (Placeholder, not used) (Surf); Safari Zone (Placeholder, not used) (Super Rod); Route 12 (Good Rod); Fuchsia City (Grass, morning); Fuchsia City (Grass, day); Fuchsia City (Grass, night); Fuchsia City (Good Rod); Route 9 (Good Rod); Route 24 (Old Rod); Cerulean Cave B1F (Super Rod); Cerulean Cave B2F (Surf) |
+| Slowpoke | Violet City (Good Rod); Slowpoke Well 1F (Grass, morning); Slowpoke Well 1F (Grass, day); Slowpoke Well 1F (Grass, night); Slowpoke Well 1F (Old Rod); Dark Cave (Route 31 entrance) (Old Rod); Mt. Silver (Moltres room) (Surf); Mt. Silver (Moltres room) (Old Rod); Mt. Silver (Moltres room) (Good Rod); Safari Zone (Placeholder, not used) (Surf); Safari Zone (Placeholder, not used) (Super Rod) |
+| Slugma | Burned Tower 1F (Grass, morning); Burned Tower 1F (Grass, day); Burned Tower 1F (Grass, night) |
+| Slurpuff | Mt. Mortar (Waterfall room) (Grass, morning); Mt. Mortar (Waterfall room) (Grass, day); Mt. Mortar (Waterfall room) (Grass, night); Route 18 (Grass, morning); Route 18 (Grass, day); Route 18 (Grass, night) |
+| Smeargle | Ruins of Alph (Inside, Main Room) (Grass, morning); Ruins of Alph (Inside, Main Room) (Grass, day); Ruins of Alph (Inside, Main Room) (Grass, night); Route 10 (Cave Ground) (Grass, morning); Route 10 (Cave Ground) (Grass, day); Route 10 (Cave Ground) (Grass, night) |
+| Smoliv | Route 35 (Grass, morning); Route 35 (Grass, day); Route 35 (Grass, night) |
+| Smoochum | Sprout Tower 3F (Grass, morning); Sprout Tower 3F (Grass, day); Sprout Tower 3F (Grass, night) |
+| Sneasel | Slowpoke Well 1F (Grass, morning); Slowpoke Well 1F (Grass, day); Slowpoke Well 1F (Grass, night) |
+| Sneasler | Bell Tower 5F (Grass, morning); Bell Tower 5F (Grass, day); Bell Tower 5F (Grass, night); Seafoam Islands B4F (Grass, morning); Seafoam Islands B4F (Grass, day); Seafoam Islands B4F (Grass, night) |
+| Snivy | Violet City (Grass, morning); Violet City (Grass, day); Violet City (Grass, night) |
+| Snom | Route 33 (Grass, morning); Route 33 (Grass, day); Route 33 (Grass, night) |
+| Snorlax | Bell Tower 8F (Grass, morning); Bell Tower 8F (Grass, day); Bell Tower 8F (Grass, night); Pallet Town (Grass, morning); Pallet Town (Grass, day); Pallet Town (Grass, night) |
+| Snorunt | Ice Path B2F (Grass, morning); Ice Path B2F (Grass, day); Ice Path B2F (Grass, night) |
+| Snover | Ice Path B1F (Grass, morning); Ice Path B1F (Grass, day); Ice Path B1F (Grass, night) |
+| Snubbull | Sprout Tower 2F (Grass, morning); Sprout Tower 2F (Grass, day); Sprout Tower 2F (Grass, night) |
+| Sobble | Cherrygrove City (Grass, morning); Cherrygrove City (Grass, day); Cherrygrove City (Grass, night) |
+| Solosis | Ruins of Alph (Inside, Ladder Room) (Grass, morning); Ruins of Alph (Inside, Ladder Room) (Grass, day); Ruins of Alph (Inside, Ladder Room) (Grass, night) |
+| Solrock | Burned Tower B1F (Rock Smash); Bell Tower 5F (Grass, morning); Bell Tower 5F (Grass, day); Bell Tower 5F (Grass, night); Rock Tunnel 1F (Grass, morning); Rock Tunnel 1F (Grass, day); Rock Tunnel 1F (Grass, night) |
+| Spearow | Route 32 (Grass, morning); Route 32 (Grass, day); Route 32 (Grass, night) |
+| Spewpa | Route 33 (Grass, morning); Route 33 (Grass, day); Route 33 (Grass, night) |
+| Spheal | Route 44 (Old Rod); Safari Zone (Placeholder, not used) (Old Rod); Safari Zone (Placeholder, not used) (Good Rod); Safari Zone (Placeholder, not used) (Super Rod) |
+| Spidops | Route 33 (Grass, morning); Route 33 (Grass, day); Route 33 (Grass, night); Route 6 (Grass, morning); Route 6 (Grass, day); Route 6 (Grass, night) |
+| Spinarak | Ruins of Alph (Inside, Main Room) (Grass, morning); Ruins of Alph (Inside, Main Room) (Grass, day); Ruins of Alph (Inside, Main Room) (Grass, night) |
+| Spinda | Route 38 (Grass, morning); Route 38 (Grass, day); Route 38 (Grass, night); Route 24 (Grass, morning); Route 24 (Grass, day); Route 24 (Grass, night) |
+| Spiritomb | Bell Tower 3F (Grass, morning); Bell Tower 3F (Grass, day); Bell Tower 3F (Grass, night); Pewter City (Grass, morning); Pewter City (Grass, day); Pewter City (Grass, night) |
+| Spoink | Ruins of Alph (Inside, Ladder Room) (Grass, morning); Ruins of Alph (Inside, Ladder Room) (Grass, day); Ruins of Alph (Inside, Ladder Room) (Grass, night) |
+| Sprigatito | Violet City (Grass, morning); Violet City (Grass, day); Violet City (Grass, night) |
+| Spritzee | Ecruteak City (Grass, morning); Ecruteak City (Grass, day); Ecruteak City (Grass, night) |
+| Squawkbily | Cianwood City (Grass, morning); Cianwood City (Grass, day); Cianwood City (Grass, night); Route 25 (Grass, morning); Route 25 (Grass, day); Route 25 (Grass, night) |
+| Squirtle | Cherrygrove City (Grass, morning); Cherrygrove City (Grass, day); Cherrygrove City (Grass, night) |
+| Stantler | Route 33 (Grass, morning); Route 33 (Grass, day); Route 33 (Grass, night) |
+| Staraptor | Bell Tower 4F (Grass, morning); Bell Tower 4F (Grass, day); Bell Tower 4F (Grass, night); Mt. Silver (Outside) (Grass, morning); Mt. Silver (Outside) (Grass, day); Mt. Silver (Outside) (Grass, night); Route 25 (Grass, morning); Route 25 (Grass, day); Route 25 (Grass, night) |
+| Staravia | Route 39 (Grass, morning); Route 39 (Grass, day); Route 39 (Grass, night) |
+| Starly | Route 32 (Grass, morning); Route 32 (Grass, day); Route 32 (Grass, night) |
+| Starmie | Violet City (Super Rod); Route 32 (Good Rod); Route 41 (Super Rod); Whirl Islands B2F (Surf); Mt. Mortar (Waterfall room) (Surf); Route 43 (Old Rod); Mt. Silver (Moltres room) (Good Rod); Mt. Silver (Moltres room) (Super Rod); Cliff Edge Gate (Super Rod); Mt. Silver (Outside) (Good Rod); Pallet Town (Good Rod); Vermilion City (Old Rod); Route 26 (Good Rod); Route 27 (Old Rod); Route 10 (Super Rod); Route 24 (Good Rod); Cerulean Cave B1F (Super Rod); Cerulean Cave B2F (Surf) |
+| Staryu | Cherrygrove City (Surf); Ruins of Alph (Outside) (Old Rod); Slowpoke Well B2F (Old Rod); Route 34 (Old Rod) |
+| Steelix | Mt. Mortar (Room above waterfall) (Grass, morning); Mt. Mortar (Room above waterfall) (Grass, day); Mt. Mortar (Room above waterfall) (Grass, night); Mt. Silver (Moltres room) (Grass, morning); Mt. Silver (Moltres room) (Grass, day); Mt. Silver (Moltres room) (Grass, night) |
+| Steenee | National Park (Grass, morning); National Park (Grass, day); National Park (Grass, night) |
+| Stonjorner | Cliff Cave (Grass, morning); Cliff Cave (Grass, day); Cliff Cave (Grass, night); Rock Tunnel B1F (Grass, morning); Rock Tunnel B1F (Grass, day); Rock Tunnel B1F (Grass, night) |
+| Stoutland | Route 44 (Grass, morning); Route 44 (Grass, day); Route 44 (Grass, night); Route 3 (Grass, morning); Route 3 (Grass, day); Route 3 (Grass, night) |
+| Stufful | Route 36 (Grass, morning); Route 36 (Grass, day); Route 36 (Grass, night) |
+| Stunfisk | Whirl Islands B1F (Grass, morning); Whirl Islands B1F (Grass, day); Whirl Islands B1F (Grass, night); Fuchsia City (Grass, morning); Fuchsia City (Grass, day); Fuchsia City (Grass, night) |
+| Stunky | Union Cave B2F (Grass, morning); Union Cave B2F (Grass, day); Union Cave B2F (Grass, night) |
+| Sudowoodo | Cliff Cave (Grass, morning); Cliff Cave (Grass, day); Cliff Cave (Grass, night); Route 11 (Grass, morning); Route 11 (Grass, day); Route 11 (Grass, night) |
+| Sunflora | Route 34 (Grass, morning); Route 34 (Grass, day); Route 34 (Grass, night); Route 8 (Grass, morning); Route 8 (Grass, day); Route 8 (Grass, night) |
+| Sunkern | Route 31 (Grass, morning); Route 31 (Grass, day); Route 31 (Grass, night) |
+| Surskit | Route 30 (Old Rod); Union Cave 1F (Old Rod) |
+| Swablu | Route 39 (Grass, morning); Route 39 (Grass, day); Route 39 (Grass, night) |
+| Swadloon | National Park (Grass, morning); National Park (Grass, day); National Park (Grass, night) |
+| Swalot | Mt. Mortar B1F (Grass, morning); Mt. Mortar B1F (Grass, day); Mt. Mortar B1F (Grass, night); Route 17 (Grass, morning); Route 17 (Grass, day); Route 17 (Grass, night) |
+| Swampert | Mt. Silver 1F (Good Rod); Route 28 (Old Rod) |
+| Swanna | Cherrygrove City (Surf); Route 35 (Surf); Route 19 (Surf); Pallet Town (Surf); Celadon City (Surf); Fuchsia City (Surf); Route 4 (Surf); Route 13 (Surf); Route 24 (Surf) |
+| Swellow | Route 42 (Grass, morning); Route 42 (Grass, day); Route 42 (Grass, night); Route 25 (Grass, morning); Route 25 (Grass, day); Route 25 (Grass, night) |
+| Swinub | Union Cave B2F (Grass, morning); Union Cave B2F (Grass, day); Union Cave B2F (Grass, night) |
+| Swirlix | Ecruteak City (Grass, morning); Ecruteak City (Grass, day); Ecruteak City (Grass, night) |
+| Swoobat | Mt. Mortar (Central room) (Grass, morning); Mt. Mortar (Central room) (Grass, day); Mt. Mortar (Central room) (Grass, night); Route 17 (Grass, morning); Route 17 (Grass, day); Route 17 (Grass, night) |
+| Sylveon | Route 1 (Grass, morning); Route 1 (Grass, day); Route 1 (Grass, night) |
+| Tadbulb | Route 36 (Grass, morning); Route 36 (Grass, day); Route 36 (Grass, night) |
+| Taillow | Route 46 (Grass, morning); Route 46 (Grass, day); Route 46 (Grass, night) |
+| Talonflame | Route 12 (Grass, morning); Route 12 (Grass, day); Route 12 (Grass, night); Route 27 (Grass, morning); Route 27 (Grass, day); Route 27 (Grass, night) |
+| Tandemaus | Route 34 (Grass, morning); Route 34 (Grass, day); Route 34 (Grass, night) |
+| Tangela | Route 47 (Grass, morning); Route 47 (Grass, day); Route 47 (Grass, night) |
+| Tangrowth | Route 47 (Grass, morning); Route 47 (Grass, day); Route 47 (Grass, night); Route 22 (Grass, morning); Route 22 (Grass, day); Route 22 (Grass, night) |
+| Tarountula | Route 33 (Grass, morning); Route 33 (Grass, day); Route 33 (Grass, night) |
+| Tatsugiri | Union Cave B2F (Super Rod); Olivine City (Good Rod); Route 42 (Old Rod); Mt. Mortar (Waterfall room) (Surf); Mt. Mortar B1F (Surf); Dragons Den (Surf); Route 45 (Super Rod); Dark Cave (Route 31 entrance) (Good Rod); Mt. Silver (Outside) (Old Rod); Viridian City (Super Rod); Vermilion City (Good Rod); Route 6 (Good Rod); Route 13 (Good Rod); Route 25 (Super Rod); Cerulean Cave 1F (Good Rod); Cerulean Cave B2F (Good Rod) |
+| Tauros | Route 47 (Grass, morning); Route 47 (Grass, day); Route 47 (Grass, night); Route 4 (Grass, morning); Route 4 (Grass, day); Route 4 (Grass, night) |
+| Tauros Aqua | Route 47 (Grass, morning); Route 47 (Grass, day); Route 47 (Grass, night); Route 4 (Grass, morning); Route 4 (Grass, day); Route 4 (Grass, night) |
+| Tauros Blaze | Route 47 (Grass, morning); Route 47 (Grass, day); Route 47 (Grass, night); Route 4 (Grass, morning); Route 4 (Grass, day); Route 4 (Grass, night) |
+| Tauros Combat | Route 47 (Grass, morning); Route 47 (Grass, day); Route 47 (Grass, night); Route 4 (Grass, morning); Route 4 (Grass, day); Route 4 (Grass, night) |
+| Teddiursa | Ecruteak City (Grass, morning); Ecruteak City (Grass, day); Ecruteak City (Grass, night) |
+| Tentacool | Olivine City (Old Rod); Route 40 (Old Rod) |
+| Tentacruel | New Bark Town (Good Rod); Route 30 (Super Rod); Route 35 (Super Rod); Whirl Islands B2F (Old Rod); Mt. Mortar (Waterfall room) (Super Rod); Mt. Mortar B1F (Good Rod); Seafoam Islands B4F (Surf); Mt. Silver 4F (Good Rod); Mt. Silver (Top, snowy area) (Super Rod); Route 12 (Super Rod); Route 20 (Good Rod); Route 20 (Super Rod); Fuchsia City (Super Rod); Route 6 (Old Rod); Route 9 (Surf) |
+| Tepig | Azalea Town (Grass, morning); Azalea Town (Grass, day); Azalea Town (Grass, night) |
+| Thievul | Route 35 (Grass, morning); Route 35 (Grass, day); Route 35 (Grass, night); Route 24 (Grass, morning); Route 24 (Grass, day); Route 24 (Grass, night) |
+| Throh | Whirl Islands B1F (Grass, morning); Whirl Islands B1F (Grass, day); Whirl Islands B1F (Grass, night); Route 7 (Grass, morning); Route 7 (Grass, day); Route 7 (Grass, night) |
+| Timburr | Slowpoke Well B2F (Grass, morning); Slowpoke Well B2F (Grass, day); Slowpoke Well B2F (Grass, night) |
+| Tinkatink | National Park (Grass, morning); National Park (Grass, day); National Park (Grass, night) |
+| Tinkaton | Bell Tower 8F (Grass, morning); Bell Tower 8F (Grass, day); Bell Tower 8F (Grass, night); Fuchsia City (Grass, morning); Fuchsia City (Grass, day); Fuchsia City (Grass, night) |
+| Tinkatuff | National Park (Grass, morning); National Park (Grass, day); National Park (Grass, night) |
+| Tirtouga | Ilex Forest (Old Rod); Route 44 (Old Rod) |
+| Toedscool | Ruins of Alph (Inside, Main Room) (Grass, morning); Ruins of Alph (Inside, Main Room) (Grass, day); Ruins of Alph (Inside, Main Room) (Grass, night) |
+| Toedscruel | Lake of Rage (Grass, morning); Lake of Rage (Grass, day); Lake of Rage (Grass, night); Seafoam Islands B4F (Grass, morning); Seafoam Islands B4F (Grass, day); Seafoam Islands B4F (Grass, night) |
+| Togedemaru | Route 24 (Grass, morning); Route 24 (Grass, day); Route 24 (Grass, night); Mahogany Town (Grass, morning); Mahogany Town (Grass, day); Mahogany Town (Grass, night) |
+| Togekiss | Pallet Town (Grass, morning); Pallet Town (Grass, day); Pallet Town (Grass, night); Mahogany Town (Grass, morning); Mahogany Town (Grass, day); Mahogany Town (Grass, night) |
+| Togepi | Route 31 (Grass, morning); Route 31 (Grass, day); Route 31 (Grass, night) |
+| Togetic | Mahogany Town (Grass, morning); Mahogany Town (Grass, day); Mahogany Town (Grass, night) |
+| Torkoal | Burned Tower 1F (Grass, morning); Burned Tower 1F (Grass, day); Burned Tower 1F (Grass, night); Cinnabar Island (Grass, morning); Cinnabar Island (Grass, day); Cinnabar Island (Grass, night) |
+| Torterra | Route 22 (Grass, morning); Route 22 (Grass, day); Route 22 (Grass, night) |
+| Totodile | Cherrygrove City (Grass, morning); Cherrygrove City (Grass, day); Cherrygrove City (Grass, night) |
+| Toucannon | Route 47 (Grass, morning); Route 47 (Grass, day); Route 47 (Grass, night); Route 2 (North, above Viridian Forest) (Grass, morning); Route 2 (North, above Viridian Forest) (Grass, day); Route 2 (North, above Viridian Forest) (Grass, night) |
+| Toxapex | Violet City (Super Rod); Route 34 (Super Rod); Cianwood City (Good Rod); Route 42 (Super Rod); Route 43 (Good Rod); Route 47 (Super Rod); Route 19 (Good Rod); Pallet Town (Surf); Vermilion City (Surf); Celadon City (Old Rod); Celadon City (Super Rod); Route 4 (Good Rod); Route 10 (Super Rod); Route 22 (Good Rod); Route 25 (Good Rod) |
+| Toxel | Union Cave 1F (Grass, morning); Union Cave 1F (Grass, day); Union Cave 1F (Grass, night) |
+| Toxicroak | Whirl Islands 1F (Grass, morning); Whirl Islands 1F (Grass, day); Whirl Islands 1F (Grass, night) |
+| Toxtricity | Mt. Mortar (Room above waterfall) (Grass, morning); Mt. Mortar (Room above waterfall) (Grass, day); Mt. Mortar (Room above waterfall) (Grass, night); Route 3 (Grass, morning); Route 3 (Grass, day); Route 3 (Grass, night) |
+| Toxtricity Low Key | Mt. Mortar (Room above waterfall) (Grass, morning); Mt. Mortar (Room above waterfall) (Grass, day); Mt. Mortar (Room above waterfall) (Grass, night); Route 3 (Grass, morning); Route 3 (Grass, day); Route 3 (Grass, night) |
+| Tranquill | Ecruteak City (Grass, morning); Ecruteak City (Grass, day); Ecruteak City (Grass, night) |
+| Trapinch | Slowpoke Well B2F (Grass, morning); Slowpoke Well B2F (Grass, day); Slowpoke Well B2F (Grass, night) |
+| Trevenant | Route 45 (Grass, morning); Route 45 (Grass, day); Route 45 (Grass, night); Route 15 (Grass, morning); Route 15 (Grass, day); Route 15 (Grass, night) |
+| Tropius | Route 43 (Grass, morning); Route 43 (Grass, day); Route 43 (Grass, night); Celadon City (Grass, morning); Celadon City (Grass, day); Celadon City (Grass, night) |
+| Trubbish | Route 34 (Grass, morning); Route 34 (Grass, day); Route 34 (Grass, night) |
+| Trumbeak | Ecruteak City (Grass, morning); Ecruteak City (Grass, day); Ecruteak City (Grass, night) |
+| Tsareena | Bell Tower 9F (Grass, morning); Bell Tower 9F (Grass, day); Bell Tower 9F (Grass, night); Route 2 (South, below Viridian Forest) (Grass, morning); Route 2 (South, below Viridian Forest) (Grass, day); Route 2 (South, below Viridian Forest) (Grass, night) |
+| Turtonator | Whirl Islands B3F (Grass, morning); Whirl Islands B3F (Grass, day); Whirl Islands B3F (Grass, night); Cinnabar Island (Grass, morning); Cinnabar Island (Grass, day); Cinnabar Island (Grass, night) |
+| Turtwig | Violet City (Grass, morning); Violet City (Grass, day); Violet City (Grass, night) |
+| Tympole | Union Cave B2F (Surf); Ecruteak City (Old Rod) |
+| Tynamo | Ruins of Alph (Outside) (Grass, morning); Ruins of Alph (Outside) (Grass, day); Ruins of Alph (Outside) (Grass, night); Ruins of Alph (Outside) (Surf); Union Cave 1F (Surf); Route 47 (Old Rod) |
+| Typhlosion | Route 28 (Grass, morning); Route 28 (Grass, day); Route 28 (Grass, night); Tohjo Falls (Grass, morning); Tohjo Falls (Grass, day); Tohjo Falls (Grass, night) |
+| Tyranitar | Mt. Silver 4F (Grass, morning); Mt. Silver 4F (Grass, day); Mt. Silver 4F (Grass, night); Victory Road 3F (Grass, morning); Victory Road 3F (Grass, day); Victory Road 3F (Grass, night); Victory Road 3F (Rock Smash) |
+| Tyrantrum | Mt. Mortar (Room above waterfall) (Grass, morning); Mt. Mortar (Room above waterfall) (Grass, day); Mt. Mortar (Room above waterfall) (Grass, night); Route 21 (Grass, morning); Route 21 (Grass, day); Route 21 (Grass, night) |
+| Tyrogue | Route 33 (Grass, morning); Route 33 (Grass, day); Route 33 (Grass, night) |
+| Tyrunt | Ruins of Alph (Inside, Main Room) (Grass, morning); Ruins of Alph (Inside, Main Room) (Grass, day); Ruins of Alph (Inside, Main Room) (Grass, night) |
+| Umbreon | Mt. Moon 1F (Grass, morning); Mt. Moon 1F (Grass, day); Mt. Moon 1F (Grass, night) |
+| Unfezant | Route 42 (Grass, morning); Route 42 (Grass, day); Route 42 (Grass, night); Route 17 (Grass, morning); Route 17 (Grass, day); Route 17 (Grass, night) |
+| Unfezant Female | Route 42 (Grass, morning); Route 42 (Grass, day); Route 42 (Grass, night); Route 17 (Grass, morning); Route 17 (Grass, day); Route 17 (Grass, night) |
+| Unown | Ruins of Alph (Inside, Main Room) (Grass, morning); Ruins of Alph (Inside, Main Room) (Grass, day); Ruins of Alph (Inside, Main Room) (Grass, night); Route 7 (Grass, morning); Route 7 (Grass, day); Route 7 (Grass, night) |
+| Ursaluna | Victory Road 1F (Grass, morning); Victory Road 1F (Grass, day); Victory Road 1F (Grass, night); Cerulean Cave B1F (Grass, morning); Cerulean Cave B1F (Grass, day); Cerulean Cave B1F (Grass, night) |
+| Ursaluna Bloodmoon | Victory Road 1F (Grass, morning); Victory Road 1F (Grass, day); Victory Road 1F (Grass, night); Cerulean Cave B1F (Grass, morning); Cerulean Cave B1F (Grass, day); Cerulean Cave B1F (Grass, night) |
+| Ursaring | Blackthorn City (Grass, morning); Blackthorn City (Grass, day); Blackthorn City (Grass, night) |
+| Vanillish | Ice Path B2F (Grass, morning); Ice Path B2F (Grass, day); Ice Path B2F (Grass, night) |
+| Vanillite | Route 37 (Grass, morning); Route 37 (Grass, day); Route 37 (Grass, night) |
+| Vanilluxe | Ice Path B2F (Grass, morning); Ice Path B2F (Grass, day); Ice Path B2F (Grass, night); Seafoam Islands 1F (Grass, morning); Seafoam Islands 1F (Grass, day); Seafoam Islands 1F (Grass, night) |
+| Vaporeon | New Bark Town (Super Rod); Cherrygrove City (Super Rod); Route 30 (Super Rod); Route 31 (Surf); Union Cave 1F (Super Rod); Lake of Rage (Super Rod); Mt. Moon (Outside area) (Old Rod); Celadon City (Surf); Celadon City (Old Rod); Route 28 (Super Rod); Route 1 (Grass, morning); Route 1 (Grass, day); Route 1 (Grass, night); Route 6 (Super Rod); Route 10 (Good Rod); Route 22 (Old Rod) |
+| Varoom | Ecruteak City (Grass, morning); Ecruteak City (Grass, day); Ecruteak City (Grass, night) |
+| Veluza | Union Cave B1F (Super Rod); Route 45 (Super Rod); Dark Cave (Route 45 entrance) (Good Rod); Seafoam Islands B4F (Old Rod); Seafoam Islands B4F (Good Rod); Safari Zone (Placeholder, not used) (Good Rod); Route 12 (Super Rod); Fuchsia City (Super Rod); Route 27 (Old Rod); Route 10 (Old Rod); Route 21 (Old Rod) |
+| Venipede | Dark Cave (Route 31 entrance) (Grass, morning); Dark Cave (Route 31 entrance) (Grass, day); Dark Cave (Route 31 entrance) (Grass, night) |
+| Venomoth | Route 42 (Grass, morning); Route 42 (Grass, day); Route 42 (Grass, night); Route 11 (Grass, morning); Route 11 (Grass, day); Route 11 (Grass, night) |
+| Venonat | Route 31 (Grass, morning); Route 31 (Grass, day); Route 31 (Grass, night) |
+| Venusaur | Mt. Silver (Moltres room) (Grass, morning); Mt. Silver (Moltres room) (Grass, day); Mt. Silver (Moltres room) (Grass, night); Pallet Town (Grass, morning); Pallet Town (Grass, day); Pallet Town (Grass, night) |
+| Vespiquen | Route 39 (Grass, morning); Route 39 (Grass, day); Route 39 (Grass, night); Route 16 (Grass, morning); Route 16 (Grass, day); Route 16 (Grass, night) |
+| Vibrava | Blackthorn City (Grass, morning); Blackthorn City (Grass, day); Blackthorn City (Grass, night) |
+| Victreebel | Route 42 (Grass, morning); Route 42 (Grass, day); Route 42 (Grass, night); Mt. Silver (Mountainside) (Grass, morning); Mt. Silver (Mountainside) (Grass, day); Mt. Silver (Mountainside) (Grass, night); Route 16 (New Grass) (Grass, morning); Route 16 (New Grass) (Grass, day); Route 16 (New Grass) (Grass, night) |
+| Vigoroth | Cianwood City (Grass, morning); Cianwood City (Grass, day); Cianwood City (Grass, night) |
+| Vikavolt | Route 12 (Grass, morning); Route 12 (Grass, day); Route 12 (Grass, night); Route 27 (Grass, morning); Route 27 (Grass, day); Route 27 (Grass, night) |
+| Vileplume | Route 39 (Grass, morning); Route 39 (Grass, day); Route 39 (Grass, night); Route 18 (Grass, morning); Route 18 (Grass, day); Route 18 (Grass, night) |
+| Vivillon | Route 33 (Grass, morning); Route 33 (Grass, day); Route 33 (Grass, night); Vermilion City (Grass, morning); Vermilion City (Grass, day); Vermilion City (Grass, night) |
+| Volbeat | National Park (Bug Catching Contest) (Grass, morning); National Park (Bug Catching Contest) (Grass, day); National Park (Bug Catching Contest) (Grass, night); Route 10 (Cave Ground) (Grass, morning); Route 10 (Cave Ground) (Grass, day); Route 10 (Cave Ground) (Grass, night) |
+| Volcarona | Cerulean Cave B2F (Grass, morning); Cerulean Cave B2F (Grass, day); Cerulean Cave B2F (Grass, night) |
+| Voltorb | Route 37 (Grass, morning); Route 37 (Grass, day); Route 37 (Grass, night) |
+| Vullaby | Bell Tower 7F (Grass, morning); Bell Tower 7F (Grass, day); Bell Tower 7F (Grass, night) |
+| Vulpix | Burned Tower B1F (Grass, morning); Burned Tower B1F (Grass, day); Burned Tower B1F (Grass, night); Ice Path B1F (Grass, morning); Ice Path B1F (Grass, day); Ice Path B1F (Grass, night) |
+| Wailmer | Union Cave B1F (Good Rod); Route 43 (Old Rod); Safari Zone (Placeholder, not used) (Old Rod) |
+| Wailord | Cherrygrove City (Super Rod); Route 30 (Good Rod); Slowpoke Well B2F (Good Rod); Route 40 (Super Rod); Whirl Islands 1F (Good Rod); Mt. Mortar B1F (Super Rod); Cliff Edge Gate (Super Rod); Route 19 (Old Rod); Route 20 (Good Rod); Route 20 (Super Rod); Pallet Town (Super Rod); Vermilion City (Good Rod) |
+| Walrein | Route 32 (Super Rod); Whirl Islands B2F (Super Rod); Route 42 (Good Rod); Mt. Mortar (Waterfall room) (Super Rod); Mt. Mortar (Room above waterfall) (Surf); Mt. Mortar (Room above waterfall) (Old Rod); Mt. Mortar B1F (Super Rod); Lake of Rage (Surf); Lake of Rage (Super Rod); Route 44 (Super Rod); Dark Cave (Route 45 entrance) (Super Rod); Route 12 (Super Rod); Route 19 (Good Rod); Route 20 (Super Rod); Cinnabar Island (Super Rod); Route 26 (Surf); Route 26 (Good Rod); Route 26 (Super Rod); Route 22 (Surf); Cerulean Cave 1F (Surf); Cerulean Cave B1F (Surf); Cerulean Cave B2F (Surf) |
+| Watchog | Route 42 (Grass, morning); Route 42 (Grass, day); Route 42 (Grass, night); Route 6 (Grass, morning); Route 6 (Grass, day); Route 6 (Grass, night) |
+| Wattrel | Route 30 (Grass, morning); Route 30 (Grass, day); Route 30 (Grass, night) |
+| Weavile | Ice Path B2F (Grass, morning); Ice Path B2F (Grass, day); Ice Path B2F (Grass, night); Seafoam Islands B4F (Grass, morning); Seafoam Islands B4F (Grass, day); Seafoam Islands B4F (Grass, night) |
+| Weedle | Route 29 (Grass, morning); Route 29 (Grass, day); Route 29 (Grass, night) |
+| Weepinbell | Cianwood City (Grass, morning); Cianwood City (Grass, day); Cianwood City (Grass, night) |
+| Weezing | Bell Tower 4F (Grass, morning); Bell Tower 4F (Grass, day); Bell Tower 4F (Grass, night); Mt. Moon 1F (Grass, morning); Mt. Moon 1F (Grass, day); Mt. Moon 1F (Grass, night) |
+| Whimsicott | Route 43 (Grass, morning); Route 43 (Grass, day); Route 43 (Grass, night); Route 16 (Grass, morning); Route 16 (Grass, day); Route 16 (Grass, night) |
+| Whirlipede | Union Cave B2F (Grass, morning); Union Cave B2F (Grass, day); Union Cave B2F (Grass, night) |
+| Whiscash | New Bark Town (Good Rod); Cherrygrove City (Super Rod); Route 30 (Good Rod); Ecruteak City (Super Rod); Whirl Islands 1F (Good Rod); Route 42 (Super Rod); Route 43 (Old Rod); Mt. Moon (Outside area) (Super Rod); Mt. Moon (Outside Clefairy active) (Surf); Mt. Silver (Top, snowy area) (Old Rod); Mt. Silver (Top, snowy area) (Good Rod); Fuchsia City (Good Rod); Route 6 (Good Rod); Route 13 (Old Rod); Route 24 (Good Rod); Tohjo Falls (Super Rod); Cerulean Cave B1F (Old Rod) |
+| Whismur | Union Cave 1F (Grass, morning); Union Cave 1F (Grass, day); Union Cave 1F (Grass, night) |
+| Wigglytuff | Blackthorn City (Grass, morning); Blackthorn City (Grass, day); Blackthorn City (Grass, night); Route 8 (Grass, morning); Route 8 (Grass, day); Route 8 (Grass, night) |
+| Wiglett | Route 34 (Surf); Route 35 (Old Rod) |
+| Wimpod | New Bark Town (Old Rod); Route 31 (Old Rod); Union Cave 1F (Surf); Ilex Forest (Surf); Cliff Edge Gate (Old Rod) |
+| Wingull | Route 30 (Grass, morning); Route 30 (Grass, day); Route 30 (Grass, night) |
+| Wishiwashi | Route 34 (Super Rod); Route 41 (Old Rod); Route 45 (Old Rod); Dark Cave (Route 31 entrance) (Super Rod); Mt. Moon (Outside Clefairy active) (Old Rod); Mt. Silver 3F (Old Rod); Mt. Silver 3F (Good Rod); Cerulean City (Surf); Route 4 (Old Rod); Route 13 (Super Rod); Route 24 (Old Rod); Cerulean Cave 1F (Super Rod); Cerulean Cave B2F (Old Rod) |
+| Wobbuffet | Ruins of Alph (Inside, Main Room) (Grass, morning); Ruins of Alph (Inside, Main Room) (Grass, day); Ruins of Alph (Inside, Main Room) (Grass, night); Route 6 (Grass, morning); Route 6 (Grass, day); Route 6 (Grass, night) |
+| Woobat | Sprout Tower 3F (Grass, morning); Sprout Tower 3F (Grass, day); Sprout Tower 3F (Grass, night) |
+| Wooloo | Route 36 (Grass, morning); Route 36 (Grass, day); Route 36 (Grass, night) |
+| Wooper | Violet City (Old Rod); Route 32 (Old Rod); Ruins of Alph (Inside, Ladder Room) (Grass, morning); Ruins of Alph (Inside, Ladder Room) (Grass, day); Ruins of Alph (Inside, Ladder Room) (Grass, night) |
+| Wormadam | National Park (Bug Catching Contest) (Grass, morning); National Park (Bug Catching Contest) (Grass, day); National Park (Bug Catching Contest) (Grass, night); Route 9 (Grass, morning); Route 9 (Grass, day); Route 9 (Grass, night) |
+| Wugtrio | New Bark Town (Good Rod); Route 31 (Good Rod); Slowpoke Well B2F (Surf); Olivine City (Super Rod); Route 41 (Good Rod); Route 42 (Super Rod); Route 12 (Good Rod); Cerulean City (Super Rod); Route 27 (Super Rod); Route 4 (Good Rod); Route 9 (Good Rod); Route 24 (Super Rod); Tohjo Falls (Good Rod); Cerulean Cave 1F (Old Rod); Cerulean Cave B1F (Old Rod) |
+| Wurmple | Route 32 (Grass, morning); Route 32 (Grass, day); Route 32 (Grass, night) |
+| Wynaut | Sprout Tower 2F (Grass, morning); Sprout Tower 2F (Grass, day); Sprout Tower 2F (Grass, night) |
+| Wyrdeer | Bell Tower 10F (Grass, morning); Bell Tower 10F (Grass, day); Bell Tower 10F (Grass, night); Route 22 (Grass, morning); Route 22 (Grass, day); Route 22 (Grass, night) |
+| Xatu | Ecruteak City (Grass, morning); Ecruteak City (Grass, day); Ecruteak City (Grass, night); Route 16 (New Grass) (Grass, morning); Route 16 (New Grass) (Grass, day); Route 16 (New Grass) (Grass, night) |
+| Yamask | Ruins of Alph (Outside) (Grass, morning); Ruins of Alph (Outside) (Grass, day); Ruins of Alph (Outside) (Grass, night) |
+| Yamper | Union Cave 1F (Grass, morning); Union Cave 1F (Grass, day); Union Cave 1F (Grass, night) |
+| Yanma | Olivine City (Grass, morning); Olivine City (Grass, day); Olivine City (Grass, night) |
+| Yanmega | Bell Tower 9F (Grass, morning); Bell Tower 9F (Grass, day); Bell Tower 9F (Grass, night); Viridian Forest (Grass, morning); Viridian Forest (Grass, day); Viridian Forest (Grass, night) |
+| Yungoos | Union Cave 1F (Grass, morning); Union Cave 1F (Grass, day); Union Cave 1F (Grass, night) |
+| Zangoose | Lake of Rage (Grass, morning); Lake of Rage (Grass, day); Lake of Rage (Grass, night); Route 24 (Grass, morning); Route 24 (Grass, day); Route 24 (Grass, night) |
+| Zebstrika | Lake of Rage (Grass, morning); Lake of Rage (Grass, day); Lake of Rage (Grass, night); Route 2 (North, above Viridian Forest) (Grass, morning); Route 2 (North, above Viridian Forest) (Grass, day); Route 2 (North, above Viridian Forest) (Grass, night) |
+| Zigzagoon | Route 33 (Grass, morning); Route 33 (Grass, day); Route 33 (Grass, night) |
+| Zoroark | Route 44 (Grass, morning); Route 44 (Grass, day); Route 44 (Grass, night); Viridian City (Grass, morning); Viridian City (Grass, day); Viridian City (Grass, night) |
+| Zorua | Union Cave B1F (Grass, morning); Union Cave B1F (Grass, day); Union Cave B1F (Grass, night) |
+| Zubat | Union Cave 1F (Grass, morning); Union Cave 1F (Grass, day); Union Cave 1F (Grass, night) |
+| Zweilous | Dragons Den (Grass, morning); Dragons Den (Grass, day); Dragons Den (Grass, night) |

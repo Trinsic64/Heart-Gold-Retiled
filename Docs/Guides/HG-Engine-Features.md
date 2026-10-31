@@ -1,55 +1,24 @@
-# HG-Engine Features and Expansion Changes
+# Heartfelt Gold gameplay features
 
-This page documents features that are confirmed by the build configuration and release audit for HeartGold Retiled Expansion v6.6.0.
+This page reflects the current hg-engine authoring configuration supplied for Pokémon Heartfelt Gold. The release patch has not been independently decoded to confirm every setting.
 
-## Battle and data features
+## Start and progression
 
-| Feature | Expansion behavior |
+- The three starter choices are Treecko, Torchic, and Mudkip. The starter creation code gives each its matching Mega Stone.
+- The National Dex is configured to be available from the start.
+- Mega Evolution is configured in the engine. The existing Oak event is the documented Mega Ring source.
+- A level cap is enabled in `include/config.h` and uses save variable `0x416F`. Its value and progression must be checked in game; the source switch alone does not establish the cap schedule.
+
+## Quality of life
+
+| Feature | Current source setting |
 | --- | --- |
-| Rules baseline | Generation 9 is selected as the latest mechanics generation. |
-| Pokémon data | 1391 species/form records are configured. The internal species/form index extends through 1315. |
-| Moves | 923 move records are present, with per-move physical/special/status split data. |
-| Items | 2685 item records are present, including later-generation evolution items and Mega Stones. |
-| Fairy type | Enabled. |
-| Weather | Snow Warning summons Snow under the Generation 9 rule selection. |
-| Sleep | Uses the configured modern 2–4 turn range. |
-| Battle style | Set mode is not forced; use the normal in-game choice. |
-| Double battles | Trainers can be configured as double battles without a partner trainer. |
-| Frame rate and text | Uncapped frame rate and instant text options are not forced in this build. |
-| National Dex | Normal story progression is retained; it is not granted automatically. |
+| TMs | Reusable |
+| HMs | Can be forgotten |
+| Frame rate | Uncapped in the overworld and battles |
+| Text speed | Instant text is not forced |
+| Marts | Expanded stock, including evolution items, specialty Poké Balls, and selected Mega Stones |
 
-## Mega Evolution and Primal Reversion
+The [Evolution Guide](Evolution-Guide.md) lists the current configured methods, and the [Static Encounter Guide](Static-Encounter-Guide.md) lists scripted species and levels from the supplied DSPRE export. Shop inventories are defined in [mart.c](../../HG-Engine/src/field/mart.c); some entries can depend on story state.
 
-- Professor Oak gives the Mega Ring immediately after giving the Pokédex. The same scene enables Mega Evolution.
-- All 92 configured Mega Stones remain obtainable. Version 6.9 retains 79 visible overworld pickups and moves 13 common-wild-family duplicates to held-source-only acquisition.
-- 82 stones also appear in wild held-item slots on members of the matching evolution families. Mewtwo X/Y, Latiasite, Latiosite, and Diancite have static sources; five future-family stones are ground-only.
-- Rayquaza Mega Evolves by knowing Dragon Ascent rather than holding a stone.
-- Groudon and Kyogre can hold the Red Orb and Blue Orb, and the original late-game orb scene awards both orbs in one save.
-- Z-Moves, Dynamax/Gigantamax, and Terastallization remain unavailable: their reserved activation flags have no setters in this release.
-
-> [!WARNING]
-> The release audit flags a possible Items-pocket stress case if a save accumulates close to 290 distinct entries. Keep more than one save backup, especially while collecting all 92 stones.
-
-## Offline event access
-
-| Content | Source | Requirement | What it unlocks |
-| --- | --- | --- | --- |
-| Enigma Stone | Ruins of Alph Research Center | National Dex and all 28 Unown | Original Pewter Museum Latias/Latios event |
-| Celebi Lv. 30 | Ilex Forest shrine | Elite Four cleared | Original Ilex/Giovanni time-travel event |
-| Guaranteed-shiny Pichu Lv. 30 | Ilex Forest shrine | Elite Four cleared | Original Spiky-eared Pichu sequence via lead-species check |
-| Arceus Lv. 50 | Ruins of Alph | All 28 Unown seen | Original Sinjoh Ruins sequence |
-| Shaymin Lv. 30 | National Park | National Dex | Gracidea from the Goldenrod Flower Shop |
-| Diancie Lv. 50 | Sinjoh Ruins | Sinjoh scene complete | Diancite-compatible static encounter |
-
-## Encounter and trainer redesign
-
-- Wild tables contain 420 time-specific records across 140 areas, with expanded grass, Surf, fishing, swarm, Rock Smash, and Pokégear radio selections.
-- The trainer table contains 738 entries. 645 regular entries use class-theme rebalancing, while bosses and rematches use curated assignments.
-- See the [Wild Encounter Guide](Wild-Encounter-Guide.md) and [Trainer Guide](Trainer-Guide.md) for the exact data.
-
-## Unchanged or unavailable systems
-
-- Pokéwalker course dependencies remain tied to Pokéwalker/save support.
-- Pal Park still depends on the original migration subsystem.
-- GTS, Wi-Fi Plaza, online Battle Tower modes, and Battle Video services are not restored.
-- The Lock Capsule has no new in-game use.
+The [Wild Encounter Guide](Wild-Encounter-Guide.md) and [Trainer Guide](Trainer-Guide.md) are generated from the current encounter and trainer tables. Online services, Pokéwalker dependencies, and Pal Park migration are not documented as restored by these changes.

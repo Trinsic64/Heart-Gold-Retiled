@@ -1,3 +1,7 @@
+# Historical guide: Retiled Expansion v6
+
+This walkthrough predates Pokémon Heartfelt Gold. Its route order, scripted rewards, and static encounters have not been rechecked against the current patch. Use the [Heartfelt Gold guide index](README.md) for current encounter and team data.
+
 # Expansion Walkthrough
 
 This walkthrough focuses on the altered progression, boss teams, Mega Evolution, and offline events in **HeartGold Retiled Expansion v6.11.0**. The map/story route remains recognizable as Pokémon HeartGold, but wild encounters and trainer parties should be treated as new.

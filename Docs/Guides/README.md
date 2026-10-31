@@ -1,22 +1,13 @@
-# HeartGold Retiled Expansion Player Guides
+# Pokémon Heartfelt Gold player guides
 
-These guides describe the **v6.12.1 expansion patch** and contain spoilers.
+These guides describe the current Heartfelt Gold authoring data and contain spoilers. The species, level, trainer, and evolution tables were regenerated from the supplied current hg-engine source. The static encounter table comes from the supplied DSPRE script export, which the project owner identified as identical for these encounters. The patch binary has not been independently decoded against every table.
 
-| Guide | Use it for |
+| Guide | Contents |
 | --- | --- |
-| [Expansion Walkthrough](Walkthrough.md) | Story order, altered boss checkpoints, Mega Ring timing, Kanto, Red, and offline events |
-| [Evolution Guide](Evolution-Guide.md) | All configured evolution/form methods and the remaining Linking Cord evolution |
-| [HG-Engine Features](HG-Engine-Features.md) | Confirmed mechanics, Mega/Primal behavior, offline content, and unavailable systems |
-| [Wild Encounter Guide](Wild-Encounter-Guide.md) | Exact rates by location, time, and method, plus a Pokémon-to-location reverse index |
-| [Item Location Guide](Item-Locations.md) | Visible pickups, hidden items, the reconciled Mega Stone distribution, held sources, and progression rewards |
-| [Trainer Guide](Trainer-Guide.md) | Exact major teams, rematches, rival variants, and all 737 non-empty trainer IDs |
+| [Wild Encounter Guide](Wild-Encounter-Guide.md) | Regular encounters by area, time, and method, plus a Pokémon index |
+| [Trainer Guide](Trainer-Guide.md) | Configured teams, levels, moves, items, and trainer IDs |
+| [Evolution Guide](Evolution-Guide.md) | Current evolution and form methods |
+| [Static Encounter Guide](Static-Encounter-Guide.md) | Scripted Pokémon and levels, with script bank IDs |
+| [HG-Engine Features](HG-Engine-Features.md) | Starters, progression settings, quality of life, and shop changes |
 
-## Data coverage
-
-- 420 time-of-day encounter rows across 140 areas
-- 257 visible pickup objects and 105 hidden items
-- 79 retained Mega Stone pickups, 13 held-source-only stones, 89 Mega/Primal held-item sources, and 5 ground-only stones
-- 542 configured evolution/form rows
-- 738 trainer table entries containing 2,843 party members
-
-The documents were compiled from the exact authoring tables used for this release. Regenerate and revalidate them whenever encounter, trainer, evolution, or item data changes.
+The [older walkthrough](Walkthrough.md) and [older item guide](Item-Locations.md) were written for the Retiled Expansion series. They need a fresh event and item audit before use with Heartfelt Gold. The [v7 draft folder](v7-draft/README.md) is an authoring snapshot, not a patch-specific player guide.

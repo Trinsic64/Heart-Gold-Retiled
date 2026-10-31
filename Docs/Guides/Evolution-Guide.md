@@ -1,973 +1,557 @@
-# Evolution Guide
+# Evolution guide — Pokémon Heartfelt Gold
 
-This is the player-facing evolution reference for the **HeartGold Retiled Expansion v6.12.0** build. It is generated from the evolution configuration used to build the patch, rather than from vanilla HeartGold rules.
+These tables are generated from the current hg-engine authoring source supplied for Heartfelt Gold. The patch binary has not been independently decoded against these tables. Encounter availability still depends on game progress.
 
-## What changed
+Search for either Pokémon or an item. “Form N” is the engine's numeric form slot. Some special methods depend on engine handlers and still need in-game verification; the final column exposes the exact method constant for source checking.
 
-- Pokémon and forms through the configured Generation 9 data set are present in the engine tables.
-- The Fairy type is enabled.
-- Many later-generation evolution methods and items are supported, including Ice Stone, Linking Cord, Black Augurite, Syrupy Apple, Auspicious Armor, Malicious Armor, and move-based methods.
-- The configured table contains no trade-only method. Former trade evolutions use level or item alternatives.
-- Alolan Graveler is the only configured evolution that still uses a **Linking Cord**.
-- Some location-based evolutions also have a stone alternative. For example, Magneton can use a Thunder Stone.
-- Mega Evolution is a temporary battle transformation, not a permanent evolution. See [HG-Engine Features](HG-Engine-Features.md) and [Item Locations](Item-Locations.md).
+Sources: [evolution table](../../HG-Engine/data/Evolutions.c), local `Data/Pokemon/Evolution-Methods.csv`, local `Data/Pokemon/Evolution-Policy-Changes.csv`.
 
-> [!NOTE]
-> Form-change rows are included because they are part of the same compiled table, even when they are not ordinary permanent evolutions. A target labelled “form N” uses the engine's numeric form slot.
-
-## Linking Cord evolution
-
-| Pokémon | Evolves into | Method |
-| --- | --- | --- |
-| Graveler Alolan | Golem (form 1) | Use Linking Cord |
-
-## Complete configured evolution list
-
-Use your browser's find command to search for a Pokémon or evolution item.
-
-| From | Result | Configured method |
-| --- | --- | --- |
-| Bulbasaur | Ivysaur | Level 16 |
-| Ivysaur | Venusaur | Level 32 |
-| Charmander | Charmeleon | Level 16 |
-| Charmeleon | Charizard | Level 36 |
-| Squirtle | Wartortle | Level 16 |
-| Wartortle | Blastoise | Level 36 |
-| Caterpie | Metapod | Level 7 |
-| Metapod | Butterfree | Level 10 |
-| Weedle | Kakuna | Level 7 |
-| Kakuna | Beedrill | Level 10 |
-| Pidgey | Pidgeotto | Level 18 |
-| Pidgeotto | Pidgeot | Level 36 |
-| Rattata | Raticate | Level 20 |
-| Spearow | Fearow | Level 20 |
-| Ekans | Arbok | Level 22 |
-| Pikachu | Raichu | Use Thunder Stone |
-| Sandshrew | Sandslash | Level 22 |
-| Nidoran♀ | Nidorina | Level 16 |
-| Nidorina | Nidoqueen | Use Moon Stone |
-| Nidoran♂ | Nidorino | Level 16 |
-| Nidorino | Nidoking | Use Moon Stone |
-| Clefairy | Clefable | Use Moon Stone |
-| Vulpix | Ninetales | Use Fire Stone |
-| Jigglypuff | Wigglytuff | Use Moon Stone |
-| Zubat | Golbat | Level 22 |
-| Golbat | Crobat | High friendship |
-| Oddish | Gloom | Level 21 |
-| Gloom | Vileplume | Use Leaf Stone |
-| Gloom | Bellossom | Use Sun Stone |
-| Paras | Parasect | Level 24 |
-| Venonat | Venomoth | Level 31 |
-| Diglett | Dugtrio | Level 26 |
-| Meowth | Persian | Level 28 |
-| Psyduck | Golduck | Level 33 |
-| Mankey | Primeape | Level 28 |
-| Primeape | Annihilape | Configured form argument 20 |
-| Growlithe | Arcanine | Use Fire Stone |
-| Poliwag | Poliwhirl | Level 25 |
-| Poliwhirl | Poliwrath | Use Water Stone |
-| Poliwhirl | Politoed | Level 36 |
-| Abra | Kadabra | Level 16 |
-| Kadabra | Alakazam | Level 36 |
-| Machop | Machoke | Level 28 |
-| Machoke | Machamp | Level 36 |
-| Bellsprout | Weepinbell | Level 21 |
-| Weepinbell | Victreebel | Use Leaf Stone |
-| Tentacool | Tentacruel | Level 30 |
-| Geodude | Graveler | Level 25 |
-| Graveler | Golem | Level 36 |
-| Ponyta | Rapidash | Level 40 |
-| Slowpoke | Slowbro | Level 37 |
-| Slowpoke | Slowking | Level 36 |
-| Magnemite | Magneton | Level 30 |
-| Magneton | Magnezone | Level up in a magnetic field |
-| Magneton | Magnezone | Use Thunder Stone |
-| Doduo | Dodrio | Level 31 |
-| Seel | Dewgong | Level 34 |
-| Grimer | Muk | Level 38 |
-| Shellder | Cloyster | Use Water Stone |
-| Gastly | Haunter | Level 25 |
-| Haunter | Gengar | Level 36 |
-| Onix | Steelix | Level 36 |
-| Drowzee | Hypno | Level 26 |
-| Krabby | Kingler | Level 28 |
-| Voltorb | Electrode | Level 30 |
-| Exeggcute | Exeggutor | Use Leaf Stone |
-| Cubone | Marowak | Level 28 |
-| Lickitung | Lickilicky | Level up knowing Rollout |
-| Koffing | Weezing | Level 35 |
-| Rhyhorn | Rhydon | Level 42 |
-| Rhydon | Rhyperior | Level 36 |
-| Chansey | Blissey | High friendship |
-| Tangela | Tangrowth | Level up knowing Ancient Power |
-| Horsea | Seadra | Level 32 |
-| Seadra | Kingdra | Level 36 |
-| Goldeen | Seaking | Level 33 |
-| Staryu | Starmie | Use Water Stone |
-| Scyther | Scizor | Level 36 |
-| Scyther | Kleavor | Use Black Augurite |
-| Electabuzz | Electivire | Level 36 |
-| Magmar | Magmortar | Level 36 |
-| Magikarp | Gyarados | Level 20 |
-| Eevee | Leafeon | Use Leaf Stone |
-| Eevee | Glaceon | Use Ice Stone |
-| Eevee | Jolteon | Use Thunder Stone |
-| Eevee | Vaporeon | Use Water Stone |
-| Eevee | Flareon | Use Fire Stone |
-| Eevee | Sylveon | Level up knowing a Fairy-type move |
-| Eevee | Espeon | High friendship during the day |
-| Eevee | Umbreon | High friendship at night |
-| Porygon | Porygon2 | Level 36 |
-| Omanyte | Omastar | Level 40 |
-| Kabuto | Kabutops | Level 40 |
-| Dratini | Dragonair | Level 30 |
-| Dragonair | Dragonite | Level 55 |
-| Chikorita | Bayleef | Level 16 |
-| Bayleef | Meganium | Level 32 |
-| Cyndaquil | Quilava | Level 14 |
-| Quilava | Typhlosion | Level 36 |
-| Totodile | Croconaw | Level 18 |
-| Croconaw | Feraligatr | Level 30 |
-| Sentret | Furret | Level 15 |
-| Hoothoot | Noctowl | Level 20 |
-| Ledyba | Ledian | Level 18 |
-| Spinarak | Ariados | Level 22 |
-| Chinchou | Lanturn | Level 27 |
-| Pichu | Pikachu | High friendship |
-| Cleffa | Clefairy | High friendship |
-| Igglybuff | Jigglypuff | High friendship |
-| Togepi | Togetic | High friendship |
-| Togetic | Togekiss | Use Shiny Stone |
-| Natu | Xatu | Level 25 |
-| Mareep | Flaaffy | Level 15 |
-| Flaaffy | Ampharos | Level 30 |
-| Marill | Azumarill | Level 18 |
-| Hoppip | Skiploom | Level 18 |
-| Skiploom | Jumpluff | Level 27 |
-| Aipom | Ambipom | Level up knowing Double Hit |
-| Sunkern | Sunflora | Use Sun Stone |
-| Yanma | Yanmega | Level up knowing Ancient Power |
-| Wooper | Quagsire | Level 20 |
-| Murkrow | Honchkrow | Use Dusk Stone |
-| Misdreavus | Mismagius | Use Dusk Stone |
-| Girafarig | Farigiraf | Level up knowing Twin Beam |
-| Pineco | Forretress | Level 31 |
-| Dunsparce | Dudunspars | Level up knowing Hyper Drill |
-| Gligar | Gliscor | Use Razor Fang at night |
-| Snubbull | Granbull | Level 23 |
-| Sneasel | Weavile | Use Razor Claw at night |
-| Teddiursa | Ursaring | Level 30 |
-| Ursaring | Ursaluna | Use Peat Block at night |
-| Slugma | Magcargo | Level 38 |
-| Swinub | Piloswine | Level 33 |
-| Piloswine | Mamoswine | Level up knowing Ancient Power |
-| Remoraid | Octillery | Level 25 |
-| Houndour | Houndoom | Level 24 |
-| Phanpy | Donphan | Level 25 |
-| Porygon2 | Porygon-Z | Level 36 |
-| Stantler | Wyrdeer | Configured form argument 20 |
-| Tyrogue | Hitmonchan | Level 20 with Attack < Defense |
-| Tyrogue | Hitmonlee | Level 20 with Attack > Defense |
-| Tyrogue | Hitmontop | Level 20 with Attack = Defense |
-| Smoochum | Jynx | Level 30 |
-| Elekid | Electabuzz | Level 30 |
-| Magby | Magmar | Level 30 |
-| Larvitar | Pupitar | Level 30 |
-| Pupitar | Tyranitar | Level 55 |
-| Treecko | Grovyle | Level 16 |
-| Grovyle | Sceptile | Level 36 |
-| Torchic | Combusken | Level 16 |
-| Combusken | Blaziken | Level 36 |
-| Mudkip | Marshtomp | Level 16 |
-| Marshtomp | Swampert | Level 36 |
-| Poochyena | Mightyena | Level 18 |
-| Zigzagoon | Linoone | Level 20 |
-| Wurmple | Silcoon | Level 7 (personality branch B) |
-| Wurmple | Cascoon | Level 7 (personality branch A) |
-| Silcoon | Beautifly | Level 10 |
-| Cascoon | Dustox | Level 10 |
-| Lotad | Lombre | Level 14 |
-| Lombre | Ludicolo | Use Water Stone |
-| Seedot | Nuzleaf | Level 14 |
-| Nuzleaf | Shiftry | Use Leaf Stone |
-| Taillow | Swellow | Level 22 |
-| Wingull | Pelipper | Level 25 |
-| Ralts | Kirlia | Level 20 |
-| Kirlia | Gardevoir | Level 30 |
-| Kirlia | Gallade | Use 109 (male) |
-| Surskit | Masquerain | Level 22 |
-| Shroomish | Breloom | Level 23 |
-| Slakoth | Vigoroth | Level 18 |
-| Vigoroth | Slaking | Level 36 |
-| Nincada | Ninjask | Level 20 (Ninjask branch) |
-| Nincada | Shedinja | Level 20 with an empty party slot and spare Poké Ball |
-| Whismur | Loudred | Level 20 |
-| Loudred | Exploud | Level 40 |
-| Makuhita | Hariyama | Level 24 |
-| Azurill | Marill | High friendship |
-| Nosepass | Probopass | Level up in a magnetic field |
-| Nosepass | Probopass | Use Thunder Stone |
-| Skitty | Delcatty | Use Moon Stone |
-| Aron | Lairon | Level 32 |
-| Lairon | Aggron | Level 42 |
-| Meditite | Medicham | Level 37 |
-| Electrike | Manectric | Level 26 |
-| Roselia | Roserade | Use Shiny Stone |
-| Gulpin | Swalot | Level 26 |
-| Carvanha | Sharpedo | Level 30 |
-| Wailmer | Wailord | Level 40 |
-| Numel | Camerupt | Level 33 |
-| Spoink | Grumpig | Level 32 |
-| Trapinch | Vibrava | Level 35 |
-| Vibrava | Flygon | Level 45 |
-| Cacnea | Cacturne | Level 32 |
-| Swablu | Altaria | Level 35 |
-| Barboach | Whiscash | Level 30 |
-| Corphish | Crawdaunt | Level 30 |
-| Baltoy | Claydol | Level 36 |
-| Lileep | Cradily | Level 40 |
-| Anorith | Armaldo | Level 40 |
-| Feebas | Milotic | Beauty 170 |
-| Feebas | Milotic | Level 36 |
-| Shuppet | Banette | Level 37 |
-| Duskull | Dusclops | Level 37 |
-| Dusclops | Dusknoir | Level 36 |
-| Wynaut | Wobbuffet | Level 15 |
-| Snorunt | Glalie | Level 42 |
-| Snorunt | Froslass | Use 109 (female) |
-| Spheal | Sealeo | Level 32 |
-| Sealeo | Walrein | Level 44 |
-| Clamperl | Huntail | Level 36 |
-| Clamperl | Gorebyss | Level 36 |
-| Bagon | Shelgon | Level 30 |
-| Shelgon | Salamence | Level 50 |
-| Beldum | Metang | Level 20 |
-| Metang | Metagross | Level 45 |
-| Turtwig | Grotle | Level 18 |
-| Grotle | Torterra | Level 32 |
-| Chimchar | Monferno | Level 14 |
-| Monferno | Infernape | Level 36 |
-| Piplup | Prinplup | Level 16 |
-| Prinplup | Empoleon | Level 36 |
-| Starly | Staravia | Level 14 |
-| Staravia | Staraptor | Level 34 |
-| Bidoof | Bibarel | Level 15 |
-| Kricketot | Kricketune | Level 10 |
-| Shinx | Luxio | Level 15 |
-| Luxio | Luxray | Level 30 |
-| Budew | Roselia | High friendship during the day |
-| Cranidos | Rampardos | Level 30 |
-| Shieldon | Bastiodon | Level 30 |
-| Burmy | Wormadam | Level 20 (female) |
-| Burmy | Mothim | Level 20 (male) |
-| Combee | Vespiquen | Level 21 (female) |
-| Buizel | Floatzel | Level 26 |
-| Cherubi | Cherrim | Level 25 |
-| Shellos | Gastrodon | Level 30 |
-| Drifloon | Drifblim | Level 28 |
-| Buneary | Lopunny | High friendship |
-| Glameow | Purugly | Level 38 |
-| Chingling | Chimecho | High friendship at night |
-| Stunky | Skuntank | Level 34 |
-| Bronzor | Bronzong | Level 33 |
-| Bonsly | Sudowoodo | Level up knowing Mimic |
-| Mime Jr. | Mr. Mime | Level up knowing Mimic |
-| Happiny | Chansey | Use Oval Stone during the day |
-| Gible | Gabite | Level 24 |
-| Gabite | Garchomp | Level 48 |
-| Munchlax | Snorlax | High friendship |
-| Riolu | Lucario | High friendship during the day |
-| Hippopotas | Hippowdon | Level 34 |
-| Skorupi | Drapion | Level 40 |
-| Croagunk | Toxicroak | Level 37 |
-| Finneon | Lumineon | Level 31 |
-| Mantyke | Mantine | Level up with Remoraid in the party |
-| Snover | Abomasnow | Level 40 |
-| Snivy | Servine | Level 17 |
-| Servine | Serperior | Level 36 |
-| Tepig | Pignite | Level 17 |
-| Pignite | Emboar | Level 36 |
-| Oshawott | Dewott | Level 17 |
-| Dewott | Samurott | Level 36 |
-| Patrat | Watchog | Level 20 |
-| Lillipup | Herdier | Level 16 |
-| Herdier | Stoutland | Level 32 |
-| Purrloin | Liepard | Level 20 |
-| Pansage | Simisage | Use Leaf Stone |
-| Pansear | Simisear | Use Fire Stone |
-| Panpour | Simipour | Use Water Stone |
-| Munna | Musharna | Use Moon Stone |
-| Pidove | Tranquill | Level 21 |
-| Tranquill | Unfezant | Level 32 (male) |
-| Tranquill | Unfezant (form 1) | Level 32 (female) |
-| Blitzle | Zebstrika | Level 27 |
-| Roggenrola | Boldore | Level 25 |
-| Boldore | Gigalith | Level 40 |
-| Woobat | Swoobat | High friendship |
-| Drilbur | Excadrill | Level 31 |
-| Timburr | Gurdurr | Level 25 |
-| Gurdurr | Conkeldurr | Level 40 |
-| Tympole | Palpitoad | Level 25 |
-| Palpitoad | Seismitoad | Level 36 |
-| Sewaddle | Swadloon | Level 20 |
-| Swadloon | Leavanny | High friendship |
-| Venipede | Whirlipede | Level 22 |
-| Whirlipede | Scolipede | Level 30 |
-| Cottonee | Whimsicott | Use Sun Stone |
-| Petilil | Lilligant | Use Sun Stone |
-| Sandile | Krokorok | Level 29 |
-| Krokorok | Krookodile | Level 40 |
-| Darumaka | Darmanitan | Level 35 |
-| Dwebble | Crustle | Level 34 |
-| Scraggy | Scrafty | Level 39 |
-| Yamask | Cofagrigus | Level 34 |
-| Tirtouga | Carracosta | Level 37 |
-| Archen | Archeops | Level 37 |
-| Trubbish | Garbodor | Level 36 |
-| Zorua | Zoroark | Level 30 |
-| Minccino | Cinccino | Use Shiny Stone |
-| Gothita | Gothorita | Level 32 |
-| Gothorita | Gothitelle | Level 41 |
-| Solosis | Duosion | Level 32 |
-| Duosion | Reuniclus | Level 41 |
-| Ducklett | Swanna | Level 35 |
-| Vanillite | Vanillish | Level 35 |
-| Vanillish | Vanilluxe | Level 47 |
-| Deerling | Sawsbuck | Level 34 |
-| Karrablast | Escavalier | Level 36 |
-| Karrablast | Escavalier | Level up with Shelmet in the party |
-| Foongus | Amoonguss | Level 39 |
-| Frillish | Jellicent | Level 40 (male) |
-| Joltik | Galvantula | Level 36 |
-| Ferroseed | Ferrothorn | Level 40 |
-| Klink | Klang | Level 38 |
-| Klang | Klinklang | Level 49 |
-| Tynamo | Eelektrik | Level 39 |
-| Eelektrik | Eelektross | Use Thunder Stone |
-| Elgyem | Beheeyem | Level 42 |
-| Litwick | Lampent | Level 41 |
-| Lampent | Chandelure | Use Dusk Stone |
-| Axew | Fraxure | Level 38 |
-| Fraxure | Haxorus | Level 48 |
-| Cubchoo | Beartic | Level 37 |
-| Shelmet | Accelgor | Level 36 |
-| Shelmet | Accelgor | Level up with Karrablast in the party |
-| Mienfoo | Mienshao | Level 50 |
-| Golett | Golurk | Level 43 |
-| Pawniard | Bisharp | Level 52 |
-| Bisharp | Kingambit | Configured form argument 3 |
-| Rufflet | Braviary | Level 54 |
-| Vullaby | Mandibuzz | Level 54 |
-| Deino | Zweilous | Level 50 |
-| Zweilous | Hydreigon | Level 64 |
-| Larvesta | Volcarona | Level 59 |
-| Chespin | Quilladin | Level 16 |
-| Quilladin | Chesnaught | Level 36 |
-| Fennekin | Braixen | Level 16 |
-| Braixen | Delphox | Level 36 |
-| Froakie | Frogadier | Level 16 |
-| Frogadier | Greninja | Level 36 |
-| Bunnelby | Diggersby | Level 20 |
-| Fletchling | Flechinder | Level 17 |
-| Flechinder | Talonflame | Level 35 |
-| Scatterbug | Spewpa | Level 9 |
-| Spewpa | Vivillon | Level 12 |
-| Litleo | Pyroar | Level 35 (male) |
-| Litleo | Pyroar (form 1) | Level 35 (female) |
-| Flabébé | Floette | Level 19 |
-| Floette | Florges | Use Shiny Stone |
-| Skiddo | Gogoat | Level 32 |
-| Pancham | Pangoro | Level Nidoran♂ with a Dark-type Pokémon in the party |
-| Espurr | Meowstic | Level 25 (male) |
-| Espurr | Meowstic (form 1) | Level 25 (female) |
-| Honedge | Doublade | Level 35 |
-| Doublade | Aegislash | Use Dusk Stone |
-| Spritzee | Aromatisse | Level 36 |
-| Swirlix | Slurpuff | Level 36 |
-| Inkay | Malamar | Level 30 |
-| Binacle | Barbaracle | Level 39 |
-| Skrelp | Dragalge | Level 48 |
-| Clauncher | Clawitzer | Level 37 |
-| Helioptile | Heliolisk | Use Sun Stone |
-| Tyrunt | Tyrantrum | Level 39 during the day |
-| Amaura | Aurorus | Level 39 |
-| Goomy | Sliggoo | Level 40 |
-| Sliggoo | Goodra | Level 50 while it is raining |
-| Phantump | Trevenant | Level 36 |
-| Pumpkaboo | Gourgeist | Level 36 |
-| Bergmite | Avalugg | Level 37 |
-| Noibat | Noivern | Level 48 |
-| Rowlet | Dartrix | Level 17 |
-| Dartrix | Decidueye | Level 34 |
-| Litten | Torracat | Level 17 |
-| Torracat | Incineroar | Level 34 |
-| Popplio | Brionne | Level 17 |
-| Brionne | Primarina | Level 34 |
-| Pikipek | Trumbeak | Level 14 |
-| Trumbeak | Toucannon | Level 28 |
-| Yungoos | Gumshoos | Level 20 during the day |
-| Grubbin | Charjabug | Level 20 |
-| Charjabug | Vikavolt | Level up in a magnetic field |
-| Charjabug | Vikavolt | Use Thunder Stone |
-| Crabrawler | Crabomnabl | Use Ice Stone |
-| Cutiefly | Ribombee | Level 25 |
-| Rockruff | Lycanroc | Level 25 during the day |
-| Rockruff | Lycanroc (form 1) | Level 25 at night |
-| Mareanie | Toxapex | Level 38 |
-| Mudbray | Mudsdale | Level 30 |
-| Dewpider | Araquanid | Level 22 |
-| Fomantis | Lurantis | Level 34 during the day |
-| Morelull | Shiinotic | Level 24 |
-| Salandit | Salazzle | Level 33 (female) |
-| Stufful | Bewear | Level 27 |
-| Bounsweet | Steenee | Level 18 |
-| Steenee | Tsareena | Level up knowing Stomp |
-| Wimpod | Golisopod | Level 30 |
-| Sandygast | Palossand | Level 42 |
-| Type: Null | Silvally | High friendship |
-| Jangmo-o | Hakamo-o | Level 35 |
-| Hakamo-o | Kommo-o | Level 45 |
-| Cosmog | Cosmoem | Level 43 |
-| Cosmoem | Solgaleo | Level 53 during the day |
-| Cosmoem | Lunala | Level 53 at night |
-| Poipole | Naganadel | Level up knowing Dragon Pulse |
-| Grookey | Thwackey | Level 16 |
-| Thwackey | Rillaboom | Level 35 |
-| Scorbunny | Raboot | Level 16 |
-| Raboot | Cinderace | Level 35 |
-| Sobble | Drizzile | Level 16 |
-| Drizzile | Inteleon | Level 35 |
-| Skwovet | Greedent | Level 24 |
-| Rookidee | Corvsquire | Level 18 |
-| Corvsquire | Corviknite | Level 38 |
-| Blipbug | Dottler | Level 10 |
-| Dottler | Orbeetle | Level 30 |
-| Nickit | Thievul | Level 18 |
-| Gossifleur | Eldegoss | Level 20 |
-| Wooloo | Dubwool | Level 24 |
-| Chewtle | Drednaw | Level 22 |
-| Yamper | Boltund | Level 25 |
-| Rolycoly | Carkol | Level 18 |
-| Carkol | Coalossal | Level 34 |
-| Applin | Flapple | Use Tart Apple |
-| Applin | Appletun | Use Sweet Apple |
-| Applin | Dipplin | Use Syrupy Apple |
-| Silicobra | Sandaconda | Level 36 |
-| Arrokuda | Baraskewda | Level 26 |
-| Toxel | Toxtricity | Level 30 with an Amped-form nature |
-| Toxel | Toxtricity (form 1) | Level 30 with a Low Key-form nature |
-| Sizzlipede | Centskorch | Level 28 |
-| Clobbopus | Grapploct | Level up knowing Taunt |
-| Sinistea | Poltegeist | Use Cracked Pot |
-| Hatenna | Hattrem | Level 32 |
-| Hattrem | Hatterene | Level 42 |
-| Impidimp | Morgrem | Level 32 |
-| Morgrem | Grimmsnarl | Level 42 |
-| Milcery | Alcremie | Spin clockwise for under 5 seconds during the day |
-| Milcery | Alcremie (form 1) | Spin counterclockwise for under 5 seconds during the day |
-| Milcery | Alcremie (form 2) | Spin clockwise for under 5 seconds at night |
-| Milcery | Alcremie (form 3) | Spin counterclockwise for over 5 seconds at night |
-| Milcery | Alcremie (form 4) | Spin clockwise for over 5 seconds at night |
-| Milcery | Alcremie (form 5) | Spin counterclockwise for under 5 seconds at night |
-| Milcery | Alcremie (form 6) | Spin counterclockwise for over 5 seconds during the day |
-| Milcery | Alcremie (form 7) | Spin clockwise for over 5 seconds during the day |
-| Milcery | Alcremie (form 8) | Spin for over 10 seconds in the evening |
-| Snom | Frosmoth | High friendship at night |
-| Cufant | Copperajah | Level 34 |
-| Duraludon | Archaludon | Use Metal Alloy |
-| Dreepy | Drakloak | Level 50 |
-| Drakloak | Dragapult | Level 60 |
-| Kubfu | Urshifu | Use Scroll of Darkness |
-| Kubfu | Urshifu (form 1) | Use Scroll of Waters |
-| Sprigatito | Floragato | Level 16 |
-| Floragato | Mewscarada | Level 36 |
-| Fuecoco | Crocalor | Level 16 |
-| Crocalor | Skeledirge | Level 36 |
-| Quaxly | Quaxwell | Level 16 |
-| Quaxwell | Quaquaval | Level 36 |
-| Lechonk | Oinkologne | Level 18 (male) |
-| Lechonk | Oinkologne (form 1) | Level 18 (female) |
-| Tarountula | Spidops | Level 15 |
-| Nymble | Lokix | Level 24 |
-| Pawmi | Pawmo | Level 18 |
-| Pawmo | Pawmot | Walk 0 steps using the following mechanic, then level up |
-| Tandemaus | Maushold | Level 25 |
-| Fidough | Dachsbun | Level 26 |
-| Smoliv | Dolliv | Level 25 |
-| Dolliv | Arboliva | Level 35 |
-| Nacli | Naclstack | Level 24 |
-| Naclstack | Garganacl | Level 38 |
-| Charcadet | Armarouge | Use Auspicious Armor |
-| Charcadet | Ceruledge | Use Malicious Armor |
-| Tadbulb | Bellibolt | Use Thunder Stone |
-| Wattrel | Kilowatrel | Level 25 |
-| Maschiff | Mabosstiff | Level 30 |
-| Shroodle | Grafaiai | Level 28 |
-| Bramblin | Bramblgast | Walk 0 steps using the following mechanic, then level up |
-| Toedscool | Toedscruel | Level 30 |
-| Capsakid | Scovillain | Use Fire Stone |
-| Rellor | Rabsca | Walk 0 steps using the following mechanic, then level up |
-| Flittle | Espathra | Level 35 |
-| Tinkatink | Tinkatuff | Level 24 |
-| Tinkatuff | Tinkaton | Level 38 |
-| Wiglett | Wugtrio | Level 26 |
-| Finizen | Palafin | Level 38 |
-| Varoom | Revavroom | Level 40 |
-| Glimmet | Glimmora | Level 35 |
-| Greavard | Houndstone | Level 30 at night |
-| Cetoddle | Cetitan | Use Ice Stone |
-| Frigibax | Arctibax | Level 35 |
-| Arctibax | Baxcalibur | Level 54 |
-| Gimmighoul | Gholdengo | Configured form argument 999 |
-| Dipplin | Hydrapple | Level up knowing Dragon Cheer |
-| Polchgeist | Sinistcha | Use Cracked Pot |
-| Rattata Alolan | Raticate (form 1) | Level 20 at night |
-| Sandshrew Alolan | Sandslash (form 1) | Use Ice Stone |
-| Vulpix Alolan | Ninetales (form 1) | Use Ice Stone |
-| Diglett Alolan | Dugtrio (form 1) | Level 26 |
-| Meowth Alolan | Persian (form 1) | High friendship |
-| Geodude Alolan | Graveler (form 1) | Level 25 |
-| Graveler Alolan | Golem (form 1) | Level 36 |
-| Graveler Alolan | Golem (form 1) | Use Linking Cord |
-| Grimer Alolan | Muk (form 1) | Level 38 |
-| Meowth Galarian | Perrserker | Level 28 |
-| Ponyta Galarian | Rapidash (form 1) | Level 40 |
-| Slowpoke Galarian | Slowbro (form 2) | Use Galarica Cuff |
-| Slowpoke Galarian | Slowking (form 1) | Use Galarica Wreath |
-| Farfetch'd Galarian | Sirfetch’d | Land 3 critical hits in one battle, then level up |
-| Mr. Mime Galarian | Mr. Rime | Level 42 |
-| Corsola Galarian | Cursola | Level 38 |
-| Zigzagoon Galarian | Linoone (form 1) | Level 20 |
-| Linoone Galarian | Obstagoon | Level 35 |
-| Darumaka Galarian | Darmanitan (form 1) | Use Ice Stone |
-| Yamask Galarian | Runerigus | Level up after taking 49 damage without fainting |
-| Shellos East Sea | Gastrodon | Level 30 |
-| Basculin White Striped | Basclegion | Level 0 (male) |
-| Basculin White Striped | Basclegion (form 1) | Level 0 (female) |
-| Deerling Summer | Sawsbuck | Level 34 |
-| Deerling Autumn | Sawsbuck | Level 34 |
-| Deerling Winter | Sawsbuck | Level 34 |
-| Flabébé Yellow Flower | Floette | Level 19 |
-| Flabébé Orange Flower | Floette | Level 19 |
-| Flabébé Blue Flower | Floette | Level 19 |
-| Flabébé White Flower | Floette | Level 19 |
-| Floette Yellow Flower | Florges | Use Shiny Stone |
-| Floette Orange Flower | Florges | Use Shiny Stone |
-| Floette Blue Flower | Florges | Use Shiny Stone |
-| Floette White Flower | Florges | Use Shiny Stone |
-| Pumpkaboo Small | Gourgeist | Level 36 |
-| Pumpkaboo Large | Gourgeist | Level 36 |
-| Pumpkaboo Super | Gourgeist | Level 36 |
-| Rockruff Own Tempo | Lycanroc (form 2) | Level 25 at dusk |
-| Sinistea Antique | Poltegeist | Use Chipped Pot |
-| Growlithe Hisuian | Arcanine (form 1) | Use Fire Stone |
-| Voltorb Hisuian | Electrode (form 1) | Use Leaf Stone |
-| Qwilfish Hisuian | Overqwil | Level up knowing Barb Barrage |
-| Sneasel Hisuian | Sneasler | Use Razor Claw during the day |
-| Zorua Hisuian | Zoroark (form 1) | Level 30 |
-| Sliggoo Hisuian | Goodra (form 1) | Level 50 while it is raining |
-| Frillish Female | Jellicent (form 1) | Level 40 (female) |
-| Wooper Paldean | Clodsire | Level 20 |
-| Poltchageist Masterpiece | Sinistcha | Use Chipped Pot |
-
-## Mega Evolution entries
-
-Mega Evolution requires the Mega Ring activation and usually the matching held Mega Stone. Rayquaza instead requires Dragon Ascent.
-
-| Pokémon | Mega form | Requirement |
-| --- | --- | --- |
-| Venusaur | Mega Venusaur | Mega Stone |
-| Charizard | Mega Charizard X | Mega Stone |
-| Charizard | Mega Charizard Y | Mega Stone |
-| Blastoise | Mega Blastoise | Mega Stone |
-| Beedrill | Mega Beedrill | Mega Stone |
-| Pidgeot | Mega Pidgeot | Mega Stone |
-| Alakazam | Mega Alakazam | Mega Stone |
-| Slowbro | Mega Slowbro | Mega Stone |
-| Gengar | Mega Gengar | Mega Stone |
-| Kangaskhan | Mega Kangaskhan | Mega Stone |
-| Pinsir | Mega Pinsir | Mega Stone |
-| Gyarados | Mega Gyarados | Mega Stone |
-| Aerodactyl | Mega Aerodactyl | Mega Stone |
-| Mewtwo | Mega Mewtwo X | Mega Stone |
-| Mewtwo | Mega Mewtwo Y | Mega Stone |
-| Meganium | Meganium | Form |
-| Ampharos | Mega Ampharos | Mega Stone |
-| Steelix | Mega Steelix | Mega Stone |
-| Scizor | Mega Scizor | Mega Stone |
-| Heracross | Mega Heracross | Mega Stone |
-| Houndoom | Mega Houndoom | Mega Stone |
-| Tyranitar | Mega Tyranitar | Mega Stone |
-| Sceptile | Mega Sceptile | Mega Stone |
-| Blaziken | Mega Blaziken | Mega Stone |
-| Swampert | Mega Swampert | Mega Stone |
-| Gardevoir | Mega Gardevoir | Mega Stone |
-| Sableye | Mega Sableye | Mega Stone |
-| Mawile | Mega Mawile | Mega Stone |
-| Aggron | Mega Aggron | Mega Stone |
-| Medicham | Mega Medicham | Mega Stone |
-| Manectric | Mega Manectric | Mega Stone |
-| Sharpedo | Mega Sharpedo | Mega Stone |
-| Camerupt | Mega Camerupt | Mega Stone |
-| Altaria | Mega Altaria | Mega Stone |
-| Castform | Castform Sunny | Form |
-| Castform | Castform Rainy | Form |
-| Banette | Mega Banette | Mega Stone |
-| Absol | Mega Absol | Mega Stone |
-| Glalie | Mega Glalie | Mega Stone |
-| Salamence | Mega Salamence | Mega Stone |
-| Metagross | Mega Metagross | Mega Stone |
-| Latias | Mega Latias | Mega Stone |
-| Latios | Mega Latios | Mega Stone |
-| Kyogre | Primal Kyogre | Primal |
-| Groudon | Primal Groudon | Primal |
-| Rayquaza | Mega Rayquaza | Mega Stone |
-| Cherrim | Cherrim Sunshine | Form |
-| Lopunny | Mega Lopunny | Mega Stone |
-| Garchomp | Mega Garchomp | Mega Stone |
-| Lucario | Mega Lucario | Mega Stone |
-| Abomasnow | Mega Abomasnow | Mega Stone |
-| Gallade | Mega Gallade | Mega Stone |
-| Audino | Mega Audino | Mega Stone |
-| Darmanitan | Darmanitan Zen Mode | Form |
-| Darmanitan | Darmanitan Zen Mode Galarian | Form |
-| Meloetta | Meloetta Pirouette | Form |
-| Greninja | Greninja Ash | Form |
-| Aegislash | Aegislash Blade | Form |
-| Xerneas | Xerneas Active | Form |
-| Zygarde | Zygarde 10 Complete | Form |
-| Zygarde | Zygarde 50 Complete | Form |
-| Diancie | Mega Diancie | Mega Stone |
-| Wishiwashi | Wishiwashi School | Form |
-| Minior | Minior Core Red | Form |
-| Minior | Minior Core Orange | Form |
-| Mimikyu | Mimikyu Busted | Form |
-| Mimikyu | Mimikyu Busted Large | Form |
-| Necrozma | Necrozma Ultra Dusk Mane | Form |
-| Necrozma | Necrozma Ultra Dawn Wings | Form |
-| Cramorant | Cramorant Gulping | Form |
-| Cramorant | Cramorant Gorging | Form |
-| Eiscue | Eiscue Noice Face | Form |
-| Morpeko | Morpeko Hangry | Form |
-| Zacian | Zacian Crowned | Form |
-| Zamazenta | Zamazenta Crowned | Form |
-| Eternatus | Eternatus Eternamax | Form |
-| Palafin | Palafin Hero | Form |
-| Ogerpon | Ogerpon Teal Mask Terastal | Form |
-| Ogerpon | Ogerpon Wellspring Mask Terastal | Form |
-| Terapagos | Terapagos Terastal | Form |
-| Terapagos | Terapagos Stellar | Form |
-| Mega Venusaur | Mega Venusaur | Mega Stone |
-| Mega Charizard X | Mega Charizard X | Mega Stone |
-| Mega Charizard Y | Mega Charizard Y | Mega Stone |
-| Mega Blastoise | Mega Blastoise | Mega Stone |
-| Mega Beedrill | Mega Beedrill | Mega Stone |
-| Mega Pidgeot | Mega Pidgeot | Mega Stone |
-| Mega Alakazam | Mega Alakazam | Mega Stone |
-| Mega Slowbro | Mega Slowbro | Mega Stone |
-| Mega Gengar | Mega Gengar | Mega Stone |
-| Mega Kangaskhan | Mega Kangaskhan | Mega Stone |
-| Mega Pinsir | Mega Pinsir | Mega Stone |
-| Mega Gyarados | Mega Gyarados | Mega Stone |
-| Mega Aerodactyl | Mega Aerodactyl | Mega Stone |
-| Mega Mewtwo X | Mega Mewtwo X | Mega Stone |
-| Mega Mewtwo Y | Mega Mewtwo Y | Mega Stone |
-| Mega Ampharos | Mega Ampharos | Mega Stone |
-| Mega Steelix | Mega Steelix | Mega Stone |
-| Mega Scizor | Mega Scizor | Mega Stone |
-| Mega Heracross | Mega Heracross | Mega Stone |
-| Mega Houndoom | Mega Houndoom | Mega Stone |
-| Mega Tyranitar | Mega Tyranitar | Mega Stone |
-| Mega Sceptile | Mega Sceptile | Mega Stone |
-| Mega Blaziken | Mega Blaziken | Mega Stone |
-| Mega Swampert | Mega Swampert | Mega Stone |
-| Mega Gardevoir | Mega Gardevoir | Mega Stone |
-| Mega Sableye | Mega Sableye | Mega Stone |
-| Mega Mawile | Mega Mawile | Mega Stone |
-| Mega Aggron | Mega Aggron | Mega Stone |
-| Mega Medicham | Mega Medicham | Mega Stone |
-| Mega Manectric | Mega Manectric | Mega Stone |
-| Mega Sharpedo | Mega Sharpedo | Mega Stone |
-| Mega Camerupt | Mega Camerupt | Mega Stone |
-| Mega Altaria | Mega Altaria | Mega Stone |
-| Mega Banette | Mega Banette | Mega Stone |
-| Mega Absol | Mega Absol | Mega Stone |
-| Mega Glalie | Mega Glalie | Mega Stone |
-| Mega Salamence | Mega Salamence | Mega Stone |
-| Mega Metagross | Mega Metagross | Mega Stone |
-| Mega Latias | Mega Latias | Mega Stone |
-| Mega Latios | Mega Latios | Mega Stone |
-| Mega Rayquaza | Mega Rayquaza | Mega Stone |
-| Mega Lopunny | Mega Lopunny | Mega Stone |
-| Mega Garchomp | Mega Garchomp | Mega Stone |
-| Mega Lucario | Mega Lucario | Mega Stone |
-| Mega Abomasnow | Mega Abomasnow | Mega Stone |
-| Mega Gallade | Mega Gallade | Mega Stone |
-| Mega Audino | Mega Audino | Mega Stone |
-| Mega Diancie | Mega Diancie | Mega Stone |
-| Primal Kyogre | Primal Kyogre | Primal |
-| Primal Groudon | Primal Groudon | Primal |
-| Rattata Alolan | Rattata Alolan | Form |
-| Raticate Alolan | Raticate Alolan | Form |
-| Raichu Alolan | Raichu Alolan | Form |
-| Sandshrew Alolan | Sandshrew Alolan | Form |
-| Sandslash Alolan | Sandslash Alolan | Form |
-| Vulpix Alolan | Vulpix Alolan | Form |
-| Ninetales Alolan | Ninetales Alolan | Form |
-| Diglett Alolan | Diglett Alolan | Form |
-| Dugtrio Alolan | Dugtrio Alolan | Form |
-| Meowth Alolan | Meowth Alolan | Form |
-| Persian Alolan | Persian Alolan | Form |
-| Geodude Alolan | Geodude Alolan | Form |
-| Graveler Alolan | Graveler Alolan | Form |
-| Golem Alolan | Golem Alolan | Form |
-| Grimer Alolan | Grimer Alolan | Form |
-| Muk Alolan | Muk Alolan | Form |
-| Exeggutor Alolan | Exeggutor Alolan | Form |
-| Marowak Alolan | Marowak Alolan | Form |
-| Raticate Alolan Large | Raticate Alolan Large | Form |
-| Marowak Alolan Large | Marowak Alolan Large | Form |
-| Gumshoos Large | Gumshoos Large | Form |
-| Vikavolt Large | Vikavolt Large | Form |
-| Ribombee Large | Ribombee Large | Form |
-| Araquanid Large | Araquanid Large | Form |
-| Lurantis Large | Lurantis Large | Form |
-| Salazzle Large | Salazzle Large | Form |
-| Togedemaru Large | Togedemaru Large | Form |
-| Mimikyu Large | Mimikyu Large | Form |
-| Mimikyu Busted Large | Mimikyu Busted Large | Form |
-| Kommo O Large | Kommo O Large | Form |
-| Meowth Galarian | Meowth Galarian | Form |
-| Ponyta Galarian | Ponyta Galarian | Form |
-| Rapidash Galarian | Rapidash Galarian | Form |
-| Slowpoke Galarian | Slowpoke Galarian | Form |
-| Slowbro Galarian | Slowbro Galarian | Form |
-| Farfetchd Galarian | Farfetchd Galarian | Form |
-| Weezing Galarian | Weezing Galarian | Form |
-| Mr Mime Galarian | Mr Mime Galarian | Form |
-| Articuno Galarian | Articuno Galarian | Form |
-| Zapdos Galarian | Zapdos Galarian | Form |
-| Moltres Galarian | Moltres Galarian | Form |
-| Slowking Galarian | Slowking Galarian | Form |
-| Corsola Galarian | Corsola Galarian | Form |
-| Zigzagoon Galarian | Zigzagoon Galarian | Form |
-| Linoone Galarian | Linoone Galarian | Form |
-| Darumaka Galarian | Darumaka Galarian | Form |
-| Darmanitan Galarian | Darmanitan Galarian | Form |
-| Yamask Galarian | Yamask Galarian | Form |
-| Stunfisk Galarian | Stunfisk Galarian | Form |
-| Pikachu Cosplay | Pikachu Cosplay | Form |
-| Pikachu Rock Star | Pikachu Rock Star | Form |
-| Pikachu Belle | Pikachu Belle | Form |
-| Pikachu Pop Star | Pikachu Pop Star | Form |
-| Pikachu Ph D | Pikachu Ph D | Form |
-| Pikachu Libre | Pikachu Libre | Form |
-| Pikachu Original Cap | Pikachu Original Cap | Form |
-| Pikachu Hoenn Cap | Pikachu Hoenn Cap | Form |
-| Pikachu Sinnoh Cap | Pikachu Sinnoh Cap | Form |
-| Pikachu Unova Cap | Pikachu Unova Cap | Form |
-| Pikachu Kalos Cap | Pikachu Kalos Cap | Form |
-| Pikachu Alola Cap | Pikachu Alola Cap | Form |
-| Pikachu Partner Cap | Pikachu Partner Cap | Form |
-| Pikachu World Cap | Pikachu World Cap | Form |
-| Castform Sunny | Castform Sunny | Form |
-| Castform Rainy | Castform Rainy | Form |
-| Castform Snowy | Castform Snowy | Form |
-| Cherrim Sunshine | Cherrim Sunshine | Form |
-| Shellos East Sea | Shellos East Sea | Form |
-| Gastrodon East Sea | Gastrodon East Sea | Form |
-| Dialga Origin | Dialga Origin | Form |
-| Palkia Origin | Palkia Origin | Form |
-| Basculin Blue Striped | Basculin Blue Striped | Form |
-| Basculin White Striped | Basculin White Striped | Form |
-| Darmanitan Zen Mode | Darmanitan Zen Mode | Form |
-| Darmanitan Zen Mode Galarian | Darmanitan Zen Mode Galarian | Form |
-| Deerling Summer | Deerling Summer | Form |
-| Deerling Autumn | Deerling Autumn | Form |
-| Deerling Winter | Deerling Winter | Form |
-| Sawsbuck Summer | Sawsbuck Summer | Form |
-| Sawsbuck Autumn | Sawsbuck Autumn | Form |
-| Sawsbuck Winter | Sawsbuck Winter | Form |
-| Tornadus Therian | Tornadus Therian | Form |
-| Thundurus Therian | Thundurus Therian | Form |
-| Landorus Therian | Landorus Therian | Form |
-| Kyurem White | Kyurem White | Form |
-| Kyurem Black | Kyurem Black | Form |
-| Keldeo Resolute | Keldeo Resolute | Form |
-| Meloetta Pirouette | Meloetta Pirouette | Form |
-| Genesect Douse Drive | Genesect Douse Drive | Form |
-| Genesect Shock Drive | Genesect Shock Drive | Form |
-| Genesect Burn Drive | Genesect Burn Drive | Form |
-| Genesect Chill Drive | Genesect Chill Drive | Form |
-| Greninja Battle Bond | Greninja Battle Bond | Form |
-| Greninja Ash | Greninja Ash | Form |
-| Vivillon Polar | Vivillon Polar | Form |
-| Vivillon Tundra | Vivillon Tundra | Form |
-| Vivillon Continental | Vivillon Continental | Form |
-| Vivillon Garden | Vivillon Garden | Form |
-| Vivillon Elegant | Vivillon Elegant | Form |
-| Vivillon Meadow | Vivillon Meadow | Form |
-| Vivillon Modern | Vivillon Modern | Form |
-| Vivillon Marine | Vivillon Marine | Form |
-| Vivillon Archipelago | Vivillon Archipelago | Form |
-| Vivillon High Plains | Vivillon High Plains | Form |
-| Vivillon Sandstorm | Vivillon Sandstorm | Form |
-| Vivillon River | Vivillon River | Form |
-| Vivillon Monsoon | Vivillon Monsoon | Form |
-| Vivillon Savanna | Vivillon Savanna | Form |
-| Vivillon Sun | Vivillon Sun | Form |
-| Vivillon Ocean | Vivillon Ocean | Form |
-| Vivillon Jungle | Vivillon Jungle | Form |
-| Vivillon Fancy | Vivillon Fancy | Form |
-| Vivillon Poke Ball | Vivillon Poke Ball | Form |
-| Flabebe Yellow Flower | Flabebe Yellow Flower | Form |
-| Flabebe Orange Flower | Flabebe Orange Flower | Form |
-| Flabebe Blue Flower | Flabebe Blue Flower | Form |
-| Flabebe White Flower | Flabebe White Flower | Form |
-| Floette Yellow Flower | Floette Yellow Flower | Form |
-| Floette Orange Flower | Floette Orange Flower | Form |
-| Floette Blue Flower | Floette Blue Flower | Form |
-| Floette White Flower | Floette White Flower | Form |
-| Floette Eternal Flower | Floette Eternal Flower | Form |
-| Florges Yellow Flower | Florges Yellow Flower | Form |
-| Florges Orange Flower | Florges Orange Flower | Form |
-| Florges Blue Flower | Florges Blue Flower | Form |
-| Florges White Flower | Florges White Flower | Form |
-| Furfrou Heart | Furfrou Heart | Form |
-| Furfrou Star | Furfrou Star | Form |
-| Furfrou Diamond | Furfrou Diamond | Form |
-| Furfrou Debutante | Furfrou Debutante | Form |
-| Furfrou Matron | Furfrou Matron | Form |
-| Furfrou Dandy | Furfrou Dandy | Form |
-| Furfrou La Reine | Furfrou La Reine | Form |
-| Furfrou Kabuki | Furfrou Kabuki | Form |
-| Furfrou Pharaoh | Furfrou Pharaoh | Form |
-| Aegislash Blade | Aegislash Blade | Form |
-| Pumpkaboo Small | Pumpkaboo Small | Form |
-| Pumpkaboo Large | Pumpkaboo Large | Form |
-| Pumpkaboo Super | Pumpkaboo Super | Form |
-| Gourgeist Small | Gourgeist Small | Form |
-| Gourgeist Large | Gourgeist Large | Form |
-| Gourgeist Super | Gourgeist Super | Form |
-| Xerneas Active | Xerneas Active | Form |
-| Zygarde 10 | Zygarde 10 | Form |
-| Zygarde 10 Power Construct | Zygarde 10 Power Construct | Form |
-| Zygarde 50 Power Construct | Zygarde 50 Power Construct | Form |
-| Zygarde 10 Complete | Zygarde 10 Complete | Form |
-| Zygarde 50 Complete | Zygarde 50 Complete | Form |
-| Hoopa Unbound | Hoopa Unbound | Form |
-| Oricorio Pom Pom | Oricorio Pom Pom | Form |
-| Oricorio Pau | Oricorio Pau | Form |
-| Oricorio Sensu | Oricorio Sensu | Form |
-| Rockruff Own Tempo | Rockruff Own Tempo | Form |
-| Lycanroc Midnight | Lycanroc Midnight | Form |
-| Lycanroc Dusk | Lycanroc Dusk | Form |
-| Wishiwashi School | Wishiwashi School | Form |
-| Minior Meteor Orange | Minior Meteor Orange | Form |
-| Minior Meteor Yellow | Minior Meteor Yellow | Form |
-| Minior Meteor Green | Minior Meteor Green | Form |
-| Minior Meteor Blue | Minior Meteor Blue | Form |
-| Minior Meteor Indigo | Minior Meteor Indigo | Form |
-| Minior Meteor Violet | Minior Meteor Violet | Form |
-| Minior Core Red | Minior Core Red | Form |
-| Minior Core Orange | Minior Core Orange | Form |
-| Minior Core Yellow | Minior Core Yellow | Form |
-| Minior Core Green | Minior Core Green | Form |
-| Minior Core Blue | Minior Core Blue | Form |
-| Minior Core Indigo | Minior Core Indigo | Form |
-| Minior Core Violet | Minior Core Violet | Form |
-| Mimikyu Busted | Mimikyu Busted | Form |
-| Necrozma Dusk Mane | Necrozma Dusk Mane | Form |
-| Necrozma Dawn Wings | Necrozma Dawn Wings | Form |
-| Necrozma Ultra Dusk Mane | Necrozma Ultra Dusk Mane | Form |
-| Necrozma Ultra Dawn Wings | Necrozma Ultra Dawn Wings | Form |
-| Magearna Original | Magearna Original | Form |
-| Pikachu Partner | Pikachu Partner | Form |
-| Eevee Partner | Eevee Partner | Form |
-| Cramorant Gulping | Cramorant Gulping | Form |
-| Cramorant Gorging | Cramorant Gorging | Form |
-| Toxtricity Low Key | Toxtricity Low Key | Form |
-| Sinistea Antique | Sinistea Antique | Form |
-| Polteageist Antique | Polteageist Antique | Form |
-| Alcremie Berry Sweet | Alcremie Berry Sweet | Form |
-| Alcremie Love Sweet | Alcremie Love Sweet | Form |
-| Alcremie Star Sweet | Alcremie Star Sweet | Form |
-| Alcremie Clover Sweet | Alcremie Clover Sweet | Form |
-| Alcremie Flower Sweet | Alcremie Flower Sweet | Form |
-| Alcremie Ribbon Sweet | Alcremie Ribbon Sweet | Form |
-| Eiscue Noice Face | Eiscue Noice Face | Form |
-| Morpeko Hangry | Morpeko Hangry | Form |
-| Zacian Crowned | Zacian Crowned | Form |
-| Zamazenta Crowned | Zamazenta Crowned | Form |
-| Eternatus Eternamax | Eternatus Eternamax | Form |
-| Urshifu Rapid Strike | Urshifu Rapid Strike | Form |
-| Zarude Dada | Zarude Dada | Form |
-| Calyrex Ice Rider | Calyrex Ice Rider | Form |
-| Calyrex Shadow Rider | Calyrex Shadow Rider | Form |
-| Enamorus Therian | Enamorus Therian | Form |
-| Growlithe Hisuian | Growlithe Hisuian | Form |
-| Arcanine Hisuian | Arcanine Hisuian | Form |
-| Voltorb Hisuian | Voltorb Hisuian | Form |
-| Electrode Hisuian | Electrode Hisuian | Form |
-| Typhlosion Hisuian | Typhlosion Hisuian | Form |
-| Qwilfish Hisuian | Qwilfish Hisuian | Form |
-| Sneasel Hisuian | Sneasel Hisuian | Form |
-| Samurott Hisuian | Samurott Hisuian | Form |
-| Lilligant Hisuian | Lilligant Hisuian | Form |
-| Zorua Hisuian | Zorua Hisuian | Form |
-| Zoroark Hisuian | Zoroark Hisuian | Form |
-| Braviary Hisuian | Braviary Hisuian | Form |
-| Sliggoo Hisuian | Sliggoo Hisuian | Form |
-| Goodra Hisuian | Goodra Hisuian | Form |
-| Avalugg Hisuian | Avalugg Hisuian | Form |
-| Decidueye Hisuian | Decidueye Hisuian | Form |
-| Kleavor Lord | Kleavor Lord | Form |
-| Lilligant Lady | Lilligant Lady | Form |
-| Arcanine Lord | Arcanine Lord | Form |
-| Electrode Lord | Electrode Lord | Form |
-| Avalugg Lord | Avalugg Lord | Form |
-| Unfezant Female | Unfezant Female | Form |
-| Frillish Female | Frillish Female | Form |
-| Jellicent Female | Jellicent Female | Form |
-| Pyroar Female | Pyroar Female | Form |
-| Meowstic Female | Meowstic Female | Form |
-| Indeedee Female | Indeedee Female | Form |
-| Basculegion Female | Basculegion Female | Form |
-| Maushold Family Of Three | Maushold Family Of Three | Form |
-| Squawkabilly Blue Plumage | Squawkabilly Blue Plumage | Form |
-| Squawkabilly Yellow Plumage | Squawkabilly Yellow Plumage | Form |
-| Squawkabilly White Plumage | Squawkabilly White Plumage | Form |
-| Palafin Hero | Palafin Hero | Form |
-| Tatsugiri Droopy | Tatsugiri Droopy | Form |
-| Tatsugiri Stretchy | Tatsugiri Stretchy | Form |
-| Dudunsparce Three Segment | Dudunsparce Three Segment | Form |
-| Gimmighoul Roaming | Gimmighoul Roaming | Form |
-| Wooper Paldean | Wooper Paldean | Form |
-| Tauros Combat | Tauros Combat | Form |
-| Tauros Blaze | Tauros Blaze | Form |
-| Tauros Aqua | Tauros Aqua | Form |
-| Oinkologne Female | Oinkologne Female | Form |
-| Revavroom Segin | Revavroom Segin | Form |
-| Revavroom Schedar | Revavroom Schedar | Form |
-| Revavroom Navi | Revavroom Navi | Form |
-| Revavroom Ruchbah | Revavroom Ruchbah | Form |
-| Koraidon Limited Build | Koraidon Limited Build | Form |
-| Koraidon Sprinting Build | Koraidon Sprinting Build | Form |
-| Koraidon Swimming Build | Koraidon Swimming Build | Form |
-| Koraidon Gliding Build | Koraidon Gliding Build | Form |
-| Miraidon Low Power Mode | Miraidon Low Power Mode | Form |
-| Miraidon Drive Mode | Miraidon Drive Mode | Form |
-| Miraidon Aquatic Mode | Miraidon Aquatic Mode | Form |
-| Miraidon Glide Mode | Miraidon Glide Mode | Form |
-| Poltchageist Masterpiece | Poltchageist Masterpiece | Form |
-| Sinistcha Masterpiece | Sinistcha Masterpiece | Form |
-| Ogerpon Wellspring Mask | Ogerpon Wellspring Mask | Form |
-| Ogerpon Hearthflame Mask | Ogerpon Hearthflame Mask | Form |
-| Ogerpon Cornerstone Mask | Ogerpon Cornerstone Mask | Form |
-| Ogerpon Teal Mask Terastal | Ogerpon Teal Mask Terastal | Form |
-| Ogerpon Wellspring Mask Terastal | Ogerpon Wellspring Mask Terastal | Form |
-| Ogerpon Hearthflame Mask Terastal | Ogerpon Hearthflame Mask Terastal | Form |
-| Ogerpon Cornerstone Mask Terastal | Ogerpon Cornerstone Mask Terastal | Form |
-| Ursaluna Bloodmoon | Ursaluna Bloodmoon | Form |
-| Terapagos Terastal | Terapagos Terastal | Form |
-| Terapagos Stellar | Terapagos Stellar | Form |
+| From | Result | Configured requirement | Engine method |
+| --- | --- | --- | --- |
+| Abra | Kadabra | Lv 16 | EVO_LEVEL |
+| Aipom | Ambipom | Lv 34 | EVO_LEVEL |
+| Amaura | Aurorus | Lv 39 | EVO_LEVEL |
+| Anorith | Armaldo | Lv 40 | EVO_LEVEL |
+| Applin | Appletun | Sweet Apple | EVO_STONE |
+| Applin | Dipplin | Syrupy Apple | EVO_STONE |
+| Applin | Flapple | Tart Apple | EVO_STONE |
+| Archen | Archeops | Lv 37 | EVO_LEVEL |
+| Arctibax | Baxcalibur | Lv 54 | EVO_LEVEL |
+| Aron | Lairon | Lv 32 | EVO_LEVEL |
+| Arrokuda | Baraskewda | Lv 26 | EVO_LEVEL |
+| Axew | Fraxure | Lv 30 | EVO_LEVEL |
+| Azurill | Marill | Friendship | EVO_FRIENDSHIP |
+| Bagon | Shelgon | Lv 30 | EVO_LEVEL |
+| Baltoy | Claydol | Lv 36 | EVO_LEVEL |
+| Barboach | Whiscash | Lv 30 | EVO_LEVEL |
+| Basculin White Striped | Basclegion | Lv 30 · Male | EVO_LEVEL_MALE |
+| Basculin White Striped | Basclegion (form 1) | Lv 30 · Female | EVO_LEVEL_FEMALE |
+| Bayleef | Meganium | Lv 32 | EVO_LEVEL |
+| Beldum | Metang | Lv 20 | EVO_LEVEL |
+| Bellsprout | Weepinbell | Lv 21 | EVO_LEVEL |
+| Bergmite | Avalugg | Lv 37 | EVO_LEVEL |
+| Bergmite | Avalugg (form 1) | Dawn Stone | EVO_STONE |
+| Bidoof | Bibarel | Lv 15 | EVO_LEVEL |
+| Binacle | Barbaracle | Lv 39 | EVO_LEVEL |
+| Bisharp | Kingambit | Lv 45 | EVO_LEVEL |
+| Blipbug | Dottler | Lv 10 | EVO_LEVEL |
+| Blitzle | Zebstrika | Lv 27 | EVO_LEVEL |
+| Boldore | Gigalith | Lv 40 | EVO_LEVEL |
+| Bonsly | Sudowoodo | Knows Mimic | EVO_HAS_MOVE |
+| Bounsweet | Steenee | Lv 18 | EVO_LEVEL |
+| Braixen | Delphox | Lv 36 | EVO_LEVEL |
+| Bramblin | Bramblgast | Lv 30 | EVO_LEVEL |
+| Brionne | Primarina | Lv 34 | EVO_LEVEL |
+| Bronzor | Bronzong | Lv 33 | EVO_LEVEL |
+| Budew | Roselia | Lv 15 | EVO_LEVEL |
+| Buizel | Floatzel | Lv 26 | EVO_LEVEL |
+| Bulbasaur | Ivysaur | Lv 16 | EVO_LEVEL |
+| Buneary | Lopunny | Friendship | EVO_FRIENDSHIP |
+| Bunnelby | Diggersby | Lv 20 | EVO_LEVEL |
+| Burmy | Mothim | Lv 20 · Male | EVO_LEVEL_MALE |
+| Burmy | Wormadam | Lv 20 · Female | EVO_LEVEL_FEMALE |
+| Cacnea | Cacturne | Lv 32 | EVO_LEVEL |
+| Capsakid | Scovillain | Fire Stone | EVO_STONE |
+| Carkol | Coalossal | Lv 34 | EVO_LEVEL |
+| Carvanha | Sharpedo | Lv 30 | EVO_LEVEL |
+| Cascoon | Dustox | Lv 10 | EVO_LEVEL |
+| Caterpie | Metapod | Lv 7 | EVO_LEVEL |
+| Cetoddle | Cetitan | Ice Stone | EVO_STONE |
+| Chansey | Blissey | Lv 34 | EVO_LEVEL |
+| Charcadet | Armarouge | Auspicious Armor | EVO_STONE |
+| Charcadet | Ceruledge | Malicious Armor | EVO_STONE |
+| Charjabug | Vikavolt | Thunder Stone | EVO_STONE |
+| Charmander | Charmeleon | Lv 16 | EVO_LEVEL |
+| Charmeleon | Charizard | Lv 36 | EVO_LEVEL |
+| Cherubi | Cherrim | Lv 25 | EVO_LEVEL |
+| Chespin | Quilladin | Lv 16 | EVO_LEVEL |
+| Chewtle | Drednaw | Lv 22 | EVO_LEVEL |
+| Chikorita | Bayleef | Lv 16 | EVO_LEVEL |
+| Chimchar | Monferno | Lv 14 | EVO_LEVEL |
+| Chinchou | Lanturn | Lv 27 | EVO_LEVEL |
+| Chingling | Chimecho | Lv 28 | EVO_LEVEL |
+| Clamperl | Gorebyss | Lv 36 · Female | EVO_LEVEL_FEMALE |
+| Clamperl | Huntail | Lv 36 · Male | EVO_LEVEL_MALE |
+| Clauncher | Clawitzer | Lv 37 | EVO_LEVEL |
+| Clefairy | Clefable | Moon Stone | EVO_STONE |
+| Cleffa | Clefairy | Lv 15 | EVO_LEVEL |
+| Clobbopus | Grapploct | Knows Taunt | EVO_HAS_MOVE |
+| Combee | Vespiquen | Lv 21 · Female | EVO_LEVEL_FEMALE |
+| Combusken | Blaziken | Lv 36 | EVO_LEVEL |
+| Corphish | Crawdaunt | Lv 30 | EVO_LEVEL |
+| Corsola | Cursola | Lv 38 | EVO_LEVEL |
+| Corvsquire | Corviknite | Lv 38 | EVO_LEVEL |
+| Cosmoem | Lunala | Lv 55 · Night | EVO_LEVEL_NIGHT |
+| Cosmoem | Solgaleo | Lv 55 · Day | EVO_LEVEL_DAY |
+| Cosmog | Cosmoem | Lv 43 | EVO_LEVEL |
+| Cottonee | Whimsicott | Sun Stone | EVO_STONE |
+| Crabrawler | Crabomnabl | Ice Stone | EVO_STONE |
+| Cranidos | Rampardos | Lv 30 | EVO_LEVEL |
+| Croagunk | Toxicroak | Lv 37 | EVO_LEVEL |
+| Crocalor | Skeledirge | Lv 36 | EVO_LEVEL |
+| Croconaw | Feraligatr | Lv 30 | EVO_LEVEL |
+| Cubchoo | Beartic | Lv 37 | EVO_LEVEL |
+| Cubone | Marowak | Lv 28 | EVO_LEVEL |
+| Cubone | Marowak (form 1) | Dusk Stone | EVO_STONE |
+| Cufant | Copperajah | Lv 34 | EVO_LEVEL |
+| Cutiefly | Ribombee | Lv 25 | EVO_LEVEL |
+| Cyndaquil | Quilava | Lv 14 | EVO_LEVEL |
+| Dartrix | Decidueye | Lv 34 · Night | EVO_LEVEL_NIGHT |
+| Dartrix | Decidueye (form 1) | Lv 34 · Day | EVO_LEVEL_DAY |
+| Darumaka | Darmanitan | Lv 35 | EVO_LEVEL |
+| Darumaka | Darmanitan (form 1) | Ice Stone | EVO_STONE |
+| Deerling | Sawsbuck | Lv 34 | EVO_LEVEL |
+| Deerling Autumn | Sawsbuck | Lv 34 | EVO_LEVEL |
+| Deerling Summer | Sawsbuck Summer | Lv 34 | EVO_LEVEL |
+| Deerling Winter | Sawsbuck | Lv 34 | EVO_LEVEL |
+| Deino | Zweilous | Lv 30 | EVO_LEVEL |
+| Dewott | Samurott | Lv 36 · Day | EVO_LEVEL_DAY |
+| Dewott | Samurott (form 1) | Lv 36 · Night | EVO_LEVEL_NIGHT |
+| Dewpider | Araquanid | Lv 22 | EVO_LEVEL |
+| Diglett | Dugtrio | Lv 26 | EVO_LEVEL |
+| Diglett | Dugtrio (form 1) | Lv 26 | EVO_LEVEL |
+| Dipplin | Hydrapple | Knows Dragon Pulse | EVO_HAS_MOVE |
+| Doduo | Dodrio | Lv 31 | EVO_LEVEL |
+| Dolliv | Arboliva | Lv 35 | EVO_LEVEL |
+| Dottler | Orbeetle | Lv 30 | EVO_LEVEL |
+| Doublade | Aegislash | Dusk Stone | EVO_STONE |
+| Dragonair | Dragonite | Lv 55 | EVO_LEVEL |
+| Drakloak | Dragapult | Lv 50 | EVO_LEVEL |
+| Dratini | Dragonair | Lv 30 | EVO_LEVEL |
+| Dreepy | Drakloak | Lv 30 | EVO_LEVEL |
+| Drifloon | Drifblim | Lv 28 | EVO_LEVEL |
+| Drilbur | Excadrill | Lv 31 | EVO_LEVEL |
+| Drizzile | Inteleon | Lv 35 | EVO_LEVEL |
+| Drowzee | Hypno | Lv 26 | EVO_LEVEL |
+| Ducklett | Swanna | Lv 35 | EVO_LEVEL |
+| Dunsparce | Dudunspars | Knows Hyper Drill | EVO_HAS_MOVE |
+| Duosion | Reuniclus | Lv 41 | EVO_LEVEL |
+| Duraludon | Archaludon | Metal Alloy | EVO_STONE |
+| Dusclops | Dusknoir | Lv 42 | EVO_LEVEL |
+| Duskull | Dusclops | Lv 28 | EVO_LEVEL |
+| Dwebble | Crustle | Lv 34 | EVO_LEVEL |
+| Eelektrik | Eelektross | Thunder Stone | EVO_STONE |
+| Eevee | Espeon | Dawn Stone | EVO_STONE |
+| Eevee | Flareon | Fire Stone | EVO_STONE |
+| Eevee | Glaceon | Ice Stone | EVO_STONE |
+| Eevee | Jolteon | Thunder Stone | EVO_STONE |
+| Eevee | Leafeon | Leaf Stone | EVO_STONE |
+| Eevee | Sylveon | Shiny Stone | EVO_STONE |
+| Eevee | Umbreon | Dusk Stone | EVO_STONE |
+| Eevee | Vaporeon | Water Stone | EVO_STONE |
+| Ekans | Arbok | Lv 22 | EVO_LEVEL |
+| Electabuzz | Electivire | Lv 45 | EVO_LEVEL |
+| Electrike | Manectric | Lv 26 | EVO_LEVEL |
+| Elekid | Electabuzz | Lv 30 | EVO_LEVEL |
+| Elgyem | Beheeyem | Lv 42 | EVO_LEVEL |
+| Espurr | Meowstic | Lv 25 · Male | EVO_LEVEL_MALE |
+| Espurr | Meowstic (form 1) | Lv 25 · Female | EVO_LEVEL_FEMALE |
+| Exeggcute | Exeggutor | Leaf Stone | EVO_STONE |
+| Exeggcute | Exeggutor (form 1) | Sun Stone | EVO_STONE |
+| Farfetch’d | Sirfetch’d | 3 critical hits | EVO_AMOUNT_OF_CRITICAL_HITS |
+| Feebas | Milotic | Lv 34 | EVO_LEVEL |
+| Fennekin | Braixen | Lv 16 | EVO_LEVEL |
+| Ferroseed | Ferrothorn | Lv 40 | EVO_LEVEL |
+| Fidough | Dachsbun | Lv 26 | EVO_LEVEL |
+| Finizen | Palafin | Lv 38 | EVO_LEVEL |
+| Finneon | Lumineon | Lv 31 | EVO_LEVEL |
+| Flaaffy | Ampharos | Lv 30 | EVO_LEVEL |
+| Flabébé | Floette | Lv 19 | EVO_LEVEL |
+| Flabebe Blue Flower | Floette | Lv 19 | EVO_LEVEL |
+| Flabebe Orange Flower | Floette | Lv 19 | EVO_LEVEL |
+| Flabebe White Flower | Floette | Lv 19 | EVO_LEVEL |
+| Flabebe Yellow Flower | Floette | Lv 19 | EVO_LEVEL |
+| Flechinder | Talonflame | Lv 35 | EVO_LEVEL |
+| Fletchling | Flechinder | Lv 17 | EVO_LEVEL |
+| Flittle | Espathra | Lv 35 | EVO_LEVEL |
+| Floette | Florges | Shiny Stone | EVO_STONE |
+| Floette Blue Flower | Florges | Shiny Stone | EVO_STONE |
+| Floette Orange Flower | Florges | Shiny Stone | EVO_STONE |
+| Floette White Flower | Florges | Shiny Stone | EVO_STONE |
+| Floette Yellow Flower | Florges | Shiny Stone | EVO_STONE |
+| Floragato | Mewscarada | Lv 36 | EVO_LEVEL |
+| Fomantis | Lurantis | Lv 34 | EVO_LEVEL |
+| Foongus | Amoonguss | Lv 39 | EVO_LEVEL |
+| Fraxure | Haxorus | Lv 45 | EVO_LEVEL |
+| Frigibax | Arctibax | Lv 35 | EVO_LEVEL |
+| Frillish | Jellicent | Lv 40 · Male | EVO_LEVEL_MALE |
+| Frillish Female | Jellicent (form 1) | Lv 40 · Female | EVO_LEVEL_FEMALE |
+| Froakie | Frogadier | Lv 16 | EVO_LEVEL |
+| Frogadier | Greninja | Lv 36 | EVO_LEVEL |
+| Fuecoco | Crocalor | Lv 16 | EVO_LEVEL |
+| Gabite | Garchomp | Lv 48 | EVO_LEVEL |
+| Gastly | Haunter | Lv 25 | EVO_LEVEL |
+| Geodude | Graveler | Lv 25 | EVO_LEVEL |
+| Geodude | Graveler (form 1) | Lv 25 | EVO_LEVEL |
+| Gible | Gabite | Lv 24 | EVO_LEVEL |
+| Gimmighoul | Gholdengo | Form Argument · 999 | EVO_FORM_ARGUMENT |
+| Girafarig | Farigiraf | Knows Twin Beam | EVO_HAS_MOVE |
+| Glameow | Purugly | Lv 38 | EVO_LEVEL |
+| Gligar | Gliscor | Razor Fang | EVO_STONE |
+| Glimmet | Glimmora | Lv 35 | EVO_LEVEL |
+| Gloom | Bellossom | Sun Stone | EVO_STONE |
+| Gloom | Vileplume | Leaf Stone | EVO_STONE |
+| Golbat | Crobat | Lv 38 | EVO_LEVEL |
+| Goldeen | Seaking | Lv 33 | EVO_LEVEL |
+| Golett | Golurk | Lv 43 | EVO_LEVEL |
+| Goomy | Sliggoo | Lv 30 | EVO_LEVEL |
+| Goomy | Sliggoo (form 1) | Metal Alloy | EVO_STONE |
+| Gossifleur | Eldegoss | Lv 20 | EVO_LEVEL |
+| Gothita | Gothorita | Lv 32 | EVO_LEVEL |
+| Gothorita | Gothitelle | Lv 41 | EVO_LEVEL |
+| Graveler | Golem | Lv 40 | EVO_LEVEL |
+| Graveler | Golem (form 1) | Lv 42 | EVO_LEVEL |
+| Greavard | Houndstone | Lv 30 | EVO_LEVEL |
+| Grimer | Muk | Lv 38 | EVO_LEVEL |
+| Grimer | Muk (form 1) | Lv 38 | EVO_LEVEL |
+| Grookey | Thwackey | Lv 16 | EVO_LEVEL |
+| Grotle | Torterra | Lv 32 | EVO_LEVEL |
+| Grovyle | Sceptile | Lv 36 | EVO_LEVEL |
+| Growlithe | Arcanine | Fire Stone | EVO_STONE |
+| Growlithe | Arcanine (form 1) | Fire Stone | EVO_STONE |
+| Grubbin | Charjabug | Lv 20 | EVO_LEVEL |
+| Gulpin | Swalot | Lv 26 | EVO_LEVEL |
+| Gurdurr | Conkeldurr | Lv 40 | EVO_LEVEL |
+| Hakamo-o | Kommo-o | Lv 45 | EVO_LEVEL |
+| Happiny | Chansey | Oval Stone | EVO_STONE |
+| Hatenna | Hattrem | Lv 32 | EVO_LEVEL |
+| Hattrem | Hatterene | Lv 42 | EVO_LEVEL |
+| Haunter | Gengar | Lv 40 | EVO_LEVEL |
+| Helioptile | Heliolisk | Sun Stone | EVO_STONE |
+| Herdier | Stoutland | Lv 32 | EVO_LEVEL |
+| Hippopotas | Hippowdon | Lv 34 | EVO_LEVEL |
+| Honedge | Doublade | Lv 35 | EVO_LEVEL |
+| Hoothoot | Noctowl | Lv 20 | EVO_LEVEL |
+| Hoppip | Skiploom | Lv 18 | EVO_LEVEL |
+| Horsea | Seadra | Lv 25 | EVO_LEVEL |
+| Houndour | Houndoom | Lv 24 | EVO_LEVEL |
+| Igglybuff | Jigglypuff | Lv 15 | EVO_LEVEL |
+| Impidimp | Morgrem | Lv 32 | EVO_LEVEL |
+| Inkay | Malamar | Lv 30 | EVO_LEVEL |
+| Ivysaur | Venusaur | Lv 32 | EVO_LEVEL |
+| Jangmo-o | Hakamo-o | Lv 35 | EVO_LEVEL |
+| Jigglypuff | Wigglytuff | Moon Stone | EVO_STONE |
+| Joltik | Galvantula | Lv 36 | EVO_LEVEL |
+| Kabuto | Kabutops | Lv 40 | EVO_LEVEL |
+| Kadabra | Alakazam | Lv 40 | EVO_LEVEL |
+| Kakuna | Beedrill | Lv 10 | EVO_LEVEL |
+| Karrablast | Escavalier | Lv 30 | EVO_LEVEL |
+| Kirlia | Gallade | Stone #109 · Male | EVO_STONE_MALE |
+| Kirlia | Gardevoir | Lv 30 | EVO_LEVEL |
+| Klang | Klinklang | Lv 39 | EVO_LEVEL |
+| Klink | Klang | Lv 28 | EVO_LEVEL |
+| Koffing | Weezing | Lv 35 · Night | EVO_LEVEL_NIGHT |
+| Koffing | Weezing (form 1) | Lv 35 · Day | EVO_LEVEL_DAY |
+| Krabby | Kingler | Lv 28 | EVO_LEVEL |
+| Kricketot | Kricketune | Lv 10 | EVO_LEVEL |
+| Krokorok | Krookodile | Lv 40 | EVO_LEVEL |
+| Kubfu | Urshifu | Scroll Of Darkness | EVO_STONE |
+| Kubfu | Urshifu (form 1) | Scroll Of Waters | EVO_STONE |
+| Lairon | Aggron | Lv 42 | EVO_LEVEL |
+| Lampent | Chandelure | Dusk Stone | EVO_STONE |
+| Larvesta | Volcarona | Lv 45 | EVO_LEVEL |
+| Larvitar | Pupitar | Lv 30 | EVO_LEVEL |
+| Lechonk | Oinkologne | Lv 18 · Male | EVO_LEVEL_MALE |
+| Lechonk | Oinkologne (form 1) | Lv 18 · Female | EVO_LEVEL_FEMALE |
+| Ledyba | Ledian | Lv 18 | EVO_LEVEL |
+| Lickitung | Lickilicky | Lv 34 | EVO_LEVEL |
+| Lileep | Cradily | Lv 40 | EVO_LEVEL |
+| Lillipup | Herdier | Lv 16 | EVO_LEVEL |
+| Linoone | Obstagoon | Lv 40 | EVO_LEVEL |
+| Litleo | Pyroar | Lv 35 · Male | EVO_LEVEL_MALE |
+| Litleo | Pyroar (form 1) | Lv 35 · Female | EVO_LEVEL_FEMALE |
+| Litten | Torracat | Lv 17 | EVO_LEVEL |
+| Litwick | Lampent | Lv 31 | EVO_LEVEL |
+| Lombre | Ludicolo | Water Stone | EVO_STONE |
+| Lotad | Lombre | Lv 14 | EVO_LEVEL |
+| Loudred | Exploud | Lv 40 | EVO_LEVEL |
+| Luxio | Luxray | Lv 30 | EVO_LEVEL |
+| Machoke | Machamp | Lv 40 | EVO_LEVEL |
+| Machop | Machoke | Lv 28 | EVO_LEVEL |
+| Magby | Magmar | Lv 30 | EVO_LEVEL |
+| Magikarp | Gyarados | Lv 20 | EVO_LEVEL |
+| Magmar | Magmortar | Lv 45 | EVO_LEVEL |
+| Magnemite | Magneton | Lv 30 | EVO_LEVEL |
+| Magneton | Magnezone | Thunder Stone | EVO_STONE |
+| Makuhita | Hariyama | Lv 24 | EVO_LEVEL |
+| Mankey | Primeape | Lv 28 | EVO_LEVEL |
+| Mantyke | Mantine | Lv 32 | EVO_LEVEL |
+| Mareanie | Toxapex | Lv 38 | EVO_LEVEL |
+| Mareep | Flaaffy | Lv 15 | EVO_LEVEL |
+| Marill | Azumarill | Lv 18 | EVO_LEVEL |
+| Marshtomp | Swampert | Lv 36 | EVO_LEVEL |
+| Maschiff | Mabosstiff | Lv 30 | EVO_LEVEL |
+| Meditite | Medicham | Lv 37 | EVO_LEVEL |
+| Meltan | Melmetal | Lv 38 | EVO_LEVEL |
+| Meowth | Perrserker | Lv 28 | EVO_LEVEL |
+| Meowth | Persian | Lv 28 | EVO_LEVEL |
+| Meowth | Persian (form 1) | Friendship | EVO_FRIENDSHIP |
+| Metang | Metagross | Lv 45 | EVO_LEVEL |
+| Metapod | Butterfree | Lv 10 | EVO_LEVEL |
+| Mienfoo | Mienshao | Lv 38 | EVO_LEVEL |
+| Milcery | Alcremie | Strawberry Sweet | EVO_STONE |
+| Milcery | Alcremie (form 1) | Berry Sweet | EVO_STONE |
+| Milcery | Alcremie (form 2) | Love Sweet | EVO_STONE |
+| Milcery | Alcremie (form 3) | Star Sweet | EVO_STONE |
+| Milcery | Alcremie (form 4) | Clover Sweet | EVO_STONE |
+| Milcery | Alcremie (form 5) | Flower Sweet | EVO_STONE |
+| Milcery | Alcremie (form 6) | Ribbon Sweet | EVO_STONE |
+| Mime Jr. | Mr. Mime | Knows Mimic | EVO_HAS_MOVE |
+| Mime Jr. | Mr. Mime (form 1) | Ice Stone | EVO_STONE |
+| Minccino | Cinccino | Shiny Stone | EVO_STONE |
+| Misdreavus | Mismagius | Lv 34 | EVO_LEVEL |
+| Monferno | Infernape | Lv 36 | EVO_LEVEL |
+| Morelull | Shiinotic | Lv 24 | EVO_LEVEL |
+| Morgrem | Grimmsnarl | Lv 42 | EVO_LEVEL |
+| Mr. Mime | Mr. Rime | Lv 42 | EVO_LEVEL |
+| Mudbray | Mudsdale | Lv 30 | EVO_LEVEL |
+| Mudkip | Marshtomp | Lv 16 | EVO_LEVEL |
+| Munchlax | Snorlax | Friendship | EVO_FRIENDSHIP |
+| Munna | Musharna | Moon Stone | EVO_STONE |
+| Murkrow | Honchkrow | Lv 34 | EVO_LEVEL |
+| Nacli | Naclstack | Lv 24 | EVO_LEVEL |
+| Naclstack | Garganacl | Lv 38 | EVO_LEVEL |
+| Natu | Xatu | Lv 25 | EVO_LEVEL |
+| Nickit | Thievul | Lv 18 | EVO_LEVEL |
+| Nidoran♀ | Nidorina | Lv 16 | EVO_LEVEL |
+| Nidoran♂ | Nidorino | Lv 16 | EVO_LEVEL |
+| Nidorina | Nidoqueen | Lv 36 | EVO_LEVEL |
+| Nidorino | Nidoking | Lv 36 | EVO_LEVEL |
+| Nincada | Ninjask | Lv 20 · Ninjask | EVO_LEVEL_NINJASK |
+| Nincada | Shedinja | Lv 20 · Shedinja | EVO_LEVEL_SHEDINJA |
+| Noibat | Noivern | Lv 38 | EVO_LEVEL |
+| Nosepass | Probopass | Lv 34 | EVO_LEVEL |
+| Numel | Camerupt | Lv 33 | EVO_LEVEL |
+| Nuzleaf | Shiftry | Leaf Stone | EVO_STONE |
+| Nymble | Lokix | Lv 24 | EVO_LEVEL |
+| Oddish | Gloom | Lv 21 | EVO_LEVEL |
+| Omanyte | Omastar | Lv 40 | EVO_LEVEL |
+| Onix | Steelix | Lv 30 | EVO_LEVEL |
+| Oshawott | Dewott | Lv 17 | EVO_LEVEL |
+| Palpitoad | Seismitoad | Lv 36 | EVO_LEVEL |
+| Pancham | Pangoro | Lv 32 | EVO_LEVEL |
+| Panpour | Simipour | Water Stone | EVO_STONE |
+| Pansage | Simisage | Leaf Stone | EVO_STONE |
+| Pansear | Simisear | Fire Stone | EVO_STONE |
+| Paras | Parasect | Lv 24 | EVO_LEVEL |
+| Patrat | Watchog | Lv 20 | EVO_LEVEL |
+| Pawmi | Pawmo | Lv 18 | EVO_LEVEL |
+| Pawmo | Pawmot | Lv 36 | EVO_LEVEL |
+| Pawniard | Bisharp | Lv 30 | EVO_LEVEL |
+| Petilil | Lilligant | Sun Stone | EVO_STONE |
+| Petilil | Lilligant (form 1) | Dawn Stone | EVO_STONE |
+| Phanpy | Donphan | Lv 25 | EVO_LEVEL |
+| Phantump | Trevenant | Lv 30 | EVO_LEVEL |
+| Pichu | Pikachu | Lv 15 | EVO_LEVEL |
+| Pidgeotto | Pidgeot | Lv 36 | EVO_LEVEL |
+| Pidgey | Pidgeotto | Lv 18 | EVO_LEVEL |
+| Pidove | Tranquill | Lv 21 | EVO_LEVEL |
+| Pignite | Emboar | Lv 36 | EVO_LEVEL |
+| Pikachu | Raichu | Thunder Stone | EVO_STONE |
+| Pikachu | Raichu (form 1) | Dawn Stone | EVO_STONE |
+| Pikipek | Trumbeak | Lv 14 | EVO_LEVEL |
+| Piloswine | Mamoswine | Lv 42 | EVO_LEVEL |
+| Pineco | Forretress | Lv 31 | EVO_LEVEL |
+| Piplup | Prinplup | Lv 16 | EVO_LEVEL |
+| Poipole | Naganadel | Lv 38 | EVO_LEVEL |
+| Polchgeist | Sinistcha | Cracked Pot | EVO_STONE |
+| Poliwag | Poliwhirl | Lv 25 | EVO_LEVEL |
+| Poliwhirl | Politoed | Kings Rock | EVO_STONE |
+| Poliwhirl | Poliwrath | Water Stone | EVO_STONE |
+| Poltchageist Masterpiece | Sinistcha | Chipped Pot | EVO_STONE |
+| Ponyta | Rapidash | Lv 40 | EVO_LEVEL |
+| Ponyta | Rapidash (form 1) | Lv 40 | EVO_LEVEL |
+| Poochyena | Mightyena | Lv 18 | EVO_LEVEL |
+| Popplio | Brionne | Lv 17 | EVO_LEVEL |
+| Porygon | Porygon2 | Lv 30 | EVO_LEVEL |
+| Porygon2 | Porygon-Z | Lv 40 | EVO_LEVEL |
+| Primeape | Annihilape | Form Argument · 20 | EVO_FORM_ARGUMENT |
+| Prinplup | Empoleon | Lv 36 | EVO_LEVEL |
+| Psyduck | Golduck | Lv 33 | EVO_LEVEL |
+| Pumpkaboo | Gourgeist | Lv 30 | EVO_LEVEL |
+| Pumpkaboo Large | Gourgeist | Lv 30 | EVO_LEVEL |
+| Pumpkaboo Small | Gourgeist | Lv 30 | EVO_LEVEL |
+| Pumpkaboo Super | Gourgeist | Lv 30 | EVO_LEVEL |
+| Pupitar | Tyranitar | Lv 55 | EVO_LEVEL |
+| Purrloin | Liepard | Lv 20 | EVO_LEVEL |
+| Quaxly | Quaxwell | Lv 16 | EVO_LEVEL |
+| Quaxwell | Quaquaval | Lv 36 | EVO_LEVEL |
+| Quilava | Typhlosion | Lv 36 · Day | EVO_LEVEL_DAY |
+| Quilava | Typhlosion (form 1) | Lv 36 · Night | EVO_LEVEL_NIGHT |
+| Quilladin | Chesnaught | Lv 36 | EVO_LEVEL |
+| Qwilfish | Overqwil | Knows Barb Barrage | EVO_HAS_MOVE |
+| Raboot | Cinderace | Lv 35 | EVO_LEVEL |
+| Ralts | Kirlia | Lv 20 | EVO_LEVEL |
+| Rattata | Raticate | Lv 20 | EVO_LEVEL |
+| Rattata | Raticate (form 1) | Lv 20 | EVO_LEVEL |
+| Rellor | Rabsca | Lv 30 | EVO_LEVEL |
+| Remoraid | Octillery | Lv 25 | EVO_LEVEL |
+| Rhydon | Rhyperior | Lv 45 | EVO_LEVEL |
+| Rhyhorn | Rhydon | Lv 30 | EVO_LEVEL |
+| Riolu | Lucario | Friendship | EVO_FRIENDSHIP |
+| Rockruff | Lycanroc | Lv 25 · Day | EVO_LEVEL_DAY |
+| Rockruff | Lycanroc (form 1) | Lv 25 · Night | EVO_LEVEL_NIGHT |
+| Rockruff | Lycanroc (form 2) | Dusk Stone | EVO_STONE |
+| Rockruff Own Tempo | Lycanroc (form 2) | Dusk Stone | EVO_STONE |
+| Roggenrola | Boldore | Lv 25 | EVO_LEVEL |
+| Rolycoly | Carkol | Lv 18 | EVO_LEVEL |
+| Rookidee | Corvsquire | Lv 18 | EVO_LEVEL |
+| Roselia | Roserade | Shiny Stone | EVO_STONE |
+| Rowlet | Dartrix | Lv 17 | EVO_LEVEL |
+| Rufflet | Braviary | Lv 38 · Day | EVO_LEVEL_DAY |
+| Rufflet | Braviary | Lv 38 · Night | EVO_LEVEL_NIGHT |
+| Salandit | Salazzle | Lv 33 · Female | EVO_LEVEL_FEMALE |
+| Sandile | Krokorok | Lv 29 | EVO_LEVEL |
+| Sandshrew | Sandslash | Lv 22 | EVO_LEVEL |
+| Sandshrew | Sandslash (form 1) | Ice Stone | EVO_STONE |
+| Sandygast | Palossand | Lv 42 | EVO_LEVEL |
+| Scatterbug | Spewpa | Lv 9 | EVO_LEVEL |
+| Scorbunny | Raboot | Lv 16 | EVO_LEVEL |
+| Scraggy | Scrafty | Lv 39 | EVO_LEVEL |
+| Scyther | Kleavor | Black Augurite | EVO_STONE |
+| Scyther | Scizor | Metal Coat | EVO_STONE |
+| Seadra | Kingdra | Lv 45 | EVO_LEVEL |
+| Sealeo | Walrein | Lv 44 | EVO_LEVEL |
+| Seedot | Nuzleaf | Lv 14 | EVO_LEVEL |
+| Seel | Dewgong | Lv 34 | EVO_LEVEL |
+| Sentret | Furret | Lv 15 | EVO_LEVEL |
+| Servine | Serperior | Lv 36 | EVO_LEVEL |
+| Sewaddle | Swadloon | Lv 20 | EVO_LEVEL |
+| Shelgon | Salamence | Lv 50 | EVO_LEVEL |
+| Shellder | Cloyster | Water Stone | EVO_STONE |
+| Shellos | Gastrodon | Lv 30 | EVO_LEVEL |
+| Shellos East Sea | Gastrodon | Lv 30 | EVO_LEVEL |
+| Shelmet | Accelgor | Lv 30 | EVO_LEVEL |
+| Shieldon | Bastiodon | Lv 30 | EVO_LEVEL |
+| Shinx | Luxio | Lv 15 | EVO_LEVEL |
+| Shroodle | Grafaiai | Lv 28 | EVO_LEVEL |
+| Shroomish | Breloom | Lv 23 | EVO_LEVEL |
+| Shuppet | Banette | Lv 37 | EVO_LEVEL |
+| Silcoon | Beautifly | Lv 10 | EVO_LEVEL |
+| Silicobra | Sandaconda | Lv 36 | EVO_LEVEL |
+| Sinistea | Poltegeist | Cracked Pot | EVO_STONE |
+| Sinistea Antique | Poltegeist | Chipped Pot | EVO_STONE |
+| Sizzlipede | Centskorch | Lv 28 | EVO_LEVEL |
+| Skiddo | Gogoat | Lv 32 | EVO_LEVEL |
+| Skiploom | Jumpluff | Lv 27 | EVO_LEVEL |
+| Skitty | Delcatty | Moon Stone | EVO_STONE |
+| Skorupi | Drapion | Lv 40 | EVO_LEVEL |
+| Skrelp | Dragalge | Lv 38 | EVO_LEVEL |
+| Skwovet | Greedent | Lv 24 | EVO_LEVEL |
+| Slakoth | Vigoroth | Lv 18 | EVO_LEVEL |
+| Sliggoo | Goodra | Lv 50 · Rain | EVO_LEVEL_RAIN |
+| Sliggoo | Goodra (form 1) | Lv 50 · Rain | EVO_LEVEL_RAIN |
+| Slowpoke | Slowbro | Lv 37 | EVO_LEVEL |
+| Slowpoke | Slowbro (form 2) | Galarica Cuff | EVO_STONE |
+| Slowpoke | Slowking | Kings Rock | EVO_STONE |
+| Slowpoke | Slowking (form 1) | Galarica Wreath | EVO_STONE |
+| Slugma | Magcargo | Lv 32 | EVO_LEVEL |
+| Smoliv | Dolliv | Lv 25 | EVO_LEVEL |
+| Smoochum | Jynx | Lv 24 | EVO_LEVEL |
+| Sneasel | Sneasler | Lv 30 | EVO_LEVEL |
+| Sneasel | Weavile | Lv 34 | EVO_LEVEL |
+| Snivy | Servine | Lv 17 | EVO_LEVEL |
+| Snom | Frosmoth | Friendship | EVO_FRIENDSHIP |
+| Snorunt | Froslass | Stone #109 · Female | EVO_STONE_FEMALE |
+| Snorunt | Glalie | Lv 42 | EVO_LEVEL |
+| Snover | Abomasnow | Lv 40 | EVO_LEVEL |
+| Snubbull | Granbull | Lv 23 | EVO_LEVEL |
+| Sobble | Drizzile | Lv 16 | EVO_LEVEL |
+| Solosis | Duosion | Lv 32 | EVO_LEVEL |
+| Spearow | Fearow | Lv 20 | EVO_LEVEL |
+| Spewpa | Vivillon | Lv 12 | EVO_LEVEL |
+| Spheal | Sealeo | Lv 32 | EVO_LEVEL |
+| Spinarak | Ariados | Lv 22 | EVO_LEVEL |
+| Spoink | Grumpig | Lv 32 | EVO_LEVEL |
+| Sprigatito | Floragato | Lv 16 | EVO_LEVEL |
+| Spritzee | Aromatisse | Lv 30 | EVO_LEVEL |
+| Squirtle | Wartortle | Lv 16 | EVO_LEVEL |
+| Stantler | Wyrdeer | Lv 38 | EVO_LEVEL |
+| Staravia | Staraptor | Lv 34 | EVO_LEVEL |
+| Starly | Staravia | Lv 14 | EVO_LEVEL |
+| Staryu | Starmie | Water Stone | EVO_STONE |
+| Steenee | Tsareena | Knows Stomp | EVO_HAS_MOVE |
+| Stufful | Bewear | Lv 27 | EVO_LEVEL |
+| Stunky | Skuntank | Lv 34 | EVO_LEVEL |
+| Sunkern | Sunflora | Sun Stone | EVO_STONE |
+| Surskit | Masquerain | Lv 22 | EVO_LEVEL |
+| Swablu | Altaria | Lv 35 | EVO_LEVEL |
+| Swadloon | Leavanny | Friendship | EVO_FRIENDSHIP |
+| Swinub | Piloswine | Lv 25 | EVO_LEVEL |
+| Swirlix | Slurpuff | Lv 30 | EVO_LEVEL |
+| Tadbulb | Bellibolt | Thunder Stone | EVO_STONE |
+| Taillow | Swellow | Lv 22 | EVO_LEVEL |
+| Tandemaus | Maushold | Lv 25 | EVO_LEVEL |
+| Tangela | Tangrowth | Lv 34 | EVO_LEVEL |
+| Tarountula | Spidops | Lv 15 | EVO_LEVEL |
+| Teddiursa | Ursaring | Lv 30 | EVO_LEVEL |
+| Tentacool | Tentacruel | Lv 30 | EVO_LEVEL |
+| Tepig | Pignite | Lv 17 | EVO_LEVEL |
+| Thwackey | Rillaboom | Lv 35 | EVO_LEVEL |
+| Timburr | Gurdurr | Lv 25 | EVO_LEVEL |
+| Tinkatink | Tinkatuff | Lv 24 | EVO_LEVEL |
+| Tinkatuff | Tinkaton | Lv 38 | EVO_LEVEL |
+| Tirtouga | Carracosta | Lv 37 | EVO_LEVEL |
+| Toedscool | Toedscruel | Lv 30 | EVO_LEVEL |
+| Togepi | Togetic | Lv 21 | EVO_LEVEL |
+| Togetic | Togekiss | Shiny Stone | EVO_STONE |
+| Torchic | Combusken | Lv 16 | EVO_LEVEL |
+| Torracat | Incineroar | Lv 34 | EVO_LEVEL |
+| Totodile | Croconaw | Lv 18 | EVO_LEVEL |
+| Toxel | Toxtricity | Lv 30 · Amped nature | EVO_LEVEL_NATURE_AMPED |
+| Toxel | Toxtricity (form 1) | Lv 30 · Nature Low Key | EVO_LEVEL_NATURE_LOW_KEY |
+| Tranquill | Unfezant | Lv 32 · Male | EVO_LEVEL_MALE |
+| Tranquill | Unfezant (form 1) | Lv 32 · Female | EVO_LEVEL_FEMALE |
+| Trapinch | Vibrava | Lv 30 | EVO_LEVEL |
+| Treecko | Grovyle | Lv 16 | EVO_LEVEL |
+| Trubbish | Garbodor | Lv 36 | EVO_LEVEL |
+| Trumbeak | Toucannon | Lv 28 | EVO_LEVEL |
+| Turtwig | Grotle | Lv 18 | EVO_LEVEL |
+| Tympole | Palpitoad | Lv 25 | EVO_LEVEL |
+| Tynamo | Eelektrik | Lv 29 | EVO_LEVEL |
+| Type: Null | Silvally | Friendship | EVO_FRIENDSHIP |
+| Tyrogue | Hitmonchan | Lv 20 · Atk < Def | EVO_LEVEL_ATK_LT_DEF |
+| Tyrogue | Hitmonlee | Lv 20 · Atk > Def | EVO_LEVEL_ATK_GT_DEF |
+| Tyrogue | Hitmontop | Lv 20 · Atk = Def | EVO_LEVEL_ATK_EQ_DEF |
+| Tyrunt | Tyrantrum | Lv 39 | EVO_LEVEL |
+| Ursaring | Ursaluna | Lv 45 | EVO_LEVEL |
+| Vanillish | Vanilluxe | Lv 40 | EVO_LEVEL |
+| Vanillite | Vanillish | Lv 28 | EVO_LEVEL |
+| Varoom | Revavroom | Lv 40 | EVO_LEVEL |
+| Venipede | Whirlipede | Lv 22 | EVO_LEVEL |
+| Venonat | Venomoth | Lv 31 | EVO_LEVEL |
+| Vibrava | Flygon | Lv 45 | EVO_LEVEL |
+| Vigoroth | Slaking | Lv 36 | EVO_LEVEL |
+| Voltorb | Electrode | Lv 30 | EVO_LEVEL |
+| Voltorb | Electrode (form 1) | Leaf Stone | EVO_STONE |
+| Vullaby | Mandibuzz | Lv 38 | EVO_LEVEL |
+| Vulpix | Ninetales | Fire Stone | EVO_STONE |
+| Vulpix | Ninetales (form 1) | Ice Stone | EVO_STONE |
+| Wailmer | Wailord | Lv 40 | EVO_LEVEL |
+| Wartortle | Blastoise | Lv 36 | EVO_LEVEL |
+| Wattrel | Kilowatrel | Lv 25 | EVO_LEVEL |
+| Weedle | Kakuna | Lv 7 | EVO_LEVEL |
+| Weepinbell | Victreebel | Lv 34 | EVO_LEVEL |
+| Whirlipede | Scolipede | Lv 30 | EVO_LEVEL |
+| Whismur | Loudred | Lv 20 | EVO_LEVEL |
+| Wiglett | Wugtrio | Lv 26 | EVO_LEVEL |
+| Wimpod | Golisopod | Lv 30 | EVO_LEVEL |
+| Wingull | Pelipper | Lv 25 | EVO_LEVEL |
+| Woobat | Swoobat | Friendship | EVO_FRIENDSHIP |
+| Wooloo | Dubwool | Lv 24 | EVO_LEVEL |
+| Wooper | Clodsire | Lv 20 | EVO_LEVEL |
+| Wooper | Quagsire | Lv 20 | EVO_LEVEL |
+| Wurmple | Cascoon | Lv 7 · personality high | EVO_LEVEL_PID_HI |
+| Wurmple | Silcoon | Lv 7 · personality low | EVO_LEVEL_PID_LO |
+| Wynaut | Wobbuffet | Lv 15 | EVO_LEVEL |
+| Yamask | Cofagrigus | Lv 34 | EVO_LEVEL |
+| Yamask | Runerigus | Take 49 damage | EVO_HURT_IN_BATTLE_AMOUNT |
+| Yamper | Boltund | Lv 25 | EVO_LEVEL |
+| Yanma | Yanmega | Lv 34 | EVO_LEVEL |
+| Yungoos | Gumshoos | Lv 20 | EVO_LEVEL |
+| Zigzagoon | Linoone | Lv 20 | EVO_LEVEL |
+| Zigzagoon | Linoone (form 1) | Lv 20 | EVO_LEVEL |
+| Zorua | Zoroark | Lv 30 | EVO_LEVEL |
+| Zorua | Zoroark (form 1) | Lv 30 | EVO_LEVEL |
+| Zubat | Golbat | Lv 22 | EVO_LEVEL |
+| Zweilous | Hydreigon | Lv 50 | EVO_LEVEL |
