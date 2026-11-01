@@ -19,9 +19,11 @@ There are still some awkward or glitchy tiles, but the project is playable and r
 
 The current Heartfelt Gold patch is:
 
-- [Heartfelt-Gold-v1-Patch.xdelta](https://github.com/Trinsic64/Heart-Gold-Retiled/releases/download/heartfelt-v1.0.0/Heartfelt-Gold-v1-Patch.xdelta) — the new major update. See the [GitHub Release](https://github.com/Trinsic64/Heart-Gold-Retiled/releases/tag/heartfelt-v1.0.0) and [release notes](RELEASE-NOTES-HEARTFELT-v1.0.0.md).
+- [Heartfelt-Gold-v1.0.1-Patch.xdelta](https://github.com/Trinsic64/Heart-Gold-Retiled/releases/download/heartfelt-v1.0.1/Heartfelt-Gold-v1.0.1-Patch.xdelta) — fixes held items disappearing from newly caught Pokémon and gives both configured wild item slots equal odds. See the [GitHub Release](https://github.com/Trinsic64/Heart-Gold-Retiled/releases/tag/heartfelt-v1.0.1) and [release notes](RELEASE-NOTES-HEARTFELT-v1.0.1.md).
 
-The patch was decoded against a clean USA source matching the hashes below; its output matches the local build named `Heartfelt-Gold-v3-Release.nds`. The `v1` filename is the patch release name.
+The [v1.0.0 patch](https://github.com/Trinsic64/Heart-Gold-Retiled/releases/tag/heartfelt-v1.0.0) remains available for archival use.
+
+The v1.0.1 patch was decoded against a clean USA source matching the hashes below. Its output SHA-256 is `3d63814b9ccbb22caca659c8721bff8127261db60cf1b7b05dc33dbff3b2a700`.
 
 The older Retiled Expansion and visual-only patches remain available for archival use:
 
@@ -54,7 +56,7 @@ Then:
 1. Back up your clean ROM dump.
 2. Open xDelta UI or RomPatcher.js.
 3. Select your original Pokémon HeartGold (USA) `.nds` file as the **source/ROM file**.
-4. Select `Heartfelt-Gold-v1-Patch.xdelta` as the **patch file**.
+4. Select `Heartfelt-Gold-v1.0.1-Patch.xdelta` as the **patch file**.
 5. Apply the patch and save the newly generated `.nds` file separately from your original ROM.
 
 Apply exactly one patch to the clean ROM. Do not stack Heartfelt Gold with any earlier Retiled patch.
@@ -74,6 +76,7 @@ In RomPatcher.js, the selections should look like this:
 SHA-256:
 
 ```text
+9C3054B3E1B2D8492D75262EB7F0E6C61D80A48E3A0B7E3300DCAB9438DB6020  xDelta/Heartfelt-Gold-v1.0.1-Patch.xdelta
 3A7799354F4CB11E0169B9AE3E8F73BFBC334AD83A1B0D58ABB3D2260DEC4443  xDelta/Heartfelt-Gold-v1-Patch.xdelta
 0B4328C30B1C41CBC9E22CBAC47A35B681F906063AC0F35B31C9A4A8487417F4  xDelta/HG-Retiled-Expansion-Patch.xdelta
 33EAC6B179A5ADB2CDC4372EBE77078FB5D48D94D44464EA3ECE5F7FB91F69AF  xDelta/HG-Retiled-Patch.xdelta
@@ -83,7 +86,7 @@ SHA-256:
 On PowerShell:
 
 ```powershell
-Get-FileHash .\xDelta\Heartfelt-Gold-v1-Patch.xdelta -Algorithm SHA256
+Get-FileHash .\xDelta\Heartfelt-Gold-v1.0.1-Patch.xdelta -Algorithm SHA256
 Get-FileHash .\xDelta\HG-Retiled-Expansion-Patch.xdelta -Algorithm SHA256
 Get-FileHash .\xDelta\HG-Retiled-Patch.xdelta -Algorithm SHA256
 Get-FileHash .\HG-Retiled-v3.bps -Algorithm SHA256
@@ -92,7 +95,7 @@ Get-FileHash .\HG-Retiled-v3.bps -Algorithm SHA256
 On macOS or Linux:
 
 ```bash
-sha256sum xDelta/Heartfelt-Gold-v1-Patch.xdelta xDelta/HG-Retiled-Expansion-Patch.xdelta xDelta/HG-Retiled-Patch.xdelta HG-Retiled-v3.bps
+sha256sum xDelta/Heartfelt-Gold-v1.0.1-Patch.xdelta xDelta/HG-Retiled-Expansion-Patch.xdelta xDelta/HG-Retiled-Patch.xdelta HG-Retiled-v3.bps
 ```
 
 The map archive hashes are recorded in [checksums.sha256](checksums.sha256).
@@ -112,7 +115,7 @@ See [MAPS.md](MAPS.md) for the contents, formats, archive checksums, and safe-us
 
 This is a work in progress. Expect visual errors, awkward transitions, and incomplete polish in some locations.
 
-The [next update notes](Docs/Next-Update-Notes.md) track source changes, including Cyclizar wild encounters, that are not yet in the downloadable v1.0.0 patch.
+The [next update notes](Docs/Next-Update-Notes.md) record the Cyclizar encounter additions included in v1.0.1.
 
 When reporting a problem, please include:
 
