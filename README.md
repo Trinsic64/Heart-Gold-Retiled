@@ -112,6 +112,8 @@ See [MAPS.md](MAPS.md) for the contents, formats, archive checksums, and safe-us
 
 This is a work in progress. Expect visual errors, awkward transitions, and incomplete polish in some locations.
 
+The [next update notes](Docs/Next-Update-Notes.md) track source changes, including Cyclizar wild encounters, that are not yet in the downloadable v1.0.0 patch.
+
 When reporting a problem, please include:
 
 - the location and nearest landmark;
