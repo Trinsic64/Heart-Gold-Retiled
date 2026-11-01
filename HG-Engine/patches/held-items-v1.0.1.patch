@@ -1,0 +1,115 @@
+diff --git a/include/battle.h b/include/battle.h
+index 6f6916aaa..ffbd12de1 100644
+--- a/include/battle.h
++++ b/include/battle.h
+@@ -1344,6 +1344,7 @@ struct PACKED newBattleStruct {
+ 
+ #ifdef RESTORE_ITEMS_AT_BATTLE_END
+     u16 itemsToRestore[6]; // items that each mon was holding at the beginning of the battle
++    u8 itemsToRestoreCount; // caught Pokemon join the party after this snapshot
+ #endif // RESTORE_ITEMS_AT_BATTLE_END
+ };
+ 
+diff --git a/src/battle/battle_pokemon.c b/src/battle/battle_pokemon.c
+index ac44e8a48..5ea17986d 100644
+--- a/src/battle/battle_pokemon.c
++++ b/src/battle/battle_pokemon.c
+@@ -1057,20 +1057,27 @@ void BattleEndRevertFormChange(struct BattleSystem *bw)
+     }
+ 
+ #ifdef RESTORE_ITEMS_AT_BATTLE_END
++    // A caught Pokemon may have joined the player's party during this battle.
++    // Only restore items for the Pokemon present when ServerInit took its snapshot.
++    int restoreCount = newBS.itemsToRestoreCount;
++    if (restoreCount > BattleWorkPokeCountGet(bw, 0)) {
++        restoreCount = BattleWorkPokeCountGet(bw, 0);
++    }
++
+     // grab newItems array for use later
+-    for (i = 0; i < BattleWorkPokeCountGet(bw, 0); i++) {
++    for (i = 0; i < restoreCount; i++) {
+         newItems[i] = GetMonData(BattleWorkPokemonParamGet(bw, 0, i), MON_DATA_HELD_ITEM, NULL);
+     }
+ 
+     // add the items that the mons have stolen to the bag
+-    for (i = 0; i < BattleWorkPokeCountGet(bw, 0); i++) {
++    for (i = 0; i < restoreCount; i++) {
+         u32 battleItem = newItems[i];
+         u32 originalQuantity = 0;
+         u32 newQuantity = 0;
+ 
+         // count up both old and new quantities of an item
+         if (battleItem) {
+-            for (j = 0; j < BattleWorkPokeCountGet(bw, 0); j++) {
++            for (j = 0; j < restoreCount; j++) {
+                 if (battleItem == newItems[j]) {
+                     // current item is identical to an item that we've previously handled, move to the next one
+                     if (i > j) {
+@@ -1080,7 +1087,7 @@ void BattleEndRevertFormChange(struct BattleSystem *bw)
+                     }
+                 }
+             }
+-            for (j = 0; j < BattleWorkPokeCountGet(bw, 0); j++) {
++            for (j = 0; j < restoreCount; j++) {
+                 if (battleItem == newBS.itemsToRestore[j]) {
+                     originalQuantity++;
+                 }
+@@ -1096,7 +1103,7 @@ void BattleEndRevertFormChange(struct BattleSystem *bw)
+     }
+ 
+     // restore items regardless of if it's a trainer battle--this will also overwrite items gained from trainers
+-    for (i = 0; i < BattleWorkPokeCountGet(bw, 0); i++) {
++    for (i = 0; i < restoreCount; i++) {
+         u32 battleItem = newBS.itemsToRestore[i];
+         pp = BattleWorkPokemonParamGet(bw, 0, i);
+         if (!IS_ITEM_BERRY(newBS.itemsToRestore[i])) {
+@@ -1105,9 +1112,10 @@ void BattleEndRevertFormChange(struct BattleSystem *bw)
+     }
+ 
+     // set to zero after the items have already been restored to maybe prevent observed byte loss
+-    for (i = 0; i < BattleWorkPokeCountGet(bw, 0); i++) {
++    for (i = 0; i < restoreCount; i++) {
+         newBS.itemsToRestore[i] = 0;
+     }
++    newBS.itemsToRestoreCount = 0;
+ #endif // RESTORE_ITEMS_AT_BATTLE_END
+ 
+ #ifdef DEBUG_BATTLE_SCENARIOS
+diff --git a/src/battle/battle_start.c b/src/battle/battle_start.c
+index 7431269fe..9db8a9af9 100644
+--- a/src/battle/battle_start.c
++++ b/src/battle/battle_start.c
+@@ -49,6 +49,7 @@ struct BattleStruct *ServerInit(struct BattleSystem *bw)
+ 
+     // store items for the player's party in sp so we can restore them at the end
+     struct Party *party = SaveData_GetPlayerPartyPtr(SaveBlock2_get());
++    newBS.itemsToRestoreCount = party->count;
+     for (int i = 0; i < party->count; i++) {
+         newBS.itemsToRestore[i] = GetMonData(Party_GetMonByIndex(party, i), MON_DATA_HELD_ITEM, NULL);
+     }
+diff --git a/src/field/enemy_party.c b/src/field/enemy_party.c
+index cf38c7e5b..6f7d4a7a0 100644
+--- a/src/field/enemy_party.c
++++ b/src/field/enemy_party.c
+@@ -451,6 +451,21 @@ BOOL LONG_CALL AddWildPartyPokemon(int inTarget, EncounterInfo *encounterInfo, s
+ 
+     WildMonSetRandomHeldItem(encounterPartyPokemon, encounterBattleParam->fight_type, range);
+ 
++    // Species with two held-item slots always hold one of them. Keep the
++    // original routine for encounters with zero or one configured item.
++    if (encounterInfo->isEgg == 0
++        && !(encounterBattleParam->fight_type & (BATTLE_TYPE_TRAINER | BATTLE_TYPE_LINK | BATTLE_TYPE_FRONTIER | BATTLE_TYPE_PAL_PARK | BATTLE_TYPE_TUTORIAL))) {
++        u16 commonItem = PokePersonalParaGet(species, PERSONAL_ITEM_1);
++        u16 rareItem = PokePersonalParaGet(species, PERSONAL_ITEM_2);
++        if (commonItem != ITEM_NONE && rareItem != ITEM_NONE) {
++            u16 item = commonItem;
++            if (commonItem != rareItem && gf_rand() < 0x8000) {
++                item = rareItem;
++            }
++            SetMonData(encounterPartyPokemon, MON_DATA_HELD_ITEM, &item);
++        }
++    }
++
+     if (species == SPECIES_UNOWN) {
+         change_form = 1;
+         form_no = GrabAndRegisterUnownForm(encounterInfo);
