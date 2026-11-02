@@ -19,13 +19,13 @@ There are still some awkward or glitchy tiles, but the project is playable and r
 
 The current Heartfelt Gold patch is:
 
-- [Heartfelt-Gold-v1.0.3-Patch.xdelta](https://github.com/Trinsic64/Heart-Gold-Retiled/releases/download/heartfelt-v1.0.3/Heartfelt-Gold-v1.0.3-Patch.xdelta) — fixes the crash when interacting with the Hiker on Route 42. Includes the regional-form, sprite-positioning, and Pokédex fixes from v1.0.2. See the [GitHub Release](https://github.com/Trinsic64/Heart-Gold-Retiled/releases/tag/heartfelt-v1.0.3) and [release notes](RELEASE-NOTES-HEARTFELT-v1.0.3.md).
+- [Heartfelt-Gold-v1.0.4-Patch.xdelta](https://github.com/Trinsic64/Heart-Gold-Retiled/releases/download/heartfelt-v1.0.4/Heartfelt-Gold-v1.0.4-Patch.xdelta) — adds an optional Level Cap NPC to 24 Pokémon Centers. Players can view the cap, disable or restore it, and adjust it one level at a time. Includes the fixes from earlier releases. See the [GitHub Release](https://github.com/Trinsic64/Heart-Gold-Retiled/releases/tag/heartfelt-v1.0.4) and [release notes](RELEASE-NOTES-HEARTFELT-v1.0.4.md).
 
-The [v1.0.2](https://github.com/Trinsic64/Heart-Gold-Retiled/releases/tag/heartfelt-v1.0.2), [v1.0.1](https://github.com/Trinsic64/Heart-Gold-Retiled/releases/tag/heartfelt-v1.0.1), and [v1.0.0](https://github.com/Trinsic64/Heart-Gold-Retiled/releases/tag/heartfelt-v1.0.0) patches remain available for archival use.
+The [v1.0.3](https://github.com/Trinsic64/Heart-Gold-Retiled/releases/tag/heartfelt-v1.0.3), [v1.0.2](https://github.com/Trinsic64/Heart-Gold-Retiled/releases/tag/heartfelt-v1.0.2), [v1.0.1](https://github.com/Trinsic64/Heart-Gold-Retiled/releases/tag/heartfelt-v1.0.1), and [v1.0.0](https://github.com/Trinsic64/Heart-Gold-Retiled/releases/tag/heartfelt-v1.0.0) patches remain available for archival use.
 
-The v1.0.3 patch was decoded against a clean USA source matching the hashes below. Its output SHA-256 is `0907cbe60a314af3cc6bb2c6eed292430cb1fbc0fbc424eb0faa390085410143`.
+The v1.0.4 patch was decoded against a clean USA source matching the hashes below. Its output SHA-256 is `85095dff98cc5af3290a3d6f21fc9788ec657347a17a11d16040931d8555f480`.
 
-**Save import friendly:** v1.0.3 is compatible with in-game saves from previous Heartfelt Gold versions. Back up your save, import or copy it for the new ROM, and continue without starting a new game. Match the save filename to the new ROM where your emulator requires it. Boot from the in-game save rather than loading an older emulator save state.
+**Save import friendly:** v1.0.4 does not change the save layout, so in-game saves from earlier Heartfelt Gold versions are expected to remain compatible. Back up your save, import or copy it for the new ROM, and continue without starting a new game. Match the save filename to the new ROM where your emulator requires it. Boot from the in-game save rather than loading an older emulator save state.
 
 The older Retiled Expansion and visual-only patches remain available for archival use:
 
@@ -58,7 +58,7 @@ Then:
 1. Back up your clean ROM dump.
 2. Open xDelta UI or RomPatcher.js.
 3. Select your original Pokémon HeartGold (USA) `.nds` file as the **source/ROM file**.
-4. Select `Heartfelt-Gold-v1.0.3-Patch.xdelta` as the **patch file**.
+4. Select `Heartfelt-Gold-v1.0.4-Patch.xdelta` as the **patch file**.
 5. Apply the patch and save the newly generated `.nds` file separately from your original ROM.
 
 Apply exactly one patch to the clean ROM. Do not stack Heartfelt Gold with any earlier Retiled patch.
@@ -78,6 +78,7 @@ In RomPatcher.js, the selections should look like this:
 SHA-256:
 
 ```text
+19FFD05CF2E2A11B0E75697BA91AE721ED55CBE3677A61D89889AF3AC03D903B  xDelta/Heartfelt-Gold-v1.0.4-Patch.xdelta
 8B8BEF11E6305ADFD47AB42DB5604A24CF20908B28284E035AE43F38C33D6575  xDelta/Heartfelt-Gold-v1.0.3-Patch.xdelta
 341D63D598DDAEE8F0379E85DE548D74BD54010A5D8410D7BF038F8DF5B0C2DC  xDelta/Heartfelt-Gold-v1.0.2-Patch.xdelta
 9C3054B3E1B2D8492D75262EB7F0E6C61D80A48E3A0B7E3300DCAB9438DB6020  xDelta/Heartfelt-Gold-v1.0.1-Patch.xdelta
@@ -90,7 +91,7 @@ SHA-256:
 On PowerShell:
 
 ```powershell
-Get-FileHash .\xDelta\Heartfelt-Gold-v1.0.3-Patch.xdelta -Algorithm SHA256
+Get-FileHash .\xDelta\Heartfelt-Gold-v1.0.4-Patch.xdelta -Algorithm SHA256
 Get-FileHash .\xDelta\HG-Retiled-Expansion-Patch.xdelta -Algorithm SHA256
 Get-FileHash .\xDelta\HG-Retiled-Patch.xdelta -Algorithm SHA256
 Get-FileHash .\HG-Retiled-v3.bps -Algorithm SHA256
