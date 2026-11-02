@@ -1,0 +1,151 @@
+diff --git a/armips/asm/pokedex.s b/armips/asm/pokedex.s
+index 365b54b..9d18021 100644
+--- a/armips/asm/pokedex.s
++++ b/armips/asm/pokedex.s
+@@ -394,6 +394,13 @@ _21EED32:
+ .pool
+ 
+ 
++// Expanded height/weight message banks no longer fit as temporary whole-bank
++// allocations alongside the Pokédex UI. Read the requested message lazily.
++.org 0x021EEA96
++    mov r0, #1 // MSGDATA_LOAD_LAZY for height text
++.org 0x021EEB46
++    mov r0, #1 // MSGDATA_LOAD_LAZY for weight text
++
+ .org 0x021F1598 // get the 1030 out
+ 
+ .area 0x88
+diff --git a/asm/other_hook.s b/asm/other_hook.s
+index 6d4a09a..b7f9243 100644
+--- a/asm/other_hook.s
++++ b/asm/other_hook.s
+@@ -21,6 +21,13 @@ bx r1
+ // treating r4-r7 as free since this function is only called at the end of other ones
+ .global get_form_out_of_encounter_species_rare
+ get_form_out_of_encounter_species_rare:
++push {r5}
++push {r1-r4, lr}
++bl PackFormSpecies
++pop {r1-r4}
++pop {r5}
++mov lr, r5
++pop {r5}
+ // ldr r4, =0xF800
+ mov r4, #0xF8
+ lsl r4, #8
+@@ -176,6 +183,13 @@ bx r0
+ // treating r4-r7 as free since this function is only called at the end of other ones
+ .global get_form_out_of_encounter_species
+ get_form_out_of_encounter_species:
++push {r5}
++push {r1-r4, lr}
++bl PackFormSpecies
++pop {r1-r4}
++pop {r5}
++mov lr, r5
++pop {r5}
+ // ldr r4, =0xF800
+ mov r4, #0xF8
+ lsl r4, #8
+diff --git a/include/pokemon.h b/include/pokemon.h
+index 0687f0e..e691dd2 100644
+--- a/include/pokemon.h
++++ b/include/pokemon.h
+@@ -1452,6 +1452,7 @@ u16 LONG_CALL GetBaseSpeciesFromAdjustedForm(u32 mons_no);
+  *  @return form of adjusted species
+  */
+ u16 LONG_CALL GetFormFromAdjustedForm(u32 mons_no);
++u32 LONG_CALL PackFormSpecies(u32 species);
+ 
+ /**
+  *  @brief grab index in ARC_POKEICON from original species, egg status, and form number
+diff --git a/src/field/enemy_party.c b/src/field/enemy_party.c
+index 6f7d4a7..dc080c4 100644
+--- a/src/field/enemy_party.c
++++ b/src/field/enemy_party.c
+@@ -147,6 +147,7 @@ void MakeTrainerPokemonParty(struct BATTLE_PARAM *bp, int num, int heapID)
+         // species field
+         species = buf[offset] | (buf[offset + 1] << 8);
+         offset += 2;
++        species = PackFormSpecies(species);
+         form_no = (species & 0xF800) >> 11;
+         species &= 0x07FF;
+ 
+@@ -455,8 +456,9 @@ BOOL LONG_CALL AddWildPartyPokemon(int inTarget, EncounterInfo *encounterInfo, s
+     // original routine for encounters with zero or one configured item.
+     if (encounterInfo->isEgg == 0
+         && !(encounterBattleParam->fight_type & (BATTLE_TYPE_TRAINER | BATTLE_TYPE_LINK | BATTLE_TYPE_FRONTIER | BATTLE_TYPE_PAL_PARK | BATTLE_TYPE_TUTORIAL))) {
+-        u16 commonItem = PokePersonalParaGet(species, PERSONAL_ITEM_1);
+-        u16 rareItem = PokePersonalParaGet(species, PERSONAL_ITEM_2);
++        u32 itemForm = GetMonData(encounterPartyPokemon, MON_DATA_FORM, NULL);
++        u16 commonItem = PokeFormNoPersonalParaGet(species, itemForm, PERSONAL_ITEM_1);
++        u16 rareItem = PokeFormNoPersonalParaGet(species, itemForm, PERSONAL_ITEM_2);
+         if (commonItem != ITEM_NONE && rareItem != ITEM_NONE) {
+             u16 item = commonItem;
+             if (commonItem != rareItem && gf_rand() < 0x8000) {
+diff --git a/src/pokemon.c b/src/pokemon.c
+index 8ff3594..b632038 100644
+--- a/src/pokemon.c
++++ b/src/pokemon.c
+@@ -48,7 +48,7 @@ BOOL LONG_CALL GetOtherFormPic(MON_PIC *picdata, u16 mons_no, u8 dir, u8 col, u8
+ 
+     word_to_store_form_at = form_no;
+ 
+-    if (form_no != 0) {
++    if (form_no != 0 && mons_no <= SPECIES_MAX_MON_NUM) {
+         u16 newSpecies;
+         ReadFromNarcMemberByIdPair(&newSpecies, ARC_CODE_ADDONS, CODE_ADDON_FORM_DATA, sizeof(u16) * (32 * mons_no + form_no - 1), sizeof(u16));
+         newSpecies &= ~(NEEDS_REVERSION);
+@@ -88,7 +88,7 @@ void SetPartyPokemonParamsForEvoCutscene(struct PartyPokemon *mon, u16 *targetSp
+  */
+ int LONG_CALL PokeOtherFormMonsNoGet(int mons_no, int form_no)
+ {
+-    if (form_no != 0) {
++    if (form_no != 0 && mons_no <= SPECIES_MAX_MON_NUM) {
+         u16 newSpecies;
+         ReadFromNarcMemberByIdPair(&newSpecies, ARC_CODE_ADDONS, CODE_ADDON_FORM_DATA, sizeof(u16) * (32 * mons_no + form_no - 1), sizeof(u16));
+         newSpecies &= ~(NEEDS_REVERSION);
+@@ -108,7 +108,7 @@ int LONG_CALL PokeOtherFormMonsNoGet(int mons_no, int form_no)
+  */
+ u16 LONG_CALL GetSpeciesBasedOnForm(int mons_no, int form_no)
+ {
+-    if (form_no != 0) {
++    if (form_no != 0 && mons_no <= SPECIES_MAX_MON_NUM) {
+         u16 newSpecies;
+         ReadFromNarcMemberByIdPair(&newSpecies, ARC_CODE_ADDONS, CODE_ADDON_FORM_DATA, sizeof(u16) * (32 * mons_no + form_no - 1), sizeof(u16));
+         newSpecies &= ~(NEEDS_REVERSION);
+@@ -156,6 +156,23 @@ u16 LONG_CALL GetFormFromAdjustedForm(u32 mons_no)
+     return ret;
+ }
+ 
++// Encounter and trainer slots pack a base species into bits 0-10 and a form
++// number into bits 11-15. Their source tables use adjusted form IDs, so
++// translate those IDs before the slot is decoded into a PartyPokemon.
++u32 LONG_CALL PackFormSpecies(u32 species)
++{
++    if (species > SPECIES_MAX_MON_NUM && species <= MAX_SPECIES_INCLUDING_FORMS) {
++        u16 baseSpecies = GetBaseSpeciesFromAdjustedForm(species);
++        if (baseSpecies > SPECIES_NONE && baseSpecies <= SPECIES_MAX_MON_NUM) {
++            u16 formNo = GetFormFromAdjustedForm(species);
++            if (formNo >= 1 && formNo <= 31) {
++                return baseSpecies | (formNo << 11);
++            }
++        }
++    }
++    return species;
++}
++
+ /**
+  *  @brief grab index in ARC_POKEICON from original species, egg status, and form number
+  *
+@@ -191,6 +208,9 @@ u32 LONG_CALL PokeIconIndexGetByMonsNumber(u32 mons, u32 egg, u32 form_no)
+ 
+ void LONG_CALL GetMonSpriteCharAndPlttNarcIdsEx(MON_PIC *picdata, u16 species, u8 gender, u8 whichFacing, u8 shiny, u8 form, u32 personality)
+ {
++    // The battle animation/position hooks resolve their species immediately
++    // after this call, using the same form as the image we are loading.
++    word_to_store_form_at = form;
+     species = PokeOtherFormMonsNoGet(species, form);
+ 
+     picdata->arc_no = ARC_MON_PIC;
