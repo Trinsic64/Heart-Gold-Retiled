@@ -19,13 +19,13 @@ There are still some awkward or glitchy tiles, but the project is playable and r
 
 The current Heartfelt Gold patch is:
 
-- [Heartfelt-Gold-v1.0.6-Patch.xdelta](https://github.com/Trinsic64/Heartfelt-Gold/releases/download/heartfelt-v1.0.6/Heartfelt-Gold-v1.0.6-Patch.xdelta) — increases Kanto legendary encounter levels and includes every v1.0.5 feature: EXP All, expanded marts and department stores, cheaper items, evolution item unlocks, and updated Trainer AI. See the [GitHub Release](https://github.com/Trinsic64/Heartfelt-Gold/releases/tag/heartfelt-v1.0.6) and [release notes](RELEASE-NOTES-HEARTFELT-v1.0.6.md).
+- [Heartfelt-Gold-v1.0.7-Patch.xdelta](https://github.com/Trinsic64/Heartfelt-Gold/releases/download/heartfelt-v1.0.7/Heartfelt-Gold-v1.0.7-Patch.xdelta) — **major update:** Ruins of Alph encounters, updated hg-engine sprites, fixed Dragon's Den encounters, new overworld and indoor cameras, and fixes for Gym level caps and Pokémon evolutions, including Scyther. Includes the features from earlier releases. See the [GitHub Release](https://github.com/Trinsic64/Heartfelt-Gold/releases/tag/heartfelt-v1.0.7) and [release notes](RELEASE-NOTES-HEARTFELT-v1.0.7.md).
 
-The [v1.0.5](https://github.com/Trinsic64/Heartfelt-Gold/releases/tag/heartfelt-v1.0.5), [v1.0.4](https://github.com/Trinsic64/Heartfelt-Gold/releases/tag/heartfelt-v1.0.4), [v1.0.3](https://github.com/Trinsic64/Heart-Gold-Retiled/releases/tag/heartfelt-v1.0.3), [v1.0.2](https://github.com/Trinsic64/Heart-Gold-Retiled/releases/tag/heartfelt-v1.0.2), [v1.0.1](https://github.com/Trinsic64/Heart-Gold-Retiled/releases/tag/heartfelt-v1.0.1), and [v1.0.0](https://github.com/Trinsic64/Heart-Gold-Retiled/releases/tag/heartfelt-v1.0.0) patches remain available for archival use.
+The [v1.0.6](https://github.com/Trinsic64/Heartfelt-Gold/releases/tag/heartfelt-v1.0.6), [v1.0.5](https://github.com/Trinsic64/Heartfelt-Gold/releases/tag/heartfelt-v1.0.5), [v1.0.4](https://github.com/Trinsic64/Heartfelt-Gold/releases/tag/heartfelt-v1.0.4), [v1.0.3](https://github.com/Trinsic64/Heart-Gold-Retiled/releases/tag/heartfelt-v1.0.3), [v1.0.2](https://github.com/Trinsic64/Heart-Gold-Retiled/releases/tag/heartfelt-v1.0.2), [v1.0.1](https://github.com/Trinsic64/Heart-Gold-Retiled/releases/tag/heartfelt-v1.0.1), and [v1.0.0](https://github.com/Trinsic64/Heart-Gold-Retiled/releases/tag/heartfelt-v1.0.0) patches remain available for archival use.
 
-The v1.0.6 patch was decoded against a clean USA source matching the hashes below. Its output SHA-256 is `dbf208bd9ca9944b5a789cdfe058156c291fc517e80da52201960f431d9f39f9`.
+The v1.0.7 patch was decoded against a clean USA source matching the hashes below. Its output SHA-256 is `a6d5dd80112f08f2a7a1eca5fdd735d65e097fb9a86817e48a48042047893246`.
 
-**Save import friendly:** v1.0.6 does not change the save layout, so in-game saves from earlier Heartfelt Gold versions are expected to remain compatible. Back up your save, import or copy it for the new ROM, and continue without starting a new game. Match the save filename to the new ROM where your emulator requires it. Boot from the in-game save rather than loading an older emulator save state.
+**Save import friendly:** in-game saves from earlier Heartfelt Gold versions are expected to remain compatible. A known copied save passed a load, save and reload test on v1.0.7. Back up your save, import or copy it for the new ROM, and continue without starting a new game. Match the save filename to the new ROM where your emulator requires it. Boot from the in-game save rather than loading an older emulator save state.
 
 The older Retiled Expansion and visual-only patches remain available for archival use:
 
@@ -58,7 +58,7 @@ Then:
 1. Back up your clean ROM dump.
 2. Open xDelta UI or RomPatcher.js.
 3. Select your original Pokémon HeartGold (USA) `.nds` file as the **source/ROM file**.
-4. Select `Heartfelt-Gold-v1.0.6-Patch.xdelta` as the **patch file**.
+4. Select `Heartfelt-Gold-v1.0.7-Patch.xdelta` as the **patch file**.
 5. Apply the patch and save the newly generated `.nds` file separately from your original ROM.
 
 Apply exactly one patch to the clean ROM. Do not stack Heartfelt Gold with any earlier Retiled patch.
@@ -78,6 +78,7 @@ In RomPatcher.js, the selections should look like this:
 SHA-256:
 
 ```text
+C37541B75A3EFD0802A457EC9F36A53EED324B3CF7A49AC58888FD1D855470D0  xDelta/Heartfelt-Gold-v1.0.7-Patch.xdelta
 810C69A129B4044FB13852D26332326CD38E227265E1BA126EF0425A9D3A03A1  xDelta/Heartfelt-Gold-v1.0.6-Patch.xdelta
 D814036E86628E9D0512701094DC7F9AC54A11D6B3AEBC716A837F77CCF74506  xDelta/Heartfelt-Gold-v1.0.5-Patch.xdelta
 19FFD05CF2E2A11B0E75697BA91AE721ED55CBE3677A61D89889AF3AC03D903B  xDelta/Heartfelt-Gold-v1.0.4-Patch.xdelta
@@ -93,7 +94,7 @@ D814036E86628E9D0512701094DC7F9AC54A11D6B3AEBC716A837F77CCF74506  xDelta/Heartfe
 On PowerShell:
 
 ```powershell
-Get-FileHash .\xDelta\Heartfelt-Gold-v1.0.6-Patch.xdelta -Algorithm SHA256
+Get-FileHash .\xDelta\Heartfelt-Gold-v1.0.7-Patch.xdelta -Algorithm SHA256
 Get-FileHash .\xDelta\HG-Retiled-Expansion-Patch.xdelta -Algorithm SHA256
 Get-FileHash .\xDelta\HG-Retiled-Patch.xdelta -Algorithm SHA256
 Get-FileHash .\HG-Retiled-v3.bps -Algorithm SHA256
@@ -102,7 +103,7 @@ Get-FileHash .\HG-Retiled-v3.bps -Algorithm SHA256
 On macOS or Linux:
 
 ```bash
-sha256sum xDelta/Heartfelt-Gold-v1.0.6-Patch.xdelta xDelta/HG-Retiled-Expansion-Patch.xdelta xDelta/HG-Retiled-Patch.xdelta HG-Retiled-v3.bps
+sha256sum xDelta/Heartfelt-Gold-v1.0.7-Patch.xdelta xDelta/HG-Retiled-Expansion-Patch.xdelta xDelta/HG-Retiled-Patch.xdelta HG-Retiled-v3.bps
 ```
 
 The map archive hashes are recorded in [checksums.sha256](checksums.sha256).
